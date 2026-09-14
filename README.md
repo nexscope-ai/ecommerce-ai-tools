@@ -24,15 +24,15 @@ Building a product research dashboard, an AI agent, or an ecommerce automation? 
 
 See [API workflows and integration steps](docs/api-capabilities.md) for concrete examples, or [the API examples repository](https://github.com/nexscope-ai/nexscope-ecommerce-api) for cURL, JavaScript, and Python clients. Have an API question or need another capability? [Open an issue for the official Nexscope team](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose).
 
-## Tools and release status
+## Browser tools
 
-The following tools are **coming soon**. Their production pages were not available at our September 14, 2026 check. The URLs below are planned destinations, not currently available demos. We will update this table when each workflow is released and verified.
+Choose a workflow below. Sign in with your Nexscope account to run it.
 
-| Tool | Start with | Workflow and output | Status |
-| --- | --- | --- | --- |
-| [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_reviews) | A competitor ASIN and marketplace | Analyze a recent 1–2 star review sample; download an AI report and source review CSV. | Coming soon |
-| [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_keywords) | A seed keyword | Explore US English Google keyword metrics, look up Amazon US products, and request an AI competitor comparison report. | Coming soon |
-| [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_auditor) | One public page URL | Inspect page SEO evidence and separately request a mobile Lighthouse check. | Coming soon; service verification pending |
+| Tool | Start with | Workflow and output |
+| --- | --- | --- |
+| [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_reviews) | A competitor ASIN and marketplace | Analyze a recent 1–2 star review sample; download an AI report and source review CSV. |
+| [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_keywords) | A seed keyword | Explore US English Google keyword metrics, look up Amazon US products, and request an AI competitor comparison report. |
+| [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_auditor) | One public page URL | Inspect page SEO evidence and separately request a mobile Lighthouse check. |
 
 These are hosted Nexscope workflows. This repository contains documentation and support resources; it does not contain the hosted application's source code or a self-hostable implementation.
 
@@ -48,7 +48,7 @@ Research Google keywords, then explicitly request matching Amazon US products an
 
 ### Inspect a website page
 
-Review one URL's collected SEO evidence and, separately, a mobile Lighthouse lab result. This is not a whole-site crawl or a guarantee of rankings. The complete live audit workflow is still awaiting service verification.
+Review one URL's collected SEO evidence and, separately, a mobile Lighthouse lab result. This is not a whole-site crawl or a guarantee of rankings.
 
 ## Free credits
 
