@@ -7,7 +7,7 @@ body:
     id: tool
     attributes:
       label: Tool
-      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, New tool / General]
+      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, API Docs / REST / MCP, New tool / General]
     validations:
       required: true
   - type: textarea

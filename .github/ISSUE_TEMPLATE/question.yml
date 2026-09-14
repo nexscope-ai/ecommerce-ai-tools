@@ -1,5 +1,5 @@
 name: Question
-description: Ask the official Nexscope team about a tool or workflow.
+description: Ask the official Nexscope team about a tool, API, or integration.
 title: "[Question]: "
 labels: [question]
 body:
@@ -7,7 +7,7 @@ body:
     id: tool
     attributes:
       label: Tool
-      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, General]
+      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, API Docs / REST / MCP, General]
     validations:
       required: true
   - type: textarea
