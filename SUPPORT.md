@@ -1,6 +1,6 @@
 # Official Nexscope support
 
-Use [Issues](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for public questions, bug reports, and feature requests about Nexscope browser tools.
+Use [Issues](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for public questions, bug reports, and feature requests about Nexscope tools, APIs, and REST/MCP integrations. Choose **API Docs / REST / MCP** in the form for an API report, and include the endpoint slug and a redacted request or error example.
 
 The official Nexscope team will respond as quickly as possible and follow up on progress toward a resolution. We do not promise an immediate fix or a fixed response time for every issue.
 
@@ -16,7 +16,7 @@ Search existing issues first. Add relevant details to an existing report when it
 
 The team reviews incoming issues, requests missing information where needed, and updates the issue as investigation progresses. A maintainer closes the issue after a fix, answer, duplicate reference, or an explanation of the decision.
 
-Tool labels help route reports: `tool:reviews`, `tool:keywords`, `tool:seo-auditor`, and `tool:general`. Status labels include `needs-info`, `investigating`, and `fixed`. A template applies the issue type; maintainers add the appropriate tool and status labels.
+Tool labels help route reports: `tool:reviews`, `tool:keywords`, `tool:seo-auditor`, `tool:api`, and `tool:general`. Status labels include `needs-info`, `investigating`, and `fixed`. A template applies the issue type; maintainers add the appropriate tool and status labels.
 
 ## Private information
 

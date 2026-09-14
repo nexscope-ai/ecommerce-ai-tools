@@ -1,10 +1,28 @@
 # Ecommerce AI Tools by Nexscope
 
-Official browser tools, workflow guides, and community support from Nexscope for ecommerce research and SEO.
+Official browser tools, ecommerce data APIs, creative AI APIs, workflow guides, and community support from Nexscope.
 
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme). Credit usage varies by action.
 
-[Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) · [Getting started](docs/getting-started.md) · [Official API documentation](https://www.nexscope.ai/api-docs)
+[Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/api-capabilities.md) · [Getting started](docs/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
+
+## Ecommerce data, SEO/GEO, and creative AI APIs
+
+Building a product research dashboard, an AI agent, or an ecommerce automation? [Nexscope API Docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_intro) brings together endpoint parameters, response schemas, request examples, online testing, and REST/MCP integration guidance.
+
+| Your goal | Documented capabilities | Start here |
+| --- | --- | --- |
+| Understand competitor complaints | Retrieve Amazon reviews by ASIN and star rating; use the returned evidence in a separate analysis request. | [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_reviews) |
+| Research products and keywords | Amazon search, ASIN details, price history, competitor lookup, and reverse ASIN keyword research. | [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_amazon) |
+| Find sourcing candidates | Search 1688 products by keyword or image and inspect returned supplier and product information. | [1688 Search By Image API](https://www.nexscope.ai/api-docs/1688-search-by-image?view=api&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_sourcing) |
+| Explore stores and social commerce | Shopify product/store queries and TikTok Shop product, creator, video, and ad research. | [Shopify Product Query API](https://www.nexscope.ai/api-docs/shopify-product-query?view=api&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_shopify) |
+| Research search visibility | SEO/GEO references for keyword metrics, SERPs, page evidence, backlinks, and AI citations; some detail pages are contract drafts. | [SEO API directory](https://www.nexscope.ai/api-docs?tab=marketing&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_seo_geo) |
+| Create product imagery and videos | Background removal, image generation/editing, and asynchronous video generation. | [Creative AI directory](https://www.nexscope.ai/api-docs?tab=creative&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_creative) |
+| Give an AI agent ecommerce tools | Discover MCP tool names and schemas, or call REST endpoints from your own workflow. | [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_mcp) |
+
+**Start with 1,000 free credits as a new Nexscope user.** [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_signup), then open the docs and check access for your chosen endpoint. External REST/MCP calls and the API tester use an account API key. Creative API key access requires an active subscription; trial credits do not unlock it. Check each SEO API's published status before relying on it in production.
+
+See [API workflows and integration steps](docs/api-capabilities.md) for concrete examples, or [the API examples repository](https://github.com/nexscope-ai/nexscope-ecommerce-api) for cURL, JavaScript, and Python clients. Have an API question or need another capability? [Open an issue for the official Nexscope team](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose).
 
 ## Tools and release status
 
