@@ -1,0 +1,23 @@
+name: Question
+description: Ask the official Nexscope team about a tool or workflow.
+title: "[Question]: "
+labels: [question]
+body:
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Tool
+      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, General]
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Explain your goal and where you need help. Do not include credentials or private data.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What have you already tried?

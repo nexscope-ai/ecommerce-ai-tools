@@ -1,0 +1,32 @@
+name: Feature request
+description: Tell the Nexscope team what you would like to accomplish.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Tool
+      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, New tool / General]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe how this would improve your workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround
+  - type: markdown
+    attributes:
+      value: "The official team reviews suggestions and follows up. Please do not include private data. Submission does not guarantee implementation."
