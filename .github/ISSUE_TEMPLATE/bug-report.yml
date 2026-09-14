@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a problem with a Nexscope browser tool.
+description: Report a problem with a Nexscope tool, API, or integration.
 title: "[Bug]: "
 labels: [bug]
 body:
@@ -10,7 +10,7 @@ body:
     id: tool
     attributes:
       label: Tool
-      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, General / Account interface]
+      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, API Docs / REST / MCP, General / Account interface]
     validations:
       required: true
   - type: textarea
