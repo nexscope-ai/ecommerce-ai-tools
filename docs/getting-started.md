@@ -1,9 +1,9 @@
 # Getting started with Nexscope tools
 
-The tools listed here are coming soon. Check the [release status](../README.md#tools-and-release-status) before opening a tool.
+Choose a workflow from [our browser tools](../README.md#browser-tools), then sign in with your Nexscope account to run it.
 
 1. [Create a Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=getting_started). New users get **1,000 free credits**. Credit usage varies by action.
-2. Once available, choose a competitor ASIN, a keyword, or a public page URL.
+2. Choose a competitor ASIN, a keyword, or a public page URL.
 3. Review the selected market, sample size, and credit requirements before starting. Some workflows require a separate second request.
 4. Inspect source evidence before acting on AI suggestions, and download results you want to keep.
 5. [Open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for questions, bugs, or feature requests. The official Nexscope team responds as quickly as possible and follows up on progress.
@@ -18,4 +18,4 @@ Explore US English Google keyword candidates and metrics, then request matching 
 
 ## Website SEO Auditor
 
-Collect evidence for one public page and separately request mobile Lighthouse. The complete live service workflow is awaiting verification. This is a single-page check, not a whole-site crawl.
+Collect evidence for one public page and separately request mobile Lighthouse. This is a single-page check, not a whole-site crawl.
