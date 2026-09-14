@@ -1,0 +1,47 @@
+name: Bug report
+description: Report a problem with a Nexscope browser tool.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "The official Nexscope team will review your report. Issues are public: do not include passwords, tokens, API keys, or private customer data."
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Tool
+      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, General / Account interface]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Describe the actions that led to the issue. Remove sensitive inputs.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include any non-sensitive error code or redacted screenshot.
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Chrome on Windows, Safari on iPhone, etc.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public report
+      options:
+        - label: I removed credentials and private information from this report.
+          required: true
