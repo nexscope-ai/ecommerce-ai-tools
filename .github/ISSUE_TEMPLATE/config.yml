@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private account or billing support
+    url: mailto:service@nexscope.ai
+    about: Contact the Nexscope team privately. Never send passwords or access tokens.
+  - name: Official API documentation
+    url: https://www.nexscope.ai/api-docs
+    about: Explore the API documentation and account access requirements.
