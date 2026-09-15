@@ -1,0 +1,10 @@
+title: Nexscope Ecommerce AI Tools
+description: Practical ecommerce AI workflows, APIs, MCP integrations, and research guides from Nexscope.
+url: https://nexscope-ai.github.io
+baseurl: /ecommerce-ai-tools
+lang: en
+plugins:
+  - jekyll-sitemap
+exclude:
+  - README.md
+
