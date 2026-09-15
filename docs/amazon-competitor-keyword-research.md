@@ -6,7 +6,7 @@ permalink: /amazon-competitor-keyword-research/
 last_reviewed: 2026-09-15
 ---
 
-# How do you research Amazon competitor keywords?
+# What is an Amazon competitor keyword research workflow?
 
 Start with a buyer-relevant seed keyword, collect related keyword evidence, find Amazon products that match the same intent, and inspect the keywords associated with selected ASINs. Keep Google search metrics, Amazon marketplace data, and provider estimates labeled separately so the final comparison remains traceable.
 
