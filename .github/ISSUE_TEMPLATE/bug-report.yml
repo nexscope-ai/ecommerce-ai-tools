@@ -10,7 +10,7 @@ body:
     id: tool
     attributes:
       label: Tool
-      options: [Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, API Docs / REST / MCP, General / Account interface]
+      options: [AI Video Generator, Amazon Review Analyzer, SEO Keyword Planner, Website SEO Auditor, API Docs / REST / MCP, General / Account interface]
     validations:
       required: true
   - type: textarea
