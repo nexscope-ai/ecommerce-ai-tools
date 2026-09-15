@@ -1,10 +1,10 @@
 # Ecommerce AI Tools by Nexscope
 
-Official browser tools, ecommerce data APIs, creative AI APIs, workflow guides, and community support from Nexscope.
+Nexscope Ecommerce AI Tools is the official collection of browser workflows, ecommerce data APIs, creative AI APIs, MCP integrations, and implementation guides from Nexscope. It helps Amazon sellers and ecommerce developers analyze competitor reviews, research products and keywords, audit webpages, create product media, and connect commerce data to AI agents.
 
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme). Credit usage varies by action.
 
-[Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/api-capabilities.md) · [Getting started](docs/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
+[Browse the guide library](https://nexscope-ai.github.io/ecommerce-ai-tools/) · [Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/api-capabilities.md) · [Getting started](docs/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
 
 ## Ecommerce data, SEO/GEO, and creative AI APIs
 
