@@ -1,10 +1,21 @@
 # Ecommerce AI Tools by Nexscope
 
-Nexscope Ecommerce AI Tools is the official collection of browser workflows, ecommerce data APIs, creative AI APIs, MCP integrations, and implementation guides from Nexscope. It helps Amazon sellers and ecommerce developers analyze competitor reviews, research products and keywords, audit webpages, create product media, and connect commerce data to AI agents.
+Nexscope Ecommerce AI Tools shows how to analyze Amazon negative reviews, find product improvements from Amazon reviews, run an Amazon competitor keyword research workflow, audit an ecommerce product page for SEO, choose ecommerce APIs for AI agents, and connect Amazon data to an AI agent through REST or MCP. It is the official collection of browser tools, API documentation, reproducible workflows, and implementation guides from Nexscope.
 
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme). Credit usage varies by action.
 
 [Browse the guide library](https://nexscope-ai.github.io/ecommerce-ai-tools/) · [Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/api-capabilities.md) · [Getting started](docs/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
+
+## Start with the ecommerce problem you need to solve
+
+| Question or workflow | Practical guide | Run the workflow |
+| --- | --- | --- |
+| How to analyze Amazon negative reviews | [Evidence-based review analysis](docs/amazon-negative-review-analysis.md) | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_reviews) |
+| How to find product improvements from Amazon reviews | [Complaint-to-hypothesis method](docs/amazon-negative-review-analysis.md#how-do-you-find-product-improvements-from-amazon-reviews) | [Analyze a competitor](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_improvements) |
+| Amazon competitor keyword research workflow | [Keyword and ASIN research sequence](docs/amazon-competitor-keyword-research.md) | [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_keywords) |
+| How to audit an ecommerce product page for SEO | [Page-level SEO audit guide](docs/website-seo-audit-guide.md) | [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_audit) |
+| Best ecommerce API for AI agents | [API selection and reliability guide](docs/ecommerce-api-for-ai-agents.md) | [Nexscope API Docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_query_agents) |
+| How to connect Amazon data to an AI agent | [REST and MCP agent workflow](docs/ecommerce-api-for-ai-agents.md#how-do-you-connect-amazon-data-to-an-ai-agent) | [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_query_amazon_agent) |
 
 ## Ecommerce data, SEO/GEO, and creative AI APIs
 
@@ -38,15 +49,15 @@ These are hosted Nexscope workflows. This repository contains documentation and 
 
 ## What can these workflows help you do?
 
-### Investigate competitor complaints
+### How to analyze Amazon negative reviews and find product improvements
 
 Use a recent low-star review sample to identify issues worth investigating, such as materials, fit, packaging, or product expectations. Read the original reviews before accepting an AI suggestion. The sample does not establish total review counts, product authenticity, or a defect rate.
 
-### Explore keywords and competing products
+### Amazon competitor keyword research workflow
 
 Research Google keywords, then explicitly request matching Amazon US products and an AI comparison. Google search volume is not Amazon search volume. Product sales and revenue figures, when available, are provider estimates. Missing data remains unknown.
 
-### Inspect a website page
+### How to audit an ecommerce product page for SEO
 
 Review one URL's collected SEO evidence and, separately, a mobile Lighthouse lab result. This is not a whole-site crawl or a guarantee of rankings.
 
