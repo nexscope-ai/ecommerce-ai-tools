@@ -34,9 +34,14 @@ The repository documents hosted Nexscope capabilities and support resources. It 
 
 ## Use the source evidence
 
+[Read a real Amazon review analysis case study](amazon-review-case-study/): a production run returned 10 reviews; four raised size or capacity concerns. See the source identifiers, sample limits, and a product validation plan.
+
 AI output should help form a testable hypothesis. Review the underlying product, review, keyword, or webpage evidence before making product or marketing decisions. Provider estimates and partial samples should not be presented as complete market measurements.
 
 ## Official links
+
+- [Join the community: questions, ideas, and shared workflows](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
+- [Welcome: tools, API Docs, and 1,000 free credits](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/1)
 
 - [Open Nexscope API Docs](https://www.nexscope.ai/api-docs?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=guide_home_docs)
 - [Try the Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools)
