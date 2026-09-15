@@ -49,6 +49,8 @@ These are hosted Nexscope workflows. This repository contains documentation and 
 
 ## What can these workflows help you do?
 
+**Real run, with evidence:** [From 10 Amazon reviews to a product-capacity test](docs/amazon-review-case-study.md). Includes inputs, returned counts, source IDs, human review of AI claims, and a validation plan.
+
 ### How to analyze Amazon negative reviews and find product improvements
 
 Use a recent low-star review sample to identify issues worth investigating, such as materials, fit, packaging, or product expectations. Read the original reviews before accepting an AI suggestion. The sample does not establish total review counts, product authenticity, or a defect rate.
@@ -66,6 +68,8 @@ Review one URL's collected SEO evidence and, separately, a mobile Lighthouse lab
 New users receive **1,000 free credits** to get started with Nexscope. Available actions and credit usage depend on the tool and your account access. Check your account for the current balance and applicable terms. Trial credits do not imply unlimited usage or access to every API.
 
 ## Official support and feature requests
+
+[Join the Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) to ask workflow questions and share results. [Read our welcome post](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/1) for tools, API Docs, and 1,000 free credits for new users.
 
 **Have a question, found a bug, or need a feature? [Open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose).**
 
