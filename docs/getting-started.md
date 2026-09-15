@@ -1,3 +1,11 @@
+---
+layout: default
+title: Getting started with Nexscope ecommerce tools
+description: Start using Nexscope browser tools and API documentation for Amazon review analysis, keyword research, and webpage SEO audits.
+permalink: /getting-started/
+last_reviewed: 2026-09-15
+---
+
 # Getting started with Nexscope tools
 
 Choose a workflow from [our browser tools](../README.md#browser-tools), then sign in with your Nexscope account to run it.
