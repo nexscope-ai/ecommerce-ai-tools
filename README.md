@@ -1,4 +1,6 @@
-# Ecommerce AI Tools by Nexscope
+# Ecommerce AI Tools by Nexscope — AI Video Generator, Amazon Research & SEO
+
+Nexscope includes an **AI video generator** that turns product images and a motion prompt into downloadable videos. [Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) or follow the [image-to-video workflow guide](docs/ai-video-generator.md).
 
 Nexscope Ecommerce AI Tools shows how to analyze Amazon negative reviews, find product improvements from Amazon reviews, run an Amazon competitor keyword research workflow, audit an ecommerce product page for SEO, choose ecommerce APIs for AI agents, and connect Amazon data to an AI agent through REST or MCP. It is the official collection of browser tools, API documentation, reproducible workflows, and implementation guides from Nexscope.
 
@@ -10,7 +12,8 @@ Nexscope Ecommerce AI Tools shows how to analyze Amazon negative reviews, find p
 
 | Question or workflow | Practical guide | Run the workflow |
 | --- | --- | --- |
-| How to analyze Amazon negative reviews | [Evidence-based review analysis](docs/amazon-negative-review-analysis.md) | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_reviews) |
+| How to use an AI video generator for product images | [Image-to-video workflow, models, and quality checks](docs/ai-video-generator.md) | [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) |
+| How to analyze Amazon negative reviews | [Evidence-based review analysis](docs/amazon-negative-review-analysis.md) | | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_reviews) |
 | How to find product improvements from Amazon reviews | [Complaint-to-hypothesis method](docs/amazon-negative-review-analysis.md#how-do-you-find-product-improvements-from-amazon-reviews) | [Analyze a competitor](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_improvements) |
 | Amazon competitor keyword research workflow | [Keyword and ASIN research sequence](docs/amazon-competitor-keyword-research.md) | [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_keywords) |
 | How to audit an ecommerce product page for SEO | [Page-level SEO audit guide](docs/website-seo-audit-guide.md) | [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_audit) |
@@ -41,6 +44,7 @@ Choose a workflow below. Sign in with your Nexscope account to run it.
 
 | Tool | Start with | Workflow and output |
 | --- | --- | --- |
+| [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) | Product images and a motion prompt | Choose a model, review the credit estimate, generate a product video, preview and download it. |
 | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_reviews) | A competitor ASIN and marketplace | Analyze a recent 1–2 star review sample; download an AI report and source review CSV. |
 | [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_keywords) | A seed keyword | Explore US English Google keyword metrics, look up Amazon US products, and request an AI competitor comparison report. |
 | [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme_auditor) | One public page URL | Inspect page SEO evidence and separately request a mobile Lighthouse check. |
