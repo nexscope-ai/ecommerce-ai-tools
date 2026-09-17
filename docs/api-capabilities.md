@@ -3,7 +3,7 @@ layout: default
 title: Nexscope API capabilities and ecommerce workflows
 description: A practical map of Nexscope ecommerce data, SEO and GEO, creative AI, REST, and MCP capabilities with workflow examples and limitations.
 permalink: /api-capabilities/
-last_reviewed: 2026-09-15
+last_reviewed: 2026-09-17
 ---
 
 # Nexscope API capabilities and ecommerce workflows
@@ -15,7 +15,7 @@ Nexscope exposes ecommerce research and creative AI capabilities through REST AP
 ## What is in the API docs?
 
 - **Ecommerce data:** Amazon product/search/review/keyword research; TikTok Shop product, creator, video, and ad research; Shopify store/product queries; 1688 sourcing; other marketplace and patent research references.
-- **SEO and GEO:** keyword metrics, search results, competitor/traffic research, page evidence, backlinks, advertising intelligence, and AI visibility references. Some SEO detail pages currently say **Contract draft**. Review endpoint status and access before planning a production integration.
+- **SEO and GEO:** keyword metrics, search results, competitor and traffic research, page evidence, backlinks, advertising intelligence, and AI visibility research. Open the relevant API page to confirm its current inputs, access requirements, and response schema.
 - **Creative AI:** image generation and editing, background removal, and video generation. Creative work uses asynchronous tasks: submit once, then query the returned task ID.
 - **Integration:** REST endpoint details, MCP tool definitions, request/response examples, and an online API tester. The [API examples repository](https://github.com/nexscope-ai/nexscope-ecommerce-api) contains reusable cURL, JavaScript, and Python clients.
 
@@ -44,7 +44,7 @@ Use [Shopify Store Query](https://www.nexscope.ai/api-docs/shopify-store-query?v
 
 ## 5. Keyword or URL → SEO/GEO evidence → research brief
 
-Explore [the SEO API directory](https://www.nexscope.ai/api-docs?tab=marketing&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=guide_seo_geo). Review keyword/SERP references for search demand, page references for on-page evidence, and AI visibility references for citation research. Check draft status and service availability first. Google search volume is not Amazon search volume; a citation sample does not guarantee visibility in every AI answer.
+Explore [the SEO API directory](https://www.nexscope.ai/api-docs?tab=marketing&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=guide_seo_geo). Use keyword and SERP data to research search demand, page data to inspect on-page evidence, and AI visibility data to study citations. Confirm the selected endpoint's access requirements and request schema before integrating it. Google search volume is not Amazon search volume, and a citation sample does not guarantee visibility in every AI answer.
 
 ## 6. Product asset → image or video task → finished media
 
