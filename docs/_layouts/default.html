@@ -79,8 +79,19 @@
       .reviewed { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
+    {% if page.url contains '/ecommerce-trends/' %}
+    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}">
+    <script src="{{ '/assets/trends.js' | relative_url }}" defer></script>
+    {% endif %}
   </head>
-  <body>
+  <body{% if page.url contains '/ecommerce-trends/' %} class="trends-page{% if page.schema_type == 'Article' %} trends-article{% endif %}"{% endif %}>
+    {% if page.url contains '/ecommerce-trends/' %}
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="trends-header"><div class="wrap">
+      <a class="brand" href="https://nexscope-ai.github.io/" aria-label="Nexscope home"><img src="https://nexscope-ai.github.io/logo.png" alt="Nexscope" width="166" height="42"></a>
+      <nav aria-label="Primary"><a href="https://nexscope-ai.github.io/">Home</a><a href="{{ '/ecommerce-trends/' | relative_url }}" aria-current="{% if page.schema_type == 'Article' %}true{% else %}page{% endif %}">Trends & insights</a><a href="{{ '/' | relative_url }}">Guides</a><a class="nav-cta" href="https://www.nexscope.ai/api-docs?utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=ecommerce_trends">Explore APIs ↗</a></nav>
+    </div></header>
+    {% else %}
     <header>
       <div class="wrap">
         <a class="brand" href="{{ '/' | relative_url }}">Nexscope Ecommerce AI Tools</a>
@@ -96,11 +107,18 @@
         </nav>
       </div>
     </header>
-    <main class="wrap">
+    {% endif %}
+    <main class="wrap" id="main-content">
+      {% if page.url contains '/ecommerce-trends/' and page.schema_type == 'Article' %}
+      <a class="back-link" href="{{ '/ecommerce-trends/' | relative_url }}">← All trends & insights</a>
+      <div class="reading-progress" aria-hidden="true"><span></span></div>
+      <div class="reading-layout"><aside class="reading-sidebar" hidden><details open><summary>On this page</summary><nav aria-label="Article contents"></nav></details></aside>
+      {% endif %}
       <article>
         {{ content }}
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official Nexscope team.</p>{% endif %}
       </article>
+      {% if page.url contains '/ecommerce-trends/' and page.schema_type == 'Article' %}</div>{% endif %}
     </main>
     <footer><div class="wrap">Have a workflow question? <a href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions">Ask the community</a>. Found a bug or need a capability? <a href="https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose">Open an issue</a>. The official Nexscope team reviews feedback and follows up as quickly as possible.</div></footer>
   </body>
