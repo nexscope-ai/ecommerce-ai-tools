@@ -1,0 +1,72 @@
+last_verified: 2026-09-17
+methodology: >-
+  Comparisons use public product pages and documentation available on the review date.
+  They do not claim private performance data, undisclosed roadmap details, or guaranteed outcomes.
+
+nexscope:
+  name: Nexscope
+  website: https://www.nexscope.ai/
+  positioning: Ecommerce data, creative APIs, REST, MCP, and reusable AI-agent workflows.
+  public_evidence:
+    - https://www.nexscope.ai/apis/amazon
+    - https://www.nexscope.ai/api-docs
+    - https://www.nexscope.ai/pricing
+  strengths:
+    - One documented catalog spanning Amazon research and other ecommerce workflows.
+    - REST and MCP access from the same developer platform.
+    - Pay-as-you-go Data Credits are available without a subscription.
+  limitations:
+    - It is not a drop-in replacement for every competitor endpoint or seller-suite feature.
+    - Coverage, marketplaces, inputs, and credit use vary by capability and must be checked in the live API documentation.
+
+rainforest_api:
+  name: Rainforest API
+  website: https://docs.trajectdata.com/rainforestapi/
+  positioning: Amazon product-data API with request types for product, search, seller, reviews, and related marketplace data.
+  public_evidence:
+    - https://docs.trajectdata.com/rainforestapi/search-product
+    - https://help.trajectdata.com/migration/getting-started-ecommerce-apis
+  strengths:
+    - Focused Amazon request model and established product-data documentation.
+    - Useful for teams already built around Rainforest or the wider Traject Data ecommerce API portfolio.
+  limitations:
+    - Migration requires mapping request types, parameters, credits, and response fields rather than swapping a base URL.
+
+keepa_api:
+  name: Keepa API
+  website: https://keepa.com/api-docs/
+  positioning: Amazon price history, product, offer, deal, seller, bestseller, and tracking data.
+  public_evidence:
+    - https://keepa.com/api-docs/
+    - https://keepa.com/api-docs/plans-tokens.html
+  strengths:
+    - Deep Amazon price-history and tracking specialization.
+    - Documented token model, product histories, deals, and tracking notifications.
+  limitations:
+    - Teams needing broader marketplace or creative workflows may still require additional providers.
+
+sellersprite:
+  name: SellerSprite
+  website: https://www.sellersprite.com/en
+  positioning: Amazon seller research platform with product, keyword, reverse-ASIN, category, and API services.
+  public_evidence:
+    - https://www.sellersprite.com/en/price/api?type=service
+    - https://www.sellersprite.com/v3/knowledge/feature/about-api
+  strengths:
+    - Strong Amazon keyword and reverse-ASIN research orientation.
+    - Product, keyword, category, market, and sales-estimation API packages.
+  limitations:
+    - API services are packaged by use case, so teams should verify which packages and quotas cover their workflow.
+
+helium_10:
+  name: Helium 10
+  website: https://www.helium10.com/
+  positioning: All-in-one Amazon seller suite for product research, keywords, listings, operations, education, and AI-assisted workflows.
+  public_evidence:
+    - https://www.helium10.com/pricing/
+    - https://www.helium10.com/tools/keyword-research/
+  strengths:
+    - Integrated seller-facing interface and broad operating workflow.
+    - Established product and keyword research tools, training, and seller features.
+  limitations:
+    - It solves a different primary job from an API-first data platform, so the right choice depends on whether the user needs a seller suite or programmable infrastructure.
