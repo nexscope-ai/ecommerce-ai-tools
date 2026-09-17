@@ -1,4 +1,12 @@
 (() => {
+  // Keep all official product links on the agreed marketing attribution.
+  document.querySelectorAll('a[href]').forEach(link => {
+    const url = new URL(link.href);
+    if (url.hostname !== 'www.nexscope.ai' && url.hostname !== 'nexscope.ai') return;
+    url.searchParams.delete('fpr');
+    url.searchParams.set('co-from', 'githubIO');
+    link.href = url.href;
+  });
   const controls = document.querySelector('.trend-controls');
   if (controls) {
     controls.hidden = false;
@@ -15,7 +23,8 @@
         card.hidden = !match;
         if (match) visible++;
       });
-      count.textContent = `${visible} ${visible === 1 ? 'article' : 'articles'}`;
+      const label = count.dataset.label || 'article';
+      count.textContent = `${visible} ${label}${visible === 1 ? '' : 's'}`;
       document.querySelector('.empty-results').hidden = visible > 0;
     };
     buttons.forEach(button => button.addEventListener('click', () => {
