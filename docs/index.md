@@ -42,6 +42,7 @@ AI output should help form a testable hypothesis. Review the underlying product,
 
 ## Official links
 
+- [View the Ecommerce AI Tools repository on GitHub](https://github.com/nexscope-ai/ecommerce-ai-tools/)
 - [Join the community: questions, ideas, and shared workflows](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
 - [Welcome: tools, API Docs, and 1,000 free credits](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/1)
 
