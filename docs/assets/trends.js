@@ -6,7 +6,58 @@
     url.searchParams.delete('fpr');
     url.searchParams.set('co-from', 'githubIO');
     link.href = url.href;
+    link.setAttribute('data-track', 'start_using');
   });
+
+  const reportEvent = (name, properties) => {
+    if (typeof window.gtag !== 'function') return false;
+    window.gtag('event', name, {
+      ...properties,
+      source_page: window.location.pathname,
+      transport_type: 'beacon',
+    });
+    return true;
+  };
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('.resource-card a[href]');
+    if (!link) return;
+    const url = new URL(link.href);
+    reportEvent('resource_opened', {
+      resource_path: url.pathname,
+      resource_title: link.querySelector('h3')?.textContent?.trim() || link.textContent.trim().slice(0, 100),
+      resource_topic: link.closest('.resource-card')?.dataset.topic || 'unknown',
+    });
+  });
+
+  const scrollMilestones = new Set();
+  let scrollMeasurementScheduled = false;
+  const measureScrollDepth = () => {
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+    );
+    const scrollableHeight = Math.max(1, documentHeight - window.innerHeight);
+    const percent = Math.min(100, Math.round((window.scrollY / scrollableHeight) * 100));
+    [25, 50, 75, 90].forEach(milestone => {
+      if (percent < milestone || scrollMilestones.has(milestone)) return;
+      if (reportEvent('scroll_depth', { percent_scrolled: milestone })) {
+        scrollMilestones.add(milestone);
+      }
+    });
+    scrollMeasurementScheduled = false;
+  };
+  const scheduleScrollMeasurement = () => {
+    if (scrollMeasurementScheduled) return;
+    scrollMeasurementScheduled = true;
+    requestAnimationFrame(measureScrollDepth);
+  };
+  window.addEventListener('scroll', scheduleScrollMeasurement, { passive: true });
+  window.addEventListener('resize', scheduleScrollMeasurement);
+  scheduleScrollMeasurement();
+
   const controls = document.querySelector('.trend-controls');
   if (controls) {
     controls.hidden = false;
