@@ -1,5 +1,5 @@
 title: Nexscope Ecommerce AI Tools
-description: AI video generator guides and practical ecommerce AI workflows, APIs, MCP integrations, and research guides from Nexscope.
+description: AI video generator guides, ecommerce tool alternatives, practical APIs, MCP integrations, and Amazon research workflows from Nexscope.
 url: https://nexscope-ai.github.io
 baseurl: /ecommerce-ai-tools
 lang: en
@@ -7,4 +7,3 @@ plugins:
   - jekyll-sitemap
 exclude:
   - README.md
-
