@@ -41,6 +41,8 @@ Open the [Nexscope API Docs](https://www.nexscope.ai/api-docs?utm_source=github_
 
 REST works well for application backends, scheduled jobs, and custom orchestration. MCP exposes named tools and schemas to compatible agent clients. Both methods should keep credentials outside prompts and client-side code. Follow the current authentication instructions in the API Docs.
 
+New to the protocol? Read [what an MCP server is, how MCP tools work, and how to evaluate an ecommerce integration](../what-is-an-mcp-server/).
+
 ## Credits and access
 
 New Nexscope users receive **1,000 free credits** to get started. Credit usage and access vary by action. External REST/MCP calls and the online API tester use an account API key. Creative API key access requires an active subscription; trial credits do not unlock it.

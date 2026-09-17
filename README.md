@@ -16,12 +16,16 @@ Latest guides:
 
 - [What can the new Codex models do for ecommerce?](docs/ecommerce-trends/codex-ecommerce-nexscope-api-workflows.md)
 - [What is agentic commerce—and why AI shopping agents may skip your products](docs/ecommerce-trends/what-is-agentic-commerce-ai-shopping-visibility.md)
+- [What is an MCP server? Ecommerce tools and examples](docs/guides/what-is-an-mcp-server.md)
+- [How to track Amazon price, BSR, and sales history](docs/guides/amazon-price-history.md)
 
 ## Start with the ecommerce problem you need to solve
 
 | Question or workflow | Practical guide | Run the workflow |
 | --- | --- | --- |
 | How to use an AI video generator for product images | [Image-to-video workflow, models, and quality checks](docs/guides/ai-video-generator.md) | [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) |
+| How to check Amazon price and BSR history | [Amazon price-history workflow and interpretation guide](docs/guides/amazon-price-history.md) | [Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=readme) |
+| What is an MCP server for ecommerce? | [MCP server architecture, safety, and examples](docs/guides/what-is-an-mcp-server.md) | [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=readme) |
 | How to analyze Amazon negative reviews | [Evidence-based review analysis](docs/guides/amazon-negative-review-analysis.md) | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_reviews) |
 | How to find product improvements from Amazon reviews | [Complaint-to-hypothesis method](docs/guides/amazon-negative-review-analysis.md#how-do-you-find-product-improvements-from-amazon-reviews) | [Analyze a competitor](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_improvements) |
 | Amazon competitor keyword research workflow | [Keyword and ASIN research sequence](docs/guides/amazon-competitor-keyword-research.md) | [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_keywords) |
