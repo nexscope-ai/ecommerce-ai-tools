@@ -8,9 +8,15 @@ og_type: article
 date_published: "2026-09-17"
 date_modified: "2026-09-17"
 last_reviewed: 2026-09-17
+image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
+image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp
+image_alt: Search-term clusters being compared across products to reveal relevant reverse ASIN keyword gaps
+image_caption: "Illustration: reverse ASIN research is most useful when product fit and buyer intent filter the keyword set."
 ---
 
 # Reverse ASIN keyword research: which terms deserve a test?
+
+{% include article-visual.html %}
 
 Reverse ASIN research starts with a product identifier and works back toward associated search terms. The useful output is not the longest keyword export. It is a short, defensible list of terms that describe your product and match a buyer's intent.
 

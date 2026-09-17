@@ -1,0 +1,19 @@
+---
+layout: null
+permalink: /image-sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+{% for item in site.pages %}{% if item.image %}
+  <url>
+    <loc>{{ item.url | absolute_url }}</loc>
+    <image:image>
+      <image:loc>{{ item.image | absolute_url }}</image:loc>
+      <image:title>{{ item.title | xml_escape }}</image:title>
+      <image:caption>{{ item.image_caption | strip_html | xml_escape }}</image:caption>
+    </image:image>
+  </url>
+{% endif %}{% endfor %}
+</urlset>

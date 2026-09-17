@@ -4,9 +4,15 @@ title: How to audit an ecommerce product page for SEO
 description: Audit an ecommerce product page for crawlability, metadata, content, links, structured data, and mobile performance evidence.
 permalink: /website-seo-audit-guide/
 last_reviewed: 2026-09-15
+image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp
+image_small: /assets/images/ecommerce-product-page-seo-audit-720w.webp
+image_alt: Ecommerce product page inspected for crawlability, content, links, images, structured data, and mobile performance
+image_caption: "Illustration: a useful page audit combines crawl signals, content evidence, structured data, links, images, and performance checks."
 ---
 
 # How do you audit an ecommerce product page for SEO?
+
+{% include article-visual.html %}
 
 Audit an ecommerce webpage by checking whether the URL can be fetched and indexed, then reviewing its title, description, headings, canonical URL, content, links, images, and structured data. Add a mobile performance check as a separate diagnostic. A single-page audit identifies evidence and risks; it does not replace a full-site crawl or guarantee rankings.
 

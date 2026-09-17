@@ -4,9 +4,15 @@ title: How to analyze Amazon negative reviews and find product improvements
 description: Learn how to analyze Amazon negative reviews and turn a traceable sample of 1-star and 2-star feedback into testable product improvement hypotheses.
 permalink: /amazon-negative-review-analysis/
 last_reviewed: 2026-09-15
+image: /assets/images/amazon-review-product-insights-1440w.webp
+image_small: /assets/images/amazon-review-product-insights-720w.webp
+image_alt: Customer review evidence grouped into product problems and improvement opportunities
+image_caption: "Illustration: group review evidence before turning recurring complaints into testable product or listing changes."
 ---
 
 # How do you analyze Amazon negative reviews?
+
+{% include article-visual.html %}
 
 Analyze negative Amazon reviews by collecting a clearly defined sample of 1-star and 2-star feedback, preserving the original comments, grouping repeated complaints, and turning the strongest themes into product hypotheses that can be tested. A review sample reveals problems worth investigating; it does not measure the defect rate of every product sold.
 

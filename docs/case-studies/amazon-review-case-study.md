@@ -4,9 +4,15 @@ title: Amazon negative review case study - from 10 reviews to a capacity test
 description: A real production run with input parameters, traceable review evidence, human review of AI claims, and a product improvement validation plan.
 permalink: /amazon-review-case-study/
 last_reviewed: 2026-09-15
+image: /assets/images/amazon-review-product-insights-1440w.webp
+image_small: /assets/images/amazon-review-product-insights-720w.webp
+image_alt: Review evidence being inspected and translated into a product capacity validation checklist
+image_caption: "Illustration: recurring review evidence becomes a hypothesis only after source inspection and a defined validation test."
 ---
 
 # How do you turn Amazon negative reviews into a product improvement test?
+
+{% include article-visual.html %}
 
 In a Nexscope production run on September 15, 2026, we requested 10 one-star and 10 two-star reviews for ASIN **B0G1FVPYNW** on Amazon US. The tool returned **10 reviews: nine one-star and one two-star**. We inspected the collected review evidence and found **four comments about size or capacity**. A practical next step is to test card and cash capacity and show accurate scale imagery on a comparable product listing.
 

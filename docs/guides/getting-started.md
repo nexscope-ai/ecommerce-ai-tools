@@ -4,9 +4,15 @@ title: Getting started with Nexscope ecommerce tools
 description: Start using Nexscope browser tools and API documentation for Amazon review analysis, keyword research, and webpage SEO audits.
 permalink: /getting-started/
 last_reviewed: 2026-09-15
+image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
+image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
+image_alt: Nexscope ecommerce tools connected through one modular product research workflow
+image_caption: "Illustration: start with one clear question, choose the smallest relevant tool, and inspect the evidence before acting."
 ---
 
 # Getting started with Nexscope tools
+
+{% include article-visual.html %}
 
 Choose a workflow from [our guide library](../), then sign in with your Nexscope account to run it.
 

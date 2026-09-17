@@ -11,9 +11,15 @@ last_modified_at: 2026-09-17
 author: Nexscope Team
 schema_type: Article
 og_type: article
+image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
+image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
+image_alt: An AI coding assistant connected to Nexscope ecommerce data, research, review, trend, and creative tools
+image_caption: "Illustration: Codex can plan and execute a workflow while focused Nexscope APIs provide specialized ecommerce capabilities."
 ---
 
 # What can the new Codex models do for ecommerce?
+
+{% include article-visual.html %}
 
 **By Nexscope Team · Published September 17, 2026 · Updated September 17, 2026**
 

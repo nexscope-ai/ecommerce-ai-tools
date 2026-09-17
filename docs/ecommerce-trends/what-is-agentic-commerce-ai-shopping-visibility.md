@@ -9,9 +9,15 @@ date_modified: 2026-09-17
 author: Nexscope Team
 schema_type: Article
 og_type: article
+image: /assets/images/agentic-commerce-ai-shopping-1440w.webp
+image_small: /assets/images/agentic-commerce-ai-shopping-720w.webp
+image_alt: An AI shopping agent discovering, verifying, comparing, and selecting ecommerce products
+image_caption: "Illustration: AI shopping visibility depends on discoverable product data, explicit attributes, verifiable evidence, and usable commerce signals."
 ---
 
 # What is agentic commerce—and why AI shopping agents may skip your products
+
+{% include article-visual.html %}
 
 **By Nexscope Team · Published September 17, 2026 · Updated September 17, 2026**
 

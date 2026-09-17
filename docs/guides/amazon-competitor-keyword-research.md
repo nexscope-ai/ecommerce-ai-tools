@@ -4,9 +4,15 @@ title: Amazon competitor keyword research workflow
 description: Research a seed keyword, discover competing Amazon products, and compare keyword and product evidence without mixing Google and Amazon metrics.
 permalink: /amazon-competitor-keyword-research/
 last_reviewed: 2026-09-15
+image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
+image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp
+image_alt: A magnifying glass revealing keyword clusters and gaps across competing ecommerce products
+image_caption: "Illustration: compare relevant competitors, inspect their associated search terms, and prioritize defensible keyword gaps."
 ---
 
 # What is an Amazon competitor keyword research workflow?
+
+{% include article-visual.html %}
 
 Start with a buyer-relevant seed keyword, collect related keyword evidence, find Amazon products that match the same intent, and inspect the keywords associated with selected ASINs. Keep Google search metrics, Amazon marketplace data, and provider estimates labeled separately so the final comparison remains traceable.
 
