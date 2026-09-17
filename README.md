@@ -1,12 +1,12 @@
 # Ecommerce AI Tools by Nexscope — AI Video Generator, Amazon Research & SEO
 
-Nexscope includes an **AI video generator** that turns product images and a motion prompt into downloadable videos. [Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) or follow the [image-to-video workflow guide](docs/ai-video-generator.md).
+Nexscope includes an **AI video generator** that turns product images and a motion prompt into downloadable videos. [Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) or follow the [image-to-video workflow guide](docs/guides/ai-video-generator.md).
 
 Nexscope Ecommerce AI Tools shows how to analyze Amazon negative reviews, find product improvements from Amazon reviews, run an Amazon competitor keyword research workflow, audit an ecommerce product page for SEO, choose ecommerce APIs for AI agents, and connect Amazon data to an AI agent through REST or MCP. It is the official collection of browser tools, API documentation, reproducible workflows, and implementation guides from Nexscope.
 
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme). Credit usage varies by action.
 
-[Browse the guide library](https://nexscope-ai.github.io/ecommerce-ai-tools/) · [Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/api-capabilities.md) · [Getting started](docs/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
+[Browse the guide library](https://nexscope-ai.github.io/ecommerce-ai-tools/) · [Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/guides/api-capabilities.md) · [Getting started](docs/guides/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
 
 ## Recent ecommerce trends
 
@@ -18,13 +18,13 @@ Latest: [What is agentic commerce—and why AI shopping agents may skip your pro
 
 | Question or workflow | Practical guide | Run the workflow |
 | --- | --- | --- |
-| How to use an AI video generator for product images | [Image-to-video workflow, models, and quality checks](docs/ai-video-generator.md) | [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) |
-| How to analyze Amazon negative reviews | [Evidence-based review analysis](docs/amazon-negative-review-analysis.md) | | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_reviews) |
-| How to find product improvements from Amazon reviews | [Complaint-to-hypothesis method](docs/amazon-negative-review-analysis.md#how-do-you-find-product-improvements-from-amazon-reviews) | [Analyze a competitor](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_improvements) |
-| Amazon competitor keyword research workflow | [Keyword and ASIN research sequence](docs/amazon-competitor-keyword-research.md) | [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_keywords) |
-| How to audit an ecommerce product page for SEO | [Page-level SEO audit guide](docs/website-seo-audit-guide.md) | [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_audit) |
-| Best ecommerce API for AI agents | [API selection and reliability guide](docs/ecommerce-api-for-ai-agents.md) | [Nexscope API Docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_query_agents) |
-| How to connect Amazon data to an AI agent | [REST and MCP agent workflow](docs/ecommerce-api-for-ai-agents.md#how-do-you-connect-amazon-data-to-an-ai-agent) | [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_query_amazon_agent) |
+| How to use an AI video generator for product images | [Image-to-video workflow, models, and quality checks](docs/guides/ai-video-generator.md) | [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) |
+| How to analyze Amazon negative reviews | [Evidence-based review analysis](docs/guides/amazon-negative-review-analysis.md) | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_reviews) |
+| How to find product improvements from Amazon reviews | [Complaint-to-hypothesis method](docs/guides/amazon-negative-review-analysis.md#how-do-you-find-product-improvements-from-amazon-reviews) | [Analyze a competitor](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_improvements) |
+| Amazon competitor keyword research workflow | [Keyword and ASIN research sequence](docs/guides/amazon-competitor-keyword-research.md) | [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_keywords) |
+| How to audit an ecommerce product page for SEO | [Page-level SEO audit guide](docs/guides/website-seo-audit-guide.md) | [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_audit) |
+| Best ecommerce API for AI agents | [API selection and reliability guide](docs/guides/ecommerce-api-for-ai-agents.md) | [Nexscope API Docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_query_agents) |
+| How to connect Amazon data to an AI agent | [REST and MCP agent workflow](docs/guides/ecommerce-api-for-ai-agents.md#how-do-you-connect-amazon-data-to-an-ai-agent) | [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_query_amazon_agent) |
 
 ## Ecommerce data, SEO/GEO, and creative AI APIs
 
@@ -42,7 +42,7 @@ Building a product research dashboard, an AI agent, or an ecommerce automation? 
 
 **Start with 1,000 free credits as a new Nexscope user.** [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_signup), then open the docs and check access for your chosen endpoint. External REST/MCP calls and the API tester use an account API key. Creative API key access requires an active subscription; trial credits do not unlock it. Confirm the endpoint's current inputs, access requirements, and response schema before integrating it.
 
-See [API workflows and integration steps](docs/api-capabilities.md) for concrete examples, or [the API examples repository](https://github.com/nexscope-ai/nexscope-ecommerce-api) for cURL, JavaScript, and Python clients. Have an API question or need another capability? [Open an issue for the official Nexscope team](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose).
+See [API workflows and integration steps](docs/guides/api-capabilities.md) for concrete examples, or [the API examples repository](https://github.com/nexscope-ai/nexscope-ecommerce-api) for cURL, JavaScript, and Python clients. Have an API question or need another capability? [Open an issue for the official Nexscope team](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose).
 
 ## Browser tools
 
@@ -59,7 +59,7 @@ These are hosted Nexscope workflows. This repository contains documentation and 
 
 ## What can these workflows help you do?
 
-**Real run, with evidence:** [From 10 Amazon reviews to a product-capacity test](docs/amazon-review-case-study.md). Includes inputs, returned counts, source IDs, human review of AI claims, and a validation plan.
+**Real run, with evidence:** [From 10 Amazon reviews to a product-capacity test](docs/case-studies/amazon-review-case-study.md). Includes inputs, returned counts, source IDs, human review of AI claims, and a validation plan.
 
 ### How to analyze Amazon negative reviews and find product improvements
 
