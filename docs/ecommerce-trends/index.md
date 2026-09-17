@@ -10,6 +10,12 @@ last_reviewed: 2026-09-17
 
 Follow the ecommerce changes that matter to sellers, developers, agencies, and growth teams. This collection explains new developments in AI shopping, marketplaces, product discovery, automation, SEO, advertising, and creative production—and turns them into practical next steps.
 
+## Latest analysis
+
+| Published | Guide | Topic |
+| --- | --- | --- |
+| September 17, 2026 | [What is agentic commerce—and why AI shopping agents may skip your products](what-is-agentic-commerce-ai-shopping-visibility/) | AI shopping and product visibility |
+
 ## Explore current ecommerce topics
 
 | Topic | What you can learn |
@@ -29,6 +35,6 @@ Follow the ecommerce changes that matter to sellers, developers, agencies, and g
 - [How to analyze negative Amazon reviews](../amazon-negative-review-analysis/)
 - [Ecommerce website SEO audit guide](../website-seo-audit-guide/)
 
-New trend analysis will be added here by publication date so readers can distinguish recent developments from evergreen guidance.
+Trend analysis is listed by publication date so readers can distinguish recent developments from evergreen guidance.
 
 [Browse all ecommerce workflow guides](../) · [Join the ecommerce AI community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) · [Explore Nexscope API documentation](https://www.nexscope.ai/api-docs?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=trend_hub)

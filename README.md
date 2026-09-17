@@ -12,6 +12,8 @@ Nexscope Ecommerce AI Tools shows how to analyze Amazon negative reviews, find p
 
 [Browse the latest ecommerce trends and practical insights](docs/ecommerce-trends/index.md) covering agentic commerce, AI shopping, marketplace discovery, ecommerce automation, SEO/GEO, and AI product media.
 
+Latest: [What is agentic commerce—and why AI shopping agents may skip your products](docs/ecommerce-trends/what-is-agentic-commerce-ai-shopping-visibility.md).
+
 ## Start with the ecommerce problem you need to solve
 
 | Question or workflow | Practical guide | Run the workflow |

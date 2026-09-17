@@ -6,12 +6,14 @@
     <title>{{ page.title | default: site.title }} | Nexscope</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
     <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
     <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:site_name" content="Nexscope Ecommerce AI Tools">
     <meta name="twitter:card" content="summary">
+    {% if page.date_published %}<meta property="article:published_time" content="{{ page.date_published }}">{% endif %}
+    {% if page.date_modified %}<meta property="article:modified_time" content="{{ page.date_modified }}">{% endif %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,7 +40,18 @@
           "description": {{ page.description | default: site.description | jsonify }},
           "isPartOf": { "@id": "https://nexscope-ai.github.io/ecommerce-ai-tools/#website" },
           "about": { "@id": "https://www.nexscope.ai/#organization" }
-        }
+        }{% if page.schema_type == "Article" %},
+        {
+          "@type": "Article",
+          "@id": "{{ page.url | absolute_url }}#article",
+          "headline": {{ page.title | jsonify }},
+          "description": {{ page.description | jsonify }},
+          "datePublished": {{ page.date_published | jsonify }},
+          "dateModified": {{ page.date_modified | default: page.date_published | jsonify }},
+          "author": { "@id": "https://www.nexscope.ai/#organization" },
+          "publisher": { "@id": "https://www.nexscope.ai/#organization" },
+          "mainEntityOfPage": { "@id": "{{ page.url | absolute_url }}#webpage" }
+        }{% endif %}
       ]
     }
     </script>
