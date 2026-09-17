@@ -8,9 +8,15 @@ og_type: article
 date_published: "2026-09-17"
 date_modified: "2026-09-17"
 last_reviewed: 2026-09-17
+image: /assets/images/amazon-review-product-insights-1440w.webp
+image_small: /assets/images/amazon-review-product-insights-720w.webp
+image_alt: Amazon review evidence flowing into a product listing improvement checklist
+image_caption: "Illustration: convert recurring review evidence into clear, supportable listing changes and product tests."
 ---
 
 # From Amazon reviews to a listing brief your team can use
+
+{% include article-visual.html %}
 
 “Improve the listing” is not a useful creative brief. “Show the internal dimensions next to a familiar object because sampled buyers misunderstood capacity” gives a writer or designer something concrete to investigate.
 

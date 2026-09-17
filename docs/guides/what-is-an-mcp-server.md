@@ -9,9 +9,15 @@ date_modified: 2026-09-17
 author: Nexscope Team
 schema_type: Article
 og_type: article
+image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
+image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
+image_alt: An AI host connected through an MCP server to product, keyword, price, review, marketplace, and video tools
+image_caption: "Illustration: an MCP server exposes focused capabilities while the host retains authorization and safety controls."
 ---
 
 # What is an MCP server? Ecommerce tools and examples
+
+{% include article-visual.html %}
 
 **By Nexscope Team · Published September 17, 2026 · Updated September 17, 2026**
 

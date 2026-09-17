@@ -9,9 +9,15 @@ date_modified: 2026-09-17
 author: Nexscope Team
 schema_type: Article
 og_type: article
+image: /assets/images/amazon-price-history-bsr-trends-1440w.webp
+image_small: /assets/images/amazon-price-history-bsr-trends-720w.webp
+image_alt: Ecommerce product dashboard comparing price history with BSR trend lines over time
+image_caption: "Illustration: interpret price, BSR, and demand signals together instead of treating one data point as proof."
 ---
 
 # Amazon price history: track price, BSR, and sales trends
+
+{% include article-visual.html %}
 
 **By Nexscope Team · Published September 17, 2026 · Updated September 17, 2026**
 

@@ -1,0 +1,15 @@
+{% if page.image %}
+<figure class="article-visual">
+  <img
+    src="{{ page.image | relative_url }}"
+    srcset="{{ page.image_small | relative_url }} 720w, {{ page.image | relative_url }} 1440w"
+    sizes="(max-width: 860px) calc(100vw - 36px), 780px"
+    width="1440"
+    height="810"
+    alt="{{ page.image_alt | escape }}"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async">
+  {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+</figure>
+{% endif %}

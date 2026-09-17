@@ -9,9 +9,15 @@ date_modified: 2026-09-17
 author: Nexscope Team
 schema_type: Article
 og_type: article
+image: /assets/images/ai-video-generator-product-workflow-1440w.webp
+image_small: /assets/images/ai-video-generator-product-workflow-720w.webp
+image_alt: A product image transforming through motion frames into a polished ecommerce video preview
+image_caption: "Illustration: a consistent product image, a focused motion prompt, and a review step form a practical AI video workflow."
 ---
 
 # How to use a free AI video generator for ecommerce product images
+
+{% include article-visual.html %}
 
 **By Nexscope Team · Published September 15, 2026 · Updated September 17, 2026**
 

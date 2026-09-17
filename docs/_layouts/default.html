@@ -11,7 +11,17 @@
     <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:site_name" content="Nexscope Ecommerce AI Tools">
+    {% if page.image %}
+    <meta property="og:image" content="{{ page.image | absolute_url }}">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="810">
+    <meta property="og:image:alt" content="{{ page.image_alt | escape }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+    <meta name="twitter:image:alt" content="{{ page.image_alt | escape }}">
+    {% else %}
     <meta name="twitter:card" content="summary">
+    {% endif %}
     {% if page.date_published %}<meta property="article:published_time" content="{{ page.date_published }}">{% endif %}
     {% if page.date_modified %}<meta property="article:modified_time" content="{{ page.date_modified }}">{% endif %}
     <script type="application/ld+json">
@@ -39,7 +49,13 @@
           "name": {{ page.title | default: site.title | jsonify }},
           "description": {{ page.description | default: site.description | jsonify }},
           "isPartOf": { "@id": "https://nexscope-ai.github.io/ecommerce-ai-tools/#website" },
-          "about": { "@id": "https://www.nexscope.ai/#organization" }
+          "about": { "@id": "https://www.nexscope.ai/#organization" }{% if page.image %},
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "{{ page.image | absolute_url }}",
+            "width": 1440,
+            "height": 810
+          }{% endif %}
         }{% if page.schema_type == "Article" %},
         {
           "@type": "Article",
@@ -50,7 +66,8 @@
           "dateModified": {{ page.date_modified | default: page.date_published | jsonify }},
           "author": { "@id": "https://www.nexscope.ai/#organization" },
           "publisher": { "@id": "https://www.nexscope.ai/#organization" },
-          "mainEntityOfPage": { "@id": "{{ page.url | absolute_url }}#webpage" }
+          "mainEntityOfPage": { "@id": "{{ page.url | absolute_url }}#webpage" }{% if page.image %},
+          "image": "{{ page.image | absolute_url }}"{% endif %}
         }{% endif %}
       ]
     }

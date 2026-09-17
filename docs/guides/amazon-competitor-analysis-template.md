@@ -8,9 +8,15 @@ og_type: article
 date_published: "2026-09-17"
 date_modified: "2026-09-17"
 last_reviewed: 2026-09-17
+image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
+image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp
+image_alt: Comparable ecommerce products arranged for structured competitor and keyword analysis
+image_caption: "Illustration: define comparable products first, then evaluate attributes, search intent, and evidence gaps."
 ---
 
 # Amazon competitor analysis: compare the right products first
+
+{% include article-visual.html %}
 
 A competitor spreadsheet is only useful if the products belong in the same comparison. A premium insulated bottle and a disposable party cup may both appear for “travel drink container,” but their buyers are solving different problems.
 
