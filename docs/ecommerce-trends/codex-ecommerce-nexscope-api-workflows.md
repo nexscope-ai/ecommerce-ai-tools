@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Codex for Ecommerce: 10 Nexscope API Workflows
+title: "Codex for Ecommerce: 10 Nexscope API Workflows"
 description: Combine new Codex models with Nexscope REST APIs for Amazon research, reviews, SEO, AI visibility, sourcing, and creative production.
 permalink: /ecommerce-trends/codex-ecommerce-nexscope-api-workflows/
 last_reviewed: 2026-09-17
