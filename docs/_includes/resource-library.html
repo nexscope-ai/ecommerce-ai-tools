@@ -1,0 +1,42 @@
+<section class="trends-hero resource-hero">
+  <div><span class="eyebrow">The Nexscope resource library</span><h1>{{ page.hero_title }}<br><span>{{ page.hero_accent }}</span></h1></div>
+  <div><p>{{ page.hero_description }}</p><a class="resource-start" href="{{ '/getting-started/' | relative_url }}">New to Nexscope? Start here ↗</a></div>
+</section>
+<nav class="resource-sections" aria-label="Resource collections">
+  <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>All resources</a>
+  <a href="{{ '/guides/' | relative_url }}"{% if page.url == '/guides/' %} aria-current="page"{% endif %}>Guides</a>
+  <a href="{{ '/case-studies/' | relative_url }}"{% if page.url == '/case-studies/' %} aria-current="page"{% endif %}>Case studies</a>
+  <a href="{{ '/ecommerce-trends/' | relative_url }}">Trends & insights</a>
+</nav>
+<section aria-labelledby="library-heading">
+  <div class="section-heading"><h2 id="library-heading">{{ page.library_heading | default: 'Find your next workflow' }}</h2><p>Official guides. Traceable evidence. Practical next steps.</p></div>
+  <div class="trend-controls" hidden>
+    <div class="topic-filters" role="group" aria-label="Filter resources"><button type="button" data-topic="all" aria-pressed="true">All topics</button><button type="button" data-topic="research" aria-pressed="false">Research & SEO</button><button type="button" data-topic="creative" aria-pressed="false">Creative AI</button><button type="button" data-topic="build" aria-pressed="false">APIs & agents</button></div>
+    <label class="trend-search">Search resources<input type="search" placeholder="Find a guide or workflow…" autocomplete="off"></label>
+  </div>
+  <p class="result-count" role="status" aria-live="polite" data-label="resource"></p>
+  <div class="trend-grid resource-grid" id="trend-results">
+  {% assign resources = site.pages | sort: 'title' %}
+  {% for item in resources %}
+    {% assign include_item = false %}
+    {% assign kind = 'guide' %}
+    {% if item.path contains 'guides/' %}{% assign include_item = true %}{% endif %}
+    {% if item.path contains 'case-studies/' %}{% assign include_item = true %}{% assign kind = 'case-study' %}{% endif %}
+    {% if item.path contains 'ecommerce-trends/' %}{% assign include_item = true %}{% assign kind = 'trend' %}{% endif %}
+    {% if item.resource_hub or item.url == '/ecommerce-trends/' %}{% assign include_item = false %}{% endif %}
+    {% if page.resource_type and kind != page.resource_type %}{% assign include_item = false %}{% endif %}
+    {% if include_item %}
+      {% assign topic = 'research' %}
+      {% if item.url contains 'video' %}{% assign topic = 'creative' %}{% endif %}
+      {% if item.url contains 'api' or item.url contains 'getting-started' %}{% assign topic = 'build' %}{% endif %}
+      <article class="trend-card resource-card" data-topic="{{ topic }}"><a href="{{ item.url | relative_url }}">
+        <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true">{% if topic == 'creative' %}▷{% elsif topic == 'build' %}⌘{% else %}↗{% endif %}</span><span class="card-tag">{% if kind == 'case-study' %}CASE STUDY{% elsif kind == 'trend' %}TREND & INSIGHT{% else %}PRACTICAL GUIDE{% endif %}</span></div>
+        <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p><span class="read-link">{% if kind == 'case-study' %}Explore the evidence{% else %}Read the guide{% endif %} ↗</span></div>
+      </a></article>
+    {% endif %}
+  {% endfor %}
+  </div>
+  <div class="empty-results" hidden><h3>No matching resources</h3><p>Try a different topic or a shorter search.</p><button class="reset-search" type="button">Clear filters</button></div>
+</section>
+<aside class="resource-note"><strong>Built around evidence, not shortcuts.</strong><p>These resources document hosted Nexscope tools—not a self-hostable application. Check each workflow’s coverage, sample limits and access requirements before using its results.</p></aside>
+<section class="trend-cta"><div><span class="eyebrow">Your next step</span><h2>Try a workflow of your own.</h2><p>New users receive 1,000 free credits. Credit use and access vary by action.</p></div><a href="https://www.nexscope.ai/?co-from=githubIO&amp;utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=resources">Explore Nexscope ↗</a></section>
