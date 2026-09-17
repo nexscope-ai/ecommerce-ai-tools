@@ -28,7 +28,7 @@
     {% if include_item %}
       {% assign topic = 'research' %}
       {% if item.url contains 'video' %}{% assign topic = 'creative' %}{% endif %}
-      {% if item.url contains 'api' or item.url contains 'getting-started' %}{% assign topic = 'build' %}{% endif %}
+      {% if item.url contains 'api' or item.url contains 'mcp' or item.url contains 'getting-started' %}{% assign topic = 'build' %}{% endif %}
       <article class="trend-card resource-card" data-topic="{{ topic }}"><a href="{{ item.url | relative_url }}">
         <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true">{% if topic == 'creative' %}▷{% elsif topic == 'build' %}⌘{% else %}↗{% endif %}</span><span class="card-tag">{% if kind == 'case-study' %}CASE STUDY{% elsif kind == 'trend' %}TREND & INSIGHT{% else %}PRACTICAL GUIDE{% endif %}</span></div>
         <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p><span class="read-link">{% if kind == 'case-study' %}Explore the evidence{% else %}Read the guide{% endif %} ↗</span></div>
