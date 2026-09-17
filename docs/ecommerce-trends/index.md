@@ -14,6 +14,7 @@ Follow the ecommerce changes that matter to sellers, developers, agencies, and g
 
 | Published | Guide | Topic |
 | --- | --- | --- |
+| September 17, 2026 | [What can the new Codex models do for ecommerce?](codex-ecommerce-nexscope-api-workflows/) | AI agents and ecommerce API workflows |
 | September 17, 2026 | [What is agentic commerce—and why AI shopping agents may skip your products](what-is-agentic-commerce-ai-shopping-visibility/) | AI shopping and product visibility |
 
 ## Explore current ecommerce topics
