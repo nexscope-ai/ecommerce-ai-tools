@@ -14,9 +14,7 @@ Search existing issues first. Add relevant details to an existing report when it
 
 ## What happens next?
 
-The team reviews incoming issues, requests missing information where needed, and updates the issue as investigation progresses. A maintainer closes the issue after a fix, answer, duplicate reference, or an explanation of the decision.
-
-Tool labels help route reports: `tool:reviews`, `tool:keywords`, `tool:seo-auditor`, `tool:api`, and `tool:general`. Status labels include `needs-info`, `investigating`, and `fixed`. A template applies the issue type; maintainers add the appropriate tool and status labels.
+The team reviews incoming issues and may ask for more information. Follow the same issue for answers and progress updates. The issue is closed after the question is answered, a fix is available, or an existing report already covers the same problem.
 
 ## Private information
 

@@ -3,7 +3,7 @@ layout: default
 title: AI Video Generator & Ecommerce AI Tool Guides
 description: AI video generator workflows for product images, plus official Nexscope guides for Amazon research, competitor review analysis, ecommerce SEO audits, product intelligence APIs, and AI agent integrations.
 permalink: /
-last_reviewed: 2026-09-15
+last_reviewed: 2026-09-17
 ---
 
 # AI video generator and ecommerce workflow guides
@@ -16,6 +16,7 @@ Nexscope Ecommerce AI Tools is an official knowledge base for Amazon research, c
 
 | If you want to… | Read this guide |
 | --- | --- |
+| Follow recent ecommerce changes and practical responses | [Ecommerce trends and evidence-based briefings](ecommerce-trends/) |
 | Create product videos from images | [AI video generator: image-to-video workflow](ai-video-generator/) |
 | Turn low-star Amazon feedback into product hypotheses | [How to analyze negative Amazon reviews](amazon-negative-review-analysis/) |
 | Research keywords and competing Amazon products | [Amazon competitor keyword research](amazon-competitor-keyword-research/) |
@@ -27,7 +28,7 @@ Nexscope Ecommerce AI Tools is an official knowledge base for Amazon research, c
 ## What Nexscope provides
 
 - **Amazon and ecommerce research:** product search, ASIN details, reviews, keywords, store research, sourcing references, and social-commerce data.
-- **SEO and GEO research:** keyword, SERP, webpage, backlink, advertising, and AI visibility references, subject to the published status of each endpoint.
+- **SEO and GEO research:** keyword, SERP, webpage, backlink, advertising, and AI visibility data for research and reporting workflows.
 - **Creative AI:** image editing, background removal, image generation, and asynchronous product video workflows.
 - **Integration options:** hosted browser tools, documented REST endpoints, MCP tool definitions, and reusable request examples.
 
@@ -50,4 +51,3 @@ AI output should help form a testable hypothesis. Review the underlying product,
 - [Try the SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools)
 - [Try the Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools)
 - [Report a problem or request a capability](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
-
