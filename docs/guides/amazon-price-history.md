@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Amazon Price History: Track Price, BSR, and Sales Trends
+title: "Amazon Price History: Track Price, BSR, and Sales Trends"
 description: Learn how to check Amazon price history, BSR history, ratings, seller counts, and monthly sales for an ASIN with Nexscope.
 permalink: /amazon-price-history/
 last_reviewed: 2026-09-17
