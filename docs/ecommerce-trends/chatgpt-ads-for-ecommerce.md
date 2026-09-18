@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ChatGPT Ads for Ecommerce: Merchant Readiness Guide
+title: "ChatGPT Ads for Ecommerce: Merchant Readiness Guide"
 description: Learn what ChatGPT Ads mean for ecommerce, how to prepare product data and creative, and how to measure qualified traffic without guessing.
 permalink: /ecommerce-trends/chatgpt-ads-for-ecommerce/
 last_reviewed: 2026-09-18

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ChatGPT Product Discovery: Merchant Preparation Guide
+title: "ChatGPT Product Discovery: Merchant Preparation Guide"
 description: Learn how ChatGPT product discovery works at a practical level and prepare accurate catalog data, product pages, evidence, and measurement.
 permalink: /ecommerce-trends/chatgpt-product-discovery/
 last_reviewed: 2026-09-18
