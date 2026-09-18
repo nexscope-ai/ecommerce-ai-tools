@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Google AI Mode Shopping: Ecommerce Readiness Guide
+title: "Google AI Mode Shopping: Ecommerce Readiness Guide"
 description: Learn how to prepare product data, pages, Merchant Center feeds, and measurement for Google AI Mode shopping experiences.
 permalink: /ecommerce-trends/google-ai-mode-shopping/
 last_reviewed: 2026-09-18

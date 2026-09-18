@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Ecommerce MCP Server: Architecture, Tools & Safety
+title: "Ecommerce MCP Server: Architecture, Tools & Safety"
 description: Learn how an ecommerce MCP server connects AI agents to product, keyword, review, price, marketplace, and creative tools safely.
 permalink: /ecommerce-mcp-server/
 last_reviewed: 2026-09-18
