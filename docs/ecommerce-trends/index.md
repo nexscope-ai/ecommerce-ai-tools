@@ -3,7 +3,7 @@ layout: default
 title: Latest Ecommerce Trends, AI Shopping & Marketplace Insights
 description: Explore recent ecommerce trends in agentic commerce, AI shopping, marketplaces, product research, SEO, advertising, automation, and AI product media.
 permalink: /ecommerce-trends/
-last_reviewed: 2026-09-17
+last_reviewed: 2026-09-18
 ---
 
 <section class="trends-hero">
@@ -17,8 +17,20 @@ last_reviewed: 2026-09-17
     <div class="topic-filters" role="group" aria-label="Filter articles by topic"><button type="button" data-topic="all" aria-pressed="true">All insights</button><button type="button" data-topic="agents" aria-pressed="false">AI agents & APIs</button><button type="button" data-topic="shopping" aria-pressed="false">AI shopping</button></div>
     <label class="trend-search">Search insights<input type="search" placeholder="Search topics or articles…" aria-controls="trend-results"></label>
   </div>
-  <p class="result-count" role="status" aria-live="polite">2 articles</p>
+  <p class="result-count" role="status" aria-live="polite">5 articles</p>
   <div class="trend-grid" id="trend-results">
+    <div class="trend-card" data-topic="shopping"><a href="{{ '/ecommerce-trends/chatgpt-ads-for-ecommerce/' | relative_url }}">
+      <div class="card-art"><img src="{{ '/assets/images/chatgpt-ads-ecommerce-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">AI ADVERTISING</span><time datetime="2026-09-18">Sep 18, 2026</time></div><h3>ChatGPT Ads: is your product ready?</h3><p>Prepare catalog evidence, landing pages, product creative and measurement for conversational advertising.</p><span class="read-link">Open the readiness guide ↗</span></div>
+    </a></div>
+    <div class="trend-card" data-topic="shopping"><a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">
+      <div class="card-art"><img src="{{ '/assets/images/google-ai-mode-shopping-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">AI SHOPPING</span><time datetime="2026-09-18">Sep 18, 2026</time></div><h3>Prepare for Google AI Mode shopping</h3><p>Align Merchant Center data, product pages, media and measurement around real shopping constraints.</p><span class="read-link">Read the merchant guide ↗</span></div>
+    </a></div>
+    <div class="trend-card" data-topic="shopping"><a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">
+      <div class="card-art"><img src="{{ '/assets/images/chatgpt-product-discovery-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">PRODUCT DISCOVERY</span><time datetime="2026-09-18">Sep 18, 2026</time></div><h3>Make products easier for ChatGPT to evaluate</h3><p>Turn catalog data, page evidence, reviews and media into a comparison-ready product record.</p><span class="read-link">Explore product discovery ↗</span></div>
+    </a></div>
     <div class="trend-card" data-topic="agents"><a href="{{ '/ecommerce-trends/codex-ecommerce-nexscope-api-workflows/' | relative_url }}">
       <div class="card-art" aria-hidden="true"><span class="art-tile">Codex</span><span class="art-arrow">↔</span><span class="art-tile dark">Nexscope API</span></div>
       <div class="card-body"><div class="card-meta"><span class="card-tag">AI AGENTS & APIs</span><time datetime="2026-09-17">Sep 17, 2026</time></div><h3>What can the new Codex models do for ecommerce?</h3><p>Explore 10 workflows connecting AI agents with ecommerce data—from product research to SEO and creative production.</p><span class="read-link">Explore the workflows ↗</span></div>
@@ -42,4 +54,4 @@ last_reviewed: 2026-09-17
     <a class="guide-link" href="{{ '/' | relative_url }}"><span>EXPLORE / ALL GUIDES</span><strong>Find your next workflow ↗</strong><span>Browse the complete ecommerce guide library.</span></a>
   </div>
 </section>
-<section class="trend-cta"><div><h2>Put ecommerce data to work.</h2><p>Explore the Nexscope APIs behind your next research workflow.</p></div><a href="https://www.nexscope.ai/api-docs?utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=ecommerce_trends&amp;utm_content=trend_hub">Explore API documentation ↗</a></section>
+<section class="trend-cta"><div><h2>Put ecommerce data to work.</h2><p>Explore the Nexscope APIs behind your next research workflow.</p></div><a href="https://www.nexscope.ai/api-docs?co-from=githubIO&amp;utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=ecommerce_trends&amp;utm_content=trend_hub">Explore API documentation ↗</a></section>
