@@ -3,7 +3,7 @@ layout: default
 title: Latest Ecommerce Trends, AI Shopping & Marketplace Insights
 description: Explore recent ecommerce trends in agentic commerce, AI shopping, marketplaces, product research, SEO, advertising, automation, and AI product media.
 permalink: /ecommerce-trends/
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-20
 ---
 
 <section class="trends-hero">
@@ -14,11 +14,19 @@ last_reviewed: 2026-09-18
 <section aria-labelledby="latest-analysis">
   <div class="section-heading"><h2 id="latest-analysis">Latest analysis</h2><p>New perspectives, grounded in practical workflows.</p></div>
   <div class="trend-controls" hidden>
-    <div class="topic-filters" role="group" aria-label="Filter articles by topic"><button type="button" data-topic="all" aria-pressed="true">All insights</button><button type="button" data-topic="agents" aria-pressed="false">AI agents & APIs</button><button type="button" data-topic="shopping" aria-pressed="false">AI shopping</button></div>
+    <div class="topic-filters" role="group" aria-label="Filter articles by topic"><button type="button" data-topic="all" aria-pressed="true">All insights</button><button type="button" data-topic="agents" aria-pressed="false">AI agents & APIs</button><button type="button" data-topic="shopping" aria-pressed="false">AI shopping</button><button type="button" data-topic="creative" aria-pressed="false">Creative AI</button><button type="button" data-topic="sourcing" aria-pressed="false">Sourcing</button></div>
     <label class="trend-search">Search insights<input type="search" placeholder="Search topics or articles…" aria-controls="trend-results"></label>
   </div>
-  <p class="result-count" role="status" aria-live="polite">5 articles</p>
+  <p class="result-count" role="status" aria-live="polite">7 articles</p>
   <div class="trend-grid" id="trend-results">
+    <div class="trend-card" data-topic="creative"><a href="{{ '/ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/' | relative_url }}">
+      <div class="card-art"><img src="{{ '/assets/images/chatgpt-images-2-5-product-photos-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">AI PRODUCT IMAGES</span><time datetime="2026-09-20">Sep 20, 2026</time></div><h3>ChatGPT Images 2.5 for product photos</h3><p>A factual editing workflow, product-fidelity checklist and next step for ecommerce video.</p><span class="read-link">Read the practical guide ↗</span></div>
+    </a></div>
+    <div class="trend-card" data-topic="sourcing"><a href="{{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}">
+      <div class="card-art"><img src="{{ '/assets/images/1688-image-search-sourcing-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">1688 SOURCING</span><time datetime="2026-09-20">Sep 20, 2026</time></div><h3>Find 1688 sourcing candidates by image</h3><p>Turn visual matches into a documented shortlist with API fields, offer checks and supplier due diligence.</p><span class="read-link">Read the sourcing workflow ↗</span></div>
+    </a></div>
     <div class="trend-card" data-topic="shopping"><a href="{{ '/ecommerce-trends/chatgpt-ads-for-ecommerce/' | relative_url }}">
       <div class="card-art"><img src="{{ '/assets/images/chatgpt-ads-ecommerce-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
       <div class="card-body"><div class="card-meta"><span class="card-tag">AI ADVERTISING</span><time datetime="2026-09-18">Sep 18, 2026</time></div><h3>ChatGPT Ads: is your product ready?</h3><p>Prepare catalog evidence, landing pages, product creative and measurement for conversational advertising.</p><span class="read-link">Open the readiness guide ↗</span></div>
