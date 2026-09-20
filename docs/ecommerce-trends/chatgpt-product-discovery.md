@@ -78,6 +78,8 @@ Define what “waterproof,” “fast,” “safe,” “sustainable,” or “a
 
 Show scale, ports, materials, setup, fit, or a product in use. AI-generated product images and video should be checked against the real SKU. Do not depict features the product does not have.
 
+For a source-backed still-image review process, see the [ChatGPT Images 2.5 ecommerce product-photo guide](../chatgpt-images-2-5-ecommerce-product-photos/). It is an editing workflow, not a claim that Nexscope provides OpenAI's image model.
+
 ### Keep the page retrievable
 
 Use semantic HTML, useful internal links, correct canonicals, crawlable product content, and structured data that matches visible information. The [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_product_discovery) can help identify page-level issues; it does not guarantee ChatGPT inclusion.
