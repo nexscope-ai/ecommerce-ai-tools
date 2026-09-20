@@ -101,6 +101,8 @@ Send an eligible public image URL to the [1688 Search By Image API](https://www.
 
 Supplier identity, availability, samples, certifications, and commercial terms still require independent verification before purchasing.
 
+For a focused, reproducible process, see the [1688 image-search sourcing guide]({{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}), which separates visual matches from supplier verification and adds offer-detail and keyword-search checks.
+
 ### 8. Store or niche to a social-commerce research report
 
 Use documented Shopify and TikTok Shop research capabilities, starting with the [Shopify Product Query API](https://www.nexscope.ai/api-docs/shopify-product-query?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_shopify_workflow) where relevant. Codex can compare product positioning, identify repeated creative angles, organize creator or video references, and create a dated competitor brief.
