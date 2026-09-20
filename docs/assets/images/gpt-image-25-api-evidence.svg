@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Nexscope GPT 2.5 image API documentation evidence</title>
+  <desc id="desc">A source-backed summary of the Flare and Sunburst API playgrounds, reference-image input, and subscription requirement. This is documentation evidence, not a generated output.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f9f7ff"/><stop offset="1" stop-color="#eee9ff"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#301c67" flood-opacity=".11"/></filter>
+  </defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <circle cx="1290" cy="90" r="190" fill="#ddd4ff" opacity=".55"/>
+  <text x="88" y="91" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#6540d4" letter-spacing="3">NEXSCOPE API / DOCUMENTED CAPABILITY</text>
+  <text x="88" y="171" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#1b1930">GPT 2.5 product-photo editing</text>
+  <text x="88" y="217" font-family="Arial, sans-serif" font-size="25" fill="#57546b">The public API pages show how to submit a reference-led image request.</text>
+  <rect x="88" y="266" width="816" height="425" rx="24" fill="#fff" filter="url(#shadow)"/>
+  <rect x="118" y="300" width="756" height="62" rx="11" fill="#211d35"/>
+  <text x="143" y="341" font-family="Consolas, monospace" font-size="25" fill="#fff">Nexscope creative image APIs</text>
+  <text x="130" y="416" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#232137">GPT 2.5 Flare</text>
+  <text x="525" y="416" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#232137">GPT 2.5 Sunburst</text>
+  <line x1="130" y1="443" x2="860" y2="443" stroke="#e6e1f2" stroke-width="2"/>
+  <text x="130" y="492" font-family="Consolas, monospace" font-size="27" fill="#5131bc">imageUrls</text>
+  <text x="342" y="492" font-family="Arial, sans-serif" font-size="25" fill="#464456">1–10 public JPG, PNG or WEBP references</text>
+  <text x="130" y="553" font-family="Consolas, monospace" font-size="27" fill="#5131bc">prompt</text>
+  <text x="342" y="553" font-family="Arial, sans-serif" font-size="25" fill="#464456">The requested edit and preserved details</text>
+  <text x="130" y="614" font-family="Consolas, monospace" font-size="27" fill="#5131bc">outputNum</text>
+  <text x="342" y="614" font-family="Arial, sans-serif" font-size="25" fill="#464456">Number of images to generate</text>
+  <rect x="935" y="266" width="417" height="425" rx="24" fill="#ede7ff" stroke="#d8cdfb" stroke-width="2"/>
+  <text x="970" y="328" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#5131bc">WHAT THIS PROVES</text>
+  <text x="970" y="383" font-family="Arial, sans-serif" font-size="25" fill="#29263e">Both API pages are published.</text>
+  <text x="970" y="428" font-family="Arial, sans-serif" font-size="25" fill="#29263e">A reference-image workflow</text>
+  <text x="970" y="464" font-family="Arial, sans-serif" font-size="25" fill="#29263e">is documented.</text>
+  <line x1="970" y1="496" x2="1317" y2="496" stroke="#c9baf8" stroke-width="2"/>
+  <text x="970" y="543" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#5131bc">WHAT IT DOES NOT</text>
+  <text x="970" y="590" font-family="Arial, sans-serif" font-size="24" fill="#29263e">Prove output quality or</text>
+  <text x="970" y="624" font-family="Arial, sans-serif" font-size="24" fill="#29263e">SKU fidelity without a run.</text>
+  <text x="88" y="742" font-family="Arial, sans-serif" font-size="22" fill="#4c4863">Source: nexscope.ai/api-docs/gpt-image-2-5-flare-generation and /gpt-image-2-5-generation</text>
+  <text x="88" y="777" font-family="Arial, sans-serif" font-size="20" fill="#6d687f">Checked 20 Sep 2026 · Documentation evidence only · Creative API access requires a subscription</text>
+</svg>

@@ -20,11 +20,11 @@ last_reviewed: 2026-09-20
   <p class="result-count" role="status" aria-live="polite">7 articles</p>
   <div class="trend-grid" id="trend-results">
     <div class="trend-card" data-topic="creative"><a href="{{ '/ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/' | relative_url }}">
-      <div class="card-art"><img src="{{ '/assets/images/chatgpt-images-2-5-product-photos-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-art"><img src="{{ '/assets/images/gpt-image-25-api-evidence-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
       <div class="card-body"><div class="card-meta"><span class="card-tag">AI PRODUCT IMAGES</span><time datetime="2026-09-20">Sep 20, 2026</time></div><h3>ChatGPT Images 2.5 for product photos</h3><p>A factual editing workflow, product-fidelity checklist and next step for ecommerce video.</p><span class="read-link">Read the practical guide ↗</span></div>
     </a></div>
     <div class="trend-card" data-topic="sourcing"><a href="{{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}">
-      <div class="card-art"><img src="{{ '/assets/images/1688-image-search-sourcing-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-art"><img src="{{ '/assets/images/1688-image-search-api-evidence-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
       <div class="card-body"><div class="card-meta"><span class="card-tag">1688 SOURCING</span><time datetime="2026-09-20">Sep 20, 2026</time></div><h3>Find 1688 sourcing candidates by image</h3><p>Turn visual matches into a documented shortlist with API fields, offer checks and supplier due diligence.</p><span class="read-link">Read the sourcing workflow ↗</span></div>
     </a></div>
     <div class="trend-card" data-topic="shopping"><a href="{{ '/ecommerce-trends/chatgpt-ads-for-ecommerce/' | relative_url }}">

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Nexscope 1688 image search API documentation evidence</title>
+  <desc id="desc">A source-backed view of accepted image inputs and documented response fields for the 1688 Search By Image API. This is API-contract evidence, not a live search or supplier verification.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f7f9ff"/><stop offset="1" stop-color="#ece9ff"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#25205d" flood-opacity=".1"/></filter>
+  </defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <circle cx="1260" cy="70" r="210" fill="#dcd5ff" opacity=".5"/>
+  <text x="88" y="91" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#6540d4" letter-spacing="3">NEXSCOPE API / DOCUMENTED CONTRACT</text>
+  <text x="88" y="171" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#1b1930">1688 search by image</text>
+  <text x="88" y="217" font-family="Arial, sans-serif" font-size="25" fill="#57546b">A photo starts a candidate search; the response does not certify a supplier.</text>
+  <rect x="88" y="266" width="816" height="425" rx="24" fill="#fff" filter="url(#shadow)"/>
+  <rect x="118" y="300" width="756" height="74" rx="11" fill="#211d35"/>
+  <text x="143" y="331" font-family="Consolas, monospace" font-size="21" fill="#fff">POST /api/skill-api/v1/skills/</text>
+  <text x="143" y="359" font-family="Consolas, monospace" font-size="21" fill="#fff">1688-search-by-image/run</text>
+  <text x="130" y="419" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#232137">INPUT</text>
+  <text x="329" y="419" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#232137">DOCUMENTED OUTPUT</text>
+  <line x1="130" y1="447" x2="862" y2="447" stroke="#e6e1f2" stroke-width="2"/>
+  <text x="130" y="498" font-family="Consolas, monospace" font-size="25" fill="#5131bc">imageUrl</text>
+  <text x="329" y="498" font-family="Consolas, monospace" font-size="25" fill="#5131bc">data.products</text>
+  <text x="130" y="552" font-family="Consolas, monospace" font-size="25" fill="#5131bc">page</text>
+  <text x="329" y="552" font-family="Consolas, monospace" font-size="25" fill="#5131bc">offerId · price · quantityBegin</text>
+  <text x="130" y="606" font-family="Consolas, monospace" font-size="25" fill="#5131bc">pageSize</text>
+  <text x="329" y="606" font-family="Consolas, monospace" font-size="25" fill="#5131bc">imageId · seller signals</text>
+  <text x="130" y="656" font-family="Arial, sans-serif" font-size="20" fill="#676176">Public PNG/JPG/JPEG URL or supported Base64 input</text>
+  <rect x="935" y="266" width="417" height="425" rx="24" fill="#ede7ff" stroke="#d8cdfb" stroke-width="2"/>
+  <text x="970" y="328" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#5131bc">WHAT THIS PROVES</text>
+  <text x="970" y="383" font-family="Arial, sans-serif" font-size="25" fill="#29263e">The public request and</text>
+  <text x="970" y="419" font-family="Arial, sans-serif" font-size="25" fill="#29263e">response fields are specified.</text>
+  <line x1="970" y1="468" x2="1317" y2="468" stroke="#c9baf8" stroke-width="2"/>
+  <text x="970" y="518" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#5131bc">WHAT IT DOES NOT</text>
+  <text x="970" y="570" font-family="Arial, sans-serif" font-size="24" fill="#29263e">Show a live search, confirm</text>
+  <text x="970" y="606" font-family="Arial, sans-serif" font-size="24" fill="#29263e">manufacturer identity, or</text>
+  <text x="970" y="642" font-family="Arial, sans-serif" font-size="24" fill="#29263e">verify product quality.</text>
+  <text x="88" y="742" font-family="Arial, sans-serif" font-size="22" fill="#4c4863">Source: nexscope.ai/api-docs/1688-search-by-image</text>
+  <text x="88" y="777" font-family="Arial, sans-serif" font-size="20" fill="#6d687f">Checked 20 Sep 2026 · API-contract evidence only · No live 1688 result shown</text>
+</svg>
