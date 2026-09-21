@@ -51,7 +51,7 @@ The figure summarizes the [published API request and response contract](https://
 
 ### One real image-search result (September 20, 2026)
 
-We compressed [our generated, unbranded amber-bottle concept image]({{ '/assets/images/gpt-image-25-flare-demo-original.png' | relative_url }}) to a 192 × 192 JPEG and sent its raw Base64 through Nexscope's Search By Image tester with `page: 1` and `pageSize: 10`. The response returned **HTTP 200, business `code: 0`, and 10 products on the first page**. The account's usage record shows **10 credits deducted** for this successful call. This was a generated concept image, **not an actual SKU photograph or a supplier-verification test**.
+We compressed [our generated, unbranded amber-bottle concept image]({{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }}) to a 192 × 192 JPEG and sent its raw Base64 through Nexscope's Search By Image tester with `page: 1` and `pageSize: 10`. The response returned **HTTP 200, business `code: 0`, and 10 products on the first page**. The account's usage record shows **10 credits deducted** for this successful call. This was a generated concept image, **not an actual SKU photograph or a supplier-verification test**.
 
 <figure class="article-inline-evidence">
   <img src="{{ '/assets/images/gpt-image-25-flare-demo-480w.webp' | relative_url }}" width="480" height="480" alt="Unbranded amber dropper-bottle concept image used as the input to a successful 1688 Base64 image search" loading="lazy">

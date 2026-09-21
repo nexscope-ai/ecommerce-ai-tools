@@ -7,3 +7,4 @@ plugins:
   - jekyll-sitemap
 exclude:
   - README.md
+  - assets/images/gpt-image-25-flare-demo-original.png
