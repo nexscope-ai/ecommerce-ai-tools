@@ -14,6 +14,7 @@ Nexscope Ecommerce AI Tools shows how to analyze Amazon negative reviews, find p
 
 Latest guides:
 
+- [Prime Big Deal Days 2026: Amazon seller research checklist](docs/ecommerce-trends/prime-big-deal-days-2026-seller-research.md)
 - [What can the new Codex models do for ecommerce?](docs/ecommerce-trends/codex-ecommerce-nexscope-api-workflows.md)
 - [What is agentic commerce—and why AI shopping agents may skip your products](docs/ecommerce-trends/what-is-agentic-commerce-ai-shopping-visibility.md)
 - [What is an MCP server? Ecommerce tools and examples](docs/guides/what-is-an-mcp-server.md)

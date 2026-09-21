@@ -1,0 +1,48 @@
+{
+  "source": "Nexscope Amazon Product Price Series API online tester",
+  "documentation": "https://www.nexscope.ai/api-docs/amazon-product-price-series",
+  "request": {
+    "asin": "B072MQ5BRX",
+    "domain": "1",
+    "days": 30,
+    "showPrice": 1,
+    "showPriceList": 1,
+    "showPriceDeal": 1,
+    "showPricePrime": 1
+  },
+  "response": {
+    "code": 0,
+    "msg": "ok",
+    "ts": "1789971415323",
+    "time": "2026-09-21 06:16:55",
+    "data": {
+      "asin": "B072MQ5BRX",
+      "price": [
+        { "time": "2026-08-18 10:19", "value": 16.62 },
+        { "time": "2026-08-31 22:14", "value": 9.69 },
+        { "time": "2026-09-01 01:01", "value": 16.62 },
+        { "time": "2026-09-03 08:02", "value": 16.32 }
+      ],
+      "buyboxPrice": [
+        { "time": "2026-08-18 10:19", "value": 16.62 },
+        { "time": "2026-08-31 22:15", "value": 9.69 },
+        { "time": "2026-09-01 01:01", "value": 16.62 },
+        { "time": "2026-09-03 08:02", "value": 16.32 }
+      ],
+      "priceDeal": [],
+      "pricePrime": [
+        { "time": "2026-06-27 18:06", "value": -1 }
+      ],
+      "priceList": [
+        { "time": "2025-06-14 07:12", "value": 15.36 }
+      ]
+    }
+  },
+  "interpretation_notes": [
+    "The four returned price records are observations, not a continuous daily history.",
+    "The lowest returned price is not identified as a promotion; priceDeal is empty.",
+    "The pricePrime value -1 is not treated as a valid currency price.",
+    "Some series contain dates outside the requested 30-day window; consumers must inspect actual timestamps.",
+    "The response's cost field is elapsed milliseconds, not credits. No API key or account identifier is stored here."
+  ]
+}

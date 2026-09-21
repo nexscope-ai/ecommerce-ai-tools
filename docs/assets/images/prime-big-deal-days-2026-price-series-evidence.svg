@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Four observed Amazon prices from a live Nexscope API test</title>
+  <desc id="desc">A live US Amazon price-series request for ASIN B072MQ5BRX returned four price observations: 16.62 dollars on August 18, 9.69 dollars on August 31, 16.62 dollars on September 1, and 16.32 dollars on September 3, 2026. The deal-price array was empty. These are sampled points, not a continuous trend or proof of a promotion.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1"><stop stop-color="#f8faff"/><stop offset="1" stop-color="#edeaff"/></linearGradient>
+    <linearGradient id="bar" x2="0" y2="1"><stop stop-color="#7459ec"/><stop offset="1" stop-color="#4b39c8"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#25205d" flood-opacity=".10"/></filter>
+  </defs>
+  <rect width="1440" height="810" fill="url(#background)"/>
+  <circle cx="1320" cy="60" r="210" fill="#dcd6ff" opacity=".52"/>
+  <text x="76" y="78" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="3" fill="#6245d4">NEXSCOPE API / LIVE TEST</text>
+  <text x="76" y="145" font-family="Arial, sans-serif" font-size="49" font-weight="700" fill="#1c1b31">One ASIN. Four observed prices.</text>
+  <text x="76" y="194" font-family="Arial, sans-serif" font-size="24" fill="#58566a">Amazon US · ASIN B072MQ5BRX · 30-day request · retrieved 21 Sep 2026</text>
+
+  <rect x="76" y="236" width="950" height="436" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="110" y="283" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#29263e">Lowest-new-price observations returned by the API</text>
+  <text x="110" y="316" font-family="Arial, sans-serif" font-size="18" fill="#746f84">USD · four sampled records; bars are not a continuous price history</text>
+
+  <g font-family="Arial, sans-serif" font-size="16" fill="#797488" text-anchor="end">
+    <text x="145" y="357">$20</text>
+    <text x="145" y="411">$15</text>
+    <text x="145" y="466">$10</text>
+    <text x="145" y="520">$5</text>
+    <text x="145" y="575">$0</text>
+  </g>
+  <g stroke="#e9e6f1" stroke-width="2">
+    <line x1="160" y1="351" x2="982" y2="351"/>
+    <line x1="160" y1="405" x2="982" y2="405"/>
+    <line x1="160" y1="459" x2="982" y2="459"/>
+    <line x1="160" y1="514" x2="982" y2="514"/>
+  </g>
+  <line x1="160" y1="568" x2="982" y2="568" stroke="#a9a2bd" stroke-width="2"/>
+
+  <rect x="208" y="388" width="104" height="180" rx="10" fill="url(#bar)"/>
+  <text x="260" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#332676">$16.62</text>
+  <text x="260" y="604" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#29263e">18 Aug</text>
+  <text x="260" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6c677d">10:19</text>
+
+  <rect x="412" y="463" width="104" height="105" rx="10" fill="#21a4b4"/>
+  <text x="464" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#116a73">$9.69</text>
+  <text x="464" y="604" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#29263e">31 Aug</text>
+  <text x="464" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6c677d">22:14</text>
+
+  <rect x="616" y="388" width="104" height="180" rx="10" fill="url(#bar)"/>
+  <text x="668" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#332676">$16.62</text>
+  <text x="668" y="604" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#29263e">1 Sep</text>
+  <text x="668" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6c677d">01:01</text>
+
+  <rect x="820" y="391" width="104" height="177" rx="10" fill="url(#bar)"/>
+  <text x="872" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#332676">$16.32</text>
+  <text x="872" y="604" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#29263e">3 Sep</text>
+  <text x="872" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6c677d">08:02</text>
+
+  <rect x="1054" y="236" width="310" height="436" rx="24" fill="#eeeaff" stroke="#d4cafa" stroke-width="2"/>
+  <text x="1083" y="283" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#5037bd">READING THE CHART</text>
+  <text x="1083" y="344" font-family="Arial, sans-serif" font-size="45" font-weight="700" fill="#34229f">4</text>
+  <text x="1142" y="344" font-family="Arial, sans-serif" font-size="18" fill="#4a4660">price records</text>
+  <text x="1083" y="400" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#157d89">$9.69</text>
+  <text x="1083" y="429" font-family="Arial, sans-serif" font-size="18" fill="#4a4660">lowest returned point</text>
+  <line x1="1083" y1="457" x2="1335" y2="457" stroke="#c9bff1" stroke-width="2"/>
+  <text x="1083" y="502" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#5037bd">0 deal-price records</text>
+  <text x="1083" y="536" font-family="Arial, sans-serif" font-size="18" fill="#4a4660">Last price point: 3 Sep.</text>
+  <text x="1083" y="587" font-family="Arial, sans-serif" font-size="18" fill="#4a4660">Low point ≠ verified deal,</text>
+  <text x="1083" y="616" font-family="Arial, sans-serif" font-size="18" fill="#4a4660">duration, or event forecast.</text>
+
+  <text x="76" y="731" font-family="Arial, sans-serif" font-size="21" fill="#4f4b64">Source: nexscope.ai/api-docs/amazon-product-price-series · live tester response code 0</text>
+  <text x="76" y="764" font-family="Arial, sans-serif" font-size="19" fill="#6d687f">Request timestamp 2026-09-21T06:16:55Z · Values and times shown exactly as returned · API key omitted</text>
+</svg>

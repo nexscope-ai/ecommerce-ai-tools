@@ -17,8 +17,12 @@ last_reviewed: 2026-09-20
     <div class="topic-filters" role="group" aria-label="Filter articles by topic"><button type="button" data-topic="all" aria-pressed="true">All insights</button><button type="button" data-topic="agents" aria-pressed="false">AI agents & APIs</button><button type="button" data-topic="shopping" aria-pressed="false">AI shopping</button><button type="button" data-topic="creative" aria-pressed="false">Creative AI</button><button type="button" data-topic="sourcing" aria-pressed="false">Sourcing</button></div>
     <label class="trend-search">Search insights<input type="search" placeholder="Search topics or articles…" aria-controls="trend-results"></label>
   </div>
-  <p class="result-count" role="status" aria-live="polite">7 articles</p>
+  <p class="result-count" role="status" aria-live="polite">8 articles</p>
   <div class="trend-grid" id="trend-results">
+    <div class="trend-card" data-topic="shopping"><a href="{{ '/ecommerce-trends/prime-big-deal-days-2026-seller-research/' | relative_url }}">
+      <div class="card-art"><img src="{{ '/assets/images/prime-big-deal-days-2026-price-series-evidence.svg' | relative_url }}" width="1440" height="810" alt="" loading="lazy"></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">AMAZON SELLER RESEARCH</span><time datetime="2026-09-21">Sep 21, 2026</time></div><h3>Prime Big Deal Days 2026: prepare with evidence</h3><p>Build a competitor baseline, read a real price-series test, and monitor offers without mistaking a low price for a verified deal.</p><span class="read-link">Read the seller checklist ↗</span></div>
+    </a></div>
     <div class="trend-card" data-topic="creative"><a href="{{ '/ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/' | relative_url }}">
       <div class="card-art"><img src="{{ '/assets/images/gpt-image-25-api-evidence-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
       <div class="card-body"><div class="card-meta"><span class="card-tag">AI PRODUCT IMAGES</span><time datetime="2026-09-20">Sep 20, 2026</time></div><h3>ChatGPT Images 2.5 for product photos</h3><p>A factual editing workflow, product-fidelity checklist and next step for ecommerce video.</p><span class="read-link">Read the practical guide ↗</span></div>
