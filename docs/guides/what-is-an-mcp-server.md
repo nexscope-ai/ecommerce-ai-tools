@@ -155,4 +155,4 @@ Yes. MCP does not remove authentication, authorization, credit, privacy, or mark
 
 ## Explore Nexscope MCP tools
 
-Start with a small, read-only research question and one documented capability. **[Explore the Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=guide_bottom)**, review the [API capabilities guide](../api-capabilities/), or open the [ecommerce data for AI agents page](https://nexscope-ai.github.io/ecommerce-ai-agents.html).
+Start with a small, read-only research question and one documented capability. **[Explore the Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=guide_bottom)**, review the [API capabilities guide](../api-capabilities/), or open the [ecommerce data for AI agents page](https://learn.nexscope.ai/ecommerce-ai-agents.html).

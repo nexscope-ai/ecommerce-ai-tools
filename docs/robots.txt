@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexscope-ai.github.io/ecommerce-ai-tools/sitemap.xml
-Sitemap: https://nexscope-ai.github.io/ecommerce-ai-tools/image-sitemap.xml
+Sitemap: https://learn.nexscope.ai/ecommerce-ai-tools/sitemap.xml
+Sitemap: https://learn.nexscope.ai/ecommerce-ai-tools/image-sitemap.xml

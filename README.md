@@ -6,7 +6,7 @@ Nexscope Ecommerce AI Tools shows how to analyze Amazon negative reviews, find p
 
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=tools_readme). Credit usage varies by action.
 
-[Browse the guide library](https://nexscope-ai.github.io/ecommerce-ai-tools/) · [Compare ecommerce tools](https://nexscope-ai.github.io/ecommerce-ai-tools/alternatives/) · [Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/guides/api-capabilities.md) · [Getting started](docs/guides/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
+[Browse the guide library](https://learn.nexscope.ai/ecommerce-ai-tools/) · [Compare ecommerce tools](https://learn.nexscope.ai/ecommerce-ai-tools/alternatives/) · [Explore API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_top) · [API capabilities and workflows](docs/guides/api-capabilities.md) · [Getting started](docs/guides/getting-started.md) · [Report a bug or request a feature](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
 
 ## Recent ecommerce trends
 

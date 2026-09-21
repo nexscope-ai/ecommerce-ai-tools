@@ -109,7 +109,7 @@ The documented REST operation is `POST /api/skill-api/v1/skills/1688-search-by-i
 | What does this exact offer say? | [Product Detail](https://www.nexscope.ai/api-docs/1688-product-detail) | `offerId`, SKU options, sale and shipping fields, company name when present | Listing data is not a confirmed purchase contract |
 | What products appear in weekly or monthly rankings? | [Product Billboard](https://www.nexscope.ai/api-docs/1688-product-billboard) | Requested chart period, category/query, ranked offers | A ranking is context, not a forecast for your destination market |
 
-For a broader procurement overview, see Nexscope's [1688 supplier sourcing guide](https://nexscope-ai.github.io/1688-supplier-product-sourcing/). This article concentrates on the narrower image-to-shortlist workflow and the API evidence needed to reproduce it.
+For a broader procurement overview, see Nexscope's [1688 supplier sourcing guide](https://learn.nexscope.ai/1688-supplier-product-sourcing/). This article concentrates on the narrower image-to-shortlist workflow and the API evidence needed to reproduce it.
 
 ## How should you compare two similar offers?
 

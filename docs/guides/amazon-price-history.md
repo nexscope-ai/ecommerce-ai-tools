@@ -81,7 +81,7 @@ Track whether a competitor repeatedly lowers its price around launches, holidays
 
 ### Product-demand validation
 
-Combine historical price and BSR direction with keyword, review, and competitive evidence. The [product-demand validation guide](https://nexscope-ai.github.io/ecommerce-product-demand-validation/) shows how to keep demand, competition, price, and margin assumptions separate.
+Combine historical price and BSR direction with keyword, review, and competitive evidence. The [product-demand validation guide](https://learn.nexscope.ai/ecommerce-product-demand-validation/) shows how to keep demand, competition, price, and margin assumptions separate.
 
 ### Repricing research
 
@@ -130,4 +130,4 @@ Yes. Review the [Amazon Product Price Series API documentation](https://www.nexs
 
 ## Start with one ASIN
 
-Choose one comparable product, write down the decision you are investigating, and preserve the returned dates and units. **[Explore the Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_bottom)** or browse the [Amazon research workflow](https://nexscope-ai.github.io/amazon-research.html) before expanding the analysis.
+Choose one comparable product, write down the decision you are investigating, and preserve the returned dates and units. **[Explore the Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_bottom)** or browse the [Amazon research workflow](https://learn.nexscope.ai/amazon-research.html) before expanding the analysis.
