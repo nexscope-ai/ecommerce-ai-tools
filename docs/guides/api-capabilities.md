@@ -66,6 +66,6 @@ Use [Background Remover](https://www.nexscope.ai/api-docs/background-remover?vie
 
 ## Ask the official team
 
-Need an API, an integration example, or help with an error? [Open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) and choose the API option in the form. The official Nexscope team responds as quickly as possible and follows up on progress toward a resolution.
+Need help choosing an endpoint or understanding an integration? [Ask in Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). Suggest a missing workflow in [Discussions Ideas](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas), or use the [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for a reproducible API bug or trackable feature request. Include the endpoint slug and a redacted request or error example.
 
 Include the endpoint slug, the workflow you want, expected/actual behavior, and a redacted error example. Do not post API keys, tokens, or private customer data. For private account or billing matters, contact [service@nexscope.ai](mailto:service@nexscope.ai).

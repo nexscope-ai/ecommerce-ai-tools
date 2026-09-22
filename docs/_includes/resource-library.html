@@ -5,11 +5,12 @@
 
 {% if page.url == '/' %}
 <section class="resource-paths" aria-labelledby="resource-paths-title">
-  <div class="section-heading"><div><span class="eyebrow">Choose your next step</span><h2 id="resource-paths-title">A clearer way in.</h2></div><p>Start with the task, not the repository.</p></div>
+  <div class="section-heading"><div><span class="eyebrow">Choose your next step</span><h2 id="resource-paths-title">A clearer way in.</h2></div><p>Start with the task or question you need to resolve.</p></div>
   <div class="resource-path-grid">
     <a href="https://learn.nexscope.ai/tools/"><span class="resource-path-icon" aria-hidden="true">✦</span><strong>Find a tool</strong><span>Explore live research, SEO and creative tools, then use them on Nexscope.</span><b>Browse tools →</b></a>
     <a href="{{ '/guides/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">↗</span><strong>Follow a guide</strong><span>Work through product research, SEO, sourcing or an AI integration.</span><b>Read guides →</b></a>
     <a href="{{ '/case-studies/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">▤</span><strong>Check the evidence</strong><span>See real inputs, source limitations and the decision a result can support.</span><b>View case studies →</b></a>
+    <a href="{{ '/community/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">?</span><strong>Ask the community</strong><span>Get official help, suggest a workflow, or report a reproducible problem in the public repository.</span><b>Choose a support channel →</b></a>
   </div>
 </section>
 {% endif %}

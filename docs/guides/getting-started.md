@@ -20,7 +20,18 @@ Choose a workflow from [our guide library](../), then sign in with your Nexscope
 2. Choose a competitor ASIN, a keyword, a public page URL, or product images and a video prompt.
 3. Review the selected market, sample size, and credit requirements before starting. Some workflows require a separate second request.
 4. Inspect source evidence before acting on AI suggestions, and download results you want to keep.
-5. [Open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for questions, bugs, or feature requests. The official Nexscope team responds as quickly as possible and follows up on progress.
+5. If something blocks you, use the [community and support guide](../community/) to choose the right public or private channel.
+
+## When you need help
+
+| What you need | Where to go |
+| --- | --- |
+| Help using a browser tool, API, or MCP integration | [Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a) |
+| A new ecommerce workflow or product idea | [Discussions Ideas](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas) |
+| A reproducible bug or trackable feature request | [GitHub Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) |
+| Help with an account, billing, or private data | [Email private support](mailto:service@nexscope.ai) |
+
+Include your goal, marketplace, product category, relevant tool or endpoint, expected result, and what happened. Never post API keys, access tokens, payment details, private customer data, or unredacted screenshots.
 
 ## AI Video Generator
 

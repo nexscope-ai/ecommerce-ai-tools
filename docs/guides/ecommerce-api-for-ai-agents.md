@@ -81,5 +81,5 @@ New Nexscope users receive **1,000 free credits** to get started. Credit usage a
 - Do not repeat an asynchronous generation request when polling the existing task is sufficient.
 - Redact keys, tokens, and customer data from logs and GitHub Issues.
 
-For cURL, JavaScript, and Python examples, use the [Nexscope Ecommerce API repository](https://github.com/nexscope-ai/nexscope-ecommerce-api). For integration questions or missing capabilities, [open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose).
+For cURL, JavaScript, and Python examples, use the [Nexscope Ecommerce API repository](https://github.com/nexscope-ai/nexscope-ecommerce-api). Ask integration questions in [Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a), suggest a workflow in [Discussions Ideas](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas), or use the [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for a reproducible bug or trackable feature request.
 

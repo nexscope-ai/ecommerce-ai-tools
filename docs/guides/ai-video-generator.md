@@ -88,6 +88,6 @@ The browser tool and external API integration are separate entry points. For aut
 
 ## Need another model or help with a result?
 
-[Open an issue for the official Nexscope team](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose). Include the model, non-sensitive settings, expected behavior, and what happened. We review feedback and respond as quickly as possible. Do not include API keys or private account information.
+For help using a model or choosing settings, [ask in Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). For a reproducible generation problem, use the [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) and include the model, non-sensitive settings, expected behavior, and what happened. Do not include API keys or private account information.
 
 **[Create your first product video](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github_pages&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_bottom)** · [Browse the other ecommerce workflows](../)
