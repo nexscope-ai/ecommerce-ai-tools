@@ -48,6 +48,9 @@ See [API workflows and integration steps](docs/guides/api-capabilities.md) for c
 
 [Browse all recent insights](docs/ecommerce-trends/index.md), including:
 
+- [Merchant Center AI Performance Insights: how sellers should use the report](docs/ecommerce-trends/merchant-center-ai-performance-insights.md)
+- [Merchant Center conversational attributes: a practical six-field guide](docs/ecommerce-trends/merchant-center-conversational-attributes.md)
+- [Business Agent for YouTube Ads: what ecommerce teams should prepare](docs/ecommerce-trends/business-agent-youtube-ads.md)
 - [Prime Big Deal Days 2026: Amazon seller research checklist](docs/ecommerce-trends/prime-big-deal-days-2026-seller-research.md)
 - [What is agentic commerce—and why AI shopping agents may skip your products](docs/ecommerce-trends/what-is-agentic-commerce-ai-shopping-visibility.md)
 - [What can the new Codex models do for ecommerce?](docs/ecommerce-trends/codex-ecommerce-nexscope-api-workflows.md)
