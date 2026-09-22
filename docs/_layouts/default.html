@@ -163,7 +163,7 @@
       <article>
         {% if page.resource_hub %}{% include resource-library.html %}{% else %}{{ content }}{% endif %}
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official Nexscope team.</p>{% endif %}
-        {% unless is_hub %}
+        {% unless is_hub or page.editorial_only %}
         <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide or find a focused tool for the task you are researching.</p><div><a href="https://learn.nexscope.ai/tools/">Find a tool →</a><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="https://www.nexscope.ai/api-docs?co-from=githubIO">Open API docs ↗</a></div></section>
         {% endunless %}
       </article>
