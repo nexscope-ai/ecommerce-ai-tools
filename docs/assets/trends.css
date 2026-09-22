@@ -19,3 +19,73 @@
 @media(max-width:1000px){.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trends-header .wrap{flex-wrap:wrap;gap:18px}.trends-header nav{gap:18px}.resource-footer{align-items:start;flex-direction:column}.resource-footer nav{justify-content:flex-start}}
 @media(max-width:600px){.resource-grid{grid-template-columns:1fr}.resource-sections{gap:4px;margin:22px 0}.resource-sections a{font-size:12px;padding:9px 12px}.trends-header nav{justify-content:flex-start;gap:8px 18px}.trends-header nav a{min-height:36px;display:flex;align-items:center}.trends-header nav .nav-cta{margin-left:auto}.resource-note{padding:22px}.resource-card h3{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.trends-page *{transition:none!important;scroll-behavior:auto!important}.trend-card:hover{transform:none}}
+
+/* Match the official web site's Start free CTA across resource pages. */
+.trends-page {
+  --brand-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --brand-gradient-hover: linear-gradient(135deg, #60a5fa, #a78bfa);
+}
+.trends-header nav .nav-cta,
+.trends-page .trend-cta a,
+.trends-page .article-action a {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--brand-gradient);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgb(59 130 246 / 18%);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.trends-header nav .nav-cta {
+  min-height: 40px;
+  padding: 10px 24px;
+}
+.trends-header nav .nav-cta:hover,
+.trends-page .trend-cta a:hover,
+.trends-page .article-action a:hover {
+  background: var(--brand-gradient-hover);
+  color: #fff;
+  box-shadow: 0 8px 28px rgb(139 92 246 / 35%);
+  transform: translateY(-1px);
+}
+.trends-header nav .nav-cta:active,
+.trends-page .trend-cta a:active,
+.trends-page .article-action a:active {
+  transform: translateY(1px);
+}
+.trends-page .resource-start {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+  color: #334155;
+  line-height: 1.2;
+}
+.trends-page .resource-start:hover {
+  border-color: #a78bfa;
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+@media(max-width:600px) {
+  .trends-header nav .nav-cta {
+    padding: 10px 14px;
+  }
+  .trends-page .trend-cta a {
+    white-space: normal;
+  }
+}
