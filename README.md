@@ -64,7 +64,7 @@ See [API workflows and integration steps](docs/guides/api-capabilities.md) for c
 | Report a reproducible bug or request a trackable feature | [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) |
 | Share a verified workflow or result | [Discussions Show and tell](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/show-and-tell) |
 
-[Read the pinned welcome post](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/1) and [our support process](SUPPORT.md). Please describe your goal, the relevant tool or endpoint, the expected result, and what happened. Do not post API keys, tokens, payment details, private customer data, or unredacted screenshots. For private account or billing questions, contact [service@nexscope.ai](mailto:service@nexscope.ai).
+[Read the pinned welcome post](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/11) and [our support process](SUPPORT.md). Please describe your goal, the relevant tool or endpoint, the expected result, and what happened. Do not post API keys, tokens, payment details, private customer data, or unredacted screenshots. For private account or billing questions, contact [service@nexscope.ai](mailto:service@nexscope.ai).
 
 The Nexscope team reviews reports and feature requests and follows up on progress. A request does not guarantee a feature or an immediate fix. To improve these public guides, see [Contributing](CONTRIBUTING.md).
 
