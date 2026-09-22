@@ -17,8 +17,16 @@ last_reviewed: 2026-09-20
     <div class="topic-filters" role="group" aria-label="Filter articles by topic"><button type="button" data-topic="all" aria-pressed="true">All insights</button><button type="button" data-topic="agents" aria-pressed="false">AI agents & APIs</button><button type="button" data-topic="shopping" aria-pressed="false">AI shopping</button><button type="button" data-topic="creative" aria-pressed="false">Creative AI</button><button type="button" data-topic="sourcing" aria-pressed="false">Sourcing</button></div>
     <label class="trend-search">Search insights<input type="search" placeholder="Search topics or articles…" aria-controls="trend-results"></label>
   </div>
-  <p class="result-count" role="status" aria-live="polite">8 articles</p>
+  <p class="result-count" role="status" aria-live="polite">10 articles</p>
   <div class="trend-grid" id="trend-results">
+    <div class="trend-card" data-topic="agents"><a href="{{ '/ecommerce-trends/amazon-accelerate-2026-seller-ai-workflow-watchlist/' | relative_url }}">
+      <div class="card-art" aria-hidden="true"><span class="art-tile">Accelerate</span><span class="art-arrow">→</span><span class="art-tile dark">Seller test</span></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">AMAZON SELLER AI</span><time datetime="2026-09-22">Sep 22, 2026</time></div><h3>Amazon Accelerate 2026: what should sellers test?</h3><p>Separate confirmed agenda items from new claims, then turn AI and research ideas into a one-SKU test.</p><span class="read-link">Open the seller watchlist ↗</span></div>
+    </a></div>
+    <div class="trend-card" data-topic="creative"><a href="{{ '/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/' | relative_url }}">
+      <div class="card-art"><img src="{{ '/assets/images/ai-video-generator-product-workflow-720w.webp' | relative_url }}" width="720" height="405" alt="" loading="lazy"></div>
+      <div class="card-body"><div class="card-meta"><span class="card-tag">TIKTOK SHOP CREATIVE</span><time datetime="2026-09-22">Sep 22, 2026</time></div><h3>AI UGC videos for TikTok Shop, without false claims</h3><p>Create from approved product assets, check the output against the SKU, disclose AI use and measure beyond views.</p><span class="read-link">Read the seller workflow ↗</span></div>
+    </a></div>
     <div class="trend-card" data-topic="shopping"><a href="{{ '/ecommerce-trends/prime-big-deal-days-2026-seller-research/' | relative_url }}">
       <div class="card-art"><img src="{{ '/assets/images/prime-big-deal-days-2026-price-series-evidence.svg' | relative_url }}" width="1440" height="810" alt="" loading="lazy"></div>
       <div class="card-body"><div class="card-meta"><span class="card-tag">AMAZON SELLER RESEARCH</span><time datetime="2026-09-21">Sep 21, 2026</time></div><h3>Prime Big Deal Days 2026: prepare with evidence</h3><p>Build a competitor baseline, read a real price-series test, and monitor offers without mistaking a low price for a verified deal.</p><span class="read-link">Read the seller checklist ↗</span></div>
