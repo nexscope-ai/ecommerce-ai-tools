@@ -63,7 +63,7 @@ See [API workflows and integration steps](docs/guides/api-capabilities.md) for c
 
 [Read the pinned welcome post](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/1) and [our support process](SUPPORT.md). Please describe your goal, the relevant tool or endpoint, the expected result, and what happened. Do not post API keys, tokens, payment details, private customer data, or unredacted screenshots. For private account or billing questions, contact [service@nexscope.ai](mailto:service@nexscope.ai).
 
-The Nexscope team reviews reports and feature requests and follows up on progress. A request does not guarantee a feature or an immediate fix. To improve these public guides, see [Contributing](CONTRIBUTING.md). Our [community plan and operation log](COMMUNITY_OPERATIONS.md) tracks ongoing improvements.
+The Nexscope team reviews reports and feature requests and follows up on progress. A request does not guarantee a feature or an immediate fix. To improve these public guides, see [Contributing](CONTRIBUTING.md). See the [community operations dashboard](https://learn.nexscope.ai/ecommerce-ai-tools/community-operations/) for the plan, completed actions, evidence, and next steps; [the Markdown table](COMMUNITY_OPERATIONS.md) is its single source of truth.
 
 ## APIs and agent skills
 
