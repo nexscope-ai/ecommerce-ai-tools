@@ -62,7 +62,6 @@
       {% if item.url contains 'api' or item.url contains 'mcp' or item.url contains 'getting-started' %}{% assign topic = 'build' %}{% endif %}
       {% if item.topic %}{% assign topic = item.topic %}{% endif %}
       <article class="trend-card resource-card" data-kind="{{ kind }}" data-topic="{{ topic }}"><a href="{{ item.url | relative_url }}">
-        {% if item.image %}<div class="card-art"><img src="{{ item.image | relative_url }}" alt="" loading="lazy" width="720" height="405"></div>{% endif %}
         <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true">{% if kind == 'alternative' %}⇄{% elsif kind == 'trend' %}◷{% elsif kind == 'case-study' %}▤{% elsif topic == 'creative' %}▷{% elsif topic == 'build' %}⌘{% else %}↗{% endif %}</span><span class="card-tag">{% if kind == 'case-study' %}CASE STUDY{% elsif kind == 'trend' %}INSIGHT{% elsif kind == 'alternative' %}COMPARISON{% else %}PRACTICAL GUIDE{% endif %}</span></div>
         <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p>{% if item.date_published and kind == 'trend' %}<time datetime="{{ item.date_published }}">Published {{ item.date_published | date: '%b %-d, %Y' }}</time>{% endif %}<span class="read-link">{% if kind == 'case-study' %}Explore the evidence{% elsif kind == 'alternative' %}Compare options{% else %}Read the article{% endif %} →</span></div>
       </a></article>
