@@ -1,5 +1,11 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Ask a usage or API question
+    url: https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a
+    about: Ask how to use a tool or integrate an API in Discussions Q&A.
+  - name: Suggest or discuss a workflow
+    url: https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas
+    about: Discuss a new ecommerce research, creative, or automation workflow.
   - name: Private account or billing support
     url: mailto:service@nexscope.ai
     about: Contact the Nexscope team privately. Never send passwords or access tokens.
