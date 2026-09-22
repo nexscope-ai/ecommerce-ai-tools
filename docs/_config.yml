@@ -5,6 +5,11 @@ baseurl: /ecommerce-ai-tools
 lang: en
 plugins:
   - jekyll-sitemap
+defaults:
+  - scope:
+      path: google3bc8f2f206788fd5.html
+    values:
+      sitemap: false
 exclude:
   - README.md
   - assets/images/gpt-image-25-flare-demo-original.png
