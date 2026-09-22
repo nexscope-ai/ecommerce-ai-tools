@@ -27,6 +27,7 @@
       resource_path: url.pathname,
       resource_title: link.querySelector('h3')?.textContent?.trim() || link.textContent.trim().slice(0, 100),
       resource_topic: link.closest('.resource-card')?.dataset.topic || 'unknown',
+      resource_kind: link.closest('.resource-card')?.dataset.kind || 'unknown',
     });
   });
 
@@ -62,31 +63,34 @@
   if (controls) {
     controls.hidden = false;
     const input = controls.querySelector('input');
-    const buttons = [...controls.querySelectorAll('[data-topic]')];
+    const buttons = [...controls.querySelectorAll('[data-kind-filter]')];
     const cards = [...document.querySelectorAll('.trend-card')];
     const count = document.querySelector('.result-count');
-    let topic = 'all';
+    let kind = 'all';
     const filter = () => {
       const query = input.value.trim().toLowerCase();
       let visible = 0;
       cards.forEach(card => {
-        const match = (topic === 'all' || card.dataset.topic === topic) && card.textContent.toLowerCase().includes(query);
+        const match = (kind === 'all' || card.dataset.kind === kind) && card.textContent.toLowerCase().includes(query);
         card.hidden = !match;
         if (match) visible++;
       });
       const label = count.dataset.label || 'article';
       count.textContent = `${visible} ${label}${visible === 1 ? '' : 's'}`;
-      document.querySelector('.empty-results').hidden = visible > 0;
+      const empty = document.querySelector('.empty-results');
+      if (empty) empty.hidden = visible > 0;
     };
     buttons.forEach(button => button.addEventListener('click', () => {
-      topic = button.dataset.topic;
+      kind = button.dataset.kindFilter;
       buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
       filter();
     }));
     input.addEventListener('input', filter);
-    document.querySelector('.reset-search').addEventListener('click', () => {
+    document.querySelector('.reset-search')?.addEventListener('click', () => {
       input.value = '';
-      buttons[0].click();
+      kind = 'all';
+      buttons.forEach((button, index) => button.setAttribute('aria-pressed', String(index === 0)));
+      filter();
       input.focus();
     });
     filter();

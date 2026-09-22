@@ -1,13 +1,13 @@
 ---
 layout: default
-title: AI Video Generator, Ecommerce AI Guides & Tool Alternatives
-description: AI video generator workflows, evidence-based ecommerce tool comparisons, and official Nexscope guides for Amazon research, SEO, APIs, and AI agents.
+title: Nexscope Learning Center | Ecommerce Guides, Evidence & Insights
+description: Explore Nexscope guides, case studies, ecommerce insights and tool comparisons, then use the right tool on the official site.
 permalink: /
 last_reviewed: 2026-09-18
 resource_hub: true
-hero_title: Ecommerce research.
-hero_accent: AI guides & tool comparisons.
-hero_description: Your field guide to ecommerce research, AI creation, tool comparisons and connected workflows. Start with a guide, compare an alternative, or explore what’s changing.
-library_heading: Explore the resource library
+hero_title: Learn the workflow.
+hero_accent: Find the evidence.
+hero_description: Practical guides, inspectable case studies and timely insights for ecommerce research, AI creation and developer workflows.
+library_heading: All learning resources
 ---
 <!-- Rendered by the shared resource-library template. -->
