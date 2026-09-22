@@ -1,0 +1,20 @@
+name: Public content boundary
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  public-content-boundary:
+    name: public-content-boundary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check explicitly approved public files
+        run: python3 scripts/check_publication_boundary.py

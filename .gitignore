@@ -1,2 +1,6 @@
 # Internal operations belong outside this public repository.
 /ops/
+/private-community-ops/
+/COMMUNITY_OPERATIONS.md
+/community-operations.html
+/docs/community-operations/
