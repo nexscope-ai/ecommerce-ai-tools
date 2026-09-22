@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Ecommerce APIs for AI agents: Amazon demand, competitors, keywords and reviews
+title: "Ecommerce APIs for AI agents: Amazon demand, competitors, keywords and reviews"
 description: Map an Amazon research agent's demand, competitor, keyword and review questions to documented ecommerce Data APIs, REST endpoints and MCP tools.
 permalink: /ecommerce-api-for-ai-agents/
 last_reviewed: 2026-09-22
