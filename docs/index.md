@@ -5,8 +5,8 @@ description: AI video generator workflows, evidence-based ecommerce tool compari
 permalink: /
 last_reviewed: 2026-09-18
 resource_hub: true
-hero_title: Better questions.
-hero_accent: More useful answers.
+hero_title: Ecommerce research.
+hero_accent: AI guides & tool comparisons.
 hero_description: Your field guide to ecommerce research, AI creation, tool comparisons and connected workflows. Start with a guide, compare an alternative, or explore what’s changing.
 library_heading: Explore the resource library
 ---
