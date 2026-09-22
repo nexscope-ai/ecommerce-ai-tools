@@ -47,7 +47,6 @@
     {% endfor %}
   {% endif %}
   {% assign resources = site.pages | sort: 'title' %}
-  {% if page.resource_type == 'trend' %}{% assign resources = site.pages | sort: 'date_published' | reverse %}{% endif %}
   {% for item in resources %}
     {% assign include_item = false %}
     {% assign kind = 'guide' %}
