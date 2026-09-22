@@ -4,3 +4,7 @@
 /COMMUNITY_OPERATIONS.md
 /community-operations.html
 /docs/community-operations/
+
+# Local-only publication review tools; never commit these to the public repository.
+/PUBLIC_FILES.txt
+/scripts/check_publication_boundary.py

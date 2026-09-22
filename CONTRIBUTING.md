@@ -9,7 +9,7 @@ Thanks for helping other ecommerce sellers and developers make better decisions 
 - Report a reproducible product or documentation bug with the [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose). Include steps, expected and actual results, and an error code if available.
 - Suggest a correction or case study by opening a pull request against the relevant file under `docs/`. State what changed and link to primary evidence when possible.
 
-Everything committed to this repository is public on GitHub; files under `docs/` are also published on the learning site. For a new public file, add its path to `PUBLIC_FILES.txt` and review the file and its assets before opening a pull request. Keep internal plans, dashboards, account records, and unpublished drafts outside this repository. The publication-boundary check rejects unlisted files and known internal paths, but it cannot determine whether the text inside an approved file is safe to publish.
+Everything committed to this repository is public on GitHub; files under `docs/` are also published on the learning site. Review every new public file and its assets before opening a pull request. Keep internal plans, dashboards, account records, and unpublished drafts outside this repository.
 
 ## Evidence for examples and case studies
 
