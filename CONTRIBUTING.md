@@ -15,4 +15,4 @@ Use a real input that can be shared, record when and where the run happened, dis
 
 Do not submit passwords, API keys, access tokens, payment information, personal customer data, or unredacted logs or screenshots. For private account or billing matters, use [private support](mailto:service@nexscope.ai).
 
-The team reviews contributions and may request clarification or edits. A proposal or pull request does not guarantee inclusion. See the [community plan and operation log](COMMUNITY_OPERATIONS.md) for current priorities and recorded changes.
+The team reviews contributions and may request clarification or edits. A proposal or pull request does not guarantee inclusion.
