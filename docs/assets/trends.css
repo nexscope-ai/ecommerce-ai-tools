@@ -14,7 +14,7 @@
   --brand-gradient: linear-gradient(135deg, #3B82F6, #8B5CF6);
   --brand-gradient-hover: linear-gradient(135deg, #60A5FA, #A78BFA);
 
-  background: #F8FAFC;
+  background: #FBF9F4;
   font-family: 'Plus Jakarta Sans', 'DM Sans', system-ui, -apple-system, sans-serif;
   color: var(--ink);
   font-size: 15px;
@@ -60,7 +60,7 @@
 
 /* === 页头 === */
 .trends-header {
-  background: #F8FAFC;
+  background: #FBF9F4;
   border-bottom: 1px solid var(--line);
 }
 
