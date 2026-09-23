@@ -1,6 +1,6 @@
 # Ecommerce AI Tools by Nexscope — AI Video Generator, Amazon Research & SEO
 
-This is Nexscope's official collection of **practical ecommerce workflows, evidence-based guides, and community support** for sellers and developers. Explore Amazon research, SEO, AI video generation, and REST/MCP integrations. The browser tools run on Nexscope; this repository contains documentation and support resources, not the hosted application's source code.
+This is Nexscope's official collection of **practical ecommerce workflows, evidence-based guides, and community support** for sellers and developers. Explore Amazon research and listing optimization, SEO, AI product image and video generation, and REST/MCP integrations. The browser tools run on Nexscope; this repository contains documentation and support resources, not the hosted application's source code.
 
 ## Choose your starting point
 
@@ -16,7 +16,9 @@ This is Nexscope's official collection of **practical ecommerce workflows, evide
 
 | Question or workflow | Practical guide | Run the workflow |
 | --- | --- | --- |
+| How to create ecommerce product images with AI | Use the tool's model guide, prompt examples, and product-accuracy checklist. | [AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=readme) |
 | How to use an AI video generator for product images | [Image-to-video workflow, models, and quality checks](docs/guides/ai-video-generator.md) | [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme) |
+| How to optimize an Amazon listing with marketplace evidence | Start with the live tool's ASIN audit, keyword, traffic, and history evidence before reviewing its prioritized plan. | [AI Amazon Listing Optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?utm_source=github&utm_medium=referral&utm_campaign=amazon_listing_optimizer_launch&utm_content=readme) |
 | How to check Amazon price and BSR history | [Amazon price-history workflow and interpretation guide](docs/guides/amazon-price-history.md) | [Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=readme) |
 | What is an MCP server for ecommerce? | [MCP server architecture, safety, and examples](docs/guides/what-is-an-mcp-server.md) | [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=readme) |
 | How to analyze Amazon negative reviews | [Evidence-based review analysis](docs/guides/amazon-negative-review-analysis.md) | [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_query_reviews) |

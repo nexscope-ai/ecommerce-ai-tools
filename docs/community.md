@@ -3,7 +3,7 @@ layout: default
 title: Nexscope Ecommerce Community and Support
 description: Ask Nexscope usage questions, suggest ecommerce workflows, report reproducible bugs, and find the right support channel.
 permalink: /community/
-last_reviewed: 2026-09-22
+last_reviewed: 2026-09-23
 community_page: true
 editorial_only: true
 faq:
@@ -38,11 +38,12 @@ The community is organized around real decisions ecommerce teams make:
 
 - validate product demand before committing inventory;
 - identify comparable competitors and inspect price or BSR history;
+- audit an Amazon listing, inspect keyword and traffic evidence, and prioritize changes to test;
 - turn low-star review evidence into product or listing hypotheses;
 - research keywords for listings and advertising without mixing Google and Amazon metrics;
 - diagnose product-page SEO and sampled AI-search visibility;
 - find 1688 sourcing candidates that still require supplier verification;
-- create and review AI product images or videos;
+- create and review AI product images or videos before publishing them;
 - connect product, keyword, review, marketplace, SEO, and creative capabilities through REST APIs or MCP.
 
 Nexscope can help collect and organize public evidence for these workflows. Provider estimates, sampled reviews, visual matches, generated media, and AI outputs still require human review and do not guarantee demand, ranking, supplier identity, product quality, or business outcomes.
