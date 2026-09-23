@@ -1,0 +1,49 @@
+<section class="capability-hero">
+  <div>
+    <span class="eyebrow">Nexscope capability atlas</span>
+    <h1>Start with the decision.<br><span>Follow the evidence.</span></h1>
+  </div>
+  <div>
+    <p>Map an ecommerce question to a practical tutorial, an inspectable test or case, and the Nexscope tool or API that can support the next step.</p>
+    <div class="capability-hero-links">
+      <a href="{{ '/guides/' | relative_url }}">Browse tutorials →</a>
+      <a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a>
+    </div>
+  </div>
+</section>
+
+<ol class="capability-process" aria-label="How to use the capability atlas">
+  <li><span>1</span><strong>Choose a question</strong><small>Define the decision before choosing data.</small></li>
+  <li><span>2</span><strong>Follow the tutorial</strong><small>Use a repeatable workflow and keep its limits visible.</small></li>
+  <li><span>3</span><strong>Inspect the evidence</strong><small>Check real inputs, outputs, dates and caveats.</small></li>
+  <li><span>4</span><strong>Run the capability</strong><small>Verify current access, fields and credits on Nexscope.</small></li>
+</ol>
+
+<section class="capability-map" aria-labelledby="capability-map-title">
+  <div class="section-heading">
+    <div><span class="eyebrow">Explore by decision</span><h2 id="capability-map-title">Nine connected commerce capabilities</h2></div>
+    <p>Tutorials and evidence stay public in this GitHub repository.</p>
+  </div>
+  <div class="capability-grid">
+    {% for item in site.data.capabilities %}
+    <article class="capability-card" id="{{ item.id }}">
+      <div class="capability-card-top"><span>{{ item.number }}</span><small>{{ item.audience }}</small></div>
+      <h3>{{ item.title }}</h3>
+      <strong>{{ item.question }}</strong>
+      <p>{{ item.description }}</p>
+      <div class="capability-links">
+        <a href="{% if item.guide contains '://' %}{{ item.guide }}{% else %}{{ item.guide | relative_url }}{% endif %}">{{ item.guide_label }} →</a>
+        {% if item.evidence %}<a href="{{ item.evidence | relative_url }}">{{ item.evidence_label }} →</a>{% endif %}
+        {% if item.tool %}<a href="{{ item.tool }}">{{ item.tool_label }} ↗</a>{% endif %}
+        {% if item.api %}<a href="{{ item.api }}">{{ item.api_label }} ↗</a>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<aside class="capability-boundary">
+  <div><span class="eyebrow">Evidence boundary</span><h2>Capability does not mean certainty.</h2></div>
+  <p>Nexscope can return structured marketplace, search and creative results. A returned field, ranking, generated asset or AI summary still needs to be checked against its source, market, collection time and intended decision. The evidence library documents what one observed run can—and cannot—support.</p>
+  <a href="{{ '/api-evidence/' | relative_url }}">Open the API evidence library →</a>
+</aside>

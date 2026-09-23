@@ -135,8 +135,11 @@
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="q6pDSjaAKMskPeTdzPWCtQ" async></script>
     <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
   </head>
-  {% assign is_hub = page.resource_hub %}
+  {% assign is_hub = false %}
+  {% if page.resource_hub or page.capability_hub %}{% assign is_hub = true %}{% endif %}
   {% assign section = 'guides' %}
+  {% if page.path contains 'capabilities/' %}{% assign section = 'capabilities' %}{% endif %}
+  {% if page.path contains 'api-evidence/' %}{% assign section = 'api-evidence' %}{% endif %}
   {% if page.path contains 'case-studies/' %}{% assign section = 'case-studies' %}{% endif %}
   {% if page.path contains 'ecommerce-trends/' %}{% assign section = 'ecommerce-trends' %}{% endif %}
   {% if page.path contains 'alternatives/' %}{% assign section = 'alternatives' %}{% endif %}
@@ -147,7 +150,8 @@
       <a class="brand" href="https://learn.nexscope.ai/" aria-label="Nexscope home"><img src="https://learn.nexscope.ai/logo.png" alt="Nexscope" width="166" height="42"></a>
       <nav aria-label="Primary">
         <a href="https://learn.nexscope.ai/tools/">Tools</a>
-        <a href="{{ '/' | relative_url }}"{% unless page.community_page %} aria-current="page"{% endunless %}>Learn</a>
+        <a href="{{ '/capabilities/' | relative_url }}"{% if section == 'capabilities' %} aria-current="page"{% endif %}>Capabilities</a>
+        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Learn</a>
         <a href="{{ '/community/' | relative_url }}"{% if page.community_page %} aria-current="page"{% endif %}>Community</a>
         <a href="https://www.nexscope.ai/api-docs?co-from=githubIO&amp;utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=learning_center">API docs</a>
         <a class="nav-cta" href="https://www.nexscope.ai/?co-from=githubIO&amp;utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=learning_center">Explore Nexscope ↗</a>
@@ -157,16 +161,16 @@
       {% unless is_hub %}
       <nav class="resource-breadcrumb" aria-label="Breadcrumb">
         <a href="{{ '/' | relative_url }}">Learn</a><span aria-hidden="true">/</span>
-        <a href="{{ section | prepend: '/' | append: '/' | relative_url }}">{% if section == 'case-studies' %}Case studies{% elsif section == 'ecommerce-trends' %}Insights{% elsif section == 'alternatives' %}Comparisons{% elsif section == 'community' %}Community{% else %}Guides{% endif %}</a>
+        <a href="{{ section | prepend: '/' | append: '/' | relative_url }}">{% if section == 'case-studies' %}Case studies{% elsif section == 'api-evidence' %}API evidence{% elsif section == 'capabilities' %}Capabilities{% elsif section == 'ecommerce-trends' %}Insights{% elsif section == 'alternatives' %}Comparisons{% elsif section == 'community' %}Community{% else %}Guides{% endif %}</a>
       </nav>
       <div class="reading-progress" aria-hidden="true"><span></span></div>
       <div class="reading-layout"><aside class="reading-sidebar" hidden><details open><summary>On this page</summary><nav aria-label="Article contents"></nav></details></aside>
       {% endunless %}
       <article>
-        {% if page.resource_hub %}{% include resource-library.html %}{% else %}{{ content }}{% endif %}
+        {% if page.resource_hub %}{% include resource-library.html %}{% elsif page.capability_hub %}{% include capability-atlas.html %}{% else %}{{ content }}{% endif %}
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official Nexscope team.</p>{% endif %}
         {% unless is_hub or page.editorial_only %}
-        <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide or find a focused tool for the task you are researching.</p><div><a href="https://learn.nexscope.ai/tools/">Find a tool →</a><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="https://www.nexscope.ai/api-docs?co-from=githubIO">Open API docs ↗</a></div></section>
+        <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide, inspect the evidence or find a focused tool for the task you are researching.</p><div><a href="{{ '/capabilities/' | relative_url }}">Explore capabilities →</a><a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a><a href="https://learn.nexscope.ai/tools/">Find a tool →</a></div></section>
         {% endunless %}
         {% unless is_hub or page.community_page %}
         <section class="article-help" aria-labelledby="article-help-title"><div><span class="eyebrow">Need help?</span><h2 id="article-help-title">Bring a real ecommerce question.</h2><p>Ask how to use a Nexscope workflow, suggest an improvement, or report a reproducible problem through the right public channel.</p></div><div class="article-help-links"><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a">Ask in Q&amp;A →</a><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas">Suggest a workflow →</a><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose">Report a bug →</a></div><p class="article-help-more"><a href="{{ '/community/' | relative_url }}">See community and support options →</a></p></section>
@@ -174,6 +178,6 @@
       </article>
       {% unless is_hub %}</div>{% endunless %}
     </main>
-    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/ecommerce-trends/' | relative_url }}">Insights</a><a href="{{ '/alternatives/' | relative_url }}">Comparisons</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
+    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/capabilities/' | relative_url }}">Capabilities</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="{{ '/ecommerce-trends/' | relative_url }}">Insights</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
   </body>
 </html>

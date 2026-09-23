@@ -7,9 +7,9 @@
 <section class="resource-paths" aria-labelledby="resource-paths-title">
   <div class="section-heading"><div><span class="eyebrow">Choose your next step</span><h2 id="resource-paths-title">A clearer way in.</h2></div><p>Start with the task or question you need to resolve.</p></div>
   <div class="resource-path-grid">
-    <a href="https://learn.nexscope.ai/tools/"><span class="resource-path-icon" aria-hidden="true">✦</span><strong>Find a tool</strong><span>Explore live research, SEO and creative tools, then use them on Nexscope.</span><b>Browse tools →</b></a>
+    <a href="{{ '/capabilities/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">01</span><strong>Explore capabilities</strong><span>Map a commerce question to the right tutorial, evidence and Nexscope capability.</span><b>Open the capability atlas →</b></a>
     <a href="{{ '/guides/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">↗</span><strong>Follow a guide</strong><span>Work through product research, SEO, sourcing or an AI integration.</span><b>Read guides →</b></a>
-    <a href="{{ '/case-studies/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">▤</span><strong>Check the evidence</strong><span>See real inputs, source limitations and the decision a result can support.</span><b>View case studies →</b></a>
+    <a href="{{ '/api-evidence/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">02</span><strong>Inspect API evidence</strong><span>See dated inputs, observed outputs, credit use and explicit limitations.</span><b>View evidence records →</b></a>
     <a href="{{ '/community/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">?</span><strong>Ask the community</strong><span>Get official help, suggest a workflow, or report a reproducible problem in the public repository.</span><b>Choose a support channel →</b></a>
   </div>
 </section>
@@ -19,18 +19,20 @@
   <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>All resources</a>
   <a href="{{ '/guides/' | relative_url }}"{% if page.url == '/guides/' %} aria-current="page"{% endif %}>Guides</a>
   <a href="{{ '/case-studies/' | relative_url }}"{% if page.url == '/case-studies/' %} aria-current="page"{% endif %}>Case studies</a>
+  <a href="{{ '/api-evidence/' | relative_url }}"{% if page.url == '/api-evidence/' %} aria-current="page"{% endif %}>API evidence</a>
   <a href="{{ '/ecommerce-trends/' | relative_url }}"{% if page.url == '/ecommerce-trends/' %} aria-current="page"{% endif %}>Insights</a>
   <a href="{{ '/alternatives/' | relative_url }}"{% if page.url == '/alternatives/' %} aria-current="page"{% endif %}>Comparisons</a>
 </nav>
 
 <section aria-labelledby="library-heading">
-  <div class="section-heading"><div><span class="eyebrow">Browse the library</span><h2 id="library-heading">{{ page.library_heading | default: 'Find your next workflow' }}</h2></div><p>Search across both Nexscope learning collections.</p></div>
+  <div class="section-heading"><div><span class="eyebrow">Browse the library</span><h2 id="library-heading">{{ page.library_heading | default: 'Find your next workflow' }}</h2></div><p>Search across the Nexscope learning collections.</p></div>
   <div class="trend-controls" hidden>
     {% if page.url == '/' %}
     <div class="topic-filters" role="group" aria-label="Filter resources by type">
       <button type="button" data-kind-filter="all" aria-pressed="true">All</button>
       <button type="button" data-kind-filter="guide" aria-pressed="false">Guides</button>
       <button type="button" data-kind-filter="case-study" aria-pressed="false">Case studies</button>
+      <button type="button" data-kind-filter="evidence" aria-pressed="false">API evidence</button>
       <button type="button" data-kind-filter="trend" aria-pressed="false">Insights</button>
       <button type="button" data-kind-filter="alternative" aria-pressed="false">Comparisons</button>
     </div>
@@ -53,6 +55,7 @@
     {% assign kind = 'guide' %}
     {% if item.path contains 'guides/' %}{% assign include_item = true %}{% endif %}
     {% if item.path contains 'case-studies/' %}{% assign include_item = true %}{% assign kind = 'case-study' %}{% endif %}
+    {% if item.path contains 'api-evidence/' %}{% assign include_item = true %}{% assign kind = 'evidence' %}{% endif %}
     {% if item.path contains 'ecommerce-trends/' %}{% assign include_item = true %}{% assign kind = 'trend' %}{% endif %}
     {% if item.path contains 'alternatives/' %}{% assign include_item = true %}{% assign kind = 'alternative' %}{% endif %}
     {% if item.resource_hub %}{% assign include_item = false %}{% endif %}
@@ -63,12 +66,12 @@
       {% if item.url contains 'api' or item.url contains 'mcp' or item.url contains 'getting-started' %}{% assign topic = 'build' %}{% endif %}
       {% if item.topic %}{% assign topic = item.topic %}{% endif %}
       <article class="trend-card resource-card" data-kind="{{ kind }}" data-topic="{{ topic }}"><a href="{{ item.url | relative_url }}">
-        <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true">{% if kind == 'alternative' %}⇄{% elsif kind == 'trend' %}◷{% elsif kind == 'case-study' %}▤{% elsif topic == 'creative' %}▷{% elsif topic == 'build' %}⌘{% else %}↗{% endif %}</span><span class="card-tag">{% if kind == 'case-study' %}CASE STUDY{% elsif kind == 'trend' %}INSIGHT{% elsif kind == 'alternative' %}COMPARISON{% else %}PRACTICAL GUIDE{% endif %}</span></div>
-        <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p>{% if item.date_published and kind == 'trend' %}<time datetime="{{ item.date_published }}">Published {{ item.date_published | date: '%b %-d, %Y' }}</time>{% endif %}<span class="read-link">{% if kind == 'case-study' %}Explore the evidence{% elsif kind == 'alternative' %}Compare options{% else %}Read the article{% endif %} →</span></div>
+        <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true">{% if kind == 'alternative' %}⇄{% elsif kind == 'trend' %}◷{% elsif kind == 'case-study' or kind == 'evidence' %}▤{% elsif topic == 'creative' %}▷{% elsif topic == 'build' %}⌘{% else %}↗{% endif %}</span><span class="card-tag">{% if kind == 'case-study' %}CASE STUDY{% elsif kind == 'evidence' %}API EVIDENCE{% elsif kind == 'trend' %}INSIGHT{% elsif kind == 'alternative' %}COMPARISON{% else %}PRACTICAL GUIDE{% endif %}</span></div>
+        <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p>{% if item.date_published and kind == 'trend' %}<time datetime="{{ item.date_published }}">Published {{ item.date_published | date: '%b %-d, %Y' }}</time>{% endif %}<span class="read-link">{% if kind == 'case-study' or kind == 'evidence' %}Explore the evidence{% elsif kind == 'alternative' %}Compare options{% else %}Read the article{% endif %} →</span></div>
       </a></article>
     {% endif %}
   {% endfor %}
   </div>
   <div class="empty-results" hidden><h3>No matching resources</h3><p>Try another term or browse a collection.</p><button class="reset-search" type="button">Clear search</button></div>
 </section>
-<aside class="resource-note"><strong>Learn here. Run the workflow on Nexscope.</strong><p>Guides explain the method and its limits. The linked tools run on the official Nexscope site; access, marketplace coverage and credit use vary by action.</p></aside>
+<aside class="resource-note"><strong>Learn here. Inspect the evidence. Run the workflow on Nexscope.</strong><p>Tutorials explain the method and its limits; evidence records document individual observed tests. Linked tools run on the official Nexscope site, where access, marketplace coverage and credit use vary by action.</p></aside>

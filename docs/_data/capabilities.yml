@@ -1,0 +1,112 @@
+- id: market-research
+  number: "01"
+  title: Product and market research
+  audience: Sellers and research teams
+  question: What is worth investigating before inventory or launch decisions?
+  description: Compare product demand, competitors, prices, reviews and marketplace context without treating one signal as a forecast.
+  guide: /amazon-competitor-analysis-template/
+  guide_label: Follow the research workflow
+  evidence: /api-evidence/amazon-price-series/
+  evidence_label: Inspect a price-series test
+  api: https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=githubIO
+  api_label: Amazon Search API
+
+- id: keyword-research
+  number: "02"
+  title: Competitor and keyword research
+  audience: Marketplace operators
+  question: Which relevant terms and competitor gaps deserve validation?
+  description: Connect marketplace queries, comparable ASINs and returned keyword evidence before changing a listing or campaign.
+  guide: /amazon-competitor-keyword-research/
+  guide_label: Research competitor keywords
+  api: https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=githubIO
+  api_label: Amazon ASIN Keywords API
+
+- id: customer-insight
+  number: "03"
+  title: Reviews and customer insight
+  audience: Product and listing teams
+  question: What are buyers repeatedly asking for or struggling with?
+  description: Collect a bounded review sample, preserve source evidence and turn recurring complaints into questions worth testing.
+  guide: /amazon-negative-review-analysis/
+  guide_label: Analyze negative reviews
+  evidence: /api-evidence/amazon-reviews-list/
+  evidence_label: Inspect the review evidence
+  api: https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=githubIO
+  api_label: Amazon Reviews List API
+
+- id: listing-optimization
+  number: "04"
+  title: Listing optimization
+  audience: Amazon sellers
+  question: Which listing change has enough evidence to test next?
+  description: Translate product, keyword and review evidence into a prioritized listing brief while keeping claims and source limits visible.
+  guide: /amazon-listing-optimization-tool/
+  guide_label: Build a listing improvement plan
+  evidence: /amazon-review-case-study/
+  evidence_label: Read the capacity-test case
+  tool: https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=githubIO
+  tool_label: Open the listing optimizer
+
+- id: seo-visibility
+  number: "05"
+  title: SEO and AI visibility
+  audience: Growth and content teams
+  question: Can search engines and AI systems retrieve a useful answer from the page?
+  description: Separate crawlability, on-page evidence, search demand and AI referral measurement instead of collapsing them into one score.
+  guide: /website-seo-audit-guide/
+  guide_label: Audit an ecommerce page
+  evidence: /ai-referral-traffic-ga4/
+  evidence_label: Review the GA4 measurement guide
+  tool: https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO
+  tool_label: Open the SEO auditor
+
+- id: sourcing
+  number: "06"
+  title: 1688 sourcing research
+  audience: Sourcing teams
+  question: Which visually similar offers deserve supplier verification?
+  description: Use image and keyword search to build a shortlist, then verify specifications, seller identity, samples and landed cost independently.
+  guide: https://learn.nexscope.ai/1688-supplier-product-sourcing/
+  guide_label: Follow the sourcing workflow
+  evidence: /api-evidence/1688-image-search/
+  evidence_label: Inspect a real image-search run
+  api: https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=githubIO
+  api_label: 1688 Search By Image API
+
+- id: product-images
+  number: "07"
+  title: AI product images
+  audience: Brands and creative teams
+  question: Can one controlled edit preserve the sellable SKU accurately?
+  description: Generate or edit product imagery with an explicit source of truth, then review identity, packaging, scene and claims before publication.
+  guide: /ai-product-image-generator/
+  guide_label: Create product images safely
+  evidence: /api-evidence/gpt-image-2-5-flare/
+  evidence_label: Inspect a real Flare run
+  api: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=githubIO
+  api_label: GPT 2.5 Flare API
+
+- id: product-video
+  number: "08"
+  title: AI product video
+  audience: Ecommerce creative teams
+  question: Which still, reference or script should become a reviewable video concept?
+  description: Choose the correct generation mode, preserve product identity and review motion, labels and claims before using an output commercially.
+  guide: /ai-video-generator/
+  guide_label: Follow the video workflow
+  tool: https://www.nexscope.ai/tools/ai-video-generator?co-from=githubIO
+  tool_label: Open the AI video generator
+
+- id: api-agents
+  number: "09"
+  title: APIs, MCP and AI agents
+  audience: Developers and AI builders
+  question: How can an agent use commerce data without losing the evidence trail?
+  description: Select a documented endpoint or MCP tool, keep credentials server-side and require source identifiers, timestamps and limitations in the result.
+  guide: /api-capabilities/
+  guide_label: Map the API workflow
+  evidence: /api-evidence/
+  evidence_label: Browse API evidence
+  api: https://www.nexscope.ai/api-docs?co-from=githubIO
+  api_label: Browse API documentation

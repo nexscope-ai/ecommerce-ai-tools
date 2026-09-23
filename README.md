@@ -1,16 +1,30 @@
 # Ecommerce AI Tools by Nexscope — AI Video Generator, Amazon Research & SEO
 
-This is Nexscope's official collection of **practical ecommerce workflows, evidence-based guides, and community support** for sellers and developers. Explore Amazon research and listing optimization, SEO, AI product image and video generation, and REST/MCP integrations. The browser tools run on Nexscope; this repository contains documentation and support resources, not the hosted application's source code.
+This is Nexscope's official public knowledge repository for its **capability atlas, practical ecommerce tutorials, traceable cases, API evidence, and community support**. Explore Amazon research and listing optimization, SEO, sourcing, AI product image and video generation, and REST/MCP integrations. The browser tools run on Nexscope; this repository contains public documentation and evidence resources, not the hosted application's source code.
 
 ## Choose your starting point
 
 | If you want to… | Start here |
 | --- | --- |
+| Understand what Nexscope can support | [Browse the capability atlas](docs/capabilities/index.md), which connects each decision to a tutorial, evidence record and official tool or API. |
 | Research a product or create a video | [Browse the workflows below](#start-with-the-ecommerce-problem-you-need-to-solve), then try the relevant browser tool. |
 | Build an ecommerce app or AI agent | [Read the API workflow guide](docs/guides/api-capabilities.md) and [browse the API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_start_developer). |
+| Verify what a real test returned | [Inspect the API evidence library](docs/api-evidence/index.md), including dated inputs, observed outputs, credit use and limitations. |
 | Ask a usage question or suggest a workflow | [Ask in Discussions](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions); use [Issues](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for reproducible bugs and trackable feature requests. |
 
 **New users receive 1,000 free credits to get started.** [Create a Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_start). Credit usage and API access depend on the action and account; trial credits do not unlock every API. For a real run with source IDs, returned counts, and limitations, read [the Amazon review case study](docs/case-studies/amazon-review-case-study.md).
+
+## Nexscope capability atlas
+
+The [Nexscope Capability Atlas](docs/capabilities/index.md) organizes the public knowledge base around nine decisions: product and market research, competitor and keyword research, review analysis, listing optimization, SEO and AI visibility, 1688 sourcing, AI product images, AI product video, and APIs/MCP/agents.
+
+Each capability points to three different kinds of resource instead of repeating the same content:
+
+- a **tutorial** explaining the repeatable workflow;
+- a **case or API evidence record** showing what one dated run actually returned;
+- the **official Nexscope tool or API reference** for current access, inputs, fields and credits.
+
+Published learning pages are available at [learn.nexscope.ai/ecommerce-ai-tools/](https://learn.nexscope.ai/ecommerce-ai-tools/). Repository Markdown remains the public source of truth and commit history for tutorials and evidence.
 
 ## Start with the ecommerce problem you need to solve
 
