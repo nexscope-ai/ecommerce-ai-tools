@@ -44,8 +44,8 @@
   {% if page.url == '/' or page.resource_type == 'guide' %}
     {% for item in site.data.site_guides %}
     <article class="trend-card resource-card" data-kind="guide" data-topic="{{ item.topic }}"><a href="{{ item.url }}">
-      <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true">↗</span><span class="card-tag">PRACTICAL GUIDE</span></div>
-      <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p><span class="read-link">Read the guide →</span></div>
+      <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true"><img src="{{ '/assets/category-icons/guide.webp' | relative_url }}" alt="" width="56" height="56" loading="lazy" decoding="async"></span><span class="card-tag">PRACTICAL GUIDE</span></div>
+      <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p><div class="resource-card-footer"><span class="read-link">Read the guide →</span>{% if item.date_published %}<time datetime="{{ item.date_published | date: '%Y-%m-%d' }}">Published {{ item.date_published | date: '%b %-d, %Y' }}</time>{% endif %}</div></div>
     </a></article>
     {% endfor %}
   {% endif %}
@@ -65,9 +65,11 @@
       {% if item.url contains 'video' %}{% assign topic = 'creative' %}{% endif %}
       {% if item.url contains 'api' or item.url contains 'mcp' or item.url contains 'getting-started' %}{% assign topic = 'build' %}{% endif %}
       {% if item.topic %}{% assign topic = item.topic %}{% endif %}
+      {% assign icon_path = '/assets/category-icons/guide.webp' %}
+      {% if kind == 'case-study' %}{% assign icon_path = '/assets/category-icons/case.webp' %}{% elsif kind == 'evidence' %}{% assign icon_path = '/assets/category-icons/evidence.webp' %}{% elsif kind == 'trend' %}{% assign icon_path = '/assets/category-icons/insight.webp' %}{% elsif kind == 'alternative' %}{% assign icon_path = '/assets/category-icons/comparison.webp' %}{% endif %}
       <article class="trend-card resource-card" data-kind="{{ kind }}" data-topic="{{ topic }}"><a href="{{ item.url | relative_url }}">
-        <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true">{% if kind == 'alternative' %}⇄{% elsif kind == 'trend' %}◷{% elsif kind == 'case-study' or kind == 'evidence' %}▤{% elsif topic == 'creative' %}▷{% elsif topic == 'build' %}⌘{% else %}↗{% endif %}</span><span class="card-tag">{% if kind == 'case-study' %}CASE STUDY{% elsif kind == 'evidence' %}API EVIDENCE{% elsif kind == 'trend' %}INSIGHT{% elsif kind == 'alternative' %}COMPARISON{% else %}PRACTICAL GUIDE{% endif %}</span></div>
-        <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p>{% if item.date_published and kind == 'trend' %}<time datetime="{{ item.date_published }}">Published {{ item.date_published | date: '%b %-d, %Y' }}</time>{% endif %}<span class="read-link">{% if kind == 'case-study' or kind == 'evidence' %}Explore the evidence{% elsif kind == 'alternative' %}Compare options{% else %}Read the article{% endif %} →</span></div>
+        <div class="resource-card-top"><span class="resource-symbol" aria-hidden="true"><img src="{{ icon_path | relative_url }}" alt="" width="56" height="56" loading="lazy" decoding="async"></span><span class="card-tag">{% if kind == 'case-study' %}CASE STUDY{% elsif kind == 'evidence' %}API EVIDENCE{% elsif kind == 'trend' %}INSIGHT{% elsif kind == 'alternative' %}COMPARISON{% else %}PRACTICAL GUIDE{% endif %}</span></div>
+        <div class="card-body"><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p><div class="resource-card-footer"><span class="read-link">{% if kind == 'case-study' or kind == 'evidence' %}Explore the evidence{% elsif kind == 'alternative' %}Compare options{% else %}Read the article{% endif %} →</span>{% if item.date_published %}<time datetime="{{ item.date_published | date: '%Y-%m-%d' }}">Published {{ item.date_published | date: '%b %-d, %Y' }}</time>{% endif %}</div></div>
       </a></article>
     {% endif %}
   {% endfor %}

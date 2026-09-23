@@ -3,7 +3,10 @@ layout: default
 title: Nexscope API capabilities and ecommerce workflows
 description: A practical map of Nexscope ecommerce data, SEO and GEO, creative AI, REST, and MCP capabilities with workflow examples and limitations.
 permalink: /api-capabilities/
+date_published: 2026-09-14
 last_reviewed: 2026-09-17
+date_modified: 2026-09-17
+schema_type: Article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
 image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
 image_alt: An AI assistant connected through a central server to ecommerce research, review, trend, and video tools

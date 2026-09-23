@@ -3,7 +3,10 @@ layout: default
 title: How to audit an ecommerce product page for SEO
 description: Audit an ecommerce product page for crawlability, metadata, content, links, structured data, and mobile performance evidence.
 permalink: /website-seo-audit-guide/
+date_published: 2026-09-15
 last_reviewed: 2026-09-15
+date_modified: 2026-09-15
+schema_type: Article
 image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp
 image_small: /assets/images/ecommerce-product-page-seo-audit-720w.webp
 image_alt: Ecommerce product page inspected for crawlability, content, links, images, structured data, and mobile performance
