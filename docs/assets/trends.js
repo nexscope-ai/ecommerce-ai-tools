@@ -95,6 +95,71 @@
     });
     filter();
   }
+
+  const atlasControls = document.querySelector('[data-atlas-controls]');
+  if (atlasControls) {
+    atlasControls.hidden = false;
+    const search = atlasControls.querySelector('[data-atlas-search]');
+    const capability = atlasControls.querySelector('[data-atlas-capability]');
+    const type = atlasControls.querySelector('[data-atlas-type]');
+    const reset = atlasControls.querySelector('[data-atlas-reset]');
+    const records = [...document.querySelectorAll('[data-atlas-record]')];
+    const count = document.querySelector('[data-atlas-count]');
+    const empty = document.querySelector('[data-atlas-empty]');
+    const expand = document.querySelector('[data-atlas-expand]');
+
+    const filterAtlas = () => {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+      records.forEach(record => {
+        const capabilityMatches = capability.value === 'all' || record.dataset.capability === capability.value;
+        const typeMatches = type.value === 'all' || record.dataset.type === type.value;
+        const searchMatches = !query || record.textContent.toLowerCase().includes(query);
+        const matches = capabilityMatches && typeMatches && searchMatches;
+        record.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      count.textContent = String(visible);
+      empty.hidden = visible > 0;
+    };
+
+    search.addEventListener('input', filterAtlas);
+    capability.addEventListener('change', filterAtlas);
+    type.addEventListener('change', filterAtlas);
+    reset.addEventListener('click', () => {
+      search.value = '';
+      capability.value = 'all';
+      type.value = 'all';
+      filterAtlas();
+      search.focus();
+    });
+
+    document.querySelectorAll('[data-atlas-jump]').forEach(button => {
+      button.addEventListener('click', () => {
+        search.value = '';
+        capability.value = button.dataset.atlasJump;
+        type.value = 'all';
+        filterAtlas();
+        document.querySelector('#atlas-library')?.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          block: 'start',
+        });
+      });
+    });
+
+    let detailsExpanded = false;
+    expand.addEventListener('click', () => {
+      detailsExpanded = !detailsExpanded;
+      records.filter(record => !record.hidden).forEach(record => {
+        const details = record.querySelector('details');
+        if (details) details.open = detailsExpanded;
+      });
+      expand.textContent = detailsExpanded ? 'Collapse all details' : 'Expand all details';
+    });
+
+    filterAtlas();
+  }
+
   const sidebar = document.querySelector('.reading-sidebar');
   if (!sidebar) return;
   const article = document.querySelector('main article');

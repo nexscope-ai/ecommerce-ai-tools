@@ -1,0 +1,287 @@
+- id: NEX-01
+  capability: market-research
+  capability_label: Product & market research
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Product opportunity workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow that connects a product question to market and competitor research.
+  input: Product question and marketplace scope
+  evidence: Research inputs and source notes to be added
+  action: Decision framework to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No result, API response or business outcome is claimed.
+
+- id: NEX-02
+  capability: market-research
+  capability_label: Product & market research
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Product research case
+  source: Content placeholder
+  summary: Reserved for a future product and market research case.
+  input: Case question and comparison set to be added
+  evidence: Source records and observations to be added
+  action: Final decision and next step to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No tested result is represented by this placeholder.
+
+- id: NEX-03
+  capability: keyword-research
+  capability_label: Competitor & keyword research
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Competitor keyword workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow covering competitor discovery and keyword qualification.
+  input: Marketplace, competitor set and target question
+  evidence: Keyword and competitor fields to be added
+  action: Prioritization method to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No keyword metric or ranking result is claimed.
+
+- id: NEX-04
+  capability: keyword-research
+  capability_label: Competitor & keyword research
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Reverse-ASIN research case
+  source: Content placeholder
+  summary: Reserved for a future reverse-ASIN research example.
+  input: ASIN and market scope to be added
+  evidence: Returned fields and source notes to be added
+  action: Keyword decision to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No API call or keyword result is represented here.
+
+- id: NEX-05
+  capability: customer-insight
+  capability_label: Reviews & customer insight
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Review insight workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow that turns a bounded review sample into testable customer questions.
+  input: Product, marketplace and review scope
+  evidence: Review excerpts and theme labels to be added
+  action: Product or listing questions to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No review coverage or customer conclusion is claimed.
+
+- id: NEX-06
+  capability: customer-insight
+  capability_label: Reviews & customer insight
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Customer complaint analysis case
+  source: Content placeholder
+  summary: Reserved for a future example of tracing a customer insight back to review evidence.
+  input: Review sample and analysis question to be added
+  evidence: Source excerpts and interpretation to be added
+  action: Proposed validation step to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No observed review result is represented here.
+
+- id: NEX-07
+  capability: listing-optimization
+  capability_label: Listing optimization
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Listing improvement workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow that turns product, keyword and customer evidence into a listing brief.
+  input: Listing and approved product facts
+  evidence: Gap analysis and source notes to be added
+  action: Prioritized listing test to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No conversion or ranking improvement is claimed.
+
+- id: NEX-08
+  capability: listing-optimization
+  capability_label: Listing optimization
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Listing change case
+  source: Content placeholder
+  summary: Reserved for a future before-and-after listing case.
+  input: Baseline listing and one proposed change
+  evidence: Source justification and experiment data to be added
+  action: Keep, revise or revert decision to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No experiment outcome is represented here.
+
+- id: NEX-09
+  capability: seo-visibility
+  capability_label: SEO & AI visibility
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Search and AI visibility workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow separating crawlability, page evidence, search demand and AI visibility.
+  input: Public page and target question
+  evidence: Search and page signals to be added
+  action: Prioritized optimization plan to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No ranking, citation or traffic result is claimed.
+
+- id: NEX-10
+  capability: seo-visibility
+  capability_label: SEO & AI visibility
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Visibility baseline case
+  source: Content placeholder
+  summary: Reserved for a future baseline across search performance, referrals and sampled AI answers.
+  input: Page, query set and measurement window to be added
+  evidence: Baseline observations to be added
+  action: Follow-up measurement plan to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No search or AI visibility result is represented here.
+
+- id: NEX-11
+  capability: sourcing
+  capability_label: 1688 sourcing research
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: 1688 sourcing workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow covering product discovery, comparison and supplier verification.
+  input: Product reference and sourcing constraints
+  evidence: Candidate products and supplier checks to be added
+  action: Verification shortlist to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No product match or supplier endorsement is claimed.
+
+- id: NEX-12
+  capability: sourcing
+  capability_label: 1688 sourcing research
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Supplier shortlist case
+  source: Content placeholder
+  summary: Reserved for a future sourcing example with documented product and supplier checks.
+  input: Candidate set and procurement requirements to be added
+  evidence: Specification and supplier records to be added
+  action: Keep, reject or verify decision to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No supplier or commercial result is represented here.
+
+- id: NEX-13
+  capability: product-images
+  capability_label: AI product images
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Product image workflow
+  source: Content placeholder
+  summary: Reserved for a future product-image workflow with source-of-truth and review checkpoints.
+  input: Product reference and creative brief
+  evidence: Prompt, settings and output review to be added
+  action: Approve, revise or reject step to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No generated asset or model result is represented here.
+
+- id: NEX-14
+  capability: product-images
+  capability_label: AI product images
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Product fidelity case
+  source: Content placeholder
+  summary: Reserved for a future comparison between a source product and generated image variants.
+  input: Source image and creative variants to be added
+  evidence: Attribute-level review to be added
+  action: Asset decision and revision notes to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No model-quality benchmark is claimed.
+
+- id: NEX-15
+  capability: product-video
+  capability_label: AI product video
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Product video workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow covering source assets, generation mode and frame-level review.
+  input: Product assets and motion brief
+  evidence: Generation settings and output review to be added
+  action: Approve, regenerate or reject step to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No generated video or model result is represented here.
+
+- id: NEX-16
+  capability: product-video
+  capability_label: AI product video
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Product video review case
+  source: Content placeholder
+  summary: Reserved for a future case comparing generated concepts against product and platform requirements.
+  input: Source assets and candidate videos to be added
+  evidence: Frame-level checks and review rubric to be added
+  action: Selected concept and corrections to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No creative or advertising outcome is claimed.
+
+- id: NEX-17
+  capability: api-agents
+  capability_label: APIs, MCP & AI agents
+  type: workflow
+  type_label: Workflow
+  status: planned
+  status_label: Placeholder
+  title: Ecommerce agent workflow
+  source: Content placeholder
+  summary: Reserved for a future workflow mapping a commerce question to a controlled tool call and traceable result.
+  input: Agent question and allowed capabilities
+  evidence: Tool schema, call trace and response to be added
+  action: Validation and next-step logic to be added
+  takeaway: This record is intentionally empty until the workflow is reviewed.
+  boundary: No autonomous deployment or API behavior is claimed.
+
+- id: NEX-18
+  capability: api-agents
+  capability_label: APIs, MCP & AI agents
+  type: case
+  type_label: Case
+  status: planned
+  status_label: Placeholder
+  title: Evidence-preserving agent case
+  source: Content placeholder
+  summary: Reserved for a future example of an agent retaining sources while producing a commerce decision brief.
+  input: Research task and approved tool set to be added
+  evidence: Tool-call trace and citations to be added
+  action: Accept, revise or reject decision to be added
+  takeaway: This record is intentionally empty until the case is reviewed.
+  boundary: No agent result or production outcome is represented here.

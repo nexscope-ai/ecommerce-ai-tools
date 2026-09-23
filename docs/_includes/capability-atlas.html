@@ -1,49 +1,157 @@
-<section class="capability-hero">
-  <div>
-    <span class="eyebrow">Nexscope capability atlas</span>
-    <h1>Start with the decision.<br><span>Follow the evidence.</span></h1>
-  </div>
-  <div>
-    <p>Map an ecommerce question to a practical tutorial, an inspectable test or case, and the Nexscope tool or API that can support the next step.</p>
-    <div class="capability-hero-links">
-      <a href="{{ '/guides/' | relative_url }}">Browse tutorials →</a>
-      <a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a>
+{% assign atlas_records = site.data.capability_library %}
+<nav class="atlas-nav" aria-label="Capability atlas sections">
+  <a href="#atlas-overview">Overview</a>
+  <a href="#atlas-map">Capability map</a>
+  <a href="#atlas-library">Library</a>
+  <a href="#atlas-insights">Design notes</a>
+  <a href="#atlas-method">How to read</a>
+</nav>
+
+<section class="atlas-hero" id="atlas-overview" aria-labelledby="atlas-title">
+  <div class="atlas-hero-copy">
+    <span class="eyebrow">Nexscope capability atlas · structure preview</span>
+    <h1 id="atlas-title">See the question.<br><span>Trace the workflow.</span></h1>
+    <p>This page is the working structure for Nexscope commerce capabilities. Every library record is intentionally marked as a placeholder so each workflow and case can be reviewed before publication.</p>
+    <div class="atlas-hero-actions">
+      <a class="atlas-primary-action" href="#atlas-library">Browse placeholders ↓</a>
+      <a class="atlas-secondary-action" href="#atlas-map">Explore by capability</a>
     </div>
+    <p class="atlas-disclosure">Structure only · No placeholder represents a tested result, customer deployment or business outcome.</p>
+  </div>
+  <div class="atlas-decision-model" aria-label="Proposed workflow structure">
+    <span class="atlas-model-label">THE RECORD FORMAT</span>
+    <div><small>01 · QUESTION</small><strong>What decision needs support?</strong></div>
+    <span aria-hidden="true">↓</span>
+    <div><small>02 · INPUTS</small><strong>What information will be inspected?</strong></div>
+    <span aria-hidden="true">↓</span>
+    <div><small>03 · NEXT STEP</small><strong>What can the user do with it?</strong></div>
   </div>
 </section>
 
-<ol class="capability-process" aria-label="How to use the capability atlas">
-  <li><span>1</span><strong>Choose a question</strong><small>Define the decision before choosing data.</small></li>
-  <li><span>2</span><strong>Follow the tutorial</strong><small>Use a repeatable workflow and keep its limits visible.</small></li>
-  <li><span>3</span><strong>Inspect the evidence</strong><small>Check real inputs, outputs, dates and caveats.</small></li>
-  <li><span>4</span><strong>Run the capability</strong><small>Verify current access, fields and credits on Nexscope.</small></li>
-</ol>
+<dl class="atlas-stats" aria-label="Capability atlas status">
+  <div><dt>09</dt><dd>capability modules</dd></div>
+  <div><dt>{{ atlas_records | size }}</dt><dd>placeholder records</dd></div>
+  <div><dt>02</dt><dd>record formats</dd></div>
+  <div><dt>00</dt><dd>published results</dd></div>
+</dl>
 
-<section class="capability-map" aria-labelledby="capability-map-title">
-  <div class="section-heading">
-    <div><span class="eyebrow">Explore by decision</span><h2 id="capability-map-title">Nine connected commerce capabilities</h2></div>
-    <p>Tutorials and evidence stay public in this GitHub repository.</p>
-  </div>
-  <div class="capability-grid">
+<section class="atlas-section" id="atlas-map" aria-labelledby="atlas-map-title">
+  <header class="atlas-section-heading">
+    <div>
+      <span class="eyebrow">Explore by capability</span>
+      <h2 id="atlas-map-title">Start from the work you want to do.</h2>
+    </div>
+    <p>Nine modules provide the initial information architecture. Selecting one opens its records in the library below.</p>
+  </header>
+  <div class="atlas-map-grid">
     {% for item in site.data.capabilities %}
-    <article class="capability-card" id="{{ item.id }}">
-      <div class="capability-card-top"><span>{{ item.number }}</span><small>{{ item.audience }}</small></div>
+    <article class="atlas-map-card" id="{{ item.id }}">
+      <div class="atlas-map-card-top"><span>{{ item.number }}</span><small>2 placeholders</small></div>
       <h3>{{ item.title }}</h3>
-      <strong>{{ item.question }}</strong>
-      <p>{{ item.description }}</p>
-      <div class="capability-links">
-        <a href="{% if item.guide contains '://' %}{{ item.guide }}{% else %}{{ item.guide | relative_url }}{% endif %}">{{ item.guide_label }} →</a>
-        {% if item.evidence %}<a href="{{ item.evidence | relative_url }}">{{ item.evidence_label }} →</a>{% endif %}
-        {% if item.tool %}<a href="{{ item.tool }}">{{ item.tool_label }} ↗</a>{% endif %}
-        {% if item.api %}<a href="{{ item.api }}">{{ item.api_label }} ↗</a>{% endif %}
-      </div>
+      <p>{{ item.question }}</p>
+      <button type="button" data-atlas-jump="{{ item.id }}" aria-label="Show {{ item.title }} placeholders">Open module <span aria-hidden="true">→</span></button>
     </article>
     {% endfor %}
   </div>
 </section>
 
-<aside class="capability-boundary">
-  <div><span class="eyebrow">Evidence boundary</span><h2>Capability does not mean certainty.</h2></div>
-  <p>Nexscope can return structured marketplace, search and creative results. A returned field, ranking, generated asset or AI summary still needs to be checked against its source, market, collection time and intended decision. The evidence library documents what one observed run can—and cannot—support.</p>
-  <a href="{{ '/api-evidence/' | relative_url }}">Open the API evidence library →</a>
-</aside>
+<section class="atlas-section atlas-library" id="atlas-library" aria-labelledby="atlas-library-title">
+  <header class="atlas-section-heading">
+    <div>
+      <span class="eyebrow">The workflow library</span>
+      <h2 id="atlas-library-title">Browse the structure before the content.</h2>
+    </div>
+    <p>Search and filters are functional now. The records themselves remain placeholders until you replace them module by module.</p>
+  </header>
+
+  <div class="atlas-controls" data-atlas-controls hidden>
+    <label class="atlas-search">
+      <span>Search placeholders</span>
+      <input type="search" data-atlas-search placeholder="Search title, capability or planned input" autocomplete="off">
+    </label>
+    <label>
+      <span>Capability</span>
+      <select data-atlas-capability>
+        <option value="all">All capabilities</option>
+        {% for item in site.data.capabilities %}<option value="{{ item.id }}">{{ item.title }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>
+      <span>Record format</span>
+      <select data-atlas-type>
+        <option value="all">All formats</option>
+        <option value="workflow">Workflow</option>
+        <option value="case">Case</option>
+      </select>
+    </label>
+    <button class="atlas-reset" type="button" data-atlas-reset>Reset filters</button>
+  </div>
+
+  <div class="atlas-results-bar" aria-live="polite">
+    <p><strong data-atlas-count>{{ atlas_records | size }}</strong> of {{ atlas_records | size }} placeholder records</p>
+    <button type="button" data-atlas-expand>Expand all details</button>
+  </div>
+
+  <div class="atlas-records">
+    {% for record in atlas_records %}
+    <article class="atlas-record" id="{{ record.id }}" data-atlas-record data-capability="{{ record.capability }}" data-type="{{ record.type }}">
+      <div class="atlas-record-meta">
+        <span>{{ record.id }}</span>
+        <span>{{ record.capability_label }}</span>
+        <span>{{ record.type_label }}</span>
+        <span class="atlas-placeholder-badge">{{ record.status_label }}</span>
+      </div>
+      <div class="atlas-record-heading">
+        <div><h3>{{ record.title }}</h3><p>{{ record.source }}</p></div>
+        <span aria-hidden="true">◌</span>
+      </div>
+      <p class="atlas-record-summary">{{ record.summary }}</p>
+      <ol class="atlas-record-flow" aria-label="Planned record flow">
+        <li><span>01 · Input</span><strong>{{ record.input }}</strong></li>
+        <li><span>02 · Evidence</span><strong>{{ record.evidence }}</strong></li>
+        <li><span>03 · Action</span><strong>{{ record.action }}</strong></li>
+      </ol>
+      <div class="atlas-record-note"><span>Design note</span><p>{{ record.takeaway }}</p></div>
+      <details>
+        <summary>Placeholder boundary <span>What this record does not claim</span></summary>
+        <p>{{ record.boundary }}</p>
+      </details>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="atlas-empty" data-atlas-empty hidden>
+    <strong>No placeholder matches these filters.</strong>
+    <p>Reset the filters or choose another capability.</p>
+  </div>
+</section>
+
+<section class="atlas-section" id="atlas-insights" aria-labelledby="atlas-insights-title">
+  <header class="atlas-section-heading">
+    <div>
+      <span class="eyebrow">Design notes</span>
+      <h2 id="atlas-insights-title">What the finished atlas should make clear.</h2>
+    </div>
+    <p>These are structural rules for future content, not performance claims.</p>
+  </header>
+  <div class="atlas-insight-grid">
+    <article><span>01</span><h3>Start with a decision</h3><p>Every record should answer one bounded commerce question instead of advertising an abstract feature.</p></article>
+    <article><span>02</span><h3>Keep sources visible</h3><p>Inputs, collection dates and source limitations should stay close to any interpretation.</p></article>
+    <article><span>03</span><h3>Separate judgment from action</h3><p>A recommendation should not be presented as an executed or successful business change.</p></article>
+    <article><span>04</span><h3>Replace placeholders deliberately</h3><p>Publish a record only after its title, scope, evidence and boundary have all been reviewed.</p></article>
+  </div>
+</section>
+
+<section class="atlas-section atlas-method" id="atlas-method" aria-labelledby="atlas-method-title">
+  <div>
+    <span class="eyebrow">How to read this preview</span>
+    <h2 id="atlas-method-title">The structure is live. The claims are not.</h2>
+  </div>
+  <div>
+    <p>The module map, search, filters and record layout are ready for review. All records use neutral placeholder language and carry an explicit boundary. Replace them gradually with approved workflows and cases.</p>
+    <ul>
+      <li><strong>Workflow</strong> describes a repeatable sequence the user can follow.</li>
+      <li><strong>Case</strong> will document one bounded example with inspectable source material.</li>
+      <li><strong>Placeholder</strong> means the record contains no published test or outcome.</li>
+    </ul>
+  </div>
+</section>

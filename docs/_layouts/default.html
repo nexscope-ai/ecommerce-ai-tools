@@ -129,8 +129,8 @@
       .reviewed { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
-    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=4">
-    <script src="{{ '/assets/trends.js' | relative_url }}?v=4" defer></script>
+    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=5">
+    <script src="{{ '/assets/trends.js' | relative_url }}?v=5" defer></script>
     <script src="https://learn.nexscope.ai/analytics.js?v=4" defer></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="q6pDSjaAKMskPeTdzPWCtQ" async></script>
     <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
@@ -178,6 +178,6 @@
       </article>
       {% unless is_hub %}</div>{% endunless %}
     </main>
-    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/capabilities/' | relative_url }}">Capabilities</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="{{ '/ecommerce-trends/' | relative_url }}">Insights</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
+    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/capabilities/' | relative_url }}">Capabilities</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a>{% unless page.capability_hub %}<a href="{{ '/api-evidence/' | relative_url }}">API evidence</a>{% endunless %}<a href="{{ '/ecommerce-trends/' | relative_url }}">Insights</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
   </body>
 </html>
