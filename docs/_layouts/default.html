@@ -35,7 +35,14 @@
           "name": "Nexscope",
           "url": "https://www.nexscope.ai/",
           "sameAs": ["https://github.com/nexscope-ai"]
-        },
+        }{% if page.subject_name %},
+        {
+          "@type": {{ page.subject_type | default: 'Thing' | jsonify }},
+          "@id": "{{ page.subject_url }}#entity",
+          "name": {{ page.subject_name | jsonify }},
+          "url": {{ page.subject_url | jsonify }}{% if page.subject_same_as %},
+          "sameAs": {{ page.subject_same_as | jsonify }}{% endif %}
+        }{% endif %},
         {
           "@type": "WebSite",
           "@id": "https://learn.nexscope.ai/ecommerce-ai-tools/#website",
@@ -50,7 +57,7 @@
           "name": {{ page.title | default: site.title | jsonify }},
           "description": {{ page.description | default: site.description | jsonify }},
           "isPartOf": { "@id": "https://learn.nexscope.ai/ecommerce-ai-tools/#website" },
-          "about": { "@id": "https://www.nexscope.ai/#organization" }{% if page.image %},
+          "about": { "@id": "{% if page.subject_name %}{{ page.subject_url }}#entity{% else %}https://www.nexscope.ai/#organization{% endif %}" }{% if page.image %},
           "primaryImageOfPage": {
             "@type": "ImageObject",
             "url": "{{ page.image | absolute_url }}",
@@ -67,7 +74,8 @@
           "dateModified": {{ page.date_modified | default: page.date_published | jsonify }},
           "author": { "@id": "https://www.nexscope.ai/#organization" },
           "publisher": { "@id": "https://www.nexscope.ai/#organization" },
-          "mainEntityOfPage": { "@id": "{{ page.url | absolute_url }}#webpage" }{% if page.image %},
+          "mainEntityOfPage": { "@id": "{{ page.url | absolute_url }}#webpage" }{% if page.subject_name %},
+          "about": { "@id": "{{ page.subject_url }}#entity" }{% endif %}{% if page.image %},
           "image": "{{ page.image | absolute_url }}"{% endif %}
         }{% endif %}{% if page.faq %},
         {
@@ -170,7 +178,7 @@
         {% unless is_hub or page.editorial_only %}
         <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide, inspect the evidence or find a focused tool for the task you are researching.</p><div><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a><a href="https://learn.nexscope.ai/tools/">Find a tool →</a></div></section>
         {% endunless %}
-        {% unless is_hub or page.community_page %}
+        {% unless is_hub or page.community_page or page.suppress_article_help %}
         <section class="article-help" aria-labelledby="article-help-title"><div><span class="eyebrow">Need help?</span><h2 id="article-help-title">Bring a real ecommerce question.</h2><p>Ask how to use a Nexscope workflow, suggest an improvement, or report a reproducible problem through the right public channel.</p></div><div class="article-help-links"><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a">Ask in Q&amp;A →</a><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas">Suggest a workflow →</a><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose">Report a bug →</a></div><p class="article-help-more"><a href="{{ '/community/' | relative_url }}">See community and support options →</a></p></section>
         {% endunless %}
       </article>
