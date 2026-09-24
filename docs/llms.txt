@@ -1,0 +1,38 @@
+# Nexscope Ecommerce AI Tools
+
+> Official Nexscope learning library with ecommerce guides, comparisons, case studies, trend analysis, and documented API evidence.
+
+Canonical section: https://learn.nexscope.ai/ecommerce-ai-tools/
+Language: English
+
+## Core guides
+
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-mcp-server/ — connect marketplace research APIs to AI agents with MCP
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-api-for-ai-agents/ — Amazon demand, competitor, keyword, and review APIs for agents
+- https://learn.nexscope.ai/ecommerce-ai-tools/what-is-an-mcp-server/ — MCP concepts, clients, servers, tools, resources, and permissions
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-capabilities/ — ecommerce API capabilities and evidence boundaries
+- https://learn.nexscope.ai/ecommerce-ai-tools/amazon-competitor-keyword-research/ — competitor keyword research workflow
+- https://learn.nexscope.ai/ecommerce-ai-tools/amazon-negative-review-analysis/ — customer complaint and review analysis
+- https://learn.nexscope.ai/ecommerce-ai-tools/website-seo-audit-guide/ — ecommerce page SEO audit
+- https://learn.nexscope.ai/ecommerce-ai-tools/ai-video-generator/ — AI product-video workflow
+- https://learn.nexscope.ai/ecommerce-ai-tools/ai-product-image-generator/ — AI product-image workflow
+
+## Evidence
+
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/ — index of documented API evidence
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/amazon-reviews-list/ — Amazon review request and response evidence
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/amazon-price-series/ — Amazon price-history evidence
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/1688-image-search/ — 1688 image-search evidence
+- https://learn.nexscope.ai/ecommerce-ai-tools/amazon-review-case-study/ — review-analysis case study
+
+## Comparisons
+
+- https://learn.nexscope.ai/ecommerce-ai-tools/alternatives/helium-10-alternative/ — Helium 10 and Nexscope fit comparison
+- https://learn.nexscope.ai/ecommerce-ai-tools/alternatives/keepa-api-alternative/ — Keepa API and Nexscope fit comparison
+- https://learn.nexscope.ai/ecommerce-ai-tools/alternatives/rainforest-api-alternative/ — Rainforest API and Nexscope fit comparison
+- https://learn.nexscope.ai/ecommerce-ai-tools/alternatives/sellersprite-alternative/ — SellerSprite and Nexscope fit comparison
+
+## Editorial and evidence policy
+
+Pages distinguish observed test results, vendor-documented capabilities, provider estimates, proposed workflows, and unknown values. Product coverage, availability, freshness, authentication, and credit requirements can change. Use the linked official documentation as the source of truth before production use.
+
