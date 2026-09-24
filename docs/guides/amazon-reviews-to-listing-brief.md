@@ -7,6 +7,7 @@ schema_type: Article
 og_type: article
 date_published: "2026-09-17"
 date_modified: "2026-09-17"
+last_modified_at: "2026-09-17"
 last_reviewed: 2026-09-17
 image: /assets/images/amazon-review-product-insights-1440w.webp
 image_small: /assets/images/amazon-review-product-insights-720w.webp

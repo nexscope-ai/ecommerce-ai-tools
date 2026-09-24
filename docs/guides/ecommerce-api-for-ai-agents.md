@@ -6,6 +6,7 @@ permalink: /ecommerce-api-for-ai-agents/
 last_reviewed: 2026-09-22
 date_published: 2026-09-17
 date_modified: 2026-09-22
+last_modified_at: 2026-09-22
 author: Nexscope Team
 schema_type: Article
 og_type: article

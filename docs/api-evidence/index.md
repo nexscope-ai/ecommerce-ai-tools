@@ -3,6 +3,7 @@ layout: default
 title: Nexscope API Evidence Library | Real Tests and Limitations
 description: Inspect dated Nexscope API and creative-tool tests with real inputs, observed outputs, credit usage, source artifacts and explicit limitations.
 permalink: /api-evidence/
+last_modified_at: 2026-09-23
 resource_hub: true
 resource_type: evidence
 hero_title: Real tests.

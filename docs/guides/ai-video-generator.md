@@ -6,6 +6,7 @@ permalink: /ai-video-generator/
 last_reviewed: 2026-09-17
 date_published: 2026-09-15
 date_modified: 2026-09-17
+last_modified_at: 2026-09-17
 author: Nexscope Team
 schema_type: Article
 og_type: article

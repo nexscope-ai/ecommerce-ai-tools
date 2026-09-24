@@ -3,6 +3,7 @@ layout: default
 title: Ecommerce Trends and AI Shopping Insights
 description: Follow practical Nexscope analysis of AI shopping, marketplaces, product research and creative workflows.
 permalink: /ecommerce-trends/
+last_modified_at: 2026-09-22
 resource_hub: true
 resource_type: trend
 hero_title: What is changing?

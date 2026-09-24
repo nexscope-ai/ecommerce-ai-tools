@@ -3,6 +3,7 @@ layout: default
 title: Nexscope Ecommerce Community and Support
 description: Ask Nexscope usage questions, suggest ecommerce workflows, report reproducible bugs, and find the right support channel.
 permalink: /community/
+last_modified_at: 2026-09-23
 last_reviewed: 2026-09-23
 community_page: true
 editorial_only: true

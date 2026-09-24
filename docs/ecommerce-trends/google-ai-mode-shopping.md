@@ -6,6 +6,7 @@ permalink: /ecommerce-trends/google-ai-mode-shopping/
 last_reviewed: 2026-09-18
 date_published: 2026-09-18
 date_modified: 2026-09-18
+last_modified_at: 2026-09-18
 author: Nexscope Team
 schema_type: Article
 og_type: article

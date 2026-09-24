@@ -3,6 +3,7 @@ layout: default
 title: Ecommerce Case Studies with Traceable Evidence
 description: See Nexscope workflows in practice, with real inputs, source evidence, sample limitations and testable next steps.
 permalink: /case-studies/
+last_modified_at: 2026-09-17
 resource_hub: true
 resource_type: case-study
 hero_title: Real workflows.

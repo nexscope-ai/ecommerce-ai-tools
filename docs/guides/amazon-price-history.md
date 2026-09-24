@@ -6,6 +6,7 @@ permalink: /amazon-price-history/
 last_reviewed: 2026-09-17
 date_published: 2026-09-17
 date_modified: 2026-09-17
+last_modified_at: 2026-09-17
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -130,4 +131,4 @@ Yes. Review the [Amazon Product Price Series API documentation](https://www.nexs
 
 ## Start with one ASIN
 
-Choose one comparable product, write down the decision you are investigating, and preserve the returned dates and units. **[Explore the Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_bottom)** or browse the [Amazon research workflow](https://learn.nexscope.ai/amazon-research.html) before expanding the analysis.
+Choose one comparable product, write down the decision you are investigating, and preserve the returned dates and units. **[Explore the Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_bottom)** or browse the [Amazon research workflow](https://learn.nexscope.ai/amazon-research/) before expanding the analysis.

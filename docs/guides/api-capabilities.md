@@ -6,6 +6,7 @@ permalink: /api-capabilities/
 date_published: 2026-09-14
 last_reviewed: 2026-09-17
 date_modified: 2026-09-17
+last_modified_at: 2026-09-17
 schema_type: Article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
 image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp

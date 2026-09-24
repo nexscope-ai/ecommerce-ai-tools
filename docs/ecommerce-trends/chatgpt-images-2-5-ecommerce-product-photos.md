@@ -6,6 +6,7 @@ permalink: /ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/
 last_reviewed: 2026-09-20
 date_published: 2026-09-20
 date_modified: 2026-09-20
+last_modified_at: 2026-09-20
 author: Nexscope Team
 schema_type: Article
 og_type: article
