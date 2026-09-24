@@ -3,8 +3,8 @@ layout: default
 title: Nexscope Ecommerce Community and Support
 description: Ask Nexscope usage questions, suggest ecommerce workflows, report reproducible bugs, and find the right support channel.
 permalink: /community/
-last_modified_at: 2026-09-23
-last_reviewed: 2026-09-23
+last_modified_at: 2026-09-24
+last_reviewed: 2026-09-24
 community_page: true
 editorial_only: true
 faq:
@@ -19,6 +19,8 @@ faq:
 # Nexscope ecommerce community and support
 
 The [ecommerce-ai-tools repository](https://github.com/nexscope-ai/ecommerce-ai-tools) is Nexscope's official public library for practical ecommerce guides, community questions, product feedback, and reproducible issue reports. It supports the hosted Nexscope tools and APIs; it does not contain the hosted application's source code.
+
+Want to contribute without writing a post? [Vote for the ecommerce task you want help with](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/14). Voting is enough; leave a one-sentence reply only if you want tailored guidance.
 
 ## Choose the right channel
 
