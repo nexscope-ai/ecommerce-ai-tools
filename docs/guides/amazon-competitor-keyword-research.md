@@ -22,7 +22,7 @@ Start with a buyer-relevant seed keyword, collect related keyword evidence, find
 ## Recommended sequence
 
 1. Write down the product category, buyer, use case, and marketplace.
-2. Enter one seed keyword in the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide).
+2. Enter one seed keyword in the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide).
 3. Review related US English Google keyword candidates and their available metrics.
 4. Request matching Amazon US products as a separate step.
 5. Select genuinely comparable ASINs rather than products that merely share one word.
@@ -40,9 +40,9 @@ Start with a buyer-relevant seed keyword, collect related keyword evidence, find
 
 ## API starting points
 
-- [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide_search) for product discovery.
-- [Amazon ASIN Keywords](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide_asin) for reverse keyword research.
-- [Nexscope API Docs](https://www.nexscope.ai/api-docs?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide_docs) for current parameters, schemas, access, and endpoint status.
+- [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide_search) for product discovery.
+- [Amazon ASIN Keywords](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide_asin) for reverse keyword research.
+- [Nexscope API Docs](https://www.nexscope.ai/api-docs?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=keyword_guide_docs) for current parameters, schemas, access, and endpoint status.
 
 ## A useful output format
 

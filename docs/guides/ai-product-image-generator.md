@@ -25,7 +25,7 @@ faq:
 
 An **AI product image generator** can turn a written scene or a product reference into image concepts for listings and ads. The useful workflow is to choose a supported model, give it accurate product information, inspect the estimated cost, then compare the output with the real item. An attractive image is not automatically an accurate product image.
 
-**[Open the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=github_pages&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_top).** New Nexscope users receive 1,000 starter credits; generation uses credits according to the selected model and settings.
+**[Open the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_top).** New Nexscope users receive 1,000 starter credits; generation uses credits according to the selected model and settings.
 
 > **Quick answer:** Start with one clear product reference when the chosen model supports it. Describe the scene without inventing product features. Generate at an aspect ratio suited to the destination, and check the shape, packaging, label, color, and claims before downloading.
 
@@ -42,7 +42,7 @@ The tool creates candidate media. It does not verify that the output complies wi
 ## How do you generate and check an image?
 
 1. Gather a high-quality photo of the real product, its approved specifications, and the destination image requirements. Decide whether you need a clean product view, a lifestyle scene, or an ad concept.
-2. Open the [image generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=github_pages&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_steps) and sign in when prompted.
+2. Open the [image generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_steps) and sign in when prompted.
 3. Select an available model. The live selector shows which inputs and output settings that model supports. Use a reference image if the selected model permits one; otherwise use an accurate text description.
 4. Write one clear prompt describing the subject, background, light, framing, and details that must stay unchanged. Avoid asking the model to add unverified features.
 5. Choose the available aspect ratio, resolution, output count, and other settings. Review the displayed credit estimate before submitting.
@@ -86,4 +86,4 @@ Reference-image support depends on the selected model. The live tool shows the i
 
 For help with model inputs, [ask in Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). For a reproducible problem, [open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) with the model and non-sensitive settings; never share account secrets.
 
-**[Try the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=github_pages&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_bottom)** · [Turn a product photo into video](../ai-video-generator/) · [Browse all guides](../guides/)
+**[Try the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_bottom)** · [Turn a product photo into video](../ai-video-generator/) · [Browse all guides](../guides/)

@@ -36,6 +36,6 @@ The result supports a follow-up question about a dated price change and a more c
 
 - [Inspect the sanitized JSON evidence]({{ '/assets/evidence/prime-big-deal-days-2026-price-series.json' | relative_url }})
 - [Read the event research workflow]({{ '/ecommerce-trends/prime-big-deal-days-2026-seller-research/' | relative_url }})
-- [Open the Amazon Product Price Series API documentation](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO)
+- [Open the Amazon Product Price Series API documentation](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn)
 
 The public JSON excludes API credentials and private account data.

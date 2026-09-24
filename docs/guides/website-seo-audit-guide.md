@@ -34,7 +34,7 @@ Audit an ecommerce webpage by checking whether the URL can be fetched and indexe
 
 ## Using the Nexscope Website SEO Auditor
 
-Enter one public URL in the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=seo_audit_guide). The tool collects page-level SEO evidence and can request a separate mobile Lighthouse check. Review the source evidence before accepting an AI recommendation.
+Enter one public URL in the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=seo_audit_guide). The tool collects page-level SEO evidence and can request a separate mobile Lighthouse check. Review the source evidence before accepting an AI recommendation.
 
 ## Prioritize findings
 

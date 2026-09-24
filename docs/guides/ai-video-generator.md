@@ -23,7 +23,7 @@ image_caption: "Illustration: a consistent product image, a focused motion promp
 
 An **AI video generator** creates a video from inputs such as images and a description of the desired motion. Nexscope's browser tool lets ecommerce sellers upload product images, choose a video model, describe a scene, review the estimated credit cost, and generate a video to preview and download.
 
-**[Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github_pages&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_top). New users receive 1,000 free credits.** Usage depends on the model and settings; this is a finite trial balance, not unlimited free video generation.
+**[Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_top). New users receive 1,000 free credits.** Usage depends on the model and settings; this is a finite trial balance, not unlimited free video generation.
 
 > **Key takeaways:** Nexscope is free to try with 1,000 starter credits for new users. Begin with one clear product image and one simple motion, check the live credit estimate before generating, and review product shape, labels, claims, and framing before publishing. The trial balance is finite and does not unlock every API capability.
 
@@ -84,10 +84,10 @@ If you are comparing the best AI video generator for a specific product, test th
 
 ## Can I automate video generation through an API?
 
-The browser tool and external API integration are separate entry points. For automation, consult [Nexscope's creative API documentation](https://www.nexscope.ai/api-docs?tab=creative&utm_source=github_pages&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_api) for the selected endpoint's authentication, inputs, asynchronous task handling, access requirements, and pricing. Do not assume every API input is exposed in the simplified browser tool.
+The browser tool and external API integration are separate entry points. For automation, consult [Nexscope's creative API documentation](https://www.nexscope.ai/api-docs?tab=creative&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_api) for the selected endpoint's authentication, inputs, asynchronous task handling, access requirements, and pricing. Do not assume every API input is exposed in the simplified browser tool.
 
 ## Need another model or help with a result?
 
 For help using a model or choosing settings, [ask in Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). For a reproducible generation problem, use the [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) and include the model, non-sensitive settings, expected behavior, and what happened. Do not include API keys or private account information.
 
-**[Create your first product video](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github_pages&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_bottom)** · [Browse the other ecommerce workflows](../)
+**[Create your first product video](https://www.nexscope.ai/tools/ai-video-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_bottom)** · [Browse the other ecommerce workflows](../)

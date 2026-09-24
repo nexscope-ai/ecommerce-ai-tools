@@ -19,7 +19,7 @@ image_caption: "Illustration: start with one clear question, choose the smallest
 
 Choose a workflow from [our guide library](../), then sign in with your Nexscope account to run it.
 
-1. [Create a Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=getting_started). New users get **1,000 free credits**. Credit usage varies by action.
+1. [Create a Nexscope account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=tools_launch&utm_content=getting_started). New users get **1,000 free credits**. Credit usage varies by action.
 2. Choose a competitor ASIN, a keyword, a public page URL, or product images and a video prompt.
 3. Review the selected market, sample size, and credit requirements before starting. Some workflows require a separate second request.
 4. Inspect source evidence before acting on AI suggestions, and download results you want to keep.
@@ -38,7 +38,7 @@ Include your goal, marketplace, product category, relevant tool or endpoint, exp
 
 ## AI Video Generator
 
-[Create a product video](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github_pages&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=getting_started) from images and a motion prompt. Choose a model, review its settings and credit estimate, then generate, preview, and download. Read the [AI video generator workflow guide](../ai-video-generator/) for an example prompt and a quality checklist.
+[Create a product video](https://www.nexscope.ai/tools/ai-video-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=getting_started) from images and a motion prompt. Choose a model, review its settings and credit estimate, then generate, preview, and download. Read the [AI video generator workflow guide](../ai-video-generator/) for an example prompt and a quality checklist.
 
 ## Amazon Review Analyzer
 

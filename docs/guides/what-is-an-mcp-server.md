@@ -63,7 +63,7 @@ An ecommerce MCP server can expose narrow tools that let an AI workflow retrieve
 - inspect keyword, SERP, webpage, backlink, or AI-search evidence;
 - start and monitor supported creative-generation jobs.
 
-The active capability catalog is the source of truth. Start with the [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=tool_map) and confirm the current schema, market coverage, credits, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=api_docs).
+The active capability catalog is the source of truth. Start with the [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=tool_map) and confirm the current schema, market coverage, credits, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=api_docs).
 
 ## An MCP server example for ecommerce research
 
@@ -87,7 +87,7 @@ The [Amazon price-history guide](../amazon-price-history/) shows how to interpre
 Use the setup instructions published for the client you are configuring. A typical process is:
 
 1. Sign in to Nexscope and review current API/MCP access requirements.
-2. Open the [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=setup).
+2. Open the [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=setup).
 3. Choose only the tools required for the workflow.
 4. Follow the client-specific connection instructions and keep credentials out of prompts, screenshots, repositories, and browser code.
 5. Run a small read-only test with non-sensitive inputs.
@@ -155,4 +155,4 @@ Yes. MCP does not remove authentication, authorization, credit, privacy, or mark
 
 ## Explore Nexscope MCP tools
 
-Start with a small, read-only research question and one documented capability. **[Explore the Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=guide_bottom)**, review the [API capabilities guide](../api-capabilities/), or open the [ecommerce data for AI agents page](https://learn.nexscope.ai/ecommerce-ai-agents.html).
+Start with a small, read-only research question and one documented capability. **[Explore the Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=guide_bottom)**, review the [API capabilities guide](../api-capabilities/), or open the [ecommerce data for AI agents page](https://learn.nexscope.ai/ecommerce-ai-agents.html).

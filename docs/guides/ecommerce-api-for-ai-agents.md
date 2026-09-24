@@ -52,7 +52,7 @@ Connect Amazon data to an AI agent by selecting the smallest documented Amazon e
 | Inspect search visibility | Keyword, SERP, webpage, backlink, advertising, and AI citation references |
 | Produce product media through REST | Image editing, background removal, image generation, and asynchronous video tasks |
 
-Open the [Nexscope API Docs](https://www.nexscope.ai/api-docs?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=agent_api_guide) to review current parameters, response schemas, access, and endpoint status. The [MCP tool map](https://www.nexscope.ai/mcp-map?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=agent_api_guide_mcp) lists available tool names and schemas.
+Open the [Nexscope API Docs](https://www.nexscope.ai/api-docs?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=agent_api_guide) to review current parameters, response schemas, access, and endpoint status. The [MCP tool map](https://www.nexscope.ai/mcp-map?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=agent_api_guide_mcp) lists available tool names and schemas.
 
 ## Safe agent pattern
 

@@ -26,7 +26,7 @@ Review analysis helps identify that question. The next step is to separate what 
 
 Choose an ASIN and marketplace, define the ratings you want to inspect, and retain the original comments alongside your notes. Record requested and returned review counts. A smaller-than-requested response should remain visible in the brief.
 
-The [Nexscope Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=listing_brief) offers a hosted starting point. Our [review collection and analysis guide]({{ '/amazon-negative-review-analysis/' | relative_url }}) explains the workflow and sample limitations.
+The [Nexscope Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=listing_brief) offers a hosted starting point. Our [review collection and analysis guide]({{ '/amazon-negative-review-analysis/' | relative_url }}) explains the workflow and sample limitations.
 
 If you analyze a competitor, treat the findings as questions about your own product—not claims that your product is better. Verify your specifications and performance independently.
 
@@ -76,4 +76,4 @@ A clearer listing may help shoppers make a better decision, but review analysis 
 
 ## Move from comments to a useful next step
 
-[Start with the Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=listing_brief&utm_content=closing). Build one evidence-backed brief, verify it with your product team, and decide what to test before changing the whole listing.
+[Start with the Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=listing_brief&utm_content=closing). Build one evidence-backed brief, verify it with your product team, and decide what to test before changing the whole listing.

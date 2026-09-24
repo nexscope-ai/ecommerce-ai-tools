@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }} | Nexscope</title>
+    <title>{% if page.title contains 'Nexscope' %}{{ page.title }}{% else %}{{ page.title | default: site.title }} | Nexscope{% endif %}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
     {% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">{% endif %}
     <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -130,8 +130,8 @@
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
     <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=8">
-    <script src="{{ '/assets/trends.js' | relative_url }}?v=6" defer></script>
-    <script src="https://learn.nexscope.ai/analytics.js?v=4" defer></script>
+    <script src="{{ '/assets/trends.js' | relative_url }}?v=7" defer></script>
+    <script src="https://learn.nexscope.ai/analytics.js?v=5" defer></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="q6pDSjaAKMskPeTdzPWCtQ" async></script>
     <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
   </head>
@@ -151,8 +151,8 @@
         <a href="https://learn.nexscope.ai/tools/">Tools</a>
         <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Learn</a>
         <a href="{{ '/community/' | relative_url }}"{% if page.community_page %} aria-current="page"{% endif %}>Community</a>
-        <a href="https://www.nexscope.ai/api-docs?co-from=githubIO&amp;utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=learning_center">API docs</a>
-        <a class="nav-cta" href="https://www.nexscope.ai/?co-from=githubIO&amp;utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=learning_center">Explore Nexscope ↗</a>
+        <a href="https://www.nexscope.ai/api-docs?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=learning_center&amp;utm_content=inline_link">API docs</a>
+        <a class="nav-cta" href="https://www.nexscope.ai/?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=learning_center&amp;utm_content=early_cta">Explore Nexscope ↗</a>
       </nav>
     </div></header>
     <main class="wrap" id="main-content">

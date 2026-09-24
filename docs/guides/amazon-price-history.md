@@ -45,7 +45,7 @@ Use a repeatable workflow so the result can be reviewed later.
 
 1. **Confirm the ASIN and marketplace.** The same product can have different offers, rankings, and availability across Amazon stores.
 2. **Define the question first.** For example: Did the price fall before a BSR improvement? Was the discount temporary? Did seller competition increase?
-3. **Open the [Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_api).** Check its current parameters, marketplace coverage, response schema, credits, and access requirements before calling it.
+3. **Open the [Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_api).** Check its current parameters, marketplace coverage, response schema, credits, and access requirements before calling it.
 4. **Request the available history once.** Preserve the ASIN, marketplace, request time, returned timestamps, units, and missing values.
 5. **Align the dates.** Compare price, BSR, rating, seller count, and sales estimates on matching or clearly documented time intervals.
 6. **Record a hypothesis, not a verdict.** A price reduction followed by a BSR change is a lead to investigate; it is not proof of causation.
@@ -126,8 +126,8 @@ Do not assume it is real time. Check the response timestamps and the current API
 
 ### Can I use Amazon price history through an API?
 
-Yes. Review the [Amazon Product Price Series API documentation](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_faq) for current inputs, output fields, authentication, access, and credit requirements.
+Yes. Review the [Amazon Product Price Series API documentation](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_faq) for current inputs, output fields, authentication, access, and credit requirements.
 
 ## Start with one ASIN
 
-Choose one comparable product, write down the decision you are investigating, and preserve the returned dates and units. **[Explore the Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_bottom)** or browse the [Amazon research workflow](https://learn.nexscope.ai/amazon-research.html) before expanding the analysis.
+Choose one comparable product, write down the decision you are investigating, and preserve the returned dates and units. **[Explore the Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_price_history&utm_content=guide_bottom)** or browse the [Amazon research workflow](https://learn.nexscope.ai/amazon-research.html) before expanding the analysis.

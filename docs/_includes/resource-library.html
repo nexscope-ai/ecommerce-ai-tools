@@ -24,6 +24,13 @@
   <a href="{{ '/alternatives/' | relative_url }}"{% if page.url == '/alternatives/' %} aria-current="page"{% endif %}>Comparisons</a>
 </nav>
 
+{% if page.url == '/ecommerce-trends/' %}
+<aside class="resource-note" aria-labelledby="search-intent-title">
+  <strong id="search-intent-title">Follow the question already appearing in search.</strong>
+  <p><a href="{{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}">1688 search by image</a> · <a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">Google AI Mode for ecommerce</a> · <a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">ChatGPT product discovery</a> · <a href="{{ '/ecommerce-trends/chatgpt-ads-for-ecommerce/' | relative_url }}">ChatGPT ads for ecommerce</a> · <a href="{{ '/amazon-competitor-keyword-research/' | relative_url }}">tracking Amazon competitors' keywords</a>.</p>
+</aside>
+{% endif %}
+
 <section aria-labelledby="library-heading">
   <div class="section-heading"><div><span class="eyebrow">Browse the library</span><h2 id="library-heading">{{ page.library_heading | default: 'Find your next workflow' }}</h2></div><p>Search across the Nexscope learning collections.</p></div>
   <div class="trend-controls" hidden>

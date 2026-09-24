@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "1688 Image Search: Find and Vet Sourcing Candidates"
-description: "Find 1688 products by image with Nexscope's API, then compare offer IDs, SKU details, MOQ and supplier evidence. A visual match is a lead, not a verified factory."
+title: "1688 Search by Image: Find Similar Products and Vet Suppliers"
+description: "Search 1688 with a product photo, compare offer IDs, prices and MOQ, and verify shortlisted suppliers with a tested Nexscope API workflow."
 permalink: /ecommerce-trends/1688-image-search-sourcing/
-last_reviewed: 2026-09-20
+last_reviewed: 2026-09-24
 date_published: 2026-09-20
-date_modified: 2026-09-20
+date_modified: 2026-09-24
 date: 2026-09-20
-last_modified_at: 2026-09-20
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -32,9 +32,9 @@ faq:
     answer: "No. A badge, score, sales figure, or listed price is a screening signal, not a guarantee. Confirm the applicable quantity tier, sample, specifications, company identity, compliance, production capacity, shipping, and payment terms independently."
 ---
 
-# 1688 image search: how to find and vet sourcing candidates
+# How to search 1688 by image and vet sourcing candidates
 
-**By Nexscope Team · Updated September 20, 2026**
+**By Nexscope Team · Updated September 24, 2026**
 
 A product photo can start a 1688 sourcing search, but it cannot tell you which listing is the original factory or which supplier can deliver your exact specification. Alibaba Group describes [1688 as a domestic wholesale marketplace](https://www.alibabagroup.com/en-US/about-alibaba-businesses-1941299332078632960). The practical job for an overseas seller is to turn visual matches into a small, reviewable list of offers, then verify those offers before paying.
 
@@ -42,12 +42,12 @@ A product photo can start a 1688 sourcing search, but it cannot tell you which l
 
 <aside class="article-action" aria-label="Try 1688 image search">
   <div><span class="eyebrow">NEXT STEP / SOURCING API</span><strong>Start a 1688 image search with your own product photo.</strong><p>Open the live API tester, review accepted image formats and credits, then keep the returned offer IDs for comparison.</p></div>
-  <a href="https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=githubIO&amp;utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=1688_image_search_guide&amp;utm_content=early_cta">Open Search By Image API ↗</a>
+  <a href="https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=1688_search_by_image&amp;utm_content=early_cta">Open Search By Image API ↗</a>
 </aside>
 
 {% include article-visual.html %}
 
-The figure summarizes the [published API request and response contract](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=githubIO). It shows which fields can support a sourcing shortlist, not what any particular photo returned.
+The figure summarizes the [published API request and response contract](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn). It shows which fields can support a sourcing shortlist, not what any particular photo returned.
 
 ### One real image-search result (September 20, 2026)
 
@@ -70,7 +70,7 @@ Three earlier public-image-URL attempts had returned **business code `13007`** (
 
 ## What can a photo actually find on 1688?
 
-**1688 image search finds visually similar listings, not proven manufacturers.** Nexscope's [1688 Search By Image API](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=image_api) documents an eligible-image input and candidate products with available identifiers, titles, images, prices, minimum order quantities, seller signals, and dispatch information when a request succeeds. Our successful Base64 test returned both plausible bottle listings and unrelated products. A similar silhouette can still hide a different material, capacity, certification, or accessory set.
+**1688 image search finds visually similar listings, not proven manufacturers.** Nexscope's [1688 Search By Image API](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=image_api) documents an eligible-image input and candidate products with available identifiers, titles, images, prices, minimum order quantities, seller signals, and dispatch information when a request succeeds. Our successful Base64 test returned both plausible bottle listings and unrelated products. A similar silhouette can still hide a different material, capacity, certification, or accessory set.
 
 This matters when sourcing from a marketplace photo. A listing may use a shared catalogue image, a reseller's photograph, or a similar-looking mold. The useful result is an **offer to investigate**. It is not evidence that the seller owns the image, owns the design, or is the manufacturer. If the reference image belongs to another brand, do not assume you can copy its branding or protected design.
 
@@ -80,8 +80,8 @@ This matters when sourcing from a marketplace photo. A listing may use a shared 
 
 1. **Choose an eligible reference.** The current Nexscope API documentation supports a publicly accessible PNG, JPG, or JPEG `imageUrl`, or raw Base64 for those formats. WEBP and GIF are not listed as supported. Use an image you have the right to process and avoid sharing private product imagery through a public URL.
 2. **Run image search and keep the raw evidence.** Record the query image, time, returned product `offerId`, listing URL, image, displayed price, `quantityBegin`, seller name or identity, and any available sales or service signals. The response may include an `imageId`; retain it for later pages. Missing fields should stay blank, not be inferred.
-3. **Check the actual offer.** Pass a shortlisted `offerId` as a string to [1688 Product Detail](https://www.nexscope.ai/api-docs/1688-product-detail?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=detail_api). Its normalized response can include `skuList`, `saleInfo`, `shippingInfo`, and `companyName`. Compare the specific variant you would order, not a generic headline image.
-4. **Search again by terms, not just appearance.** The [1688 Product Search API](https://www.nexscope.ai/api-docs/1688-product-search?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=keyword_api) supports a `keyWord` in Simplified Chinese, price and MOQ filters, supplier-related filters, and sorting. Search the product's material and function to find alternatives that look different but better fit the brief.
+3. **Check the actual offer.** Pass a shortlisted `offerId` as a string to [1688 Product Detail](https://www.nexscope.ai/api-docs/1688-product-detail?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=detail_api). Its normalized response can include `skuList`, `saleInfo`, `shippingInfo`, and `companyName`. Compare the specific variant you would order, not a generic headline image.
+4. **Search again by terms, not just appearance.** The [1688 Product Search API](https://www.nexscope.ai/api-docs/1688-product-search?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=keyword_api) supports a `keyWord` in Simplified Chinese, price and MOQ filters, supplier-related filters, and sorting. Search the product's material and function to find alternatives that look different but better fit the brief.
 5. **Ask for evidence from the finalists.** Confirm company identity, sample quality, applicable price tier, lead time, production role, testing or compliance documents, payment terms, and shipping arrangement directly. Do not pay solely because an API returned a promising row.
 
 A minimal image-search request body looks like this. Replace the example URL with your own eligible, publicly accessible image; this is a **request template, not a live test or a real search result**:
@@ -96,7 +96,7 @@ A minimal image-search request body looks like this. Replace the example URL wit
 
 For the successful test above, we omitted `imageUrl` and sent `"imageBase64": "<raw JPEG Base64>"` instead, without a `data:image/jpeg;base64,` prefix. Supply exactly one of `imageUrl`, `imageBase64`, or `imageId`, as the live documentation specifies. The Base64 itself is intentionally not reproduced in this article.
 
-The documented REST operation is `POST /api/skill-api/v1/skills/1688-search-by-image/run` with a bearer API key. Keep the key on your server, not in browser code or a shared document. Check the JSON `code` as well as the HTTP status: `code: 0` means the request was accepted or succeeded, not that a suitable supplier was found. Read candidate listings from the returned data, preserve `imageId` for pagination when present, and treat missing optional fields as unknown. The [live API reference](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=run_api) is the source of truth for current inputs and billing.
+The documented REST operation is `POST /api/skill-api/v1/skills/1688-search-by-image/run` with a bearer API key. Keep the key on your server, not in browser code or a shared document. Check the JSON `code` as well as the HTTP status: `code: 0` means the request was accepted or succeeded, not that a suitable supplier was found. Read candidate listings from the returned data, preserve `imageId` for pagination when present, and treat missing optional fields as unknown. The [live API reference](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=run_api) is the source of truth for current inputs and billing.
 
 ## Which 1688 API answers which sourcing question?
 
@@ -131,7 +131,7 @@ For cross-border resale, a better comparison is **estimated landed cost per sell
 
 **A data shortlist is the beginning of due diligence.** Before money changes hands, ask the supplier to confirm the exact specification and variant in writing; request a sample; check company registration and whether the seller manufactures or trades; confirm production capacity, lead time, inspection rights, required safety or labeling rules in the destination market, and how defects or delays will be handled. Seek appropriate professional advice where compliance or intellectual-property rights are material.
 
-The same caution applies to rankings. [1688 Product Billboard](https://www.nexscope.ai/api-docs/1688-product-billboard?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=billboard_api) exposes weekly or monthly product ranking context, but a hot wholesale item does not prove end-customer demand in your market. Validate demand separately and document the period, category, and filters used.
+The same caution applies to rankings. [1688 Product Billboard](https://www.nexscope.ai/api-docs/1688-product-billboard?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=billboard_api) exposes weekly or monthly product ranking context, but a hot wholesale item does not prove end-customer demand in your market. Validate demand separately and document the period, category, and filters used.
 
 ## A repeatable workflow for a small sourcing team
 
@@ -139,7 +139,7 @@ The same caution applies to rankings. [1688 Product Billboard](https://www.nexsc
 
 For an initial test, choose one non-branded product you can inspect physically. Search by image, retain five candidate offer IDs, inspect the relevant SKUs, then run a Chinese-keyword search for the same material and function. Identify the two candidates that meet your written constraints and request samples. If none qualifies, that is a useful result: revise the specification or price target instead of lowering verification standards.
 
-Nexscope's 1688 APIs help with **discovery and structured comparison**. They do not place an order, certify a factory, guarantee a margin, or replace direct supplier and compliance checks. [Explore the 1688 API documentation](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=final_cta) to choose the first read-only call for your sourcing workflow.
+Nexscope's 1688 APIs help with **discovery and structured comparison**. They do not place an order, certify a factory, guarantee a margin, or replace direct supplier and compliance checks. [Explore the 1688 API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=1688_image_search_guide&utm_content=final_cta) to choose the first read-only call for your sourcing workflow.
 
 ## Frequently asked questions
 

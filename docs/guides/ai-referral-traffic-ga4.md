@@ -122,9 +122,9 @@ Do not infer that an article caused revenue from a small sample. Look for repeat
 
 Analytics shows what happened on your site. Nexscope can support the earlier research workflow:
 
-- research buyer language with the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=ai_referral_ga4);
-- audit landing-page SEO and evidence with the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=ai_referral_ga4);
-- inspect public product, competitor, review, backlink, search, and supported AI-visibility data through the [API catalog](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=ai_referral_ga4).
+- research buyer language with the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4);
+- audit landing-page SEO and evidence with the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4);
+- inspect public product, competitor, review, backlink, search, and supported AI-visibility data through the [API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4).
 
 Keep public research, GA4 behavioral data, advertising reports, and first-party revenue separate until you have a defined join and attribution method.
 

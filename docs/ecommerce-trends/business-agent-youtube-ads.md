@@ -104,7 +104,7 @@ Check that price, stock, variants, dimensions, materials, compatibility, and pol
 
 ### 5. Review the landing page after qualification
 
-A better-informed visitor may arrive with a more specific expectation. The destination should preserve the chosen variant, answer the same core questions, and make the next action clear. Use the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=business_agent_youtube) to inspect the public page, then manually verify commerce behavior and policy accuracy.
+A better-informed visitor may arrive with a more specific expectation. The destination should preserve the chosen variant, answer the same core questions, and make the next action clear. Use the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=business_agent_youtube) to inspect the public page, then manually verify commerce behavior and policy accuracy.
 
 ## How should video creative change?
 
@@ -119,7 +119,7 @@ Useful video creative should:
 - leave the viewer with questions the catalog can answer accurately;
 - align the call to action with the destination and current offer.
 
-Nexscope's [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=business_agent_youtube) can help create concepts from product assets that the merchant is authorized to use. Every generated frame still requires review for product shape, color, included parts, text, claims, and platform compliance.
+Nexscope's [AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=business_agent_youtube) can help create concepts from product assets that the merchant is authorized to use. Every generated frame still requires review for product shape, color, included parts, text, claims, and platform compliance.
 
 ## How should you measure a Business Agent test?
 
@@ -158,7 +158,7 @@ The shared requirement is not a special set of AI keywords. It is a product-info
 
 ## Where can Nexscope help—and where can it not?
 
-Nexscope can support product-question research, public competitor and review analysis, page auditing, and product video workflows. The [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=business_agent_youtube) can help map buyer language, while marketplace and review capabilities in the [Nexscope API catalog](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=business_agent_youtube) can help investigate comparison criteria.
+Nexscope can support product-question research, public competitor and review analysis, page auditing, and product video workflows. The [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=business_agent_youtube) can help map buyer language, while marketplace and review capabilities in the [Nexscope API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=business_agent_youtube) can help investigate comparison criteria.
 
 Nexscope is not Google Ads, Merchant Center, or the Business Agent beta. It cannot guarantee beta access, ad delivery, answer behavior, traffic quality, or sales. Those boundaries should remain explicit in any campaign plan.
 

@@ -53,9 +53,9 @@ An illustrative comparison might flag that one listing explains internal dimensi
 
 ## Collect evidence with Nexscope
 
-Use the [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=competitor_template) to begin product discovery, then inspect candidate listings for comparability. Consult its current documentation for supported inputs and returned fields.
+Use the [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=competitor_template) to begin product discovery, then inspect candidate listings for comparability. Consult its current documentation for supported inputs and returned fields.
 
-For selected ASINs, the [Amazon ASIN Keywords API](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=competitor_template) provides a separate keyword-research starting point. Do not assume that every field or marketplace has the same coverage.
+For selected ASINs, the [Amazon ASIN Keywords API](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=competitor_template) provides a separate keyword-research starting point. Do not assume that every field or marketplace has the same coverage.
 
 For customer language, follow our [negative-review analysis workflow]({{ '/amazon-negative-review-analysis/' | relative_url }}). Store observations from each source separately before combining them into a recommendation.
 
@@ -75,4 +75,4 @@ Use this template to choose better questions and tests, not to turn uncertain da
 
 ## Start with one shortlist
 
-[Explore the Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=competitor_template&utm_content=closing) and build your first evidence-backed comparison. Next, use our [reverse ASIN keyword checklist]({{ '/reverse-asin-keyword-research/' | relative_url }}) to qualify the terms worth investigating.
+[Explore the Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=competitor_template&utm_content=closing) and build your first evidence-backed comparison. Next, use our [reverse ASIN keyword checklist]({{ '/reverse-asin-keyword-research/' | relative_url }}) to qualify the terms worth investigating.

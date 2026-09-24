@@ -149,9 +149,9 @@ Google's separate [conversational attributes](../merchant-center-conversational-
 
 Nexscope can support the investigation around a visibility gap:
 
-- use the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=merchant_center_ai_performance) to map search language around a product problem;
-- inspect public marketplace products, prices, reviews, and competitor evidence through the relevant [ecommerce APIs](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=merchant_center_ai_performance);
-- audit public product pages with the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=merchant_center_ai_performance);
+- use the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=merchant_center_ai_performance) to map search language around a product problem;
+- inspect public marketplace products, prices, reviews, and competitor evidence through the relevant [ecommerce APIs](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=merchant_center_ai_performance);
+- audit public product pages with the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=merchant_center_ai_performance);
 - maintain a fixed query set when researching broader AI visibility.
 
 Keep public research evidence separate from Merchant Center observations and first-party conversion data.

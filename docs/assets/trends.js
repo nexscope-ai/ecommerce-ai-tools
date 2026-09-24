@@ -1,10 +1,28 @@
 (() => {
-  // Keep all official product links on the agreed marketing attribution.
+  const officialProductHosts = new Set(['www.nexscope.ai', 'nexscope.ai']);
+  const campaignFromPath = () => {
+    const segments = window.location.pathname.split('/').filter(Boolean);
+    const slug = segments.at(-1) === 'ecommerce-ai-tools' ? 'learning_center' : segments.at(-1);
+    return (slug || 'learning_center').replace(/[^a-z0-9]+/gi, '_').replace(/^_+|_+$/g, '').toLowerCase();
+  };
+  const contentFromLink = (link, url) => {
+    const explicit = link.dataset.utmContent || url.searchParams.get('utm_content') || '';
+    if (/^(early_cta|inline_link|final_cta)$/.test(explicit)) return explicit;
+    if (link.closest('.article-action')) return 'early_cta';
+    if (/final|bottom|closing/i.test(explicit) || link.closest('.article-next')) return 'final_cta';
+    return 'inline_link';
+  };
+
+  // Attribute every Learn -> Nexscope product handoff to the current Learn page.
   document.querySelectorAll('a[href]').forEach(link => {
-    const url = new URL(link.href);
-    if (url.hostname !== 'www.nexscope.ai' && url.hostname !== 'nexscope.ai') return;
+    const url = new URL(link.href, window.location.href);
+    if (!officialProductHosts.has(url.hostname)) return;
     url.searchParams.delete('fpr');
-    url.searchParams.set('co-from', 'githubIO');
+    url.searchParams.set('co-from', 'learn');
+    url.searchParams.set('utm_source', 'learn.nexscope.ai');
+    url.searchParams.set('utm_medium', 'referral');
+    url.searchParams.set('utm_campaign', link.dataset.utmCampaign || campaignFromPath());
+    url.searchParams.set('utm_content', contentFromLink(link, url));
     link.href = url.href;
     link.setAttribute('data-track', 'start_using');
   });

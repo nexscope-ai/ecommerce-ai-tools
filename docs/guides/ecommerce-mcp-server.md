@@ -104,7 +104,7 @@ This workflow can fail even when every request succeeds—for example, if the sa
 
 ## How can Nexscope be used as an ecommerce MCP server?
 
-Start with the [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_mcp_server) to inspect currently exposed capabilities. Then check the [API documentation](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_mcp_server) for inputs, outputs, coverage, credits, and access requirements.
+Start with the [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server) to inspect currently exposed capabilities. Then check the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server) for inputs, outputs, coverage, credits, and access requirements.
 
 A typical setup is:
 
@@ -146,4 +146,4 @@ Many production systems use both: APIs for application services and MCP as the c
 
 - [Model Context Protocol specification](https://modelcontextprotocol.io/specification/2026-07-28)
 - [Model Context Protocol: July 2026 specification update](https://blog.modelcontextprotocol.io/posts/2026-07-28/)
-- [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=githubIO)
+- [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn)

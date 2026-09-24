@@ -35,6 +35,6 @@ This run demonstrates a reference-image editing workflow and a concrete QA failu
 
 - [Read the complete GPT Images 2.5 ecommerce workflow]({{ '/ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/' | relative_url }})
 - [View the optimized output image]({{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }})
-- [Open the GPT 2.5 Flare API documentation](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=githubIO)
+- [Open the GPT 2.5 Flare API documentation](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn)
 
 No API key or private account information appears in this record.

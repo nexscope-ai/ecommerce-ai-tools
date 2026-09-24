@@ -68,7 +68,7 @@ Use stable IDs, variant-level prices, current availability, correct URLs, descri
 
 Use buyer language naturally in headings, comparison tables, specifications, FAQs, and support content. Do not repeat a phrase simply because it appears in a keyword tool. Help a shopper resolve an actual constraint.
 
-The [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_product_discovery) can help organize search language by use case, attribute, concern, and comparison.
+The [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery) can help organize search language by use case, attribute, concern, and comparison.
 
 ### Make claims auditable
 
@@ -82,7 +82,7 @@ For a source-backed still-image review process, see the [ChatGPT Images 2.5 ecom
 
 ### Keep the page retrievable
 
-Use semantic HTML, useful internal links, correct canonicals, crawlable product content, and structured data that matches visible information. The [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_product_discovery) can help identify page-level issues; it does not guarantee ChatGPT inclusion.
+Use semantic HTML, useful internal links, correct canonicals, crawlable product content, and structured data that matches visible information. The [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery) can help identify page-level issues; it does not guarantee ChatGPT inclusion.
 
 ## A product-discovery audit with Nexscope
 
@@ -94,7 +94,7 @@ Use semantic HTML, useful internal links, correct canonicals, crawlable product 
 6. Test the same prompts across supported assistants and search surfaces.
 7. Record dates, markets, sources, answers, citations, and destination pages.
 
-Use the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_product_discovery) to confirm current product, keyword, review, search, and AI-visibility capabilities before building an automated workflow.
+Use the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery) to confirm current product, keyword, review, search, and AI-visibility capabilities before building an automated workflow.
 
 ## How is product discovery different from ChatGPT Ads?
 

@@ -45,9 +45,9 @@ These examples show the reasoning method. They are not findings about a specific
 
 ## Using the Nexscope Amazon Review Analyzer
 
-The [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=review_guide) accepts a competitor ASIN, marketplace, low-star review counts, and report language. It collects a recent sample and can generate a separate AI report. The report and source reviews can be downloaded for further research.
+The [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=review_guide) accepts a competitor ASIN, marketplace, low-star review counts, and report language. It collects a recent sample and can generate a separate AI report. The report and source reviews can be downloaded for further research.
 
-Developers can start with the [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=review_guide_api), then use the documented analysis capability in a separate request. Review collection and AI analysis may each consume account credits.
+Developers can start with the [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=review_guide_api), then use the documented analysis capability in a separate request. Review collection and AI analysis may each consume account credits.
 
 ## What a low-star sample cannot prove
 

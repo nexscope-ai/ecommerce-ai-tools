@@ -34,7 +34,7 @@ Two selected rows appeared visually relevant to amber dropper bottles; one selec
 The result can support a shortlist of returned `offerId` values for subsequent Product Detail checks. It cannot establish manufacturer identity, product quality, material, compliance, intellectual-property rights, negotiated price or landed cost.
 
 - [Read the full 1688 sourcing analysis]({{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }})
-- [Open the 1688 Search By Image API documentation](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=githubIO)
+- [Open the 1688 Search By Image API documentation](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn)
 - [Follow the broader sourcing tutorial](https://learn.nexscope.ai/1688-supplier-product-sourcing/)
 
 The raw Base64 and all credentials are intentionally excluded from this public record.

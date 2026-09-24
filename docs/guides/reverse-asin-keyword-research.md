@@ -32,7 +32,7 @@ Use the [competitor analysis template]({{ '/amazon-competitor-analysis-template/
 
 ## Retrieve keywords without losing their context
 
-Nexscope's [Amazon ASIN Keywords API](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=reverse_asin_guide) documents reverse lookup with keyword metrics such as organic and advertising rankings, search volume and time-window information. Check the current request schema and actual returned fields for your chosen market; do not assume every record is complete.
+Nexscope's [Amazon ASIN Keywords API](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=reverse_asin_guide) documents reverse lookup with keyword metrics such as organic and advertising rankings, search volume and time-window information. Check the current request schema and actual returned fields for your chosen market; do not assume every record is complete.
 
 Save the source ASIN, marketplace and retrieval date with the results. Preserve any returned period and metric definitions. A number detached from its source or time period is difficult to compare responsibly.
 
@@ -79,4 +79,4 @@ Record a baseline from your own available reporting, make a controlled change wh
 
 ## Try the workflow
 
-[Open the Amazon ASIN Keywords documentation](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=reverse_asin_guide&utm_content=closing). Start with one comparable ASIN, check the output, and expand only after the fields answer your research question.
+[Open the Amazon ASIN Keywords documentation](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=reverse_asin_guide&utm_content=closing). Start with one comparable ASIN, check the output, and expand only after the fields answer your research question.

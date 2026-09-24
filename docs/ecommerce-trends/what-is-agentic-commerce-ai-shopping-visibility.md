@@ -51,7 +51,7 @@ Four developments now sit at different layers of the agentic-commerce journey:
 
 The merchant task remains the same: provide accurate product identity, variant-level offers, explicit attributes, current availability, accessible pages, and evidence for claims. Protocol participation can make information or actions available; it cannot make a product relevant to every request.
 
-Read the focused guides to [ChatGPT product discovery](../chatgpt-product-discovery/), [ChatGPT Ads for ecommerce](../chatgpt-ads-for-ecommerce/), and [Google AI Mode shopping](../google-ai-mode-shopping/) for platform-specific preparation and measurement.
+Read the focused guides to [ChatGPT product discovery](../chatgpt-product-discovery/), [ChatGPT ads for ecommerce](../chatgpt-ads-for-ecommerce/), and [Google AI Mode for ecommerce](../google-ai-mode-shopping/) for platform-specific preparation and measurement.
 
 ## How is agentic commerce different from conversational commerce?
 
@@ -122,7 +122,7 @@ This gives the audit a testable target. A broad prompt such as “best lunch bag
 
 ### Step 2: Map the language buyers use
 
-Use the [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_keywords) to research related Google queries and the language used around the need. Treat Google search metrics as Google data; they are not Amazon search volume.
+Use the [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_keywords) to research related Google queries and the language used around the need. Treat Google search metrics as Google data; they are not Amazon search volume.
 
 Group terms by intent:
 
@@ -135,19 +135,19 @@ The output is a buyer-language map, not a list of phrases to repeat on every pag
 
 ### Step 3: Inspect comparable marketplace products
 
-Use relevant product research capabilities in the [Nexscope API documentation](https://www.nexscope.ai/api-docs?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_product_research) to identify comparable products and inspect the fields that are actually returned. Compare attribute coverage, positioning, price, and missing data. Provider estimates should stay separate from measured sales or account data.
+Use relevant product research capabilities in the [Nexscope API documentation](https://www.nexscope.ai/api-docs?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_product_research) to identify comparable products and inspect the fields that are actually returned. Compare attribute coverage, positioning, price, and missing data. Provider estimates should stay separate from measured sales or account data.
 
 ### Step 4: Study customer complaints as evidence
 
-Run a recent low-star sample through the [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_reviews). Read the original comments before accepting a theme. A complaint can suggest a hypothesis—such as testing a gasket after repeated use—but a review sample does not establish a population-wide defect rate.
+Run a recent low-star sample through the [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_reviews). Read the original comments before accepting a theme. A complaint can suggest a hypothesis—such as testing a gasket after repeated use—but a review sample does not establish a population-wide defect rate.
 
 ### Step 5: Audit the page that should support the recommendation
 
-Use the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_audit) on the public product or category URL. Check whether the title, headings, canonical URL, indexability, main copy, structured data, and mobile performance support the buyer question. The auditor examines page-level evidence; it is not a whole-site crawl or a ranking guarantee.
+Use the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_audit) on the public product or category URL. Check whether the title, headings, canonical URL, indexability, main copy, structured data, and mobile performance support the buyer question. The auditor examines page-level evidence; it is not a whole-site crawl or a ranking guarantee.
 
 ### Step 6: Check public search and AI evidence
 
-The [Nexscope marketing API directory](https://www.nexscope.ai/api-docs?tab=marketing&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_visibility) includes search, page, backlink, advertising, and AI visibility research capabilities. Use the current endpoint documentation to confirm inputs and access. AI answers vary between platforms and runs, so record the prompt, date, market, platform, response, and cited sources rather than treating one answer as a stable ranking.
+The [Nexscope marketing API directory](https://www.nexscope.ai/api-docs?tab=marketing&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_visibility) includes search, page, backlink, advertising, and AI visibility research capabilities. Use the current endpoint documentation to confirm inputs and access. AI answers vary between platforms and runs, so record the prompt, date, market, platform, response, and cited sources rather than treating one answer as a stable ranking.
 
 ### Step 7: Fix evidence gaps and test again
 
@@ -233,7 +233,7 @@ Not through the public workflows described here. Use Merchant Center for your pr
 
 Choose one commercially important product, write one constrained buyer request, and build its evidence matrix. That small exercise usually reveals whether the problem is missing attributes, weak proof, inconsistent data, page accessibility, or platform participation.
 
-[Create a Nexscope account](https://www.nexscope.ai/?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_signup) to receive **1,000 free credits**, then start with the keyword, review, and page-audit steps above. Credit use and feature access depend on the selected action and your account.
+[Create a Nexscope account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=agentic_commerce_signup) to receive **1,000 free credits**, then start with the keyword, review, and page-audit steps above. Credit use and feature access depend on the selected action and your account.
 
 ## Sources
 

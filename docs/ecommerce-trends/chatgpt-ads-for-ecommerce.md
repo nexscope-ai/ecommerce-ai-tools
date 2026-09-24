@@ -70,11 +70,11 @@ Vague copy such as “premium quality” is not a substitute for measurable evid
 
 The page should answer the reason a shopper clicked. Use a clear title, descriptive headings, readable specifications, accessible media, valid canonical tags, and product structured data where appropriate. Avoid hiding the important evidence behind a login or fragile interaction.
 
-Run the destination URL through the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_ads_guide) before launch. A page audit can identify technical and content gaps; it does not guarantee ad approval or organic visibility.
+Run the destination URL through the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_ads_guide) before launch. A page audit can identify technical and content gaps; it does not guarantee ad approval or organic visibility.
 
 ### 3. Research the language and alternatives around the product
 
-Map the problem, use case, attributes, objections, and alternatives that appear in buyer research. Use the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_ads_guide) for search-language research, then inspect comparable marketplace products and customer reviews.
+Map the problem, use case, attributes, objections, and alternatives that appear in buyer research. Use the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_ads_guide) for search-language research, then inspect comparable marketplace products and customer reviews.
 
 Keep sources separate. Google keyword metrics, Amazon product estimates, reviews, and first-party store conversions answer different questions.
 
@@ -82,7 +82,7 @@ Keep sources separate. Google keyword metrics, Amazon product estimates, reviews
 
 Creative should clarify the product rather than decorate the ad. Demonstrate scale, setup, use, material, or a meaningful before-and-after only when the claim can be supported. Review every AI-generated frame for product accuracy.
 
-The [Nexscope AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_ads_guide) can help turn approved product assets into video concepts. Generated output still requires human review and compliance with platform rules.
+The [Nexscope AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_ads_guide) can help turn approved product assets into video concepts. Generated output still requires human review and compliance with platform rules.
 
 ### 5. Define measurement before launch
 
@@ -126,7 +126,7 @@ It does not replace the advertiser account, OpenAI campaign controls, merchant f
 
 Select one commercially important product and one constrained customer question. Check whether the catalog, landing page, reviews, creative, and analytics can answer it without guessing. Then decide whether paid conversational discovery is a sensible test.
 
-[Explore Nexscope ecommerce APIs](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=chatgpt_ads_guide&utm_content=bottom_cta) or read how [ChatGPT product discovery changes merchant preparation](../chatgpt-product-discovery/).
+[Explore Nexscope ecommerce APIs](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_ads_guide&utm_content=bottom_cta) or read how [ChatGPT product discovery changes merchant preparation](../chatgpt-product-discovery/).
 
 ## Sources
 

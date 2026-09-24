@@ -8,7 +8,7 @@
   guide_label: Follow the research workflow
   evidence: /api-evidence/amazon-price-series/
   evidence_label: Inspect a price-series test
-  api: https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=githubIO
+  api: https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=learn
   api_label: Amazon Search API
 
 - id: keyword-research
@@ -19,7 +19,7 @@
   description: Connect marketplace queries, comparable ASINs and returned keyword evidence before changing a listing or campaign.
   guide: /amazon-competitor-keyword-research/
   guide_label: Research competitor keywords
-  api: https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=githubIO
+  api: https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn
   api_label: Amazon ASIN Keywords API
 
 - id: customer-insight
@@ -32,7 +32,7 @@
   guide_label: Analyze negative reviews
   evidence: /api-evidence/amazon-reviews-list/
   evidence_label: Inspect the review evidence
-  api: https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=githubIO
+  api: https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=learn
   api_label: Amazon Reviews List API
 
 - id: listing-optimization
@@ -45,7 +45,7 @@
   guide_label: Build a listing improvement plan
   evidence: /amazon-review-case-study/
   evidence_label: Read the capacity-test case
-  tool: https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=githubIO
+  tool: https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=learn
   tool_label: Open the listing optimizer
 
 - id: seo-visibility
@@ -58,7 +58,7 @@
   guide_label: Audit an ecommerce page
   evidence: /ai-referral-traffic-ga4/
   evidence_label: Review the GA4 measurement guide
-  tool: https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO
+  tool: https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn
   tool_label: Open the SEO auditor
 
 - id: sourcing
@@ -71,7 +71,7 @@
   guide_label: Follow the sourcing workflow
   evidence: /api-evidence/1688-image-search/
   evidence_label: Inspect a real image-search run
-  api: https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=githubIO
+  api: https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn
   api_label: 1688 Search By Image API
 
 - id: product-images
@@ -84,7 +84,7 @@
   guide_label: Create product images safely
   evidence: /api-evidence/gpt-image-2-5-flare/
   evidence_label: Inspect a real Flare run
-  api: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=githubIO
+  api: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn
   api_label: GPT 2.5 Flare API
 
 - id: product-video
@@ -95,7 +95,7 @@
   description: Choose the correct generation mode, preserve product identity and review motion, labels and claims before using an output commercially.
   guide: /ai-video-generator/
   guide_label: Follow the video workflow
-  tool: https://www.nexscope.ai/tools/ai-video-generator?co-from=githubIO
+  tool: https://www.nexscope.ai/tools/ai-video-generator?co-from=learn
   tool_label: Open the AI video generator
 
 - id: api-agents
@@ -108,5 +108,5 @@
   guide_label: Map the API workflow
   evidence: /api-evidence/
   evidence_label: Browse API evidence
-  api: https://www.nexscope.ai/api-docs?co-from=githubIO
+  api: https://www.nexscope.ai/api-docs?co-from=learn
   api_label: Browse API documentation

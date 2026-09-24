@@ -108,7 +108,7 @@ Helium 10 is usually the more natural choice for a seller who wants an integrate
 
 Some organizations may use both: a seller team operates in Helium 10 while a development team uses Nexscope for customer-facing or automated workflows. The overlap should be evaluated at the task level.
 
-[Explore Nexscope's Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=helium_10_alternative) and test the exact capability before committing to a migration.
+[Explore Nexscope's Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=helium_10_alternative) and test the exact capability before committing to a migration.
 
 Compare adjacent decisions: [SellerSprite for Amazon keyword research](../sellersprite/), [Keepa API for product history](../keepa-api/), or [Rainforest API for Amazon product data](../rainforest-api/).
 
@@ -132,8 +132,8 @@ Reviewed September 17, 2026. Plan names, limits, and product capabilities can ch
 
 - [Helium 10 pricing](https://www.helium10.com/pricing/)
 - [Helium 10 keyword research tools](https://www.helium10.com/tools/keyword-research/)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=githubIO)
-- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=githubIO)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=githubIO)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
+- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
 
 Nexscope is not affiliated with or endorsed by Helium 10. Product names belong to their respective owners.

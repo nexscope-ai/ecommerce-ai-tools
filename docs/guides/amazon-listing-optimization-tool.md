@@ -25,7 +25,7 @@ faq:
 
 To **optimize an Amazon listing**, start with its current content and a specific shopper intent. Compare the ASIN's title, bullets, images, and other visible fields with relevant keyword and competitor signals. Turn gaps into a short list of changes you can verify and test. Nexscope's AI Amazon Listing Optimizer organizes those inputs and proposes a prioritized plan; the seller still decides what is true and what to publish.
 
-**[Open the AI Amazon Listing Optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_listing_optimizer_launch&utm_content=guide_top).** The workflow requires sign-in, and live research or AI steps may use credits.
+**[Open the AI Amazon Listing Optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_listing_optimizer_launch&utm_content=guide_top).** The workflow requires sign-in, and live research or AI steps may use credits.
 
 > **Quick answer:** Enter an ASIN or Amazon product URL, select the marketplace, and optionally add a target keyword. Review the listing snapshot, reverse-ASIN keyword sample, traffic signals, and product history before accepting any recommendation. Prioritize changes with a clear source, a feasible edit, and a way to check the result.
 
@@ -45,7 +45,7 @@ To **optimize an Amazon listing**, start with its current content and a specific
 
 1. Choose one listing and one marketplace. Record its ASIN or product URL and the date of your review.
 2. Decide what you want to improve: discoverability for a particular shopper query, clearer product information, or a suspected content gap. Add a target keyword if you want the optional page-one benchmark.
-3. Open the [listing optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_listing_optimizer_launch&utm_content=guide_steps), sign in, and submit the ASIN or URL and marketplace. Review the credit information before live steps.
+3. Open the [listing optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_listing_optimizer_launch&utm_content=guide_steps), sign in, and submit the ASIN or URL and marketplace. Review the credit information before live steps.
 4. Read the listing snapshot first. Verify its product identity and visible fields against the current Amazon page and your own catalog facts.
 5. Inspect keyword, traffic, and history sections separately. Note the source, date, and whether each value is observed, estimated, or missing.
 6. Read the proposed plan as a set of hypotheses. Reject changes that depend on unsupported claims, irrelevant terms, or unavailable evidence.
@@ -83,4 +83,4 @@ An ASIN or Amazon URL and a marketplace are the starting inputs. A target keywor
 
 For help interpreting a result, [ask in Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). For a reproducible tool error, [open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) with a non-sensitive ASIN, marketplace, step, and expected behavior.
 
-**[Audit an Amazon listing](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?utm_source=github_pages&utm_medium=referral&utm_campaign=amazon_listing_optimizer_launch&utm_content=guide_bottom)** · [Browse all guides](../guides/)
+**[Audit an Amazon listing](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_listing_optimizer_launch&utm_content=guide_bottom)** · [Browse all guides](../guides/)

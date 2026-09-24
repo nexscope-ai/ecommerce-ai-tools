@@ -59,7 +59,7 @@ Keepa also documents a hosted MCP server, so “supports AI agents” is no long
 
 ## Where Nexscope fits
 
-Nexscope's [Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=keepa_api_alternative) documents historical price, BSR, rating, seller-count, and monthly-sales signals when available. That can support research such as promotion analysis, competitive movement, and demand validation.
+Nexscope's [Amazon Product Price Series API](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=keepa_api_alternative) documents historical price, BSR, rating, seller-count, and monthly-sales signals when available. That can support research such as promotion analysis, competitive movement, and demand validation.
 
 Its larger advantage is what happens before and after the history call. A workflow can combine product or keyword research with other ecommerce data, then expose capabilities through REST, MCP, or Skills. For teams building an agent or multi-step internal tool, reducing the number of unrelated providers can matter as much as one individual series.
 
@@ -100,7 +100,7 @@ Keepa is the stronger default when deep Amazon product history and tracking are 
 
 These services can also coexist. Keepa can remain the history specialist while Nexscope handles other research or agent tasks. Consolidation is valuable only when the tested result meets your real contract.
 
-[Explore Nexscope's Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=keepa_api_alternative) and run a controlled sample before changing a production integration.
+[Explore Nexscope's Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=keepa_api_alternative) and run a controlled sample before changing a production integration.
 
 Compare adjacent decisions: [Rainforest API for Amazon product data](../rainforest-api/), [SellerSprite for keyword research](../sellersprite/), or [Helium 10 for an all-in-one seller suite](../helium-10/).
 
@@ -124,8 +124,8 @@ Reviewed September 17, 2026. Features and plan terms can change; verify them dir
 
 - [Keepa API documentation](https://keepa.com/api-docs/)
 - [Keepa plans and token model](https://keepa.com/api-docs/plans-tokens.html)
-- [Nexscope Amazon Product Price Series](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=githubIO)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=githubIO)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=githubIO)
+- [Nexscope Amazon Product Price Series](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
 
 Nexscope is not affiliated with or endorsed by Keepa. Product names belong to their respective owners.

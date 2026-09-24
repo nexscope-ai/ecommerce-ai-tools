@@ -61,31 +61,31 @@ The strongest workflows start with a narrow decision, request only the evidence 
 
 ### 1. Keyword to market-opportunity brief
 
-Start with one seed query and use the [SEO and marketing API directory](https://www.nexscope.ai/api-docs?tab=marketing&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_keyword_workflow) to select the relevant keyword and search endpoints. Codex can normalize the returned terms, group them by intent, compare available demand and competition fields, and produce a brief organized around customer needs.
+Start with one seed query and use the [SEO and marketing API directory](https://www.nexscope.ai/api-docs?tab=marketing&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_keyword_workflow) to select the relevant keyword and search endpoints. Codex can normalize the returned terms, group them by intent, compare available demand and competition fields, and produce a brief organized around customer needs.
 
 The report should retain the market, language, date, and provider for each metric. Google keyword data should not be labeled as Amazon search volume.
 
 ### 2. Amazon keyword to competitor map
 
-Use the [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_amazon_search) to find products for a documented marketplace and query. Codex can select comparable ASINs, create a consistent comparison table, highlight missing fields, and generate follow-up requests for product or competitor details.
+Use the [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_amazon_search) to find products for a documented marketplace and query. Codex can select comparable ASINs, create a consistent comparison table, highlight missing fields, and generate follow-up requests for product or competitor details.
 
 The output can answer questions such as which price bands appear, which features are common, and which product attributes are poorly explained. Provider estimates must remain labeled as estimates.
 
 ### 3. Competitor ASIN to keyword-gap report
 
-After identifying relevant ASINs, use the [Amazon ASIN Keywords API](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_asin_keywords) for reverse keyword research. Codex can compare several returned keyword sets, remove duplicates, group terms by intent, and map each cluster to an existing or proposed page.
+After identifying relevant ASINs, use the [Amazon ASIN Keywords API](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_asin_keywords) for reverse keyword research. Codex can compare several returned keyword sets, remove duplicates, group terms by intent, and map each cluster to an existing or proposed page.
 
 This is useful for building a research backlog. It does not prove that a keyword will rank or convert for a different product.
 
 ### 4. Low-star reviews to product-improvement hypotheses
 
-Request a recent sample with the [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_review_workflow). Codex can preserve the returned review identifiers, group comments by issue, quote short evidence snippets, and distinguish an observed complaint from a proposed improvement.
+Request a recent sample with the [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_review_workflow). Codex can preserve the returned review identifiers, group comments by issue, quote short evidence snippets, and distinguish an observed complaint from a proposed improvement.
 
 A useful report might turn “the cup is hard to clean under the blade” into a testable cleaning-access requirement. It should not convert five complaints into a market-wide defect rate.
 
 ### 5. Product URL to SEO action list
 
-Use webpage, SERP, keyword, and backlink capabilities from the [marketing API directory](https://www.nexscope.ai/api-docs?tab=marketing&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_seo_workflow). Codex can compare the collected page evidence with the target query, propose metadata and heading changes, add internal links, implement JSON-LD, and prepare a reviewable code change.
+Use webpage, SERP, keyword, and backlink capabilities from the [marketing API directory](https://www.nexscope.ai/api-docs?tab=marketing&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_seo_workflow). Codex can compare the collected page evidence with the target query, propose metadata and heading changes, add internal links, implement JSON-LD, and prepare a reviewable code change.
 
 The API evidence supports diagnosis; Codex performs the code and content work. Neither one can guarantee a ranking increase.
 
@@ -97,7 +97,7 @@ AI answers are non-deterministic. “Cited in three of five runs” is more usef
 
 ### 7. Product image to a sourcing shortlist
 
-Send an eligible public image URL to the [1688 Search By Image API](https://www.nexscope.ai/api-docs/1688-search-by-image?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_sourcing_workflow). Codex can normalize candidate names, prices, minimum-order quantities, and available seller information into a shortlist.
+Send an eligible public image URL to the [1688 Search By Image API](https://www.nexscope.ai/api-docs/1688-search-by-image?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_sourcing_workflow). Codex can normalize candidate names, prices, minimum-order quantities, and available seller information into a shortlist.
 
 Supplier identity, availability, samples, certifications, and commercial terms still require independent verification before purchasing.
 
@@ -105,13 +105,13 @@ For a focused, reproducible process, see the [1688 image-search sourcing guide](
 
 ### 8. Store or niche to a social-commerce research report
 
-Use documented Shopify and TikTok Shop research capabilities, starting with the [Shopify Product Query API](https://www.nexscope.ai/api-docs/shopify-product-query?view=api&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_shopify_workflow) where relevant. Codex can compare product positioning, identify repeated creative angles, organize creator or video references, and create a dated competitor brief.
+Use documented Shopify and TikTok Shop research capabilities, starting with the [Shopify Product Query API](https://www.nexscope.ai/api-docs/shopify-product-query?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_shopify_workflow) where relevant. Codex can compare product positioning, identify repeated creative angles, organize creator or video references, and create a dated competitor brief.
 
 These are public research workflows. They do not automatically connect a merchant's private store, orders, advertising account, or customer records.
 
 ### 9. Product assets to a repeatable creative pipeline
 
-The [creative API directory](https://www.nexscope.ai/api-docs?tab=creative&utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_creative_workflow) documents background removal, image generation or editing, and video-generation capabilities. Codex can validate input files, submit a task, retain its task ID, poll the documented status endpoint, and organize completed media with its prompt and settings.
+The [creative API directory](https://www.nexscope.ai/api-docs?tab=creative&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_creative_workflow) documents background removal, image generation or editing, and video-generation capabilities. Codex can validate input files, submit a task, retain its task ID, poll the documented status endpoint, and organize completed media with its prompt and settings.
 
 Creative generation can be asynchronous. Poll the existing task instead of repeating the generation request, which may create another billable job.
 
@@ -125,7 +125,7 @@ Start with one decision and a small endpoint set. A dashboard with fifty unverif
 
 A regular Codex user does not need to hand-write the entire integration. Codex can create and run a local script, but the user must provide legitimate API access and keep the key out of source control and chat messages.
 
-1. Open the exact [Nexscope API documentation](https://www.nexscope.ai/api-docs?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_api_docs) page for the capability you need.
+1. Open the exact [Nexscope API documentation](https://www.nexscope.ai/api-docs?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_api_docs) page for the capability you need.
 2. Store the API key in a local environment variable such as `NEXSCOPE_API_KEY`. Do not paste it into the prompt, commit it, or include it in screenshots.
 3. Give Codex the documentation URL, the business question, the required output, and the verification rules.
 4. Ask Codex to create a read-only script first, save raw responses separately, and generate a human-readable report from those responses.
@@ -275,7 +275,7 @@ New Nexscope users receive **1,000 free credits** to get started. Credit consump
 
 The best first workflow is deliberately small. Choose one business question, one documented Nexscope endpoint, one saved raw response, and one report that links every conclusion to evidence. Once that workflow is reliable, Codex can help turn it into a tested application, recurring job, or dashboard.
 
-[Create a Nexscope account](https://www.nexscope.ai/?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_ecommerce_signup) to receive **1,000 free credits**, then inspect the [Nexscope REST API documentation](https://www.nexscope.ai/api-docs?utm_source=github_pages&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_ecommerce_docs) for the capability you want to test.
+[Create a Nexscope account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_ecommerce_signup) to receive **1,000 free credits**, then inspect the [Nexscope REST API documentation](https://www.nexscope.ai/api-docs?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_trends&utm_content=codex_ecommerce_docs) for the capability you want to test.
 
 ## Sources
 

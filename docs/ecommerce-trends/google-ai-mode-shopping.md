@@ -80,15 +80,15 @@ Write ten questions that combine a product, use case, and meaningful constraints
 
 ### Map buyer language
 
-Use the [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=google_ai_mode_shopping) to group search language by use case, attribute, concern, and comparison. Keyword metrics describe a search dataset; they do not prove AI Mode selection.
+Use the [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=google_ai_mode_shopping) to group search language by use case, attribute, concern, and comparison. Keyword metrics describe a search dataset; they do not prove AI Mode selection.
 
 ### Compare marketplace evidence
 
-Inspect comparable products, review themes, price positioning, and missing attributes with the relevant capabilities in the [Nexscope API catalog](https://www.nexscope.ai/api-docs?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=google_ai_mode_shopping). Separate public observations and estimates from your first-party sales data.
+Inspect comparable products, review themes, price positioning, and missing attributes with the relevant capabilities in the [Nexscope API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=google_ai_mode_shopping). Separate public observations and estimates from your first-party sales data.
 
 ### Audit the destination page
 
-Use the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=githubIO&utm_source=github_pages&utm_medium=referral&utm_campaign=google_ai_mode_shopping) to inspect indexability, title, headings, canonical URL, visible copy, structured data, and mobile delivery. Validate structured data separately with Google's testing tools.
+Use the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=google_ai_mode_shopping) to inspect indexability, title, headings, canonical URL, visible copy, structured data, and mobile delivery. Validate structured data separately with Google's testing tools.
 
 ### Record, fix, and retest
 

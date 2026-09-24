@@ -35,7 +35,7 @@ The returned evidence supports a **follow-up capacity test** for a comparable pr
 The complete case study lists the four returned source review IDs, paraphrased evidence, the proposed validation plan and places where human review rejected unsupported AI interpretations.
 
 - [Read the full Amazon review case study]({{ '/amazon-review-case-study/' | relative_url }})
-- [Open the Amazon Reviews List API documentation](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=githubIO)
+- [Open the Amazon Reviews List API documentation](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=learn)
 - [Follow the negative-review analysis tutorial]({{ '/amazon-negative-review-analysis/' | relative_url }})
 
 No API key, token or private account information is stored in this public record.
