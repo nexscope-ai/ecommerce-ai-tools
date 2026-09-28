@@ -29,7 +29,7 @@ Run the following command from the repository root:
 .\scripts\rebuild-product-showcase.ps1
 ```
 
-The script removes previously generated product detail pages, the generated product manifest, and the old `_site` output. It then fetches the current approved and published products, regenerates their static pages, and performs a complete Jekyll build. Hand-written product showcase files are not removed.
+The script removes previously generated product detail pages, the generated product manifest, and the old `_site` output. It then fetches the current approved and published product JSON, composes page metadata and Product JSON-LD from each product's complete `seoConfig` object, renders each page with `scripts/templates/product-showcase-product.html`, regenerates the sitemap manifest, and performs a complete Jekyll build. Hand-written product showcase files are not removed, and the backend does not render the public HTML page.
 
 ## Start with the ecommerce problem you need to solve
 
