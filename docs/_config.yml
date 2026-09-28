@@ -3,6 +3,7 @@ description: Nexscope ecommerce tutorials, API evidence, case studies, insights 
 url: https://learn.nexscope.ai
 baseurl: /ecommerce-ai-tools
 lang: en
+product_showcase_api_base: https://api-test.nexscope.ai/api/product-showcase
 plugins:
   - jekyll-sitemap
 defaults:

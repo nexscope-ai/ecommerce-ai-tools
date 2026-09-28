@@ -21,6 +21,16 @@ Start with a practical guide, inspect a dated case or API evidence record, then 
 
 Published learning pages are available at [learn.nexscope.ai/ecommerce-ai-tools/](https://learn.nexscope.ai/ecommerce-ai-tools/). Repository Markdown remains the public source of truth and commit history for tutorials and evidence.
 
+### Rebuild all product showcase pages locally
+
+Run the following command from the repository root:
+
+```powershell
+.\scripts\rebuild-product-showcase.ps1
+```
+
+The script removes previously generated product detail pages, the generated product manifest, and the old `_site` output. It then fetches the current approved and published products, regenerates their static pages, and performs a complete Jekyll build. Hand-written product showcase files are not removed.
+
 ## Start with the ecommerce problem you need to solve
 
 | Question or workflow | Practical guide | Run the workflow |
