@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.generate_product_showcase_pages import BuildError, GENERATED_MARKER, generate
+from scripts.generate_product_showcase_pages import BuildError, GENERATED_MARKER, generate, render_product_page
 
 
 PUBLIC_UUID = "b05186f4-94f9-43d0-9fc7-931404589234"
@@ -133,7 +133,7 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
                 '<link rel="canonical" href="https://spam.example.com/not-the-product">',
                 html,
             )
-            self.assertIn("<h3>Product benefits</h3>", html)
+            self.assertIn('<h3 id="product-detail-section-1">Product benefits</h3>', html)
             self.assertIn("<strong>useful</strong>", html)
             self.assertIn('"@type":"Product"', html)
             self.assertIn('"brand":{"@type":"Brand","name":"Example Brand"}', html)
@@ -162,7 +162,20 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertIn('href="#product-video-title">Video</a>', html)
             self.assertIn('class="listing-layout"', html)
             self.assertIn('class="product-sidebar"', html)
+            self.assertIn('<section class="product-brief" aria-label="Product at a glance">', html)
+            self.assertIn("A product for daily workflows.", html)
+            self.assertNotIn('class="product-outline"', html)
+            self.assertNotIn('<span>Media</span>', html)
+            self.assertNotIn("Browse all products", html)
+            self.assertNotIn('class="listing-meta"', html)
+            self.assertNotIn("Published product", html)
             self.assertIn('aria-label="Open product image 2 in a new tab"', html)
+            self.assertEqual(2, html.count('<figure class="carousel-slide" data-carousel-slide'))
+            self.assertIn('<button type="button" data-carousel-prev', html)
+            self.assertIn('<button type="button" data-carousel-next', html)
+            self.assertIn('aria-roledescription="carousel"', html)
+            self.assertIn('aria-live="polite" data-carousel-announcement', html)
+            self.assertNotIn('id="product-gallery-title"', html)
             self.assertNotIn("{{", html)
             self.assertFalse(stale.exists())
 
@@ -172,6 +185,72 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertEqual(f"/product-showcase/product/{PUBLIC_UUID}/", manifest[0]["path"])
             self.assertEqual("Static product", manifest[0]["title"])
             self.assertEqual("https://cdn.example.com/product.webp", manifest[0]["image"])
+
+    def test_single_or_missing_image_has_no_carousel_controls(self):
+        template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
+        canonical = f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/"
+        gallery = "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/"
+        for images in (["https://cdn.example.com/product.webp"], []):
+            with self.subTest(images=images):
+                product = self.product()
+                product["imageUrls"] = images
+                html = render_product_page(template, product, canonical, gallery)
+                self.assertEqual(len(images), html.count('<figure class="carousel-slide" data-carousel-slide'))
+                self.assertNotIn('<button type="button" data-carousel-prev', html)
+                self.assertNotIn('data-carousel-thumb="', html)
+                self.assertNotIn('aria-roledescription="carousel"', html)
+                if not images:
+                    self.assertIn("No image is currently available.", html)
+
+    def test_header_tags_only_come_from_seo_config(self):
+        template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
+        canonical = f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/"
+        gallery = "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/"
+        product = self.product()
+        product["seoConfig"]["tags"] = [
+            " AI 视频 ", "电商", "ai 视频", "<script>alert(1)</script>", "", None, 7,
+        ]
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertIn('<div class="listing-meta" aria-label="Product tags">', html)
+        self.assertEqual(3, html.count('class="listing-tag"'))
+        self.assertIn('<span class="listing-tag">AI 视频</span>', html)
+        self.assertIn('<span class="listing-tag">电商</span>', html)
+        self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;', html)
+        self.assertNotIn('<script>alert(1)</script>', html)
+
+        product["seoConfig"]["tags"] = []
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertNotIn('class="listing-meta"', html)
+        product["seoConfig"] = json.dumps({"tags": "Automation, Video AI"})
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertIn('<span class="listing-tag">Automation</span>', html)
+        self.assertIn('<span class="listing-tag">Video AI</span>', html)
+
+    def test_explicit_geo_summary_and_product_outline_are_safe_and_optional(self):
+        template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
+        canonical = f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/"
+        gallery = "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/"
+        product = self.product()
+        product["productDetails"] = (
+            "## Core **benefits**\n\nUseful details.\n\n"
+            "```\n## Not a heading\n```\n\n"
+            "## Limitations & fit\n\nCheck the product site."
+        )
+        product["seoConfig"]["geo"]["answerSummary"] = "Quick <script>alert(1)</script> summary."
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertIn("Quick &lt;script&gt;alert(1)&lt;/script&gt; summary.", html)
+        self.assertNotIn("<script>alert(1)</script>", html)
+        self.assertIn('href="#product-detail-section-1">Core benefits</a>', html)
+        self.assertIn('href="#product-detail-section-2">Limitations &amp; fit</a>', html)
+        self.assertNotIn("href=\"#product-detail-section-3\"", html)
+        self.assertIn('<h3 id="product-detail-section-2">Limitations &amp; fit</h3>', html)
+
+        product["seoConfig"]["geo"]["answerSummary"] = product["seoConfig"]["description"]
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertNotIn('class="product-brief"', html)
+        product["seoConfig"].pop("geo")
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertNotIn('class="product-brief"', html)
 
     def test_disabled_public_gallery_generates_no_product_pages(self):
         with tempfile.TemporaryDirectory() as directory:

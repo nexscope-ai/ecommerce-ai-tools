@@ -47,6 +47,10 @@ The script removes the entire existing `docs/product-showcase/product` directory
 
 The product template applies `seoConfig` during generation: title, description, keywords, robots, language, author, theme color, Open Graph, Twitter Card, alternate-language links, Product/WebPage schema extensions, and additional `structuredData` or `jsonLd` nodes. GEO schema supplied through `geo.schema`, `geo.structuredData`, or `geo.jsonLd` is added to the JSON-LD graph. The complete safely serialized configuration is also embedded as `#nexscope-product-seo-config`, while the public product UUID, product name, and canonical page identity remain protected from accidental overrides.
 
+Visible product badges come only from `seoConfig.tags`, for example `"tags": ["AI video", "Ecommerce"]`. The builder shows at most eight distinct tags; when `tags` is absent or empty, it shows no badges. SEO `keywords` do not become visible tags.
+
+Product detail pages also use an explicit `seoConfig.geo.answerSummary` for a short, visible answer beneath the hero. It is omitted when empty or identical to the SEO description; other GEO analysis fields are not displayed as product claims. Submitted Markdown headings receive stable anchors, and a details table of contents appears only when there are at least two sections.
+
 ## Start with the ecommerce problem you need to solve
 
 | Question or workflow | Practical guide | Run the workflow |

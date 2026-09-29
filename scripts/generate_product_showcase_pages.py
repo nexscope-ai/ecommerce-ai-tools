@@ -229,12 +229,31 @@ def render_inline(source: str) -> str:
     return "".join(output)
 
 
+def product_detail_headings(value: object) -> list[str]:
+    if not isinstance(value, str):
+        return []
+    headings: list[str] = []
+    in_code = False
+    for line in value.replace("\r", "").split("\n"):
+        if line.startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        match = re.match(r"^#{1,3}\s+(.+)$", line)
+        if match:
+            label = limited_text(plain_markdown(match.group(1)), 90)
+            headings.append(label or f"Section {len(headings) + 1}")
+    return headings
+
+
 def render_markdown(value: object) -> str:
     if not isinstance(value, str) or not value.strip():
         return "<p>No additional product details were provided.</p>"
     lines = value.replace("\r", "").split("\n")
     output: list[str] = []
     index = 0
+    heading_number = 0
     while index < len(lines):
         line = lines[index]
         if not line.strip():
@@ -252,8 +271,12 @@ def render_markdown(value: object) -> str:
             continue
         heading = re.match(r"^(#{1,3})\s+(.+)$", line)
         if heading:
+            heading_number += 1
             level = min(4, len(heading.group(1)) + 1)
-            output.append(f"<h{level}>{render_inline(heading.group(2))}</h{level}>")
+            output.append(
+                f'<h{level} id="product-detail-section-{heading_number}">'
+                f"{render_inline(heading.group(2))}</h{level}>"
+            )
             index += 1
             continue
         ordered = re.match(r"^\d+\.\s+(.+)$", line)
@@ -327,6 +350,39 @@ def seo_metadata(product: dict) -> tuple[str, str, list[str]]:
 def seo_language(config: dict) -> str:
     language = limited_text(config.get("language") or config.get("lang"), 35)
     return language if language and LANGUAGE_PATTERN.fullmatch(language) else "en"
+
+
+def seo_tags(config: dict) -> list[str]:
+    raw_tags = config.get("tags")
+    if isinstance(raw_tags, str):
+        raw_tags = raw_tags.split(",")
+    if not isinstance(raw_tags, list):
+        return []
+    tags: list[str] = []
+    seen: set[str] = set()
+    for value in raw_tags:
+        if not isinstance(value, str):
+            continue
+        tag = limited_text(" ".join(value.split()), 40)
+        if tag and tag.casefold() not in seen:
+            tags.append(tag)
+            seen.add(tag.casefold())
+        if len(tags) == 8:
+            break
+    return tags
+
+
+def render_product_outline(headings: list[str]) -> str:
+    if len(headings) < 2:
+        return ""
+    links = "".join(
+        f'<li><a href="#product-detail-section-{index}">{escape(heading)}</a></li>'
+        for index, heading in enumerate(headings, 1)
+    )
+    return (
+        '<nav class="product-outline" aria-label="Product details contents">'
+        '<strong>On this page</strong><ol>' + links + "</ol></nav>"
+    )
 
 
 def configured_canonical(config: dict, canonical_url: str) -> str:
@@ -615,35 +671,38 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
     video_url = safe_url(product.get("videoUrl"))
     page_title = title if "nexscope" in title.lower() else f"{title} | Nexscope Product Gallery"
     first_image = images[0] if images else None
-    if first_image:
-        hero_image = (
-            f'<img src="{escape(first_image, quote=True)}" '
-            f'alt="{escape(product_name + " product image", quote=True)}" '
-            'fetchpriority="high" decoding="async">'
-        )
-    else:
-        hero_image = (
-            '<div class="media-placeholder"><span>Product image</span>'
-            '<strong>No image is currently available.</strong></div>'
-        )
-    gallery_section = ""
-    if len(images) > 1:
-        gallery_images = "".join(
-            '<figure class="gallery-item"><a '
-            f'href="{escape(image, quote=True)}" target="_blank" rel="noopener noreferrer" '
+    if images:
+        preview_stage = '<div class="carousel-stage">' + "".join(
+            '<figure class="carousel-slide" data-carousel-slide '
+            f'aria-label="Image {index + 1} of {len(images)}">'
+            f'<a href="{escape(image, quote=True)}" target="_blank" rel="noopener noreferrer" '
             f'aria-label="Open product image {index + 1} in a new tab">'
             f'<img src="{escape(image, quote=True)}" '
             f'alt="{escape(product_name + " product image " + str(index + 1), quote=True)}" '
-            'loading="lazy" decoding="async"></a>'
-            f'<figcaption>View {index + 1}</figcaption></figure>'
-            for index, image in enumerate(images[1:], start=1)
+            f'loading="{"eager" if index == 0 else "lazy"}" decoding="async"></a></figure>'
+            for index, image in enumerate(images)
+        ) + '</div>'
+    else:
+        preview_stage = (
+            '<div class="carousel-stage"><div class="media-placeholder"><span>Product image</span>'
+            '<strong>No image is currently available.</strong></div></div>'
         )
-        gallery_section = (
-            '<section class="media-section" aria-labelledby="product-gallery-title">'
-            '<div class="section-heading"><div><span class="eyebrow">More views</span>'
-            '<h2 id="product-gallery-title">Product images</h2></div>'
-            f'<p>{len(images) - 1} additional image{"s" if len(images) > 2 else ""}</p></div>'
-            f'<div class="gallery-grid">{gallery_images}</div></section>'
+    carousel_controls = ""
+    if len(images) > 1:
+        thumbnails = "".join(
+            f'<button type="button" class="carousel-thumb" data-carousel-thumb="{index}" '
+            f'aria-label="Show image {index + 1} of {len(images)}" '
+            f'aria-pressed="{"true" if index == 0 else "false"}">'
+            f'<img src="{escape(image, quote=True)}" alt="" loading="lazy" decoding="async"></button>'
+            for index, image in enumerate(images)
+        )
+        carousel_controls = (
+            '<div class="carousel-footer"><div class="carousel-arrows">'
+            '<button type="button" data-carousel-prev aria-label="Previous image">←</button>'
+            '<button type="button" data-carousel-next aria-label="Next image">→</button>'
+            '</div><div class="carousel-thumbnails" aria-label="Choose product image">'
+            f'{thumbnails}</div></div>'
+            '<p class="sr-only" aria-live="polite" data-carousel-announcement></p>'
         )
     video_section = ""
     if video_url:
@@ -685,9 +744,24 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
             f'<time datetime="{escape(published, quote=True)}">{escape(published[:10])}</time>'
             "</strong></div>"
         )
-    media_summary = f"{len(images)} image{'s' if len(images) != 1 else ''}"
-    if video_url:
-        media_summary += " · Video available"
+    tags = seo_tags(config)
+    geo = config.get("geo")
+    answer_summary = limited_text(geo.get("answerSummary"), 420) if isinstance(geo, dict) else None
+    if answer_summary and answer_summary.casefold() == description.casefold():
+        answer_summary = None
+    quick_answer = (
+        '<section class="product-brief" aria-label="Product at a glance">'
+        '<span class="eyebrow">In brief</span>'
+        f'<p>{escape(answer_summary)}</p></section>'
+        if answer_summary else ""
+    )
+    detail_headings = product_detail_headings(product.get("productDetails"))
+    header_tags = (
+        '<div class="listing-meta" aria-label="Product tags">'
+        + "".join(f'<span class="listing-tag">{escape(tag)}</span>' for tag in tags)
+        + "</div>"
+        if tags else ""
+    )
     media_nav = '<a href="#product-media">Images</a>' if images else ""
     video_nav = '<a href="#product-video-title">Video</a>' if video_url else ""
     replacements = {
@@ -717,16 +791,22 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
         ),
         "{{GALLERY_URL}}": escape(gallery_url, quote=True),
         "{{PRODUCT_NAME}}": escape(product_name),
-        "{{SOURCE_BUTTON}}": source_button,
-        "{{HERO_IMAGE}}": hero_image,
+        "{{SEO_TAGS}}": header_tags,
+        "{{QUICK_ANSWER}}": quick_answer,
+        "{{PRODUCT_OUTLINE}}": render_product_outline(detail_headings),
+        "{{HEADER_ACTIONS}}": (
+            f'<div class="listing-header-actions">{source_button}</div>' if source_button else ""
+        ),
+        "{{PREVIEW_STAGE}}": preview_stage,
+        "{{PREVIEW_COUNTER}}": f"1 / {len(images)}" if images else "No images",
+        "{{CAROUSEL_ROLE}}": ' aria-roledescription="carousel"' if len(images) > 1 else "",
+        "{{CAROUSEL_CONTROLS}}": carousel_controls,
         "{{PRODUCT_DETAILS}}": render_markdown(product.get("productDetails")),
         "{{PUBLISHED_CARD}}": published_card,
         "{{SOURCE_CARD}}": source_card,
-        "{{MEDIA_SUMMARY}}": escape(media_summary),
         "{{MEDIA_NAV}}": media_nav,
         "{{VIDEO_NAV}}": video_nav,
         "{{FACTS_ACTION}}": facts_action,
-        "{{GALLERY_SECTION}}": gallery_section,
         "{{VIDEO_SECTION}}": video_section,
     }
     html = template
