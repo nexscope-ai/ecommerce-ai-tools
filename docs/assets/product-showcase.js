@@ -1061,10 +1061,12 @@
       const score = data.score === null || data.score === undefined || data.score === ''
         ? null
         : Number(data.score);
-      const hasScore = Number.isFinite(score) && score >= 0 && score <= 100;
-      reviewInsights.hidden = !suggestion && !hasScore;
-      reviewSuggestion.hidden = !suggestion;
-      if (suggestion) renderMarkdown(reviewSuggestion, suggestion);
+      const hasSuggestion = suggestion.length > 0;
+      // A default score of 0 is not editorial feedback on its own.
+      const hasScore = hasSuggestion && Number.isFinite(score) && score >= 0 && score <= 100;
+      reviewInsights.hidden = !hasSuggestion;
+      reviewSuggestion.hidden = !hasSuggestion;
+      if (hasSuggestion) renderMarkdown(reviewSuggestion, suggestion);
       else reviewSuggestion.replaceChildren();
       reviewScore.hidden = !hasScore;
       if (hasScore) {
