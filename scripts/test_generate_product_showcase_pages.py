@@ -8,7 +8,7 @@ from scripts.generate_product_showcase_pages import BuildError, GENERATED_MARKER
 
 
 PUBLIC_UUID = "b05186f4-94f9-43d0-9fc7-931404589234"
-DETAIL_URL = f"https://api-test.nexscope.ai/api/product-showcase/products/{PUBLIC_UUID}"
+DETAIL_URL = f"https://api.nexscope.ai/api/product-showcase/products/{PUBLIC_UUID}"
 PRODUCT_TEMPLATE = (
     Path(__file__).resolve().parent / "templates" / "product-showcase-product.html"
 )
@@ -21,7 +21,7 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
         (source / "_config.yml").write_text(
             "url: https://learn.nexscope.ai\n"
             "baseurl: /ecommerce-ai-tools\n"
-            "product_showcase_api_base: https://api-test.nexscope.ai/api/product-showcase\n",
+            "product_showcase_api_base: https://api.nexscope.ai/api/product-showcase\n",
             encoding="utf-8",
         )
         target_template = root / "scripts" / "templates" / "product-showcase-product.html"
