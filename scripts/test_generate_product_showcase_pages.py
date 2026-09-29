@@ -162,8 +162,7 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertIn('href="#product-video-title">Video</a>', html)
             self.assertIn('class="listing-layout"', html)
             self.assertIn('class="product-sidebar"', html)
-            self.assertIn('<section class="product-brief" aria-label="Product at a glance">', html)
-            self.assertIn("A product for daily workflows.", html)
+            self.assertNotIn('class="product-brief"', html)
             self.assertNotIn('class="product-outline"', html)
             self.assertNotIn('<span>Media</span>', html)
             self.assertNotIn("Browse all products", html)
@@ -226,7 +225,7 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
         self.assertIn('<span class="listing-tag">Automation</span>', html)
         self.assertIn('<span class="listing-tag">Video AI</span>', html)
 
-    def test_explicit_geo_summary_and_product_outline_are_safe_and_optional(self):
+    def test_geo_summary_is_not_visible_and_product_outline_is_safe(self):
         template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
         canonical = f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/"
         gallery = "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/"
@@ -238,19 +237,22 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
         )
         product["seoConfig"]["geo"]["answerSummary"] = "Quick <script>alert(1)</script> summary."
         html = render_product_page(template, product, canonical, gallery)
-        self.assertIn("Quick &lt;script&gt;alert(1)&lt;/script&gt; summary.", html)
+        self.assertNotIn('class="product-brief"', html)
+        self.assertNotIn("Quick &lt;script&gt;alert(1)&lt;/script&gt; summary.", html)
         self.assertNotIn("<script>alert(1)</script>", html)
+        config_match = re.search(
+            r'<script type="application/json" id="nexscope-product-seo-config">(.*?)</script>',
+            html,
+        )
+        self.assertIsNotNone(config_match)
+        self.assertEqual(
+            "Quick <script>alert(1)</script> summary.",
+            json.loads(config_match.group(1))["geo"]["answerSummary"],
+        )
         self.assertIn('href="#product-detail-section-1">Core benefits</a>', html)
         self.assertIn('href="#product-detail-section-2">Limitations &amp; fit</a>', html)
         self.assertNotIn("href=\"#product-detail-section-3\"", html)
         self.assertIn('<h3 id="product-detail-section-2">Limitations &amp; fit</h3>', html)
-
-        product["seoConfig"]["geo"]["answerSummary"] = product["seoConfig"]["description"]
-        html = render_product_page(template, product, canonical, gallery)
-        self.assertNotIn('class="product-brief"', html)
-        product["seoConfig"].pop("geo")
-        html = render_product_page(template, product, canonical, gallery)
-        self.assertNotIn('class="product-brief"', html)
 
     def test_disabled_public_gallery_generates_no_product_pages(self):
         with tempfile.TemporaryDirectory() as directory:

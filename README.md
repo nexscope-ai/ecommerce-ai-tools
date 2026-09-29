@@ -49,7 +49,7 @@ The product template applies `seoConfig` during generation: title, description, 
 
 Visible product badges come only from `seoConfig.tags`, for example `"tags": ["AI video", "Ecommerce"]`. The builder shows at most eight distinct tags; when `tags` is absent or empty, it shows no badges. SEO `keywords` do not become visible tags.
 
-Product detail pages also use an explicit `seoConfig.geo.answerSummary` for a short, visible answer beneath the hero. It is omitted when empty or identical to the SEO description; other GEO analysis fields are not displayed as product claims. Submitted Markdown headings receive stable anchors, and a details table of contents appears only when there are at least two sections.
+Submitted Markdown headings receive stable anchors, and a details table of contents appears only when there are at least two sections. GEO configuration remains in the safely serialized SEO JSON; explicitly configured GEO schema still enters JSON-LD, but `geo.answerSummary` no longer creates a visible summary card.
 
 ## Start with the ecommerce problem you need to solve
 

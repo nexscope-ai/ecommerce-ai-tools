@@ -745,16 +745,6 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
             "</strong></div>"
         )
     tags = seo_tags(config)
-    geo = config.get("geo")
-    answer_summary = limited_text(geo.get("answerSummary"), 420) if isinstance(geo, dict) else None
-    if answer_summary and answer_summary.casefold() == description.casefold():
-        answer_summary = None
-    quick_answer = (
-        '<section class="product-brief" aria-label="Product at a glance">'
-        '<span class="eyebrow">In brief</span>'
-        f'<p>{escape(answer_summary)}</p></section>'
-        if answer_summary else ""
-    )
     detail_headings = product_detail_headings(product.get("productDetails"))
     header_tags = (
         '<div class="listing-meta" aria-label="Product tags">'
@@ -792,7 +782,6 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
         "{{GALLERY_URL}}": escape(gallery_url, quote=True),
         "{{PRODUCT_NAME}}": escape(product_name),
         "{{SEO_TAGS}}": header_tags,
-        "{{QUICK_ANSWER}}": quick_answer,
         "{{PRODUCT_OUTLINE}}": render_product_outline(detail_headings),
         "{{HEADER_ACTIONS}}": (
             f'<div class="listing-header-actions">{source_button}</div>' if source_button else ""
