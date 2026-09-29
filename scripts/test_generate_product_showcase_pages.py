@@ -156,6 +156,13 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertEqual("Static product", product_schema["name"])
             self.assertIn('"@type":"VideoObject"', html)
             self.assertIn("product-side.webp", html)
+            self.assertIn('<nav class="listing-tabs" aria-label="On this page">', html)
+            self.assertIn('href="#product-media">Images</a>', html)
+            self.assertIn('href="#product-overview-title">Overview</a>', html)
+            self.assertIn('href="#product-video-title">Video</a>', html)
+            self.assertIn('class="listing-layout"', html)
+            self.assertIn('class="product-sidebar"', html)
+            self.assertIn('aria-label="Open product image 2 in a new tab"', html)
             self.assertNotIn("{{", html)
             self.assertFalse(stale.exists())
 

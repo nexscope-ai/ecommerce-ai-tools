@@ -257,6 +257,98 @@
       .media-section { padding: 26px 18px; }
       .gallery-item { min-height: 240px; }
     }
+    /* Directory-style product detail: clear summary, page sections and a compact facts rail. */
+    :root { --canvas: #f7f8fc; --ink: #191b29; --muted: #606477; --line: #e3e5ee; --soft: #f2efff; --shadow: 0 18px 52px rgb(32 31 70 / 6%); }
+    body { background: radial-gradient(circle at 10% 0%, #f0edff 0, transparent 31%), var(--canvas); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .site-header { background: rgb(255 255 255 / 92%); }
+    .site-header .wrap { min-height: 72px; }
+    .listing-page { padding: 26px 0 86px; }
+    .listing-page .breadcrumbs { margin-bottom: 20px; font-size: 12px; }
+    .listing-page .breadcrumbs > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .listing-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 34px; padding: clamp(30px, 4vw, 52px); overflow: hidden; border: 1px solid #dfe2ee; border-radius: 24px; background: radial-gradient(circle at 100% 0%, rgb(108 85 255 / 11%), transparent 35%), linear-gradient(120deg, #fff 0%, #fbfbff 100%); box-shadow: var(--shadow); }
+    .listing-heading { min-width: 0; max-width: 740px; }
+    .listing-heading .eyebrow { color: #5e4bea; font-size: 10px; letter-spacing: .18em; }
+    .listing-heading h1 { margin: 13px 0 14px; font-size: clamp(36px, 4.2vw, 54px); line-height: 1.06; letter-spacing: -.05em; overflow-wrap: anywhere; }
+    .listing-heading .lead { max-width: 680px; color: #5d6173; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.65; }
+    .listing-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 24px; }
+    .listing-meta > span { display: inline-flex; min-height: 31px; align-items: center; gap: 8px; padding: 6px 11px; border: 1px solid #e2e4ee; border-radius: 999px; background: #fff; color: #555b70; font-size: 11px; font-weight: 700; }
+    .listing-meta .listing-status { border-color: #c7eadc; background: #f0fcf7; color: #187150; }
+    .listing-status > span { width: 7px; height: 7px; border-radius: 50%; background: #22a46f; }
+    .listing-header-actions { display: flex; min-width: 192px; flex: 0 0 auto; flex-direction: column; gap: 10px; }
+    .listing-header-actions .button { width: 100%; min-height: 48px; border-radius: 11px; white-space: nowrap; }
+    .listing-header-actions .button:not(.button-primary) { color: #4d5368; }
+    .listing-tabs { position: sticky; z-index: 10; top: 0; display: flex; gap: 28px; margin-top: 26px; padding: 0 8px; overflow-x: auto; border-bottom: 1px solid #dce0eb; background: rgb(247 248 252 / 95%); backdrop-filter: blur(16px); scrollbar-width: none; }
+    .listing-tabs::-webkit-scrollbar { display: none; }
+    .listing-tabs a { flex: 0 0 auto; padding: 15px 4px 14px; border-bottom: 2px solid transparent; color: #606477; font-size: 13px; font-weight: 750; text-decoration: none; }
+    .listing-tabs a:hover, .listing-tabs a:focus-visible { border-color: var(--accent); color: var(--accent); }
+    .listing-layout { display: grid; grid-template-columns: minmax(0, 1fr) 292px; gap: 28px; align-items: start; margin-top: 28px; }
+    .listing-main { min-width: 0; }
+    #product-media, #product-overview-title, #product-video-title { scroll-margin-top: 76px; }
+    .product-preview { position: relative; overflow: hidden; border: 1px solid #262a46; border-radius: 20px; background: radial-gradient(circle at 50% 22%, #34315c 0%, #1b1e34 42%, #101321 100%); color: #fff; }
+    .product-preview::before { position: absolute; inset: 0; background-image: linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px); background-size: 34px 34px; content: ""; pointer-events: none; }
+    .preview-bar { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 16px; padding: 17px 22px; border-bottom: 1px solid rgb(255 255 255 / 10%); color: #c4c6df; font-size: 10px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .preview-bar span:last-child { color: #979bb9; text-align: right; }
+    .preview-image { position: relative; display: grid; min-height: clamp(290px, 38vw, 470px); place-items: center; padding: clamp(22px, 4vw, 42px); }
+    .preview-image img { display: block; width: auto; max-width: 100%; height: auto; max-height: 430px; border-radius: 12px; object-fit: contain; box-shadow: 0 24px 60px rgb(0 0 0 / 24%); }
+    .preview-image .media-placeholder { color: #c4c6df; }
+    .preview-image .media-placeholder strong { color: #fff; }
+    .listing-main .product-overview, .listing-main .media-section, .listing-main .external-video { display: block; margin-top: 24px; padding: clamp(26px, 3.5vw, 38px); border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: 0 8px 28px rgb(32 31 70 / 3%); }
+    .listing-main .section-intro h2, .listing-main .section-heading h2, .listing-main .external-video h2 { margin: 9px 0 0; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.16; letter-spacing: -.035em; }
+    .listing-main .section-heading { align-items: end; margin-bottom: 22px; }
+    .listing-main .section-heading p { color: #777b8e; font-size: 12px; }
+    .listing-main .product-copy { max-width: 68ch; margin-top: 26px; font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
+    .listing-main .product-copy p, .listing-main .product-copy li { color: #4b5062; }
+    .listing-main .product-copy h2 { font-size: 25px; }
+    .listing-main .product-copy h3 { font-size: 20px; }
+    .listing-main .product-copy img { max-width: 100%; height: auto; }
+    .listing-main .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .listing-main .gallery-item, .listing-main .gallery-item:last-child:nth-child(odd) { display: block; min-height: 0; grid-column: auto; border-color: #e5e7f0; border-radius: 14px; background: #f6f7fb; }
+    .listing-main .gallery-item a { display: block; height: 190px; padding: 12px; overflow: hidden; }
+    .listing-main .gallery-item a:focus-visible { outline: 3px solid var(--accent); outline-offset: -4px; }
+    .listing-main .gallery-item img { display: block; width: 100%; height: 100%; max-height: 100%; object-fit: contain; }
+    .listing-main .gallery-item figcaption { padding: 0 16px 13px; color: #666b7e; font-size: 11px; font-weight: 700; }
+    .listing-main .video-section video { max-height: 500px; border-radius: 12px; }
+    .listing-main .external-video { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .listing-main .external-video a { display: inline-flex; min-height: 44px; align-items: center; white-space: nowrap; }
+    .product-sidebar { position: sticky; top: 82px; display: grid; gap: 16px; }
+    .product-sidebar .product-facts { display: block; overflow: hidden; border-color: var(--line); border-radius: 18px; background: #fff; box-shadow: 0 10px 34px rgb(32 31 70 / 4%); }
+    .product-sidebar .facts-title { padding: 22px 22px 18px; }
+    .product-sidebar .facts-title strong { font-size: 19px; letter-spacing: -.025em; }
+    .product-sidebar .fact { display: grid; gap: 4px; padding: 16px 22px; border-right: 0; }
+    .product-sidebar .fact span { color: #7b7f91; }
+    .product-sidebar .fact strong { color: #32374a; font-size: 13px; line-height: 1.4; }
+    .product-sidebar .facts-action { padding: 20px 22px 22px; }
+    .product-sidebar .facts-action .button { min-height: 46px; }
+    .sidebar-note { display: grid; grid-template-columns: 24px 1fr; gap: 11px; padding: 18px; border: 1px solid #e1ddf5; border-radius: 16px; background: #f5f2ff; color: #626177; font-size: 12px; line-height: 1.55; }
+    .sidebar-note-mark { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; background: #e8e2ff; color: var(--accent); font-weight: 850; }
+    .sidebar-note strong { display: block; margin-bottom: 5px; color: var(--ink); font-size: 13px; }
+    .sidebar-note p { margin: 0; }
+    @media (max-width: 900px) {
+      .listing-layout { grid-template-columns: minmax(0, 1fr); }
+      .product-sidebar { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .listing-page { padding-top: 19px; }
+      .listing-header { align-items: stretch; flex-direction: column; gap: 24px; padding: 27px 23px; border-radius: 19px; }
+      .listing-heading h1 { font-size: clamp(34px, 9vw, 46px); }
+      .listing-header-actions { flex-direction: row; flex-wrap: wrap; }
+      .listing-header-actions .button { flex: 1 1 180px; width: auto; }
+      .listing-tabs { margin-top: 14px; }
+      .listing-layout { gap: 20px; margin-top: 20px; }
+      .preview-image { min-height: 290px; padding: 22px; }
+      .listing-main .product-overview, .listing-main .media-section, .listing-main .external-video { padding: 26px 23px; border-radius: 18px; }
+      .product-sidebar { grid-template-columns: 1fr; }
+      .listing-main .external-video { align-items: stretch; flex-direction: column; }
+      .listing-main .external-video a { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .listing-meta > span { font-size: 10px; }
+      .preview-bar { padding: 15px 16px; }
+      .preview-image { min-height: 230px; padding: 18px; }
+      .listing-main .gallery-grid { grid-template-columns: 1fr; }
+      .listing-main .gallery-item a { height: 210px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .button { transition: none; } html { scroll-behavior: auto; } }
   </style>
   <script src="https://learn.nexscope.ai/analytics.js?v=5" defer></script>
 </head>
@@ -268,20 +360,37 @@
       <details class="mobile-menu"><summary aria-label="Open navigation menu"><span class="menu-lines" aria-hidden="true"></span></summary><nav aria-label="Mobile navigation"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/">Learn</a><a href="{{GALLERY_URL}}" aria-current="page">Product Gallery</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/community/">Community</a><a href="https://www.nexscope.ai/api-docs">API docs</a></nav></details>
     </div>
   </header>
-  <main class="wrap product-page">
+  <main class="wrap product-page listing-page">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{GALLERY_URL}}">Product Gallery</a><span aria-hidden="true">/</span><span>{{PRODUCT_NAME}}</span></nav>
-    <article>
-      <section class="product-hero">
-        <div class="hero-copy"><span class="eyebrow">Nexscope product gallery</span><h1>{{PRODUCT_NAME}}</h1><p class="lead">{{DESCRIPTION}}</p><div class="hero-actions">{{SOURCE_BUTTON}}<a class="button" href="{{GALLERY_URL}}">Browse product gallery</a></div></div>
-        <div class="hero-media">{{HERO_IMAGE}}</div>
-      </section>
-      <section class="product-overview" aria-labelledby="product-overview-title">
-        <div><div class="section-intro"><span class="eyebrow">Product overview</span><h2 id="product-overview-title">About {{PRODUCT_NAME}}.</h2></div><div class="product-copy">{{PRODUCT_DETAILS}}</div></div>
-        <aside class="product-facts" aria-label="Product listing details"><div class="facts-title"><span class="eyebrow">At a glance</span><strong>Public product listing</strong></div><div class="fact"><span>Listing status</span><strong>Editorially reviewed and published</strong></div>{{PUBLISHED_CARD}}{{SOURCE_CARD}}<div class="fact"><span>Available media</span><strong>{{MEDIA_SUMMARY}}</strong></div>{{FACTS_ACTION}}</aside>
-      </section>
-      {{GALLERY_SECTION}}
-      {{VIDEO_SECTION}}
-      <aside class="disclosure"><span class="disclosure-mark" aria-hidden="true">i</span><div><strong>About this listing</strong>This public gallery page is based on information submitted for editorial review. Nexscope does not sell the product. Verify availability, claims, pricing and buying terms on the linked product website.</div></aside>
+    <article class="listing-article">
+      <header class="listing-header">
+        <div class="listing-heading">
+          <span class="eyebrow">Nexscope Product Gallery</span>
+          <h1>{{PRODUCT_NAME}}</h1>
+          <p class="lead">{{DESCRIPTION}}</p>
+          <div class="listing-meta"><span class="listing-status"><span aria-hidden="true"></span>Published product</span><span>{{MEDIA_SUMMARY}}</span></div>
+        </div>
+        <div class="listing-header-actions">{{SOURCE_BUTTON}}<a class="button" href="{{GALLERY_URL}}">Browse all products</a></div>
+      </header>
+      <nav class="listing-tabs" aria-label="On this page">{{MEDIA_NAV}}<a href="#product-overview-title">Overview</a>{{VIDEO_NAV}}</nav>
+      <div class="listing-layout">
+        <div class="listing-main">
+          <section class="product-preview" id="product-media" aria-label="Product preview">
+            <div class="preview-bar"><span>Product preview</span><span>{{MEDIA_SUMMARY}}</span></div>
+            <div class="preview-image">{{HERO_IMAGE}}</div>
+          </section>
+          {{GALLERY_SECTION}}
+          <section class="product-overview" aria-labelledby="product-overview-title">
+            <div class="section-intro"><span class="eyebrow">What is this product?</span><h2 id="product-overview-title">About {{PRODUCT_NAME}}</h2></div>
+            <div class="product-copy">{{PRODUCT_DETAILS}}</div>
+          </section>
+          {{VIDEO_SECTION}}
+        </div>
+        <aside class="product-sidebar" aria-label="Product listing details">
+          <div class="product-facts"><div class="facts-title"><span class="eyebrow">At a glance</span><strong>Product information</strong></div><div class="fact"><span>Status</span><strong>Published in Nexscope Gallery</strong></div>{{SOURCE_CARD}}{{PUBLISHED_CARD}}<div class="fact"><span>Media</span><strong>{{MEDIA_SUMMARY}}</strong></div>{{FACTS_ACTION}}</div>
+          <div class="sidebar-note"><span class="sidebar-note-mark" aria-hidden="true">i</span><div><strong>About this listing</strong><p>This page is based on submitted product information. Nexscope does not sell this product. Confirm claims, availability and buying terms on the product website.</p></div></div>
+        </aside>
+      </div>
     </article>
   </main>
   <footer class="site-footer"><div class="wrap"><span>Nexscope Product Gallery · Curated ecommerce product discovery.</span><a href="{{GALLERY_URL}}">Explore more products ↗</a></div></footer>

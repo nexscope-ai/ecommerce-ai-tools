@@ -629,15 +629,19 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
     gallery_section = ""
     if len(images) > 1:
         gallery_images = "".join(
-            f'<figure class="gallery-item"><img src="{escape(image, quote=True)}" '
+            '<figure class="gallery-item"><a '
+            f'href="{escape(image, quote=True)}" target="_blank" rel="noopener noreferrer" '
+            f'aria-label="Open product image {index + 1} in a new tab">'
+            f'<img src="{escape(image, quote=True)}" '
             f'alt="{escape(product_name + " product image " + str(index + 1), quote=True)}" '
-            'loading="lazy" decoding="async"></figure>'
+            'loading="lazy" decoding="async"></a>'
+            f'<figcaption>View {index + 1}</figcaption></figure>'
             for index, image in enumerate(images[1:], start=1)
         )
         gallery_section = (
             '<section class="media-section" aria-labelledby="product-gallery-title">'
-            '<div class="section-heading"><div><span class="eyebrow">Product gallery</span>'
-            '<h2 id="product-gallery-title">Explore more product views.</h2></div>'
+            '<div class="section-heading"><div><span class="eyebrow">More views</span>'
+            '<h2 id="product-gallery-title">Product images</h2></div>'
             f'<p>{len(images) - 1} additional image{"s" if len(images) > 2 else ""}</p></div>'
             f'<div class="gallery-grid">{gallery_images}</div></section>'
         )
@@ -684,6 +688,8 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
     media_summary = f"{len(images)} image{'s' if len(images) != 1 else ''}"
     if video_url:
         media_summary += " · Video available"
+    media_nav = '<a href="#product-media">Images</a>' if images else ""
+    video_nav = '<a href="#product-video-title">Video</a>' if video_url else ""
     replacements = {
         "{{HTML_LANG}}": escape(language, quote=True),
         "{{TITLE}}": escape(page_title),
@@ -717,6 +723,8 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
         "{{PUBLISHED_CARD}}": published_card,
         "{{SOURCE_CARD}}": source_card,
         "{{MEDIA_SUMMARY}}": escape(media_summary),
+        "{{MEDIA_NAV}}": media_nav,
+        "{{VIDEO_NAV}}": video_nav,
         "{{FACTS_ACTION}}": facts_action,
         "{{GALLERY_SECTION}}": gallery_section,
         "{{VIDEO_SECTION}}": video_section,
