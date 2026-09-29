@@ -704,16 +704,20 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
             f'{thumbnails}</div></div>'
             '<p class="sr-only" aria-live="polite" data-carousel-announcement></p>'
         )
+    video_hero = ""
     video_section = ""
     if video_url:
         if re.search(r"\.(?:mp4|webm)(?:[?#].*)?$", video_url, re.I):
             poster = f' poster="{escape(first_image, quote=True)}"' if first_image else ""
-            video_section = (
-                '<section class="media-section video-section" aria-labelledby="product-video-title">'
-                '<div class="section-heading"><div><span class="eyebrow">Product video</span>'
-                '<h2 id="product-video-title">See the product in context.</h2></div>'
-                '<p>Use the native controls to play, pause or expand.</p></div>'
-                f'<video controls preload="metadata" playsinline src="{escape(video_url, quote=True)}"{poster}></video>'
+            video_hero = (
+                '<section class="listing-video-hero" aria-labelledby="product-video-title" data-video-hero>'
+                f'<video controls muted loop preload="metadata" playsinline '
+                f'src="{escape(video_url, quote=True)}"{poster}></video>'
+                '<div class="listing-video-intro"><span class="eyebrow" id="product-video-title">'
+                'Product in motion</span><span class="listing-video-hint">'
+                'Use the video controls to play with sound or pause.</span></div>'
+                '<a class="listing-video-next" href="#product-summary">Explore this product '
+                '<span aria-hidden="true">↓</span></a>'
                 "</section>"
             )
         else:
@@ -782,6 +786,7 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
         "{{GALLERY_URL}}": escape(gallery_url, quote=True),
         "{{PRODUCT_NAME}}": escape(product_name),
         "{{SEO_TAGS}}": header_tags,
+        "{{VIDEO_HERO}}": video_hero,
         "{{PRODUCT_OUTLINE}}": render_product_outline(detail_headings),
         "{{HEADER_ACTIONS}}": (
             f'<div class="listing-header-actions">{source_button}</div>' if source_button else ""

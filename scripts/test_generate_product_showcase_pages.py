@@ -161,6 +161,25 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertIn('href="#product-overview-title">Overview</a>', html)
             self.assertIn('href="#product-video-title">Video</a>', html)
             self.assertIn('class="listing-layout"', html)
+            self.assertLess(
+                html.index('href="#product-video-title">Video</a>'),
+                html.index('href="#product-media">Images</a>'),
+            )
+            self.assertLess(
+                html.index('<section class="listing-video-hero"'),
+                html.index('<header class="listing-header"'),
+            )
+            self.assertLess(
+                html.index('<section class="listing-video-hero"'),
+                html.index('<section class="product-preview"'),
+            )
+            self.assertIn('controls muted loop preload="metadata" playsinline', html)
+            self.assertIn('href="#product-summary">Explore this product', html)
+            self.assertNotIn('class="media-section video-section"', html)
+            self.assertLess(
+                html.index('<section class="product-preview"'),
+                html.index('<section class="product-overview"'),
+            )
             self.assertIn('class="product-sidebar"', html)
             self.assertNotIn('class="product-brief"', html)
             self.assertNotIn('class="product-outline"', html)
@@ -184,6 +203,33 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertEqual(f"/product-showcase/product/{PUBLIC_UUID}/", manifest[0]["path"])
             self.assertEqual("Static product", manifest[0]["title"])
             self.assertEqual("https://cdn.example.com/product.webp", manifest[0]["image"])
+
+    def test_external_video_precedes_images_and_no_video_keeps_images_first(self):
+        template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
+        canonical = f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/"
+        gallery = "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/"
+        product = self.product()
+        product["videoUrl"] = "https://videos.example.com/watch/product"
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertNotIn('class="listing-video-hero"', html)
+        self.assertLess(
+            html.index('<section class="external-video"'),
+            html.index('<section class="product-preview"'),
+        )
+        self.assertLess(
+            html.index('href="#product-video-title">Video</a>'),
+            html.index('href="#product-media">Images</a>'),
+        )
+
+        product["videoUrl"] = None
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertNotIn('class="listing-video-hero"', html)
+        self.assertNotIn('id="product-video-title"', html)
+        self.assertNotIn('href="#product-video-title">Video</a>', html)
+        self.assertLess(
+            html.index('<section class="product-preview"'),
+            html.index('<section class="product-overview"'),
+        )
 
     def test_single_or_missing_image_has_no_carousel_controls(self):
         template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
