@@ -1,11 +1,20 @@
 # Ecommerce AI Tools by Nexscope — AI Video Generator, Amazon Research & SEO
 
-This is Nexscope's official public knowledge repository for **practical ecommerce tutorials, traceable cases, API evidence, and community support**. Explore Amazon research and listing optimization, SEO, sourcing, AI product image and video generation, and REST/MCP integrations. The browser tools run on Nexscope; this repository contains public documentation and evidence resources, not the hosted application's source code.
+This is Nexscope's official public knowledge repository for **practical ecommerce tutorials, traceable cases, API evidence, and community support**. Explore the Product Gallery, Amazon research and listing optimization, SEO, sourcing, AI product image and video generation, and REST/MCP integrations. The browser tools run on Nexscope; this repository contains public documentation and evidence resources, not the hosted application's source code.
+
+## Product Gallery — share a product and improve its public page
+
+[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) is accepting ecommerce products for editorial review. Sellers can submit a public product-page URL or Amazon ASIN with product details and images; video is optional. An approved product may receive a focused public page with its context, visuals, and buying link. Editorial review may also suggest ways to make the public product page clearer. No store connection, seller token, or payment access is required.
+
+**[Submit your product](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Explore the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Ask a question or share feedback](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
+
+Submissions stay offline until reviewed and approved. Keep the private management link to check status, edit, or withdraw a submission; never post it publicly. Approval, publication, search rankings, traffic, and sales are not guaranteed.
 
 ## Choose your starting point
 
 | If you want to… | Start here |
 | --- | --- |
+| Showcase a product or improve its public page | [Submit a product for editorial review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_start) and [discuss the workflow](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16). |
 | Understand what Nexscope can support | [Browse the learning center](https://learn.nexscope.ai/ecommerce-ai-tools/) for tutorials, case studies, API evidence and tools. |
 | Research a product or create a video | [Browse the workflows below](#start-with-the-ecommerce-problem-you-need-to-solve), then try the relevant browser tool. |
 | Build an ecommerce app or AI agent | [Read the API workflow guide](docs/guides/api-capabilities.md) and [browse the API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_start_developer). |
