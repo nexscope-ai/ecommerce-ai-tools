@@ -135,6 +135,17 @@ html { scroll-behavior: smooth; }
 .markdown-editor-dialog { width: min(1180px, calc(100vw - 40px)); height: min(760px, calc(100vh - 40px)); max-width: none; max-height: none; margin: auto; padding: 0; overflow: hidden; border: 1px solid #dcd7e6; border-radius: 18px; background: #fbfaf7; color: var(--ink); box-shadow: 0 30px 90px rgb(28 24 38 / 22%); }
 .markdown-editor-dialog[open] { display: flex; flex-direction: column; }
 .markdown-editor-dialog::backdrop { position: fixed; inset: 0; width: 100vw; height: 100dvh; background: rgb(28 24 38 / 48%); }
+.management-confirm-dialog { box-sizing: border-box; width: min(480px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow-y: auto; border: 1px solid #ddd8ea; border-radius: 20px; background: #fff; color: var(--ink); box-shadow: 0 30px 90px rgb(28 24 38 / 24%); }
+.management-confirm-dialog::backdrop { background: rgb(28 24 38 / 52%); backdrop-filter: blur(4px); }
+.management-confirm-header { display: flex; align-items: start; justify-content: space-between; gap: 20px; padding: 28px 28px 0; }
+.management-confirm-header .eyebrow { color: var(--accent); }
+.management-confirm-header h2 { margin: 9px 0 0; color: var(--ink); font-size: clamp(24px, 4vw, 30px); line-height: 1.15; letter-spacing: -.035em; }
+.management-confirm-close { display: grid; flex: none; width: 34px; height: 34px; place-items: center; padding: 0; border: 1px solid #ded9e8; border-radius: 50%; background: #fff; color: #605a69; font: 400 23px/1 Arial, Helvetica, sans-serif; cursor: pointer; }
+.management-confirm-close:hover { border-color: #bdb4d5; color: var(--ink); }
+.management-confirm-dialog > p { margin: 14px 28px 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.management-confirm-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; padding: 26px 28px 28px; }
+.management-confirm-actions > button { min-width: 130px; }
+.management-confirm-dialog button:focus-visible { outline: 3px solid rgb(98 80 233 / 20%); outline-offset: 2px; }
 .markdown-dialog-header { display: flex; flex: none; align-items: start; justify-content: space-between; gap: 28px; padding: 22px 24px 20px; border-bottom: 1px solid var(--line); background: #fff; }
 .markdown-dialog-header h2 { margin: 7px 0 4px; font-size: 23px; letter-spacing: -.03em; }
 .markdown-dialog-header p { margin: 0; color: var(--muted); font-size: 11px; }
@@ -451,6 +462,11 @@ html { scroll-behavior: smooth; }
   .media-preview-stage img, .media-preview-stage video { max-height: calc(100dvh - 122px); }
 }
 @media (max-width: 560px) {
+  .management-confirm-dialog { width: calc(100vw - 24px); border-radius: 16px; }
+  .management-confirm-header { padding: 22px 20px 0; }
+  .management-confirm-dialog > p { margin: 12px 20px 0; }
+  .management-confirm-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 22px 20px 24px; }
+  .management-confirm-actions > button { min-width: 0; padding-inline: 10px; }
   .product-showcase-page main.wrap { width: calc(100% - 28px); padding-top: 22px; }
   .showcase-hero { padding-bottom: 56px; }
   .showcase-home-entry { gap: 26px; margin: 38px 0; padding: 24px 18px 18px; border-radius: 20px; }

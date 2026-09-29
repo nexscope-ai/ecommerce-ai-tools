@@ -1009,7 +1009,42 @@
     const reviewSuggestion = managementPage.querySelector('[data-review-suggestion]');
     const reviewScore = managementPage.querySelector('[data-review-score]');
     const reviewScoreValue = managementPage.querySelector('[data-review-score-value]');
+    const confirmDialog = managementPage.querySelector('[data-management-confirm-dialog]');
+    const confirmTitle = confirmDialog.querySelector('[data-management-confirm-title]');
+    const confirmDescription = confirmDialog.querySelector('[data-management-confirm-description]');
+    const confirmSubmit = confirmDialog.querySelector('[data-management-confirm-submit]');
+    const confirmCancel = confirmDialog.querySelector('.management-confirm-actions [data-management-confirm-cancel]');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let resolveConfirmation;
+
+    const confirmManagementAction = ({ title, description, actionLabel, intent }) => new Promise(resolve => {
+      if (confirmDialog.open) {
+        resolve(false);
+        return;
+      }
+      confirmTitle.textContent = title;
+      confirmDescription.textContent = description;
+      confirmSubmit.textContent = actionLabel;
+      confirmSubmit.classList.toggle('showcase-offline', intent === 'offline');
+      confirmSubmit.classList.toggle('showcase-primary', intent !== 'offline');
+      confirmDialog.returnValue = 'cancel';
+      resolveConfirmation = resolve;
+      confirmDialog.showModal();
+      confirmCancel.focus();
+    });
+
+    confirmDialog.querySelectorAll('[data-management-confirm-cancel]').forEach(button => {
+      button.addEventListener('click', () => confirmDialog.close('cancel'));
+    });
+    confirmSubmit.addEventListener('click', () => confirmDialog.close('confirm'));
+    confirmDialog.addEventListener('click', e => {
+      if (e.target === confirmDialog) confirmDialog.close('cancel');
+    });
+    confirmDialog.addEventListener('close', () => {
+      const resolve = resolveConfirmation;
+      resolveConfirmation = null;
+      resolve?.(confirmDialog.returnValue === 'confirm');
+    });
 
     const setManagementLoading = loading => {
       if (skeleton) skeleton.hidden = !loading;
@@ -1137,9 +1172,12 @@
       e.preventDefault();
       error.hidden = true;
       if (!validateProduct(editForm)) return;
-      if (!window.confirm(
-        'Save these changes and resubmit? The product will be taken offline immediately and returned to Under review. It must be approved and published again before it appears in the Product Gallery.',
-      )) return;
+      if (!await confirmManagementAction({
+        title: 'Save changes and resubmit?',
+        description: 'This product will be taken offline immediately and returned to Under review. It must be approved and published again before it appears in the Product Gallery.',
+        actionLabel: 'Save and resubmit',
+        intent: 'resubmit',
+      })) return;
       const saveLabel = saveButton.innerHTML;
       saveButton.disabled = true;
       saveButton.textContent = 'Saving changes…';
@@ -1163,9 +1201,12 @@
     });
 
     offlineButton.addEventListener('click', async () => {
-      if (!window.confirm(
-        'Take this product offline now? It will disappear from the Product Gallery immediately, but the approved submission will remain available on this private page.',
-      )) return;
+      if (!await confirmManagementAction({
+        title: 'Take this product offline?',
+        description: 'It will disappear from the Product Gallery immediately. The approved submission will remain available on this private management page.',
+        actionLabel: 'Take product offline',
+        intent: 'offline',
+      })) return;
       error.hidden = true;
       const offlineLabel = offlineButton.textContent;
       offlineButton.disabled = true;

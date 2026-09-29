@@ -186,4 +186,16 @@ private_page: true
     </div>
     <div class="markdown-dialog-footer"><span><strong data-count="productDetails">0 / 5000</strong> · Saved into this resubmission as Markdown.</span><button class="showcase-primary" type="button" data-close-markdown>Done editing</button></div>
   </dialog>
+
+  <dialog class="management-confirm-dialog" data-management-confirm-dialog aria-labelledby="management-confirm-title" aria-describedby="management-confirm-description">
+    <div class="management-confirm-header">
+      <div><span class="eyebrow">Confirm action</span><h2 id="management-confirm-title" data-management-confirm-title></h2></div>
+      <button class="management-confirm-close" type="button" data-management-confirm-cancel aria-label="Cancel and close">×</button>
+    </div>
+    <p id="management-confirm-description" data-management-confirm-description></p>
+    <div class="management-confirm-actions">
+      <button class="showcase-secondary" type="button" data-management-confirm-cancel>Cancel</button>
+      <button class="showcase-primary" type="button" data-management-confirm-submit></button>
+    </div>
+  </dialog>
 </section>
