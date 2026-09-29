@@ -15,17 +15,14 @@
     <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:site_name" content="Nexscope Learning Center">
-    {% if page.image %}
-    <meta property="og:image" content="{{ page.image | absolute_url }}">
-    <meta property="og:image:width" content="1440">
-    <meta property="og:image:height" content="810">
-    <meta property="og:image:alt" content="{{ page.image_alt | escape }}">
+    {% if page.image %}{% assign share_image = page.image | absolute_url %}{% assign share_alt = page.image_alt %}{% else %}{% assign share_image = 'https://learn.nexscope.ai/og-default.png' %}{% assign share_alt = 'Nexscope ecommerce research, tools and evidence-based workflows' %}{% endif %}
+    <meta property="og:image" content="{{ share_image }}">
+    <meta property="og:image:width" content="{% if page.image %}1440{% else %}1200{% endif %}">
+    <meta property="og:image:height" content="{% if page.image %}810{% else %}630{% endif %}">
+    <meta property="og:image:alt" content="{{ share_alt | escape }}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{{ page.image | absolute_url }}">
-    <meta name="twitter:image:alt" content="{{ page.image_alt | escape }}">
-    {% else %}
-    <meta name="twitter:card" content="summary">
-    {% endif %}
+    <meta name="twitter:image" content="{{ share_image }}">
+    <meta name="twitter:image:alt" content="{{ share_alt | escape }}">
     {% if page.date_published %}<meta property="article:published_time" content="{{ page.date_published }}">{% endif %}
     {% if page.date_modified %}<meta property="article:modified_time" content="{{ page.date_modified }}">{% endif %}
     <script type="application/ld+json">

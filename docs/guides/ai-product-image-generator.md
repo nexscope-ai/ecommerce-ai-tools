@@ -1,12 +1,12 @@
 ---
 layout: default
 title: How to Create Ecommerce Product Images with AI
-description: "A practical AI product image generator workflow for ecommerce sellers: prepare references, compare models, check credits, and review product accuracy before publishing."
+description: "Create ecommerce product images with AI: prepare references, compare models, check credits and review product accuracy before publishing."
 permalink: /ai-product-image-generator/
-last_reviewed: 2026-09-23
+last_reviewed: 2026-09-24
 date_published: 2026-09-23
-date_modified: 2026-09-23
-last_modified_at: 2026-09-23
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

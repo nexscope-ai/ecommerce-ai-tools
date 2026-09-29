@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon Product Price Series API Evidence | Four Returned Records
+title: Amazon Product Price Series API Test
 description: Inspect a real Nexscope Amazon price-series response with four dated price observations, an empty deal array and explicit coverage limitations.
 permalink: /api-evidence/amazon-price-series/
-last_reviewed: 2026-09-23
+last_reviewed: 2026-09-24
 date_published: 2026-09-23
-date_modified: 2026-09-23
-last_modified_at: 2026-09-23
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 schema_type: Article
 topic: research
 image: /assets/images/prime-big-deal-days-2026-price-series-evidence.svg

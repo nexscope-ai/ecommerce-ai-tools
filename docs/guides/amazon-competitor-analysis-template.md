@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Amazon Competitor Analysis Template for Better Product Decisions
-description: Build an Amazon competitor shortlist with a practical comparison template. Separate product facts, keyword evidence and review signals before deciding what to test.
+title: Amazon Competitor Analysis Template
+description: Build an Amazon competitor shortlist with a practical template that separates product facts, keyword evidence and review signals before choosing a test.
 permalink: /amazon-competitor-analysis-template/
 schema_type: Article
 og_type: article
 date_published: "2026-09-17"
-date_modified: "2026-09-17"
-last_modified_at: "2026-09-17"
+date_modified: "2026-09-24"
+last_modified_at: "2026-09-24"
 last_reviewed: 2026-09-17
 image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
 image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp

@@ -14,7 +14,7 @@ og_type: article
 topic: agents
 editorial_only: true
 suppress_article_help: true
-subject_type: SoftwareApplication
+subject_type: Thing
 subject_name: BrowserAct
 subject_url: https://www.browseract.com/
 subject_same_as:

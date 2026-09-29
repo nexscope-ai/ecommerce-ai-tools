@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Rainforest API Alternative: Nexscope for Ecommerce Data and AI Agents"
+title: "Rainforest API Alternative for Ecommerce AI"
 description: "Compare Rainforest API and Nexscope for Amazon product data, ecommerce APIs, MCP access, AI agents, pricing, and migration planning."
 permalink: /alternatives/rainforest-api/
 last_reviewed: 2026-09-17
 date_published: 2026-09-17
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

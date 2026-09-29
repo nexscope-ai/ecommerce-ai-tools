@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "1688 Search by Image: Find Similar Products and Vet Suppliers"
+title: "1688 Image Search for Product Sourcing"
 description: "Search 1688 with a product photo, compare offer IDs, prices and MOQ, and verify shortlisted suppliers with a tested Nexscope API workflow."
 permalink: /ecommerce-trends/1688-image-search-sourcing/
 last_reviewed: 2026-09-24

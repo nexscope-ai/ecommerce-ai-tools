@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Helium 10 Alternative: Seller Suite vs Ecommerce API Platform"
+title: "Helium 10 Alternative for Ecommerce APIs"
 description: "Compare Helium 10 and Nexscope for Amazon product and keyword research, seller operations, ecommerce APIs, MCP tools, AI agents, and pricing fit."
 permalink: /alternatives/helium-10/
 last_reviewed: 2026-09-17
 date_published: 2026-09-17
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

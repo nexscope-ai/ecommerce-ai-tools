@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Amazon Selling Partner Plugin for Claude: Seller Guide"
-description: "Learn what Amazon's Selling Partner plugin for Claude is, its beta availability, permissions to verify, seller workflows to test, and how it differs from an API or MCP server."
+description: "Learn how Amazon's Selling Partner plugin for Claude works, who can access the beta, which permissions to verify and which seller workflows to test."
 permalink: /ecommerce-trends/amazon-selling-partner-plugin-claude/
 last_reviewed: 2026-09-24
 date_published: 2026-09-24

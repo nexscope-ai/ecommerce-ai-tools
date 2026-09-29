@@ -1,12 +1,12 @@
 ---
 layout: default
-title: How to analyze Amazon negative reviews and find product improvements
+title: How to Analyze Amazon Negative Reviews
 description: Learn how to analyze Amazon negative reviews and turn a traceable sample of 1-star and 2-star feedback into testable product improvement hypotheses.
 permalink: /amazon-negative-review-analysis/
 date_published: 2026-09-15
 last_reviewed: 2026-09-15
-date_modified: 2026-09-15
-last_modified_at: 2026-09-15
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 schema_type: Article
 image: /assets/images/amazon-review-product-insights-1440w.webp
 image_small: /assets/images/amazon-review-product-insights-720w.webp

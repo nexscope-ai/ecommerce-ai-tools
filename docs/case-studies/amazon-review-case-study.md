@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon negative review case study - from 10 reviews to a capacity test
+title: Amazon Negative Review Analysis Case Study
 description: A real production run with input parameters, traceable review evidence, human review of AI claims, and a product improvement validation plan.
 permalink: /amazon-review-case-study/
 date_published: 2026-09-15
 last_reviewed: 2026-09-15
-date_modified: 2026-09-15
-last_modified_at: 2026-09-15
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 schema_type: Article
 image: /assets/images/amazon-review-product-insights-1440w.webp
 image_small: /assets/images/amazon-review-product-insights-720w.webp

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Reverse ASIN Keyword Research — Find Relevant Gaps, Not Just More Terms
-description: Learn how to qualify reverse ASIN keywords by buyer intent, product fit, marketplace and evidence quality before using them in a listing or advertising test.
+title: Reverse ASIN Keyword Research Guide
+description: Qualify reverse ASIN keywords by buyer intent, product fit, marketplace and evidence quality before using them in listing or advertising tests.
 permalink: /reverse-asin-keyword-research/
 schema_type: Article
 og_type: article
 date_published: "2026-09-17"
-date_modified: "2026-09-17"
-last_modified_at: "2026-09-17"
+date_modified: "2026-09-24"
+last_modified_at: "2026-09-24"
 last_reviewed: 2026-09-17
 image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
 image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp

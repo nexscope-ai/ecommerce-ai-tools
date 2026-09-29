@@ -1,12 +1,12 @@
 ---
 layout: default
 title: "ChatGPT Images 2.5 for Ecommerce Product Photos"
-description: "Use GPT-Image-2.5 for ecommerce product-photo edits through Nexscope's Flare and Sunburst APIs. See a reviewable workflow, evidence limits, and SKU approval checklist."
+description: "Use GPT-Image-2.5 for ecommerce product-photo edits through Nexscope's Flare and Sunburst APIs, with an evidence-based workflow and SKU review checklist."
 permalink: /ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/
 last_reviewed: 2026-09-20
 date_published: 2026-09-20
-date_modified: 2026-09-20
-last_modified_at: 2026-09-20
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

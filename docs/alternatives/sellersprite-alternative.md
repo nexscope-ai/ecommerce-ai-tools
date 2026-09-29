@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SellerSprite Alternative: Compare Amazon Keyword and API Workflows"
+title: "SellerSprite Alternative for Amazon Research"
 description: "Compare SellerSprite and Nexscope for Amazon keyword research, reverse ASIN, product research, APIs, MCP access, pricing, and developer workflows."
 permalink: /alternatives/sellersprite/
 last_reviewed: 2026-09-17
 date_published: 2026-09-17
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

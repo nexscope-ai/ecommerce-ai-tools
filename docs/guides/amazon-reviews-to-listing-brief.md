@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Turn Amazon Review Analysis into a Clearer Product Listing
-description: Create an evidence-backed listing brief from Amazon reviews. Separate product defects from unclear expectations, then plan copy and image changes you can validate.
+description: Create an evidence-backed Amazon listing brief from review themes, then separate product defects from unclear expectations and plan testable changes.
 permalink: /amazon-reviews-to-listing-brief/
 schema_type: Article
 og_type: article
 date_published: "2026-09-17"
-date_modified: "2026-09-17"
-last_modified_at: "2026-09-17"
+date_modified: "2026-09-24"
+last_modified_at: "2026-09-24"
 last_reviewed: 2026-09-17
 image: /assets/images/amazon-review-product-insights-1440w.webp
 image_small: /assets/images/amazon-review-product-insights-720w.webp

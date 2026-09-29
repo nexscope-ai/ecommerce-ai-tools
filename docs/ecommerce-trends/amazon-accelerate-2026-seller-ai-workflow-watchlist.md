@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Amazon Accelerate 2026 Updates: Seller AI Tools and Workflow Tests"
-description: "Review confirmed Amazon Accelerate 2026 seller and AI updates, what they mean for product research, listings and creative workflows, and how to test each capability."
+title: "Amazon Accelerate 2026: Seller AI Updates"
+description: "Review confirmed Amazon Accelerate 2026 seller AI updates, what they mean for research, listings and creative workflows, and how to test them safely."
 permalink: /ecommerce-trends/amazon-accelerate-2026-seller-ai-workflow-watchlist/
 last_reviewed: 2026-09-24
 date_published: 2026-09-22

@@ -1,12 +1,12 @@
 ---
 layout: default
 title: How to Optimize an Amazon Listing with Marketplace Evidence
-description: Audit an Amazon ASIN, interpret keyword and traffic signals, and turn listing gaps into a prioritized, testable optimization plan without treating estimates as facts.
+description: Audit an Amazon ASIN, interpret keyword and traffic evidence, and turn listing gaps into prioritized changes you can verify and test.
 permalink: /amazon-listing-optimization-tool/
-last_reviewed: 2026-09-23
+last_reviewed: 2026-09-24
 date_published: 2026-09-23
-date_modified: 2026-09-23
-last_modified_at: 2026-09-23
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

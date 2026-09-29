@@ -1,13 +1,13 @@
 ---
 layout: default
 title: "Prime Big Deal Days 2026: Amazon Seller Research Checklist"
-description: "Prepare for Prime Big Deal Days 2026 with a practical Amazon competitor research checklist, real price-series API evidence, and a careful pre-event monitoring plan."
+description: "Prepare for Prime Big Deal Days 2026 with an Amazon competitor checklist, real price-series API evidence and a practical monitoring plan."
 permalink: /ecommerce-trends/prime-big-deal-days-2026-seller-research/
-last_reviewed: 2026-09-21
+last_reviewed: 2026-09-24
 date_published: 2026-09-21
-date_modified: 2026-09-21
+date_modified: 2026-09-24
 date: 2026-09-21
-last_modified_at: 2026-09-21
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

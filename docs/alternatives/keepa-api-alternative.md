@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Keepa API Alternative: Compare Amazon History and Ecommerce Workflows"
+title: "Keepa API Alternative for Amazon Data"
 description: "Compare Keepa API and Nexscope for Amazon price history, BSR signals, tracking, broader ecommerce APIs, MCP access, and AI-agent workflows."
 permalink: /alternatives/keepa-api/
 last_reviewed: 2026-09-17
 date_published: 2026-09-17
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article

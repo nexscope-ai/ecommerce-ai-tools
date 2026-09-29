@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Ecommerce APIs for AI agents: Amazon demand, competitors, keywords and reviews"
+title: "Ecommerce APIs for AI Agents: Amazon Research"
 description: Map an Amazon research agent's demand, competitor, keyword and review questions to documented ecommerce Data APIs, REST endpoints and MCP tools.
 permalink: /ecommerce-api-for-ai-agents/
-last_reviewed: 2026-09-22
+last_reviewed: 2026-09-24
 date_published: 2026-09-17
-date_modified: 2026-09-22
-last_modified_at: 2026-09-22
+date_modified: 2026-09-24
+last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
 og_type: article
