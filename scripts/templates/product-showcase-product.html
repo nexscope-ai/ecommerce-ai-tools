@@ -1,25 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{HTML_LANG}}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{TITLE}}</title>
-  <meta name="description" content="{{DESCRIPTION}}">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <meta name="author" content="Nexscope">
-  <meta name="theme-color" content="#fbf9f5">
-  {{KEYWORDS_META}}
-  <link rel="canonical" href="{{CANONICAL_URL}}">
-  <meta property="og:type" content="product">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Nexscope Product Gallery">
-  <meta property="og:title" content="{{META_TITLE}}">
-  <meta property="og:description" content="{{DESCRIPTION}}">
-  <meta property="og:url" content="{{CANONICAL_URL}}">
-  {{SOCIAL_META}}
-  <meta name="twitter:title" content="{{META_TITLE}}">
-  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  {{SEO_HEAD}}
   <script type="application/ld+json">{{JSON_LD}}</script>
+  <script type="application/json" id="nexscope-product-seo-config">{{SEO_CONFIG_JSON}}</script>
   <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
   <style>
     :root {

@@ -29,7 +29,9 @@ Run the following command from the repository root:
 .\scripts\rebuild-product-showcase.ps1
 ```
 
-The script removes previously generated product detail pages, the generated product manifest, and the old `_site` output. It then fetches the current approved and published product JSON, composes page metadata and Product JSON-LD from each product's complete `seoConfig` object, renders each page with `scripts/templates/product-showcase-product.html`, regenerates the sitemap manifest, and performs a complete Jekyll build. Hand-written product showcase files are not removed, and the backend does not render the public HTML page.
+The script removes the entire existing `docs/product-showcase/product` directory, the generated product manifest, and the old `_site` output. It then fetches the current approved and published product JSON, composes page metadata and Product JSON-LD from each product's complete `seoConfig` object, renders each current page with `scripts/templates/product-showcase-product.html`, writes a new sitemap manifest, and performs a complete Jekyll build. The resulting sitemap is rebuilt from that new manifest, so removed or ineligible products cannot remain published or indexed. The backend does not render the public HTML page.
+
+The product template applies `seoConfig` during generation: title, description, keywords, robots, language, author, theme color, Open Graph, Twitter Card, alternate-language links, Product/WebPage schema extensions, and additional `structuredData` or `jsonLd` nodes. GEO schema supplied through `geo.schema`, `geo.structuredData`, or `geo.jsonLd` is added to the JSON-LD graph. The complete safely serialized configuration is also embedded as `#nexscope-product-seo-config`, while the public product UUID, product name, and canonical page identity remain protected from accidental overrides.
 
 ## Start with the ecommerce problem you need to solve
 

@@ -1,4 +1,5 @@
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -45,11 +46,39 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
                 "title": "SEO title for static product",
                 "description": "A focused product description for search and AI discovery.",
                 "keywords": ["static product", "workflow product"],
+                "robots": "index,follow,max-image-preview:large",
+                "author": "Nexscope Editorial",
+                "themeColor": "#6550f2",
+                "language": "en-US",
+                "canonicalUrl": "https://spam.example.com/not-the-product",
+                "openGraph": {
+                    "title": "Open Graph product title",
+                    "description": "Open Graph product description.",
+                    "image": "https://cdn.example.com/social-product.webp",
+                    "imageAlt": "Static product social preview",
+                },
+                "twitter": {
+                    "card": "summary_large_image",
+                    "title": "Twitter product title",
+                    "description": "Twitter product description.",
+                    "site": "@nexscope_ai",
+                },
+                "alternates": {
+                    "en": "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/",
+                },
                 "schema": {
                     "@type": "Product",
+                    "name": "This must not replace the public product name",
                     "brand": {"@type": "Brand", "name": "Example Brand"},
                 },
-                "geo": {"answerSummary": "A product for daily workflows."},
+                "geo": {
+                    "answerSummary": "A product for daily workflows.",
+                    "schema": {
+                        "@type": "Thing",
+                        "@id": "https://learn.nexscope.ai/#workflow-product",
+                        "name": "Workflow product",
+                    },
+                },
             },
         }
 
@@ -79,10 +108,52 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertIn(canonical, html)
             self.assertIn("<title>SEO title for static product | Nexscope Product Gallery</title>", html)
             self.assertIn('<meta name="keywords" content="static product, workflow product">', html)
+            self.assertIn('<html lang="en-US">', html)
+            self.assertIn(
+                '<meta name="robots" content="index,follow,max-image-preview:large">',
+                html,
+            )
+            self.assertIn('<meta name="author" content="Nexscope Editorial">', html)
+            self.assertIn('<meta name="theme-color" content="#6550f2">', html)
+            self.assertIn(
+                '<meta property="og:title" content="Open Graph product title">',
+                html,
+            )
+            self.assertIn(
+                '<meta name="twitter:title" content="Twitter product title">',
+                html,
+            )
+            self.assertIn('<meta name="twitter:site" content="@nexscope_ai">', html)
+            self.assertIn(
+                '<link rel="alternate" hreflang="en" '
+                'href="https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/">',
+                html,
+            )
+            self.assertNotIn(
+                '<link rel="canonical" href="https://spam.example.com/not-the-product">',
+                html,
+            )
             self.assertIn("<h3>Product benefits</h3>", html)
             self.assertIn("<strong>useful</strong>", html)
             self.assertIn('"@type":"Product"', html)
             self.assertIn('"brand":{"@type":"Brand","name":"Example Brand"}', html)
+            self.assertIn(
+                '"@type":"Thing","@id":"https://learn.nexscope.ai/#workflow-product",'
+                '"name":"Workflow product"',
+                html,
+            )
+            self.assertIn(
+                '<script type="application/json" id="nexscope-product-seo-config">',
+                html,
+            )
+            self.assertIn('"answerSummary":"A product for daily workflows."', html)
+            json_ld_match = re.search(
+                r'<script type="application/ld\+json">(.*?)</script>', html
+            )
+            self.assertIsNotNone(json_ld_match)
+            graph = json.loads(json_ld_match.group(1))["@graph"]
+            product_schema = next(node for node in graph if node.get("@type") == "Product")
+            self.assertEqual("Static product", product_schema["name"])
             self.assertIn('"@type":"VideoObject"', html)
             self.assertIn("product-side.webp", html)
             self.assertNotIn("{{", html)
@@ -113,6 +184,43 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             )
             self.assertEqual([], manifest)
 
+    def test_rebuild_replaces_all_old_product_pages_and_manifest_entries(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = self.source(Path(directory))
+            old_uuid = "11111111-1111-4111-8111-111111111111"
+            old_product = source / "product-showcase" / "product" / old_uuid
+            old_product.mkdir(parents=True)
+            (old_product / "index.html").write_text(
+                "<!doctype html><title>Old unmarked product</title>",
+                encoding="utf-8",
+            )
+            legacy_product = source / "product-showcase" / "product" / "legacy-product"
+            legacy_product.mkdir(parents=True)
+            (legacy_product / "index.html").write_text("legacy", encoding="utf-8")
+            manifest_path = source / "_data" / "product_showcase_pages.json"
+            manifest_path.parent.mkdir(parents=True)
+            manifest_path.write_text(
+                json.dumps([{"publicUuid": old_uuid, "path": f"/old/{old_uuid}/"}]),
+                encoding="utf-8",
+            )
+            product = self.product()
+
+            self.assertEqual(
+                1,
+                generate(
+                    source,
+                    self.list_loader([product]),
+                    lambda _url: {"code": 0, "data": product},
+                ),
+            )
+
+            product_root = source / "product-showcase" / "product"
+            self.assertFalse((product_root / old_uuid).exists())
+            self.assertFalse((product_root / "legacy-product").exists())
+            self.assertTrue((product_root / PUBLIC_UUID / "index.html").is_file())
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            self.assertEqual([PUBLIC_UUID], [item["publicUuid"] for item in manifest])
+
     def test_sitemap_templates_read_the_generated_manifest(self):
         docs = Path(__file__).resolve().parents[1] / "docs"
         for filename in ("sitemap.xml", "image-sitemap.xml"):
@@ -135,6 +243,61 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             )
             self.assertEqual([], detail_calls)
             self.assertFalse((source / "product-showcase" / "product" / PUBLIC_UUID).exists())
+
+    def test_accepts_a_serialized_long_publication_timestamp(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = self.source(Path(directory))
+            summary = self.product()
+            detail = self.product()
+            summary["publishedAt"] = "1790566911000"
+            detail["publishedAt"] = "1790566911000"
+
+            self.assertEqual(
+                1,
+                generate(
+                    source,
+                    self.list_loader([summary]),
+                    lambda _url: {"code": 0, "data": detail},
+                ),
+            )
+
+            output = source / "product-showcase" / "product" / PUBLIC_UUID / "index.html"
+            self.assertTrue(output.is_file())
+            manifest = json.loads(
+                (source / "_data" / "product_showcase_pages.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual("2026-09-28T03:41:51Z", manifest[0]["lastModified"])
+
+    def test_missing_seo_description_does_not_reuse_product_details(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = self.source(Path(directory))
+            product = self.product()
+            product["productDetails"] = "Private product body used only in the overview."
+            product["seoConfig"].pop("description")
+            product["seoConfig"]["openGraph"].pop("description")
+            product["seoConfig"]["twitter"].pop("description")
+
+            self.assertEqual(
+                1,
+                generate(
+                    source,
+                    self.list_loader([product]),
+                    lambda _url: {"code": 0, "data": product},
+                ),
+            )
+
+            html = (
+                source / "product-showcase" / "product" / PUBLIC_UUID / "index.html"
+            ).read_text(encoding="utf-8")
+            fallback = "Explore Static product in the Nexscope Product Gallery."
+            self.assertIn(f'<meta name="description" content="{fallback}">', html)
+            self.assertIn(f'<meta property="og:description" content="{fallback}">', html)
+            self.assertIn(f'<meta name="twitter:description" content="{fallback}">', html)
+            self.assertNotIn(
+                '<meta name="description" content="Private product body used only in the overview.">',
+                html,
+            )
+            self.assertIn("Private product body used only in the overview.", html)
 
     def test_skips_only_the_product_whose_detail_request_fails(self):
         with tempfile.TemporaryDirectory() as directory:
