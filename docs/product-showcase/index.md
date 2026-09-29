@@ -29,12 +29,12 @@ faq:
 <section class="showcase-hero" data-showcase-view>
   <div class="showcase-hero-copy">
     <span class="eyebrow">Nexscope product showcase</span>
-    <p class="showcase-status">COMING SOON</p>
+    <p class="showcase-status">SUBMISSIONS OPEN · PAGES PUBLISHED AFTER REVIEW</p>
     <h1>Discover ecommerce products<br><span>in one curated showcase.</span></h1>
     <p>Nexscope Product Gallery brings clear product details, rich visuals and direct buying links together so useful ecommerce products are easier to discover and understand.</p>
     <div class="showcase-actions">
       <a class="showcase-primary" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product ↗</a>
-      <a class="showcase-quiet-link" href="#showcase-preview">See what is coming <span aria-hidden="true">↓</span></a>
+      <a class="showcase-quiet-link" href="#showcase-preview">How the Gallery works <span aria-hidden="true">↓</span></a>
     </div>
   </div>
   <figure class="showcase-hero-art">
