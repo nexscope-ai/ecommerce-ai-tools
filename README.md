@@ -20,7 +20,7 @@ Submissions stay offline until reviewed and approved. Keep the private managemen
 | Build an ecommerce app or AI agent | [Read the API workflow guide](docs/guides/api-capabilities.md) and [browse the API docs](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_start_developer). |
 | Verify what a real test returned | [Inspect the API evidence library](docs/api-evidence/index.md), including dated inputs, observed outputs, credit use and limitations. |
 | Help choose the next ecommerce workflow | [Vote for the task slowing you down](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/14). One click is enough; a comment is optional. |
-| Ask a usage question or suggest a workflow | [Ask in Discussions](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions); use [Issues](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for reproducible bugs and trackable feature requests. |
+| Ask a usage question or suggest a workflow | [Ask in Discussions](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions); use [Ideas](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas) for feature suggestions and [Issues](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for reproducible bugs. |
 
 **New users receive 1,000 free credits to get started.** [Create a Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_start). Credit usage and API access depend on the action and account; trial credits do not unlock every API. For a real run with source IDs, returned counts, and limitations, read [the Amazon review case study](docs/case-studies/amazon-review-case-study.md).
 
@@ -93,7 +93,7 @@ See [API workflows and integration steps](docs/guides/api-capabilities.md) for c
 | --- | --- |
 | Ask how to use a tool or integrate an API | [Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a) |
 | Suggest a workflow or discuss a product idea | [Discussions Ideas](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas) |
-| Report a reproducible bug or request a trackable feature | [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) |
+| Report a reproducible bug | [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) |
 | Share a verified workflow or result | [Discussions Show and tell](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/show-and-tell) |
 
 [Read the pinned welcome post](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/11) and [our support process](SUPPORT.md). Please describe your goal, the relevant tool or endpoint, the expected result, and what happened. Do not post API keys, tokens, payment details, private customer data, or unredacted screenshots. For private account or billing questions, contact [service@nexscope.ai](mailto:service@nexscope.ai).
