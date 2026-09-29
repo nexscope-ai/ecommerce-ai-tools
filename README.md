@@ -4,12 +4,12 @@ This is Nexscope's official public knowledge repository for **practical ecommerc
 
 ## Product Gallery — share a product and improve its public page
 
-[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) is accepting ecommerce products for editorial review. Sellers can submit a public product-page URL or Amazon ASIN with product details and images; video is optional. An approved product may receive a focused public page with its context, visuals, and buying link. Editorial review may also suggest ways to make the public product page clearer. No store connection, seller token, or payment access is required.
+[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) helps sellers give their products more exposure and improve how they are presented. Submit a public product-page URL or Amazon ASIN with product details and images; video is optional. Our editorial team reviews submissions for a public showcase page and provides professional suggestions for improving the product page. No store connection, seller token, or payment access is required.
 
 **Why submit a product?**
 
-- **Give it a clearer public home.** If approved, a focused page brings the product story, images, optional video, and buying link together so visitors can understand and share it.
-- **Find practical improvements.** Editorial review may suggest clearer positioning, product details, visuals, video, or destination links based on the public material you submit.
+- **Bring your product more exposure.** An approved listing adds a focused public page with the product story, images, optional video, and buying link, creating another way for potential customers to discover and share it.
+- **Get professional improvement suggestions.** Our editorial review gives you actionable recommendations on positioning, product details, visuals, video, and destination links based on the public material you submit.
 - **Keep control of the listing.** Your private management link lets you follow the review status, update details, or withdraw the product.
 
 **[Submit your product](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Explore the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Ask a question or share feedback](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
