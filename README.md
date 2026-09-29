@@ -8,13 +8,12 @@ This is Nexscope's official public knowledge repository for **practical ecommerc
 
 **Why submit a product?**
 
-- **Bring your product more exposure.** An approved listing adds a focused public page with the product story, images, optional video, and buying link, creating another way for potential customers to discover and share it.
+- **Bring your product more exposure.** An approved listing creates another public page for potential customers to discover and share your product.
 - **Get professional improvement suggestions.** Our editorial review gives you actionable recommendations on positioning, product details, visuals, video, and destination links based on the public material you submit.
-- **Keep control of the listing.** Your private management link lets you follow the review status, update details, or withdraw the product.
 
 **[Submit your product](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Explore the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Ask a question or share feedback](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
 
-Submissions stay offline until reviewed and approved. Keep the private management link to check status, edit, or withdraw a submission; never post it publicly. Approval, publication, search rankings, traffic, and sales are not guaranteed.
+Submissions stay offline until reviewed and approved. Approval, publication, search rankings, traffic, and sales are not guaranteed.
 
 ## Choose your starting point
 

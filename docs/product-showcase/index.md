@@ -101,7 +101,7 @@ faq:
   <div class="showcase-path-copy">
     <span class="eyebrow">From submission to discovery</span>
     <h2 id="showcase-path-title">Give your product a clearer place to be discovered.</h2>
-    <p>Share a public product page or Amazon ASIN, add the details that help people understand it, and keep control through a private management link.</p>
+    <p>Share a public product page or Amazon ASIN and add the details that help people understand it. We review each submission before any public display.</p>
     <ol>
       <li><span>01</span><div><strong>Share the source</strong><small>Public product link or Amazon ASIN</small></div></li>
       <li><span>02</span><div><strong>Add the useful detail</strong><small>Description, images and optional video</small></div></li>

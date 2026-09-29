@@ -29,8 +29,8 @@ image_caption: The Nexscope product submission workflow combines public product 
       <p>Your submission stays offline until it is reviewed and approved.</p>
       <ul>
         <li>Public links only</li>
-        <li>Private management link</li>
-        <li>Edit or withdraw later</li>
+        <li>Editorial review before publication</li>
+        <li>No store credentials required</li>
       </ul>
     </aside>
   </header>
