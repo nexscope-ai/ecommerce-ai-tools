@@ -8,3 +8,9 @@
 # Local-only publication review tools; never commit these to the public repository.
 /PUBLIC_FILES.txt
 /scripts/check_publication_boundary.py
+
+# Product detail pages are generated from the public showcase API during the Pages build.
+/docs/product-showcase/product/*/index.html
+/docs/_data/product_showcase_pages.json
+__pycache__/
+*.py[cod]

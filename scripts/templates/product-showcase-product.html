@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="{{HTML_LANG}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  {{SEO_HEAD}}
+  <script type="application/ld+json">{{JSON_LD}}</script>
+  <script type="application/json" id="nexscope-product-seo-config">{{SEO_CONFIG_JSON}}</script>
+  <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18161f;
+      --muted: #625d6d;
+      --line: #e3deea;
+      --accent: #6550f2;
+      --blue: #417dff;
+      --paper: #fff;
+      --canvas: #fbf9f5;
+      --soft: #f5f1ff;
+      --shadow: 0 24px 70px rgb(42 31 74 / 10%);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 16px/1.65 Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      position: relative;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgb(251 249 245 / 94%);
+      backdrop-filter: blur(16px);
+    }
+    .site-header .wrap {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand img { display: block; width: 166px; height: auto; }
+    .desktop-nav { display: flex; align-items: center; gap: 26px; font-size: 14px; font-weight: 750; }
+    .desktop-nav a, .mobile-menu a { text-decoration: none; }
+    .desktop-nav .gallery-link { color: var(--accent); }
+    .mobile-menu { display: none; }
+    .mobile-menu summary {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      cursor: pointer;
+      list-style: none;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      box-shadow: 0 8px 22px rgb(36 28 55 / 8%);
+    }
+    .mobile-menu summary::-webkit-details-marker { display: none; }
+    .menu-lines, .menu-lines::before, .menu-lines::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--ink);
+      content: "";
+    }
+    .menu-lines { position: relative; }
+    .menu-lines::before { position: absolute; top: -6px; }
+    .menu-lines::after { position: absolute; top: 6px; }
+    .mobile-menu nav {
+      position: absolute;
+      top: 72px;
+      right: 24px;
+      display: grid;
+      min-width: 210px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .mobile-menu nav a { padding: 10px 12px; border-radius: 9px; font-size: 14px; font-weight: 750; }
+    .mobile-menu nav a:hover { background: var(--soft); }
+    .product-page { padding: 30px 0 88px; }
+    .breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .breadcrumbs a { text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .product-hero {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
+      gap: 42px;
+      align-items: stretch;
+    }
+    .hero-copy, .hero-media {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(34px, 5vw, 68px); }
+    .eyebrow {
+      display: block;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero-copy h1 {
+      max-width: 720px;
+      margin: 14px 0 20px;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      overflow-wrap: anywhere;
+    }
+    .lead { max-width: 680px; margin: 0; color: var(--muted); font-size: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      font-size: 14px;
+      font-weight: 850;
+      text-decoration: none;
+      transition: transform .18s ease;
+    }
+    .button-primary {
+      border-color: transparent;
+      background: linear-gradient(110deg, var(--blue), #813ef1);
+      color: #fff;
+      box-shadow: 0 14px 30px rgb(101 79 240 / 24%);
+    }
+    .button:hover { transform: translateY(-1px); }
+    .hero-media {
+      display: grid;
+      min-height: 560px;
+      place-items: center;
+      overflow: hidden;
+      background: linear-gradient(145deg, #f0ebff 0%, #fff 56%, #fff5e8 100%);
+    }
+    .hero-media img { display: block; width: 100%; height: 100%; max-height: 680px; object-fit: contain; }
+    .media-placeholder { display: grid; gap: 8px; padding: 48px; text-align: center; color: var(--muted); }
+    .media-placeholder span { color: var(--accent); font-size: 11px; font-weight: 850; letter-spacing: .15em; text-transform: uppercase; }
+    .media-placeholder strong { color: var(--ink); font-size: 20px; }
+    .product-overview {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr);
+      gap: 42px;
+      margin-top: 46px;
+      padding: clamp(32px, 5vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .section-intro h2, .section-heading h2, .external-video h2 {
+      margin: 10px 0 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+    .product-copy { margin-top: 28px; }
+    .product-copy > :first-child { margin-top: 0; }
+    .product-copy h2, .product-copy h3, .product-copy h4 { margin: 1.5em 0 .55em; line-height: 1.15; letter-spacing: -.025em; }
+    .product-copy h2 { font-size: 30px; }
+    .product-copy h3 { font-size: 24px; }
+    .product-copy p, .product-copy li { color: #403a48; }
+    .product-copy a { color: var(--accent); font-weight: 750; }
+    .product-copy blockquote { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; background: var(--soft); }
+    .product-copy pre { overflow: auto; padding: 18px; border-radius: 14px; background: #201e25; color: #fff; }
+    .product-copy code { padding: .12em .35em; border-radius: 4px; background: #efecf4; }
+    .product-copy pre code { padding: 0; background: transparent; }
+    .product-facts { align-self: start; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: #faf8fd; }
+    .facts-title { padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .facts-title strong { display: block; margin-top: 5px; font-size: 18px; }
+    .fact { display: grid; gap: 3px; padding: 17px 22px; border-bottom: 1px solid var(--line); }
+    .fact span { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .fact strong { font-size: 14px; overflow-wrap: anywhere; }
+    .facts-action { padding: 20px 22px; }
+    .facts-action .button { width: 100%; }
+    .media-section { margin-top: 46px; padding: clamp(26px, 4vw, 46px); border: 1px solid var(--line); border-radius: 28px; background: var(--paper); box-shadow: var(--shadow); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .section-heading p { max-width: 320px; margin: 0; color: var(--muted); font-size: 13px; text-align: right; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .gallery-item { display: grid; min-height: 360px; place-items: center; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(145deg, #faf8ff, #fff); }
+    .gallery-item img { display: block; width: 100%; height: 100%; max-height: 520px; object-fit: contain; }
+    .gallery-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .video-section video { display: block; width: 100%; max-height: 680px; border-radius: 20px; background: #141219; }
+    .external-video { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 46px; padding: 32px 36px; border: 1px solid var(--line); border-radius: 24px; background: var(--paper); box-shadow: var(--shadow); }
+    .external-video p { margin: 10px 0 0; color: var(--muted); }
+    .external-video a { flex: 0 0 auto; padding: 12px 18px; border-radius: 11px; background: var(--soft); color: var(--accent); font-weight: 850; text-decoration: none; }
+    .disclosure { display: grid; grid-template-columns: auto 1fr; gap: 16px; margin-top: 46px; padding: 22px 24px; border: 1px solid #dcd3ff; border-radius: 18px; background: var(--soft); color: var(--muted); font-size: 13px; }
+    .disclosure-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: var(--paper); color: var(--accent); font-weight: 900; }
+    .disclosure strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 14px; }
+    .site-footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
+    .site-footer a { font-weight: 750; text-decoration: none; }
+    @media (max-width: 900px) {
+      .product-hero, .product-overview { grid-template-columns: 1fr; }
+      .hero-media { min-height: 440px; order: -1; }
+      .product-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .facts-title, .facts-action { grid-column: 1 / -1; }
+      .fact:nth-of-type(odd) { border-right: 1px solid var(--line); }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .desktop-nav { display: none; }
+      .mobile-menu { display: block; }
+      .product-page { padding-top: 22px; }
+      .product-hero { gap: 18px; }
+      .hero-copy, .hero-media, .product-overview, .media-section { border-radius: 21px; }
+      .hero-copy { padding: 32px 24px; }
+      .hero-copy h1 { font-size: clamp(38px, 13vw, 54px); }
+      .lead { font-size: 16px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .hero-media { min-height: 340px; }
+      .product-overview { gap: 30px; margin-top: 24px; padding: 30px 24px; }
+      .product-facts { grid-template-columns: 1fr; }
+      .fact:nth-of-type(odd) { border-right: 0; }
+      .media-section, .external-video { margin-top: 24px; }
+      .section-heading { align-items: start; flex-direction: column; }
+      .section-heading p { text-align: left; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item { min-height: 280px; }
+      .gallery-item:last-child:nth-child(odd) { grid-column: auto; }
+      .external-video { align-items: stretch; flex-direction: column; padding: 28px 24px; }
+      .external-video a { text-align: center; }
+      .disclosure { margin-top: 24px; }
+      .site-footer .wrap { flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .hero-media { min-height: 280px; }
+      .product-facts { display: block; }
+      .section-intro h2, .section-heading h2, .external-video h2 { font-size: 31px; }
+      .media-section { padding: 26px 18px; }
+      .gallery-item { min-height: 240px; }
+    }
+  </style>
+  <script src="https://learn.nexscope.ai/analytics.js?v=5" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="https://learn.nexscope.ai/" aria-label="Nexscope home"><img src="https://learn.nexscope.ai/logo.png" alt="Nexscope" width="166" height="42"></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/">Learn</a><a class="gallery-link" href="{{GALLERY_URL}}" aria-current="page">Product Gallery</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/community/">Community</a><a href="https://www.nexscope.ai/api-docs">API docs</a></nav>
+      <details class="mobile-menu"><summary aria-label="Open navigation menu"><span class="menu-lines" aria-hidden="true"></span></summary><nav aria-label="Mobile navigation"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/">Learn</a><a href="{{GALLERY_URL}}" aria-current="page">Product Gallery</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/community/">Community</a><a href="https://www.nexscope.ai/api-docs">API docs</a></nav></details>
+    </div>
+  </header>
+  <main class="wrap product-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{GALLERY_URL}}">Product Gallery</a><span aria-hidden="true">/</span><span>{{PRODUCT_NAME}}</span></nav>
+    <article>
+      <section class="product-hero">
+        <div class="hero-copy"><span class="eyebrow">Nexscope product gallery</span><h1>{{PRODUCT_NAME}}</h1><p class="lead">{{DESCRIPTION}}</p><div class="hero-actions">{{SOURCE_BUTTON}}<a class="button" href="{{GALLERY_URL}}">Browse product gallery</a></div></div>
+        <div class="hero-media">{{HERO_IMAGE}}</div>
+      </section>
+      <section class="product-overview" aria-labelledby="product-overview-title">
+        <div><div class="section-intro"><span class="eyebrow">Product overview</span><h2 id="product-overview-title">About {{PRODUCT_NAME}}.</h2></div><div class="product-copy">{{PRODUCT_DETAILS}}</div></div>
+        <aside class="product-facts" aria-label="Product listing details"><div class="facts-title"><span class="eyebrow">At a glance</span><strong>Public product listing</strong></div><div class="fact"><span>Listing status</span><strong>Editorially reviewed and published</strong></div>{{PUBLISHED_CARD}}{{SOURCE_CARD}}<div class="fact"><span>Available media</span><strong>{{MEDIA_SUMMARY}}</strong></div>{{FACTS_ACTION}}</aside>
+      </section>
+      {{GALLERY_SECTION}}
+      {{VIDEO_SECTION}}
+      <aside class="disclosure"><span class="disclosure-mark" aria-hidden="true">i</span><div><strong>About this listing</strong>This public gallery page is based on information submitted for editorial review. Nexscope does not sell the product. Verify availability, claims, pricing and buying terms on the linked product website.</div></aside>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="wrap"><span>Nexscope Product Gallery · Curated ecommerce product discovery.</span><a href="{{GALLERY_URL}}">Explore more products ↗</a></div></footer>
+</body>
+</html>

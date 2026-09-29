@@ -21,6 +21,18 @@ Start with a practical guide, inspect a dated case or API evidence record, then 
 
 Published learning pages are available at [learn.nexscope.ai/ecommerce-ai-tools/](https://learn.nexscope.ai/ecommerce-ai-tools/). Repository Markdown remains the public source of truth and commit history for tutorials and evidence.
 
+### Rebuild all product showcase pages locally
+
+Run the following command from the repository root:
+
+```powershell
+.\scripts\rebuild-product-showcase.ps1
+```
+
+The script removes the entire existing `docs/product-showcase/product` directory, the generated product manifest, and the old `_site` output. It then fetches the current approved and published product JSON, composes page metadata and Product JSON-LD from each product's complete `seoConfig` object, renders each current page with `scripts/templates/product-showcase-product.html`, writes a new sitemap manifest, and performs a complete Jekyll build. The resulting sitemap is rebuilt from that new manifest, so removed or ineligible products cannot remain published or indexed. The backend does not render the public HTML page.
+
+The product template applies `seoConfig` during generation: title, description, keywords, robots, language, author, theme color, Open Graph, Twitter Card, alternate-language links, Product/WebPage schema extensions, and additional `structuredData` or `jsonLd` nodes. GEO schema supplied through `geo.schema`, `geo.structuredData`, or `geo.jsonLd` is added to the JSON-LD graph. The complete safely serialized configuration is also embedded as `#nexscope-product-seo-config`, while the public product UUID, product name, and canonical page identity remain protected from accidental overrides.
+
 ## Start with the ecommerce problem you need to solve
 
 | Question or workflow | Practical guide | Run the workflow |

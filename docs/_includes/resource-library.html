@@ -15,6 +15,31 @@
 </section>
 {% endif %}
 
+{% if page.url == '/' %}
+<section class="showcase-home-entry" aria-labelledby="showcase-home-title">
+  <div class="showcase-home-copy">
+    <span class="eyebrow">Nexscope Product Gallery</span>
+    <h2 id="showcase-home-title">Help more people discover and understand your product.</h2>
+    <p>Submit a public product page or Amazon ASIN for editorial review. Approved products can receive a focused public showcase page, together with practical suggestions for clearer positioning, imagery, video and buying links.</p>
+    <ul class="showcase-home-benefits">
+      <li><span aria-hidden="true">01</span><strong>Another public discovery page</strong></li>
+      <li><span aria-hidden="true">02</span><strong>Professional product-page suggestions</strong></li>
+      <li><span aria-hidden="true">03</span><strong>No store connection required</strong></li>
+    </ul>
+    <div class="showcase-home-actions">
+      <a class="showcase-primary" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product ↗</a>
+      <a class="showcase-home-link" href="{{ '/product-showcase/' | relative_url }}">Explore Product Gallery →</a>
+    </div>
+    <small>Every submission stays offline until it is reviewed and approved. Inclusion does not guarantee rankings, traffic or sales.</small>
+  </div>
+  <figure class="showcase-home-art">
+    <span>SUBMISSIONS OPEN</span>
+    <img src="{{ '/assets/product-showcase-hero.webp' | relative_url }}" width="1200" height="800" loading="lazy" decoding="async" alt="A curated display of ecommerce products including home, travel, beauty and technology products">
+    <figcaption><strong>Product context, images and video</strong><span>Presented together in one focused showcase.</span></figcaption>
+  </figure>
+</section>
+{% endif %}
+
 <nav class="resource-sections" aria-label="Learning collections">
   <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>All resources</a>
   <a href="{{ '/guides/' | relative_url }}"{% if page.url == '/guides/' %} aria-current="page"{% endif %}>Guides</a>
