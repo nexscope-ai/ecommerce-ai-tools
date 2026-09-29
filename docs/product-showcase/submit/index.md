@@ -25,12 +25,12 @@ image_caption: The Nexscope product submission workflow combines public product 
     </div>
     <aside class="submission-promise" aria-label="Submission promises">
       <span class="submission-promise-label">BEFORE YOU START</span>
-      <strong>About 3 minutes</strong>
+      <strong>Have these ready</strong>
       <p>Your submission stays offline until it is reviewed and approved.</p>
       <ul>
-        <li>Public links only</li>
-        <li>Editorial review before publication</li>
-        <li>No store credentials required</li>
+        <li>One public product URL or Amazon ASIN</li>
+        <li>Product name, details and 1–5 images</li>
+        <li>A contact email for update or removal requests</li>
       </ul>
     </aside>
   </header>
