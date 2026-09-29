@@ -32,7 +32,13 @@ Language: English
 - https://learn.nexscope.ai/ecommerce-ai-tools/alternatives/rainforest-api-alternative/ — Rainforest API and Nexscope fit comparison
 - https://learn.nexscope.ai/ecommerce-ai-tools/alternatives/sellersprite-alternative/ — SellerSprite and Nexscope fit comparison
 
+## Recent AI and ecommerce insights
+
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/claude-sonnet-5-5-ecommerce-workflows/ — evaluate Claude Sonnet 5.5 on bounded ecommerce workflows
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/ai-coworkers-ecommerce-workflows/ — test AI coworkers with scoped permissions and evidence
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/chatgpt-product-discovery/ — prepare product evidence for conversational discovery
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/what-is-agentic-commerce-ai-shopping-visibility/ — understand agentic commerce and AI shopping visibility
+
 ## Editorial and evidence policy
 
 Pages distinguish observed test results, vendor-documented capabilities, provider estimates, proposed workflows, and unknown values. Product coverage, availability, freshness, authentication, and credit requirements can change. Use the linked official documentation as the source of truth before production use.
-
