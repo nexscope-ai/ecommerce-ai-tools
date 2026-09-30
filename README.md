@@ -18,7 +18,7 @@ No store connection, seller token, or payment access is required. Submissions re
 
 Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs).
 
-### Production usage snapshot
+### Nexscope at a glance
 
 ![Line chart of daily valid Nexscope API requests from August 31 to September 29, 2026, with a 1,316-request daily average](docs/assets/readme-api-requests-2026-09.svg)
 
