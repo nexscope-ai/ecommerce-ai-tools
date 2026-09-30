@@ -139,18 +139,12 @@ def validate(snapshot: object) -> None:
         require(category["market"] == "US", f"{path}.market must be US")
         nonempty(category["nodeIdPath"], f"{path}.nodeIdPath")
         require(day(category["observedAt"], f"{path}.observedAt") <= as_of, f"{path} cannot be newer than asOf")
-        if category["sampleSize"] is not None:
-            whole(category["sampleSize"], f"{path}.sampleSize", 1)
+        whole(category["sampleSize"], f"{path}.sampleSize", 1)
         metrics = keys(category["metrics"], {"avgPriceUsd", "avgRating", "avgBsr", "newProductPercent"}, f"{path}.metrics")
-        require(any(value is not None for value in metrics.values()), f"{path}.metrics must contain at least one observed value")
-        if metrics["avgPriceUsd"] is not None:
-            number(metrics["avgPriceUsd"], f"{path}.avgPriceUsd", 0.01, 1_000_000)
-        if metrics["avgRating"] is not None:
-            number(metrics["avgRating"], f"{path}.avgRating", 0, 5)
-        if metrics["avgBsr"] is not None:
-            whole(metrics["avgBsr"], f"{path}.avgBsr", 1)
-        if metrics["newProductPercent"] is not None:
-            number(metrics["newProductPercent"], f"{path}.newProductPercent", 0, 100)
+        number(metrics["avgPriceUsd"], f"{path}.avgPriceUsd", 0.01, 1_000_000)
+        number(metrics["avgRating"], f"{path}.avgRating", 0, 5)
+        whole(metrics["avgBsr"], f"{path}.avgBsr", 1)
+        number(metrics["newProductPercent"], f"{path}.newProductPercent", 0, 100)
         candidates = category["candidates"]
         require(isinstance(candidates, list) and 1 <= len(candidates) <= 5, f"{path}.candidates needs 1–5 selected samples")
         asins = set()
@@ -160,12 +154,9 @@ def validate(snapshot: object) -> None:
             require(isinstance(product["asin"], str) and bool(re.fullmatch(r"[A-Z0-9]{10}", product["asin"])) and product["asin"] not in asins, f"{cp}.asin must be a unique ASIN")
             asins.add(product["asin"])
             nonempty(product["title"], f"{cp}.title")
-            if product["priceUsd"] is not None:
-                number(product["priceUsd"], f"{cp}.priceUsd", 0.01, 1_000_000)
-            if product["rating"] is not None:
-                number(product["rating"], f"{cp}.rating", 0, 5)
-            if product["bsr"] is not None:
-                whole(product["bsr"], f"{cp}.bsr", 1)
+            number(product["priceUsd"], f"{cp}.priceUsd", 0.01, 1_000_000)
+            number(product["rating"], f"{cp}.rating", 0, 5)
+            whole(product["bsr"], f"{cp}.bsr", 1)
             require(day(product["observedAt"], f"{cp}.observedAt") <= as_of, f"{cp} cannot be newer than asOf")
         sources = keys(category["sources"], {"marketStats", "opportunitySearch"}, f"{path}.sources")
         doc_url(sources["marketStats"], DOCS["market"], f"{path}.sources.marketStats")
