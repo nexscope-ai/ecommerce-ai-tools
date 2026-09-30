@@ -3,10 +3,10 @@ layout: default
 title: "Meta Muse Shopping Agent: A Merchant Readiness Guide"
 description: "What Meta confirms about Muse shopping, what remains unknown, and how merchants can test product information, checkout, and agent access."
 permalink: /ecommerce-trends/meta-muse-shopping-agent-merchant-readiness/
-last_reviewed: 2026-09-22
+last_reviewed: 2026-09-30
 date_published: 2026-09-22
-date_modified: 2026-09-22
-last_modified_at: 2026-09-22
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -33,6 +33,8 @@ faq:
 **Meta Muse is a personal AI agent that can browse the web and prepare a purchase for the shopper's approval.** For merchants, the immediate question is whether an agent can verify the exact product, offer, and checkout terms a shopper requested. Meta's launch materials do not describe a merchant-submission feed or recommendation formula for Muse. A readable product page is a sensible preparation step, not a guarantee of inclusion—and some retailers may not permit Muse access.
 
 > **Key takeaways:** Muse is Meta's personal AI agent, not the Muse Image or Muse Video model. A merchant should make variant-level facts, price, availability, shipping, returns, and evidence easy to find and internally consistent. Test an ordinary, permitted shopper journey rather than guessing at Muse's private ranking. Record what the agent actually saw and did. No page markup guarantees that Muse will visit or recommend a product.
+
+OpenAI launched a separate persistent-agent product on September 29. The [OpenAI Dots ecommerce guide](../openai-dots-ecommerce-always-on-ai-agents/) compares the documented availability, controls, and suitable merchant test cases without assuming that Dots and Muse have feature parity.
 
 ## What is Meta Muse—and what was announced?
 

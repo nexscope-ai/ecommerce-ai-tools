@@ -3,10 +3,10 @@ layout: default
 title: What Is Agentic Commerce? AI Shopping Visibility
 description: Learn how AI shopping agents discover products and use a practical workflow to research keywords, competitors, reviews, product pages, and AI visibility.
 permalink: /ecommerce-trends/what-is-agentic-commerce-ai-shopping-visibility/
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-30
 date_published: 2026-09-17
-date_modified: 2026-09-18
-last_modified_at: 2026-09-18
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -31,6 +31,8 @@ Imagine a shopper asking an AI assistant: “Find a leakproof insulated lunch ba
 ## Why is agentic commerce important now?
 
 Agentic commerce is moving from experiments into large shopping surfaces. The change matters because shoppers can now describe an outcome instead of navigating a category tree, while AI systems perform more of the research and comparison work.
+
+One current example is [Shopify Checkout WebMCP](../shopify-webmcp-checkout-ai-agents/), which lets an eligible browser agent read and update the checkout already open in a buyer's tab and submit it after the buyer confirms. It is a transaction interface, not a product-discovery or ranking guarantee.
 
 - [Google's September 2026 shopping update](https://blog.google/products-and-platforms/products/shopping/google-shopping-updates-holiday-shopping/) describes AI performance insights in Merchant Center, conversational product attributes, and Universal Commerce Protocol checkout experiences across Search and Gemini. Google also says accurate product feeds remain fundamental.
 - [Shopify introduced its agentic commerce platform](https://www.shopify.com/news/ai-commerce-at-scale) around integrations with Google, Microsoft Copilot, and ChatGPT. Shopify says the Universal Commerce Protocol, co-developed with Google, had support from more than 20 retailers and platforms when announced.
