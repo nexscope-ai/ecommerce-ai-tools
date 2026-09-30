@@ -16,6 +16,7 @@ Language: English
 - https://learn.nexscope.ai/ecommerce-ai-tools/website-seo-audit-guide/ — ecommerce page SEO audit
 - https://learn.nexscope.ai/ecommerce-ai-tools/ai-video-generator/ — AI product-video workflow
 - https://learn.nexscope.ai/ecommerce-ai-tools/ai-product-image-generator/ — AI product-image workflow
+- https://learn.nexscope.ai/ecommerce-ai-tools/amazon-listing-optimization-tool/ — evidence-led Amazon listing optimization workflow
 
 ## Evidence
 
@@ -23,6 +24,8 @@ Language: English
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/amazon-reviews-list/ — Amazon review request and response evidence
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/amazon-price-series/ — Amazon price-history evidence
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/1688-image-search/ — 1688 image-search evidence
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/gpt-image-2-5-flare/ — observed AI product-image edit, credit use and fidelity limitation
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/amazon-listing-optimizer/ — recorded Amazon listing-optimizer output and evidence limits
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-review-case-study/ — review-analysis case study
 
 ## Comparisons

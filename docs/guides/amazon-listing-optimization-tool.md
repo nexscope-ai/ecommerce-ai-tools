@@ -1,12 +1,12 @@
 ---
 layout: default
 title: How to Optimize an Amazon Listing with Marketplace Evidence
-description: Audit an Amazon ASIN, interpret keyword and traffic evidence, and turn listing gaps into prioritized changes you can verify and test.
+description: Use the Nexscope AI Amazon Listing Optimizer to audit an ASIN and turn marketplace evidence into prioritized changes you can verify and test.
 permalink: /amazon-listing-optimization-tool/
-last_reviewed: 2026-09-24
+last_reviewed: 2026-09-30
 date_published: 2026-09-23
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -41,6 +41,14 @@ To **optimize an Amazon listing**, start with its current content and a specific
 | Generated plan | Which potential edits can be reviewed first? | Recommendations are hypotheses until a human checks the evidence and product facts. |
 
 **Unavailable data is unknown, not zero.** A recommendation based on a missing field should not become a factual claim.
+
+## What did one recorded listing audit return?
+
+The public tool page records a September 22, 2026 US-marketplace test for ASIN `B072MQ5BRX`, Amazon Fresh Colombia Ground Coffee, Medium Roast, 32 Oz. The observed listing snapshot showed a 4.4 rating and 12,407 reviews. The workflow returned a **75/100 listing-readiness score**, with content 71, visual 88, trust 87, offer clarity 77, and risk checks 38.
+
+The archived public example did not capture the exact credits deducted or name the model used for the final AI plan. Those values remain **unknown**, not zero. The output demonstrates how the tool separates readiness areas; it does not prove a ranking, conversion, compliance, or category-performance result.
+
+[Inspect the recorded input, output, sources, missing cost fields, and human interpretation]({{ '/api-evidence/amazon-listing-optimizer/' | relative_url }}).
 
 ## How do you run a listing audit?
 

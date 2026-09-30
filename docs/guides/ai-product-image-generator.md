@@ -1,12 +1,12 @@
 ---
 layout: default
 title: How to Create Ecommerce Product Images with AI
-description: "Create ecommerce product images with AI: prepare references, compare models, check credits and review product accuracy before publishing."
+description: "Use the Nexscope AI Product Image Generator to prepare references, compare models, check credits, and review product accuracy before publishing."
 permalink: /ai-product-image-generator/
-last_reviewed: 2026-09-24
+last_reviewed: 2026-09-30
 date_published: 2026-09-23
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -70,6 +70,12 @@ This is an example input, **not a measured result**. A prompt can request fideli
 | Economics | On-page estimate and completed run's credit usage | Keep the settings and cost with the selected asset. |
 
 Nexscope's [product-reference example on the tool page](https://www.nexscope.ai/tools/ai-image-generator) shows a reference-to-output workflow. Treat showcase media as an example of a possible creative direction, not a benchmark for your own product. This guide contains no independent success-rate or conversion claim.
+
+## What did one real Nexscope image test return?
+
+On September 20, 2026, a Nexscope GPT 2.5 Flare run used a generated, unbranded bottle concept as its reference and requested one 2K square image at medium quality. The task returned `SUCCEEDED`, produced one 2048 × 2048 PNG, and deducted **116 credits**. Human review found that the label size and some bottle and cap proportions changed, so the output failed an exact-SKU preservation check.
+
+[Inspect the input, output, task ID, credit use, and human QA conclusion]({{ '/api-evidence/gpt-image-2-5-flare/' | relative_url }}). This is one observed edit, not a model benchmark or a claim that every image will cost the same amount.
 
 ## Frequently asked questions
 
