@@ -90,6 +90,16 @@ class ValidateMarketInsightsTest(unittest.TestCase):
                 with self.assertRaises(SnapshotError):
                     validate(data)
 
+    def test_unavailable_optional_metrics_are_not_zero(self):
+        data = valid_snapshot()
+        data["categories"][0]["sampleSize"] = None
+        data["categories"][0]["metrics"]["avgBsr"] = None
+        data["categories"][0]["candidates"][0]["rating"] = None
+        validate(data)
+        data["categories"][0]["metrics"] = {key: None for key in data["categories"][0]["metrics"]}
+        with self.assertRaises(SnapshotError):
+            validate(data)
+
     def test_anomalous_value_or_rank_fails(self):
         changes = (
             lambda d: d["categories"][0]["metrics"].update(avgRating=7),
