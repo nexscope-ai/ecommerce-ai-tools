@@ -24,14 +24,6 @@ Nexscope helps ecommerce teams research marketplaces, analyze customer feedback,
 
 ![Bar chart of the five most requested Nexscope APIs during the same 30-day period](docs/assets/readme-top-apis-2026-09.svg)
 
-| Most requested API | Requests in 30 days |
-| --- | ---: |
-| 1688 Product Detail | 6,998 |
-| 1688 Search by Image | 6,404 |
-| TikTok Top Selling Products | 5,115 |
-| 1688 Product Search | 5,054 |
-| Shopee Product Search | 2,792 |
-
 Source: Nexscope production API usage aggregates. Figures exclude test and deleted users, bots, and internal traffic. The line shows a seven-day rolling median of daily requests to make the underlying trend easier to read; it is not the raw daily count. The bar chart ranks requests, including unsuccessful attempts, rather than unique users or successful calls. This is a dated snapshot, not a live counter.
 
 ## Try the browser tools
