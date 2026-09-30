@@ -22,6 +22,7 @@
     <a href="{{ '/ecommerce-mcp-server/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">03</span><strong>Connect an ecommerce agent</strong><span>Review the current endpoint, authentication, tool discovery and async-result safeguards.</span><b>Open the MCP setup guide →</b></a>
     <a href="{{ '/website-seo-audit-guide/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">04</span><strong>Audit an ecommerce page</strong><span>Separate crawl eligibility, index status, content quality, links and performance evidence.</span><b>Use the SEO audit guide →</b></a>
   </div>
+  {% if site.data.market_insights.status == 'published' %}<aside class="resource-note"><strong>New: US ecommerce market insights snapshot</strong><p>Explore dated category samples, the selected US keyword pool and Nexscope usage, with sources and limits for each module. <a href="{{ '/market-insights/' | relative_url }}">Open the dashboard →</a></p></aside>{% endif %}
 </section>
 {% endif %}
 

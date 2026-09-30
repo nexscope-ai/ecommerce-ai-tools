@@ -27,6 +27,10 @@ jobs:
           python-version: "3.12"
       - name: Test the product page generator
         run: python -m unittest scripts.test_generate_product_showcase_pages
+      - name: Validate the public market snapshot
+        run: |
+          python -m unittest scripts.test_validate_market_insights
+          python scripts/validate_market_insights.py
       - name: Generate static product pages
         run: python scripts/generate_product_showcase_pages.py
       - name: Configure GitHub Pages

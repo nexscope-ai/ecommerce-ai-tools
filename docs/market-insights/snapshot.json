@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /market-insights/snapshot.json
+---
+{{ site.data.market_insights | jsonify }}

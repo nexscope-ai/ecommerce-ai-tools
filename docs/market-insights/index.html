@@ -1,0 +1,90 @@
+---
+layout: default
+title: US Ecommerce Market Insights Dashboard | Nexscope
+description: Dated Nexscope usage, US Amazon category samples and a selected-pool SEO keyword ranking, with sources and methodological limits.
+permalink: /market-insights/
+standalone_page: true
+market_insights_page: true
+sitemap: false
+---
+{% assign snapshot = site.data.market_insights %}
+{% assign now_seconds = site.time | date: '%s' | plus: 0 %}
+{% assign snapshot_seconds = snapshot.asOf | date: '%s' | plus: 0 %}
+{% assign snapshot_age_days = now_seconds | minus: snapshot_seconds | divided_by: 86400 %}
+<div class="mi-shell">
+  <section class="mi-hero" aria-labelledby="mi-title">
+    <div>
+      <span class="mi-eyebrow">Nexscope · US market snapshot</span>
+      <h1 id="mi-title">See the signals.<br><em>Check the evidence.</em></h1>
+      <p>A bounded view of Nexscope usage, selected Amazon category samples and US English keyword demand. Every number has a date, source and scope.</p>
+    </div>
+    <div class="mi-hero-stamp">
+      <span>Snapshot status</span>
+      {% if snapshot.status == 'published' %}
+        <strong>As of <time datetime="{{ snapshot.asOf }}">{{ snapshot.asOf | date: '%b %-d, %Y' }}</time></strong>
+        <small>US market · Static, manually reviewed snapshot</small>
+      {% else %}
+        <strong>Awaiting verified data</strong>
+        <small>No estimated or example figures are displayed.</small>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if snapshot.status != 'published' %}
+  <section class="mi-empty" aria-labelledby="mi-empty-title">
+    <span class="mi-eyebrow">Publication gate</span>
+    <h2 id="mi-empty-title">The first verified snapshot is being prepared.</h2>
+    <p>We will publish platform aggregates and US market research after their source results and reporting windows have been checked. Until then, this page has no rankings or sample numbers.</p>
+    <p>For currently documented capabilities, visit the <a href="https://www.nexscope.ai/api-docs">Nexscope API documentation</a>.</p>
+  </section>
+  {% else %}
+  {% if snapshot_age_days > 45 %}<p class="mi-stale" role="status">This snapshot is {{ snapshot_age_days }} days old. Use it as historical context, not current market conditions.</p>{% endif %}
+  <nav class="mi-jump" aria-label="Dashboard sections"><a href="#usage">Nexscope usage</a><a href="#categories">US category samples</a><a href="#keywords">Selected keyword pool</a><a href="#context">Historical context</a></nav>
+
+  <section class="mi-section" id="usage" aria-labelledby="mi-usage-title">
+    <div class="mi-section-head"><div><span class="mi-eyebrow">01 · Platform overview</span><h2 id="mi-usage-title">How Nexscope is being used</h2></div><p>{{ snapshot.period.start }}–{{ snapshot.period.end }} · Asia/Shanghai reporting dates</p></div>
+    <div class="mi-metric-grid">
+      <div class="mi-metric"><span>Active users, approximately</span><strong>{{ snapshot.platform.activeUsersApprox }}</strong><small>Distinct non-test users with a final successful product call in the period.</small></div>
+      <div class="mi-metric"><span>Successful calls, approximately</span><strong>{{ snapshot.platform.successfulCallsApprox }}</strong><small>Completed successful calls across documented API/MCP product usage; failures and pending calls excluded.</small></div>
+    </div>
+    <div class="mi-panel"><div class="mi-panel-heading"><h3>Top 5 APIs by successful calls</h3><span>Rounded counts · same 30-day period</span></div>
+      <ol class="mi-bars">
+      {% assign max_api_calls = snapshot.platform.topApis[0].successfulCallsApprox %}
+      {% for api in snapshot.platform.topApis %}
+        {% assign share = api.successfulCallsApprox | times: 100 | divided_by: max_api_calls %}
+        <li><div><a href="{{ api.docsUrl }}">{{ api.name | escape }}</a><strong>≈{{ api.successfulCallsApprox }}</strong></div><span class="mi-bar-track"><span style="width:{{ share }}%"></span></span></li>
+      {% endfor %}
+      </ol>
+    </div>
+    <p class="mi-source"><strong>Source and method:</strong> {{ snapshot.platform.source | escape }}. {{ snapshot.platform.methodology | escape }} Counts are rounded and are not unique customers or a measure of market share.</p>
+  </section>
+
+  <section class="mi-section" id="categories" aria-labelledby="mi-categories-title">
+    <div class="mi-section-head"><div><span class="mi-eyebrow">02 · US market selection</span><h2 id="mi-categories-title">Three categories to watch</h2></div><p>Category samples and filtered candidate products, not a US bestseller chart.</p></div>
+    <div class="mi-category-grid">
+    {% for category in snapshot.categories %}
+      <article class="mi-category" aria-labelledby="mi-cat-{{ category.id }}"><div class="mi-category-top"><span>{{ forloop.index | prepend: '0' }}</span><time datetime="{{ category.observedAt }}">{{ category.observedAt }}</time></div><h3 id="mi-cat-{{ category.id }}">{{ category.name }}</h3><p class="mi-meta">US · node {{ category.nodeIdPath | escape }} · {{ category.sampleSize }} sampled products</p>
+        <dl class="mi-stat-grid"><div><dt>Average price</dt><dd>${{ category.metrics.avgPriceUsd }}</dd></div><div><dt>Average rating</dt><dd>{{ category.metrics.avgRating }} / 5</dd></div><div><dt>Average BSR</dt><dd>{{ category.metrics.avgBsr }}</dd></div><div><dt>New products</dt><dd>{{ category.metrics.newProductPercent }}%</dd></div></dl>
+        <h4>Filtered samples</h4><ol class="mi-products">{% for product in category.candidates %}<li><span>{{ product.title | escape }}</span><small>ASIN {{ product.asin }} · ${{ product.priceUsd }} · {{ product.rating }}/5 · BSR {{ product.bsr }} · {{ product.observedAt }}</small></li>{% endfor %}</ol>
+        <p class="mi-limit">{{ category.limitations | escape }}</p>
+        <p class="mi-links"><a href="{{ category.sources.marketStats }}">Market Statistics API</a><a href="{{ category.sources.opportunitySearch }}">Opportunity Search API</a></p>
+      </article>
+    {% endfor %}
+    </div>
+    <p class="mi-source"><strong>How to read this:</strong> Average price, rating and BSR describe the returned category sample. New-product share is the provider's sampled proportion. BSR is category-relative. Candidate products were filtered with the opportunity-search endpoint; they are examples for further review, not ranked recommendations.</p>
+  </section>
+
+  <section class="mi-section" id="keywords" aria-labelledby="mi-keywords-title">
+    <div class="mi-section-head"><div><span class="mi-eyebrow">03 · Search demand</span><h2 id="mi-keywords-title">US SEO keywords: selected-pool ranking</h2></div><p>Top 10 from {{ snapshot.keywords.size }} fixed-pool terms for the three categories, sorted by estimated US English monthly searches.</p></div>
+    <div class="mi-panel mi-table-wrap"><table><caption>Selected keyword pool as of {{ snapshot.asOf }}; US English monthly search volume estimates</caption><thead><tr><th scope="col">Rank</th><th scope="col">Keyword</th><th scope="col">Category</th><th scope="col">Monthly estimate</th><th scope="col">Observed</th></tr></thead><tbody>{% for keyword in snapshot.keywords limit:10 %}<tr><th scope="row">{{ forloop.index }}</th><td>{{ keyword.term | escape }}</td><td>{{ keyword.categoryId | replace: '-', ' ' | capitalize }}</td><td>{{ keyword.monthlySearchVolumeEstimate }}</td><td><time datetime="{{ keyword.observedAt }}">{{ keyword.observedAt }}</time></td></tr>{% endfor %}</tbody></table></div>
+    <p class="mi-source"><strong>Pool:</strong> {{ snapshot.keywordPoolDefinition | escape }} <strong>Source:</strong> <a href="https://www.nexscope.ai/api-docs/seo-keyword-metrics">SEO Keyword Metrics API</a>. These are provider estimates for selected terms, not a census of all US searches. A value of zero is a returned estimate, not a missing value. The full measured pool is in the <a href="{{ '/market-insights/snapshot.json' | relative_url }}">snapshot JSON</a>.</p>
+    {% if snapshot.trends.size > 0 %}<div class="mi-trends"><h3>Relative trend context</h3><p>Google Trends indexes interest within each series from 0 to 100. It is not monthly search volume and should not be compared numerically with the ranking above.</p>{% for series in snapshot.trends %}<div class="mi-trend"><strong>{{ series.term | escape }}</strong><div class="mi-trend-bars" aria-label="Relative trend index by date for {{ series.term | escape }}">{% for point in series.points %}<span style="height:{{ point.index }}%" title="{{ point.date }}: {{ point.index }}"><span class="mi-sr">{{ point.date }}: {{ point.index }}</span></span>{% endfor %}</div><small>{{ series.points.first.date }} to {{ series.points.last.date }} · <a href="{{ series.source }}">Google Trends By Time API</a></small></div>{% endfor %}</div>{% endif %}
+  </section>
+
+  <section class="mi-section" id="context" aria-labelledby="mi-context-title">
+    <div class="mi-section-head"><div><span class="mi-eyebrow">04 · Historical context</span><h2 id="mi-context-title">Look beyond a single product snapshot</h2></div><p>Price and BSR history appears only when a verified series is available.</p></div>
+    {% if snapshot.history.size > 0 %}<div class="mi-history-grid">{% for series in snapshot.history %}<article class="mi-panel"><h3>ASIN {{ series.asin }}</h3><p class="mi-meta">{{ series.categoryId | replace: '-', ' ' | capitalize }} · US · {{ series.observedAt }}</p><div class="mi-table-wrap"><table><caption>Observed price and BSR over time</caption><thead><tr><th scope="col">Date</th><th scope="col">Price</th><th scope="col">BSR</th></tr></thead><tbody>{% for point in series.points %}<tr><th scope="row">{{ point.date }}</th><td>${{ point.priceUsd }}</td><td>{{ point.bsr }}</td></tr>{% endfor %}</tbody></table></div><a href="{{ series.source }}">Amazon Product Price Series API →</a></article>{% endfor %}</div>{% else %}<p class="mi-no-history">No verified price-and-BSR history was available for the selected ASINs at this snapshot. The category samples above remain point-in-time observations.</p>{% endif %}
+  </section>
+  <footer class="mi-method"><strong>About this dashboard</strong><p>This page is generated from a manually reviewed JSON snapshot at site build time. Opening it does not make an API call. Previous snapshots remain in the repository's Git history. API access, credit costs and response coverage can change; verify current details in the linked documentation.</p><a href="{{ '/market-insights/snapshot.json' | relative_url }}">View the published snapshot JSON →</a></footer>
+  {% endif %}
+</div>
