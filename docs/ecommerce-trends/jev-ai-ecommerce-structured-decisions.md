@@ -3,10 +3,10 @@ layout: default
 title: "Jev AI for Ecommerce: Structured Decisions, Not a Chatbot"
 description: "What Jev's typed decisions can and cannot do for ecommerce, with a review-routing pilot, data requirements, and a method for testing errors."
 permalink: /ecommerce-trends/jev-ai-ecommerce-structured-decisions/
-last_reviewed: 2026-09-24
+last_reviewed: 2026-09-30
 date_published: 2026-09-22
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -33,6 +33,8 @@ faq:
 **Jev is TypeSafe AI's early-access model for typed decisions with probabilities, not a chatbot or an ecommerce database.** It is designed for bounded questions such as classification, routing, and scoring inside software. A seller might test it on review themes or catalog triage, but a valid output can still be wrong, and the model cannot supply missing product or customer evidence.
 
 > **Key takeaways:** Jev is TypeSafe AI's early-access System One Model for structured decisions, not a conversational shopping agent. Its developer-defined output shape may reduce parsing failures; semantic mistakes still require measurement and human fallback. Start with one low-risk decision, legitimate source data, labeled examples, and a review threshold.
+
+> **September 30 update:** OpenAI has announced a competing Decisions API powered by GPT-6 Luna. See the fact-checked [OpenAI Decisions API vs Jev comparison](../openai-decisions-api-vs-jev/) for the preview's known features, mixed early tests, missing pricing, and the reported—but not completed—$10 billion TypeSafe valuation talks.
 
 <aside class="article-action" aria-label="Test a structured review-routing workflow">
   <div><span class="eyebrow">NEXT STEP / REVIEW ROUTING</span><strong>Test a structured review-routing workflow.</strong><p>Start with a documented sample of low-star Amazon reviews, preserve the source evidence, and compare automated categories with human labels.</p></div>
