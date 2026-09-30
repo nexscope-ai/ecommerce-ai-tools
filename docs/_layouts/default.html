@@ -6,7 +6,7 @@
     {% if page.not_found_page %}<script>(function(){var m=location.pathname.match(/\/product-showcase\/manage\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})\/?$/i);if(m){sessionStorage.setItem('nexscopeProductShowcaseManagementUuid',m[1]);location.replace(location.pathname.slice(0,m.index+m[0].lastIndexOf('/')+1));}})();</script>{% endif %}
     <title>{% if page.title contains 'Nexscope' %}{{ page.title }}{% else %}{{ page.title | default: site.title }} | Nexscope{% endif %}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
-    {% if page.market_insights_page and site.data.market_insights.status != 'published' %}<meta name="robots" content="noindex, nofollow">{% elsif page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+    {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     {% if page.private_page %}<meta name="referrer" content="no-referrer">{% endif %}
     {% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">{% endif %}
     <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -139,7 +139,6 @@
     </style>
     <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=10">
     <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=35">
-    {% if page.market_insights_page %}<link rel="stylesheet" href="{{ '/assets/market-insights.css' | relative_url }}?v=1">{% endif %}
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
     <script src="{{ '/assets/trends.js' | relative_url }}?v=9" defer></script>
     {% unless page.private_page %}
@@ -157,7 +156,7 @@
   {% if page.path contains 'ecommerce-trends/' %}{% assign section = 'ecommerce-trends' %}{% endif %}
   {% if page.path contains 'alternatives/' %}{% assign section = 'alternatives' %}{% endif %}
   {% if page.community_page %}{% assign section = 'community' %}{% endif %}
-  <body class="trends-page{% unless is_hub %} trends-article{% endunless %}{% if page.product_showcase_page %} product-showcase-page{% endif %}{% if page.market_insights_page %} market-insights-page{% endif %}{% if page.not_found_page %} not-found-page{% endif %}">
+  <body class="trends-page{% unless is_hub %} trends-article{% endunless %}{% if page.product_showcase_page %} product-showcase-page{% endif %}{% if page.not_found_page %} not-found-page{% endif %}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="trends-header"><div class="wrap">
       <a class="brand" href="https://learn.nexscope.ai/" aria-label="Nexscope home"><img src="https://learn.nexscope.ai/logo.png" alt="Nexscope" width="166" height="42"></a>
@@ -169,7 +168,6 @@
           <li><a href="https://learn.nexscope.ai/tools/">Tools</a></li>
           <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Learn</a></li>
           <li><a href="{{ '/product-showcase/' | relative_url }}"{% if page.product_showcase_page %} aria-current="page"{% endif %}>Product Gallery</a></li>
-          {% if site.data.market_insights.status == 'published' %}<li><a href="{{ '/market-insights/' | relative_url }}"{% if page.market_insights_page %} aria-current="page"{% endif %}>Market Insights</a></li>{% endif %}
           <li><a href="{{ '/community/' | relative_url }}"{% if page.community_page %} aria-current="page"{% endif %}>Community</a></li>
           <li><a href="https://www.nexscope.ai/api-docs?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=learning_center&amp;utm_content=inline_link">API docs</a></li>
           <li><a class="nav-cta" href="https://www.nexscope.ai/?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=learning_center&amp;utm_content=early_cta">Explore Nexscope ↗</a></li>
@@ -197,7 +195,7 @@
       </article>
       {% unless is_hub %}</div>{% endunless %}
     </main>
-    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="{{ '/ecommerce-trends/' | relative_url }}">Insights</a>{% if site.data.market_insights.status == 'published' %}<a href="{{ '/market-insights/' | relative_url }}">Market Insights</a>{% endif %}<a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
+    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="{{ '/ecommerce-trends/' | relative_url }}">Insights</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
     {% if page.product_showcase_page %}<script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=27" defer></script>{% endif %}
     {% if page.not_found_page %}<script src="{{ '/assets/not-found.js' | relative_url }}?v=1" defer></script>{% endif %}
   </body>

@@ -4,8 +4,6 @@
 
 [Learning hub](https://learn.nexscope.ai/ecommerce-ai-tools/) · [Try the tools](https://www.nexscope.ai/data?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) · [API documentation](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) · [Ask a question](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a) · [Report an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
 
-**US market insights dashboard:** [View the dashboard and snapshot status](https://learn.nexscope.ai/ecommerce-ai-tools/market-insights/). The first public snapshot will appear only after Nexscope usage aggregates, three US Amazon category samples, and the selected keyword pool have been verified. Until then the page displays no market figures. Each future snapshot will state its date, source, scope, and limitations.
-
 **New users receive 1,000 free credits to get started.** [Create a Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header). Credit use and API access depend on the selected action and account.
 
 This repository contains public tutorials, dated test evidence, API examples, case studies, and support resources. The browser tools run on Nexscope; the hosted application's source code is not stored here.

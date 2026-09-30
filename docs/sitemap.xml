@@ -30,13 +30,6 @@ sitemap: false
     </url>
   {% endfor %}
 
-  {% if site.data.market_insights.status == 'published' %}
-    <url>
-      <loc>{{ '/market-insights/' | absolute_url | xml_escape }}</loc>
-      <lastmod>{{ site.data.market_insights.asOf | date_to_xmlschema }}</lastmod>
-    </url>
-  {% endif %}
-
   {% for product in site.data.product_showcase_pages %}
     <url>
       <loc>{{ product.path | absolute_url | xml_escape }}</loc>
