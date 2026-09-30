@@ -20,7 +20,7 @@ Nexscope helps ecommerce teams research marketplaces, analyze customer feedback,
 
 ### Nexscope at a glance
 
-![Line chart showing the seven-day rolling median of valid Nexscope API requests through September 29, 2026](docs/assets/readme-api-requests-2026-09.svg)
+![Line chart showing the seven-day rolling median of valid Nexscope API requests through September 29, 2026](docs/assets/readme-usage-trend-2026-09.svg)
 
 ![Bar chart of the five most requested Nexscope APIs during the same 30-day period](docs/assets/readme-top-apis-2026-09.svg)
 
