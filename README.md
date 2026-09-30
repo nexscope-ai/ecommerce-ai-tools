@@ -20,12 +20,6 @@ Nexscope helps ecommerce teams research marketplaces, analyze customer feedback,
 
 ### Production usage snapshot
 
-| Metric | Value | Measurement |
-| --- | ---: | --- |
-| Valid registered accounts | **4,267** | As of September 30, 2026; test and deleted accounts excluded |
-| Average valid API requests per day | **1,316** | August 31–September 29, 2026 (30 complete days) |
-| Valid API requests in the period | **39,478** | Same 30-day period |
-
 ![Line chart of daily valid Nexscope API requests from August 31 to September 29, 2026, with a 1,316-request daily average](docs/assets/readme-api-requests-2026-09.svg)
 
 ![Bar chart of the five most requested Nexscope APIs during the same 30-day period](docs/assets/readme-top-apis-2026-09.svg)
@@ -38,7 +32,7 @@ Nexscope helps ecommerce teams research marketplaces, analyze customer feedback,
 | 1688 Product Search | 5,054 |
 | Shopee Product Search | 2,792 |
 
-Source: Nexscope production user records and API usage aggregates. API figures exclude test and deleted users, bots, and internal traffic. The charts count requests, including unsuccessful attempts; they do not count unique API users. This is a dated snapshot, not a live counter. The September 29 request spike is included in the 30-day average.
+Source: Nexscope production API usage aggregates. Figures exclude test and deleted users, bots, and internal traffic. The charts count requests, including unsuccessful attempts; they do not count unique API users. This is a dated snapshot, not a live counter. The September 29 request spike is included in the 30-day average.
 
 ## Try the browser tools
 
