@@ -18,3 +18,15 @@ Use a real input that can be shared, record when and where the run happened, dis
 Do not submit passwords, API keys, access tokens, payment information, personal customer data, or unredacted logs or screenshots. For private account or billing matters, use [private support](mailto:service@nexscope.ai).
 
 The team reviews contributions and may request clarification or edits. A proposal or pull request does not guarantee inclusion.
+
+## Maintainer workflow: rebuild Product Gallery pages
+
+Maintainers can rebuild all approved and published Product Gallery pages from the repository root:
+
+```powershell
+.\scripts\rebuild-product-showcase.ps1
+```
+
+The script replaces the generated `docs/product-showcase/product` directory, product manifest, and old `_site` output. It fetches the current published product JSON, applies each product's `seoConfig`, renders the product template, rebuilds the sitemap manifest, and runs a complete Jekyll build. Removed or ineligible products are therefore removed from the generated site and sitemap.
+
+The product template applies metadata, Open Graph and Twitter tags, alternate-language links, and Product/WebPage JSON-LD from the safely serialized configuration. Visible badges come only from `seoConfig.tags`; SEO keywords do not become visible badges. Submitted Markdown headings receive stable anchors, and a details table of contents appears when the content contains at least two sections.

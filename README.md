@@ -1,6 +1,21 @@
-# Ecommerce AI Tools by Nexscope — AI Video Generator, Amazon Research & SEO
+# Ecommerce AI Tools by Nexscope — Amazon Research, SEO & AI Video
 
-This is Nexscope's official public knowledge repository for **practical ecommerce tutorials, traceable cases, API evidence, and community support**. Explore the Product Gallery, Amazon research and listing optimization, SEO, sourcing, AI product image and video generation, and REST/MCP integrations. The browser tools run on Nexscope; this repository contains public documentation and evidence resources, not the hosted application's source code.
+**Nexscope Ecommerce AI Tools** is a public learning and evidence hub for ecommerce sellers and developers. Use practical workflows for Amazon review analysis, competitor keyword research, ecommerce SEO audits, AI product image and video generation, marketplace research, and ecommerce APIs for AI agents.
+
+[Learning hub](https://learn.nexscope.ai/ecommerce-ai-tools/) · [Try the tools](https://www.nexscope.ai/data?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) · [API documentation](https://www.nexscope.ai/api-docs?co-from=github-ecommerce-ai-tools&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) · [Ask a question](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a) · [Report an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose)
+
+**New users receive 1,000 free credits to get started.** [Create a Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header). Credit use and API access depend on the selected action and account.
+
+This repository contains public tutorials, dated test evidence, API examples, case studies, and support resources. The browser tools run on Nexscope; the hosted application's source code is not stored here.
+
+## Try the featured ecommerce AI tools
+
+| Tool | What it helps you do | Try it |
+| --- | --- | --- |
+| Amazon Review Analyzer | Group negative-review themes and turn customer complaints into testable product-improvement hypotheses. | [Analyze Amazon reviews](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_featured_reviews) |
+| SEO Keyword Planner | Research competitor keywords, search demand, SERP evidence, and content opportunities. | [Plan ecommerce keywords](https://www.nexscope.ai/tools/seo-keyword-planner?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_featured_keywords) |
+| Website SEO Auditor | Inspect an ecommerce or product page for crawlability, metadata, headings, links, and actionable SEO issues. | [Audit a product page](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_featured_audit) |
+| AI Video Generator | Turn product images into ecommerce videos with selectable generation models and production controls. | [Create a product video](https://www.nexscope.ai/tools/ai-video-generator?utm_source=github&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=readme_featured_video) |
 
 ## Product Gallery — share a product and improve its public page
 
@@ -27,29 +42,13 @@ Submissions stay offline until reviewed and approved. Approval, publication, sea
 | Help choose the next ecommerce workflow | [Vote for the task slowing you down](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/14). One click is enough; a comment is optional. |
 | Ask a usage question or suggest a workflow | [Ask in Discussions](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions); use [Ideas](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas) for feature suggestions and [Issues](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) for reproducible bugs. |
 
-**New users receive 1,000 free credits to get started.** [Create a Nexscope account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_start). Credit usage and API access depend on the action and account; trial credits do not unlock every API. For a real run with source IDs, returned counts, and limitations, read [the Amazon review case study](docs/case-studies/amazon-review-case-study.md).
+For a real run with source IDs, returned counts, and limitations, read [the Amazon review case study](docs/case-studies/amazon-review-case-study.md). Trial credits do not unlock every API.
 
 ## Learning resources
 
 Start with a practical guide, inspect a dated case or API evidence record, then open the official Nexscope tool or API reference to check current access, fields and credits.
 
 Published learning pages are available at [learn.nexscope.ai/ecommerce-ai-tools/](https://learn.nexscope.ai/ecommerce-ai-tools/). Repository Markdown remains the public source of truth and commit history for tutorials and evidence.
-
-### Rebuild all product showcase pages locally
-
-Run the following command from the repository root:
-
-```powershell
-.\scripts\rebuild-product-showcase.ps1
-```
-
-The script removes the entire existing `docs/product-showcase/product` directory, the generated product manifest, and the old `_site` output. It then fetches the current approved and published product JSON, composes page metadata and Product JSON-LD from each product's complete `seoConfig` object, renders each current page with `scripts/templates/product-showcase-product.html`, writes a new sitemap manifest, and performs a complete Jekyll build. The resulting sitemap is rebuilt from that new manifest, so removed or ineligible products cannot remain published or indexed. The backend does not render the public HTML page.
-
-The product template applies `seoConfig` during generation: title, description, keywords, robots, language, author, theme color, Open Graph, Twitter Card, alternate-language links, Product/WebPage schema extensions, and additional `structuredData` or `jsonLd` nodes. GEO schema supplied through `geo.schema`, `geo.structuredData`, or `geo.jsonLd` is added to the JSON-LD graph. The complete safely serialized configuration is also embedded as `#nexscope-product-seo-config`, while the public product UUID, product name, and canonical page identity remain protected from accidental overrides.
-
-Visible product badges come only from `seoConfig.tags`, for example `"tags": ["AI video", "Ecommerce"]`. The builder shows at most eight distinct tags; when `tags` is absent or empty, it shows no badges. SEO `keywords` do not become visible tags.
-
-Submitted Markdown headings receive stable anchors, and a details table of contents appears only when there are at least two sections. GEO configuration remains in the safely serialized SEO JSON; explicitly configured GEO schema still enters JSON-LD, but `geo.answerSummary` no longer creates a visible summary card.
 
 ## Start with the ecommerce problem you need to solve
 
