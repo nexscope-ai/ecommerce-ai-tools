@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "OpenAI Decisions API vs Jev: Did OpenAI Kill Jev?"
-description: "A fact-checked comparison of OpenAI Decisions API and Jev, including latency tests, pricing gaps, the reported $10B valuation talks, and what builders should test."
+description: "OpenAI Decisions API vs Jev, fact-checked: early latency tests, unknown pricing, $10B valuation claims, feature differences, and a builder benchmark plan."
 permalink: /ecommerce-trends/openai-decisions-api-vs-jev/
 last_reviewed: 2026-09-30
 date_published: 2026-09-30
@@ -34,11 +34,30 @@ faq:
 
 # OpenAI Decisions API vs Jev: did OpenAI kill Jev in two weeks?
 
-**By Nexscope Team · Published September 30, 2026**
+**By Nexscope Team · Published and last verified September 30, 2026**
 
 **No—OpenAI has not proved that Jev is dead. It has proved that fast, fixed-choice AI decisions are important enough to become a platform feature.** OpenAI announced the Decisions API at DevDay on September 29, two weeks after TypeSafe AI introduced Jev on September 15. The overlap is real, but the strongest “Jev is dead” claims run ahead of the available evidence: OpenAI's product is still a limited preview, its price and complete API contract are not public, and the first small third-party comparisons point in different directions.
 
-> **Key takeaways:** OpenAI Decisions API and Jev both target classification, routing, and agent branching without a long generated answer. OpenAI brings distribution, multimodal input, and the existing API ecosystem. Jev brings a dedicated decision interface, public pricing, and a company-stated focus on calibrated probabilities. The reported $10 billion TypeSafe figure describes early fundraising talks—not a completed valuation—and neither launch demos nor anonymous Reddit benchmarks settle the performance question.
+> **Key takeaways**
+>
+> - Decisions API and Jev both target classification, routing, and agent branching without a long generated answer.
+> - OpenAI brings multimodal input, distribution, and an existing developer ecosystem; Jev brings documented decision primitives and public pricing.
+> - The reported $10 billion TypeSafe figure describes early fundraising talks, not a completed valuation.
+> - OpenAI's reported 150 ms launch figure is not a public p50/p95 production benchmark.
+> - The first two third-party comparisons split their results, so neither product has established a general performance lead.
+
+## Fact check: what is verified, and what is still a claim?
+
+**The product launch and competitive overlap are verified; the “$10 billion company killed in 15 days” conclusion is not.** The dates, product descriptions, funding report, and early tests support a narrower story: OpenAI entered the same decision-API category while the decisive commercial and technical evidence remains incomplete.
+
+| Claim circulating after DevDay | Verdict | Evidence and limitation |
+| --- | --- | --- |
+| OpenAI announced Decisions API after Jev launched | **Verified** | TypeSafe announced Jev on September 15; OpenAI announced Decisions at DevDay on September 29. That is 14 elapsed days, or 15 calendar dates when both endpoints are counted. |
+| Decisions API overlaps with Jev | **Verified, with differences** | Both select from bounded answers for routing and classification. Jev also documents Choice, Score, and Noul; OpenAI's preview accepts text and images. |
+| Decisions responds in 150 ms instead of 1.6 seconds | **Launch claim, not independently established** | The figure was reported from the announcement. OpenAI has not published a latency distribution, workload definition, region, concurrency level, or reproducible benchmark. |
+| OpenAI publicly documents confidence-score calibration | **Not yet verified** | No complete public Decisions response schema or calibration evaluation was available when this page was reviewed. |
+| TypeSafe is a $10 billion company | **Misleading as a completed valuation** | The Information reported early talks and offers from unnamed investors at $10 billion or more, not a closed financing round. |
+| “Jev is dead” | **Opinion, not a factual result** | The phrase came from a Reddit discussion. Pricing, broad-release reliability, independent calibration, and production retention are still unknown. |
 
 ## What did OpenAI actually announce?
 
@@ -158,14 +177,9 @@ Both make bounded decisions from predefined options. OpenAI's Luna-powered previ
 
 ## Sources and verification scope
 
-- [OpenAI DevDay 2026](https://devday.openai.com/), September 29, 2026 — event date and launch context.
-- [OpenAI: GPT-6 Luna model documentation](https://developers.openai.com/api/docs/models/gpt-6-luna), reviewed September 30, 2026 — base-model positioning and standard Luna pricing context, not Decisions API pricing.
-- [Axios: OpenAI DevDay announcements](https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol), September 29, 2026 — independent confirmation and product positioning.
-- [Every: Vibe Check, OpenAI DevDay 2026](https://every.to/vibe-check/vibe-check-openai-devday-2026), September 29, 2026 — preview status, multimodal input, unpublished pricing, and two early comparisons.
-- [TypeSafe AI: Introducing System One Models & Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev/), September 15, 2026 — architecture, pricing, latency, evaluation methodology, and limitations claimed by the vendor.
-- [TypeSafe AI API documentation](https://api.typesafe.ai/docs), reviewed September 30, 2026 — public request and response schemas.
-- [The Information: Jev Fervor Leads to Talk of Big Valuation Boost](https://www.theinformation.com/newsletters/dealmaker/jev-fervor-leads-talk-big-valuation-boost), September 24, 2026 — early fundraising discussions and reported offers.
-- [OpenAI: GPT-4 contributions](https://openai.com/contributions/gpt-4/) and [InstructGPT paper](https://arxiv.org/abs/2203.02155) — verification of TypeSafe founder Diogo Almeida's OpenAI and InstructGPT contributions.
-- [Reddit: “Jev Is Dead” discussion](https://www.reddit.com/r/AI_Agents/comments/1wtiicr/jev_is_dead/), September 30, 2026 — community reaction and an explicitly unverified anecdotal benchmark.
+- **Primary vendor sources:** [OpenAI DevDay 2026](https://devday.openai.com/), September 29, 2026 — event date and launch context; [OpenAI GPT-6 Luna documentation](https://developers.openai.com/api/docs/models/gpt-6-luna), reviewed September 30, 2026 — base-model positioning and standard Luna pricing context, not Decisions API pricing.
+- **Primary TypeSafe sources:** [Introducing System One Models & Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev/), September 15, 2026 — vendor claims, methodology, pricing, latency, and disclosed limitations; [TypeSafe API documentation](https://api.typesafe.ai/docs), reviewed September 30, 2026 — public request and response schemas.
+- **Independent reporting and early tests:** [Axios: OpenAI DevDay announcements](https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol), September 29, 2026 — independent launch confirmation; [Every: Vibe Check, OpenAI DevDay 2026](https://every.to/vibe-check/vibe-check-openai-devday-2026), September 29, 2026 — preview details and two early comparisons; [The Information: Jev Fervor Leads to Talk of Big Valuation Boost](https://www.theinformation.com/newsletters/dealmaker/jev-fervor-leads-talk-big-valuation-boost), September 24, 2026 — early fundraising discussions and reported offers.
+- **Community reaction, not independent evidence:** [Reddit: “Jev Is Dead” discussion](https://www.reddit.com/r/AI_Agents/comments/1wtiicr/jev_is_dead/), September 30, 2026 — the viral claim and an unreproducible anecdotal benchmark.
 
 **Scope note:** We did not have access to OpenAI's limited-preview endpoint and did not run an independent Decisions-vs-Jev benchmark. Product behavior, latency, accuracy, pricing, and availability can change after broad release. The comparisons above separate vendor statements, third-party tests, reporting, and anonymous community claims.
