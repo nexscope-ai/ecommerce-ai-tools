@@ -20,7 +20,7 @@ Nexscope helps ecommerce teams research marketplaces, analyze customer feedback,
 
 ### Nexscope at a glance
 
-![Line chart of daily valid Nexscope API requests from August 31 to September 29, 2026, with a 1,316-request daily average](docs/assets/readme-api-requests-2026-09.svg)
+![Line chart showing the seven-day rolling median of valid Nexscope API requests through September 29, 2026](docs/assets/readme-api-requests-2026-09.svg)
 
 ![Bar chart of the five most requested Nexscope APIs during the same 30-day period](docs/assets/readme-top-apis-2026-09.svg)
 
@@ -32,7 +32,7 @@ Nexscope helps ecommerce teams research marketplaces, analyze customer feedback,
 | 1688 Product Search | 5,054 |
 | Shopee Product Search | 2,792 |
 
-Source: Nexscope production API usage aggregates. Figures exclude test and deleted users, bots, and internal traffic. The charts count requests, including unsuccessful attempts; they do not count unique API users. This is a dated snapshot, not a live counter. The September 29 request spike is included in the 30-day average.
+Source: Nexscope production API usage aggregates. Figures exclude test and deleted users, bots, and internal traffic. The line shows a seven-day rolling median of daily requests to make the underlying trend easier to read; it is not the raw daily count. The bar chart ranks requests, including unsuccessful attempts, rather than unique users or successful calls. This is a dated snapshot, not a live counter.
 
 ## Try the browser tools
 
