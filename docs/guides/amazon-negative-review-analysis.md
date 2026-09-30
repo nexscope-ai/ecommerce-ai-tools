@@ -4,9 +4,9 @@ title: How to Analyze Amazon Negative Reviews
 description: Learn how to analyze Amazon negative reviews and turn a traceable sample of 1-star and 2-star feedback into testable product improvement hypotheses.
 permalink: /amazon-negative-review-analysis/
 date_published: 2026-09-15
-last_reviewed: 2026-09-15
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+last_reviewed: 2026-09-30
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 schema_type: Article
 image: /assets/images/amazon-review-product-insights-1440w.webp
 image_small: /assets/images/amazon-review-product-insights-720w.webp
@@ -19,6 +19,12 @@ image_caption: "Illustration: group review evidence before turning recurring com
 {% include article-visual.html %}
 
 Analyze negative Amazon reviews by collecting a clearly defined sample of 1-star and 2-star feedback, preserving the original comments, grouping repeated complaints, and turning the strongest themes into product hypotheses that can be tested. A review sample reveals problems worth investigating; it does not measure the defect rate of every product sold.
+
+## One observed Nexscope review sample
+
+On September 15, 2026, a production run requested ten one-star and ten two-star reviews for Amazon US ASIN `B0G1FVPYNW`. It returned **10 unique review IDs: nine one-star and one two-star**. Human review found four returned comments that explicitly mentioned physical size or capacity.
+
+This supports a follow-up question about dimensions and listing clarity. It does not establish the product's overall rating distribution, defect rate, conversion rate or return rate. The [Amazon Reviews List evidence record]({{ '/api-evidence/amazon-reviews-list/' | relative_url }}) preserves the request, returned count, dates and interpretation limits; the [full case study]({{ '/amazon-review-case-study/' | relative_url }}) shows where human review rejected unsupported conclusions.
 
 ## A practical workflow
 

@@ -3,10 +3,10 @@ layout: default
 title: How to Track AI Referral Traffic in GA4
 description: Build a practical GA4 workflow for AI referral traffic, landing pages, scroll depth, engagement, conversions, and source limitations.
 permalink: /ai-referral-traffic-ga4/
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-30
 date_published: 2026-09-18
-date_modified: 2026-09-18
-last_modified_at: 2026-09-18
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -126,6 +126,8 @@ Analytics shows what happened on your site. Nexscope can support the earlier res
 - research buyer language with the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4);
 - audit landing-page SEO and evidence with the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4);
 - inspect public product, competitor, review, backlink, search, and supported AI-visibility data through the [API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4).
+
+Before interpreting a low-traffic landing page, follow the [ecommerce page SEO audit guide](../website-seo-audit-guide/) to separate crawl eligibility, index status, content relevance and internal-link signals from analytics attribution.
 
 Keep public research, GA4 behavioral data, advertising reports, and first-party revenue separate until you have a defined join and attribution method.
 

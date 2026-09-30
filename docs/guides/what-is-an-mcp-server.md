@@ -3,10 +3,10 @@ layout: default
 title: What Is an MCP Server? Ecommerce Tools and Examples
 description: Learn what an MCP server is, how hosts, clients, and tools work, and how ecommerce agents can use Nexscope APIs through MCP safely.
 permalink: /what-is-an-mcp-server/
-last_reviewed: 2026-09-17
+last_reviewed: 2026-09-30
 date_published: 2026-09-17
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -156,4 +156,4 @@ Yes. MCP does not remove authentication, authorization, credit, privacy, or mark
 
 ## Explore Nexscope MCP tools
 
-Start with a small, read-only research question and one documented capability. **[Explore the Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=guide_bottom)**, review the [API capabilities guide](../api-capabilities/), or open the [ecommerce data for AI agents page](https://learn.nexscope.ai/ecommerce-ai-agents.html).
+Start with a small, read-only research question and one documented capability. **[Use the current Nexscope MCP setup guide](../ecommerce-mcp-server/)** for the endpoint, authentication and asynchronous-result workflow. You can also explore the [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=mcp_server_guide&utm_content=guide_bottom), review the [API capabilities guide](../api-capabilities/), or open the [ecommerce data for AI agents page](https://learn.nexscope.ai/ecommerce-ai-agents/).

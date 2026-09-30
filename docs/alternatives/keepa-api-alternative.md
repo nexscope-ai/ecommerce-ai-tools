@@ -3,10 +3,10 @@ layout: default
 title: "Keepa API Alternative for Amazon Data"
 description: "Compare Keepa API and Nexscope for Amazon price history, BSR signals, tracking, broader ecommerce APIs, MCP access, and AI-agent workflows."
 permalink: /alternatives/keepa-api/
-last_reviewed: 2026-09-17
+last_reviewed: 2026-09-30
 date_published: 2026-09-17
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -33,11 +33,17 @@ faq:
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 17, 2026 · Updated September 17, 2026**
+**By Nexscope Team · Published September 17, 2026 · Updated September 30, 2026**
 
 **Keepa and Nexscope overlap on selected Amazon research jobs, but they are not interchangeable products.** Keepa is a specialist in Amazon price history, product data, offers, deals, best sellers, sellers, and tracking. Nexscope provides selected historical product signals inside a broader catalog of ecommerce APIs, MCP tools, and reusable AI-agent workflows.
 
 > **TL;DR:** Choose Keepa when Amazon history, deal discovery, and tracking are the center of your product. Evaluate Nexscope when price or BSR history is one step inside a wider research, multi-marketplace, or AI-agent workflow. Test the exact data series before moving anything important.
+
+## One Nexscope price-series result you can inspect
+
+A September 21, 2026 Nexscope test requested 30 days of Amazon US history for ASIN `B072MQ5BRX`. The response returned `code: 0` and four lowest-new-price observations: **$16.62 on August 18, $9.69 on August 31, $16.62 on September 1, and $16.32 on September 3**. The deal array was empty, and a Prime value of `-1` was not treated as a usable price.
+
+That result proves the tested endpoint returned dated observations for that request. It does **not** prove continuous daily coverage, equivalent depth to Keepa, a current price, or the cause of the temporary low. [Inspect the sanitized response and complete limitations]({{ '/api-evidence/amazon-price-series/' | relative_url }}) before using this example in a provider decision.
 
 ## Keepa API vs Nexscope at a glance
 

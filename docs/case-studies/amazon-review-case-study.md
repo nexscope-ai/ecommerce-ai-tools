@@ -4,9 +4,9 @@ title: Amazon Negative Review Analysis Case Study
 description: A real production run with input parameters, traceable review evidence, human review of AI claims, and a product improvement validation plan.
 permalink: /amazon-review-case-study/
 date_published: 2026-09-15
-last_reviewed: 2026-09-15
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+last_reviewed: 2026-09-30
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 schema_type: Article
 image: /assets/images/amazon-review-product-insights-1440w.webp
 image_small: /assets/images/amazon-review-product-insights-720w.webp
@@ -94,5 +94,7 @@ Comments about size do not establish that the current listing omits dimensions. 
 New Nexscope users receive **1,000 free credits**. [Create an account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_signup); usage and access vary by action.
 
 For automation, start with the [Amazon Reviews List API documentation](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_api), preserve returned evidence, and use a separate analysis step. Check documented authentication and access requirements.
+
+For the reusable method without this ASIN's findings, follow the [Amazon negative-review analysis guide]({{ '/amazon-negative-review-analysis/' | relative_url }}). To connect review evidence with keyword and competitor research, continue with the [Amazon research overview](https://learn.nexscope.ai/amazon-research/).
 
 [Ask a workflow question or share your own case](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions). [Report a bug or request a capability](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose). The official Nexscope team reviews feedback and follows up as quickly as possible.

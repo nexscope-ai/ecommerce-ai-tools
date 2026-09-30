@@ -3,10 +3,10 @@ layout: default
 title: "Ecommerce MCP Server: Nexscope Tools, Setup, and Safety"
 description: Connect an AI agent to the Nexscope ecommerce MCP server. Review the live endpoint, OAuth setup, current tools, async media workflow, and safety checks.
 permalink: /ecommerce-mcp-server/
-last_reviewed: 2026-09-29
+last_reviewed: 2026-09-30
 date_published: 2026-09-18
-date_modified: 2026-09-29
-last_modified_at: 2026-09-29
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -39,11 +39,13 @@ faq:
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 18, 2026 · Updated September 29, 2026**
+**By Nexscope Team · Published September 18, 2026 · Updated September 30, 2026**
 
 **The Nexscope ecommerce MCP server lets a compatible AI agent discover and call published marketplace, keyword, SEO, creative, advertising, and patent tools through one remote MCP endpoint.** New integrations should use the v2 Streamable HTTP endpoint at `https://api.nexscope.ai/api/skill-api/v2/mcp`, authorize with OAuth 2.1 Authorization Code with PKCE when the client supports it, and request the `mcp:tools` scope.
 
 > **Current implementation snapshot — September 29, 2026:** the live Nexscope MCP directory lists **318 tools across 28 categories**. The server builds its MCP tool list from the published API catalog, so the exact count, schemas, access requirements, and credit behavior can change. Use `tools/list` and the [live MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server&utm_content=current_snapshot) as the source of truth.
+
+This is the product-specific implementation guide: it records the Nexscope endpoint, authentication path, live catalog boundary and asynchronous-result handling. For protocol terminology without Nexscope setup details, use the separate [What is an MCP server?](../what-is-an-mcp-server/) explainer. Keeping those two jobs separate prevents this page from duplicating a generic MCP introduction.
 
 ## What is an ecommerce MCP server?
 

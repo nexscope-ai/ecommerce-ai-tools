@@ -3,10 +3,10 @@ layout: default
 title: Amazon Product Price Series API Test
 description: Inspect a real Nexscope Amazon price-series response with four dated price observations, an empty deal array and explicit coverage limitations.
 permalink: /api-evidence/amazon-price-series/
-last_reviewed: 2026-09-24
+last_reviewed: 2026-09-30
 date_published: 2026-09-23
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 schema_type: Article
 topic: research
 image: /assets/images/prime-big-deal-days-2026-price-series-evidence.svg
@@ -37,6 +37,7 @@ The result supports a follow-up question about a dated price change and a more c
 
 - [Inspect the sanitized JSON evidence]({{ '/assets/evidence/prime-big-deal-days-2026-price-series.json' | relative_url }})
 - [Read the event research workflow]({{ '/ecommerce-trends/prime-big-deal-days-2026-seller-research/' | relative_url }})
+- [Compare Keepa and Nexscope for Amazon history]({{ '/alternatives/keepa-api/' | relative_url }})
 - [Open the Amazon Product Price Series API documentation](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn)
 
 The public JSON excludes API credentials and private account data.

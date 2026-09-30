@@ -4,9 +4,9 @@ title: How to audit an ecommerce product page for SEO
 description: Audit an ecommerce product page for crawlability, metadata, content, links, structured data, and mobile performance evidence.
 permalink: /website-seo-audit-guide/
 date_published: 2026-09-15
-last_reviewed: 2026-09-15
-date_modified: 2026-09-15
-last_modified_at: 2026-09-15
+last_reviewed: 2026-09-30
+date_modified: 2026-09-30
+last_modified_at: 2026-09-30
 schema_type: Article
 image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp
 image_small: /assets/images/ecommerce-product-page-seo-audit-720w.webp
@@ -19,6 +19,12 @@ image_caption: "Illustration: a useful page audit combines crawl signals, conten
 {% include article-visual.html %}
 
 Audit an ecommerce webpage by checking whether the URL can be fetched and indexed, then reviewing its title, description, headings, canonical URL, content, links, images, and structured data. Add a mobile performance check as a separate diagnostic. A single-page audit identifies evidence and risks; it does not replace a full-site crawl or guarantee rankings.
+
+## Crawl eligibility and index selection are different checks
+
+A page can return HTTP 200, allow crawling, declare a self-referencing canonical and pass Google's live URL test while still showing **Discovered – currently not indexed** or **Crawled – currently not indexed**. The first status means Google knows the URL but has not yet crawled it; the second means Google fetched it but has not selected it for the index at that time.
+
+Use the audit to remove technical conflicts, then strengthen the page's unique answer, dated evidence and internal links. A sitemap helps discovery but does not guarantee crawling or indexing. Confirm the current state in Google Search Console after the report refreshes rather than treating a successful live test as an indexing promise.
 
 ## Page-level checklist
 
