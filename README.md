@@ -43,12 +43,9 @@ Source: Nexscope production API usage aggregates. The line shows a seven-day rol
 | --- | --- |
 | How can I analyze negative Amazon reviews and find product improvements? | [Review analysis guide](docs/guides/amazon-negative-review-analysis.md) and [dated case study](docs/case-studies/amazon-review-case-study.md) |
 | How can I research competitor keywords? | [Amazon competitor keyword workflow](docs/guides/amazon-competitor-keyword-research.md) |
-| How can I screen Amazon product ideas from a keyword? | [Amazon Keyword Researcher guide](docs/guides/amazon-keyword-researcher-guide.md) |
-| How can I compare established products with new launches? | [Amazon Product Rankings guide](docs/guides/amazon-product-rankings-guide.md) |
 | How can I audit an ecommerce product page? | [Website SEO audit guide](docs/guides/website-seo-audit-guide.md) |
 | How can I optimize an Amazon listing with evidence? | [Listing optimization guide](docs/guides/amazon-listing-optimization-tool.md) |
 | How can I create accurate product images or videos? | [Image guide](docs/guides/ai-product-image-generator.md) · [Video guide](docs/guides/ai-video-generator.md) |
-| How can I create a video from an existing product listing? | [URL to Video guide](docs/guides/url-to-video-guide.md) |
 | How can I use ecommerce data in an AI agent? | [API selection and integration guide](docs/guides/ecommerce-api-for-ai-agents.md) · [MCP server guide](docs/guides/what-is-an-mcp-server.md) |
 
 Browse the [API evidence library](docs/api-evidence/index.md) for dated inputs, observed outputs, credit use, and limitations, or [recent ecommerce analysis](docs/ecommerce-trends/index.md) for current industry changes.
