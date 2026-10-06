@@ -9,6 +9,7 @@ Language: English
 
 - https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-mcp-server/ — connect marketplace research APIs to AI agents with MCP
 - https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-api-for-ai-agents/ — Amazon demand, competitor, keyword, and review APIs for agents
+- https://learn.nexscope.ai/ecommerce-ai-tools/best-amazon-product-research-api/ — choose an Amazon research API by task, evidence, coverage, access, and cost
 - https://learn.nexscope.ai/ecommerce-ai-tools/what-is-an-mcp-server/ — MCP concepts, clients, servers, tools, resources, and permissions
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-capabilities/ — ecommerce API capabilities and evidence boundaries
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-competitor-keyword-research/ — competitor keyword research workflow

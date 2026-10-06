@@ -3,10 +3,10 @@ layout: default
 title: "Ecommerce MCP Server: Nexscope Tools, Setup, and Safety"
 description: Connect an AI agent to the Nexscope ecommerce MCP server. Review the live endpoint, OAuth setup, current tools, async media workflow, and safety checks.
 permalink: /ecommerce-mcp-server/
-last_reviewed: 2026-09-30
+last_reviewed: 2026-10-06
 date_published: 2026-09-18
-date_modified: 2026-09-30
-last_modified_at: 2026-09-30
+date_modified: 2026-10-06
+last_modified_at: 2026-10-06
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -33,19 +33,33 @@ faq:
     answer: "The published catalog includes marketplace research, keyword and search intelligence, creative AI, patent and IP risk, Amazon advertising, JEV routing and evaluation, and asynchronous result tools. The catalog changes over time, so tools/list and the live MCP tool map are the source of truth."
   - question: How should an agent handle an asynchronous media tool?
     answer: "Call the generation tool once, save its taskId and originating skill slug, and query nexscope_media_task_result with progressive backoff. Do not resubmit a paid generation merely because the result is still pending."
+  - question: When should I use REST instead of the Nexscope MCP server?
+    answer: "Use REST when your backend already knows the exact endpoint and needs deterministic scheduling, caching, retries, typed contracts, or custom orchestration. Use MCP when a compatible AI agent needs to discover schemas and choose among tools during a conversation."
 ---
 
 # Ecommerce MCP server: Nexscope tools, setup, and safety
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 18, 2026 · Updated September 30, 2026**
+**By Nexscope Team · Published September 18, 2026 · Updated October 6, 2026**
 
 **The Nexscope ecommerce MCP server lets a compatible AI agent discover and call published marketplace, keyword, SEO, creative, advertising, and patent tools through one remote MCP endpoint.** New integrations should use the v2 Streamable HTTP endpoint at `https://api.nexscope.ai/api/skill-api/v2/mcp`, authorize with OAuth 2.1 Authorization Code with PKCE when the client supports it, and request the `mcp:tools` scope.
 
 > **Current implementation snapshot — September 29, 2026:** the live Nexscope MCP directory lists **318 tools across 28 categories**. The server builds its MCP tool list from the published API catalog, so the exact count, schemas, access requirements, and credit behavior can change. Use `tools/list` and the [live MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server&utm_content=current_snapshot) as the source of truth.
 
 This is the product-specific implementation guide: it records the Nexscope endpoint, authentication path, live catalog boundary and asynchronous-result handling. For protocol terminology without Nexscope setup details, use the separate [What is an MCP server?](../what-is-an-mcp-server/) explainer. Keeping those two jobs separate prevents this page from duplicating a generic MCP introduction.
+
+## Who should use MCP—and who should use REST instead?
+
+| Need | Better starting point |
+| --- | --- |
+| A compatible AI agent must discover available tools and schemas during a conversation | MCP v2 |
+| A backend already knows the exact operation and needs deterministic scheduling, caching, retries, or typed contracts | REST API |
+| A seller wants to run one hosted report without building an integration | The matching Nexscope browser tool |
+| A workflow can spend credits, generate media, or change an owned account | Either access method, with explicit approval, idempotency, audit logs, and result verification |
+| The client cannot protect credentials or complete the documented authorization flow | Do not connect it until secrets can be kept out of prompts and client-side code |
+
+MCP makes tool discovery easier; it does not remove engineering or governance responsibilities. If a job is fixed and repeatable, REST may be simpler and easier to observe.
 
 ## What is an ecommerce MCP server?
 
