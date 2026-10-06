@@ -6,7 +6,8 @@ sitemap: false
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}
   {% for collection in collections %}
     {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
@@ -16,6 +17,7 @@ sitemap: false
         {% if doc.last_modified_at or doc.date %}<lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>{% endif %}
         {% if doc.sitemap.priority %}<priority>{{ doc.sitemap.priority }}</priority>{% endif %}
         {% if doc.sitemap.changefreq %}<changefreq>{{ doc.sitemap.changefreq }}</changefreq>{% endif %}
+        {% if doc.image %}<image:image><image:loc>{{ doc.image | absolute_url | xml_escape }}</image:loc></image:image>{% endif %}
       </url>
     {% endfor %}
   {% endfor %}
@@ -27,6 +29,7 @@ sitemap: false
       {% if page.last_modified_at %}<lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>{% endif %}
       {% if page.sitemap.priority %}<priority>{{ page.sitemap.priority }}</priority>{% endif %}
       {% if page.sitemap.changefreq %}<changefreq>{{ page.sitemap.changefreq }}</changefreq>{% endif %}
+      {% if page.image %}<image:image><image:loc>{{ page.image | absolute_url | xml_escape }}</image:loc></image:image>{% endif %}
     </url>
   {% endfor %}
 
@@ -36,6 +39,7 @@ sitemap: false
       {% if product.lastModified %}<lastmod>{{ product.lastModified | xml_escape }}</lastmod>{% endif %}
       <priority>0.9</priority>
       <changefreq>weekly</changefreq>
+      {% if product.image %}<image:image><image:loc>{{ product.image | xml_escape }}</image:loc></image:image>{% endif %}
     </url>
   {% endfor %}
 

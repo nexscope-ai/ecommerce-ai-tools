@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://learn.nexscope.ai/ecommerce-ai-tools/sitemap.xml
-Sitemap: https://learn.nexscope.ai/ecommerce-ai-tools/image-sitemap.xml

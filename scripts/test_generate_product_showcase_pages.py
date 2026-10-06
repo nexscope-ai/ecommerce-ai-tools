@@ -357,9 +357,12 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
 
     def test_sitemap_templates_read_the_generated_manifest(self):
         docs = Path(__file__).resolve().parents[1] / "docs"
-        for filename in ("sitemap.xml", "image-sitemap.xml"):
-            template = (docs / filename).read_text(encoding="utf-8")
-            self.assertIn("site.data.product_showcase_pages", template)
+        template = (docs / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("site.data.product_showcase_pages", template)
+        self.assertIn("<image:image>", template)
+        legacy_template = (docs / "image-sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("<sitemapindex", legacy_template)
+        self.assertNotIn("<url>", legacy_template)
 
     def test_skips_a_product_without_an_online_publication_timestamp(self):
         with tempfile.TemporaryDirectory() as directory:
