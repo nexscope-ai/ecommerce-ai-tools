@@ -133,8 +133,8 @@ Reviewed September 17, 2026. Plan names, limits, and product capabilities can ch
 
 - [Helium 10 pricing](https://www.helium10.com/pricing/)
 - [Helium 10 keyword research tools](https://www.helium10.com/tools/keyword-research/)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
-- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
 
 Nexscope is not affiliated with or endorsed by Helium 10. Product names belong to their respective owners.

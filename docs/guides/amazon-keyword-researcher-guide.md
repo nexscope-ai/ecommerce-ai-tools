@@ -19,7 +19,7 @@ og_type: article
 
 ## 1. Search in the right marketplace
 
-Open [Nexscope Amazon Keyword Researcher](https://www.nexscope.ai/seller/amazon-keyword-researcher) and sign in when prompted. Choose a **Marketplace**—US, UK, DE, JP, or CA—before entering a term in **Keyword**. For a first run, choose **US**, enter `dog grooming kit`, and select **Search**.
+Open [Nexscope Amazon Keyword Researcher](https://www.nexscope.ai/seller/amazon-keyword-researcher?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and sign in when prompted. Choose a **Marketplace**—US, UK, DE, JP, or CA—before entering a term in **Keyword**. For a first run, choose **US**, enter `dog grooming kit`, and select **Search**.
 
 The page may take a few minutes to fetch Amazon data. Watch the status message while the search runs. Do not treat the initial loading values as results. If no keywords are found, the page suggests trying a broader term, removing model numbers or narrow attributes, or switching marketplace.
 
@@ -55,7 +55,7 @@ You can reopen a recent search from the **Recent searches** row if it is availab
 
 **What this gives you:** a traceable shortlist for further product research, not a “winning product” guarantee. Nexscope brings related Amazon terms and product evidence into one workflow; your sourcing costs, customer research, compliance checks, and launch test still determine whether an idea is viable.
 
-**Try it:** [Open Amazon Keyword Researcher](https://www.nexscope.ai/seller/amazon-keyword-researcher). For a workflow question, ask the [official Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) without posting private account data.
+**Try it:** [Open Amazon Keyword Researcher](https://www.nexscope.ai/seller/amazon-keyword-researcher?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral). For a workflow question, ask the [official Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) without posting private account data.
 
 For a second look at the products you shortlist, follow the [Amazon price history guide]({{ '/amazon-price-history/' | relative_url }}) and compare matched dates rather than a single snapshot.
 

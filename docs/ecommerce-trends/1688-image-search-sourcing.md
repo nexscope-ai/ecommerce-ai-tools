@@ -47,7 +47,7 @@ A product photo can start a 1688 sourcing search, but it cannot tell you which l
 
 {% include article-visual.html %}
 
-The figure summarizes the [published API request and response contract](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn). It shows which fields can support a sourcing shortlist, not what any particular photo returned.
+The figure summarizes the [published API request and response contract](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral). It shows which fields can support a sourcing shortlist, not what any particular photo returned.
 
 ### One real image-search result (September 20, 2026)
 
@@ -104,10 +104,10 @@ The documented REST operation is `POST /api/skill-api/v1/skills/1688-search-by-i
 
 | Sourcing question | Nexscope capability | Evidence to keep | Important limit |
 | --- | --- | --- | --- |
-| What listings look similar to this item? | [Search By Image](https://www.nexscope.ai/api-docs/1688-search-by-image) | `offerId`, image, listed price, MOQ, seller and dispatch fields when present | Visual similarity is not product or manufacturer identity |
-| What other products match the specification? | [Product Search](https://www.nexscope.ai/api-docs/1688-product-search) | Simplified Chinese query, filters, price, quantity tier, sales period, store | Search results are not a quality audit |
-| What does this exact offer say? | [Product Detail](https://www.nexscope.ai/api-docs/1688-product-detail) | `offerId`, SKU options, sale and shipping fields, company name when present | Listing data is not a confirmed purchase contract |
-| What products appear in weekly or monthly rankings? | [Product Billboard](https://www.nexscope.ai/api-docs/1688-product-billboard) | Requested chart period, category/query, ranked offers | A ranking is context, not a forecast for your destination market |
+| What listings look similar to this item? | [Search By Image](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) | `offerId`, image, listed price, MOQ, seller and dispatch fields when present | Visual similarity is not product or manufacturer identity |
+| What other products match the specification? | [Product Search](https://www.nexscope.ai/api-docs/1688-product-search?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) | Simplified Chinese query, filters, price, quantity tier, sales period, store | Search results are not a quality audit |
+| What does this exact offer say? | [Product Detail](https://www.nexscope.ai/api-docs/1688-product-detail?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) | `offerId`, SKU options, sale and shipping fields, company name when present | Listing data is not a confirmed purchase contract |
+| What products appear in weekly or monthly rankings? | [Product Billboard](https://www.nexscope.ai/api-docs/1688-product-billboard?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) | Requested chart period, category/query, ranked offers | A ranking is context, not a forecast for your destination market |
 
 For a broader procurement overview, see Nexscope's [1688 supplier sourcing guide](https://learn.nexscope.ai/1688-supplier-product-sourcing/). This article concentrates on the narrower image-to-shortlist workflow and the API evidence needed to reproduce it.
 
@@ -161,4 +161,4 @@ Not necessarily. Verify the applicable quantity tier, MOQ, materials, sample, sh
 
 ---
 
-**Sources and methodology:** This guide was reviewed against [Alibaba Group's description of 1688](https://www.alibabagroup.com/en-US/about-alibaba-businesses-1941299332078632960) and Nexscope's public [image search](https://www.nexscope.ai/api-docs/1688-search-by-image), [product search](https://www.nexscope.ai/api-docs/1688-product-search), [product detail](https://www.nexscope.ai/api-docs/1688-product-detail), and [billboard](https://www.nexscope.ai/api-docs/1688-product-billboard) API references on September 20, 2026. Three URL-based requests failed; one Base64 request succeeded and returned 10 first-page rows. The table reports three selected rows from that response. No supplier identity, product specification, purchase, or performance claim was independently verified. Fields may be absent or change; check the live documentation and returned data before use.
+**Sources and methodology:** This guide was reviewed against [Alibaba Group's description of 1688](https://www.alibabagroup.com/en-US/about-alibaba-businesses-1941299332078632960) and Nexscope's public [image search](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral), [product search](https://www.nexscope.ai/api-docs/1688-product-search?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral), [product detail](https://www.nexscope.ai/api-docs/1688-product-detail?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral), and [billboard](https://www.nexscope.ai/api-docs/1688-product-billboard?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) API references on September 20, 2026. Three URL-based requests failed; one Base64 request succeeded and returned 10 first-page rows. The table reports three selected rows from that response. No supplier identity, product specification, purchase, or performance claim was independently verified. Fields may be absent or change; check the live documentation and returned data before use.

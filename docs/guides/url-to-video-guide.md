@@ -19,7 +19,7 @@ og_type: article
 
 ## 1. Import a product page
 
-Open [Nexscope URL to Video](https://www.nexscope.ai/url-to-video) and select **Create product video** to enter the workspace. Sign in when requested. Paste a link to an individual product page in **Product URL**, then select **Analyze URL**. The supported-platform list currently shows **Amazon, Shopify, Walmart, Etsy, and eBay**. A valid link is required; an unsupported, private, or inaccessible page may not import usable details.
+Open [Nexscope URL to Video](https://www.nexscope.ai/url-to-video?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and select **Create product video** to enter the workspace. Sign in when requested. Paste a link to an individual product page in **Product URL**, then select **Analyze URL**. The supported-platform list currently shows **Amazon, Shopify, Walmart, Etsy, and eBay**. A valid link is required; an unsupported, private, or inaccessible page may not import usable details.
 
 Wait for **Product details ready**. Review the imported **Product name** and **Product description** against your live listing and edit anything inaccurate. In **Select product images**, choose the images that show the actual item clearly. You can change the selection and, where offered, add your own images. The page displays how many images can be selected for this workflow.
 
@@ -45,7 +45,7 @@ The video appears in **Recent videos** when the task is ready; **View all histor
 
 Use **Download video** only after the clip passes review. If it fails, use **Edit settings** to adjust the input before another generation. Keep a record of the source URL, approved product facts, selected images, script, model, settings, and date. A generated video is a creative asset—not evidence of product performance or an automatic sales lift.
 
-**Try it with a product you know well:** [Open Nexscope URL to Video](https://www.nexscope.ai/url-to-video). If the import fails, share the platform, non-sensitive URL pattern, and error message in the [official Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions).
+**Try it with a product you know well:** [Open Nexscope URL to Video](https://www.nexscope.ai/url-to-video?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral). If the import fails, share the platform, non-sensitive URL pattern, and error message in the [official Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions).
 
 If you prefer to begin with a standalone product photo, use the separate [image-to-video tutorial]({{ '/ai-video-generator/' | relative_url }}).
 

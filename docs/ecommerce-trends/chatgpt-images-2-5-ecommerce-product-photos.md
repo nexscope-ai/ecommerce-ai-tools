@@ -50,7 +50,7 @@ faq:
 
 OpenAI says Images 2.5 is better at preserving recognizable subjects from reference photos, changing only requested elements, and maintaining quality across successive edits. It also reports image-generation latency **up to 50% lower than Images 2.0**. That is an OpenAI comparison, not a Nexscope benchmark and not a guaranteed speedup for every job. The launch also introduced Sketch, templates, comments on images, and prompt sharing in ChatGPT. [Read the official announcement](https://openai.com/index/introducing-chatgpt-images-2-5/).
 
-For developers, the launch names two API models: **GPT-Image-2.5 Flare**, positioned as the default for most applications, and **GPT-Image-2.5 Sunburst**, positioned for more exacting premium visuals and editing. Nexscope also documents [GPT 2.5 Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn) and [GPT 2.5 Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn) as image-generation API options. Their Nexscope access conditions and credit estimates are shown on the live pages; they are not the same as OpenAI's direct API billing. The [OpenAI system card](https://deploymentsafety.openai.com/chatgpt-images-2-5/safety-evaluations) describes the models and their safety controls.
+For developers, the launch names two API models: **GPT-Image-2.5 Flare**, positioned as the default for most applications, and **GPT-Image-2.5 Sunburst**, positioned for more exacting premium visuals and editing. Nexscope also documents [GPT 2.5 Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and [GPT 2.5 Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) as image-generation API options. Their Nexscope access conditions and credit estimates are shown on the live pages; they are not the same as OpenAI's direct API billing. The [OpenAI system card](https://deploymentsafety.openai.com/chatgpt-images-2-5/safety-evaluations) describes the models and their safety controls.
 
 | Change described by OpenAI | Useful ecommerce test | What it does *not* prove |
 | --- | --- | --- |
@@ -102,7 +102,7 @@ Use the same checklist for every candidate so a visually appealing result does n
 
 Keep a lightweight audit trail: source-file ID, approved SKU facts, prompt, model and interface used, generation date, reviewer, rejected issues, and final channel. That record helps creative teams explain why a variant was approved; it is more useful than an unsupported claim that “AI raised conversion.”
 
-The figure above summarizes the documented [Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn) and [Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn) inputs. The following single run adds an actual Flare output, but **it is not a product-fidelity test on a real SKU**.
+The figure above summarizes the documented [Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and [Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) inputs. The following single run adds an actual Flare output, but **it is not a product-fidelity test on a real SKU**.
 
 ## One real Flare run: input, output, and limitation
 
@@ -140,7 +140,7 @@ It can help develop or edit a candidate image, but **you remain responsible for 
 
 ### Is ChatGPT Images 2.5 available through Nexscope?
 
-**Yes, via Nexscope's documented [Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn) and [Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn) image-generation API options.** That is distinct from using the ChatGPT interface directly. The Nexscope docs state that Creative AI API-key access requires an active subscription; consult the live playground for the current credit estimate and supported input settings.
+**Yes, via Nexscope's documented [Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and [Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) image-generation API options.** That is distinct from using the ChatGPT interface directly. The Nexscope docs state that Creative AI API-key access requires an active subscription; consult the live playground for the current credit estimate and supported input settings.
 
 ### Which API model should a developer choose?
 
@@ -154,7 +154,7 @@ You can use a suitable still as an input to a separate image-to-video workflow w
 
 - [OpenAI: Introducing ChatGPT Images 2.5](https://openai.com/index/introducing-chatgpt-images-2-5/), September 8, 2026 — release features, API model positioning, and the latency comparison.
 - [OpenAI: ChatGPT Images 2.5 System Card](https://deploymentsafety.openai.com/chatgpt-images-2-5/safety-evaluations), September 8, 2026 — model identity and safety context.
-- [Nexscope: GPT 2.5 Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn) and [GPT 2.5 Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn) — live hosted image-generation API inputs, access requirements, and credit estimates.
+- [Nexscope: GPT 2.5 Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and [GPT 2.5 Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) — live hosted image-generation API inputs, access requirements, and credit estimates.
 - [Nexscope: AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_images_25_article) — live video-tool availability and settings. Nexscope is independent of OpenAI.
 
 **Next step:** take one approved product photograph, run a single background-edit test in the [Nexscope Flare playground](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_images_25_article&utm_content=article_end), document what changed, and reject misleading details. If it passes, [explore a separate video concept](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_images_25_article&utm_content=video_handoff) with another review. For the broader shopping journey, read the [ChatGPT product-discovery guide](../chatgpt-product-discovery/).

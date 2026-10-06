@@ -137,8 +137,8 @@ Reviewed September 17, 2026. This article compares public positioning and docume
 
 - [SellerSprite API pricing and packages](https://www.sellersprite.com/en/price/api?type=service)
 - [SellerSprite API introduction](https://www.sellersprite.com/v3/knowledge/feature/about-api)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
-- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
 
 Nexscope is not affiliated with or endorsed by SellerSprite. Product names belong to their respective owners.

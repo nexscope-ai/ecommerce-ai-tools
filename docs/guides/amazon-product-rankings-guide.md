@@ -19,7 +19,7 @@ og_type: article
 
 ## 1. Choose the market and product group
 
-Open [Nexscope Amazon Product Rankings](https://www.nexscope.ai/seller/amazon-product-rankings) and sign in if the workspace asks you to. In **Marketplace**, choose the country you plan to sell in: US, UK, DE, JP, or CA. Select a **Core Category**, then a **Subcategory**. Make these choices before drawing a conclusion; a ranking in one subcategory or country cannot be generalized to another.
+Open [Nexscope Amazon Product Rankings](https://www.nexscope.ai/seller/amazon-product-rankings?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and sign in if the workspace asks you to. In **Marketplace**, choose the country you plan to sell in: US, UK, DE, JP, or CA. Select a **Core Category**, then a **Subcategory**. Make these choices before drawing a conclusion; a ranking in one subcategory or country cannot be generalized to another.
 
 The page loads a list after a subcategory is selected. If it has not finished loading, wait for the status line under **Product Information** rather than reading an empty table as “no competition.”
 
@@ -45,7 +45,7 @@ Select **Export CSV** after setting the marketplace, ranking view, and subcatego
 
 If you want a compact first exercise, shortlist three ASINs: a leading established product, a mid-list alternative, and a newer listing. Compare their actual listings and customer feedback before deciding whether to source anything. Nexscope's ranking views can shorten the discovery step, but estimates and rankings are not a launch recommendation.
 
-**Try it:** [Browse Amazon Product Rankings](https://www.nexscope.ai/seller/amazon-product-rankings). Share a non-sensitive workflow question in the [Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions).
+**Try it:** [Browse Amazon Product Rankings](https://www.nexscope.ai/seller/amazon-product-rankings?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral). Share a non-sensitive workflow question in the [Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions).
 
 When an ASIN makes your shortlist, the [negative-review analysis guide]({{ '/amazon-negative-review-analysis/' | relative_url }}) explains how to inspect a bounded customer-feedback sample without overstating it.
 

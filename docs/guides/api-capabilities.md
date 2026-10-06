@@ -20,7 +20,7 @@ image_caption: "Illustration: Nexscope capabilities can be combined into focused
 
 Nexscope exposes ecommerce research and creative AI capabilities through REST APIs and MCP tools. Use [the official API docs](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=guide_docs) to inspect parameters, response fields, examples, and testing instructions for the endpoint you need.
 
-**New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=guide_signup). Credit usage and access vary by action. Creative API key access requires an active subscription; trial credits do not enable it.
+**New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=guide_signup&co-from=learn). Credit usage and access vary by action. Creative API key access requires an active subscription; trial credits do not enable it.
 
 ## What is in the API docs?
 

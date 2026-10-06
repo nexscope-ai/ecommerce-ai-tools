@@ -131,8 +131,8 @@ Reviewed September 17, 2026. Features and plan terms can change; verify them dir
 
 - [Keepa API documentation](https://keepa.com/api-docs/)
 - [Keepa plans and token model](https://keepa.com/api-docs/plans-tokens.html)
-- [Nexscope Amazon Product Price Series](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
+- [Nexscope Amazon Product Price Series](https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
 
 Nexscope is not affiliated with or endorsed by Keepa. Product names belong to their respective owners.

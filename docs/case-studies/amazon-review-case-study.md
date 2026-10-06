@@ -24,7 +24,7 @@ This case documents an observed tool run and a proposed validation plan. No prod
 
 ## Reproduce the workflow
 
-1. Open the [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_study) and sign in.
+1. Open the [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_study&co-from=learn) and sign in.
 2. Enter `B0G1FVPYNW`, choose **United States**, request **10** reviews for each of the **1-star** and **2-star** ratings, and select **English**.
 3. Select **Analyze reviews**. Review collection and AI analysis are separate requests and may consume credits.
 4. Open **View collected review evidence** and compare the original comments with the generated report.
@@ -91,9 +91,9 @@ Comments about size do not establish that the current listing omits dimensions. 
 
 ## Run your own example or ask for help
 
-New Nexscope users receive **1,000 free credits**. [Create an account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_signup); usage and access vary by action.
+New Nexscope users receive **1,000 free credits**. [Create an account](https://www.nexscope.ai/?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_signup&co-from=learn); usage and access vary by action.
 
-For automation, start with the [Amazon Reviews List API documentation](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_api), preserve returned evidence, and use a separate analysis step. Check documented authentication and access requirements.
+For automation, start with the [Amazon Reviews List API documentation](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=community_launch&utm_content=case_api&co-from=learn), preserve returned evidence, and use a separate analysis step. Check documented authentication and access requirements.
 
 For the reusable method without this ASIN's findings, follow the [Amazon negative-review analysis guide]({{ '/amazon-negative-review-analysis/' | relative_url }}). To connect review evidence with keyword and competitor research, continue with the [Amazon research overview](https://learn.nexscope.ai/amazon-research/).
 
