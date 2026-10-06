@@ -9,7 +9,7 @@ sitemap:
   changefreq: weekly
 standalone_page: true
 product_showcase_page: true
-image: /assets/product-showcase-visibility.png
+image: /assets/product-showcase-visibility.webp
 image_alt: Ecommerce products connected to discovery touchpoints around the Nexscope mark
 image_caption: Nexscope Product Gallery brings product context, media, public links, editorial guidance, and related ecommerce API capabilities into one discovery workflow.
 faq:
@@ -78,7 +78,7 @@ faq:
     <small class="showcase-disclaimer">Exposure and recommendations depend on editorial review. Nexscope does not guarantee search rankings, traffic or sales.</small>
   </div>
   <figure class="showcase-growth-art">
-    <img src="{{ '/assets/product-showcase-visibility.png' | relative_url }}" width="1536" height="1024" loading="lazy" alt="Ecommerce products connected to discovery touchpoints around the Nexscope mark">
+    <img src="{{ '/assets/product-showcase-visibility.webp' | relative_url }}" width="1536" height="1024" loading="lazy" alt="Ecommerce products connected to discovery touchpoints around the Nexscope mark">
   </figure>
 </section>
 

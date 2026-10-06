@@ -9,7 +9,7 @@ sitemap:
   changefreq: weekly
 standalone_page: true
 product_showcase_page: true
-image: /assets/product-showcase-review-api.png
+image: /assets/product-showcase-review-api.webp
 image_alt: A public ecommerce product page under editorial review with research, keyword, sourcing, and creative API capabilities
 image_caption: The Nexscope product submission workflow combines public product information with editorial review and optional ecommerce API workflows.
 ---
@@ -50,7 +50,7 @@ image_caption: The Nexscope product submission workflow combines public product 
       <small class="showcase-disclaimer">Recommendations are editorial guidance, not a guarantee of rankings, traffic or sales.</small>
     </div>
     <figure class="submission-visual-art">
-      <img src="{{ '/assets/product-showcase-review-api.png' | relative_url }}" width="1536" height="1024" loading="lazy" alt="A public product page being reviewed with connected ecommerce research, keyword, sourcing and creative capabilities">
+      <img src="{{ '/assets/product-showcase-review-api.webp' | relative_url }}" width="1536" height="1024" loading="lazy" alt="A public product page being reviewed with connected ecommerce research, keyword, sourcing and creative capabilities">
     </figure>
   </section>
 
