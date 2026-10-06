@@ -3,8 +3,8 @@ layout: default
 title: Nexscope Ecommerce Community and Support
 description: Ask Nexscope usage questions, suggest ecommerce workflows, report reproducible bugs, and find the right support channel.
 permalink: /community/
-last_modified_at: 2026-09-24
-last_reviewed: 2026-09-24
+last_modified_at: 2026-10-06
+last_reviewed: 2026-10-06
 community_page: true
 editorial_only: true
 faq:
@@ -20,7 +20,7 @@ faq:
 
 The [ecommerce-ai-tools repository](https://github.com/nexscope-ai/ecommerce-ai-tools) is Nexscope's official public library for practical ecommerce guides, community questions, product feedback, and reproducible issue reports. It supports the hosted Nexscope tools and APIs; it does not contain the hosted application's source code.
 
-Want to contribute without writing a post? [Vote for the ecommerce task you want help with](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/14). Voting is enough; leave a one-sentence reply only if you want tailored guidance.
+Have a public question about a Nexscope tool or API? [Ask it in Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). For private account or billing help, use [email support](mailto:service@nexscope.ai).
 
 ## Choose the right channel
 
@@ -71,6 +71,6 @@ GitHub Discussions and Issues are public. Never post passwords, API keys, access
 
 ## What happens after you post
 
-The official Nexscope team reviews public questions, ideas, and issue reports and follows up as quickly as possible. The team may request additional redacted evidence, convert a reproducible problem into a tracked Issue, or use recurring questions to improve a guide. A post does not guarantee an immediate fix, a specific response time, or acceptance of a requested feature.
+The official Nexscope team checks public Q&A and Issues on business days and aims to acknowledge actionable posts within one business day. We provide verified guidance or ask for the minimum non-sensitive details needed to investigate. Resolved Q&A answers are marked; product changes are linked to a tracked Issue, and the team returns to the original discussion when the outcome is available. The response target is not a guaranteed fix or resolution time. See the [support process](https://github.com/nexscope-ai/ecommerce-ai-tools/blob/main/SUPPORT.md) for details.
 
 Start with the [official repository](https://github.com/nexscope-ai/ecommerce-ai-tools), [ask a usage question](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a), or [report a reproducible problem](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose).
