@@ -6,7 +6,7 @@ Practical ecommerce research, SEO, creative AI, and API workflows from the Nexsc
 
 New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header). Credit use and API access vary by action and account.
 
-## Try the browser tools
+## Explore ecommerce tools
 
 Create or refine product visuals, then investigate Amazon, 1688 and TikTok Shop signals before deciding what to test.
 
