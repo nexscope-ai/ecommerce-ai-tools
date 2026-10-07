@@ -6,26 +6,6 @@ Practical ecommerce research, SEO, creative AI, and API workflows from the Nexsc
 
 New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header). Credit use and API access vary by action and account.
 
-## Product Gallery: get feedback on your product page
-
-[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) gives sellers another public place to present a product and receive editorial suggestions. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. The Nexscope team reviews submissions before publication and suggests improvements to positioning, product details, visuals, video, or destination links based on the public material provided.
-
-**[Submit a product for review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Discuss the workflow](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
-
-No store connection, seller token, or payment access is required. Submissions remain offline until reviewed and approved. Publication, search rankings, traffic, and sales are not guaranteed.
-
-## About Nexscope
-
-Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs).
-
-### Nexscope at a glance
-
-![Line chart showing the seven-day rolling median of valid Nexscope API requests through September 29, 2026](docs/assets/readme-usage-trend-2026-09.svg)
-
-![Bar chart of the five most requested Nexscope APIs during the same 30-day period](docs/assets/readme-top-apis-2026-09.svg)
-
-Source: Nexscope production API usage aggregates. The line shows a seven-day rolling median of daily requests to make the underlying trend easier to read; it is not the raw daily count. The bar chart ranks APIs by request count. This is a dated snapshot, not a live counter.
-
 ## Try the browser tools
 
 Create or refine product visuals, then investigate Amazon, 1688 and TikTok Shop signals before deciding what to test.
@@ -45,6 +25,26 @@ Create or refine product visuals, then investigate Amazon, 1688 and TikTok Shop 
 **[View more ecommerce tools →](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_more_tools)**
 
 The Amazon-to-1688, TikTok Shop and SEO Keyword Planner workflows accept a visitor-provided API key; other tools may require sign-in. Credits may apply to requests you start.
+
+## Product Gallery: get feedback on your product page
+
+[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) gives sellers another public place to present a product and receive editorial suggestions. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. The Nexscope team reviews submissions before publication and suggests improvements to positioning, product details, visuals, video, or destination links based on the public material provided.
+
+**[Submit a product for review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Discuss the workflow](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
+
+No store connection, seller token, or payment access is required. Submissions remain offline until reviewed and approved. Publication, search rankings, traffic, and sales are not guaranteed.
+
+## About Nexscope
+
+Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs).
+
+### Nexscope at a glance
+
+![Line chart showing the seven-day rolling median of valid Nexscope API requests through September 29, 2026](docs/assets/readme-usage-trend-2026-09.svg)
+
+![Bar chart of the five most requested Nexscope APIs during the same 30-day period](docs/assets/readme-top-apis-2026-09.svg)
+
+Source: Nexscope production API usage aggregates. The line shows a seven-day rolling median of daily requests to make the underlying trend easier to read; it is not the raw daily count. The bar chart ranks APIs by request count. This is a dated snapshot, not a live counter.
 
 ## Guides and evidence
 
