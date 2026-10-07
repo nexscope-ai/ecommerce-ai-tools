@@ -33,6 +33,9 @@ Language: English
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/gpt-image-2-5-flare/ — observed AI product-image edit, credit use and fidelity limitation
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/amazon-listing-optimizer/ — recorded Amazon listing-optimizer output and evidence limits
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-review-case-study/ — review-analysis case study
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/portable-blender-keyword-competitor/ — Google US keyword estimates and a bounded Amazon US competitor sample
+- https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/portable-blender-amazon-1688/ — Amazon product, selected low-star reviews, 1688 image search and supplier-detail evidence
+- https://learn.nexscope.ai/ecommerce-ai-tools/portable-blender-market-research-case-study/ — end-to-end portable-blender research case with decision limits
 
 ## Comparisons
 

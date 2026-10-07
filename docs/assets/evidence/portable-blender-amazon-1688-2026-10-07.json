@@ -1,0 +1,79 @@
+{
+  "recordType": "sanitized-production-api-evidence",
+  "observedAtUtc": "2026-10-07T04:01:36Z",
+  "credentialsExcluded": true,
+  "creditUsageObserved": null,
+  "sourceAmazonProduct": {
+    "endpoint": "amazon-product-detail/run",
+    "observedAtUtc": "2026-10-07T04:00:21Z",
+    "asin": "B0CT2BY5KL",
+    "title": "Portable Blender Personal Juicer for Shakes Smoothies with Insulated Sleeve",
+    "price": 32.29,
+    "currencySymbolReturned": "$",
+    "imageHost": "m.media-amazon.com"
+  },
+  "imageSearch": {
+    "endpoint": "1688-search-by-image/run",
+    "observedAtUtc": "2026-10-07T04:00:21Z",
+    "returnedCount": 10,
+    "visualMatchDoesNotProveIdentity": true,
+    "rows": [
+      { "rank": 1, "offerId": "902856167524", "title": "跨境榨汁机水果做果汁便携式充电家用小型多功能迷你搅拌机榨汁杯", "priceCny": 33, "moq": 1, "reportedMonthlyUnits": 591, "identityLabels": ["诚信通会员"] },
+      { "rank": 2, "offerId": "957433112906", "title": "懒人电动搅拌咖啡杯办公运动健身蛋白粉全自动摇粉家用充电摇摇杯", "priceCny": 28, "moq": null, "reportedMonthlyUnits": 210, "identityLabels": ["实力商家", "诚信通会员"] },
+      { "rank": 3, "offerId": "947942225643", "title": "直销多功能榨汁机便携式家用果汁机无线小型迷你电动小型", "priceCny": 30.64, "moq": 1, "reportedMonthlyUnits": 207, "identityLabels": ["实力商家", "诚信通会员"] },
+      { "rank": 4, "offerId": "1043284401663", "title": "跨境新品榨汁机橙子原汁机渣汁分离", "priceCny": 35, "moq": 1, "reportedMonthlyUnits": 184, "identityLabels": ["诚信通会员"] },
+      { "rank": 5, "offerId": "1036978647065", "title": "跨境榨汁机便携式充电家用小型多功能迷你搅拌机榨汁杯", "priceCny": 33, "moq": 1, "reportedMonthlyUnits": 76, "identityLabels": ["超级工厂", "诚信通会员"] },
+      { "rank": 6, "offerId": "689890947922", "title": "新款亚马逊榨汁杯", "priceCny": 72, "moq": 1, "reportedMonthlyUnits": 40, "identityLabels": ["诚信通会员"] },
+      { "rank": 7, "offerId": "1014280929964", "title": "跨境榨汁机杯", "priceCny": 38, "moq": 1, "reportedMonthlyUnits": 20, "identityLabels": ["实力商家", "诚信通会员"] },
+      { "rank": 8, "offerId": "1049551732248", "title": "新款亚马逊榨汁杯", "priceCny": 38, "moq": 1, "reportedMonthlyUnits": 14, "identityLabels": ["诚信通会员"] },
+      { "rank": 9, "offerId": "959069756666", "title": "跨境亚马逊便携式榨汁机", "priceCny": 79, "moq": 1, "reportedMonthlyUnits": 5, "identityLabels": ["超级工厂", "诚信通会员"] },
+      { "rank": 10, "offerId": "1044389845983", "title": "现货榨汁机", "priceCny": 33, "moq": 1, "reportedMonthlyUnits": 4, "identityLabels": ["诚信通会员"] }
+    ]
+  },
+  "supplierDetailChecks": [
+    { "endpoint": "1688-product-detail/run", "observedAtUtc": "2026-10-07T04:00:40Z", "offerId": "902856167524", "company": "温州八只鹅电子科技有限公司", "dispatchLocation": "浙江省温州市", "moq": 1, "skuCount": 5, "returnedWholesaleTiers": [{ "minimumQuantity": 1, "priceCny": 33 }] },
+    { "endpoint": "1688-product-detail/run", "observedAtUtc": "2026-10-07T04:00:40Z", "offerId": "1036978647065", "company": "温州启寻科技有限公司", "dispatchLocation": "浙江省温州市", "moq": 1, "skuCount": 5, "returnedWholesaleTiers": [{ "minimumQuantity": 1, "priceCny": 33 }] }
+  ],
+  "lowStarReviewSample": {
+    "endpoint": "amazon-reviews-list/run",
+    "observedAtUtc": "2026-10-07T04:01:36Z",
+    "asin": "B0CT2BY5KL",
+    "requested": { "oneStar": 5, "twoStar": 5, "threeToFiveStar": 0 },
+    "returnedCount": 10,
+    "returnedRatingCounts": { "oneStar": 10, "twoStar": 0 },
+    "reviewTextExcluded": true,
+    "reviewerIdentityExcluded": true,
+    "providerReturnedVerifiedLabels": 10,
+    "rows": [
+      { "reviewId": "R2FC5D2CH9JF3T", "date": "2026-10-04", "rating": 1, "paraphrase": "Generic negative assessment without diagnostic detail." },
+      { "reviewId": "R1TS1ONT6VDJQL", "date": "2026-09-18", "rating": 1, "paraphrase": "Reported a missing small cup and difficulty cutting small ice or fruit." },
+      { "reviewId": "RVC5JPT0I27PU", "date": "2026-09-03", "rating": 1, "paraphrase": "Reported that the unit stopped working after about two months and that the warranty route was unclear." },
+      { "reviewId": "R3QL2GXIHG8QWK", "date": "2026-08-19", "rating": 1, "paraphrase": "Reported a base leak after about one month that made the unit unusable." },
+      { "reviewId": "R20T5IXENGOSXG", "date": "2026-08-17", "rating": 1, "paraphrase": "Reported failure to blend fresh fruit and failure after one use." },
+      { "reviewId": "R22TX9I0AIQ8JJ", "date": "2026-08-14", "rating": 1, "paraphrase": "Reported failure after four uses and immediate battery discharge." },
+      { "reviewId": "R3PNNDWY39SQX4", "date": "2026-08-12", "rating": 1, "paraphrase": "Reported an awkward motor and base workflow, battery drain, slow charging and only a USB lead." },
+      { "reviewId": "R1QA4TIDIYH7QI", "date": "2026-08-10", "rating": 1, "paraphrase": "Reported a dead battery after storage and inability to run while plugged in." },
+      { "reviewId": "R1NV4DGKFB8DQ5", "date": "2026-07-05", "rating": 1, "paraphrase": "Reported difficulty with frozen fruit and small ice plus quick battery drain." },
+      { "reviewId": "R21SDLC69ES2O9", "date": "2026-06-04", "rating": 1, "paraphrase": "Expressed a product-type or value expectation mismatch without detailed failure evidence." }
+    ],
+    "overlappingHumanCodedThemes": {
+      "batteryOrCharging": 4,
+      "fruitOrIceBlendingPerformance": 3,
+      "stoppedWorkingOrUnusable": 5,
+      "leakage": 1,
+      "missingParts": 1,
+      "designOrConvenience": 1,
+      "productTypeExpectation": 1,
+      "genericWithoutDiagnosticDetail": 1
+    }
+  },
+  "limitations": [
+    "A visual image-search match does not establish the same manufacturer, specification, quality, compliance or intellectual-property status.",
+    "Identity and membership labels are provider-returned fields and were not independently authenticated.",
+    "Reported monthly units are provider-returned values, not verified supplier sales.",
+    "The Amazon price and 1688 listing price cannot be treated as margin; landed cost, fees, returns, advertising and compliance are excluded.",
+    "The low-star sample is intentionally selected and cannot estimate overall satisfaction or defect rate.",
+    "The absence of returned two-star rows does not prove that no two-star reviews exist.",
+    "A per-call credit charge was not captured, so this record makes no credit-cost claim."
+  ]
+}

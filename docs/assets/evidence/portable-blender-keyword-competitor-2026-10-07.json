@@ -1,0 +1,77 @@
+{
+  "recordType": "sanitized-production-api-evidence",
+  "observedAtUtc": "2026-10-07T03:59:25Z",
+  "credentialsExcluded": true,
+  "creditUsageObserved": null,
+  "query": {
+    "keyword": "portable blender",
+    "googleLocation": "United States",
+    "googleLanguage": "English",
+    "amazonMarketplace": "US",
+    "amazonPage": 1,
+    "amazonPageSize": 10
+  },
+  "keywordExpansion": {
+    "endpoint": "seo-keyword-expand/run",
+    "observedAtUtc": "2026-10-07T03:58:52Z",
+    "status": "SUCCESS",
+    "returnedCount": 10,
+    "keywords": [
+      "ninja blast portable blender",
+      "portable blender",
+      "ninja portable blender",
+      "portable ninja blender",
+      "ninja blender portable",
+      "aldi ambiano portable blender",
+      "portable cordless blender",
+      "cordless portable blender",
+      "ninja blast max portable blender",
+      "portable blender for smoothies"
+    ]
+  },
+  "keywordMetrics": {
+    "endpoint": "seo-keyword-metrics/run",
+    "observedAtUtc": "2026-10-07T03:59:11Z",
+    "status": "SUCCESS",
+    "scope": "Google United States, English",
+    "metricsAreProviderEstimates": true,
+    "rows": [
+      { "keyword": "portable blender", "volume": 18100, "keywordDifficulty": 23, "competition": 1.0, "cpc": null },
+      { "keyword": "ninja blast portable blender", "volume": 22200, "keywordDifficulty": 4, "competition": 0.96, "cpc": null },
+      { "keyword": "ninja portable blender", "volume": 9900, "keywordDifficulty": 6, "competition": 1.0, "cpc": null },
+      { "keyword": "portable ninja blender", "volume": 9900, "keywordDifficulty": 6, "competition": 1.0, "cpc": null },
+      { "keyword": "ninja blender portable", "volume": 9900, "keywordDifficulty": 6, "competition": 1.0, "cpc": null },
+      { "keyword": "aldi ambiano portable blender", "volume": 8100, "keywordDifficulty": 0, "competition": 0.47, "cpc": null },
+      { "keyword": "portable cordless blender", "volume": 3600, "keywordDifficulty": 1, "competition": 0.32, "cpc": null },
+      { "keyword": "cordless portable blender", "volume": 3600, "keywordDifficulty": 4, "competition": 0.32, "cpc": null },
+      { "keyword": "ninja blast max portable blender", "volume": 3600, "keywordDifficulty": 0, "competition": 0.98, "cpc": null },
+      { "keyword": "portable blender for smoothies", "volume": 2900, "keywordDifficulty": 5, "competition": 1.0, "cpc": null }
+    ]
+  },
+  "amazonCompetitorSample": {
+    "endpoint": "amazon-competitor-lookup/run",
+    "observedAtUtc": "2026-10-07T03:59:25Z",
+    "returnedCount": 10,
+    "salesAndRevenueAreProviderEstimates": true,
+    "rows": [
+      { "rank": 1, "asin": "B0FZMTKC6S", "brand": "YETI", "priceUsd": 25.0, "estimatedMonthlyUnits": 22328, "estimatedMonthlyRevenueUsd": 558200.0, "rating": 4.5, "ratingCount": 2667, "bsr": 1579, "sampleNote": "Shaker bottle, not an electric blender" },
+      { "rank": 2, "asin": "B0DB8ZN253", "brand": "Ninja", "priceUsd": 69.95, "estimatedMonthlyUnits": 8542, "estimatedMonthlyRevenueUsd": 597512.9, "rating": 4.2, "ratingCount": 3157, "bsr": 322 },
+      { "rank": 3, "asin": "B0C2FF4JD1", "brand": "Ninja", "priceUsd": 49.99, "estimatedMonthlyUnits": 6782, "estimatedMonthlyRevenueUsd": 339032.2, "rating": 4.2, "ratingCount": 14082, "bsr": 308 },
+      { "rank": 4, "asin": "B0DJM4QW9B", "brand": "Ganiza", "priceUsd": 28.48, "estimatedMonthlyUnits": 5053, "estimatedMonthlyRevenueUsd": 143909.44, "rating": 4.4, "ratingCount": 3687, "bsr": 1059 },
+      { "rank": 5, "asin": "B00KVZ27UA", "brand": "Hamilton Beach", "priceUsd": 24.95, "estimatedMonthlyUnits": 3766, "estimatedMonthlyRevenueUsd": 93961.7, "rating": 4.2, "ratingCount": 40871, "bsr": 1041 },
+      { "rank": 6, "asin": "B0G2774F1S", "brand": "Ninja", "priceUsd": 39.95, "estimatedMonthlyUnits": 1639, "estimatedMonthlyRevenueUsd": 65478.05, "rating": 4.5, "ratingCount": 33, "bsr": 9864, "sampleNote": "Renewed product" },
+      { "rank": 7, "asin": "B0CT2BY5KL", "brand": "NexaEase", "priceUsd": 32.29, "estimatedMonthlyUnits": 1573, "estimatedMonthlyRevenueUsd": 50792.17, "rating": 4.1, "ratingCount": 1099, "bsr": 6041 },
+      { "rank": 8, "asin": "B00QNUCV0I", "brand": "Hamilton Beach", "priceUsd": 26.45, "estimatedMonthlyUnits": 1542, "estimatedMonthlyRevenueUsd": 40785.902, "rating": 4.3, "ratingCount": 50829, "bsr": 6394 },
+      { "rank": 9, "asin": "B0FDY1GZPT", "brand": "Ninja", "priceUsd": 39.95, "estimatedMonthlyUnits": 1465, "estimatedMonthlyRevenueUsd": 58526.75, "rating": 5.0, "ratingCount": 1, "bsr": 7483, "sampleNote": "Renewed product" },
+      { "rank": 10, "asin": "B0D8ZXZH5Z", "brand": "NutriBullet", "priceUsd": 58.79, "estimatedMonthlyUnits": 937, "estimatedMonthlyRevenueUsd": 55086.23, "rating": 4.0, "ratingCount": 1149, "bsr": 14425 }
+    ]
+  },
+  "limitations": [
+    "Google keyword metrics are estimates and are not Amazon search volume.",
+    "The Amazon result is one first-page sample returned at one time.",
+    "Returned sales, revenue, BSR, rating and price fields were not independently verified.",
+    "A non-electric shaker bottle in the sample demonstrates query-intent noise.",
+    "A per-call credit charge was not captured, so this record makes no credit-cost claim.",
+    "No ranking, conversion, revenue or launch outcome was measured."
+  ]
+}
