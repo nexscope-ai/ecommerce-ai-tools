@@ -5,9 +5,9 @@ description: Combine new Codex models with Nexscope REST APIs for Amazon researc
 permalink: /ecommerce-trends/codex-ecommerce-nexscope-api-workflows/
 last_reviewed: 2026-09-17
 date_published: 2026-09-17
-date_modified: 2026-09-17
+date_modified: 2026-10-07
 date: 2026-09-17
-last_modified_at: 2026-09-17
+last_modified_at: 2026-10-07
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -26,6 +26,8 @@ image_caption: "Illustration: Codex can plan and execute a workflow while focuse
 Imagine asking Codex to evaluate the portable-blender market, identify competing Amazon products, find recurring complaints, discover keyword gaps, audit a product page, and turn the evidence into a prioritized launch plan. Codex can plan the work and write the software, but it still needs current, specialized ecommerce data to support its conclusions.
 
 Combining Codex with Nexscope REST APIs closes that gap. Codex provides reasoning, code generation, file operations, and workflow execution. Nexscope provides documented ecommerce, marketplace, SEO, AI-visibility, sourcing, and creative APIs. The result is an evidence-backed ecommerce workflow that can be reviewed and repeated.
+
+When a permitted workflow requires interacting with a website rather than calling a documented API, the [BrowserAct browser-automation review]({{ '/ecommerce-trends/browseract-ai-web-scraper-agent-browser/' | relative_url }}) explains that separate approach and its limits. Browser actions should not be mistaken for verified marketplace API data.
 
 > **Key takeaways:** Codex is the planner and executor; Nexscope APIs are specialized data and generation services. Together they can automate research and reporting, but they do not remove the need to verify source data, protect credentials, and approve consequential actions. Use REST endpoints documented for the selected capability, keep raw evidence, and separate facts, estimates, missing values, and AI suggestions.
 

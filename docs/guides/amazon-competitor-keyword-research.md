@@ -5,8 +5,8 @@ description: Research a seed keyword, discover competing Amazon products, and co
 permalink: /amazon-competitor-keyword-research/
 date_published: 2026-09-15
 last_reviewed: 2026-09-15
-date_modified: 2026-09-15
-last_modified_at: 2026-09-15
+date_modified: 2026-10-07
+last_modified_at: 2026-10-07
 schema_type: Article
 image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
 image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp
@@ -38,6 +38,8 @@ Start with a buyer-relevant seed keyword, collect related keyword evidence, find
 | Amazon search results | Discover products returned for a marketplace query | Assuming every result targets the same buyer intent |
 | ASIN keyword data | Explore terms associated with a selected product | Treating missing terms as proof that a competitor never uses them |
 | Estimated sales or revenue | Directional competitor comparison | Presenting provider estimates as seller-account measurements |
+
+Product rankings answer a different question from keyword volume. The [Amazon product rankings guide]({{ '/amazon-product-rankings-guide/' | relative_url }}) explains how to read category rank and trend signals without treating a rank as a sales count.
 
 ## API starting points
 

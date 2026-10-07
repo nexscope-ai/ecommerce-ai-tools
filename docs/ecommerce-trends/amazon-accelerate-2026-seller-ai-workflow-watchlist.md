@@ -5,8 +5,8 @@ description: "Review confirmed Amazon Accelerate 2026 seller AI updates, what th
 permalink: /ecommerce-trends/amazon-accelerate-2026-seller-ai-workflow-watchlist/
 last_reviewed: 2026-09-24
 date_published: 2026-09-22
-date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+date_modified: 2026-10-07
+last_modified_at: 2026-10-07
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -40,6 +40,8 @@ This page separates Amazon's own September 23 publication from event previews an
 | Amazon Selling Partner plugin for Amazon Quick | **Beta for sellers in U.S. stores.** | Connected account, permitted data, proposed actions, approval controls, and audit logs |
 | Amazon Selling Partner plugin for Anthropic's Claude | **Beta.** Amazon says it connects in roughly 60 seconds without coding. | Claude plan/access, exact data boundary, action permissions, and regional eligibility |
 | Free Amazon Quick Plus subscription | **Time-limited offer.** Amazon says primary account holders globally can enroll themselves and two coworkers through December 31, 2026 for 12 months. | Enrollment deadline, eligible users, later pricing, and account terms |
+
+For a closer look at two account-dependent features, read the separate guides to [Seller Assistant's Canvas workspace]({{ '/ecommerce-trends/amazon-seller-assistant-canvas/' | relative_url }}) and the [Selling Partner plugin for Claude]({{ '/ecommerce-trends/amazon-selling-partner-plugin-claude/' | relative_url }}). Both distinguish Amazon's announcement from access and results a seller can verify in their own account.
 
 <aside class="article-action" aria-label="Test an Amazon research workflow">
   <div><span class="eyebrow">NEXT STEP / INDEPENDENT BASELINE</span><strong>Build a one-SKU evidence baseline before testing a new seller AI workflow.</strong><p>Capture comparable products, keywords and review questions first, then compare the tool's recommendation with dated marketplace evidence.</p></div>

@@ -198,9 +198,27 @@
       <article>
         {% if page.resource_hub %}{% include resource-library.html %}{% else %}{{ content }}{% endif %}
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
-        {% unless is_hub or page.editorial_only %}
-        <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide, inspect the evidence or find a focused tool for the task you are researching.</p><div><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a><a href="https://learn.nexscope.ai/tools/">Find a tool →</a></div></section>
-        {% endunless %}
+        {% if page.schema_type == 'Article' %}
+          {% assign article_pages = site.pages | where: 'schema_type', 'Article' | where_exp: 'item', 'item.sitemap != false' | sort: 'url' %}
+          {% assign siblings = article_pages | where_exp: 'item', 'item.path contains section' %}
+          {% if siblings.size > 1 %}
+            {% for item in siblings %}
+              {% if item.url == page.url %}
+                {% assign previous_index = forloop.index0 | minus: 1 %}
+                {% assign next_index = forloop.index0 | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {% if previous_index < 0 %}{% assign previous_index = siblings.size | minus: 1 %}{% endif %}
+            {% if next_index >= siblings.size %}{% assign next_index = 0 %}{% endif %}
+            {% assign previous_article = siblings[previous_index] %}
+            {% assign next_article = siblings[next_index] %}
+            <section class="article-next" aria-label="Related articles"><span class="eyebrow">Keep exploring</span><h2>More from {% if section == 'ecommerce-trends' %}Insights{% elsif section == 'api-evidence' %}API evidence{% elsif section == 'case-studies' %}Case studies{% elsif section == 'alternatives' %}Comparisons{% else %}Guides{% endif %}</h2><p>Continue with another article in this collection.</p><div><a href="{{ previous_article.url | relative_url }}">{{ previous_article.title | escape }} →</a>{% if previous_article.url != next_article.url %}<a href="{{ next_article.url | relative_url }}">{{ next_article.title | escape }} →</a>{% endif %}</div></section>
+          {% endif %}
+        {% else %}
+          {% unless is_hub or page.editorial_only %}
+          <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide, inspect the evidence or find a focused tool for the task you are researching.</p><div><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a><a href="https://learn.nexscope.ai/tools/">Find a tool →</a></div></section>
+          {% endunless %}
+        {% endif %}
         {% unless is_hub or page.community_page or page.suppress_article_help %}
         <section class="article-help" aria-labelledby="article-help-title"><div><span class="eyebrow">Need help?</span><h2 id="article-help-title">Bring a real ecommerce question.</h2><p>Ask how to use a Nexscope workflow, suggest an improvement, or report a reproducible problem through the right public channel.</p></div><div class="article-help-links"><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a">Ask in Q&amp;A →</a><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas">Suggest a workflow →</a><a href="https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose">Report a bug →</a></div><p class="article-help-more"><a href="{{ '/community/' | relative_url }}">See community and support options →</a></p></section>
         {% endunless %}

@@ -5,9 +5,9 @@ description: "Search 1688 with a product photo, compare offer IDs, prices and MO
 permalink: /ecommerce-trends/1688-image-search-sourcing/
 last_reviewed: 2026-09-24
 date_published: 2026-09-20
-date_modified: 2026-09-24
+date_modified: 2026-10-07
 date: 2026-09-20
-last_modified_at: 2026-09-24
+last_modified_at: 2026-10-07
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -110,6 +110,8 @@ The documented REST operation is `POST /api/skill-api/v1/skills/1688-search-by-i
 | What products appear in weekly or monthly rankings? | [Product Billboard](https://www.nexscope.ai/api-docs/1688-product-billboard?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) | Requested chart period, category/query, ranked offers | A ranking is context, not a forecast for your destination market |
 
 For a broader procurement overview, see Nexscope's [1688 supplier sourcing guide](https://learn.nexscope.ai/1688-supplier-product-sourcing/). This article concentrates on the narrower image-to-shortlist workflow and the API evidence needed to reproduce it.
+
+For the exact documented request and response fields behind this step, inspect the [1688 Search By Image evidence record]({{ '/api-evidence/1688-image-search/' | relative_url }}). It separates observable API fields from supplier claims that still need verification.
 
 ## How should you compare two similar offers?
 
