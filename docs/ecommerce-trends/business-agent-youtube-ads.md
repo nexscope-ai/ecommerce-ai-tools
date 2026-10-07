@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Business Agent for YouTube Ads: Ecommerce Readiness"
+title: "YouTube Ads Business Agent: Seller Guide"
 description: Learn how Google's Business Agent for YouTube Ads works and what ecommerce teams should verify across product data, pages, video, and measurement.
 permalink: /ecommerce-trends/business-agent-youtube-ads/
 last_reviewed: 2026-09-22

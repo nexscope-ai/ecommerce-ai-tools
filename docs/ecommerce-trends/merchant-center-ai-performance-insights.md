@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Merchant Center AI Performance Insights: Seller Guide"
+title: "Merchant Center AI Insights: Seller Guide"
 description: Learn how to read Google Merchant Center AI Performance Insights, interpret AI share of voice, and prioritize product-data improvements.
 permalink: /ecommerce-trends/merchant-center-ai-performance-insights/
 last_reviewed: 2026-09-22

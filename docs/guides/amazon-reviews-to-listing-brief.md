@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Turn Amazon Review Analysis into a Clearer Product Listing
+title: Amazon Reviews to a Clearer Product Listing
 description: Create an evidence-backed Amazon listing brief from review themes, then separate product defects from unclear expectations and plan testable changes.
 permalink: /amazon-reviews-to-listing-brief/
 schema_type: Article

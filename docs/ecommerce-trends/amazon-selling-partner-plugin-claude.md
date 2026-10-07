@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Amazon Selling Partner Plugin for Claude: Seller Guide"
+title: "Amazon Plugin for Claude: Seller Guide"
 description: "Learn how Amazon's Selling Partner plugin for Claude works, who can access the beta, which permissions to verify and which seller workflows to test."
 permalink: /ecommerce-trends/amazon-selling-partner-plugin-claude/
 last_reviewed: 2026-09-24

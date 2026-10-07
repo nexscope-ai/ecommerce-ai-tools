@@ -1,6 +1,6 @@
 ---
 layout: default
-title: What Is an MCP Server? Ecommerce Tools and Examples
+title: MCP Server Guide for Ecommerce Tools
 description: Learn what an MCP server is, how hosts, clients, and tools work, and how ecommerce agents can use Nexscope APIs through MCP safely.
 permalink: /what-is-an-mcp-server/
 last_reviewed: 2026-09-30

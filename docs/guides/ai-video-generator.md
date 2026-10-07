@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Free AI Video Generator Workflow for Ecommerce Images
+title: AI Video Generator Workflow for Ecommerce
 description: Try a free AI video generator workflow for ecommerce product images with 1,000 starter credits, model selection, prompting, and quality checks.
 permalink: /ai-video-generator/
 last_reviewed: 2026-09-17

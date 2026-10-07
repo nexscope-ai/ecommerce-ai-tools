@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Ecommerce APIs for AI Agents: Selection Guide"
+title: "Ecommerce APIs for AI Agents"
 description: "Choose ecommerce APIs for an AI agent by task, evidence, marketplace coverage, REST or MCP access, credit cost, reliability, and human approval boundaries."
 permalink: /ecommerce-api-for-ai-agents/
 last_reviewed: 2026-10-06

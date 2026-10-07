@@ -25,6 +25,7 @@
     <meta name="twitter:image:alt" content="{{ share_alt | escape }}">
     {% if page.date_published %}<meta property="article:published_time" content="{{ page.date_published }}">{% endif %}
     {% if page.date_modified %}<meta property="article:modified_time" content="{{ page.date_modified }}">{% endif %}
+    {% if page.schema_type == "Article" %}<meta name="author" content="{{ page.author | default: 'Nexscope Team' | escape }}">{% endif %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,7 +35,18 @@
           "@id": "https://www.nexscope.ai/#organization",
           "name": "Nexscope",
           "url": "https://www.nexscope.ai/",
-          "sameAs": ["https://github.com/nexscope-ai"]
+          "description": "Nexscope is an ecommerce intelligence and AI-creative platform for sellers, brands, agencies and developers.",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://learn.nexscope.ai/logo.png"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/nexscope-ai/",
+            "https://x.com/Nexscope_ai",
+            "https://www.youtube.com/@Nexscope-AI",
+            "https://www.tiktok.com/@nexscope_ai",
+            "https://github.com/nexscope-ai"
+          ]
         }{% if page.subject_name %},
         {
           "@type": {{ page.subject_type | default: 'Thing' | jsonify }},
@@ -185,7 +197,7 @@
       {% endunless %}
       <article>
         {% if page.resource_hub %}{% include resource-library.html %}{% else %}{{ content }}{% endif %}
-        {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official Nexscope team.</p>{% endif %}
+        {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
         {% unless is_hub or page.editorial_only %}
         <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide, inspect the evidence or find a focused tool for the task you are researching.</p><div><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a><a href="https://learn.nexscope.ai/tools/">Find a tool →</a></div></section>
         {% endunless %}
@@ -195,7 +207,7 @@
       </article>
       {% unless is_hub %}</div>{% endunless %}
     </main>
-    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="{{ '/ecommerce-trends/' | relative_url }}">Insights</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
+    <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="{{ '/about/' | relative_url }}">About</a><a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a><a href="https://www.nexscope.ai/privacy">Privacy</a><a href="https://www.nexscope.ai/terms">Terms</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
     {% if page.product_showcase_page %}<script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=27" defer></script>{% endif %}
     {% if page.not_found_page %}<script src="{{ '/assets/not-found.js' | relative_url }}?v=1" defer></script>{% endif %}
   </body>

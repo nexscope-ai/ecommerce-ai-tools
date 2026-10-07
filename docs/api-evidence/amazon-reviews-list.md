@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Amazon Reviews List API Evidence | One Low-Star Sample
+title: Amazon Reviews API | Low-Star Sample
 description: Inspect a real Nexscope Amazon review collection with its ASIN, marketplace, requested ratings, returned count, source IDs and analysis limitations.
 permalink: /api-evidence/amazon-reviews-list/
 last_reviewed: 2026-09-23

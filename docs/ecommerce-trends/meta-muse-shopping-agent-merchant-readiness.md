@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Meta Muse Shopping Agent: A Merchant Readiness Guide"
+title: "Meta Muse Shopping Agent: Merchant Guide"
 description: "What Meta confirms about Muse shopping, what remains unknown, and how merchants can test product information, checkout, and agent access."
 permalink: /ecommerce-trends/meta-muse-shopping-agent-merchant-readiness/
 last_reviewed: 2026-09-30

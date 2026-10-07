@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Amazon Listing Optimizer Evidence | One Recorded ASIN Audit
+title: Amazon Listing Optimizer | ASIN Audit
 description: Review a recorded Nexscope Amazon Listing Optimizer test, including its ASIN, marketplace, readiness scores, sources, credit uncertainty, and limits.
 permalink: /api-evidence/amazon-listing-optimizer/
 last_reviewed: 2026-09-30

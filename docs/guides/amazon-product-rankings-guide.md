@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Compare Amazon Product Rankings and New Launches"
+title: "Compare Amazon Rankings and New Launches"
 description: "Browse Nexscope Amazon Product Rankings by marketplace and subcategory, compare estimated best sellers with new launches, and export a focused ASIN shortlist."
 permalink: /amazon-product-rankings-guide/
 topic: research

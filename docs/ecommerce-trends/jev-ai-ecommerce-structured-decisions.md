@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Jev AI for Ecommerce: Structured Decisions, Not a Chatbot"
+title: "Jev AI for Structured Ecommerce Decisions"
 description: "What Jev's typed decisions can and cannot do for ecommerce, with a review-routing pilot, data requirements, and a method for testing errors."
 permalink: /ecommerce-trends/jev-ai-ecommerce-structured-decisions/
 last_reviewed: 2026-09-30

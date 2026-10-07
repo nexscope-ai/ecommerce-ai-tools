@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "From Market Research to AI UGC Video: TikTok Shop Workflow"
-description: "Turn market, keyword, competitor, and review evidence into a truthful TikTok Shop AI UGC video brief, then verify the product, disclose AI use, and test business results."
+title: "TikTok Shop Research to AI UGC Video"
+description: "Turn market, keyword, competitor and review evidence into a TikTok Shop AI UGC brief, then verify the product, disclose AI use and test results."
 permalink: /ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/
 last_reviewed: 2026-10-06
 date_published: 2026-09-22

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Amazon Review Analyzer: Turn Negative Reviews Into Product Tests"
-description: "Use an Amazon review analyzer to preserve source comments, group recurring complaints, and turn a bounded 1-star and 2-star sample into testable product improvements."
+title: "Amazon Review Analyzer: Product Tests"
+description: "Use an Amazon review analyzer to preserve source comments, group recurring complaints and turn a bounded low-star sample into product tests."
 permalink: /amazon-negative-review-analysis/
 date_published: 2026-09-15
 last_reviewed: 2026-10-06

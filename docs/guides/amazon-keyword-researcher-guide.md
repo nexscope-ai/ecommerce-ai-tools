@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Amazon Keyword Researcher for Product Ideas"
+title: "Amazon Keyword Researcher for Product Ideas"
 description: "Use Nexscope Amazon Keyword Researcher to compare related search terms, estimated sales and competition signals, then inspect product samples before sourcing."
 permalink: /amazon-keyword-researcher-guide/
 topic: research

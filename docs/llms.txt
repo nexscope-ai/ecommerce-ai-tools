@@ -19,6 +19,11 @@ Language: English
 - https://learn.nexscope.ai/ecommerce-ai-tools/ai-product-image-generator/ — AI product-image workflow
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-listing-optimization-tool/ — evidence-led Amazon listing optimization workflow
 
+## About and editorial standards
+
+- https://learn.nexscope.ai/ecommerce-ai-tools/about/ — what Nexscope is, who maintains this site, and official profiles
+- https://learn.nexscope.ai/ecommerce-ai-tools/editorial-policy/ — evidence labels, source hierarchy, AI review, comparisons and corrections
+
 ## Evidence
 
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/ — index of documented API evidence

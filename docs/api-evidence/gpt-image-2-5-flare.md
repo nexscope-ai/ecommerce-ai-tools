@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GPT 2.5 Flare API Evidence | One Product Concept Edit
+title: GPT 2.5 Flare API | Product Concept Test
 description: Inspect a real Nexscope GPT 2.5 Flare run with its reference image, observed output, credit use and exact-SKU preservation failure.
 permalink: /api-evidence/gpt-image-2-5-flare/
 last_reviewed: 2026-09-23

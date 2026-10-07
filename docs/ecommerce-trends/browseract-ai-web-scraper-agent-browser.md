@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Automation for AI Agents: BrowserAct Review"
+title: "BrowserAct Review for AI Agent Automation"
 description: "Compare BrowserAct as a browser automation tool for AI agents and a no-code web scraper, including Google Maps scraping, pricing, limits, and alternatives."
 permalink: /ecommerce-trends/browseract-ai-web-scraper-agent-browser/
 last_reviewed: 2026-09-24
