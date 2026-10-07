@@ -2,7 +2,7 @@
 
 Practical ecommerce research, SEO, creative AI, and API workflows from the Nexscope team. This repository is a public library of guides, dated evidence, examples, and support resources for sellers and developers. The hosted Nexscope application runs separately; its source code is not in this repository.
 
-[Explore the learning hub](https://learn.nexscope.ai/ecommerce-ai-tools/) · [Try Nexscope tools](https://www.nexscope.ai/data?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) · [Browse API docs](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) · [Ask the community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
+[Explore the learning hub](https://learn.nexscope.ai/ecommerce-ai-tools/) · [Try Nexscope tools](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) · [Browse API docs](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) · [Ask the community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
 
 New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header). Credit use and API access vary by action and account.
 
@@ -31,9 +31,12 @@ Source: Nexscope production API usage aggregates. The line shows a seven-day rol
 | Tool | Use it to | Open |
 | --- | --- | --- |
 | Amazon Review Analyzer | Group complaints and form testable product-improvement hypotheses. | [Analyze reviews](https://www.nexscope.ai/tools/amazon-review-analyzer) |
-| SEO Keyword Planner | Research competitor keywords, search demand, and SERP evidence. | [Plan keywords](https://www.nexscope.ai/tools/seo-keyword-planner) |
+| SEO Keyword Planner | Expand US English Google keywords, inspect an Amazon US product sample, and request an AI comparison report with your own API key. | [Plan keywords](https://learn.nexscope.ai/tools/seo-keyword-planner/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_keywords) |
 | Website SEO Auditor | Check crawlability, metadata, headings, links, and page-level SEO issues. | [Audit a page](https://www.nexscope.ai/tools/website-seo-auditor) |
 | AI Amazon Listing Optimizer | Audit an ASIN and prioritize evidence-based listing changes. | [Review a listing](https://www.nexscope.ai/tools/amazon-listing-optimization-tool) |
+| Amazon to 1688 Supplier Finder | Find visually similar 1688 listings from an Amazon ASIN, then compare supplier terms and minimum orders. Bring your own API key; credits apply. | [Find suppliers](https://learn.nexscope.ai/tools/amazon-to-1688-supplier-finder/) |
+| TikTok Shop New-Product Validator | Review a dated product ranking, sales windows, and related video evidence. Bring your own API key; credits apply. | [Validate a product](https://learn.nexscope.ai/tools/tiktok-shop-new-product-validator/) |
+| TikTok Shop Product-to-Creator Match | Find creators associated with a product and inspect profiles and product-tagged videos. Bring your own API key; credits apply. | [Find creators](https://learn.nexscope.ai/tools/tiktok-shop-creator-match/) |
 | AI Product Image Generator | Generate or edit ecommerce images and check product accuracy. | [Create an image](https://www.nexscope.ai/tools/ai-image-generator) |
 | AI Video Generator | Turn product images into videos with selectable models. | [Create a video](https://www.nexscope.ai/tools/ai-video-generator) |
 
