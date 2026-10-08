@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Ecommerce Product Showcase & Product Page Review | Nexscope
-description: Showcase your ecommerce product, gain useful exposure, and receive practical page recommendations backed by Nexscope research, sourcing, SEO, and creative APIs.
+title: Ecommerce Product Gallery for AI-Assisted Shopping | Nexscope
+description: Explore reviewed ecommerce product submissions with clear product details, images and source links. Submit a product for editorial feedback and learn how to assess AI shopping visibility.
 permalink: /product-showcase/
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
@@ -16,7 +16,9 @@ faq:
   - question: "What is the Nexscope Product Gallery?"
     answer: "Nexscope Product Gallery is a curated ecommerce product showcase that brings product details, images, video, and public buying links together on focused product pages. Public display is subject to editorial review."
   - question: "How can the gallery help improve product visibility?"
-    answer: "An approved product receives another public page where shoppers, researchers, and AI-assisted discovery systems can understand what it is, who it is for, and where it is available. Inclusion does not guarantee rankings, traffic, or sales."
+    answer: "An approved product receives another public page with submitted details, media, and a link to its original listing. This can give shoppers and AI-assisted research another source of product context, but inclusion does not guarantee indexing, recommendations, traffic, or sales."
+  - question: "Does a Gallery submission add my product to ChatGPT or Google Shopping?"
+    answer: "No. The Gallery publishes an editorially reviewed public page. Shopping catalog participation requires a separate route through the seller's store or an authorized product feed; Gallery submission does not register the seller with ChatGPT or Google Shopping."
   - question: "What professional product-page recommendations can Nexscope provide?"
     answer: "Editorial recommendations may cover positioning, product descriptions, supporting evidence, image coverage, video, and the clarity of public destination links. Recommendations are based only on the submitted public materials."
   - question: "Which Nexscope APIs support ecommerce product workflows?"
@@ -30,8 +32,8 @@ faq:
   <div class="showcase-hero-copy">
     <span class="eyebrow">Nexscope product showcase</span>
     <p class="showcase-status">SUBMISSIONS OPEN · PAGES PUBLISHED AFTER REVIEW</p>
-    <h1>Discover ecommerce products<br><span>in one curated showcase.</span></h1>
-    <p>Nexscope Product Gallery brings clear product details, rich visuals and direct buying links together so useful ecommerce products are easier to discover and understand.</p>
+    <h1>Discover ecommerce products<br><span>with useful context.</span></h1>
+    <p>Explore reviewed product submissions with details, images, optional video and a link to the original listing. See what a product is for before deciding where to buy.</p>
     <div class="showcase-actions">
       <a class="showcase-primary" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product ↗</a>
       <a class="showcase-quiet-link" href="#showcase-preview">How the Gallery works <span aria-hidden="true">↓</span></a>
@@ -43,6 +45,26 @@ faq:
   </figure>
 </section>
 
+{% assign published_products = site.data.product_showcase_pages %}
+{% if published_products.size > 0 %}
+<section class="showcase-products" aria-labelledby="showcase-products-title">
+  <header class="showcase-section-heading">
+    <div><span class="eyebrow">Reviewed products</span><h2 id="showcase-products-title">Explore the Gallery.</h2></div>
+    <p>Each product has a public detail page and a link to its original selling page. Check current offers with the seller.</p>
+  </header>
+  <div class="showcase-products-grid">
+    {% for product in published_products %}
+    <article class="showcase-product-card">
+      <a href="{{ product.path | relative_url }}">
+        {% if product.image %}<img src="{{ product.image | escape }}" alt="{{ product.title | escape }}" loading="lazy" width="640" height="480">{% else %}<span class="showcase-product-placeholder" aria-hidden="true">Nexscope Product Gallery</span>{% endif %}
+        <span class="showcase-product-card-copy"><small>Reviewed product</small><strong>{{ product.title | escape }}</strong><span>View product details →</span></span>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 <section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
   <header class="showcase-section-heading">
     <div><span class="eyebrow">Ecommerce product discovery</span><h2 id="showcase-discovery-title">What is the Nexscope Product Gallery?</h2></div>
@@ -53,29 +75,42 @@ faq:
     <article><span>02</span><h3>Visual detail</h3><p>Explore product images and video before opening the external product page.</p></article>
     <article><span>03</span><h3>A direct next step</h3><p>Continue to the submitted storefront or marketplace listing when the product fits.</p></article>
   </div>
+  <section class="showcase-shopping-paths" aria-labelledby="showcase-shopping-paths-title">
+    <div class="showcase-shopping-paths-intro">
+      <span class="eyebrow">After the Gallery</span>
+      <h3 id="showcase-shopping-paths-title">Want your product in shopping results?</h3>
+      <p>A reviewed Gallery page adds public product context. Shopping catalog participation is a separate step managed by the seller or an authorized partner using current offer data.</p>
+    </div>
+    <div class="showcase-shopping-paths-grid">
+      <article><span>ChatGPT Shopping</span><h4>Check your catalog route</h4><p>OpenAI says Shopify and Etsy catalogs are already integrated. Other merchants can apply to share a current product feed; acceptance and display are not guaranteed.</p><a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">See the ChatGPT merchant steps →</a></article>
+      <article><span>Google Shopping &amp; Gemini</span><h4>Use your Merchant Center account</h4><p>Verify the selling website, submit product data, and keep price and availability consistent with the page where customers can buy.</p><a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">See the Google merchant steps →</a></article>
+    </div>
+    <p class="showcase-shopping-paths-footnote">Want to measure visibility first? <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=gallery_ai_visibility">Run a separate AI visibility check ↗</a> Results are time-bound observations, not a promise of recommendations.</p>
+  </section>
 </section>
 
 <section class="showcase-growth" aria-labelledby="showcase-growth-title">
   <div class="showcase-growth-copy">
     <span class="eyebrow">More than a listing</span>
     <h2 id="showcase-growth-title">How can Nexscope improve product exposure?</h2>
-    <p><strong>An approved showcase page gives your product another public place to be discovered and understood.</strong> Editorial review can also highlight practical ways to make the page clearer, more complete and easier to trust.</p>
+    <p><strong>An approved showcase page gives your product another public place to be found and evaluated.</strong> Editorial review can also highlight missing buyer-facing facts, unclear claims or media that would make the page more useful.</p>
     <ul class="showcase-benefit-list">
       <li><strong>More useful exposure</strong><span>Bring the product story, visuals and buying destination together in one focused page.</span></li>
       <li><strong>Professional page suggestions</strong><span>Get practical guidance on positioning, product details, imagery, video and public links.</span></li>
     </ul>
     <div class="showcase-api-callout">
-      <h3>Give your product more ways to be discovered</h3>
-      <p>An approved Gallery page can improve your product's exposure by giving it another public place to be found and understood. To strengthen that visibility, Nexscope APIs can help you compare Amazon listings, explore the language shoppers search, find similar products on 1688, or create stronger supporting visuals. These tools are optional and are not run automatically during review.</p>
+      <h3>Research the questions buyers actually ask</h3>
+      <p>Use Nexscope tools to compare Amazon listings, explore search language, find similar products on 1688 or prepare accurate supporting visuals. Run the separate AI Visibility Tool to observe whether a product appears in sampled AI shopping answers. None of these tools runs automatically when you submit to the Gallery.</p>
       <div class="showcase-api-links">
         <a href="https://www.nexscope.ai/api-docs/amazon-product-research?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=amazon_product_research">Research Amazon listings</a>
         <a href="https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=seo_keyword_metrics">Explore keyword demand</a>
         <a href="https://www.nexscope.ai/api-docs/1688-search-by-image?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=1688_image_search">Find similar products on 1688</a>
         <a href="https://www.nexscope.ai/api-docs?tab=creative&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=creative_apis">Create product images &amp; video</a>
+        <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=gallery_ai_visibility_chip">Check AI shopping visibility</a>
       </div>
       <a class="showcase-quiet-link" href="https://www.nexscope.ai/api-docs?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=gallery_api_capabilities">See the APIs behind these workflows <span aria-hidden="true">↗</span></a>
     </div>
-    <small class="showcase-disclaimer">Exposure and recommendations depend on editorial review. Nexscope does not guarantee search rankings, traffic or sales.</small>
+    <small class="showcase-disclaimer">Publication depends on editorial review. Nexscope does not guarantee indexing, AI recommendations, traffic or sales.</small>
   </div>
   <figure class="showcase-growth-art">
     <img src="{{ '/assets/product-showcase-visibility.webp' | relative_url }}" width="1536" height="1024" loading="lazy" alt="Ecommerce products connected to discovery touchpoints around the Nexscope mark">
@@ -89,7 +124,8 @@ faq:
   </header>
   <div class="showcase-faq-list">
     <details open><summary>What is the Nexscope Product Gallery?</summary><p>Nexscope Product Gallery is a curated ecommerce product showcase that brings product details, images, video and public buying links together on focused product pages. Public display is subject to editorial review.</p></details>
-    <details><summary>How can the gallery help improve product visibility?</summary><p>An approved product receives another public page where shoppers, researchers and AI-assisted discovery systems can understand what it is, who it is for and where it is available. Inclusion does not guarantee rankings, traffic or sales.</p></details>
+    <details><summary>How can the gallery help improve product visibility?</summary><p>An approved product receives another public page with submitted details, media and a link to its original listing. This can give shoppers and AI-assisted research another source of product context, but inclusion does not guarantee indexing, recommendations, traffic or sales.</p></details>
+    <details><summary>Does a Gallery submission add my product to ChatGPT or Google Shopping?</summary><p>No. The Gallery publishes an editorially reviewed public page; it does not submit a merchant feed or register your store with a shopping platform. Use the seller's own catalog route for <a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">ChatGPT</a> or <a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">Google Shopping</a>.</p></details>
     <details><summary>What professional product-page recommendations can Nexscope provide?</summary><p>Editorial recommendations may cover positioning, product descriptions, supporting evidence, image coverage, video and the clarity of public destination links. Recommendations are based only on the submitted public materials.</p></details>
     <details><summary>Which Nexscope APIs support ecommerce product workflows?</summary><p>Relevant documented capabilities include Amazon product research, review and price data, SEO keyword metrics, 1688 product sourcing and image search, plus ecommerce image and video generation APIs. Current inputs, outputs, access and credits are listed in the API documentation.</p></details>
     <details><summary>Do I need to connect or authorize my store?</summary><p>No. A submission uses public product-page links or an Amazon ASIN. Nexscope does not request a store password, seller token or payment access for this workflow.</p></details>

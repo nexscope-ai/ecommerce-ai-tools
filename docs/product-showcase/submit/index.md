@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Submit an Ecommerce Product for Review | Nexscope
-description: Submit an ecommerce product page or Amazon ASIN for editorial review, practical page recommendations, and possible inclusion in the Nexscope Product Gallery.
+title: Submit a Product to Nexscope Gallery | Ecommerce Product Review
+description: Submit a public product URL or Amazon ASIN with buyer-facing facts, images and a source link for editorial review and possible inclusion in Nexscope Product Gallery.
 permalink: /product-showcase/submit/
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
@@ -17,8 +17,8 @@ image_caption: The Nexscope product submission workflow combines public product 
   <header class="showcase-form-intro">
     <div class="showcase-form-heading">
       <span class="eyebrow">Product showcase submission</span>
-      <h1>Submit your ecommerce product<br><span>for editorial review.</span></h1>
-      <p>Share a public product page or Amazon ASIN for possible inclusion in the Nexscope Product Gallery and practical recommendations for a clearer public product page. No store connection, seller token or payment access is required.</p>
+      <h1>Submit your product<br><span>with the facts buyers need.</span></h1>
+      <p>Share a public product page or Amazon ASIN for possible inclusion in the Nexscope Product Gallery. Describe who the product is for, its decision-making details and what buyers should verify. Our team reviews submissions before publication; no store connection or seller token is required.</p>
       <div class="showcase-form-heading-actions">
         <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Start your submission <span aria-hidden="true">↓</span></a>
       </div>
@@ -29,7 +29,8 @@ image_caption: The Nexscope product submission workflow combines public product 
       <p>Your submission stays offline until it is reviewed and approved.</p>
       <ul>
         <li>One public product URL or Amazon ASIN</li>
-        <li>Product name, details and 1–5 images</li>
+        <li>Exact product name, model or variant</li>
+        <li>Use case, key specifications and 1–5 accurate product images</li>
         <li>A contact email for update or removal requests</li>
       </ul>
     </aside>
@@ -38,16 +39,17 @@ image_caption: The Nexscope product submission workflow combines public product 
   <section class="submission-visual" aria-labelledby="submission-visual-title">
     <div class="submission-visual-copy">
       <span class="eyebrow">More than a submission</span>
-      <h2 id="submission-visual-title">A clearer product page, with practical next steps.</h2>
-      <p>If approved, your product can gain another public place to be discovered. Our editorial review may suggest ways to strengthen the positioning, details, imagery, video and destination links you share.</p>
+      <h2 id="submission-visual-title">Help shoppers evaluate the real product.</h2>
+      <p>AI-assisted shopping often starts with a specific question: will this product fit, work with an existing device or meet a budget? Explain those details in plain language and support important claims. If approved, your Gallery page provides another public place to read that information and reach the original listing.</p>
       <div class="submission-api-note">
-        <strong>Start with more visibility, then improve what people see</strong>
-        <span>An approved submission gives your product another public page, helping more shoppers, researchers and AI-assisted discovery tools find and understand it. To make that exposure more useful, Nexscope APIs can help your team <a href="https://www.nexscope.ai/api-docs/amazon-product-research?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_amazon_research">compare Amazon listings</a>, <a href="https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_keyword_metrics">check keyword signals</a>, <a href="https://www.nexscope.ai/api-docs/1688-search-by-image?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_1688_image_search">find similar products on 1688</a>, or <a href="https://www.nexscope.ai/api-docs?tab=creative&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_creative_apis">create supporting images and video</a>. These tools are optional and are never run automatically on your submission.</span>
+        <strong>Keep the source, research and AI visibility separate</strong>
+        <span>Your original product listing remains the source for current price, availability and purchase terms. Nexscope APIs can help you <a href="https://www.nexscope.ai/api-docs/amazon-product-research?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_amazon_research">compare Amazon listings</a>, <a href="https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_keyword_metrics">check keyword signals</a> or <a href="https://www.nexscope.ai/api-docs?tab=creative&amp;co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_creative_apis">prepare supporting media</a>. The <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submit_ai_visibility">AI Visibility Tool</a> is a separate test of sampled AI shopping answers. None of these tools runs automatically on a Gallery submission.</span>
       </div>
       <div class="submission-visual-actions">
+        <a class="showcase-quiet-link" href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How to prepare product facts for AI shopping <span aria-hidden="true">→</span></a>
         <a class="showcase-quiet-link" href="https://www.nexscope.ai/api-docs?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submission_api_capabilities">See what each API can do <span aria-hidden="true">↗</span></a>
       </div>
-      <small class="showcase-disclaimer">Recommendations are editorial guidance, not a guarantee of rankings, traffic or sales.</small>
+      <small class="showcase-disclaimer">Gallery approval does not submit a merchant feed to ChatGPT or Google. Editorial guidance and AI visibility reports do not guarantee rankings, recommendations, traffic or sales.</small>
     </div>
     <figure class="submission-visual-art">
       <img src="{{ '/assets/product-showcase-review-api.webp' | relative_url }}" width="1536" height="1024" loading="lazy" alt="A public product page being reviewed with connected ecommerce research, keyword, sourcing and creative capabilities">
@@ -57,23 +59,23 @@ image_caption: The Nexscope product submission workflow combines public product 
   <div class="submission-layout" id="product-submission-form">
     <form class="showcase-form" novalidate>
       <div class="form-section">
-        <div class="form-section-heading"><span class="form-number">01</span><div><h2>Describe the product</h2><p>Give the editorial team enough context to review it accurately.</p></div></div>
+        <div class="form-section-heading"><span class="form-number">01</span><div><h2>Describe the exact product</h2><p>Answer the buyer's likely questions with facts you can support. This text may appear on the public Gallery page after review.</p></div></div>
         <div class="form-section-body">
           <div class="media-field" data-media-upload="IMAGE" data-max-files="5" data-max-bytes="10485760">
-            <div class="media-field-header"><div><strong>Product images <span class="required-mark" aria-label="required">*</span></strong><span>Upload 1–5 JPEG, PNG or WebP images, up to 10 MB each.</span></div><span class="media-limit">0 / 5</span></div>
+            <div class="media-field-header"><div><strong>Product images <span class="required-mark" aria-label="required">*</span></strong><span>Upload 1–5 accurate JPEG, PNG or WebP images, up to 10 MB each. Show scale or a key feature when useful.</span></div><span class="media-limit">0 / 5</span></div>
             <input type="hidden" name="imageUploadKeys" value="[]">
             <input class="media-file-input" data-media-input type="file" accept="image/jpeg,image/png,image/webp" multiple>
             <button class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
             <div class="media-upload-list image-upload-list" data-media-list aria-live="polite"></div>
             <small class="field-error" id="imageUploadKeys-error" data-error-for="imageUploadKeys" role="alert" hidden></small>
           </div>
-          <label><strong class="field-label">Product name <span class="required-mark" aria-label="required">*</span></strong><span>2–120 characters</span><input name="productName" type="text" minlength="2" maxlength="120" required autocomplete="off" placeholder="What should people call this product?"><small class="field-error" id="productName-error" data-error-for="productName" role="alert" hidden></small></label>
+          <label><strong class="field-label">Product name <span class="required-mark" aria-label="required">*</span></strong><span>2–120 characters. Include the model or variant when it changes what buyers receive.</span><input name="productName" type="text" minlength="2" maxlength="120" required autocomplete="off" placeholder="Brand, product and exact model"><small class="field-error" id="productName-error" data-error-for="productName" role="alert" hidden></small></label>
           <div class="markdown-field">
             <div class="markdown-field-header">
-              <div><strong id="product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Markdown, 20–5000 characters. Use headings, lists and links to make the product easier to review.</span></div>
+              <div><strong id="product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Markdown, 20–5000 characters. Explain use case, measurable specifications, compatibility, limits and evidence for important claims. Do not invent missing facts.</span></div>
               <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
             </div>
-            <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="## Product overview&#10;Explain what the product does and who it is for.&#10;&#10;- Primary use case&#10;- Key differentiator"></textarea>
+            <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="## Who it is for&#10;Describe one real buyer need or use case.&#10;&#10;## Key facts&#10;- Size, capacity or compatibility (with units)&#10;- What is included&#10;&#10;## Limits and evidence&#10;State important limitations and link to support for claims."></textarea>
             <small class="field-error" id="productDetails-error" data-error-for="productDetails" role="alert" hidden></small>
             <small class="character-count" data-count="productDetails">0 / 5000</small>
           </div>
@@ -107,7 +109,7 @@ image_caption: The Nexscope product submission workflow combines public product 
           <small class="field-error" id="sourceType-error" data-error-for="sourceType" role="alert" hidden></small>
 
           <div data-source-fields="PRODUCT_URL">
-            <label><strong class="field-label">Product page link <span class="required-mark" aria-label="required">*</span></strong><span>One public HTTPS product URL. Nexscope does not log in to or automatically fetch this page.</span><input name="productUrl" type="url" maxlength="2048" inputmode="url" placeholder="https://your-store.com/products/example" required><small class="field-error" id="productUrl-error" data-error-for="productUrl" role="alert" hidden></small></label>
+            <label><strong class="field-label">Product page link <span class="required-mark" aria-label="required">*</span></strong><span>One public HTTPS page for this exact product. Keep current price, availability and buying terms there; Nexscope does not automatically fetch it.</span><input name="productUrl" type="url" maxlength="2048" inputmode="url" placeholder="https://your-store.com/products/example" required><small class="field-error" id="productUrl-error" data-error-for="productUrl" role="alert" hidden></small></label>
           </div>
 
           <div data-source-fields="AMAZON_ASIN" hidden>
@@ -125,6 +127,17 @@ image_caption: The Nexscope product submission workflow combines public product 
           </div>
         </div>
       </div>
+
+      <aside class="showcase-merchant-next" aria-labelledby="showcase-merchant-next-title">
+        <span class="eyebrow">A separate merchant step</span>
+        <h2 id="showcase-merchant-next-title">Submitting here does not enroll your store in shopping catalogs.</h2>
+        <p>We use your public link or ASIN to review a Gallery page. We do not connect your store, fetch live offers or submit products to ChatGPT or Google. Keep price, stock and checkout information current on the original selling page.</p>
+        <div class="showcase-merchant-next-links">
+          <a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How merchants reach ChatGPT Shopping →</a>
+          <a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">How merchants reach Google Shopping →</a>
+        </div>
+        <small>Submitting an Amazon ASIN alone does not authorize Nexscope to manage that seller's catalog.</small>
+      </aside>
 
       <div class="form-section form-section-submit">
         <div class="form-section-heading"><span class="form-number">03</span><div><h2>Provide a secure contact</h2><p>This helps us verify important requests about your product information.</p></div></div>

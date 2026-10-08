@@ -3,10 +3,10 @@ layout: default
 title: "Google AI Mode Shopping: Seller Guide"
 description: Learn how to prepare product data, pages, Merchant Center feeds, and measurement for Google AI Mode shopping experiences.
 permalink: /ecommerce-trends/google-ai-mode-shopping/
-last_reviewed: 2026-09-18
+last_reviewed: 2026-10-08
 date_published: 2026-09-18
-date_modified: 2026-09-18
-last_modified_at: 2026-09-18
+date_modified: 2026-10-08
+last_modified_at: 2026-10-08
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -27,17 +27,27 @@ faq:
     answer: "No. Structured data can help Google understand a page, but it does not guarantee crawling, indexing, eligibility, ranking, citation, recommendation, or conversion."
   - question: What should merchants improve first?
     answer: "Prioritize accurate identifiers, variant-level price and availability, complete attributes, high-quality media, accessible product pages, clear policies, and consistent feed-to-page data."
+  - question: Does a Nexscope Gallery page put a product in Google Shopping?
+    answer: "No. A Gallery page links to the original seller. The seller should use its own Merchant Center account, verified selling website and current product data; Google merchant listings require a page where shoppers can purchase the product."
 ---
 
 # Google AI Mode shopping: how ecommerce teams can prepare
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 18, 2026 · Updated September 18, 2026**
+**By Nexscope Team · Published September 18, 2026 · Updated October 8, 2026**
 
 **Google AI Mode shopping is an AI-assisted discovery experience that can help people explore, compare, visualize, and evaluate products using richer questions than a traditional search query.** Merchants cannot force a recommendation, but they can reduce ambiguity by maintaining accurate feeds, explicit product attributes, accessible pages, useful media, and trustworthy evidence.
 
 > **The practical takeaway:** treat Merchant Center, product pages, structured data, images, policies, and inventory as one product-information system. AI shopping experiences are less useful when those sources disagree.
+
+## How does a seller get products into Google Shopping?
+
+1. **Set up [Google Merchant Center](https://support.google.com/merchants/answer/12475474?hl=en)** for the business and verify and claim the selling website. Publish clear contact, shipping, return and refund information.
+2. **Provide product data** with identifiers, title, description, image, selling-page URL, price, currency and availability. A Shopify seller can use the [Google & YouTube app](https://support.google.com/merchants/answer/16267554?hl=en) to sync its store; other sellers can use a supported Merchant Center product source. Keep the feed and the live purchase page consistent.
+3. **Check free listings and diagnostics** in Merchant Center. Fix disapproved products and landing-page mismatches. Eligible free listings can appear across Google surfaces, including Shopping and Gemini, but [visibility is not guaranteed](https://support.google.com/merchants/answer/13889434?hl=en).
+
+The product URL supplied to Merchant Center must lead to a page where a shopper can buy the item, with matching price and availability. A [Nexscope Product Gallery]({{ '/product-showcase/' | relative_url }}) page sends visitors to another seller and is therefore a supplementary editorial page, not the seller's Merchant Center landing page. Google's [merchant listing rules](https://developers.google.com/search/docs/appearance/structured-data/merchant-listing) distinguish purchase pages from pages that only link to a seller. An Amazon ASIN submitted to Nexscope likewise does not grant control over that marketplace offer.
 
 ## What can shoppers do in Google AI Mode?
 
@@ -123,6 +133,10 @@ Keep a change log. Indexing and feed processing take time, so compare stable per
 
 ## Sources
 
+- [Google: Share your product data with Google](https://developers.google.com/search/docs/specialty/ecommerce/share-your-product-data-with-google)
+- [Google: Merchant Center setup requirements](https://support.google.com/merchants/answer/12475474?hl=en)
+- [Google: Free listings for products](https://support.google.com/merchants/answer/13889434?hl=en)
+- [Google: Merchant listing technical guidelines](https://developers.google.com/search/docs/appearance/structured-data/merchant-listing)
 - [Google: Shop in AI Mode and try clothes on yourself virtually](https://blog.google/products-and-platforms/products/shopping/google-shopping-ai-mode-virtual-try-on-update/)
 - [Google: Retailers, get ready for AI-driven holiday shopping](https://blog.google/products-and-platforms/products/shopping/google-shopping-updates-holiday-shopping/), September 16, 2026
 - [Google: Agentic commerce tools and the Universal Commerce Protocol](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/), January 11, 2026
