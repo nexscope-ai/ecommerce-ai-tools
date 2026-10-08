@@ -93,4 +93,4 @@ Reference-image support depends on the selected model. The live tool shows the i
 
 For help with model inputs, [ask in Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). For a reproducible problem, [open an issue](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) with the model and non-sensitive settings; never share account secrets.
 
-**[Try the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_bottom&co-from=learn)** · [Turn a product photo into video](../ai-video-generator/) · [Browse all guides](../guides/)
+**[Try the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_image_generator_launch&utm_content=guide_bottom&co-from=learn)** · [Plan an ad-ready product image pack]({{ '/ecommerce-ad-creative-production/' | relative_url }}) · [Turn a product photo into video](../ai-video-generator/) · [Browse all guides](../guides/)
