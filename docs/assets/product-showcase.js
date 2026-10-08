@@ -16,6 +16,12 @@
   if (document.querySelector('[data-showcase-view]')) event('product_showcase_view');
 
   document.addEventListener('click', clickEvent => {
+    const submitLink = clickEvent.target.closest?.('[data-showcase-submit-cta]');
+    if (submitLink) {
+      event('product_showcase_submit_click', {
+        cta_placement: submitLink.dataset.showcaseSubmitCta,
+      });
+    }
     const communityLink = clickEvent.target.closest?.('[data-community-action][href]');
     if (!communityLink) return;
     const destination = new URL(communityLink.href, window.location.href);
@@ -148,6 +154,9 @@
   const wireMediaUploads = (scope, form, api) => {
     const controllers = [];
     const managesExistingMedia = form.classList.contains('management-edit-form');
+    const trackUpload = (name, properties) => {
+      if (!managesExistingMedia) event(name, properties);
+    };
     const videoField = scope.querySelector('[data-video-field]');
     const videoValue = videoField?.querySelector('[name="videoUrl"]');
     const videoUrlInput = videoField?.querySelector('[data-video-url-input]');
@@ -275,10 +284,12 @@
       };
 
       const upload = async entry => {
+        let stage = 'presign';
         entry.status = 'uploading';
         entry.progress = 0;
         entry.error = '';
         render();
+        trackUpload('product_upload_start', { media_type: mediaType.toLowerCase() });
         try {
           const presign = await json(`${api}/media/presign`, {
             method: 'POST',
@@ -289,6 +300,7 @@
               mediaType,
             }),
           });
+          stage = 'transfer';
           await uploadToPresignedUrl(entry.file, presign, progress => {
             entry.progress = progress;
             updateEntryPresentation(entry);
@@ -296,10 +308,14 @@
           entry.status = 'complete';
           entry.progress = 100;
           entry.uploadKey = presign.uploadKey;
-          event('product_upload_complete');
+          event('product_upload_complete', { media_type: mediaType.toLowerCase() });
         } catch (cause) {
           entry.status = 'error';
           entry.error = cause.message || 'Upload failed';
+          trackUpload('product_upload_failed', {
+            media_type: mediaType.toLowerCase(),
+            failure_stage: stage,
+          });
         }
         syncValues();
         render();
@@ -308,17 +324,26 @@
       const addFiles = files => {
         const incoming = [...files];
         if (entries.length + incoming.length > maximumFiles) {
+          trackUpload('product_upload_rejected', {
+            media_type: mediaType.toLowerCase(), reason: 'too_many_files',
+          });
           throw new Error(mediaType === 'IMAGE'
             ? `Upload no more than ${maximumFiles} product images.`
             : 'Only one product video can be uploaded.');
         }
         const prepared = incoming.map(file => {
           if (!input.accept.split(',').includes(file.type)) {
+            trackUpload('product_upload_rejected', {
+              media_type: mediaType.toLowerCase(), reason: 'unsupported_type',
+            });
             throw new Error(mediaType === 'IMAGE'
               ? 'Images must be JPEG, PNG or WebP files.'
               : 'Video must be an MP4 or WebM file.');
           }
           if (file.size <= 0 || file.size > maximumBytes) {
+            trackUpload('product_upload_rejected', {
+              media_type: mediaType.toLowerCase(), reason: 'invalid_size',
+            });
             throw new Error(mediaType === 'IMAGE'
               ? 'Each product image must be 10 MB or smaller.'
               : 'The product video must be 100 MB or smaller.');
@@ -809,7 +834,7 @@
     form.addEventListener('change', clearChangedField);
   };
 
-  const validateProduct = form => {
+  const validateProduct = (form, onInvalid = () => {}) => {
     clearFieldErrors(form);
     const issues = [];
     const addIssue = (name, message) => {
@@ -893,6 +918,7 @@
     }
 
     if (issues.length) {
+      onInvalid(issues.map(issue => issue.name));
       let firstTarget;
       issues.forEach(issue => {
         const target = setFieldError(form, issue.name, issue.message);
@@ -938,6 +964,47 @@
     const error = formShell.querySelector('.form-error');
     const api = formShell.dataset.apiBase;
     let submitting = false;
+    const steps = new Set(['product', 'source', 'contact']);
+    const engagedSteps = new Set();
+    let formEngaged = false;
+    const stepForField = field => {
+      if (['imageUploadKeys', 'productName', 'productDetails', 'videoUrl'].includes(field)) return 'product';
+      if (['sourceType', 'productUrl', 'amazonMarketplace', 'amazonAsin'].includes(field)) return 'source';
+      return 'contact';
+    };
+
+    const observeSteps = () => {
+      const sections = form.querySelectorAll('[data-showcase-step]');
+      const markViewed = section => {
+        event('product_submission_step_view', { step: section.dataset.showcaseStep });
+      };
+      if (!('IntersectionObserver' in window)) return;
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          markViewed(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(section => observer.observe(section));
+    };
+    observeSteps();
+
+    const markEngaged = inputEvent => {
+      if (!inputEvent.target.matches?.('input:not([type="hidden"]), textarea, select')) return;
+      const step = inputEvent.target.closest('[data-showcase-step]')?.dataset.showcaseStep;
+      if (!steps.has(step)) return;
+      if (!formEngaged) {
+        formEngaged = true;
+        event('product_submission_form_engaged');
+      }
+      if (!engagedSteps.has(step)) {
+        engagedSteps.add(step);
+        event('product_submission_step_engaged', { step });
+      }
+    };
+    form.addEventListener('input', markEngaged);
+    form.addEventListener('change', markEngaged);
 
     enhanceSelects(formShell);
     wireInlineValidation(form);
@@ -959,7 +1026,20 @@
       if (submitting) return;
       const submitButton = form.querySelector('[type="submit"]');
       clearError();
-      if (!validateProduct(form)) return;
+      event('product_submission_attempt');
+      if (!validateProduct(form, invalidFields => {
+        const firstField = invalidFields[0];
+        event('product_submission_validation_failed', {
+          first_error_field: firstField,
+          error_step: stepForField(firstField),
+          error_count: invalidFields.length,
+        });
+        invalidFields.forEach(field => event('product_submission_field_error', {
+          field_name: field,
+          step: stepForField(field),
+        }));
+      })) return;
+      let failureStage = 'request';
       try {
         submitting = true;
         submitButton.disabled = true;
@@ -968,15 +1048,21 @@
           method: 'POST',
           body: JSON.stringify(productBody(form)),
         });
-        event('product_submission_success');
+        failureStage = 'response';
         if (!result.managementUrl) throw new Error('The private management link was not returned.');
         const managementUrl = new URL(result.managementUrl, window.location.href);
         if (['127.0.0.1', 'localhost'].includes(window.location.hostname)) {
           managementUrl.protocol = window.location.protocol;
           managementUrl.host = window.location.host;
         }
+        event('product_submission_success');
         window.location.replace(managementUrl.href);
       } catch (cause) {
+        event('product_submission_failed', {
+          failure_stage: failureStage,
+          failure_type: failureStage === 'response' ? 'invalid_response'
+            : cause instanceof TypeError ? 'network' : 'api_rejected',
+        });
         showError(cause.message || 'Submission failed. Please retry.');
       } finally {
         submitting = false;

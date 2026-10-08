@@ -35,7 +35,7 @@ faq:
     <h1>Discover ecommerce products<br><span>with useful context.</span></h1>
     <p>Explore reviewed product submissions with details, images, optional video and a link to the original listing. See what a product is for before deciding where to buy.</p>
     <div class="showcase-actions">
-      <a class="showcase-primary" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product ↗</a>
+      <a class="showcase-primary" data-showcase-submit-cta="hero" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product ↗</a>
       <a class="showcase-quiet-link" href="#showcase-preview">How the Gallery works <span aria-hidden="true">↓</span></a>
     </div>
   </div>
@@ -143,7 +143,7 @@ faq:
       <li><span>02</span><div><strong>Add the useful detail</strong><small>Description, images and optional video</small></div></li>
       <li><span>03</span><div><strong>Prepare for the showcase</strong><small>Reviewed before any public display</small></div></li>
     </ol>
-    <a class="showcase-primary" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product ↗</a>
+    <a class="showcase-primary" data-showcase-submit-cta="footer" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product ↗</a>
   </div>
   <figure class="showcase-path-art">
     <img src="{{ '/assets/product-showcase-submission.webp' | relative_url }}" width="1200" height="800" alt="Product links, images and video moving into a curated ecommerce showcase">

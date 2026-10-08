@@ -58,7 +58,7 @@ image_caption: The Nexscope product submission workflow combines public product 
 
   <div class="submission-layout" id="product-submission-form">
     <form class="showcase-form" novalidate>
-      <div class="form-section">
+      <div class="form-section" data-showcase-step="product">
         <div class="form-section-heading"><span class="form-number">01</span><div><h2>Describe the exact product</h2><p>Answer the buyer's likely questions with facts you can support. This text may appear on the public Gallery page after review.</p></div></div>
         <div class="form-section-body">
           <div class="media-field" data-media-upload="IMAGE" data-max-files="5" data-max-bytes="10485760">
@@ -99,7 +99,7 @@ image_caption: The Nexscope product submission workflow combines public product 
         </div>
       </div>
 
-      <div class="form-section">
+      <div class="form-section" data-showcase-step="source">
         <div class="form-section-heading"><span class="form-number">02</span><div><h2>Choose the product source <span class="required-mark" aria-label="required">*</span></h2><p>Add a public reference after describing the product.</p></div></div>
         <div class="form-section-body">
           <div class="source-options" role="radiogroup" aria-label="Product source">
@@ -139,7 +139,7 @@ image_caption: The Nexscope product submission workflow combines public product 
         <small>Submitting an Amazon ASIN alone does not authorize Nexscope to manage that seller's catalog.</small>
       </aside>
 
-      <div class="form-section form-section-submit">
+      <div class="form-section form-section-submit" data-showcase-step="contact">
         <div class="form-section-heading"><span class="form-number">03</span><div><h2>Provide a secure contact</h2><p>This helps us verify important requests about your product information.</p></div></div>
         <div class="form-section-body">
           <label><strong class="field-label">Contact email <span class="required-mark" aria-label="required">*</span></strong><span>Kept private and never displayed on the public product page.</span><input name="submitterEmail" type="email" maxlength="254" required autocomplete="email" inputmode="email" placeholder="you@company.com"><small class="field-error" id="submitterEmail-error" data-error-for="submitterEmail" role="alert" hidden></small></label>
