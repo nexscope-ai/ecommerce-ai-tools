@@ -77,6 +77,8 @@ Start with five to ten high-priority gift SKUs. Give each an owner who can confi
 
 Shopify's report includes brand examples, but their outcomes are not a forecast for another store. If you use [Merchant Center AI performance insights](../merchant-center-ai-performance-insights/) or other channel reports, note the date, market, and reporting definition before comparing results.
 
+Once one SKU has verified facts, accurate images and a public selling page, you can [submit it to the Nexscope Product Gallery]({{ '/product-showcase/submit/' | relative_url }}) for editorial review. An approved Gallery page is an additional product explanation, not a live offer feed or a guarantee of AI shopping visibility.
+
 ## Where does an image-to-video product clip help?
 
 **Video is most useful when it answers a visual question that the catalog cannot show well in one still image.** For a holiday product, that may be the package size, visible finish, a colorway, or a simple gifting scene. The seller can place an approved clip on an owned product page, in email, or in social creative. Nothing in Shopify's holiday report or OpenAI's product-discovery documentation says that uploading such a clip guarantees an AI recommendation.

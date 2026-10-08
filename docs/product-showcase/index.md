@@ -3,6 +3,7 @@ layout: default
 title: Ecommerce Product Gallery for AI-Assisted Shopping | Nexscope
 description: Explore reviewed ecommerce product submissions with clear product details, images and source links. Submit a product for editorial feedback and learn how to assess AI shopping visibility.
 permalink: /product-showcase/
+last_modified_at: 2026-10-08
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -27,6 +28,8 @@ faq:
     answer: "No. A submission uses public product-page links or an Amazon ASIN. Nexscope does not request a store password, seller token, or payment access for this workflow."
   - question: "Does submitting a product guarantee publication or search performance?"
     answer: "No. Every submission remains offline until reviewed, and Nexscope does not guarantee approval, publication, search rankings, AI citations, traffic, or sales."
+  - question: "What happens after I submit a product?"
+    answer: "Save the private management link shown after submission. It shows the current review and publication status and lets you edit and resubmit if changes are requested. There is no fixed review deadline or automatic status email. A product remains offline until approved and published."
 ---
 <section class="showcase-hero" data-showcase-view>
   <div class="showcase-hero-copy">
@@ -130,6 +133,7 @@ faq:
     <details><summary>Which Nexscope APIs support ecommerce product workflows?</summary><p>Relevant documented capabilities include Amazon product research, review and price data, SEO keyword metrics, 1688 product sourcing and image search, plus ecommerce image and video generation APIs. Current inputs, outputs, access and credits are listed in the API documentation.</p></details>
     <details><summary>Do I need to connect or authorize my store?</summary><p>No. A submission uses public product-page links or an Amazon ASIN. Nexscope does not request a store password, seller token or payment access for this workflow.</p></details>
     <details><summary>Does submitting a product guarantee publication or search performance?</summary><p>No. Every submission remains offline until reviewed, and Nexscope does not guarantee approval, publication, search rankings, AI citations, traffic or sales.</p></details>
+    <details><summary>What happens after I submit a product?</summary><p>Save the private management link shown after submission. It shows the current review and publication status. There is no fixed review deadline or automatic status email. A product stays offline until approved and published. If changes are requested and an editor adds suggestions, read them there, edit the submission and resubmit it.</p></details>
   </div>
 </section>
 

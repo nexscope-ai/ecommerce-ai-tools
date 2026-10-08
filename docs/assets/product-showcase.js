@@ -963,6 +963,17 @@
     const form = formShell.querySelector('form');
     const error = formShell.querySelector('.form-error');
     const api = formShell.dataset.apiBase;
+    const entryType = (() => {
+      if (!document.referrer) return 'direct_or_unknown';
+      try {
+        const referrer = new URL(document.referrer);
+        if (referrer.origin !== window.location.origin) return 'external';
+        return /\/product-showcase\/?$/.test(referrer.pathname) ? 'gallery' : 'learn_content';
+      } catch (_) {
+        return 'direct_or_unknown';
+      }
+    })();
+    event('product_submission_page_view', { entry_type: entryType });
     let submitting = false;
     const steps = new Set(['product', 'source', 'contact']);
     const engagedSteps = new Set();
@@ -1026,13 +1037,15 @@
       if (submitting) return;
       const submitButton = form.querySelector('[type="submit"]');
       clearError();
-      event('product_submission_attempt');
+      const sourceType = form.querySelector('[name="sourceType"]:checked')?.value || 'unknown';
+      event('product_submission_attempt', { source_type: sourceType });
       if (!validateProduct(form, invalidFields => {
         const firstField = invalidFields[0];
         event('product_submission_validation_failed', {
           first_error_field: firstField,
           error_step: stepForField(firstField),
           error_count: invalidFields.length,
+          source_type: sourceType,
         });
         invalidFields.forEach(field => event('product_submission_field_error', {
           field_name: field,
@@ -1043,7 +1056,7 @@
       try {
         submitting = true;
         submitButton.disabled = true;
-        event('product_submission_start');
+        event('product_submission_start', { source_type: sourceType });
         const result = await json(`${api}/submissions`, {
           method: 'POST',
           body: JSON.stringify(productBody(form)),
@@ -1055,13 +1068,14 @@
           managementUrl.protocol = window.location.protocol;
           managementUrl.host = window.location.host;
         }
-        event('product_submission_success');
+        event('product_submission_success', { source_type: sourceType });
         window.location.replace(managementUrl.href);
       } catch (cause) {
         event('product_submission_failed', {
           failure_stage: failureStage,
           failure_type: failureStage === 'response' ? 'invalid_response'
             : cause instanceof TypeError ? 'network' : 'api_rejected',
+          source_type: sourceType,
         });
         showError(cause.message || 'Submission failed. Please retry.');
       } finally {

@@ -3,6 +3,7 @@ layout: default
 title: Submit a Product to Nexscope Gallery | Ecommerce Product Review
 description: Submit a public product URL or Amazon ASIN with buyer-facing facts, images and a source link for editorial review and possible inclusion in Nexscope Product Gallery.
 permalink: /product-showcase/submit/
+last_modified_at: 2026-10-08
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -33,8 +34,22 @@ image_caption: The Nexscope product submission workflow combines public product 
         <li>Use case, key specifications and 1–5 accurate product images</li>
         <li>A contact email for update or removal requests</li>
       </ul>
+      <a class="submission-review-link" href="#submission-review">What happens after you submit? ↓</a>
     </aside>
   </header>
+
+  <section class="submission-review" id="submission-review" aria-labelledby="submission-review-title">
+    <div class="submission-review-intro">
+      <span class="eyebrow">Before you submit</span>
+      <h2 id="submission-review-title">Know what review involves.</h2>
+      <p>There is no fixed review deadline. Your product stays offline until an editor approves it and publishes a page.</p>
+    </div>
+    <div class="submission-review-grid">
+      <article><strong>Which products fit?</strong><p>Submit a specific product with a public HTTPS selling page or an Amazon ASIN, accurate images and facts you can support. Use the exact model or variant; leave uncertain claims out.</p></article>
+      <article><strong>How do I check progress?</strong><p>After a successful submission, save the private management link shown on the next page. It displays the current review and publication status. The contact email is for verification; an automatic status email is not currently sent.</p></article>
+      <article><strong>What if changes are needed?</strong><p>A submission marked “Changes requested” remains offline. If an editor adds suggestions, you can read them on the private page, update the product information there and resubmit for review.</p></article>
+    </div>
+  </section>
 
   <section class="submission-visual" aria-labelledby="submission-visual-title">
     <div class="submission-visual-copy">
@@ -145,7 +160,7 @@ image_caption: The Nexscope product submission workflow combines public product 
           <label><strong class="field-label">Contact email <span class="required-mark" aria-label="required">*</span></strong><span>Kept private and never displayed on the public product page.</span><input name="submitterEmail" type="email" maxlength="254" required autocomplete="email" inputmode="email" placeholder="you@company.com"><small class="field-error" id="submitterEmail-error" data-error-for="submitterEmail" role="alert" hidden></small></label>
           <div class="trust-note"><strong>Your email stays private.</strong><span>It is used only to verify important requests to update or remove product information, and never for marketing.</span></div>
           <p class="form-error" role="alert" hidden></p>
-          <div class="submission-actions"><button class="showcase-primary" type="submit">Submit product for review <span aria-hidden="true">↗</span></button><small>Use an inbox you can access later.</small></div>
+          <div class="submission-actions"><button class="showcase-primary" type="submit">Submit product for review <span aria-hidden="true">↗</span></button><small>After submitting, save your private management link to check the result and make changes.</small></div>
         </div>
       </div>
     </form>

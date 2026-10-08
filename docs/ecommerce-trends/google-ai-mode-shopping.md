@@ -49,6 +49,8 @@ faq:
 
 The product URL supplied to Merchant Center must lead to a page where a shopper can buy the item, with matching price and availability. A [Nexscope Product Gallery]({{ '/product-showcase/' | relative_url }}) page sends visitors to another seller and is therefore a supplementary editorial page, not the seller's Merchant Center landing page. Google's [merchant listing rules](https://developers.google.com/search/docs/appearance/structured-data/merchant-listing) distinguish purchase pages from pages that only link to a seller. An Amazon ASIN submitted to Nexscope likewise does not grant control over that marketplace offer.
 
+If you already have an accurate selling page and want a separate, reviewed page that explains the product for shoppers, [check the Gallery submission requirements]({{ '/product-showcase/submit/' | relative_url }}). Keep the Merchant Center feed and your own selling page as the source for current offers; a Gallery submission does not replace either one.
+
 ## What can shoppers do in Google AI Mode?
 
 Google has described AI-assisted shopping experiences that support complex questions, visual exploration, product comparison, and virtual try-on in eligible markets and categories. Google also continues to develop commerce standards and merchant tools for agentic discovery and checkout.
