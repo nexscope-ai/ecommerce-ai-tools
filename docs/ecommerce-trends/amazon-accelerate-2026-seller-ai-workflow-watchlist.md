@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Amazon Accelerate 2026: Seller AI Updates"
-description: "Review confirmed Amazon Accelerate 2026 seller AI updates, what they mean for research, listings and creative workflows, and how to test them safely."
+title: "Amazon Accelerate 2026: Seller Assistant, Canvas & AI"
+description: "What did Amazon announce at Accelerate 2026? Compare Seller Assistant, Canvas and plugin access, then use a one-SKU checklist to test seller AI workflows."
 permalink: /ecommerce-trends/amazon-accelerate-2026-seller-ai-workflow-watchlist/
 last_reviewed: 2026-09-24
 date_published: 2026-09-22
-date_modified: 2026-10-07
-last_modified_at: 2026-10-07
+date_modified: 2026-10-08
+last_modified_at: 2026-10-08
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -18,11 +18,11 @@ keywords:
   - Amazon product research
 ---
 
-# Amazon Accelerate 2026 updates: what changed and what sellers should test
+# Amazon Accelerate 2026: Seller Assistant, Canvas and AI workflows
 
-**By Nexscope Team · Updated September 24, 2026**
+**By Nexscope Team · Published September 22, 2026 · Sources checked September 24, 2026**
 
-Amazon Accelerate 2026 runs **September 22–24 in Seattle**. On September 23, Amazon published confirmed upgrades to Seller Assistant, new always-on workflows, a visual Canvas workspace, and a Selling Partner plugin for Amazon Quick and Anthropic's Claude. Those announcements are meaningful, but availability differs: the plugin is in beta for sellers in Amazon's U.S. stores, Claude access is beta, and some Seller Assistant capabilities depend on the seller's account. A launch headline is therefore the start of a test, not proof of business impact.
+**The seller AI updates announced at Amazon Accelerate 2026 center on Seller Assistant, its Canvas workspace and continuous workflows, plus a Selling Partner plugin for Amazon Quick and Anthropic's Claude.** Amazon Accelerate ran September 22–24 in Seattle, and Amazon published these details on September 23. Availability differs: the plugin is in beta for sellers in Amazon's U.S. stores, Claude access is beta, and some Seller Assistant capabilities depend on the seller's account. A launch headline is therefore the start of a test, not proof of business impact.
 
 This page separates Amazon's own September 23 publication from event previews and product demonstrations. Check the [official Amazon announcement](https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude), [event page](https://sell.amazon.com/events), and [Seller Forums agenda update](https://sellercentral.amazon.com/seller-forums/discussions/t/3ab1210c-8a5f-449c-b5af-09b0ae67b8dd) for later changes.
 

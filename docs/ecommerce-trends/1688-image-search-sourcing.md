@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "1688 Image Search for Product Sourcing"
-description: "Search 1688 with a product photo, compare offer IDs, prices and MOQ, and verify shortlisted suppliers with a tested Nexscope API workflow."
+title: "1688 Search by Image: Compare Products & Suppliers"
+description: "How to search 1688 by image: compare visually similar offers, prices and MOQ, then check product details and supplier claims before ordering. Includes a real API test."
 permalink: /ecommerce-trends/1688-image-search-sourcing/
 last_reviewed: 2026-09-24
 date_published: 2026-09-20
-date_modified: 2026-10-07
+date_modified: 2026-10-08
 date: 2026-09-20
-last_modified_at: 2026-10-07
+last_modified_at: 2026-10-08
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -32,11 +32,11 @@ faq:
     answer: "No. A badge, score, sales figure, or listed price is a screening signal, not a guarantee. Confirm the applicable quantity tier, sample, specifications, company identity, compliance, production capacity, shipping, and payment terms independently."
 ---
 
-# How to search 1688 by image and vet sourcing candidates
+# 1688 search by image: how to compare products and vet suppliers
 
-**By Nexscope Team · Updated September 24, 2026**
+**By Nexscope Team · Published September 20, 2026 · API test reviewed September 24, 2026**
 
-A product photo can start a 1688 sourcing search, but it cannot tell you which listing is the original factory or which supplier can deliver your exact specification. Alibaba Group describes [1688 as a domestic wholesale marketplace](https://www.alibabagroup.com/en-US/about-alibaba-businesses-1941299332078632960). The practical job for an overseas seller is to turn visual matches into a small, reviewable list of offers, then verify those offers before paying.
+**To search 1688 by image, submit a suitable product photo, save the matching offer IDs, and compare the exact variant, price tier and minimum order quantity before contacting suppliers.** A photo cannot tell you which listing is the original factory or who can deliver your exact specification. Alibaba Group describes [1688 as a domestic wholesale marketplace](https://www.alibabagroup.com/en-US/about-alibaba-businesses-1941299332078632960). The practical job for an overseas seller is to turn visual matches into a small, reviewable list of offers, then verify those offers before paying.
 
 > **The short answer:** run 1688 image search with a suitable product photo, record the returned listing IDs, compare price and minimum order quantity on a like-for-like basis, inspect the promising listings in Product Detail, and use Chinese-keyword search to catch alternatives the photo missed. Treat the resulting shortlist as research, not supplier certification.
 

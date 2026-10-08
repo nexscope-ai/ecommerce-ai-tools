@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Meta Muse Shopping Agent: Merchant Guide"
-description: "What Meta confirms about Muse shopping, what remains unknown, and how merchants can test product information, checkout, and agent access."
+title: "Meta Muse Shopping Agent: What Merchants Can Verify"
+description: "Can Meta Muse shop your store? See what Meta has confirmed, what remains unknown, and a merchant checklist for product facts, access and checkout approval."
 permalink: /ecommerce-trends/meta-muse-shopping-agent-merchant-readiness/
 last_reviewed: 2026-09-30
 date_published: 2026-09-22
-date_modified: 2026-09-30
-last_modified_at: 2026-09-30
+date_modified: 2026-10-08
+last_modified_at: 2026-10-08
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -26,11 +26,11 @@ faq:
     answer: "No. Accurate structured data can make a page clearer to some systems, but Meta has not documented it as a Muse inclusion or ranking guarantee. Test what an authorized Muse session actually sees."
 ---
 
-# Meta Muse shopping agent: what merchants can verify now
+# Meta Muse shopping agent: what merchants can verify
 
 **By Nexscope Team · Published September 22, 2026**
 
-**Meta Muse is a personal AI agent that can browse the web and prepare a purchase for the shopper's approval.** For merchants, the immediate question is whether an agent can verify the exact product, offer, and checkout terms a shopper requested. Meta's launch materials do not describe a merchant-submission feed or recommendation formula for Muse. A readable product page is a sensible preparation step, not a guarantee of inclusion—and some retailers may not permit Muse access.
+**Meta Muse is a personal AI agent that can browse the web and prepare a purchase for the shopper's approval.** Merchants cannot assume it will visit or recommend their store. The useful first test is whether an authorized Muse session can verify the exact product, offer and checkout terms a shopper requested. Meta's launch materials do not describe a merchant-submission feed or recommendation formula for Muse. A readable product page is a sensible preparation step, not a guarantee of inclusion—and some retailers may not permit Muse access.
 
 > **Key takeaways:** Muse is Meta's personal AI agent, not the Muse Image or Muse Video model. A merchant should make variant-level facts, price, availability, shipping, returns, and evidence easy to find and internally consistent. Test an ordinary, permitted shopper journey rather than guessing at Muse's private ranking. Record what the agent actually saw and did. No page markup guarantees that Muse will visit or recommend a product.
 
