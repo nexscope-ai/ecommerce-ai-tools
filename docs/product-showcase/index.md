@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ecommerce Product Gallery for AI-Assisted Shopping | Nexscope
-description: Explore reviewed ecommerce product submissions with clear product details, images and source links. Submit a product for editorial feedback and learn how to assess AI shopping visibility.
+description: Explore reviewed ecommerce products and submit yours to Nexscope Product Gallery for free. Approved products may receive a public page with images, details and a source link.
 permalink: /product-showcase/
 last_modified_at: 2026-10-08
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
@@ -26,6 +26,8 @@ faq:
     answer: "Relevant documented capabilities include Amazon product research, review and price data, SEO keyword metrics, 1688 product sourcing and image search, plus ecommerce image and video generation APIs. Current inputs, outputs, access, and credits are listed in the API documentation."
   - question: "Do I need to connect or authorize my store?"
     answer: "No. A submission uses public product-page links or an Amazon ASIN. Nexscope does not request a store password, seller token, or payment access for this workflow."
+  - question: "Is it free to submit a product?"
+    answer: "Yes. Submitting a product to Nexscope Product Gallery and its editorial review are free. Publication is subject to approval. Optional Nexscope API tools are separate and may use credits."
   - question: "Does submitting a product guarantee publication or search performance?"
     answer: "No. Every submission remains offline until reviewed, and Nexscope does not guarantee approval, publication, search rankings, AI citations, traffic, or sales."
   - question: "What happens after I submit a product?"
@@ -34,7 +36,7 @@ faq:
 <section class="showcase-hero" data-showcase-view>
   <div class="showcase-hero-copy">
     <span class="eyebrow">Nexscope product showcase</span>
-    <p class="showcase-status">SUBMISSIONS OPEN · PAGES PUBLISHED AFTER REVIEW</p>
+    <p class="showcase-status">FREE SUBMISSION · PAGES PUBLISHED AFTER REVIEW</p>
     <h1>Discover ecommerce products<br><span>with useful context.</span></h1>
     <p>Explore reviewed product submissions with details, images, optional video and a link to the original listing. See what a product is for before deciding where to buy.</p>
     <div class="showcase-actions">
@@ -132,6 +134,7 @@ faq:
     <details><summary>What professional product-page recommendations can Nexscope provide?</summary><p>Editorial recommendations may cover positioning, product descriptions, supporting evidence, image coverage, video and the clarity of public destination links. Recommendations are based only on the submitted public materials.</p></details>
     <details><summary>Which Nexscope APIs support ecommerce product workflows?</summary><p>Relevant documented capabilities include Amazon product research, review and price data, SEO keyword metrics, 1688 product sourcing and image search, plus ecommerce image and video generation APIs. Current inputs, outputs, access and credits are listed in the API documentation.</p></details>
     <details><summary>Do I need to connect or authorize my store?</summary><p>No. A submission uses public product-page links or an Amazon ASIN. Nexscope does not request a store password, seller token or payment access for this workflow.</p></details>
+    <details><summary>Is it free to submit a product?</summary><p>Yes. Submitting a product to Nexscope Product Gallery and its editorial review are free. Publication is subject to approval. Optional Nexscope API tools are separate and may use credits.</p></details>
     <details><summary>Does submitting a product guarantee publication or search performance?</summary><p>No. Every submission remains offline until reviewed, and Nexscope does not guarantee approval, publication, search rankings, AI citations, traffic or sales.</p></details>
     <details><summary>What happens after I submit a product?</summary><p>Save the private management link shown after submission. It shows the current review and publication status. There is no fixed review deadline or automatic status email. A product stays offline until approved and published. If changes are requested and an editor adds suggestions, read them there, edit the submission and resubmit it.</p></details>
   </div>

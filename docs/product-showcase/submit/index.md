@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Submit a Product to Nexscope Gallery | Ecommerce Product Review
-description: Submit a public product URL or Amazon ASIN with buyer-facing facts, images and a source link for editorial review and possible inclusion in Nexscope Product Gallery.
+description: Submit a product to Nexscope Product Gallery for free. Share a public product URL or Amazon ASIN, buyer-facing facts and images for editorial review.
 permalink: /product-showcase/submit/
 last_modified_at: 2026-10-08
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
@@ -19,7 +19,7 @@ image_caption: The Nexscope product submission workflow combines public product 
     <div class="showcase-form-heading">
       <span class="eyebrow">Product showcase submission</span>
       <h1>Submit your product<br><span>with the facts buyers need.</span></h1>
-      <p>Share a public product page or Amazon ASIN for possible inclusion in the Nexscope Product Gallery. Describe who the product is for, its decision-making details and what buyers should verify. Our team reviews submissions before publication; no store connection or seller token is required.</p>
+      <p>Submit your product for free by sharing a public product page or Amazon ASIN. Describe who the product is for, its decision-making details and what buyers should verify. Our team reviews submissions before publication; no store connection or seller token is required.</p>
       <div class="showcase-form-heading-actions">
         <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Start your submission <span aria-hidden="true">↓</span></a>
       </div>
@@ -27,7 +27,7 @@ image_caption: The Nexscope product submission workflow combines public product 
     <aside class="submission-promise" aria-label="Submission promises">
       <span class="submission-promise-label">BEFORE YOU START</span>
       <strong>Have these ready</strong>
-      <p>Your submission stays offline until it is reviewed and approved.</p>
+      <p>Submission and editorial review are free. Your product stays offline until it is reviewed and approved.</p>
       <ul>
         <li>One public product URL or Amazon ASIN</li>
         <li>Exact product name, model or variant</li>
@@ -64,7 +64,7 @@ image_caption: The Nexscope product submission workflow combines public product 
         <a class="showcase-quiet-link" href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How to prepare product facts for AI shopping <span aria-hidden="true">→</span></a>
         <a class="showcase-quiet-link" href="https://www.nexscope.ai/api-docs?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=submission_api_capabilities">See what each API can do <span aria-hidden="true">↗</span></a>
       </div>
-      <small class="showcase-disclaimer">Gallery approval does not submit a merchant feed to ChatGPT or Google. Editorial guidance and AI visibility reports do not guarantee rankings, recommendations, traffic or sales.</small>
+      <small class="showcase-disclaimer">Gallery submission and editorial review are free; optional Nexscope API tools are separate and may use credits. Gallery approval does not submit a merchant feed to ChatGPT or Google. Editorial guidance and AI visibility reports do not guarantee rankings, recommendations, traffic or sales.</small>
     </div>
     <figure class="submission-visual-art">
       <img src="{{ '/assets/product-showcase-review-api.webp' | relative_url }}" width="1536" height="1024" loading="lazy" alt="A public product page being reviewed with connected ecommerce research, keyword, sourcing and creative capabilities">
