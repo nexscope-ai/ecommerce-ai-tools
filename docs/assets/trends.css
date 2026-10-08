@@ -185,3 +185,11 @@
 .resource-card-footer { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 22px; }
 .resource-card .resource-card-footer .read-link { padding-top: 0; }
 .resource-card .resource-card-footer time { margin: 0 0 0 auto; white-space: nowrap; text-align: right; }
+
+/* Fill the article column on larger screens; retain horizontal scrolling for narrow tables. */
+@media (min-width: 601px) {
+  .trends-article article table {
+    display: table;
+    width: 100%;
+  }
+}
