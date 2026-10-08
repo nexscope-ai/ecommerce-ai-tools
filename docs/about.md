@@ -3,8 +3,8 @@ layout: default
 title: About Nexscope and This Learning Center
 description: Learn what Nexscope does, who maintains this official learning center, how its tools and evidence are described, and where to verify current product details.
 permalink: /about/
-last_reviewed: 2026-10-07
-last_modified_at: 2026-10-07
+last_reviewed: 2026-10-08
+last_modified_at: 2026-10-08
 standalone_page: true
 ---
 
@@ -13,6 +13,8 @@ standalone_page: true
 **Nexscope is an ecommerce intelligence and AI-creative platform for sellers, brands, agencies and developers.** It brings product research, marketplace data, APIs, MCP workflows and product-image and video tools into one product family.
 
 This is the official Nexscope learning center. It explains how to investigate ecommerce questions, use supported tools and APIs, inspect dated evidence records, and understand what a result can and cannot establish.
+
+For company-level information about the Nexscope brand, products and official web properties, see [About Nexscope](https://learn.nexscope.ai/about/).
 
 ## Who this site is for
 
