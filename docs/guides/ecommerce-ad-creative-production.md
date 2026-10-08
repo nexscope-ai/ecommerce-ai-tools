@@ -23,6 +23,8 @@ faq:
     answer: Yes. Nexscope Product Photography Service accepts a product photo, listing link, reference style, or campaign idea as a starting point, then reviews the required formats and image mix.
   - question: Which Nexscope service should I contact for ad visuals?
     answer: Use Ecommerce Growth Services when you want creative direction in a broader product or launch plan. Use Product Photography Service when the main need is a finished set of studio, lifestyle, listing, or ad images.
+  - question: Do better product images guarantee stronger ad performance?
+    answer: No. Review product accuracy first, then compare approved creative variants using channel reporting and product-page outcomes. A click or engagement change alone does not prove that an image caused more sales.
 ---
 
 # How to make ecommerce ad creatives from a product brief
@@ -34,6 +36,14 @@ faq:
 Modern commerce marketing connects product context, creative direction, and asset production in one process. A seller can use that principle without buying a large advertising platform: prepare one brief, turn it into several purposeful images, and check every variation against the actual product. If you need help doing that work, Nexscope offers [Ecommerce Growth Services](https://www.nexscope.ai/ecommerce-growth-services?service=aiPhotos&co-from=learn-ad-creative#inquiry) and a [Product Photography Service](https://www.nexscope.ai/product-photography-service?co-from=learn-ad-creative#inquiry). The right entry point depends on whether you need a broader creative plan or a finished image pack.
 
 > **Quick answer:** Start with one SKU, one audience, and the buyer question the image should answer. Supply real product photos and approved claims. Plan a clean product view, a useful detail, an in-use scene, and placement-specific crops only where they help. Review the final images for product accuracy before anyone uses them in an ad.
+
+## Which route fits your current creative task?
+
+| Your situation | Best starting point | Why |
+| --- | --- | --- |
+| You have one reference image and want to explore concepts yourself | [AI Product Image Generator guide]({{ '/ai-product-image-generator/' | relative_url }}) | You control prompts and review each output; the tool does not approve product claims or channel rules. |
+| Your product story and visual angles are still unclear | [Ecommerce Growth Services — AI Product Creatives](https://www.nexscope.ai/ecommerce-growth-services?service=aiPhotos&co-from=learn-ad-creative#inquiry) | Discuss the product, buyer questions, listing context, and creative direction together. |
+| You know what images you need and want a finished pack | [Product Photography Service](https://www.nexscope.ai/product-photography-service?co-from=learn-ad-creative#inquiry) | Request studio, model, lifestyle, listing, PDP, or ad-ready images from product references. |
 
 ## Why do ecommerce ads need more than one good-looking photo?
 
@@ -65,6 +75,12 @@ For a *hypothetical* travel mug, the brief might call for a clean SKU shot, a cl
 
 An AI image generator can help explore possible scenes, but it does not verify product truth or a platform's current ad rules. The [Nexscope AI product image guide]({{ '/ai-product-image-generator/' | relative_url }}) explains how to review self-service outputs against a real reference. For managed production, the two service inquiries below let you share the product and ask for a proposed scope.
 
+## What does a real image test tell us about quality control?
+
+In one [published Nexscope GPT 2.5 Flare reference-image test]({{ '/api-evidence/gpt-image-2-5-flare/' | relative_url }}), a request for one 2K square image returned a 2048 × 2048 PNG and a successful task status. Human review still found that the label size and parts of the bottle and cap proportions had changed. The source was an unbranded generated concept, so the output was **not** approved as an exact-SKU listing image.
+
+This is one dated observation, not a model benchmark or proof about every image. Its practical lesson for an ad pack is narrower: a technically successful generation can still fail product-fidelity review. Preserve the source reference and compare the finished creative with the actual item before approving it.
+
 ## Which Nexscope service fits the job?
 
 **Choose [Ecommerce Growth Services — AI Product Creatives](https://www.nexscope.ai/ecommerce-growth-services?service=aiPhotos&co-from=learn-ad-creative#inquiry)** when the product story, buyer questions, listing context, and image directions need to be worked out together. The growth-services page includes research, listing preparation, and creative support as part of a wider product or launch workflow. Its inquiry form can be opened with the image-related need selected.
@@ -82,6 +98,10 @@ Send the product or listing link, your sales channel, the existing product photo
 
 Before approving any final asset, compare it with the real SKU and the current rules for the destination channel. A visually polished image may still be unsuitable if it changes the product or creates an expectation the listing cannot support.
 
+Once the seller or campaign team uses the approved assets, record which image variant appeared in each placement. Review platform-reported impressions and clicks alongside product-page engagement and purchases where measurement is available. Keep audience, placement, offer, and time period in view; a change in one metric is a clue for the next test, not proof that a creative alone caused the result.
+
+The service descriptions above were checked against Nexscope's [Ecommerce Growth Services](https://www.nexscope.ai/ecommerce-growth-services) and [Product Photography Service](https://www.nexscope.ai/product-photography-service) pages on October 8, 2026. Availability and final deliverables are confirmed through the inquiry, and the dated image test should not be read as a service portfolio result.
+
 ## Frequently asked questions
 
 ### Does Nexscope automatically launch ads when it creates product images?
@@ -95,3 +115,7 @@ Yes. Product Photography Service accepts a product photo, listing link, referenc
 ### Which Nexscope service should I contact for ad visuals?
 
 Start with Ecommerce Growth Services if the visual direction needs to be planned alongside the product or launch. Start with Product Photography Service if you already know what you sell and primarily need the finished studio, lifestyle, listing, or ad images. Explain both needs in the form if the boundary is unclear.
+
+### Do better product images guarantee stronger ad performance?
+
+No. First confirm that each image represents the real product and fits its intended placement. After it is used, compare approved variants with the channel's reporting and the product page's outcomes. A change in clicks or engagement by itself does not establish that the image caused more sales.
