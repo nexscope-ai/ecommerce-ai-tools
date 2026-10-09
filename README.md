@@ -4,6 +4,8 @@ Practical ecommerce research, SEO, creative AI, and API workflows from the Nexsc
 
 [Explore the learning hub](https://learn.nexscope.ai/ecommerce-ai-tools/) · [Explore ecommerce tools](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) · [Browse API docs](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) · [Ask the community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
 
+**For sellers:** [Which part of your product page is hardest to improve?](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16) Reply A, B, C, or D. No store link or private data is needed; the Nexscope team will respond with a practical first check or a relevant guide.
+
 New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header). Credit use and API access vary by action and account.
 
 ## Explore ecommerce tools
@@ -30,7 +32,7 @@ The Amazon-to-1688, TikTok Shop and SEO Keyword Planner workflows accept a visit
 
 [Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) gives sellers another public place to present a product and receive editorial suggestions. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. The Nexscope team reviews submissions before publication and suggests improvements to positioning, product details, visuals, video, or destination links based on the public material provided.
 
-**[Submit a product for review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Discuss the workflow](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
+**[Submit a product for review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Share your product-page challenge](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
 
 No store connection, seller token, or payment access is required. Submissions remain offline until reviewed and approved. Publication, search rankings, traffic, and sales are not guaranteed.
 
