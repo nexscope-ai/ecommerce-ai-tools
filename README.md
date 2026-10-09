@@ -30,7 +30,7 @@ The Amazon-to-1688, TikTok Shop and SEO Keyword Planner workflows accept a visit
 
 ## Product Gallery: get feedback on your product page
 
-[The free ecommerce product page review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) starts with feedback on the product page you already have. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. After editorial review, read what works and any evidence-based improvements on your private management page, whether or not the product is approved for publication. We do not invent changes to reach a target number. If approved and published, the product also receives a free Gallery page linking to the original listing.
+[The free ecommerce product page review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) starts with feedback on the product page you already have. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. After editorial review, read what works and any evidence-based improvements on your private management page, whether or not the product is approved for publication. We do not invent changes to reach a target number. If approved and published, the product also receives a free public Gallery page, creating another discovery route to the original listing without guaranteed traffic.
 
 **[Request free product-page feedback](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [How the review works](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Share your product-page challenge](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Submit a Product Page for Free Feedback | Nexscope
-description: Submit a public product URL or Amazon ASIN with product details and images for free editorial feedback. Save a private link to read the review and status.
+description: Submit a product URL or Amazon ASIN for free professional product-page feedback. See what works and get specific improvement advice where needed.
 permalink: /product-showcase/submit/
 last_modified_at: 2026-10-09
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
@@ -19,7 +19,7 @@ image_caption: Submit product details for editorial review and possible free lis
     <div class="showcase-form-heading">
       <span class="eyebrow">Submit a product page for editorial review</span>
       <h1>Submit your product page<br><span>for free feedback.</span></h1>
-      <p>Submit one public Shopify, WooCommerce or other product URL—or an Amazon ASIN—with verified details and images. After editorial review, read what works and any evidence-based improvements on your private management page. If approved and published, your product can also receive a free Nexscope Gallery page linking to the original listing. No store connection or seller token is required.</p>
+      <p>Submit one public Shopify, WooCommerce or other product URL—or an Amazon ASIN—with verified details and images. After editorial review, read professional feedback on what works and any evidence-based improvements on your private management page. If approved and published, your product can also receive a free Nexscope Gallery page linking to the original listing. No store connection or seller token is required.</p>
       <div class="showcase-form-heading-actions">
         <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Request free product-page feedback <span aria-hidden="true">↓</span></a>
       </div>
@@ -29,7 +29,7 @@ image_caption: Submit product details for editorial review and possible free lis
       <strong>Useful feedback, no filler</strong>
       <p>Our editors review one product at a time. If a change would help, we explain it. If no material gap appears in what we checked, we say so. Your feedback appears on a private page after review; a public Gallery page is an approval-dependent benefit.</p>
       <ul>
-        <li>Evidence-based feedback on facts, images and buyer questions</li>
+        <li>Professional feedback on product facts, images and buyer questions</li>
         <li>A free public page linked to your original listing if approved and published</li>
         <li>A private link to check status and update your submission</li>
       </ul>
