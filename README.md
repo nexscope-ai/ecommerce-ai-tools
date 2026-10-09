@@ -53,7 +53,7 @@ Source: Nexscope production API usage aggregates. The line shows a seven-day rol
 | Question | Start with |
 | --- | --- |
 | How can I analyze negative Amazon reviews and find product improvements? | [Review analysis guide](docs/guides/amazon-negative-review-analysis.md) and [dated case study](docs/case-studies/amazon-review-case-study.md) |
-| How can I research competitor keywords? | [Amazon competitor keyword workflow](docs/guides/amazon-competitor-keyword-research.md) |
+| How can I plan ecommerce keywords and check competing products? | [SEO Keyword Planner workflow](docs/guides/seo-keyword-planner.md) and [dated API test](docs/api-evidence/portable-blender-keyword-competitor.md) |
 | How can I audit an ecommerce product page? | [Website SEO audit guide](docs/guides/website-seo-audit-guide.md) |
 | How can I optimize an Amazon listing with evidence? | [Listing optimization guide](docs/guides/amazon-listing-optimization-tool.md) |
 | How can I create accurate product images or videos? | [Image guide](docs/guides/ai-product-image-generator.md) · [Video guide](docs/guides/ai-video-generator.md) |

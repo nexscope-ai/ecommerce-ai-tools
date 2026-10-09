@@ -5,8 +5,8 @@ description: Build a practical GA4 workflow for AI referral traffic, landing pag
 permalink: /ai-referral-traffic-ga4/
 last_reviewed: 2026-09-30
 date_published: 2026-09-18
-date_modified: 2026-09-30
-last_modified_at: 2026-09-30
+date_modified: 2026-10-09
+last_modified_at: 2026-10-09
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -75,6 +75,8 @@ Domain names and routing behavior can change. Review the rule monthly.
 ## Step 3: separate paid, owned, and earned AI traffic
 
 Use UTM parameters on links you control. For example, a link in an owned assistant integration, partner placement, or campaign should identify its campaign and medium. Do not overwrite genuine referrer data on links you do not control.
+
+For the Nexscope Learn-to-main-site journey, keep the two sources distinct. [OpenAI says ChatGPT Search links include](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq) `utm_source=chatgpt.com`, so a visitor may arrive at Learn with that marker. A later click from Learn to `www.nexscope.ai` uses `utm_source=learn.nexscope.ai`, because Learn is the **immediate** referring channel. When the entry signal is present, that outbound link also carries `learn_entry_source=chatgpt.com` as a separate upstream marker. On the main site, filter landing-page URLs or captured landing-page paths for that marker within Learn-attributed visits. Do not relabel those visits as direct ChatGPT sessions or add the two counts together: one visitor can generate both events. Missing referrers, analytics consent, blocked scripts, or a later session can still make this a lower-bound view.
 
 | Traffic type | Recommended evidence | Important limitation |
 | --- | --- | --- |

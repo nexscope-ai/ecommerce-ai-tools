@@ -1,5 +1,29 @@
 (() => {
   const officialProductHosts = new Set(['www.nexscope.ai', 'nexscope.ai']);
+  const entrySourceKey = 'nexscope_learn_entry_source_v1';
+  const entrySourceMaxAge = 30 * 60 * 1000;
+  const learnEntrySource = (() => {
+    const normalize = source => /^(?:[a-z0-9-]+\.)?chatgpt\.com$|^chat\.openai\.com$/i.test(source || '') ? 'chatgpt.com' : '';
+    const campaignSource = new URLSearchParams(window.location.search).get('utm_source');
+    let referrerHost = '';
+    try { referrerHost = new URL(document.referrer).hostname.toLowerCase(); } catch (_) { /* No usable referrer. */ }
+    const externalReferrer = referrerHost && referrerHost !== window.location.hostname;
+    let previous = null;
+    try { previous = JSON.parse(window.sessionStorage.getItem(entrySourceKey) || 'null'); } catch (_) { /* Storage may be unavailable. */ }
+    const previousAge = Date.now() - previous?.savedAt;
+    const source = campaignSource !== null
+      ? normalize(campaignSource)
+      : externalReferrer
+        ? normalize(referrerHost)
+        : previous?.source === 'chatgpt.com' && previousAge >= 0 && previousAge < entrySourceMaxAge
+          ? previous.source
+          : '';
+    try {
+      if (source) window.sessionStorage.setItem(entrySourceKey, JSON.stringify({ source, savedAt: Date.now() }));
+      else window.sessionStorage.removeItem(entrySourceKey);
+    } catch (_) { /* Attribution must not block navigation. */ }
+    return source;
+  })();
   const campaignFromPath = () => {
     const segments = window.location.pathname.split('/').filter(Boolean);
     const slug = segments.at(-1) === 'ecommerce-ai-tools' ? 'learning_center' : segments.at(-1);
@@ -23,6 +47,8 @@
     url.searchParams.set('utm_medium', 'referral');
     url.searchParams.set('utm_campaign', link.dataset.utmCampaign || campaignFromPath());
     url.searchParams.set('utm_content', contentFromLink(link, url));
+    if (learnEntrySource) url.searchParams.set('learn_entry_source', learnEntrySource);
+    else url.searchParams.delete('learn_entry_source');
     link.href = url.href;
     link.setAttribute('data-track', 'start_using');
   });
@@ -86,6 +112,14 @@
   });
 
   document.addEventListener('click', clickEvent => {
+    const mainSiteLink = clickEvent.target.closest?.('a[data-track="start_using"][href]');
+    if (mainSiteLink) {
+      const destination = new URL(mainSiteLink.href, window.location.href);
+      reportEvent('learn_to_main_click', {
+        destination_path: destination.pathname,
+        learn_entry_source: learnEntrySource || 'unattributed',
+      });
+    }
     const link = clickEvent.target.closest?.('[data-article-next-step][href]');
     if (!link) return;
     const destination = new URL(link.href, window.location.href);

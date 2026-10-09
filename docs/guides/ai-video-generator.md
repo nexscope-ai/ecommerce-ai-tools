@@ -5,8 +5,8 @@ description: Try a free AI video generator workflow for ecommerce product images
 permalink: /ai-video-generator/
 last_reviewed: 2026-09-17
 date_published: 2026-09-15
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+date_modified: 2026-10-09
+last_modified_at: 2026-10-09
 author: Nexscope Team
 schema_type: Article
 next_step:
@@ -26,7 +26,7 @@ image_caption: "Illustration: a consistent product image, a focused motion promp
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 15, 2026 · Updated September 17, 2026**
+**By Nexscope Team · Published September 15, 2026 · Updated October 9, 2026**
 
 An **AI video generator** creates a video from inputs such as images and a description of the desired motion. Nexscope's browser tool lets ecommerce sellers upload product images, choose a video model, describe a scene, review the estimated credit cost, and generate a video to preview and download.
 
@@ -82,6 +82,12 @@ Model names alone do not establish which is best for your product. Compare the s
 | Claims | Scenes that suggest untested performance, capacity, or durability | Remove unsupported implications before using the clip. |
 
 For a reproducible comparison, record the input image, prompt, model, selected settings, date, actual credits used, and your review notes. Save the output alongside those inputs. A model-generated clip is creative material; it is not evidence of product performance.
+
+## What has Nexscope publicly tested here?
+
+This guide documents the browser workflow and an inspection checklist. **It does not contain a published, side-by-side video-generation test or a measured winner among the listed models.** The bottle prompt above is a suggested input, not an observed output. Before choosing a model for an exact SKU, make a short test clip with an image you are allowed to use, then log the model, duration, resolution, credits charged, output link, and any changes to shape, label, color, or packaging. If a detail changes, mark the clip unsuitable for a factual product demonstration.
+
+For a public example of how Nexscope separates a successful creative task from product fidelity, see the [dated GPT 2.5 Flare image-edit record]({{ '/api-evidence/gpt-image-2-5-flare/' | relative_url }}). That is an **image** test, not evidence that any video model preserves the same SKU.
 
 ## Is this a free AI video generator?
 

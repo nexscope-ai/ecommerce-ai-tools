@@ -5,8 +5,8 @@ description: Start using Nexscope browser tools and API documentation for Amazon
 permalink: /getting-started/
 date_published: 2026-09-14
 last_reviewed: 2026-09-15
-date_modified: 2026-09-15
-last_modified_at: 2026-09-15
+date_modified: 2026-10-09
+last_modified_at: 2026-10-09
 schema_type: Article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
 image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
@@ -48,6 +48,8 @@ Enter a competitor ASIN and marketplace, request recent 1–2 star reviews, and 
 ## SEO Keyword Planner
 
 Explore US English Google keyword candidates and metrics, then request matching Amazon US products and an AI comparison. Google search volume is not Amazon search volume. Product sales figures are estimates when available.
+
+See the [SEO Keyword Planner workflow]({{ '/seo-keyword-planner/' | relative_url }}) for a dated `portable blender` test, its source data, and the product-relevance check that excluded a shaker bottle from the comparison.
 
 ## Website SEO Auditor
 

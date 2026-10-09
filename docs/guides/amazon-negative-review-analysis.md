@@ -5,8 +5,8 @@ description: "Use an Amazon review analyzer to preserve source comments, group r
 permalink: /amazon-negative-review-analysis/
 date_published: 2026-09-15
 last_reviewed: 2026-10-06
-date_modified: 2026-10-06
-last_modified_at: 2026-10-06
+date_modified: 2026-10-09
+last_modified_at: 2026-10-09
 author: Nexscope Team
 schema_type: Article
 next_step:
@@ -56,6 +56,8 @@ Analyze negative Amazon reviews by collecting a clearly defined sample of 1-star
 On September 15, 2026, a production run requested ten one-star and ten two-star reviews for Amazon US ASIN `B0G1FVPYNW`. It returned **10 unique review IDs: nine one-star and one two-star**. Human review found four returned comments that explicitly mentioned physical size or capacity.
 
 This supports a follow-up question about dimensions and listing clarity. It does not establish the product's overall rating distribution, defect rate, conversion rate or return rate. The [Amazon Reviews List evidence record]({{ '/api-evidence/amazon-reviews-list/' | relative_url }}) preserves the request, returned count, dates and interpretation limits; the [full case study]({{ '/amazon-review-case-study/' | relative_url }}) shows where human review rejected unsupported conclusions.
+
+**What should you do when an API returns fewer reviews than requested?** Treat the returned rows as the entire observed sample, not as the requested sample size. In this test, 20 requested reviews became 10 returned reviews, so a claim such as “four of 20 buyers complained about size” would be false. The defensible statement is that four of the 10 returned comments explicitly raised size or capacity. Preserve the requested and returned counts together whenever you share a summary.
 
 ## A practical workflow
 

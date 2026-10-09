@@ -5,9 +5,9 @@ description: "How to search 1688 by image: compare visually similar offers, pric
 permalink: /ecommerce-trends/1688-image-search-sourcing/
 last_reviewed: 2026-09-24
 date_published: 2026-09-20
-date_modified: 2026-10-08
+date_modified: 2026-10-09
 date: 2026-09-20
-last_modified_at: 2026-10-08
+last_modified_at: 2026-10-09
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -43,6 +43,8 @@ faq:
 **By Nexscope Team · Published September 20, 2026 · API test reviewed September 24, 2026**
 
 **To search 1688 by image, submit a suitable product photo, save the matching offer IDs, and compare the exact variant, price tier and minimum order quantity before contacting suppliers.** A photo cannot tell you which listing is the original factory or who can deliver your exact specification. Alibaba Group describes [1688 as a domestic wholesale marketplace](https://www.alibabagroup.com/en-US/about-alibaba-businesses-1941299332078632960). The practical job for an overseas seller is to turn visual matches into a small, reviewable list of offers, then verify those offers before paying.
+
+A [second dated Nexscope test]({{ '/api-evidence/portable-blender-amazon-1688/' | relative_url }}) connected one Amazon portable-blender product to 10 returned 1688 image-search offers and two offer-detail checks on October 7, 2026. That test is a separate sample from the amber-bottle test below; neither verifies a factory match or a landed-cost margin.
 
 > **The short answer:** run 1688 image search with a suitable product photo, record the returned listing IDs, compare price and minimum order quantity on a like-for-like basis, inspect the promising listings in Product Detail, and use Chinese-keyword search to catch alternatives the photo missed. Treat the resulting shortlist as research, not supplier certification.
 

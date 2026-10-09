@@ -15,6 +15,7 @@ Language: English
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-competitor-keyword-research/ — competitor keyword research workflow
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-negative-review-analysis/ — customer complaint and review analysis
 - https://learn.nexscope.ai/ecommerce-ai-tools/website-seo-audit-guide/ — ecommerce page SEO audit
+- https://learn.nexscope.ai/ecommerce-ai-tools/seo-keyword-planner/ — ecommerce keyword-planning workflow with a dated Google and Amazon test
 - https://learn.nexscope.ai/ecommerce-ai-tools/ai-video-generator/ — AI product-video workflow
 - https://learn.nexscope.ai/ecommerce-ai-tools/ai-product-image-generator/ — AI product-image workflow
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-listing-optimization-tool/ — evidence-led Amazon listing optimization workflow
