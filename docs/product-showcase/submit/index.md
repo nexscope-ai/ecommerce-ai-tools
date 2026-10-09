@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Get Free Product Page Feedback | Nexscope Gallery
-description: Share one product URL or Amazon ASIN for three specific editorial suggestions about your product page. Approved products can also receive a free Gallery page linked to the original listing.
+description: Share one product URL or Amazon ASIN for free editorial feedback on what works and what could improve. Approved products can also receive a free Gallery page linked to the original listing.
 permalink: /product-showcase/submit/
 last_modified_at: 2026-10-09
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
@@ -18,18 +18,18 @@ image_caption: Submit product details for editorial review and possible free lis
   <header class="showcase-form-intro">
     <div class="showcase-form-heading">
       <span class="eyebrow">Free product-page feedback</span>
-      <h1>Find what your product page<br><span>leaves unanswered.</span></h1>
-      <p>Share one public product page or Amazon ASIN, then add verified details and images. After editorial review, you will receive three specific suggestions on your private management page. If approved, your product can also receive a free Nexscope Gallery page linking to the original listing. No store connection or seller token is required.</p>
+      <h1>See your product page<br><span>through a buyer's eyes.</span></h1>
+      <p>Share one public product page or Amazon ASIN, then add verified details and images. After editorial review, read what works and any evidence-based improvements on your private management page. If approved and published, your product can also receive a free Nexscope Gallery page linking to the original listing. No store connection or seller token is required.</p>
       <div class="showcase-form-heading-actions">
         <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Request free product-page feedback <span aria-hidden="true">↓</span></a>
       </div>
     </div>
     <aside class="submission-promise" aria-label="Submission promises">
       <span class="submission-promise-label">WHAT YOU GET</span>
-      <strong>Three edits worth making</strong>
-      <p>Our editors review one product at a time. Your three suggestions appear on a private page after review; an approved public Gallery page is an added benefit.</p>
+      <strong>Useful feedback, no filler</strong>
+      <p>Our editors review one product at a time. If a change would help, we explain it. If no material gap appears in what we checked, we say so. Your feedback appears on a private page after review; a public Gallery page is an approval-dependent benefit.</p>
       <ul>
-        <li>Specific feedback on facts, images or unanswered buyer questions</li>
+        <li>Evidence-based feedback on facts, images and buyer questions</li>
         <li>A free public page linked to your original listing if approved and published</li>
         <li>A private link to check status and update your submission</li>
       </ul>
@@ -41,12 +41,12 @@ image_caption: Submit product details for editorial review and possible free lis
     <div class="submission-review-intro">
       <span class="eyebrow">Before you submit</span>
       <h2 id="submission-review-title">Know what happens next.</h2>
-      <p>Every reviewed submission receives three specific suggestions, whether or not it is published. There is no fixed review deadline. Your product stays offline until an editor approves it and publishes a page.</p>
+      <p>Every reviewed submission receives written editorial feedback, whether or not it is published. We only suggest changes when the submitted materials show a meaningful reason. There is no fixed review deadline. Your product stays offline until an editor approves it and publishes a page.</p>
     </div>
     <div class="submission-review-grid">
       <article><strong>What should I prepare?</strong><p>Bring a public HTTPS product page or Amazon ASIN, the exact product name, verified details, at least one accurate image and a contact email. No store authorization is needed.</p></article>
-      <article><strong>Where will I find my feedback?</strong><p>Save the private management link shown after submission. It displays your three suggestions after review, along with the review and publication status. No automatic status email is currently sent.</p></article>
-      <article><strong>What if changes are needed?</strong><p>A submission marked “Changes requested” remains offline. Read the editor's three suggestions on the private page, update the product information and resubmit for review.</p></article>
+      <article><strong>Where will I find my feedback?</strong><p>Save the private management link shown after submission. It displays the editor's feedback after review, along with the review and publication status. No automatic status email is currently sent.</p></article>
+      <article><strong>What if changes are needed?</strong><p>A submission marked “Changes requested” remains offline. Read the editor's specific feedback on the private page, update the product information and resubmit for review.</p></article>
     </div>
   </section>
 
@@ -54,7 +54,7 @@ image_caption: Submit product details for editorial review and possible free lis
     <div class="submission-visual-copy">
       <span class="eyebrow">More than a submission</span>
       <h2 id="submission-visual-title">Improve the page buyers already see.</h2>
-      <p>Buyers need to know whether a product fits, works with an existing device or meets a budget. Our editors look for gaps in the facts and images you provide, then give you three changes to consider on your original product page.</p>
+      <p>Buyers need to know whether a product fits, works with an existing device or meets a budget. Our editors check the facts and images you provide, call out what is clear, and suggest changes only where a buyer question remains unanswered.</p>
       <p>If approved and published, a Gallery page gives buyers another place to understand the product and find your original listing. Your store remains the source for current price, availability and purchase terms.</p>
       <div class="submission-visual-actions">
         <a class="showcase-quiet-link" href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How to prepare product facts for AI shopping <span aria-hidden="true">→</span></a>
@@ -155,7 +155,7 @@ image_caption: Submit product details for editorial review and possible free lis
           <label><strong class="field-label">Contact email <span class="required-mark" aria-label="required">*</span></strong><span>Kept private and never displayed on the public product page.</span><input name="submitterEmail" type="email" maxlength="254" required autocomplete="email" inputmode="email" placeholder="you@company.com"><small class="field-error" id="submitterEmail-error" data-error-for="submitterEmail" role="alert" hidden></small></label>
           <div class="trust-note"><strong>Your email stays private.</strong><span>It is used only to verify important requests to update or remove product information, and never for marketing.</span></div>
           <p class="form-error" role="alert" hidden></p>
-          <div class="submission-actions"><button class="showcase-primary" type="submit">Request free product-page feedback <span aria-hidden="true">↗</span></button><small>Save your private management link after submitting. Your three suggestions will appear there after editorial review.</small></div>
+          <div class="submission-actions"><button class="showcase-primary" type="submit">Request free product-page feedback <span aria-hidden="true">↗</span></button><small>Save your private management link after submitting. Your editorial feedback will appear there after review.</small></div>
         </div>
       </div>
     </form>
