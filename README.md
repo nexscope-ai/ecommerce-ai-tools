@@ -2,7 +2,7 @@
 
 Practical ecommerce research, SEO, creative AI, and API workflows from the Nexscope team. This repository is a public library of guides, dated evidence, examples, and support resources for sellers and developers. The hosted Nexscope application runs separately; its source code is not in this repository.
 
-[Explore the learning hub](https://learn.nexscope.ai/ecommerce-ai-tools/) · [Explore ecommerce tools](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) · [Browse API docs](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) · [Ask the community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
+[![Learning Hub](https://img.shields.io/badge/Learning%20Hub-6258E8?style=for-the-badge)](https://learn.nexscope.ai/ecommerce-ai-tools/) [![Ecommerce Tools](https://img.shields.io/badge/Ecommerce%20Tools-6258E8?style=for-the-badge)](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) [![API Docs](https://img.shields.io/badge/API%20Docs-6258E8?style=for-the-badge)](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) [![Community](https://img.shields.io/badge/Community-6258E8?style=for-the-badge)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
 
 **For sellers:** [Which part of your product page is hardest to improve?](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16) Reply A, B, C, or D. No store link or private data is needed; the Nexscope team will respond with a practical first check or a relevant guide.
 
