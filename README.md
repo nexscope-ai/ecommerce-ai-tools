@@ -30,11 +30,11 @@ The Amazon-to-1688, TikTok Shop and SEO Keyword Planner workflows accept a visit
 
 ## Product Gallery: get feedback on your product page
 
-[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) gives sellers another public place to present a product and receive editorial suggestions. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. The Nexscope team reviews submissions before publication and suggests improvements to positioning, product details, visuals, video, or destination links based on the public material provided.
+[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) starts with feedback on the product page you already have. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. After editorial review, you receive three specific suggestions on your private management page, whether or not the product is approved for publication. If approved and published, it also receives a free Gallery page linking to the original listing.
 
-**[Submit a product for review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Share your product-page challenge](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
+**[Request free product-page feedback](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Share your product-page challenge](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
 
-No store connection, seller token, or payment access is required. Submissions remain offline until reviewed and approved. Publication, search rankings, traffic, and sales are not guaranteed.
+No store connection, seller token, or payment access is required. Save the private management link shown after submission to read your feedback; there is no fixed review deadline or automatic status email. Submissions remain offline until approved and published. Publication, search rankings, traffic, and sales are not guaranteed.
 
 ## About Nexscope
 

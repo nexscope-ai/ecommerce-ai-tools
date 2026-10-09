@@ -19,7 +19,7 @@ private_page: true
         </div>
       </div>
       <h1>Manage your product submission.</h1>
-      <p>Keep this private link bookmarked. It lets you check the latest review and publishing status, update product information, or take a published product offline.</p>
+      <p>Keep this private link bookmarked. Your three product-page suggestions will appear here after editorial review. You can also check publishing status, update product information, or take a published product offline.</p>
       <p class="management-feedback" data-management-feedback role="status" hidden></p>
     </div>
     <a class="showcase-primary management-public-link" data-view-public-product href="" target="_blank" rel="noopener noreferrer" hidden>View product detail page <span aria-hidden="true">↗</span></a>
@@ -41,8 +41,8 @@ private_page: true
           <img src="https://learn.nexscope.ai/logo.png" alt="Nexscope" width="116" height="29">
           <span>Official recommendations</span>
         </div>
-        <h2 id="management-review-insights-title">Suggestions for your product page.</h2>
-        <p>Recommendations prepared by the official Nexscope editorial team for your submitted product page.</p>
+        <h2 id="management-review-insights-title">Three suggestions for your product page.</h2>
+        <p>Recommendations prepared by the Nexscope editorial team from the product information you submitted.</p>
       </header>
       <div class="management-score-badge" data-review-score hidden>
         <span>Product score</span>
