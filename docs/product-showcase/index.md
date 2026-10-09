@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Free Product Page Feedback and Gallery | Nexscope
-description: Submit a product URL or Amazon ASIN for an editorial review of what works and what could improve. Approved products can also receive a free Gallery page linking to the original listing.
+title: Free Ecommerce Product Page Review for Sellers | Nexscope
+description: Get a free editorial review of one ecommerce product page or Amazon ASIN. See what works and what buyers may need; approved products can join Nexscope Gallery.
 permalink: /product-showcase/
 last_modified_at: 2026-10-09
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
@@ -24,6 +24,8 @@ faq:
     answer: "After editorial review, the private management page shows written feedback based on the submitted public materials, whether or not the product is approved for publication. We explain what works and recommend specific changes only where the evidence supports them. If no material gap appears within the reviewed scope, we say so instead of inventing suggestions."
   - question: "Do I need to connect or authorize my store?"
     answer: "No. A submission uses public product-page links or an Amazon ASIN. Nexscope does not request a store password, seller token, or payment access for this workflow."
+  - question: "Can I submit a Shopify or WooCommerce product page, or an Amazon ASIN?"
+    answer: "Yes. Submit one public HTTPS product URL, such as a Shopify or WooCommerce product page, or select the Amazon ASIN option. Add verified product details and at least one accurate image. We review the submitted material, not private store analytics."
   - question: "Is product listing and display free?"
     answer: "Yes. Product submission and editorial review are completely free. If approved and published, listing and display in Nexscope Product Gallery are also completely free. Approval and search performance are not guaranteed."
   - question: "Does submitting a product guarantee publication or search performance?"
@@ -33,10 +35,10 @@ faq:
 ---
 <section class="showcase-hero" data-showcase-view>
   <div class="showcase-hero-copy">
-    <span class="eyebrow">Free product-page feedback for ecommerce sellers</span>
+    <span class="eyebrow">Free ecommerce product page review for sellers</span>
     <p class="showcase-status">SPECIFIC EDITORIAL FEEDBACK · FREE APPROVED DISPLAY</p>
     <h1>See your product page<br><span>through a buyer's eyes.</span></h1>
-    <p>Share one product URL or Amazon ASIN. Our editors review its facts, images and buyer questions, then explain what works and suggest changes only where needed. If approved and published, your product can also receive a free Gallery page linking to your original listing.</p>
+    <p>Share one public product page, including a Shopify or WooCommerce page, or an Amazon ASIN. Our editors review its facts, images and buyer questions, then explain what works and suggest changes only where needed. If approved and published, your product can also receive a free Gallery page linking to your original listing.</p>
     <div class="showcase-actions">
       <a class="showcase-primary" data-showcase-submit-cta="hero" href="{{ '/product-showcase/submit/' | relative_url }}">Request free product-page feedback ↗</a>
       <a class="showcase-quiet-link" href="#showcase-preview">See what you get <span aria-hidden="true">↓</span></a>
@@ -120,6 +122,7 @@ faq:
     <details><summary>Does a Gallery submission add my product to ChatGPT or Google Shopping?</summary><p>No. The Gallery publishes an editorially reviewed public page; it does not submit a merchant feed or register your store with a shopping platform. Use the seller's own catalog route for <a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">ChatGPT</a> or <a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">Google Shopping</a>.</p></details>
     <details><summary>What feedback will I receive?</summary><p>After editorial review, the private management page shows written feedback based on the submitted public materials, whether or not the product is approved for publication. We explain what works and recommend specific changes only where the evidence supports them. If no material gap appears within the reviewed scope, we say so instead of inventing suggestions.</p></details>
     <details><summary>Do I need to connect or authorize my store?</summary><p>No. A submission uses public product-page links or an Amazon ASIN. Nexscope does not request a store password, seller token or payment access for this workflow.</p></details>
+    <details><summary>Can I submit a Shopify or WooCommerce product page, or an Amazon ASIN?</summary><p>Yes. Submit one public HTTPS product URL, such as a Shopify or WooCommerce product page, or select the Amazon ASIN option. Add verified product details and at least one accurate image. We review the submitted material, not private store analytics.</p></details>
     <details><summary>Is product listing and display free?</summary><p>Yes. Product submission and editorial review are completely free. If approved and published, listing and display in Nexscope Product Gallery are also completely free. Approval and search performance are not guaranteed.</p></details>
     <details><summary>Does submitting a product guarantee publication or search performance?</summary><p>No. Every submission remains offline until reviewed, and Nexscope does not guarantee approval, publication, search rankings, AI citations, traffic or sales.</p></details>
     <details><summary>What happens after I submit a product?</summary><p>Save the private management link shown after submission. It shows the current status and, after editorial review, your feedback. You can edit and resubmit if changes are requested. There is no fixed review deadline or automatic status email. A product stays offline until approved and published.</p></details>

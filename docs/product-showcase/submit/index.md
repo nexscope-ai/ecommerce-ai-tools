@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Get Free Product Page Feedback | Nexscope Gallery
-description: Share one product URL or Amazon ASIN for free editorial feedback on what works and what could improve. Approved products can also receive a free Gallery page linked to the original listing.
+title: Submit a Product Page for Free Feedback | Nexscope
+description: Submit a public product URL or Amazon ASIN with product details and images for free editorial feedback. Save a private link to read the review and status.
 permalink: /product-showcase/submit/
 last_modified_at: 2026-10-09
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
@@ -17,9 +17,9 @@ image_caption: Submit product details for editorial review and possible free lis
 <section class="showcase-form-shell" data-showcase-form data-api-base="{{ site.product_showcase_api_base }}">
   <header class="showcase-form-intro">
     <div class="showcase-form-heading">
-      <span class="eyebrow">Free product-page feedback</span>
-      <h1>See your product page<br><span>through a buyer's eyes.</span></h1>
-      <p>Share one public product page or Amazon ASIN, then add verified details and images. After editorial review, read what works and any evidence-based improvements on your private management page. If approved and published, your product can also receive a free Nexscope Gallery page linking to the original listing. No store connection or seller token is required.</p>
+      <span class="eyebrow">Submit a product page for editorial review</span>
+      <h1>Submit your product page<br><span>for free feedback.</span></h1>
+      <p>Submit one public Shopify, WooCommerce or other product URL—or an Amazon ASIN—with verified details and images. After editorial review, read what works and any evidence-based improvements on your private management page. If approved and published, your product can also receive a free Nexscope Gallery page linking to the original listing. No store connection or seller token is required.</p>
       <div class="showcase-form-heading-actions">
         <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Request free product-page feedback <span aria-hidden="true">↓</span></a>
       </div>
