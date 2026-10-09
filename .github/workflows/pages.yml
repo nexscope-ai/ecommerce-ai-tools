@@ -37,7 +37,9 @@ jobs:
           source: ./docs
           destination: ./_site
       - name: Attribute official site links in published pages
-        run: python scripts/attribute_outbound_links.py _site
+        run: |
+          sudo chown -R "$(id -u):$(id -g)" _site
+          python scripts/attribute_outbound_links.py _site
       - name: Upload the Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
