@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Test the product page generator
-        run: python -m unittest scripts.test_generate_product_showcase_pages
+        run: python -m unittest scripts.test_generate_product_showcase_pages scripts.test_attribute_outbound_links
       - name: Generate static product pages
         run: python scripts/generate_product_showcase_pages.py
       - name: Configure GitHub Pages
@@ -36,6 +36,8 @@ jobs:
         with:
           source: ./docs
           destination: ./_site
+      - name: Attribute official site links in published pages
+        run: python scripts/attribute_outbound_links.py _site
       - name: Upload the Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
