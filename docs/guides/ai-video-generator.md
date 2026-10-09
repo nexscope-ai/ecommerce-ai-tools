@@ -20,6 +20,13 @@ image: /assets/images/ai-video-generator-product-workflow-1440w.webp
 image_small: /assets/images/ai-video-generator-product-workflow-720w.webp
 image_alt: A product image transforming through motion frames into a polished ecommerce video preview
 image_caption: "Illustration: a consistent product image, a focused motion prompt, and a review step form a practical AI video workflow."
+faq:
+  - question: How can I compare AI image-to-video models for a product photo?
+    answer: Keep the source image, prompt, aspect ratio, duration and resolution as similar as the models allow. Record each model's output, actual credits and elapsed time, then compare product shape, color, label legibility and motion. Mark settings that cannot be matched.
+  - question: When should I reject an AI-generated product video?
+    answer: Reject a clip as a factual product demonstration if it changes the product's shape, packaging text, logo, color, accessories or performance claims. A visually attractive clip can still misrepresent the product.
+  - question: Has Nexscope published a winning video model for product accuracy?
+    answer: No. This guide documents the workflow and review method, but it does not publish a controlled side-by-side output test or declare a model winner.
 ---
 
 # How to use a free AI video generator for ecommerce product images
@@ -33,6 +40,8 @@ An **AI video generator** creates a video from inputs such as images and a descr
 **[Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_top&co-from=learn). New users receive 1,000 free credits.** Usage depends on the model and settings; this is a finite trial balance, not unlimited free video generation.
 
 > **Key takeaways:** Nexscope is free to try with 1,000 starter credits for new users. Begin with one clear product image and one simple motion, check the live credit estimate before generating, and review product shape, labels, claims, and framing before publishing. The trial balance is finite and does not unlock every API capability.
+
+**Which model preserves a product's packaging best? This page does not claim a winner.** A fair comparison needs the same permitted product image, the same motion prompt, and matched duration, aspect ratio and resolution where each model supports them. Save every output and record actual credits and elapsed time. Reject any clip that changes the item's shape, printed label, logo, color, accessories or implied performance, even if the motion looks polished. No controlled output comparison has been published here yet.
 
 ## How to create a product video from images
 
@@ -82,6 +91,19 @@ Model names alone do not establish which is best for your product. Compare the s
 | Claims | Scenes that suggest untested performance, capacity, or durability | Remove unsupported implications before using the clip. |
 
 For a reproducible comparison, record the input image, prompt, model, selected settings, date, actual credits used, and your review notes. Save the output alongside those inputs. A model-generated clip is creative material; it is not evidence of product performance.
+
+## How should you compare two image-to-video models fairly?
+
+Use one product image that you have permission to process and write a motion prompt before choosing a model. Run the same image and prompt through the models you want to compare. Keep duration, aspect ratio and resolution equal when the controls allow it, and mark any unmatched setting instead of presenting the outputs as directly equivalent. If the model offers a fixed random seed, record it; do not assume every model supports one.
+
+| Review item | Record for every output | Reject the clip as a factual product demonstration when… |
+| --- | --- | --- |
+| Product identity | Source image and generated output URL or file name | Shape, color, packaging, logo or an accessory changes. |
+| Label legibility | Whether printed text stays readable in the relevant frames | The output invents, removes or distorts product text. |
+| Motion and framing | Prompt, camera movement, duration, ratio and resolution | Motion hides the product or creates unsupported use or performance claims. |
+| Cost and time | Displayed estimate, actual credits charged and elapsed time | Do not infer cost or speed from another model's run. |
+
+A pass/fail decision should cite the saved output and the specific changed detail; a subjective overall score alone cannot show whether the product was represented accurately. **No rows on this page are claimed to be a completed model benchmark.**
 
 ## What has Nexscope publicly tested here?
 

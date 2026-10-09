@@ -31,6 +31,8 @@ faq:
 
 **Use an ecommerce keyword planner to form a shortlist of buyer questions, not to predict sales.** Begin with one product phrase, inspect related Google search terms for the chosen locale, and separately review matching marketplace products. Keep the query, source, date, estimated metric, and product relevance in the same record so an AI summary can be checked against the underlying rows.
 
+**Does Google search volume measure Amazon demand? No.** The Google estimate describes searches on Google for the selected locale and period; an Amazon product lookup returns marketplace listings, not a conversion of that estimate into Amazon searches or purchases. In our [October 7 portable-blender test]({{ '/api-evidence/portable-blender-keyword-competitor/' | relative_url }}), the Google seed estimate was 18,100 monthly searches, while the separate Amazon sample contained a non-electric shaker bottle. Those observations answer different questions and must remain labeled separately.
+
 ## What did a real Nexscope test show?
 
 On **October 7, 2026**, a Nexscope production API test expanded `portable blender` for **Google US English**. It returned 10 keyword ideas; six were brand-led. The term `portable blender` had an **estimated** monthly volume of 18,100 and difficulty of 23 in that response. A separate Amazon US competitor lookup returned 10 first-page products, but its first row was a **shaker bottle**, not an electric blender.
@@ -42,6 +44,18 @@ On **October 7, 2026**, a Nexscope production API test expanded `portable blende
 | Are all returned Amazon products comparable? | No; one shaker bottle appeared in the 10-row sample | That the remaining rows are the full competitor set |
 
 Read the [dated request and response analysis]({{ '/api-evidence/portable-blender-keyword-competitor/' | relative_url }}) and its [sanitized JSON record]({{ '/assets/evidence/portable-blender-keyword-competitor-2026-10-07.json' | relative_url }}). This is **one bounded API test**, not a benchmark of every query or a claim that the browser tool produces the same report automatically. Credit usage was not captured in that test.
+
+## Which rows belong in a new seller's keyword and competitor shortlist?
+
+Use the returned values as screening inputs, then apply a human relevance check. The same October 7 response illustrates three different decisions:
+
+| Returned item | Keep or separate? | Why |
+| --- | --- | --- |
+| `portable blender` | Keep as a generic Google query to investigate | Its 18,100 estimated Google US monthly searches are **not** an Amazon-demand estimate or sales forecast. |
+| Five Ninja variants and one Aldi Ambiano term | Separate as brand-led queries | Six of the 10 returned ideas named existing brands; a new brand should not count all of that volume as addressable generic demand. |
+| A YETI shaker bottle in the Amazon results | Exclude from an electric-blender competitor set | The returned product serves a different function even though it appeared in the 10-row sample. |
+
+Record the exact query, marketplace, result date, inclusion reason and excluded rows. The [source response and complete rows]({{ '/api-evidence/portable-blender-keyword-competitor/' | relative_url }}) let another researcher challenge this shortlist. A single sample does not establish which keyword or product will convert.
 
 ## How do you turn the results into a useful plan?
 

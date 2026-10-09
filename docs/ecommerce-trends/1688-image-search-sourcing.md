@@ -46,6 +46,13 @@ faq:
 
 A [second dated Nexscope test]({{ '/api-evidence/portable-blender-amazon-1688/' | relative_url }}) connected one Amazon portable-blender product to 10 returned 1688 image-search offers and two offer-detail checks on October 7, 2026. That test is a separate sample from the amber-bottle test below; neither verifies a factory match or a landed-cost margin.
 
+| What the two tests observed | What a buyer can use it for | What remains unverified |
+| --- | --- | --- |
+| The [September 20 amber-bottle test]({{ '/api-evidence/1688-image-search/' | relative_url }}) returned 10 offers, including an off-target face mask. | Screen visually similar candidates and remove unrelated rows. | The original manufacturer, exact material and product quality. |
+| The [October 7 portable-blender test]({{ '/api-evidence/portable-blender-amazon-1688/' | relative_url }}) returned 10 offers and two offer-detail records. | Compare listed variants, prices and MOQ before requesting samples. | Whether any 1688 offer is identical to the Amazon product or yields a profitable landed cost. |
+
+These are separate, bounded searches rather than a measured accuracy rate for 1688 image search. Their documented inputs and returned fields are linked above; do not combine the two 10-row samples into a supplier ranking.
+
 > **The short answer:** run 1688 image search with a suitable product photo, record the returned listing IDs, compare price and minimum order quantity on a like-for-like basis, inspect the promising listings in Product Detail, and use Chinese-keyword search to catch alternatives the photo missed. Treat the resulting shortlist as research, not supplier certification.
 
 <aside class="article-action" aria-label="Try 1688 image search">

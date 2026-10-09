@@ -39,6 +39,8 @@ faq:
 
 Analyze negative Amazon reviews by collecting a clearly defined sample of 1-star and 2-star feedback, preserving the original comments, grouping repeated complaints, and turning the strongest themes into product hypotheses that can be tested. A review sample reveals problems worth investigating; it does not measure the defect rate of every product sold.
 
+In [one dated Nexscope test]({{ '/api-evidence/amazon-reviews-list/' | relative_url }}), a request for 20 low-star reviews returned 10 unique comments. Four of those 10 mentioned size or capacity. The defensible next step is to measure the product and check whether listing images and dimensions set accurate expectations; **4 of 10 returned comments is not a defect rate or a finding about all buyers**. The [case study]({{ '/amazon-review-case-study/' | relative_url }}) documents the source IDs and proposed tests.
+
 > **TL;DR:** Use an Amazon review analyzer to shorten collection and theme grouping, not to replace judgment. Keep every conclusion connected to the original comment, rating, date, ASIN, and marketplace. Repeated complaints can justify a product, packaging, or listing test; they cannot establish a market-wide defect rate or guarantee that a change will improve sales.
 
 ## When should you use this workflow?
@@ -56,6 +58,14 @@ Analyze negative Amazon reviews by collecting a clearly defined sample of 1-star
 On September 15, 2026, a production run requested ten one-star and ten two-star reviews for Amazon US ASIN `B0G1FVPYNW`. It returned **10 unique review IDs: nine one-star and one two-star**. Human review found four returned comments that explicitly mentioned physical size or capacity.
 
 This supports a follow-up question about dimensions and listing clarity. It does not establish the product's overall rating distribution, defect rate, conversion rate or return rate. The [Amazon Reviews List evidence record]({{ '/api-evidence/amazon-reviews-list/' | relative_url }}) preserves the request, returned count, dates and interpretation limits; the [full case study]({{ '/amazon-review-case-study/' | relative_url }}) shows where human review rejected unsupported conclusions.
+
+| Observation in the returned sample | Question to test | Evidence needed before changing the product or listing |
+| --- | --- | --- |
+| Four of 10 comments mentioned size or capacity | Is the physical item smaller than its stated dimensions, or do the images create a different expectation? | Measure multiple units, compare the measurements with listing copy and photograph the item beside a scale reference. |
+| The request asked for 20 reviews but returned 10 | Would more comments change which complaint appears most common? | Record the missing coverage, retrieve another dated sample if available and keep the two samples separate. |
+| Nine returned comments were one-star and one was two-star | Does this low-star pattern represent the product's buyers overall? | It cannot answer that question; compare with broader sales, returns, support and quality data where available. |
+
+These are **proposed validation steps**, not results of a physical product test or an Amazon listing experiment. Amazon's [Manage Your Experiments](https://sell.amazon.com/tools/manage-your-experiments) can test eligible listing content; it cannot establish whether a manufacturing change works.
 
 **What should you do when an API returns fewer reviews than requested?** Treat the returned rows as the entire observed sample, not as the requested sample size. In this test, 20 requested reviews became 10 returned reviews, so a claim such as “four of 20 buyers complained about size” would be false. The defensible statement is that four of the 10 returned comments explicitly raised size or capacity. Preserve the requested and returned counts together whenever you share a summary.
 
