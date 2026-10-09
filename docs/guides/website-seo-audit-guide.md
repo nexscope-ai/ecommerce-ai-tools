@@ -8,6 +8,12 @@ last_reviewed: 2026-09-30
 date_modified: 2026-09-30
 last_modified_at: 2026-09-30
 schema_type: Article
+next_step:
+  id: website_seo_auditor
+  title: Audit one page you can improve
+  description: Start with a public URL, inspect the underlying evidence, and choose one fix to verify.
+  label: Open Website SEO Auditor
+  url: https://www.nexscope.ai/tools/website-seo-auditor
 image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp
 image_small: /assets/images/ecommerce-product-page-seo-audit-720w.webp
 image_alt: Ecommerce product page inspected for crawlability, content, links, images, structured data, and mobile performance

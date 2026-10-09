@@ -9,6 +9,12 @@ date_modified: 2026-10-06
 last_modified_at: 2026-10-06
 author: Nexscope Team
 schema_type: Article
+next_step:
+  id: amazon_review_analyzer
+  title: Turn one review sample into testable questions
+  description: Choose a comparable ASIN, keep the source comments, and review any AI-generated themes against them.
+  label: Open Amazon Review Analyzer
+  url: https://www.nexscope.ai/tools/amazon-review-analyzer
 image: /assets/images/amazon-review-product-insights-1440w.webp
 image_small: /assets/images/amazon-review-product-insights-720w.webp
 image_alt: Customer review evidence grouped into product problems and improvement opportunities

@@ -12,6 +12,12 @@ schema_type: Article
 og_type: article
 topic: agents
 editorial_only: true
+next_step:
+  id: ecommerce_agent_api_guide
+  title: Apply a decision layer to real ecommerce data
+  description: Start with a documented product-data workflow and define which decisions still need human approval.
+  label: Read the ecommerce API guide
+  url: https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-api-for-ai-agents/
 keywords:
   - OpenAI Decisions API
   - OpenAI Decisions API vs Jev

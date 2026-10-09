@@ -918,6 +918,12 @@
     }
 
     if (issues.length) {
+      issues.sort((left, right) => {
+        const leftTarget = validationTarget(form, left.name);
+        const rightTarget = validationTarget(form, right.name);
+        if (!leftTarget || !rightTarget) return 0;
+        return leftTarget.compareDocumentPosition(rightTarget) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+      });
       onInvalid(issues.map(issue => issue.name));
       let firstTarget;
       issues.forEach(issue => {
@@ -975,7 +981,7 @@
     })();
     event('product_submission_page_view', { entry_type: entryType });
     let submitting = false;
-    const steps = new Set(['product', 'source', 'contact']);
+    const steps = new Set(['source', 'product', 'contact']);
     const engagedSteps = new Set();
     let formEngaged = false;
     const stepForField = field => {

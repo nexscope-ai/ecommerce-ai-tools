@@ -19,9 +19,9 @@ image_caption: Submit product details for editorial review and possible free lis
     <div class="showcase-form-heading">
       <span class="eyebrow">Product showcase submission</span>
       <h1>Submit your product<br><span>with the facts buyers need.</span></h1>
-      <p>Submit your product for free by sharing a public product page or Amazon ASIN. Editorial review and, if approved, listing and display in the Nexscope Product Gallery are completely free. Describe who the product is for and what buyers should verify. No store connection or seller token is required.</p>
+      <p>Start with a public product page or Amazon ASIN, then add the details and images buyers need. Submission, editorial review and, if approved, listing and display in the Nexscope Product Gallery are completely free. No store connection or seller token is required.</p>
       <div class="showcase-form-heading-actions">
-        <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Start your submission <span aria-hidden="true">↓</span></a>
+        <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Start with a link or ASIN <span aria-hidden="true">↓</span></a>
       </div>
     </div>
     <aside class="submission-promise" aria-label="Submission promises">
@@ -69,9 +69,48 @@ image_caption: Submit product details for editorial review and possible free lis
 
   <div class="submission-layout" id="product-submission-form">
     <form class="showcase-form" novalidate>
-      <div class="form-section" data-showcase-step="product">
-        <div class="form-section-heading"><span class="form-number">01</span><div><h2>Describe the exact product</h2><p>Answer the buyer's likely questions with facts you can support. This text may appear on the public Gallery page after review.</p></div></div>
+      <div class="form-section" data-showcase-step="source">
+        <div class="form-section-heading"><span class="form-number">01</span><div><h2>Start with your product link or ASIN <span class="required-mark" aria-label="required">*</span></h2><p>Choose the source you already have. We use it for review; you will add and check the public product details in the next step.</p></div></div>
         <div class="form-section-body">
+          <div class="source-options" role="radiogroup" aria-label="Product source">
+            <label class="source-option"><input name="sourceType" type="radio" value="PRODUCT_URL" checked><span><strong>Product page link</strong><small>Add one public Shopify, WooCommerce or other product page.</small></span></label>
+            <label class="source-option"><input name="sourceType" type="radio" value="AMAZON_ASIN"><span><strong>Amazon ASIN</strong><small>Use a marketplace and 10-character ASIN—no seller authorization.</small></span></label>
+          </div>
+          <small class="field-error" id="sourceType-error" data-error-for="sourceType" role="alert" hidden></small>
+
+          <div data-source-fields="PRODUCT_URL">
+            <label><strong class="field-label">Product page link <span class="required-mark" aria-label="required">*</span></strong><span>Paste the public HTTPS page for this exact product, such as a Shopify or WooCommerce product URL. Nexscope does not automatically import its details.</span><input name="productUrl" type="url" maxlength="2048" inputmode="url" placeholder="https://your-store.com/products/example" required><small class="field-error" id="productUrl-error" data-error-for="productUrl" role="alert" hidden></small></label>
+          </div>
+
+          <div data-source-fields="AMAZON_ASIN" hidden>
+            <div class="field-pair">
+              <div class="form-field">
+                <strong class="field-label" id="amazon-marketplace-label">Amazon marketplace <span class="required-mark" aria-label="required">*</span></strong>
+                <span class="field-hint">Choose the storefront where the ASIN is listed.</span>
+                <div class="select-component" data-select-component>
+                  <select name="amazonMarketplace" aria-labelledby="amazon-marketplace-label"><option value="US">United States</option><option value="UK">United Kingdom</option><option value="CA">Canada</option><option value="DE">Germany</option><option value="FR">France</option><option value="IT">Italy</option><option value="ES">Spain</option><option value="JP">Japan</option><option value="AU">Australia</option><option value="IN">India</option><option value="MX">Mexico</option><option value="BR">Brazil</option><option value="NL">Netherlands</option><option value="SE">Sweden</option><option value="PL">Poland</option><option value="BE">Belgium</option><option value="SG">Singapore</option><option value="AE">United Arab Emirates</option><option value="SA">Saudi Arabia</option><option value="TR">Türkiye</option></select>
+                </div>
+                <small class="field-error" id="amazonMarketplace-error" data-error-for="amazonMarketplace" role="alert" hidden></small>
+              </div>
+              <label class="form-field"><strong class="field-label">ASIN <span class="required-mark" aria-label="required">*</span></strong><span class="field-hint">Use 10 letters or numbers, for example B0ABC12345.</span><input name="amazonAsin" type="text" minlength="10" maxlength="10" pattern="[A-Za-z0-9]{10}" autocomplete="off" placeholder="B0ABC12345"><small class="field-error" id="amazonAsin-error" data-error-for="amazonAsin" role="alert" hidden></small></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" data-showcase-step="product">
+        <div class="form-section-heading"><span class="form-number">02</span><div><h2>Add product details and images</h2><p>Start with the name and a few clear facts, then upload accurate images. This content may appear on the public Gallery page after review.</p></div></div>
+        <div class="form-section-body">
+          <label><strong class="field-label">Product name <span class="required-mark" aria-label="required">*</span></strong><span>2–120 characters. Include the model or variant when it changes what buyers receive.</span><input name="productName" type="text" minlength="2" maxlength="120" required autocomplete="off" placeholder="Brand, product and exact model"><small class="field-error" id="productName-error" data-error-for="productName" role="alert" hidden></small></label>
+          <div class="markdown-field">
+            <div class="markdown-field-header">
+              <div><strong id="product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Plain text or Markdown, 20–5000 characters. Explain who it is for, key specifications or compatibility, and important limits. Add only facts you can support.</span></div>
+              <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
+            </div>
+            <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="Who it is for: Describe one real use case.&#10;Key facts: Add verified size, capacity or compatibility.&#10;Limits: Note anything buyers should check before purchase."></textarea>
+            <small class="field-error" id="productDetails-error" data-error-for="productDetails" role="alert" hidden></small>
+            <small class="character-count" data-count="productDetails">0 / 5000</small>
+          </div>
           <div class="media-field" data-media-upload="IMAGE" data-max-files="5" data-max-bytes="10485760">
             <div class="media-field-header"><div><strong>Product images <span class="required-mark" aria-label="required">*</span></strong><span>Upload 1–5 accurate JPEG, PNG or WebP images, up to 10 MB each. Show scale or a key feature when useful.</span></div><span class="media-limit">0 / 5</span></div>
             <input type="hidden" name="imageUploadKeys" value="[]">
@@ -79,16 +118,6 @@ image_caption: Submit product details for editorial review and possible free lis
             <button class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
             <div class="media-upload-list image-upload-list" data-media-list aria-live="polite"></div>
             <small class="field-error" id="imageUploadKeys-error" data-error-for="imageUploadKeys" role="alert" hidden></small>
-          </div>
-          <label><strong class="field-label">Product name <span class="required-mark" aria-label="required">*</span></strong><span>2–120 characters. Include the model or variant when it changes what buyers receive.</span><input name="productName" type="text" minlength="2" maxlength="120" required autocomplete="off" placeholder="Brand, product and exact model"><small class="field-error" id="productName-error" data-error-for="productName" role="alert" hidden></small></label>
-          <div class="markdown-field">
-            <div class="markdown-field-header">
-              <div><strong id="product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Markdown, 20–5000 characters. Explain use case, measurable specifications, compatibility, limits and evidence for important claims. Do not invent missing facts.</span></div>
-              <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
-            </div>
-            <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="## Who it is for&#10;Describe one real buyer need or use case.&#10;&#10;## Key facts&#10;- Size, capacity or compatibility (with units)&#10;- What is included&#10;&#10;## Limits and evidence&#10;State important limitations and link to support for claims."></textarea>
-            <small class="field-error" id="productDetails-error" data-error-for="productDetails" role="alert" hidden></small>
-            <small class="character-count" data-count="productDetails">0 / 5000</small>
           </div>
           <div class="media-field video-field" data-video-field>
             <div class="media-field-header"><div><strong>Product video</strong><span>Optional. Upload one MP4/WebM video up to 100 MB, or use a public HTTPS link.</span></div></div>
@@ -106,35 +135,6 @@ image_caption: Submit product details for editorial review and possible free lis
             </div>
             <div data-video-panel="URL" hidden><input data-video-url-input type="url" maxlength="2048" inputmode="url" placeholder="https://cdn.example.com/product-video.mp4"></div>
             <small class="field-error" id="videoUrl-error" data-error-for="videoUrl" role="alert" hidden></small>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section" data-showcase-step="source">
-        <div class="form-section-heading"><span class="form-number">02</span><div><h2>Choose the product source <span class="required-mark" aria-label="required">*</span></h2><p>Add a public reference after describing the product.</p></div></div>
-        <div class="form-section-body">
-          <div class="source-options" role="radiogroup" aria-label="Product source">
-            <label class="source-option"><input name="sourceType" type="radio" value="PRODUCT_URL" checked><span><strong>Product page link</strong><small>Add one public Shopify, WooCommerce or other product page.</small></span></label>
-            <label class="source-option"><input name="sourceType" type="radio" value="AMAZON_ASIN"><span><strong>Amazon ASIN</strong><small>Use a marketplace and 10-character ASIN—no seller authorization.</small></span></label>
-          </div>
-          <small class="field-error" id="sourceType-error" data-error-for="sourceType" role="alert" hidden></small>
-
-          <div data-source-fields="PRODUCT_URL">
-            <label><strong class="field-label">Product page link <span class="required-mark" aria-label="required">*</span></strong><span>One public HTTPS page for this exact product. Keep current price, availability and buying terms there; Nexscope does not automatically fetch it.</span><input name="productUrl" type="url" maxlength="2048" inputmode="url" placeholder="https://your-store.com/products/example" required><small class="field-error" id="productUrl-error" data-error-for="productUrl" role="alert" hidden></small></label>
-          </div>
-
-          <div data-source-fields="AMAZON_ASIN" hidden>
-            <div class="field-pair">
-              <div class="form-field">
-                <strong class="field-label" id="amazon-marketplace-label">Amazon marketplace <span class="required-mark" aria-label="required">*</span></strong>
-                <span class="field-hint">Choose the storefront where the ASIN is listed.</span>
-                <div class="select-component" data-select-component>
-                  <select name="amazonMarketplace" aria-labelledby="amazon-marketplace-label"><option value="US">United States</option><option value="UK">United Kingdom</option><option value="CA">Canada</option><option value="DE">Germany</option><option value="FR">France</option><option value="IT">Italy</option><option value="ES">Spain</option><option value="JP">Japan</option><option value="AU">Australia</option><option value="IN">India</option><option value="MX">Mexico</option><option value="BR">Brazil</option><option value="NL">Netherlands</option><option value="SE">Sweden</option><option value="PL">Poland</option><option value="BE">Belgium</option><option value="SG">Singapore</option><option value="AE">United Arab Emirates</option><option value="SA">Saudi Arabia</option><option value="TR">Türkiye</option></select>
-                </div>
-                <small class="field-error" id="amazonMarketplace-error" data-error-for="amazonMarketplace" role="alert" hidden></small>
-              </div>
-              <label class="form-field"><strong class="field-label">ASIN <span class="required-mark" aria-label="required">*</span></strong><span class="field-hint">Use 10 letters or numbers, for example B0ABC12345.</span><input name="amazonAsin" type="text" minlength="10" maxlength="10" pattern="[A-Za-z0-9]{10}" autocomplete="off" placeholder="B0ABC12345"><small class="field-error" id="amazonAsin-error" data-error-for="amazonAsin" role="alert" hidden></small></label>
-            </div>
           </div>
         </div>
       </div>

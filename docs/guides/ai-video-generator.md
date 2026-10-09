@@ -9,6 +9,12 @@ date_modified: 2026-09-17
 last_modified_at: 2026-09-17
 author: Nexscope Team
 schema_type: Article
+next_step:
+  id: ai_video_generator
+  title: Test a product-video concept
+  description: Start with one clear product image, review the credit estimate, then check the result for product accuracy.
+  label: Open AI Video Generator
+  url: https://www.nexscope.ai/tools/ai-video-generator
 og_type: article
 image: /assets/images/ai-video-generator-product-workflow-1440w.webp
 image_small: /assets/images/ai-video-generator-product-workflow-720w.webp

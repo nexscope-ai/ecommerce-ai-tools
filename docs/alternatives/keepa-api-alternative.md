@@ -9,6 +9,12 @@ date_modified: 2026-10-06
 last_modified_at: 2026-10-06
 author: Nexscope Team
 schema_type: Article
+next_step:
+  id: amazon_price_series_api
+  title: Compare the price series on your own ASINs
+  description: Run a small controlled sample and compare coverage, dates, missing values and credit cost with your requirements.
+  label: Open Amazon price series
+  url: https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api
 og_type: article
 topic: build
 keywords:

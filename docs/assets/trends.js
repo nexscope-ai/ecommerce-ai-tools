@@ -85,6 +85,17 @@
     });
   });
 
+  document.addEventListener('click', clickEvent => {
+    const link = clickEvent.target.closest?.('[data-article-next-step][href]');
+    if (!link) return;
+    const destination = new URL(link.href, window.location.href);
+    reportEvent('article_next_step_click', {
+      next_step: link.dataset.stepId || 'unknown',
+      destination_host: destination.hostname,
+      destination_path: destination.pathname,
+    });
+  });
+
   const scrollMilestones = new Set();
   let scrollMeasurementScheduled = false;
   const measureScrollDepth = () => {

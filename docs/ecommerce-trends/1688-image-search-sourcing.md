@@ -12,6 +12,12 @@ author: Nexscope Team
 schema_type: Article
 og_type: article
 topic: sourcing
+next_step:
+  id: 1688_image_search_api
+  title: Test one image-to-supplier shortlist
+  description: Run the documented image-search request, then verify product specifications and supplier details before shortlisting.
+  label: Open 1688 image search
+  url: https://www.nexscope.ai/api-docs/1688-search-by-image?view=api
 keywords:
   - 1688 image search
   - find 1688 supplier by image

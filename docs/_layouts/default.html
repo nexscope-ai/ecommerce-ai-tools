@@ -149,10 +149,10 @@
       .reviewed { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
-    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=11">
+    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=12">
     <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=37">
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
-    <script src="{{ '/assets/trends.js' | relative_url }}?v=9" defer></script>
+    <script src="{{ '/assets/trends.js' | relative_url }}?v=10" defer></script>
     {% unless page.private_page %}
     <script src="https://learn.nexscope.ai/analytics.js?v=7" defer></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="q6pDSjaAKMskPeTdzPWCtQ" async></script>
@@ -199,6 +199,14 @@
         {% if page.resource_hub %}{% include resource-library.html %}{% else %}{{ content }}{% endif %}
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
         {% if page.schema_type == 'Article' %}
+          {% if page.next_step %}
+            <section class="article-next article-next-focused" aria-label="Recommended next step">
+              <span class="eyebrow">Put this into practice</span>
+              <h2>{{ page.next_step.title | escape }}</h2>
+              <p>{{ page.next_step.description | escape }}</p>
+              <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
+            </section>
+          {% else %}
           {% assign article_pages = site.pages | where: 'schema_type', 'Article' | where_exp: 'item', 'item.sitemap != false' | sort: 'url' %}
           {% assign siblings = article_pages | where_exp: 'item', 'item.path contains section' %}
           {% if siblings.size > 1 %}
@@ -214,6 +222,7 @@
             {% assign next_article = siblings[next_index] %}
             <section class="article-next" aria-label="Related articles"><span class="eyebrow">Keep exploring</span><h2>More from {% if section == 'ecommerce-trends' %}Insights{% elsif section == 'api-evidence' %}API evidence{% elsif section == 'case-studies' %}Case studies{% elsif section == 'alternatives' %}Comparisons{% else %}Guides{% endif %}</h2><p>Continue with another article in this collection.</p><div><a href="{{ previous_article.url | relative_url }}">{{ previous_article.title | escape }} →</a>{% if previous_article.url != next_article.url %}<a href="{{ next_article.url | relative_url }}">{{ next_article.title | escape }} →</a>{% endif %}</div></section>
           {% endif %}
+          {% endif %}
         {% else %}
           {% unless is_hub or page.editorial_only %}
           <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide, inspect the evidence or find a focused tool for the task you are researching.</p><div><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a><a href="https://learn.nexscope.ai/tools/">Find a tool →</a></div></section>
@@ -226,7 +235,7 @@
       {% unless is_hub %}</div>{% endunless %}
     </main>
     <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="https://learn.nexscope.ai/about/">About</a><a href="https://learn.nexscope.ai/security/">Security</a><a href="https://learn.nexscope.ai/contact/">Contact</a><a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a><a href="https://www.nexscope.ai/privacy">Privacy</a><a href="https://www.nexscope.ai/terms">Terms</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
-    {% if page.product_showcase_page %}<script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=29" defer></script>{% endif %}
+    {% if page.product_showcase_page %}<script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=30" defer></script>{% endif %}
     {% if page.not_found_page %}<script src="{{ '/assets/not-found.js' | relative_url }}?v=1" defer></script>{% endif %}
   </body>
 </html>

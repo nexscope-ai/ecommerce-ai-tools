@@ -12,6 +12,12 @@ author: Nexscope Team
 schema_type: Article
 og_type: article
 topic: shopping
+next_step:
+  id: amazon_price_series_api
+  title: Check one competitor's dated price observations
+  description: Compare returned timestamps and missing values before treating any change as a promotion.
+  label: Open Amazon price series
+  url: https://www.nexscope.ai/api-docs/amazon-product-price-series?view=api
 keywords:
   - Prime Big Deal Days 2026
   - Amazon seller competitor research

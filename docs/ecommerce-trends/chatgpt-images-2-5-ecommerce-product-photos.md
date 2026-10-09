@@ -11,6 +11,12 @@ author: Nexscope Team
 schema_type: Article
 og_type: article
 topic: creative
+next_step:
+  id: gpt_image_flare_api
+  title: Try one controlled product-photo edit
+  description: Use an approved source image and check product details against the original before using any generated result.
+  label: Open the Flare image playground
+  url: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?view=api
 keywords:
   - ChatGPT Images 2.5
   - GPT-Image-2.5 ecommerce

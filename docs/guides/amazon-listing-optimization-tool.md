@@ -9,6 +9,12 @@ date_modified: 2026-09-30
 last_modified_at: 2026-09-30
 author: Nexscope Team
 schema_type: Article
+next_step:
+  id: amazon_listing_optimizer
+  title: Build a reviewable listing improvement plan
+  description: Enter one ASIN or product URL and verify suggested changes against the live listing and source evidence.
+  label: Open Listing Optimizer
+  url: https://www.nexscope.ai/tools/amazon-listing-optimization-tool
 og_type: article
 topic: research
 faq:
