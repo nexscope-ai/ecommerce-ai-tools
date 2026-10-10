@@ -83,7 +83,7 @@ private_page: true
               <small class="field-error" data-error-for="imageUploadKeys" role="alert" hidden></small>
             </div>
             <div class="media-field video-field" data-video-field>
-              <div class="media-field-header"><div><strong>Product video</strong><span>Optional: keep, replace (MP4/WebM up to 100 MB), or link a video. A clear video may improve your media score. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase_management&amp;utm_content=video_hint" data-utm-campaign="product_showcase_management" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
+              <div class="media-field-header"><div><strong>Product video</strong><span>Optional: keep, replace (MP4/WebM up to 100 MB), or use a link. A good video may boost your media score and reach. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase_management&amp;utm_content=video_hint" data-utm-campaign="product_showcase_management" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
               <input type="hidden" name="videoUrl">
               <div class="media-mode-switch" role="tablist" aria-label="Video source">
                 <button type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
