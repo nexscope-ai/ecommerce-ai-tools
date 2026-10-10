@@ -127,13 +127,11 @@ image_caption: Submit product details for editorial review and possible free lis
           </div>
           <div class="media-field video-field" data-video-field>
             <div class="media-field-header"><div><strong>Product video</strong><span>Optional. Upload one MP4/WebM video up to 100 MB, or use a public HTTPS link.</span></div></div>
+            <p class="video-generator-hint">A clear, accurate video can improve your editorial media score. Need a product video? <a href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase_submission&amp;utm_content=video_hint" data-utm-campaign="product_showcase_submission" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></p>
             <input type="hidden" name="videoUrl">
-            <div class="video-source-row">
-              <div class="media-mode-switch" role="tablist" aria-label="Video source">
-                <button type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
-                <button type="button" role="tab" aria-selected="false" data-video-mode="URL">Use video URL</button>
-              </div>
-              <p class="video-generator-hint">A clear, accurate video can improve your editorial media score. Need a product video? <a href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase_submission&amp;utm_content=video_hint" data-utm-campaign="product_showcase_submission" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></p>
+            <div class="media-mode-switch" role="tablist" aria-label="Video source">
+              <button type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
+              <button type="button" role="tab" aria-selected="false" data-video-mode="URL">Use video URL</button>
             </div>
             <div data-video-panel="UPLOAD">
               <div data-media-upload="VIDEO" data-max-files="1" data-max-bytes="104857600">
