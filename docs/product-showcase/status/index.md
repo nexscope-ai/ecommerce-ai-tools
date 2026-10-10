@@ -43,6 +43,8 @@ private_page: true
         </div>
         <h2 id="management-review-insights-title">Editorial feedback on your product page.</h2>
         <p>Recommendations prepared by the Nexscope editorial team from the product information you submitted.</p>
+        <p class="management-review-help">Questions about a recommendation? <a data-community-action="editorial_feedback_question" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a?utm_source=learn.nexscope.ai&amp;utm_medium=product_management&amp;utm_campaign=product_showcase_support&amp;utm_content=editorial_feedback_question" target="_blank" rel="noopener noreferrer">Ask in Discussions <span aria-hidden="true">↗</span></a> <span aria-hidden="true">·</span> Found a page bug? <a data-community-action="editorial_feedback_bug" href="https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose?utm_source=learn.nexscope.ai&amp;utm_medium=product_management&amp;utm_campaign=product_showcase_support&amp;utm_content=editorial_feedback_bug" target="_blank" rel="noopener noreferrer">Report an Issue <span aria-hidden="true">↗</span></a></p>
+        <p class="management-review-privacy">Share only public product information. Never post this private management link or unpublished review details.</p>
       </header>
       <div class="management-score-badge" data-review-score hidden>
         <span>Product score</span>

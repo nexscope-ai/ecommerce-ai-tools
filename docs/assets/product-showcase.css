@@ -367,6 +367,9 @@ html { scroll-behavior: smooth; }
 .management-review-source span { padding: 5px 9px; border: 1px solid #d8cff7; border-radius: 999px; background: #f4f1ff; color: #5944cf; font-size: 8px; font-weight: 900; letter-spacing: .1em; line-height: 1.3; text-transform: uppercase; }
 .management-review-insights > header h2 { margin: 0 0 8px; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -.04em; }
 .management-review-insights > header p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+.management-review-insights > header p.management-review-help { margin-top: 10px; }
+.management-review-help a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+.management-review-insights > header p.management-review-privacy { margin-top: 4px; font-size: 11px; }
 .management-score-badge { grid-column: 2; grid-row: 1; align-self: start; display: grid; min-width: 112px; grid-template-columns: auto auto; gap: 0 4px; align-items: baseline; padding: 12px 15px 11px; border: 1px solid #cfc4ff; border-radius: 14px; background: linear-gradient(135deg, #f3efff 0%, #fff 100%); color: #4f36c9; box-shadow: 0 12px 30px rgb(84 62 180 / 15%); }
 .management-score-badge[hidden] { display: none; }
 .management-score-badge > span { grid-column: 1 / -1; margin-bottom: 3px; color: currentColor; font-size: 8px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; opacity: .78; }
