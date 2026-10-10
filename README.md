@@ -40,14 +40,6 @@ No store connection, seller token, or payment access is required. Save the priva
 
 Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_1).
 
-### Nexscope at a glance
-
-![Line chart showing the seven-day rolling median of valid Nexscope API requests through September 29, 2026](docs/assets/readme-usage-trend-2026-09.svg)
-
-![Bar chart of the five most requested Nexscope APIs during the same 30-day period](docs/assets/readme-top-apis-2026-09.svg)
-
-Source: Nexscope production API usage aggregates. The line shows a seven-day rolling median of daily requests to make the underlying trend easier to read; it is not the raw daily count. The bar chart ranks APIs by request count. This is a dated snapshot, not a live counter.
-
 ## Guides and evidence
 
 | Question | Start with |
