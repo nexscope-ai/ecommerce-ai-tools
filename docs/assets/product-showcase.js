@@ -452,46 +452,10 @@
     return controllers;
   };
 
-  const appendInlineMarkdown = (target, source) => {
-    const pattern = /(\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|\*\*([^*\n]+)\*\*|__([^_\n]+)__|`([^`\n]+)`|\*([^*\n]+)\*|_([^_\n]+)_)/g;
-    let cursor = 0;
-    let match;
-    while ((match = pattern.exec(source)) !== null) {
-      if (match.index > cursor) target.append(document.createTextNode(source.slice(cursor, match.index)));
-      let element;
-      let text;
-      if (match[2] && match[3]) {
-        try {
-          const url = new URL(match[3]);
-          if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Unsupported protocol');
-          element = document.createElement('a');
-          element.href = url.href;
-          element.target = '_blank';
-          element.rel = 'noopener noreferrer';
-          text = match[2];
-        } catch (_) {
-          target.append(document.createTextNode(match[0]));
-          cursor = pattern.lastIndex;
-          continue;
-        }
-      } else if (match[4] || match[5]) {
-        element = document.createElement('strong');
-        text = match[4] || match[5];
-      } else if (match[6]) {
-        element = document.createElement('code');
-        text = match[6];
-      } else {
-        element = document.createElement('em');
-        text = match[7] || match[8];
-      }
-      element.textContent = text;
-      target.append(element);
-      cursor = pattern.lastIndex;
-    }
-    if (cursor < source.length) target.append(document.createTextNode(source.slice(cursor)));
-  };
+  const markdownTools = window.ProductShowcaseMarkdown;
+  const markdownParser = markdownTools?.createParser(window.markdownit);
 
-  const renderMarkdown = (target, source) => {
+  const renderMarkdown = (target, source, isReviewSuggestion = false) => {
     target.replaceChildren();
     if (!source.trim()) {
       const empty = document.createElement('p');
@@ -500,91 +464,25 @@
       target.append(empty);
       return;
     }
-
-    const lines = source.replace(/\r/g, '').split('\n');
-    const isBlockStart = line => /^(?:#{1,3}\s+|```|>\s?|[-*]\s+|\d+\.\s+|_{3,}\s*$|-{3,}\s*$)/.test(line);
-    let index = 0;
-    while (index < lines.length) {
-      const line = lines[index];
-      if (!line.trim()) {
-        index += 1;
-        continue;
-      }
-
-      if (line.startsWith('```')) {
-        const language = line.slice(3).trim();
-        const content = [];
-        index += 1;
-        while (index < lines.length && !lines[index].startsWith('```')) {
-          content.push(lines[index]);
-          index += 1;
-        }
-        if (index < lines.length) index += 1;
-        const pre = document.createElement('pre');
-        const code = document.createElement('code');
-        if (language) code.dataset.language = language;
-        code.textContent = content.join('\n');
-        pre.append(code);
-        target.append(pre);
-        continue;
-      }
-
-      const heading = line.match(/^(#{1,3})\s+(.+)$/);
-      if (heading) {
-        const element = document.createElement(`h${heading[1].length}`);
-        appendInlineMarkdown(element, heading[2]);
-        target.append(element);
-        index += 1;
-        continue;
-      }
-
-      if (/^(?:_{3,}|-{3,})\s*$/.test(line)) {
-        target.append(document.createElement('hr'));
-        index += 1;
-        continue;
-      }
-
-      if (/^>\s?/.test(line)) {
-        const quoteLines = [];
-        while (index < lines.length && /^>\s?/.test(lines[index])) {
-          quoteLines.push(lines[index].replace(/^>\s?/, ''));
-          index += 1;
-        }
-        const quote = document.createElement('blockquote');
-        const paragraph = document.createElement('p');
-        appendInlineMarkdown(paragraph, quoteLines.join(' '));
-        quote.append(paragraph);
-        target.append(quote);
-        continue;
-      }
-
-      const unordered = /^[-*]\s+/.test(line);
-      const ordered = /^\d+\.\s+/.test(line);
-      if (unordered || ordered) {
-        const list = document.createElement(ordered ? 'ol' : 'ul');
-        const expression = ordered ? /^\d+\.\s+(.+)$/ : /^[-*]\s+(.+)$/;
-        while (index < lines.length) {
-          const itemMatch = lines[index].match(expression);
-          if (!itemMatch) break;
-          const item = document.createElement('li');
-          appendInlineMarkdown(item, itemMatch[1]);
-          list.append(item);
-          index += 1;
-        }
-        target.append(list);
-        continue;
-      }
-
-      const paragraphLines = [line.trim()];
-      index += 1;
-      while (index < lines.length && lines[index].trim() && !isBlockStart(lines[index])) {
-        paragraphLines.push(lines[index].trim());
-        index += 1;
-      }
-      const paragraph = document.createElement('p');
-      appendInlineMarkdown(paragraph, paragraphLines.join(' '));
-      target.append(paragraph);
+    if (!markdownParser) {
+      const plain = document.createElement('p');
+      plain.className = 'markdown-preview-plain';
+      plain.textContent = source;
+      target.append(plain);
+      return;
     }
+    const content = isReviewSuggestion ? markdownTools.normalizeReviewSuggestion(source) : source;
+    target.innerHTML = markdownParser.render(content);
+    target.querySelectorAll('a').forEach(link => {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+    target.querySelectorAll('table').forEach(table => {
+      const scroll = document.createElement('div');
+      scroll.className = 'markdown-table-scroll';
+      table.replaceWith(scroll);
+      scroll.append(table);
+    });
   };
 
   const wireMarkdownEditor = (scope, form) => {
@@ -1207,7 +1105,7 @@
       const hasScore = hasSuggestion && Number.isFinite(score) && score >= 0 && score <= 100;
       reviewInsights.hidden = !hasSuggestion;
       reviewSuggestion.hidden = !hasSuggestion;
-      if (hasSuggestion) renderMarkdown(reviewSuggestion, suggestion);
+      if (hasSuggestion) renderMarkdown(reviewSuggestion, suggestion, true);
       else reviewSuggestion.replaceChildren();
       reviewScore.hidden = !hasScore;
       if (hasScore) {

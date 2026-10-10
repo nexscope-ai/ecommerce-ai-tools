@@ -214,6 +214,13 @@ html { scroll-behavior: smooth; }
 .markdown-preview pre code { padding: 0; background: transparent; color: inherit; }
 .markdown-preview a { color: var(--accent); text-underline-offset: 3px; }
 .markdown-preview hr { margin: 22px 0; border: 0; border-top: 1px solid var(--line); }
+.markdown-preview-plain { white-space: pre-wrap; }
+.markdown-table-scroll { max-width: 100%; margin: 0 0 1.25em; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.markdown-preview table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 13px; line-height: 1.55; }
+.markdown-preview th, .markdown-preview td { padding: 10px 12px; border: 1px solid #e5e0e9; text-align: left; vertical-align: top; }
+.markdown-preview th { background: #f1eef8; color: var(--ink); font-weight: 700; }
+.markdown-preview td { color: #474250; overflow-wrap: anywhere; }
+.markdown-preview tr:nth-child(even) td { background: #fbfaff; }
 .markdown-preview-empty { color: #8a8591 !important; font-style: italic; }
 .markdown-dialog-footer { display: flex; flex: none; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 20px; border-top: 1px solid var(--line); background: #fff; }
 .markdown-dialog-footer > span { color: var(--muted); font-size: 11px; }

@@ -150,7 +150,7 @@
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
     <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=12">
-    <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=40">
+    <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=41">
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
     <script src="{{ '/assets/trends.js' | relative_url }}?v=12" defer></script>
     {% unless page.private_page %}
@@ -235,7 +235,7 @@
       {% unless is_hub %}</div>{% endunless %}
     </main>
     <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="https://learn.nexscope.ai/about/">About</a><a href="https://learn.nexscope.ai/security/">Security</a><a href="https://learn.nexscope.ai/contact/">Contact</a><a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a><a href="https://www.nexscope.ai/privacy">Privacy</a><a href="https://www.nexscope.ai/terms">Terms</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
-    {% if page.product_showcase_page %}<script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=30" defer></script>{% endif %}
+    {% if page.product_showcase_page %}<script src="{{ '/assets/vendor/markdown-it-14.3.2.min.js' | relative_url }}" defer></script><script src="{{ '/assets/product-showcase-markdown.js' | relative_url }}?v=1" defer></script><script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=31" defer></script>{% endif %}
     {% if page.not_found_page %}<script src="{{ '/assets/not-found.js' | relative_url }}?v=1" defer></script>{% endif %}
   </body>
 </html>
