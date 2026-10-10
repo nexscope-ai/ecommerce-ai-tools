@@ -31,7 +31,7 @@
   };
   const contentFromLink = (link, url) => {
     const explicit = link.dataset.utmContent || url.searchParams.get('utm_content') || '';
-    if (/^(early_cta|inline_link|final_cta)$/.test(explicit)) return explicit;
+    if (/^(early_cta|inline_link|final_cta|video_hint)$/.test(explicit)) return explicit;
     if (link.closest('.article-action')) return 'early_cta';
     if (/final|bottom|closing/i.test(explicit) || link.closest('.article-next')) return 'final_cta';
     return 'inline_link';
