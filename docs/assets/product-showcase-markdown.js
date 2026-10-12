@@ -94,6 +94,7 @@
         return false;
       }
     };
+    parser.disable('image');
     parser.use(taskListPlugin);
     return parser;
   };
