@@ -94,6 +94,8 @@ Both implement Shopify's Universal Commerce Protocol checkout capability and use
 
 For a protocol-level introduction, see [what an ecommerce MCP server does](../../ecommerce-mcp-server/) and the [agentic commerce overview](../what-is-agentic-commerce-ai-shopping-visibility/).
 
+If you are comparing Shopify's browser-based path with other merchant approaches, see the [agentic checkout seller checklist](../agentic-checkout-ecommerce-seller-checklist/). It keeps discovery and page checks separate from the platform-specific payment test.
+
 ## Do Shopify merchants need to enable Checkout WebMCP?
 
 **Shopify says the new checkout tools require no merchant configuration, but “no configuration” does not mean “no preparation.”** The platform supplies the eligible tools in checkout; the merchant remains responsible for accurate products, offers, policies, extensions, and the customer experience the agent encounters.

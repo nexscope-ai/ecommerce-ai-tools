@@ -56,6 +56,8 @@ The merchant task remains the same: provide accurate product identity, variant-l
 
 Read the focused guides to [ChatGPT product discovery](../chatgpt-product-discovery/), [ChatGPT ads for ecommerce](../chatgpt-ads-for-ecommerce/), and [Google AI Mode for ecommerce](../google-ai-mode-shopping/) for platform-specific preparation and measurement.
 
+For a purchase-stage comparison rather than a discovery overview, use the [agentic checkout seller checklist](../agentic-checkout-ecommerce-seller-checklist/). It separates product visibility, offer accuracy, and checkout eligibility across recent provider approaches.
+
 ## How is agentic commerce different from conversational commerce?
 
 **Conversational commerce helps a shopper through dialogue; agentic commerce can also perform a sequence of tasks on the shopper's behalf.** The boundary is practical rather than absolute because many products combine both behaviors.
