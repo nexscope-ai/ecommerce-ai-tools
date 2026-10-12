@@ -3,24 +3,42 @@
 <section class="showcase-featured" aria-labelledby="showcase-featured-{{ include.context }}-title">
   <header class="showcase-featured-heading">
     <div>
-      <span class="eyebrow">From the Product Gallery</span>
-      <h2 id="showcase-featured-{{ include.context }}-title">Browse published product pages.</h2>
+      <span class="eyebrow">Nexscope editorial scores</span>
+      <h2 id="showcase-featured-{{ include.context }}-title">{% if published_products.size >= 3 %}The 3 highest-scoring products in the Gallery.{% else %}Highest-scoring products in the Gallery.{% endif %}</h2>
     </div>
-    <p>See how products appear in the Gallery. Open a card to view its details and original selling link.</p>
+    <p>{% if published_products.size >= 3 %}These are the three highest-scoring products currently published on Nexscope.{% else %}These published products are shown in Nexscope editorial score order.{% endif %} Open a card to see its details and original selling link.</p>
   </header>
-  <div class="showcase-featured-list">
+  <div class="showcase-featured-scoring" aria-label="Nexscope editorial score criteria">
+    <p>Nexscope's 100-point editorial review includes:</p>
+    <dl>
+      <div><dt>Submitted page SEO</dt><dd>30 points</dd></div>
+      <div><dt>Submitted page GEO</dt><dd>30 points</dd></div>
+      <div><dt>Product description</dt><dd>20 points</dd></div>
+      <div><dt>Images and video</dt><dd>20 points</dd></div>
+    </dl>
+    <small>Scores assess the submitted product detail page and materials, not customer ratings, sales or product performance.</small>
+  </div>
+  <div class="showcase-featured-list{% if published_products.size >= 3 %} is-stacked{% endif %}" aria-label="Highest-scoring published products">
     {% for product in published_products limit:3 %}
     <a class="showcase-featured-card" href="{{ product.path | relative_url }}">
+      <span class="showcase-featured-rank" aria-hidden="true">0{{ forloop.index }}</span>
       <span class="showcase-featured-image">
         {% if product.image %}<img src="{{ product.image | escape }}" alt="" loading="lazy" width="480" height="360">{% else %}<span class="showcase-featured-placeholder" aria-hidden="true">Product image unavailable</span>{% endif %}
       </span>
       <span class="showcase-featured-copy">
         <strong>{{ product.title | escape }}</strong>
-        <small>{% if product.lastModified %}Published {{ product.lastModified | date: "%b %-d, %Y" }}{% else %}Published product{% endif %}</small>
         <span>View product details <span aria-hidden="true">↗</span></span>
       </span>
     </a>
     {% endfor %}
+  </div>
+  {% if published_products.size >= 3 %}<p class="showcase-featured-swipe">Swipe to explore all three products <span aria-hidden="true">↔</span></p>{% endif %}
+  <div class="showcase-featured-cta">
+    <div>
+      <strong>Want your product in the Gallery?</strong>
+      <p>Submit a product page for free editorial review. Approved products may receive a public Gallery listing linked to the original selling page.</p>
+    </div>
+    <a class="showcase-primary" data-showcase-submit-cta="featured-{{ include.context }}" href="{% if include.context == 'submit' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">Submit your product for Gallery review <span aria-hidden="true">↗</span></a>
   </div>
 </section>
 {% endif %}
