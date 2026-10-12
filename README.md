@@ -4,8 +4,6 @@ Practical ecommerce research, SEO, creative AI, and API workflows from the Nexsc
 
 [![Learning Hub](https://img.shields.io/badge/Docs-Learning%20Hub-7C3AED?style=flat&labelColor=555)](https://learn.nexscope.ai/ecommerce-ai-tools/) [![Ecommerce Tools](https://img.shields.io/badge/Tools-Ecommerce%20Tools-2563EB?style=flat&labelColor=555)](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) [![API Docs](https://img.shields.io/badge/Developers-API%20Docs-0891B2?style=flat&labelColor=555)](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header&co-from=learn) [![Discussions](https://img.shields.io/badge/Community-Discussions-D97706?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![Issues](https://img.shields.io/badge/Feedback-Issues-2DA44E?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/issues) [![Enterprise Plans](https://img.shields.io/badge/Business-Enterprise%20Plans-6D28D9?style=flat&labelColor=555)](https://www.nexscope.ai/enterprise?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=readme_header)
 
-New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header&co-from=learn). Credit use and API access vary by action and account.
-
 ## Product Gallery: get feedback on your product page
 
 [The free ecommerce product page review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) starts with feedback on the product page you already have. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. After editorial review, read what works and any evidence-based improvements on your private management page, whether or not the product is approved for publication. We do not invent changes to reach a target number. If approved and published, the product also receives a free public Gallery page, creating another discovery route to the original listing without guaranteed traffic.
@@ -13,6 +11,12 @@ New users receive 1,000 free credits to get started. [Create an account](https:/
 **[Request free product-page feedback](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [How the review works](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Share your product-page challenge](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
 
 No store connection, seller token, or payment access is required. Save the private management link shown after submission to read your feedback; there is no fixed review deadline or automatic status email. Submissions remain offline until approved and published. Publication, search rankings, traffic, and sales are not guaranteed.
+
+## About Nexscope
+
+Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_1).
+
+New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header&co-from=learn). Credit use and API access vary by action and account.
 
 ## Explore ecommerce tools
 
@@ -33,10 +37,6 @@ Create or refine product visuals, then investigate Amazon, 1688 and TikTok Shop 
 **[View more ecommerce tools →](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_more_tools)**
 
 The Amazon-to-1688, TikTok Shop and SEO Keyword Planner workflows accept a visitor-provided API key; other tools may require sign-in. Credits may apply to requests you start.
-
-## About Nexscope
-
-Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_1).
 
 ## Guides and evidence
 
