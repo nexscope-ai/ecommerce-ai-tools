@@ -58,25 +58,7 @@ faq:
   </figure>
 </section>
 
-{% assign published_products = site.data.product_showcase_pages %}
-{% if published_products.size > 0 %}
-<section class="showcase-products" aria-labelledby="showcase-products-title">
-  <header class="showcase-section-heading">
-    <div><span class="eyebrow">Reviewed products</span><h2 id="showcase-products-title">Explore the Gallery.</h2></div>
-    <p>Each product has a public detail page and a link to its original selling page. Check current offers with the seller.</p>
-  </header>
-  <div class="showcase-products-grid">
-    {% for product in published_products %}
-    <article class="showcase-product-card">
-      <a href="{{ product.path | relative_url }}">
-        {% if product.image %}<img src="{{ product.image | escape }}" alt="{{ product.title | escape }}" loading="lazy" width="640" height="480">{% else %}<span class="showcase-product-placeholder" aria-hidden="true">Nexscope Product Gallery</span>{% endif %}
-        <span class="showcase-product-card-copy"><small>Reviewed product</small><strong>{{ product.title | escape }}</strong><span>View product details →</span></span>
-      </a>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
+{% include product-showcase-featured.html context="hub" %}
 
 <section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
   <header class="showcase-section-heading">
