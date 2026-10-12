@@ -25,7 +25,7 @@ html { scroll-behavior: smooth; }
 .showcase-hero-art figcaption span { color: var(--muted); font-size: 12px; }
 .showcase-discovery { padding: 58px 0 68px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
 .showcase-featured { margin: 0 0 70px; padding: 64px 0 0; border-top: 1px solid var(--line); }
-.showcase-featured-heading { display: flex; justify-content: space-between; gap: 36px; align-items: end; margin-bottom: 24px; }
+.showcase-featured-heading { display: flex; justify-content: space-between; gap: 36px; align-items: end; margin-bottom: 24px; border: 0; background: transparent; }
 .showcase-featured-heading h2 { margin: 11px 0 0; font-size: clamp(30px, 3vw, 40px); line-height: 1.15; letter-spacing: -.035em; }
 .showcase-featured-heading > p { max-width: 390px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .showcase-featured-scoring { margin-bottom: 26px; padding: 17px 0 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
