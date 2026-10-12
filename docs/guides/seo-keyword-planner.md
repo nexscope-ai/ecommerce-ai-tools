@@ -4,9 +4,9 @@ title: "SEO Keyword Planner for Ecommerce: A Tested Workflow"
 description: Plan ecommerce keywords with a dated Google US keyword and Amazon US competitor test. See the actual inputs, estimates, mismatches, and next checks.
 permalink: /seo-keyword-planner/
 date_published: 2026-10-09
-date_modified: 2026-10-09
-last_modified_at: 2026-10-09
-last_reviewed: 2026-10-09
+date_modified: 2026-10-12
+last_modified_at: 2026-10-12
+last_reviewed: 2026-10-12
 author: Nexscope Team
 schema_type: Article
 topic: research
@@ -66,6 +66,8 @@ Record the exact query, marketplace, result date, inclusion reason and excluded 
 5. **Choose a validation step.** Compare the shortlist with your Search Console queries, advertising search terms, listing experiments, or actual product sales where available. Record what remains unknown.
 
 The [Amazon competitor keyword workflow]({{ '/amazon-competitor-keyword-research/' | relative_url }}) explains when to add reverse-ASIN research after this first pass. Do not present Google search volume as Amazon search volume, and do not turn one API response into a profit forecast.
+
+If the decision is whether an Amazon product idea is worth investigating at all, use the [Amazon Keyword Researcher product-idea guide]({{ '/amazon-keyword-researcher-guide/' | relative_url }}) to compare demand and competition signals before building a listing. This is a different task from choosing SEO terms for an existing product.
 
 ## Where does Nexscope fit?
 

@@ -3,10 +3,10 @@ layout: default
 title: AI Video Generator Workflow for Ecommerce
 description: Try a free AI video generator workflow for ecommerce product images with 1,000 starter credits, model selection, prompting, and quality checks.
 permalink: /ai-video-generator/
-last_reviewed: 2026-09-17
+last_reviewed: 2026-10-12
 date_published: 2026-09-15
-date_modified: 2026-10-09
-last_modified_at: 2026-10-09
+date_modified: 2026-10-12
+last_modified_at: 2026-10-12
 author: Nexscope Team
 schema_type: Article
 next_step:
@@ -38,6 +38,8 @@ faq:
 An **AI video generator** creates a video from inputs such as images and a description of the desired motion. Nexscope's browser tool lets ecommerce sellers upload product images, choose a video model, describe a scene, review the estimated credit cost, and generate a video to preview and download.
 
 **[Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_video_generator_launch&utm_content=guide_top&co-from=learn). New users receive 1,000 free credits.** Usage depends on the model and settings; this is a finite trial balance, not unlimited free video generation.
+
+Already have a public product listing instead of a standalone image? Follow the [URL-to-video guide]({{ '/url-to-video-guide/' | relative_url }}) to import the listing, verify its product details, and prepare a script before generating. The image-to-video workflow below starts from uploaded product images.
 
 > **Key takeaways:** Nexscope is free to try with 1,000 starter credits for new users. Begin with one clear product image and one simple motion, check the live credit estimate before generating, and review product shape, labels, claims, and framing before publishing. The trial balance is finite and does not unlock every API capability.
 

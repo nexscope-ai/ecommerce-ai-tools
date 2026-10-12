@@ -4,9 +4,9 @@ title: How to audit an ecommerce product page for SEO
 description: Audit an ecommerce product page for crawlability, metadata, content, links, structured data, and mobile performance evidence.
 permalink: /website-seo-audit-guide/
 date_published: 2026-09-15
-last_reviewed: 2026-09-30
-date_modified: 2026-09-30
-last_modified_at: 2026-09-30
+last_reviewed: 2026-10-12
+date_modified: 2026-10-12
+last_modified_at: 2026-10-12
 schema_type: Article
 next_step:
   id: website_seo_auditor
@@ -66,4 +66,6 @@ Enter one public URL in the [Website SEO Auditor](https://www.nexscope.ai/tools/
 - Competitor, backlink, keyword, and index-coverage research require additional evidence.
 
 Use Search Console, analytics, server logs, merchant data, and a full crawler when the decision requires site-wide evidence.
+
+For a complete store rather than one URL, use the [sitewide ecommerce SEO audit checklist]({{ '/ecommerce-seo-audit/' | relative_url }}). It covers discovery, category and product templates, filters, product data, and how to prioritize fixes.
 
