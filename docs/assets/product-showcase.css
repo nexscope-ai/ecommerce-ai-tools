@@ -25,21 +25,42 @@ html { scroll-behavior: smooth; }
 .showcase-hero-art figcaption span { color: var(--muted); font-size: 12px; }
 .showcase-discovery { padding: 58px 0 68px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
 .showcase-featured { margin: 0 0 70px; padding: 64px 0 0; border-top: 1px solid var(--line); }
-.showcase-featured-heading { display: flex; justify-content: space-between; gap: 36px; align-items: end; margin-bottom: 28px; }
+.showcase-featured-heading { display: flex; justify-content: space-between; gap: 36px; align-items: end; margin-bottom: 24px; }
 .showcase-featured-heading h2 { margin: 11px 0 0; font-size: clamp(30px, 3vw, 40px); line-height: 1.15; letter-spacing: -.035em; }
 .showcase-featured-heading > p { max-width: 390px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.showcase-featured-scoring { margin-bottom: 26px; padding: 17px 0 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.showcase-featured-scoring > p { margin: 0 0 12px; color: var(--ink); font-size: 13px; font-weight: 700; }
+.showcase-featured-scoring dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 0 0 10px; }
+.showcase-featured-scoring dl > div { display: flex; min-width: 0; justify-content: space-between; gap: 10px; }
+.showcase-featured-scoring dt { color: var(--ink); font-size: 13px; }
+.showcase-featured-scoring dd { flex: 0 0 auto; margin: 0; color: var(--accent); font-size: 13px; font-weight: 800; }
+.showcase-featured-scoring > small { color: var(--muted); font-size: 12px; line-height: 1.5; }
 .showcase-featured-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.showcase-featured-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid #e6e2ef; border-radius: 16px; background: #fff; color: var(--ink) !important; text-decoration: none; transition: border-color .2s, box-shadow .2s, transform .2s; }
-.showcase-featured-card:hover { transform: translateY(-2px); border-color: #bcaeeb; box-shadow: 0 14px 34px rgb(48 37 86 / 8%); }
-.showcase-featured-card:focus-visible { outline: 3px solid #8270f4; outline-offset: 3px; }
-.showcase-featured-image { display: grid; width: 100%; aspect-ratio: 4 / 3; place-items: center; overflow: hidden; background: #f5f2fa; }
-.showcase-featured-image img { display: block; width: 100%; height: 100%; padding: 18px; object-fit: contain; }
+.showcase-featured-list.is-stacked { position: relative; display: block; width: min(100%, 960px); height: clamp(300px, 50vw, 470px); margin-inline: auto; isolation: isolate; }
+.showcase-featured-card { position: relative; display: block; min-width: 0; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid #e6e2ef; border-radius: 18px; background: #fff; color: #fff !important; text-decoration: none; box-shadow: 0 18px 40px rgb(31 23 59 / 15%); transition: transform .25s ease, box-shadow .25s ease; }
+.showcase-featured-list.is-stacked .showcase-featured-card { position: absolute; top: var(--card-top); left: var(--card-left); z-index: var(--card-layer); width: 34%; transform: rotate(var(--card-tilt)); }
+.showcase-featured-list.is-stacked .showcase-featured-card:nth-child(1) { --card-left: 5%; --card-top: 20px; --card-tilt: -5deg; --card-layer: 1; }
+.showcase-featured-list.is-stacked .showcase-featured-card:nth-child(2) { --card-left: 33%; --card-top: 46px; --card-tilt: 4deg; --card-layer: 2; }
+.showcase-featured-list.is-stacked .showcase-featured-card:nth-child(3) { --card-left: 61%; --card-top: 27px; --card-tilt: -2deg; --card-layer: 3; }
+.showcase-featured-card:hover, .showcase-featured-card:focus-visible, .showcase-featured-list.is-stacked .showcase-featured-card:hover, .showcase-featured-list.is-stacked .showcase-featured-card:focus-visible { z-index: 5; transform: translateY(-10px) rotate(0) scale(1.025); box-shadow: 0 28px 60px rgb(31 23 59 / 23%); }
+.showcase-featured-card:focus-visible { outline: 3px solid #8270f4; outline-offset: 4px; }
+.showcase-featured-rank { position: absolute; top: 15px; left: 15px; z-index: 1; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgb(255 255 255 / 75%); border-radius: 10px; background: rgb(255 255 255 / 88%); color: #4333b4; font-size: 12px; font-weight: 800; backdrop-filter: blur(8px); }
+.showcase-featured-image { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; background: #f5f2fa; }
+.showcase-featured-image img { display: block; width: 100%; height: 100%; padding: 10px 10px 60px; object-fit: contain; }
 .showcase-featured-placeholder { padding: 20px; color: var(--muted); font-size: 13px; text-align: center; }
-.showcase-featured-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 8px; padding: 20px 22px 22px; }
-.showcase-featured-copy strong { color: var(--ink); font-size: 18px; line-height: 1.4; }
-.showcase-featured-copy small { color: var(--muted); font-size: 12px; line-height: 1.45; }
-.showcase-featured-copy > span { margin-top: auto; padding-top: 12px; color: var(--accent); font-size: 13px; font-weight: 700; }
-.showcase-featured-card:hover .showcase-featured-copy > span { text-decoration: underline; text-underline-offset: 3px; }
+.showcase-featured-copy { position: absolute; right: 0; bottom: 0; left: 0; display: flex; min-width: 0; flex-direction: column; gap: 9px; padding: 68px 20px 20px; background: linear-gradient(180deg, transparent, rgb(13 17 35 / 78%) 46%, rgb(13 17 35 / 96%)); }
+.showcase-featured-copy strong { display: block; overflow: hidden; color: #fff; font-size: 18px; line-height: 1.33; text-overflow: ellipsis; white-space: nowrap; }
+.showcase-featured-list.is-stacked .showcase-featured-card:not(:last-child) .showcase-featured-copy { padding-right: 65px; }
+.showcase-featured-list.is-stacked .showcase-featured-card:hover .showcase-featured-copy, .showcase-featured-list.is-stacked .showcase-featured-card:focus-visible .showcase-featured-copy { padding-right: 20px; }
+.showcase-featured-card:hover .showcase-featured-copy strong, .showcase-featured-card:focus-visible .showcase-featured-copy strong { display: -webkit-box; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+.showcase-featured-copy > span { color: #e8e4ff; font-size: 12px; font-weight: 700; }
+.showcase-featured-card:hover .showcase-featured-copy > span, .showcase-featured-card:focus-visible .showcase-featured-copy > span { text-decoration: underline; text-underline-offset: 3px; }
+.showcase-featured-swipe { display: none; }
+.showcase-featured-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 26px; }
+.showcase-featured-cta > div { max-width: 610px; }
+.showcase-featured-cta strong { color: var(--ink); font-size: 17px; }
+.showcase-featured-cta p { margin: 5px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.showcase-featured-cta .showcase-primary { flex: 0 0 auto; white-space: nowrap; }
 .showcase-form-shell > .showcase-featured { margin: 0; padding-top: 44px; border-top: 0; }
 .showcase-section-heading { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); gap: 48px; align-items: center; margin-bottom: 24px; padding: 0; border: 0; background: transparent; }
 .showcase-section-heading h2 { max-width: 630px; margin: 10px 0 0; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -.045em; }
@@ -518,6 +539,8 @@ html { scroll-behavior: smooth; }
   .showcase-discovery-grid { grid-template-columns: 1fr; }
   .showcase-featured-heading { align-items: start; flex-direction: column; gap: 12px; }
   .showcase-featured-heading > p { max-width: 680px; }
+  .showcase-featured-scoring dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .showcase-featured-cta { align-items: start; flex-direction: column; gap: 16px; }
   .showcase-featured-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .showcase-discovery-grid article { min-height: 0; }
   .showcase-shopping-paths-grid { grid-template-columns: 1fr; }
@@ -553,6 +576,15 @@ html { scroll-behavior: smooth; }
   .media-preview-stage { padding: 14px; }
   .media-preview-stage img, .media-preview-stage video { max-height: calc(100dvh - 122px); }
 }
+@media (max-width: 800px) {
+  .showcase-featured-list.is-stacked { display: flex; width: 100%; height: auto; gap: 14px; margin: 0; padding: 18px 3px 28px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-padding-inline: 3px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .showcase-featured-list.is-stacked .showcase-featured-card { position: relative; top: auto; left: auto; flex: 0 0 min(72vw, 320px); width: auto; transform: none; scroll-snap-align: start; }
+  .showcase-featured-list.is-stacked .showcase-featured-card:hover, .showcase-featured-list.is-stacked .showcase-featured-card:focus-visible { transform: translateY(-4px); }
+  .showcase-featured-list.is-stacked .showcase-featured-card:not(:last-child) .showcase-featured-copy { padding-right: 20px; }
+  .showcase-featured-copy strong { display: -webkit-box; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+  .showcase-featured-swipe { display: block; margin: 0; color: var(--muted); font-size: 12px; text-align: center; }
+  .showcase-featured-cta { margin-top: 28px; }
+}
 @media (max-width: 560px) {
   .management-confirm-dialog { width: calc(100vw - 24px); border-radius: 16px; }
   .management-confirm-header { padding: 22px 20px 0; }
@@ -574,10 +606,11 @@ html { scroll-behavior: smooth; }
   .showcase-discovery { padding: 44px 0 52px; }
   .showcase-featured { margin-bottom: 52px; padding-top: 44px; }
   .showcase-featured-heading { margin-bottom: 20px; }
+  .showcase-featured-scoring dl { grid-template-columns: 1fr; gap: 9px; }
   .showcase-featured-list { grid-template-columns: 1fr; gap: 16px; }
-  .showcase-featured-image { aspect-ratio: 4 / 3; }
-  .showcase-featured-copy { padding: 18px 20px 20px; }
+  .showcase-featured-copy { padding: 68px 20px 20px; }
   .showcase-featured-copy strong { font-size: 18px; }
+  .showcase-featured-cta .showcase-primary { width: 100%; white-space: normal; text-align: center; }
   .showcase-growth { margin-bottom: 52px; padding: 26px 18px 18px; border-radius: 20px; }
   .showcase-faq { margin-bottom: 56px; padding-top: 44px; }
   .showcase-path { margin-bottom: 56px; padding: 28px 18px 16px; border-radius: 20px; }
@@ -633,6 +666,7 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .skeleton-line, .skeleton-input, .skeleton-textarea, .skeleton-dot { animation: none; }
+  .showcase-featured-card { transition: none; }
 }
 
 @media (forced-colors: active) {
