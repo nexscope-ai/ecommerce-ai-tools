@@ -3,28 +3,24 @@
 <section class="showcase-featured" aria-labelledby="showcase-featured-{{ include.context }}-title">
   <header class="showcase-featured-heading">
     <div>
-      <span class="eyebrow">Published product pages</span>
-      <h2 id="showcase-featured-{{ include.context }}-title">Featured from the Gallery.</h2>
-      <p>Open a reviewed product page to see its details, images and original selling link.</p>
+      <span class="eyebrow">From the Product Gallery</span>
+      <h2 id="showcase-featured-{{ include.context }}-title">Browse published product pages.</h2>
     </div>
-    <div class="showcase-featured-count"><strong>{{ published_products.size }}</strong><span>published in this Gallery snapshot</span></div>
+    <p>See how products appear in the Gallery. Open a card to view its details and original selling link.</p>
   </header>
   <div class="showcase-featured-list">
     {% for product in published_products limit:3 %}
-    <a class="showcase-featured-card" href="{{ product.path | relative_url }}" aria-label="View details for {{ product.title | escape }}">
-      <span class="showcase-featured-number" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+    <a class="showcase-featured-card" href="{{ product.path | relative_url }}">
       <span class="showcase-featured-image">
-        {% if product.image %}<img src="{{ product.image | escape }}" alt="" loading="lazy" width="240" height="180">{% else %}<span class="showcase-featured-placeholder" aria-hidden="true">Product image unavailable</span>{% endif %}
+        {% if product.image %}<img src="{{ product.image | escape }}" alt="" loading="lazy" width="480" height="360">{% else %}<span class="showcase-featured-placeholder" aria-hidden="true">Product image unavailable</span>{% endif %}
       </span>
       <span class="showcase-featured-copy">
-        <small>Reviewed product{% if product.lastModified %} · Published {{ product.lastModified | date: "%b %-d, %Y" }}{% endif %}</small>
         <strong>{{ product.title | escape }}</strong>
-        <span>View product details</span>
+        <small>{% if product.lastModified %}Published {{ product.lastModified | date: "%b %-d, %Y" }}{% else %}Published product{% endif %}</small>
+        <span>View product details <span aria-hidden="true">↗</span></span>
       </span>
-      <span class="showcase-featured-arrow" aria-hidden="true">↗</span>
     </a>
     {% endfor %}
   </div>
-  <p class="showcase-featured-note">Shown in the Gallery’s current display order, not ranked by sales or customer ratings.</p>
 </section>
 {% endif %}
