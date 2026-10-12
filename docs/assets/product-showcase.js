@@ -453,13 +453,14 @@
   };
 
   const appendInlineMarkdown = (target, source) => {
-    const pattern = /(\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|\*\*([^*\n]+)\*\*|__([^_\n]+)__|`([^`\n]+)`|\*([^*\n]+)\*|_([^_\n]+)_)/g;
+    const pattern = /(\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|<(https?:\/\/[^>\s]+)>|(https?:\/\/[^\s<]+)|\*\*([^*\n]+)\*\*|__([^_\n]+)__|~~([^~\n]+)~~|`([^`\n]+)`|\*([^*\n]+)\*|_([^_\n]+)_)/g;
     let cursor = 0;
     let match;
     while ((match = pattern.exec(source)) !== null) {
       if (match.index > cursor) target.append(document.createTextNode(source.slice(cursor, match.index)));
       let element;
       let text;
+      let suffix = '';
       if (match[2] && match[3]) {
         try {
           const url = new URL(match[3]);
@@ -475,23 +476,149 @@
           continue;
         }
       } else if (match[4] || match[5]) {
+        const rawUrl = match[4] || match[5];
+        const cleanedUrl = rawUrl.replace(/[.,;:!?]+$/, '');
+        suffix = rawUrl.slice(cleanedUrl.length);
+        try {
+          const url = new URL(cleanedUrl);
+          if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Unsupported protocol');
+          element = document.createElement('a');
+          element.href = url.href;
+          element.target = '_blank';
+          element.rel = 'noopener noreferrer';
+          text = cleanedUrl;
+        } catch (_) {
+          target.append(document.createTextNode(match[0]));
+          cursor = pattern.lastIndex;
+          continue;
+        }
+      } else if (match[6] || match[7]) {
         element = document.createElement('strong');
-        text = match[4] || match[5];
-      } else if (match[6]) {
+        text = match[6] || match[7];
+      } else if (match[8]) {
+        element = document.createElement('del');
+        text = match[8];
+      } else if (match[9]) {
         element = document.createElement('code');
-        text = match[6];
+        text = match[9];
       } else {
         element = document.createElement('em');
-        text = match[7] || match[8];
+        text = match[10] || match[11];
       }
       element.textContent = text;
       target.append(element);
+      if (suffix) target.append(document.createTextNode(suffix));
       cursor = pattern.lastIndex;
     }
     if (cursor < source.length) target.append(document.createTextNode(source.slice(cursor)));
   };
 
+  const splitMarkdownTableRow = line => {
+    let value = line.trim();
+    if (value.startsWith('|')) value = value.slice(1);
+    if (value.endsWith('|') && !value.endsWith('\\|')) value = value.slice(0, -1);
+    const cells = [];
+    let cell = '';
+    let escaped = false;
+    let inCode = false;
+    for (const character of value) {
+      if (escaped) {
+        cell += character;
+        escaped = false;
+      } else if (character === '\\') {
+        escaped = true;
+      } else if (character === '`') {
+        inCode = !inCode;
+        cell += character;
+      } else if (character === '|' && !inCode) {
+        cells.push(cell.trim());
+        cell = '';
+      } else {
+        cell += character;
+      }
+    }
+    if (escaped) cell += '\\';
+    cells.push(cell.trim());
+    return cells;
+  };
+
+  const tableAlignments = line => {
+    const cells = splitMarkdownTableRow(line);
+    if (cells.length < 2 || cells.some(cell => !/^:?-{3,}:?$/.test(cell))) return null;
+    return cells.map(cell => {
+      const left = cell.startsWith(':');
+      const right = cell.endsWith(':');
+      if (left && right) return 'center';
+      if (right) return 'right';
+      return 'left';
+    });
+  };
+
+  const enhanceMarkdownCopy = target => {
+    if (target.dataset.markdownCopyEnhanced === 'true') return;
+    target.dataset.markdownCopyEnhanced = 'true';
+    target.addEventListener('copy', event => {
+      const selection = window.getSelection();
+      if (!selection || selection.rangeCount !== 1 || selection.isCollapsed || !event.clipboardData) return;
+      const range = selection.getRangeAt(0);
+      const common = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
+        ? range.commonAncestorContainer
+        : range.commonAncestorContainer.parentElement;
+      if (common !== target && !target.contains(common)) return;
+
+      const selectedLinks = Array.from(target.querySelectorAll('a[href]')).filter(link => {
+        try {
+          return range.intersectsNode(link);
+        } catch (_) {
+          return false;
+        }
+      });
+      if (!selectedLinks.length) return;
+
+      const rich = document.createElement('div');
+      rich.append(range.cloneContents());
+      const startElement = range.startContainer.nodeType === Node.ELEMENT_NODE
+        ? range.startContainer
+        : range.startContainer.parentElement;
+      const endElement = range.endContainer.nodeType === Node.ELEMENT_NODE
+        ? range.endContainer
+        : range.endContainer.parentElement;
+      const startLink = startElement?.closest?.('a[href]');
+      const endLink = endElement?.closest?.('a[href]');
+      if (!rich.querySelector('a[href]') && startLink && startLink === endLink) {
+        const link = startLink.cloneNode(false);
+        link.textContent = selection.toString();
+        rich.replaceChildren(link);
+      }
+
+      const plain = rich.cloneNode(true);
+      plain.querySelectorAll('a[href]').forEach(link => {
+        const label = link.textContent.trim();
+        const url = link.href;
+        link.replaceWith(document.createTextNode(label && label !== url ? `${label} (${url})` : url));
+      });
+      plain.style.cssText = 'position:fixed;left:-10000px;top:0;white-space:pre-wrap;';
+      document.body.append(plain);
+      let plainText = (plain.innerText || plain.textContent || '').trim();
+      plain.remove();
+      const missingLinks = selectedLinks.filter(link => !plainText.includes(link.href));
+      if (missingLinks.length) {
+        const references = missingLinks.map(link => {
+          const label = link.textContent.trim();
+          return label && label !== link.href ? `${label}: ${link.href}` : link.href;
+        });
+        plainText += `${plainText ? '\n\n' : ''}Links:\n- ${references.join('\n- ')}`;
+      }
+
+      event.clipboardData.setData('text/plain', plainText);
+      event.clipboardData.setData('text/html', rich.innerHTML);
+      event.preventDefault();
+    });
+  };
+
   const renderMarkdown = (target, source) => {
+    enhanceMarkdownCopy(target);
+    target.__markdownSource = source;
     target.replaceChildren();
     if (!source.trim()) {
       const empty = document.createElement('p');
@@ -558,6 +685,43 @@
         continue;
       }
 
+      const alignments = index + 1 < lines.length ? tableAlignments(lines[index + 1]) : null;
+      const headerCells = line.includes('|') ? splitMarkdownTableRow(line) : [];
+      if (alignments && headerCells.length === alignments.length) {
+        const scroller = document.createElement('div');
+        scroller.className = 'markdown-table-scroll';
+        const table = document.createElement('table');
+        const head = document.createElement('thead');
+        const headRow = document.createElement('tr');
+        headerCells.forEach((value, cellIndex) => {
+          const cell = document.createElement('th');
+          cell.style.textAlign = alignments[cellIndex];
+          appendInlineMarkdown(cell, value);
+          headRow.append(cell);
+        });
+        head.append(headRow);
+        table.append(head);
+        index += 2;
+
+        const body = document.createElement('tbody');
+        while (index < lines.length && lines[index].trim() && lines[index].includes('|')) {
+          const values = splitMarkdownTableRow(lines[index]);
+          const row = document.createElement('tr');
+          alignments.forEach((alignment, cellIndex) => {
+            const cell = document.createElement('td');
+            cell.style.textAlign = alignment;
+            appendInlineMarkdown(cell, values[cellIndex] || '');
+            row.append(cell);
+          });
+          body.append(row);
+          index += 1;
+        }
+        table.append(body);
+        scroller.append(table);
+        target.append(scroller);
+        continue;
+      }
+
       const unordered = /^[-*]\s+/.test(line);
       const ordered = /^\d+\.\s+/.test(line);
       if (unordered || ordered) {
@@ -585,6 +749,24 @@
       appendInlineMarkdown(paragraph, paragraphLines.join(' '));
       target.append(paragraph);
     }
+  };
+
+  const copyMarkdownSource = async target => {
+    const value = typeof target.__markdownSource === 'string' ? target.__markdownSource : '';
+    if (!value) return false;
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+      return true;
+    }
+    const fallback = document.createElement('textarea');
+    fallback.value = value;
+    fallback.setAttribute('readonly', '');
+    fallback.style.cssText = 'position:fixed;left:-10000px;top:0;';
+    document.body.append(fallback);
+    fallback.select();
+    const copied = document.execCommand('copy');
+    fallback.remove();
+    return copied;
   };
 
   const wireMarkdownEditor = (scope, form) => {
@@ -1113,6 +1295,8 @@
     const publishBadge = managementPage.querySelector('[data-publish-status]');
     const reviewInsights = managementPage.querySelector('[data-review-insights]');
     const reviewSuggestion = managementPage.querySelector('[data-review-suggestion]');
+    const reviewSuggestionToolbar = managementPage.querySelector('[data-review-suggestion-toolbar]');
+    const reviewSuggestionCopy = managementPage.querySelector('[data-copy-review-suggestion]');
     const reviewScore = managementPage.querySelector('[data-review-score]');
     const reviewScoreValue = managementPage.querySelector('[data-review-score-value]');
     const confirmDialog = managementPage.querySelector('[data-management-confirm-dialog]');
@@ -1122,6 +1306,17 @@
     const confirmCancel = confirmDialog.querySelector('.management-confirm-actions [data-management-confirm-cancel]');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let resolveConfirmation;
+
+    reviewSuggestionCopy?.addEventListener('click', async () => {
+      const idleLabel = reviewSuggestionCopy.textContent;
+      try {
+        const copied = await copyMarkdownSource(reviewSuggestion);
+        reviewSuggestionCopy.textContent = copied ? 'Copied' : 'Nothing to copy';
+      } catch (_) {
+        reviewSuggestionCopy.textContent = 'Copy failed';
+      }
+      window.setTimeout(() => { reviewSuggestionCopy.textContent = idleLabel; }, 1600);
+    });
 
     const confirmManagementAction = ({ title, description, actionLabel, intent }) => new Promise(resolve => {
       if (confirmDialog.open) {
@@ -1206,6 +1401,7 @@
       // A default score of 0 is not editorial feedback on its own.
       const hasScore = hasSuggestion && Number.isFinite(score) && score >= 0 && score <= 100;
       reviewInsights.hidden = !hasSuggestion;
+      if (reviewSuggestionToolbar) reviewSuggestionToolbar.hidden = !hasSuggestion;
       reviewSuggestion.hidden = !hasSuggestion;
       if (hasSuggestion) renderMarkdown(reviewSuggestion, suggestion);
       else reviewSuggestion.replaceChildren();
