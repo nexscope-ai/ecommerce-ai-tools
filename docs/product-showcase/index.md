@@ -11,7 +11,7 @@ keywords:
   - additional product exposure for ecommerce sellers
   - can a product gallery increase referral traffic
 permalink: /product-showcase/
-last_modified_at: 2026-10-09
+last_modified_at: 2026-10-12
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -94,6 +94,7 @@ faq:
       <li><strong>Add a discovery route</strong><span>An approved and published Gallery page brings product details, media and the original buying link together.</span></li>
     </ul>
     <p>Submission, editorial review and, if approved, listing and display in the Gallery are completely free.</p>
+    <p>Start by improving your original listing: learn how <a href="{{ '/product-page-seo-for-ecommerce/' | relative_url }}">product page SEO helps shoppers find it</a> and how <a href="{{ '/product-page-geo-ai-shopping/' | relative_url }}">clear product facts support AI-assisted shopping research</a>. The Gallery adds feedback and, when approved, another public page; it does not replace your store page.</p>
     <small class="showcase-disclaimer">Publication depends on editorial review. Nexscope does not guarantee indexing, AI recommendations, traffic or sales.</small>
   </div>
   <figure class="showcase-growth-art">
