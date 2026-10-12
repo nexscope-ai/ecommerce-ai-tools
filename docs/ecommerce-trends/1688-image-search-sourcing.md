@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "1688 Search by Image: Compare Products & Suppliers"
-description: "How to search 1688 by image: compare visually similar offers, prices and MOQ, then check product details and supplier claims before ordering. Includes a real API test."
+description: "Search 1688 by image to compare similar offers, prices, MOQ and supplier details. Includes a real API test and checks to make before ordering."
 permalink: /ecommerce-trends/1688-image-search-sourcing/
 last_reviewed: 2026-09-24
 date_published: 2026-09-20

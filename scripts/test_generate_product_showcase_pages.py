@@ -106,7 +106,7 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             )
             self.assertIn(GENERATED_MARKER, html)
             self.assertIn(canonical, html)
-            self.assertIn("<title>SEO title for static product | Nexscope Product Gallery</title>", html)
+            self.assertIn("<title>SEO title for static product | Nexscope</title>", html)
             self.assertIn('<meta name="keywords" content="static product, workflow product">', html)
             self.assertIn('<html lang="en-US">', html)
             self.assertIn(

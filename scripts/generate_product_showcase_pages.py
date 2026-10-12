@@ -669,7 +669,7 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
         images = [url for value in raw_images if (url := safe_url(value))][:5]
     product_url = safe_url(product.get("productUrl"))
     video_url = safe_url(product.get("videoUrl"))
-    page_title = title if "nexscope" in title.lower() else f"{title} | Nexscope Product Gallery"
+    page_title = title if "nexscope" in title.lower() else f"{title} | Nexscope"
     first_image = images[0] if images else None
     if images:
         preview_stage = '<div class="carousel-stage">' + "".join(

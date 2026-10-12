@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Product Discovery: Merchant Guide"
-description: Prepare products for ChatGPT shopping research with accurate facts, public pages, evidence and measurement. See where Nexscope Product Gallery fits and what it cannot do.
+description: Prepare products for ChatGPT shopping research with accurate facts, evidence and measurement. See where Nexscope Product Gallery fits and its limits.
 permalink: /ecommerce-trends/chatgpt-product-discovery/
 last_reviewed: 2026-10-08
 date_published: 2026-09-18

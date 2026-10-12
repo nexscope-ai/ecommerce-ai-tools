@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Enterprise Ecommerce API and MCP Partnerships
-description: Explore Nexscope enterprise ecommerce APIs and MCP tools for product research, search intelligence and AI creative workflows, with tailored usage and integration support.
+description: Explore Nexscope enterprise ecommerce APIs and MCP tools for product research, search intelligence and AI creative workflows, with tailored integration support.
 permalink: /enterprise-ecommerce-api-mcp-partnership/
 date_published: 2026-10-10
 date_modified: 2026-10-10
