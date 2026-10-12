@@ -51,6 +51,10 @@ private_page: true
         <strong data-review-score-value>—</strong>
         <small>/ 100</small>
       </div>
+      <div class="management-suggestion-toolbar" data-review-suggestion-toolbar hidden>
+        <span>SEO / GEO suggestions</span>
+        <button type="button" data-copy-review-suggestion>Copy Markdown</button>
+      </div>
       <div class="markdown-preview management-suggestion-markdown" data-review-suggestion hidden></div>
     </section>
 
@@ -173,7 +177,7 @@ private_page: true
 
   <dialog class="markdown-editor-dialog" data-markdown-dialog aria-labelledby="management-markdown-editor-title">
     <div class="markdown-dialog-header">
-      <div><span class="eyebrow">Product details</span><h2 id="management-markdown-editor-title">Edit Markdown with a live preview</h2><p>Raw HTML is shown as text. Headings, emphasis, lists, links, quotes and code are supported.</p></div>
+      <div><span class="eyebrow">Product details</span><h2 id="management-markdown-editor-title">Edit Markdown with a live preview</h2><p>GitHub-flavored Markdown supports headings, emphasis, nested lists, links, tables, task lists, quotes, images and code. Raw HTML is displayed as text.</p></div>
       <button class="markdown-dialog-close" type="button" data-close-markdown aria-label="Close Markdown editor">×</button>
     </div>
     <div class="markdown-editor-grid">

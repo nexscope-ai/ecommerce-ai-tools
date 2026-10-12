@@ -456,6 +456,14 @@
   const markdownParser = markdownTools?.createParser(window.markdownit);
 
   const renderMarkdown = (target, source, isReviewSuggestion = false) => {
+    if (markdownTools?.render) {
+      markdownTools.render(target, source, {
+        parser: markdownParser,
+        reviewSuggestion: isReviewSuggestion,
+      });
+      return;
+    }
+
     target.replaceChildren();
     if (!source.trim()) {
       const empty = document.createElement('p');
@@ -1011,6 +1019,8 @@
     const publishBadge = managementPage.querySelector('[data-publish-status]');
     const reviewInsights = managementPage.querySelector('[data-review-insights]');
     const reviewSuggestion = managementPage.querySelector('[data-review-suggestion]');
+    const reviewSuggestionToolbar = managementPage.querySelector('[data-review-suggestion-toolbar]');
+    const reviewSuggestionCopy = managementPage.querySelector('[data-copy-review-suggestion]');
     const reviewScore = managementPage.querySelector('[data-review-score]');
     const reviewScoreValue = managementPage.querySelector('[data-review-score-value]');
     const confirmDialog = managementPage.querySelector('[data-management-confirm-dialog]');
@@ -1020,6 +1030,17 @@
     const confirmCancel = confirmDialog.querySelector('.management-confirm-actions [data-management-confirm-cancel]');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let resolveConfirmation;
+
+    reviewSuggestionCopy?.addEventListener('click', async () => {
+      const idleLabel = reviewSuggestionCopy.textContent;
+      try {
+        const copied = await markdownTools?.copySource?.(reviewSuggestion);
+        reviewSuggestionCopy.textContent = copied ? 'Copied' : 'Nothing to copy';
+      } catch (_) {
+        reviewSuggestionCopy.textContent = 'Copy failed';
+      }
+      window.setTimeout(() => { reviewSuggestionCopy.textContent = idleLabel; }, 1600);
+    });
 
     const confirmManagementAction = ({ title, description, actionLabel, intent }) => new Promise(resolve => {
       if (confirmDialog.open) {
@@ -1104,6 +1125,7 @@
       // A default score of 0 is not editorial feedback on its own.
       const hasScore = hasSuggestion && Number.isFinite(score) && score >= 0 && score <= 100;
       reviewInsights.hidden = !hasSuggestion;
+      if (reviewSuggestionToolbar) reviewSuggestionToolbar.hidden = !hasSuggestion;
       reviewSuggestion.hidden = !hasSuggestion;
       if (hasSuggestion) renderMarkdown(reviewSuggestion, suggestion, true);
       else reviewSuggestion.replaceChildren();
