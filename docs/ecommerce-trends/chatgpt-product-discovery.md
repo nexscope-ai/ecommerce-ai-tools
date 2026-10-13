@@ -146,6 +146,8 @@ AI referrals can lose or change referrer details. Add UTM parameters to links yo
 
 Choose one product and one constrained buyer question. Check the original listing's facts and buying terms, then [submit the product to the Nexscope Gallery]({{ '/product-showcase/submit/' | relative_url }}) if you want an additional reviewed public page and editorial suggestions. [Run an AI visibility report](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery&utm_content=conclusion) separately to observe sampled shopping answers. Neither step replaces the merchant's own catalog or guarantees that an AI assistant recommends the product.
 
+For a narrower check of what shoppers see after discovery, use the [product-card versus offer-card seller audit](../chatgpt-product-cards-offer-cards-seller-audit/). It separates the product choice from the merchant offer and explains the limits of a recent observational shopping study.
+
 ## Sources
 
 - [OpenAI: Powering Product Discovery in ChatGPT](https://openai.com/index/powering-product-discovery-in-chatgpt/), March 24, 2026
