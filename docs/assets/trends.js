@@ -24,31 +24,16 @@
     } catch (_) { /* Attribution must not block navigation. */ }
     return source;
   })();
-  const campaignFromPath = () => {
-    const segments = window.location.pathname.split('/').filter(Boolean);
-    const slug = segments.at(-1) === 'ecommerce-ai-tools' ? 'learning_center' : segments.at(-1);
-    return (slug || 'learning_center').replace(/[^a-z0-9]+/gi, '_').replace(/^_+|_+$/g, '').toLowerCase();
-  };
-  const contentFromLink = (link, url) => {
-    const explicit = link.dataset.utmContent || url.searchParams.get('utm_content') || '';
-    if (/^(early_cta|inline_link|final_cta|video_hint)$/.test(explicit)) return explicit;
-    if (link.closest('.article-action')) return 'early_cta';
-    if (/final|bottom|closing/i.test(explicit) || link.closest('.article-next')) return 'final_cta';
-    return 'inline_link';
-  };
-
-  // Attribute every Learn -> Nexscope product handoff to the current Learn page.
+  // Keep Learn navigation context without replacing the original GA4 source.
   document.querySelectorAll('a[href]').forEach(link => {
     const url = new URL(link.href, window.location.href);
     if (!officialProductHosts.has(url.hostname)) return;
     url.searchParams.delete('fpr');
     url.searchParams.set('co-from', 'learn');
-    url.searchParams.set('utm_source', 'learn.nexscope.ai');
-    url.searchParams.set('utm_medium', 'referral');
-    url.searchParams.set('utm_campaign', link.dataset.utmCampaign || campaignFromPath());
-    url.searchParams.set('utm_content', contentFromLink(link, url));
-    if (learnEntrySource) url.searchParams.set('learn_entry_source', learnEntrySource);
-    else url.searchParams.delete('learn_entry_source');
+    for (const name of [...url.searchParams.keys()]) {
+      if (name.startsWith('utm_')) url.searchParams.delete(name);
+    }
+    url.searchParams.delete('learn_entry_source');
     link.href = url.href;
     link.setAttribute('data-track', 'start_using');
   });

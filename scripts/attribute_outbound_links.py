@@ -1,4 +1,4 @@
-"""Add Learn attribution to rendered links that leave for the Nexscope app.
+"""Keep Learn context on rendered links without replacing GA4 acquisition.
 
 Run after Jekyll builds the site, so links from Markdown, includes, and data
 templates receive the same treatment without changing canonical or JSON-LD URLs.
@@ -27,13 +27,12 @@ def is_official_link(href: str) -> bool:
 
 def attribute_url(href: str, page: Path, index: int) -> str:
     url = urlsplit(html.unescape(href))
-    query = dict(parse_qsl(url.query, keep_blank_values=True))
+    query = {
+        key: value
+        for key, value in parse_qsl(url.query, keep_blank_values=True)
+        if not key.startswith("utm_") and key != "learn_entry_source"
+    }
     query["co-from"] = "learn"
-    query["utm_source"] = "learn.nexscope.ai"
-    query["utm_medium"] = "referral"
-    query.setdefault("utm_campaign", "learning_center")
-    page_name = "_".join(page.with_suffix("").parts).replace("_index", "") or "home"
-    query.setdefault("utm_content", f"{page_name}_link_{index}")
     target = url._replace(query=urlencode(query), netloc="www.nexscope.ai")
     return html.escape(urlunsplit(target), quote=True)
 
@@ -70,8 +69,8 @@ def process_site(site: Path) -> tuple[int, int]:
             if not is_official_link(match.group("href")):
                 continue
             query = dict(parse_qsl(urlsplit(html.unescape(match.group("href"))).query))
-            if any(not query.get(key) for key in ("co-from", "utm_source", "utm_medium", "utm_campaign", "utm_content")):
-                raise ValueError(f"Unattributed official link in {page}")
+            if query.get("co-from") != "learn" or any(key.startswith("utm_") for key in query):
+                raise ValueError(f"Incorrect Learn link attribution in {page}")
     return changed_pages, attributed_links
 
 
@@ -80,7 +79,7 @@ def main() -> None:
     parser.add_argument("site", type=Path, help="Built Jekyll site directory")
     args = parser.parse_args()
     pages, links = process_site(args.site)
-    print(f"Attributed {links} official links across {pages} built HTML pages.")
+    print(f"Prepared {links} official links across {pages} built HTML pages.")
 
 
 if __name__ == "__main__":
