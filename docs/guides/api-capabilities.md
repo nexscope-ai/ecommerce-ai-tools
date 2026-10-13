@@ -20,6 +20,8 @@ image_caption: "Illustration: Nexscope capabilities can be combined into focused
 
 Nexscope exposes ecommerce research and creative AI capabilities through REST APIs and MCP tools. Use [the official API docs](https://www.nexscope.ai/api-docs?co-from=learn) to inspect parameters, response fields, examples, and testing instructions for the endpoint you need.
 
+For the TikTok-specific catalog, see the [TikTok Shop API guide](/guides/tiktok-shop-api-guide/), which groups the current product, creator, video, shop, advertising, and analytics APIs by seller decision.
+
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?co-from=learn). Credit usage and access vary by action. Creative API key access requires an active subscription; trial credits do not enable it.
 
 ## What is in the API docs?

@@ -34,6 +34,8 @@ An AI UGC video for TikTok Shop can turn a product image and a verified selling 
 
 TikTok now offers its own [AI Video Maker in Seller Center](https://seller-us.tiktok.com/university/essay?knowledge_id=4411372784994066&lang=en), while its September 2026 [TikTok Shop AI-generated content guidance](https://seller-us.tiktok.com/university/essay?knowledge_id=491489038501663) explains disclosure and product-accuracy requirements for the US market. This guide shows how to create, review, and test an AI-assisted product video, including where Nexscope fits and where human footage remains the better choice.
 
+For the data layer behind product, creator, and video research, see the [TikTok Shop API guide](/guides/tiktok-shop-api-guide/).
+
 > **Key takeaways:** Start with approved images and claims for one exact SKU. Use AI to test a hook or visual treatment, not to invent product performance or a customer's experience. Review the generated item against the listing before publishing. Disclose fully or significantly AI-generated content as TikTok Shop requires in your market. Measure product clicks and orders alongside views, and keep a record of the input, final video, and approval decision.
 
 ## How do you go from market research to an AI UGC video?
