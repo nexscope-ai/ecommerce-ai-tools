@@ -5,8 +5,8 @@ description: Learn what Google's six Merchant Center conversational attributes d
 permalink: /ecommerce-trends/merchant-center-conversational-attributes/
 last_reviewed: 2026-09-22
 date_published: 2026-09-22
-date_modified: 2026-09-22
-last_modified_at: 2026-09-22
+date_modified: 2026-10-13
+last_modified_at: 2026-10-13
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -33,7 +33,7 @@ faq:
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 22, 2026 · Updated September 22, 2026**
+**By Nexscope Team · Published September 22, 2026 · Updated October 13, 2026**
 
 **Merchant Center conversational attributes are six optional product-data fields designed to help AI systems understand questions, documents, product relationships, groups, variants, and relative popularity.** They complement the standard product feed; they do not replace identifiers, price, availability, required attributes, or accurate landing pages.
 
@@ -163,7 +163,7 @@ Review and substantiate every proposed value. Marketplace observations, keyword 
 
 Select 20 products from one coherent category. Fix core feed inconsistencies first, then add one or two conversational attributes that answer a documented need. Record the baseline, upload date, affected items, validation result, and relevant AI Performance Insights segment. Review the same cohort after processing instead of comparing it with unrelated products.
 
-The best first result is not “all six fields completed.” It is a smaller catalog segment with fewer unanswered questions and a repeatable update process.
+The best first result is not “all six fields completed.” It is a smaller catalog segment with fewer unanswered questions and a repeatable update process. Use the [product data enrichment checklist]({{ '/ecommerce-product-data-enrichment/' | relative_url }}) to reconcile the underlying catalog, product page, structured data, and feed before adding optional fields.
 
 ## Sources
 

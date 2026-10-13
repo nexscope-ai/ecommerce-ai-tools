@@ -13,6 +13,7 @@ Language: English
 - https://learn.nexscope.ai/ecommerce-ai-tools/what-is-an-mcp-server/ — MCP concepts, clients, servers, tools, resources, and permissions
 - https://learn.nexscope.ai/ecommerce-ai-tools/api-capabilities/ — ecommerce API capabilities and evidence boundaries
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-competitor-keyword-research/ — competitor keyword research workflow
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-product-data-enrichment/ — verify catalog, product page, structured data, and feed facts before enrichment
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-negative-review-analysis/ — customer complaint and review analysis
 - https://learn.nexscope.ai/ecommerce-ai-tools/website-seo-audit-guide/ — ecommerce page SEO audit
 - https://learn.nexscope.ai/ecommerce-ai-tools/seo-keyword-planner/ — ecommerce keyword-planning workflow with a dated Google and Amazon test
