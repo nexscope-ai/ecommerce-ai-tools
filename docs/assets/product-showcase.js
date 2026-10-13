@@ -5,8 +5,15 @@
   );
   const event = (name, properties = {}) => {
     if (typeof window.gtag === 'function') {
+      const traffic = window.nexscopeTrafficAttribution || {};
       window.gtag('event', name, {
         ...properties,
+        traffic_source: traffic.trafficSource || 'direct_or_unknown',
+        traffic_medium: traffic.trafficMedium || 'none',
+        traffic_campaign: traffic.trafficCampaign || undefined,
+        traffic_referrer_host: traffic.trafficReferrerHost || undefined,
+        traffic_landing_path: traffic.trafficLandingPath || analyticsSourcePath,
+        traffic_evidence: traffic.trafficEvidence || 'none',
         source_page: analyticsSourcePath,
         transport_type: 'beacon',
       });
