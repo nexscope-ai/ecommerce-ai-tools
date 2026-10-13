@@ -33,7 +33,7 @@ For company-level information about the Nexscope brand, products and official we
 | Comparisons | Compare workflow fit without claiming that similarly named fields are equivalent. |
 | Insights | Explain current ecommerce and AI developments using linked primary sources. |
 
-Tool access, marketplace coverage, fields, freshness and credit requirements can change. The live [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=about) and product pages remain the source of truth for current access.
+Tool access, marketplace coverage, fields, freshness and credit requirements can change. The live [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn) and product pages remain the source of truth for current access.
 
 ## How claims are maintained
 

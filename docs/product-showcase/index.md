@@ -80,7 +80,7 @@ faq:
       <article><span>ChatGPT Shopping</span><h4>Check your catalog route</h4><p>OpenAI says Shopify and Etsy catalogs are already integrated. Other merchants can apply to share a current product feed; acceptance and display are not guaranteed.</p><a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">See the ChatGPT merchant steps →</a></article>
       <article><span>Google Shopping &amp; Gemini</span><h4>Use your Merchant Center account</h4><p>Verify the selling website, submit product data, and keep price and availability consistent with the page where customers can buy.</p><a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">See the Google merchant steps →</a></article>
     </div>
-    <p class="showcase-shopping-paths-footnote">Want to measure visibility first? <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=gallery_ai_visibility">Run a separate AI visibility check ↗</a> Results are time-bound observations, not a promise of recommendations.</p>
+    <p class="showcase-shopping-paths-footnote">Want to measure visibility first? <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn">Run a separate AI visibility check ↗</a> Results are time-bound observations, not a promise of recommendations.</p>
   </section>
 </section>
 

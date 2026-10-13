@@ -76,7 +76,7 @@ Domain names and routing behavior can change. Review the rule monthly.
 
 Use UTM parameters on links you control. For example, a link in an owned assistant integration, partner placement, or campaign should identify its campaign and medium. Do not overwrite genuine referrer data on links you do not control.
 
-For the Nexscope Learn-to-main-site journey, keep the two sources distinct. [OpenAI says ChatGPT Search links include](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq) `utm_source=chatgpt.com`, so a visitor may arrive at Learn with that marker. A later click from Learn to `www.nexscope.ai` uses `utm_source=learn.nexscope.ai`, because Learn is the **immediate** referring channel. When the entry signal is present, that outbound link also carries `learn_entry_source=chatgpt.com` as a separate upstream marker. On the main site, filter landing-page URLs or captured landing-page paths for that marker within Learn-attributed visits. Do not relabel those visits as direct ChatGPT sessions or add the two counts together: one visitor can generate both events. Missing referrers, analytics consent, blocked scripts, or a later session can still make this a lower-bound view.
+For the Nexscope Learn-to-main-site journey, use the same GA4 web stream on both subdomains and analyze the sequence from a Learn landing page to a main-site action. [OpenAI says ChatGPT Search links include](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq) `utm_source=chatgpt.com`, so a visitor may arrive at Learn with that marker. Keep the original entry source when that visitor moves to `www.nexscope.ai`: internal Learn-to-main links should not add a new `utm_source=learn.nexscope.ai` campaign. Instead, use the Learn landing page, page hostname, and relevant click and sign-up events to analyze the path. Missing referrers, analytics consent, blocked scripts, or a later session can still make this a lower-bound view.
 
 | Traffic type | Recommended evidence | Important limitation |
 | --- | --- | --- |
@@ -125,9 +125,9 @@ Do not infer that an article caused revenue from a small sample. Look for repeat
 
 Analytics shows what happened on your site. Nexscope can support the earlier research workflow:
 
-- research buyer language with the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4);
-- audit landing-page SEO and evidence with the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4);
-- inspect public product, competitor, review, backlink, search, and supported AI-visibility data through the [API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_referral_ga4).
+- research buyer language with the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn);
+- audit landing-page SEO and evidence with the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn);
+- inspect public product, competitor, review, backlink, search, and supported AI-visibility data through the [API catalog](https://www.nexscope.ai/api-docs?co-from=learn).
 
 Before interpreting a low-traffic landing page, follow the [ecommerce page SEO audit guide](../website-seo-audit-guide/) to separate crawl eligibility, index status, content relevance and internal-link signals from analytics attribution.
 

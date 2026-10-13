@@ -47,7 +47,7 @@ The best Amazon product research API depends on the evidence you need. Use Keepa
 | Long-running Amazon price, offer, sales-rank, deal, or seller history | [Keepa API](https://keepa.com/api-docs/) | Amazon history and tracking are core product capabilities | Marketplace, historical series, token cost, refill rate, and missing intervals |
 | Request-level Amazon product, search, offer, review, or category data | [Rainforest API](https://trajectdata.com/ecommerce/rainforest-api/) | Focused Amazon data requests with documented parameters and responses | Supported request type, locale, response fields, request cost, and current Traject Data/ScraperAPI terms |
 | Packaged Amazon product, keyword, reverse-ASIN, or competitor-research services | [SellerSprite API](https://www.sellersprite.com/v3/knowledge/feature/about-api) | Separate research packages map to familiar seller-research jobs | Which package is required, quota, concurrency, marketplaces, and renewal terms |
-| A wider workflow combining products, keywords, reviews, selected history, sourcing, REST, and MCP | [Nexscope Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=best_amazon_product_research_api) | One account can connect multiple research stages and agent tools | Endpoint-level coverage, provenance, freshness, credit cost, and whether the exact capability is REST, MCP, or both |
+| A wider workflow combining products, keywords, reviews, selected history, sourcing, REST, and MCP | [Nexscope Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=learn) | One account can connect multiple research stages and agent tools | Endpoint-level coverage, provenance, freshness, credit cost, and whether the exact capability is REST, MCP, or both |
 | Catalog, pricing, listings, inventory, orders, or other authorized seller operations | [Amazon Selling Partner API](https://developer-docs.amazon.com/sp-api) | Amazon's authorized interface for seller and vendor workflows | Required roles, seller authorization, rate limits, restricted data, and app-review requirements |
 | A ready-made seller operating suite with an AI-agent interface | [Helium 10](https://www.helium10.com/tools/mcp/) | A hosted suite and MCP integration may be a better fit than assembling raw API calls | Included plan, tool availability, usage limits, export needs, and whether raw API access is actually required |
 
@@ -94,7 +94,7 @@ Record the live terms on the day of the decision:
 - [SellerSprite API services](https://www.sellersprite.com/en/price/api?type=service)
 - [Rainforest API product page](https://trajectdata.com/ecommerce/rainforest-api/)
 - [Helium 10 pricing](https://www.helium10.com/pricing/)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=best_amazon_product_research_api&utm_content=pricing)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
 - [Amazon SP-API onboarding](https://developer-docs.amazon.com/sp-api/docs/onboarding-overview)
 
 The useful metric is **cost per accepted result**: total provider and processing cost divided by outputs that satisfy the data contract. This exposes the hidden cost of empty results, missing fields, retries, and manual cleanup.
@@ -119,7 +119,7 @@ Use SP-API when the job depends on authorized seller or vendor access, including
 
 Compare cost per accepted result after quotas, retries, missing fields, post-processing, storage, and review. Save the plan assumptions and date because access rules and prices can change.
 
-**Next step:** choose one read-only research question, create a 20–50-item test set, inspect the provider documentation, and compare the returned evidence before connecting a production workflow. Start with the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=best_amazon_product_research_api&utm_content=bottom_cta) if the broader workflow is your target.
+**Next step:** choose one read-only research question, create a 20–50-item test set, inspect the provider documentation, and compare the returned evidence before connecting a production workflow. Start with the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn) if the broader workflow is your target.
 
 ## Sources and methodology
 
@@ -132,6 +132,6 @@ Reviewed October 6, 2026. Provider capabilities, availability, usage limits, and
 - [Rainforest API documentation](https://docs.trajectdata.com/rainforestapi/)
 - [SellerSprite API overview](https://www.sellersprite.com/v3/knowledge/feature/about-api)
 - [Helium 10 MCP](https://www.helium10.com/tools/mcp/)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=best_amazon_product_research_api)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
 
 Nexscope is not affiliated with or endorsed by Amazon, Keepa, Traject Data, Rainforest API, SellerSprite, or Helium 10. Product names belong to their respective owners.

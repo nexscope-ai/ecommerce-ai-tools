@@ -89,9 +89,9 @@ OpenAI says Shopify product data is integrated through Shopify Catalog, while [d
 
 ## Where can Nexscope help, and where can it not?
 
-**Nexscope can help identify a starting point for investigation; it does not control ChatGPT's shopping interface.** Its [AI Product Visibility Tool](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_cards_2026&utm_content=visibility_check) reports sampled product mentions, recommendation positions, citations, and competing products across supported AI shopping answers. Use that report to decide which buyer questions and competitors to inspect manually. It is **not** a live product-card or offer-card eligibility test, a complete ranking tracker, or a sales attribution report.
+**Nexscope can help identify a starting point for investigation; it does not control ChatGPT's shopping interface.** Its [AI Product Visibility Tool](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn) reports sampled product mentions, recommendation positions, citations, and competing products across supported AI shopping answers. Use that report to decide which buyer questions and competitors to inspect manually. It is **not** a live product-card or offer-card eligibility test, a complete ranking tracker, or a sales attribution report.
 
-For one public product page, the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_cards_2026&utm_content=landing_page_audit) can inspect available metadata, readable content, indexing signals, sampled action links, and optional mobile Lighthouse evidence. It does not validate a private catalog feed, check live ChatGPT cards, or verify the final checkout price. The merchant should manually compare the page with its catalog and order system.
+For one public product page, the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) can inspect available metadata, readable content, indexing signals, sampled action links, and optional mobile Lighthouse evidence. It does not validate a private catalog feed, check live ChatGPT cards, or verify the final checkout price. The merchant should manually compare the page with its catalog and order system.
 
 ## Frequently asked questions
 
@@ -115,7 +115,7 @@ No. OpenAI determines its own discovery results and controls merchant-feed eligi
 
 Choose one commercially important SKU, test three buyer questions, and record the product and offer evidence shown in each session. Fix the first verified mismatch—wrong variant, stale price, missing dimension, or unavailable offer—at the merchant-controlled source. Then retest and measure the later visit and order stages separately. That is a more defensible response to the product-card research than claiming a new “AI ranking trick.”
 
-**First check:** [sample whether AI shopping answers mention your product](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_cards_2026&utm_content=article_end). If you need a purchase-stage framework after the product and offer checks, see our [agentic checkout seller checklist](../agentic-checkout-ecommerce-seller-checklist/).
+**First check:** [sample whether AI shopping answers mention your product](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn). If you need a purchase-stage framework after the product and offer checks, see our [agentic checkout seller checklist](../agentic-checkout-ecommerce-seller-checklist/).
 
 ## Sources and scope
 

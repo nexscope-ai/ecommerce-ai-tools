@@ -56,7 +56,7 @@ For a broader explanation of the journey, see [what agentic commerce means for p
 
 For a hypothetical stainless-steel pet fountain, test: “Find a quiet stainless-steel cat fountain under $70 with replaceable filters.” Record the platform, market, date, exact prompt, products returned, position, and cited links. Repeat the same small set of prompts later rather than treating one answer as a permanent ranking. If the product is absent, inspect the stated constraints before rewriting copy: is the price current, is the material explicit, and is a compatible filter identified?
 
-The [Nexscope AI Product Visibility Tool](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=agentic_checkout_2026&utm_content=discovery_report) accepts one product identifier and reports sampled mentions, recommendation positions, citations, and competing products across supported AI shopping answers. It is a dated observation of selected questions and models, **not** a guarantee of inclusion, a live checkout test, or proof that a page change caused a later recommendation.
+The [Nexscope AI Product Visibility Tool](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn) accepts one product identifier and reports sampled mentions, recommendation positions, citations, and competing products across supported AI shopping answers. It is a dated observation of selected questions and models, **not** a guarantee of inclusion, a live checkout test, or proof that a page change caused a later recommendation.
 
 ## Can the agent verify the offer before checkout?
 
@@ -73,7 +73,7 @@ Use one evidence row per buying constraint:
 
 Keep the catalog or feed, visible page, and checkout offer consistent. A public page should also expose its main facts without fragile rendering or a login wall. [Google's guidance for AI features in Search](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) continues to emphasize the same foundational crawlability and helpful-content practices as ordinary Search; it does not prescribe a special “agentic checkout SEO” markup.
 
-To inspect one public selling page, [run the Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=agentic_checkout_2026&utm_content=page_audit). It checks available metadata, readable content, indexing signals, sampled action links, and mobile Lighthouse evidence. It does **not** crawl the entire store, validate a private feed, observe dynamic checkout behavior, or confirm conversion. The [product-page audit guide](../../website-seo-audit-guide/) explains how to review its evidence rather than treating every suggestion as a proven defect.
+To inspect one public selling page, [run the Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn). It checks available metadata, readable content, indexing signals, sampled action links, and mobile Lighthouse evidence. It does **not** crawl the entire store, validate a private feed, observe dynamic checkout behavior, or confirm conversion. The [product-page audit guide](../../website-seo-audit-guide/) explains how to review its evidence rather than treating every suggestion as a proven defect.
 
 ## Can the buyer safely complete the supported checkout?
 
@@ -124,7 +124,7 @@ No. Nexscope can help inspect sampled AI product visibility and one public produ
 
 Pick one important SKU, write three realistic buyer questions, and compare the AI answer with the merchant's current offer. Then verify the page and, only if your platform supports it, test the agent-to-checkout handoff. This sequence finds a specific failure point without claiming that “agentic checkout” is universally available.
 
-**First check:** [see whether AI shopping answers find your product](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=agentic_checkout_2026&utm_content=conclusion_visibility). The report is a starting point for investigation, not a promise of rankings or sales.
+**First check:** [see whether AI shopping answers find your product](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn). The report is a starting point for investigation, not a promise of rankings or sales.
 
 ## Sources and scope
 

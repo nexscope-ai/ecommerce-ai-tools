@@ -19,7 +19,7 @@ next_step:
   title: Check the evidence on one priority page
   description: Use a public category or product URL to inspect page-level signals, then verify sitewide patterns in Search Console and a crawler.
   label: Open Website SEO Auditor
-  url: "https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=ecommerce_seo_audit_next_step"
+  url: "https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn"
 ---
 
 # Ecommerce SEO audit checklist: how to inspect an entire store
@@ -122,7 +122,7 @@ Keep a change log with **URL pattern, sample URL, evidence, owner, release date,
 
 ## Where can Nexscope help, and what remains manual?
 
-Use the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=ecommerce_seo_audit&co-from=learn) to inspect **one public URL** and review its page-level crawl, metadata, content, links, and structured-data evidence; a mobile Lighthouse check is a separate diagnostic. It is useful for verifying a representative page or a proposed fix. It does **not** crawl the complete store, read your private Search Console or Merchant Center reports, or prove that rankings improved. Pair it with those first-party reports and a full crawler for a true sitewide audit.
+Use the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) to inspect **one public URL** and review its page-level crawl, metadata, content, links, and structured-data evidence; a mobile Lighthouse check is a separate diagnostic. It is useful for verifying a representative page or a proposed fix. It does **not** crawl the complete store, read your private Search Console or Merchant Center reports, or prove that rankings improved. Pair it with those first-party reports and a full crawler for a true sitewide audit.
 
 For a narrower workflow, use the [product-page SEO audit guide]({{ '/website-seo-audit-guide/' | relative_url }}). If your priority is what product information Google can use in newer shopping experiences, continue with the [Google AI Mode shopping readiness guide]({{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}).
 

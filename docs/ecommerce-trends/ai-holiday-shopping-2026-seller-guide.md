@@ -83,7 +83,7 @@ Once one SKU has verified facts, accurate images and a public selling page, you 
 
 **Video is most useful when it answers a visual question that the catalog cannot show well in one still image.** For a holiday product, that may be the package size, visible finish, a colorway, or a simple gifting scene. The seller can place an approved clip on an owned product page, in email, or in social creative. Nothing in Shopify's holiday report or OpenAI's product-discovery documentation says that uploading such a clip guarantees an AI recommendation.
 
-The [Nexscope image-to-video workspace](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_holiday_shopping_2026&utm_content=article_workflow) provides image upload, product-showcase and other video templates, a custom-description option, and visible video settings. For one test SKU:
+The [Nexscope image-to-video workspace](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn) provides image upload, product-showcase and other video templates, a custom-description option, and visible video settings. For one test SKU:
 
 1. Start from a seller-approved image that matches the current variation.
 2. Choose a simple product-showcase concept. Ask for a restrained camera movement and name details that must remain unchanged.
@@ -98,7 +98,7 @@ For example, a giftable ceramic mug could be shown in a slow tabletop orbit with
 
 As the season progresses, refresh delivery cutoffs and promotion dates rather than leaving an expired holiday promise live. If you run an Amazon promotion, our [Prime Big Deal Days 2026 seller checklist](../prime-big-deal-days-2026-seller-research/) explains how to record competitors' prices without treating one observed discount as proof of a trend.
 
-**Next step:** pick one gift SKU, correct its evidence, and test the buyer journey. If a video would clarify the product on your owned channels, [turn an approved product image into a short clip with Nexscope](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ai_holiday_shopping_2026&utm_content=article_cta). Nexscope provides creative production and research tools; it does not control how ChatGPT, Google, Shopify, or another channel ranks or recommends products.
+**Next step:** pick one gift SKU, correct its evidence, and test the buyer journey. If a video would clarify the product on your owned channels, [turn an approved product image into a short clip with Nexscope](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn). Nexscope provides creative production and research tools; it does not control how ChatGPT, Google, Shopify, or another channel ranks or recommends products.
 
 ## Sources and related reading
 

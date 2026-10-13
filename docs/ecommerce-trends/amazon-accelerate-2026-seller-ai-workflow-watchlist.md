@@ -45,7 +45,7 @@ For a closer look at two account-dependent features, read the separate guides to
 
 <aside class="article-action" aria-label="Test an Amazon research workflow">
   <div><span class="eyebrow">NEXT STEP / INDEPENDENT BASELINE</span><strong>Build a one-SKU evidence baseline before testing a new seller AI workflow.</strong><p>Capture comparable products, keywords and review questions first, then compare the tool's recommendation with dated marketplace evidence.</p></div>
-  <a href="https://www.nexscope.ai/apis/amazon?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=amazon_accelerate_2026_updates&amp;utm_content=early_cta">Explore Amazon data workflows ↗</a>
+  <a href="https://www.nexscope.ai/apis/amazon?co-from=learn">Explore Amazon data workflows ↗</a>
 </aside>
 
 The event agenda also confirms more than 150 sessions across 11 topics, the Seller Café, Partner Connect, the Innovation Hub, and Seller Sandbox. Those formats are useful places to ask questions or test prototypes, but the agenda alone does not establish that a demonstrated feature is generally available or effective for a seller's catalog. Capture the product-specific announcement and account status separately from the event schedule.
@@ -80,7 +80,7 @@ Write down one baseline metric and one decision threshold before testing. Exampl
 4. Write three questions you want answered: one about market demand, one about operational risk, and one about a creative or listing test.
 5. After a session, record the speaker, official documentation link, claimed availability, markets, prerequisites, and what you still need to verify.
 
-Independent research can help prepare the public-market side of that sheet. Nexscope's [Amazon data API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_accelerate_2026_updates&utm_content=inline_link) includes product, competitor, keyword, review, and historical-data workflows where supported. It is **not Amazon Seller Assistant or a replacement for your first-party Seller Central reports**. See this practical workflow for [tracking Amazon competitors' keywords]({{ '/amazon-competitor-keyword-research/' | relative_url }}) for a narrower example.
+Independent research can help prepare the public-market side of that sheet. Nexscope's [Amazon data API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn) includes product, competitor, keyword, review, and historical-data workflows where supported. It is **not Amazon Seller Assistant or a replacement for your first-party Seller Central reports**. See this practical workflow for [tracking Amazon competitors' keywords]({{ '/amazon-competitor-keyword-research/' | relative_url }}) for a narrower example.
 
 ## How do you turn a conference announcement into a seven-day test?
 
@@ -105,6 +105,6 @@ For a bounded pre-event research sequence and an example of how sparse price-his
 
 ## The practical next step
 
-Choose one conference theme that matches your current bottleneck, prepare the evidence sheet, and save the official release-status link beside the result. Run a one-SKU test before broad adoption. If your question is about market and competitor evidence, [explore Nexscope's Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_accelerate_2026_updates&utm_content=final_cta).
+Choose one conference theme that matches your current bottleneck, prepare the evidence sheet, and save the official release-status link beside the result. Run a one-SKU test before broad adoption. If your question is about market and competitor evidence, [explore Nexscope's Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn).
 
 **Editorial status:** This article reflects Amazon's official materials checked September 24, 2026. General Session #2 was still scheduled for September 24; later announcements may require another update. Do not treat an onstage demo, account-limited feature, or beta as universal availability without a current official source and an account-level check.

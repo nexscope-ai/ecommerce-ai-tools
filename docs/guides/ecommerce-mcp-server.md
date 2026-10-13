@@ -45,7 +45,7 @@ faq:
 
 **The Nexscope ecommerce MCP server lets a compatible AI agent discover and call published marketplace, keyword, SEO, creative, advertising, and patent tools through one remote MCP endpoint.** New integrations should use the v2 Streamable HTTP endpoint at `https://api.nexscope.ai/api/skill-api/v2/mcp`, authorize with OAuth 2.1 Authorization Code with PKCE when the client supports it, and request the `mcp:tools` scope.
 
-> **Current implementation snapshot — September 29, 2026:** the live Nexscope MCP directory lists **318 tools across 28 categories**. The server builds its MCP tool list from the published API catalog, so the exact count, schemas, access requirements, and credit behavior can change. Use `tools/list` and the [live MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server&utm_content=current_snapshot) as the source of truth.
+> **Current implementation snapshot — September 29, 2026:** the live Nexscope MCP directory lists **318 tools across 28 categories**. The server builds its MCP tool list from the published API catalog, so the exact count, schemas, access requirements, and credit behavior can change. Use `tools/list` and the [live MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn) as the source of truth.
 
 This is the product-specific implementation guide: it records the Nexscope endpoint, authentication path, live catalog boundary and asynchronous-result handling. For protocol terminology without Nexscope setup details, use the separate [What is an MCP server?](../what-is-an-mcp-server/) explainer. Keeping those two jobs separate prevents this page from duplicating a generic MCP introduction.
 
@@ -138,7 +138,7 @@ For an OAuth-capable client, start authorization from the MCP endpoint and reque
 If the client does not complete the supported OAuth flow, a Nexscope API key can be sent as a compatibility bearer token:
 
 ```http
-Authorization: Bearer nk-xxxxxxxxxxxxxxxxx
+Authorization: Bearer <NEXSCOPE_API_KEY>
 ```
 
 Do not place either credential in a prompt, client-side JavaScript bundle, screenshot, public issue, analytics event, or Git repository.
@@ -282,12 +282,12 @@ Many production systems use both: REST for deterministic application services an
 
 ## Explore the current Nexscope MCP tools
 
-Start with a narrow, non-sensitive research question and one documented capability. **[Open the live Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server&utm_content=bottom_cta)** to inspect the current endpoint, tool names, schemas, authentication, and examples. For direct HTTP integration, use the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server&utm_content=api_docs_bottom) or the [API capabilities guide](../api-capabilities/).
+Start with a narrow, non-sensitive research question and one documented capability. **[Open the live Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn)** to inspect the current endpoint, tool names, schemas, authentication, and examples. For direct HTTP integration, use the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn) or the [API capabilities guide](../api-capabilities/).
 
 ## Sources
 
-- [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server&utm_content=sources)
-- [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_mcp_server&utm_content=sources)
+- [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn)
+- [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn)
 - [Model Context Protocol 2025-11-25: Streamable HTTP transport](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)
 - [Model Context Protocol 2025-11-25: authorization](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 - [Model Context Protocol 2025-11-25: tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)

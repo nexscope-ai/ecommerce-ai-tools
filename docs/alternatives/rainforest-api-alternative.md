@@ -61,7 +61,7 @@ Public catalogs, ownership, plan terms, and offers can change. Verify them in th
 
 **Price the request contract you actually need.** Rainforest API's current product page directs buyers to start free or talk to an expert, while Nexscope publishes a free trial and Data Credit plans. Record the endpoint, marketplace, delivery method, request volume, concurrency, retries, missing-field rate, support level, and cost per usable record. A quote or credit bundle is only comparable when those assumptions match.
 
-Use the [current Rainforest API product page](https://trajectdata.com/ecommerce/rainforest-api/) and [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=rainforest_api_alternative&utm_content=pricing_comparison) as dated inputs to the decision.
+Use the [current Rainforest API product page](https://trajectdata.com/ecommerce/rainforest-api/) and [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn) as dated inputs to the decision.
 
 ## What Rainforest API does well
 
@@ -110,7 +110,7 @@ For related implementation patterns, see the [Amazon competitor-analysis templat
 
 Rainforest API remains a credible choice for a focused Amazon data integration. Nexscope becomes interesting when the buying question changes from “Which endpoint gives me this Amazon object?” to “Which platform can support our whole research and AI workflow?”
 
-The best next step is a measured pilot, not a blanket replacement claim. [Explore Nexscope's Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=rainforest_api_alternative) and validate the exact capability, marketplace, response schema, and credit use against your current contract.
+The best next step is a measured pilot, not a blanket replacement claim. [Explore Nexscope's Amazon APIs](https://www.nexscope.ai/apis/amazon?co-from=learn) and validate the exact capability, marketplace, response schema, and credit use against your current contract.
 
 Compare adjacent decisions: [Keepa API for Amazon history](../keepa-api/), [SellerSprite for keyword research](../sellersprite/), or [Helium 10 for an all-in-one seller suite](../helium-10/).
 
@@ -135,8 +135,8 @@ Reviewed October 6, 2026. This comparison uses public product documentation and 
 - [Rainforest API documentation](https://docs.trajectdata.com/rainforestapi/)
 - [Rainforest API product page](https://trajectdata.com/ecommerce/rainforest-api/)
 - [Traject Data ecommerce API migration guide](https://help.trajectdata.com/migration/getting-started-ecommerce-apis)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
-- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
+- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
 
 Nexscope is not affiliated with or endorsed by Rainforest API or Traject Data. Product names belong to their respective owners.

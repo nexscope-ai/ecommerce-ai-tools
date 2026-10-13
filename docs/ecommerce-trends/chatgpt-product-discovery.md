@@ -81,7 +81,7 @@ Use stable IDs, variant-level prices, current availability, correct URLs, descri
 
 Use buyer language naturally in headings, comparison tables, specifications, FAQs, and support content. Do not repeat a phrase simply because it appears in a keyword tool. Help a shopper resolve an actual constraint.
 
-The [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery) can help organize search language by use case, attribute, concern, and comparison.
+The [Nexscope SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn) can help organize search language by use case, attribute, concern, and comparison.
 
 ### Make claims auditable
 
@@ -95,7 +95,7 @@ For a source-backed still-image review process, see the [ChatGPT Images 2.5 ecom
 
 ### Keep the page retrievable
 
-Use semantic HTML, useful internal links, correct canonicals, crawlable product content, and structured data that matches visible information. The [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery) can help identify page-level issues; it does not guarantee ChatGPT inclusion.
+Use semantic HTML, useful internal links, correct canonicals, crawlable product content, and structured data that matches visible information. The [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) can help identify page-level issues; it does not guarantee ChatGPT inclusion.
 
 ## Where does Nexscope Product Gallery fit in AI shopping preparation?
 
@@ -108,7 +108,7 @@ Use this workflow to keep the channels separate:
 1. **Maintain the original store or marketplace listing.** Check that product identity, attributes, images, price and availability are current there. A Gallery page does not replace a merchant catalog, Merchant Center feed or participating platform's commerce requirements.
 2. **Submit a useful public description.** Explain who the product fits, the exact specifications that matter, limits and evidence. The Gallery team reviews the submission before any public display; publication is not automatic.
 3. **Check the approved page and source link.** Make sure the public description still matches the live product. Use the private management link to edit and resubmit or take the Gallery page offline if information changes.
-4. **Measure AI answers separately.** The [Nexscope AI Product Visibility Tool](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery&utm_content=gallery_workflow) can test one product against sampled shopping questions and show mentions, recommended position, citations and competing products. Record the market, prompts, model and run date. A report is a time-bound observation, not evidence that Gallery publication caused a change.
+4. **Measure AI answers separately.** The [Nexscope AI Product Visibility Tool](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn) can test one product against sampled shopping questions and show mentions, recommended position, citations and competing products. Record the market, prompts, model and run date. A report is a time-bound observation, not evidence that Gallery publication caused a change.
 
 Google distinguishes product pages that allow direct purchase from pages that refer shoppers to another seller. Follow [Google's product structured-data guidance](https://developers.google.com/search/docs/appearance/structured-data/product) on the merchant's own site; a Gallery page is an additional information source, not a shortcut to merchant-listing eligibility.
 
@@ -122,7 +122,7 @@ Google distinguishes product pages that allow direct purchase from pages that re
 6. Test the same prompts across supported assistants and search surfaces.
 7. Record dates, markets, sources, answers, citations, and destination pages.
 
-Use the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery) to confirm current product, keyword, review, search, and AI-visibility capabilities before building an automated workflow.
+Use the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn) to confirm current product, keyword, review, search, and AI-visibility capabilities before building an automated workflow.
 
 ## How is product discovery different from ChatGPT Ads?
 
@@ -144,7 +144,7 @@ AI referrals can lose or change referrer details. Add UTM parameters to links yo
 
 ## Start with one product, not a promise of AI ranking
 
-Choose one product and one constrained buyer question. Check the original listing's facts and buying terms, then [submit the product to the Nexscope Gallery]({{ '/product-showcase/submit/' | relative_url }}) if you want an additional reviewed public page and editorial suggestions. [Run an AI visibility report](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_product_discovery&utm_content=conclusion) separately to observe sampled shopping answers. Neither step replaces the merchant's own catalog or guarantees that an AI assistant recommends the product.
+Choose one product and one constrained buyer question. Check the original listing's facts and buying terms, then [submit the product to the Nexscope Gallery]({{ '/product-showcase/submit/' | relative_url }}) if you want an additional reviewed public page and editorial suggestions. [Run an AI visibility report](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn) separately to observe sampled shopping answers. Neither step replaces the merchant's own catalog or guarantees that an AI assistant recommends the product.
 
 For a narrower check of what shoppers see after discovery, use the [product-card versus offer-card seller audit](../chatgpt-product-cards-offer-cards-seller-audit/). It separates the product choice from the merchant offer and explains the limits of a recent observational shopping study.
 

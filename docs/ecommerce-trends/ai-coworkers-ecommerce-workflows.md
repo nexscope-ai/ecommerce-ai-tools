@@ -127,7 +127,7 @@ Developers can review the [ecommerce MCP server guide]({{ '/ecommerce-mcp-server
 
 <aside class="article-action" aria-label="Design an evidence-backed AI coworker pilot">
   <div><span class="eyebrow">START WITH READ-ONLY EVIDENCE</span><strong>Give the coworker one task, not the whole store.</strong><p>Choose a narrow research or review workflow, inspect the available data tools, and define the source and human-approval rule before connecting an agent.</p></div>
-  <a href="https://www.nexscope.ai/mcp-map?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=ai_coworkers_ecommerce&amp;utm_content=final_cta">Inspect the Nexscope MCP tool map ↗</a>
+  <a href="https://www.nexscope.ai/mcp-map?co-from=learn">Inspect the Nexscope MCP tool map ↗</a>
 </aside>
 
 ## Frequently asked questions

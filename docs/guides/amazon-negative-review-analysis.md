@@ -95,11 +95,11 @@ These examples show the reasoning method. They are not findings about a specific
 
 ## Using the Nexscope Amazon Review Analyzer
 
-The [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=review_guide&co-from=learn) accepts a competitor ASIN, marketplace, low-star review counts, and report language. It collects a recent sample and can generate a separate AI report. The report and source reviews can be downloaded for further research.
+The [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn) accepts a competitor ASIN, marketplace, low-star review counts, and report language. It collects a recent sample and can generate a separate AI report. The report and source reviews can be downloaded for further research.
 
-Developers can start with the [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=review_guide_api&co-from=learn), then use the documented analysis capability in a separate request. Review collection and AI analysis may each consume account credits.
+Developers can start with the [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=learn), then use the documented analysis capability in a separate request. Review collection and AI analysis may each consume account credits.
 
-The hosted tool requires a signed-in Nexscope account but does not ask the user to paste an API key. Access and credit use can change, so check the tool and [current pricing page](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_review_analyzer&utm_content=pricing) before a large batch. Download the source CSV and report before leaving the page if you need a durable evidence trail.
+The hosted tool requires a signed-in Nexscope account but does not ask the user to paste an API key. Access and credit use can change, so check the tool and [current pricing page](https://www.nexscope.ai/pricing?co-from=learn) before a large batch. Download the source CSV and report before leaving the page if you need a durable evidence trail.
 
 ## What a low-star sample cannot prove
 
@@ -129,5 +129,5 @@ The hosted browser tool uses a signed-in Nexscope account. External REST or MCP 
 
 It cannot establish the overall defect rate, represent buyers who left no review, verify reviewer identity, or prove that one product or listing change will improve sales. Treat it as evidence for the next test.
 
-**Try the workflow:** open the [Nexscope Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_review_analyzer&utm_content=bottom_cta&co-from=learn) with one comparable ASIN, record requested and returned counts, and keep the source comments beside the resulting hypotheses.
+**Try the workflow:** open the [Nexscope Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn) with one comparable ASIN, record requested and returned counts, and keep the source comments beside the resulting hypotheses.
 

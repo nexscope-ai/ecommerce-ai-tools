@@ -31,7 +31,7 @@ next_step:
   title: Bring us one specific enterprise workflow
   description: Share the decision your team needs to make, the sources you need, expected usage and where the result must go.
   label: Discuss an enterprise plan
-  url: https://www.nexscope.ai/enterprise?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=closing_cta
+  url: https://www.nexscope.ai/enterprise?co-from=learn
 ---
 
 # Enterprise ecommerce APIs and MCP tools for better decisions
@@ -44,22 +44,22 @@ Enterprise teams often need more than another dashboard: they need product and m
 
 ## What can enterprise teams access today?
 
-The [public API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_catalog) documents data, SEO, and image or video capabilities. The examples below are starting points, not a promise that every field or marketplace is available for every request.
+The [public API catalog](https://www.nexscope.ai/api-docs?co-from=learn) documents data, SEO, and image or video capabilities. The examples below are starting points, not a promise that every field or marketplace is available for every request.
 
 | Decision | Example Nexscope capability | Where to verify |
 | --- | --- | --- |
-| Which products or categories deserve closer research? | Amazon market statistics and product research; TikTok Shop product and creator research; 1688 and Shopify discovery. | [Amazon Market Statistics](https://www.nexscope.ai/api-docs/amazon-market-statistics?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_detail) · [API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_catalog) |
-| What are customers saying? | Retrieve available product reviews and examine recurring questions or complaints before revising a listing or brief. | [Amazon Reviews List](https://www.nexscope.ai/api-docs/amazon-reviews-list?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_detail) |
-| Which search topics warrant content work? | Check keyword metrics and time-based search trends; keep estimated search volume separate from trend indices. | [SEO Keyword Metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_detail) · [Google Trends By Time](https://www.nexscope.ai/api-docs/google-trends-by-time?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_detail) |
-| How can product assets move into production? | Use documented image and video generation models within an approved creative workflow, then review outputs before publishing. | [Video and Image APIs](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_catalog) |
+| Which products or categories deserve closer research? | Amazon market statistics and product research; TikTok Shop product and creator research; 1688 and Shopify discovery. | [Amazon Market Statistics](https://www.nexscope.ai/api-docs/amazon-market-statistics?co-from=learn) · [API catalog](https://www.nexscope.ai/api-docs?co-from=learn) |
+| What are customers saying? | Retrieve available product reviews and examine recurring questions or complaints before revising a listing or brief. | [Amazon Reviews List](https://www.nexscope.ai/api-docs/amazon-reviews-list?co-from=learn) |
+| Which search topics warrant content work? | Check keyword metrics and time-based search trends; keep estimated search volume separate from trend indices. | [SEO Keyword Metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?co-from=learn) · [Google Trends By Time](https://www.nexscope.ai/api-docs/google-trends-by-time?co-from=learn) |
+| How can product assets move into production? | Use documented image and video generation models within an approved creative workflow, then review outputs before publishing. | [Video and Image APIs](https://www.nexscope.ai/api-docs?co-from=learn) |
 
 For a broader map of supported tasks and limits, see our [API capabilities guide]({{ '/api-capabilities/' | relative_url }}).
 
 ## How do REST API and MCP access differ?
 
-**REST API access** fits applications, reporting pipelines and scheduled jobs that call a documented endpoint with an API key, validate the response and track credits or usage. Start with the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_catalog) and review each operation's schema and cost.
+**REST API access** fits applications, reporting pipelines and scheduled jobs that call a documented endpoint with an API key, validate the response and track credits or usage. Start with the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn) and review each operation's schema and cost.
 
-**MCP access** lets a compatible AI client discover and call Nexscope tools within an agent workflow. The [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=mcp_docs) lists available tools, arguments and response fields. The current guide documents Streamable HTTP and authentication options. A tool call still follows the underlying API's validation, availability and billing rules. Neither access method replaces your team's review of source data, permissions and output quality. Our [AI-agent API guide]({{ '/ecommerce-api-for-ai-agents/' | relative_url }}) explains the choice in more detail.
+**MCP access** lets a compatible AI client discover and call Nexscope tools within an agent workflow. The [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn) lists available tools, arguments and response fields. The current guide documents Streamable HTTP and authentication options. A tool call still follows the underlying API's validation, availability and billing rules. Neither access method replaces your team's review of source data, permissions and output quality. Our [AI-agent API guide]({{ '/ecommerce-api-for-ai-agents/' | relative_url }}) explains the choice in more detail.
 
 ## Which cooperation model fits your team?
 
@@ -77,7 +77,7 @@ A second pilot could test whether an AI assistant can answer a bounded research 
 
 ## What can be customized?
 
-According to the [enterprise plan](https://www.nexscope.ai/enterprise?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=enterprise_plan), teams can discuss expected usage, API limits, priority support, setup assistance and data collection beyond the standard catalog. For a useful proposal, specify the marketplace or website, requested fields, geography, refresh frequency, expected monthly volume, delivery method and business decision the data will support. Nexscope then checks feasibility and agrees on scope, support arrangements and pricing with the customer. New-source coverage, response times and service levels should be written into the actual proposal; they are not universal promises in this article.
+According to the [enterprise plan](https://www.nexscope.ai/enterprise?co-from=learn), teams can discuss expected usage, API limits, priority support, setup assistance and data collection beyond the standard catalog. For a useful proposal, specify the marketplace or website, requested fields, geography, refresh frequency, expected monthly volume, delivery method and business decision the data will support. Nexscope then checks feasibility and agrees on scope, support arrangements and pricing with the customer. New-source coverage, response times and service levels should be written into the actual proposal; they are not universal promises in this article.
 
 ## How does an enterprise engagement start?
 
@@ -85,7 +85,7 @@ According to the [enterprise plan](https://www.nexscope.ai/enterprise?co-from=le
 2. **Validate a small sample.** Select the relevant documented APIs or MCP tools and check field coverage, quality and credit costs against real examples.
 3. **Review a scoped proposal.** Agree on feasible collection, integration work, support, volume, pricing and delivery arrangements before rollout.
 
-Bring Nexscope one specific workflow: what your team needs to decide, which sources matter and where the result must go. [Discuss an enterprise plan](https://www.nexscope.ai/enterprise?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=body_cta) or [inspect the API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_catalog) first.
+Bring Nexscope one specific workflow: what your team needs to decide, which sources matter and where the result must go. [Discuss an enterprise plan](https://www.nexscope.ai/enterprise?co-from=learn) or [inspect the API catalog](https://www.nexscope.ai/api-docs?co-from=learn) first.
 
 ## Frequently asked questions
 
@@ -107,4 +107,4 @@ No single price covers every use case. The enterprise plan says pricing depends 
 
 ---
 
-**Source and scope:** This article describes published capabilities and the current enterprise inquiry process, checked October 10, 2026. Primary sources are the [Nexscope API catalog](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=api_catalog), [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=mcp_docs) and [enterprise plan](https://www.nexscope.ai/enterprise?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=enterprise_plan). The pilot scenarios are examples, not customer case studies.
+**Source and scope:** This article describes published capabilities and the current enterprise inquiry process, checked October 10, 2026. Primary sources are the [Nexscope API catalog](https://www.nexscope.ai/api-docs?co-from=learn), [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn) and [enterprise plan](https://www.nexscope.ai/enterprise?co-from=learn). The pilot scenarios are examples, not customer case studies.

@@ -39,7 +39,7 @@ Marketplace fields can change after capture. A current decision requires a new r
 
 The recorded output supports a review of why the five readiness areas received different scores and which source fields deserve closer inspection. It does not support treating 75 as an official Amazon score or assuming that the 38 risk-check value proves a policy violation. Any proposed title, bullet, image, claim, or keyword change remains a hypothesis until a human verifies it and measures a defined outcome.
 
-- [Open the live AI Amazon Listing Optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_listing_optimizer_evidence&utm_content=evidence_record)
+- [Open the live AI Amazon Listing Optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=learn)
 - [Follow the listing-optimization workflow]({{ '/amazon-listing-optimization-tool/' | relative_url }})
 - [Review a separate Amazon customer-language case]({{ '/amazon-review-case-study/' | relative_url }})
 

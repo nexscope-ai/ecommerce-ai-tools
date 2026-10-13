@@ -38,7 +38,7 @@ faq:
 
 <aside class="article-action" aria-label="Test a structured review-routing workflow">
   <div><span class="eyebrow">NEXT STEP / REVIEW ROUTING</span><strong>Test a structured review-routing workflow.</strong><p>Start with a documented sample of low-star Amazon reviews, preserve the source evidence, and compare automated categories with human labels.</p></div>
-  <a href="https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=jev_review_routing&amp;utm_content=early_cta">Open Amazon Review Analyzer ↗</a>
+  <a href="https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn">Open Amazon Review Analyzer ↗</a>
 </aside>
 
 ## What is Jev, and why is it drawing attention?
@@ -111,7 +111,7 @@ For the customer-facing side of this shift, see the [Meta Muse merchant-readines
 
 <aside class="article-action" aria-label="Run the review-routing pilot">
   <div><span class="eyebrow">TRY THE BOUNDED PILOT</span><strong>Turn a low-star review sample into testable categories.</strong><p>Keep the original comments beside every generated theme, then review mixed or uncertain cases before changing a listing.</p></div>
-  <a href="https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=jev_review_routing&amp;utm_content=final_cta">Run the review analyzer ↗</a>
+  <a href="https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn">Run the review analyzer ↗</a>
 </aside>
 
 ## Frequently asked questions
