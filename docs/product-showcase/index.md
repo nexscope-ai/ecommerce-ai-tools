@@ -3,7 +3,7 @@ layout: default
 title: Ecommerce Product Gallery for AI-Assisted Shopping | Nexscope
 description: Submit a product to Nexscope Product Gallery for free. Editorial review, and listing and display after approval, are completely free.
 permalink: /product-showcase/
-last_modified_at: 2026-10-08
+last_modified_at: 2026-10-14
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -48,25 +48,7 @@ faq:
   </figure>
 </section>
 
-{% assign published_products = site.data.product_showcase_pages %}
-{% if published_products.size > 0 %}
-<section class="showcase-products" aria-labelledby="showcase-products-title">
-  <header class="showcase-section-heading">
-    <div><span class="eyebrow">Reviewed products</span><h2 id="showcase-products-title">Explore the Gallery.</h2></div>
-    <p>Each product has a public detail page and a link to its original selling page. Check current offers with the seller.</p>
-  </header>
-  <div class="showcase-products-grid">
-    {% for product in published_products %}
-    <article class="showcase-product-card">
-      <a href="{{ product.path | relative_url }}">
-        {% if product.image %}<img src="{{ product.image | escape }}" alt="{{ product.title | escape }}" loading="lazy" width="640" height="480">{% else %}<span class="showcase-product-placeholder" aria-hidden="true">Nexscope Product Gallery</span>{% endif %}
-        <span class="showcase-product-card-copy"><small>Reviewed product</small><strong>{{ product.title | escape }}</strong><span>View product details →</span></span>
-      </a>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
+{% include product-showcase-featured.html context="hub" %}
 
 <section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
   <header class="showcase-section-heading">
@@ -78,6 +60,17 @@ faq:
     <article><span>02</span><h3>Visual detail</h3><p>Explore product images and video before opening the external product page.</p></article>
     <article><span>03</span><h3>A direct next step</h3><p>Continue to the submitted storefront or marketplace listing when the product fits.</p></article>
   </div>
+  <section class="showcase-community" aria-labelledby="showcase-community-title">
+    <div class="showcase-community-intro">
+      <span class="eyebrow">Join the product-page conversation</span>
+      <h3 id="showcase-community-title">Bring one real question to the community.</h3>
+      <p>Ask about one public detail that affects a buying decision—such as title clarity, image coverage, dimensions, compatibility or a buyer objection. Keep store credentials, customer data and private review links out of the post.</p>
+    </div>
+    <div class="showcase-community-actions">
+      <a class="showcase-primary" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a?utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_gallery_community&amp;utm_content=gallery_qna" target="_blank" rel="noopener noreferrer">Ask in GitHub Q&amp;A ↗</a>
+      <a class="showcase-secondary" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/show-and-tell?utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_gallery_community&amp;utm_content=gallery_show_and_tell" target="_blank" rel="noopener noreferrer">Share a published Gallery page ↗</a>
+    </div>
+  </section>
   <section class="showcase-shopping-paths" aria-labelledby="showcase-shopping-paths-title">
     <div class="showcase-shopping-paths-intro">
       <span class="eyebrow">After the Gallery</span>
@@ -88,7 +81,7 @@ faq:
       <article><span>ChatGPT Shopping</span><h4>Check your catalog route</h4><p>OpenAI says Shopify and Etsy catalogs are already integrated. Other merchants can apply to share a current product feed; acceptance and display are not guaranteed.</p><a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">See the ChatGPT merchant steps →</a></article>
       <article><span>Google Shopping &amp; Gemini</span><h4>Use your Merchant Center account</h4><p>Verify the selling website, submit product data, and keep price and availability consistent with the page where customers can buy.</p><a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">See the Google merchant steps →</a></article>
     </div>
-    <p class="showcase-shopping-paths-footnote">Want to measure visibility first? <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=product_showcase&amp;utm_content=gallery_ai_visibility">Run a separate AI visibility check ↗</a> Results are time-bound observations, not a promise of recommendations.</p>
+    <p class="showcase-shopping-paths-footnote">Want to measure visibility first? <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn">Run a separate AI visibility check ↗</a> Results are time-bound observations, not a promise of recommendations.</p>
   </section>
 </section>
 

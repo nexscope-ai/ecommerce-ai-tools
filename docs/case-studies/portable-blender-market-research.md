@@ -145,7 +145,7 @@ If a product proceeds, track conversion, returns, support reasons, review themes
 | 6 | `1688-search-by-image/run` | Amazon product image returned in step 4 |
 | 7 | `1688-product-detail/run` | Offers `902856167524` and `1036978647065` |
 
-Use server-side credential storage and the current [Nexscope API documentation](https://www.nexscope.ai/api-docs?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=portable_blender_case&co-from=learn). Never embed an API key in client-side code, a public repository, screenshots or downloadable evidence.
+Use server-side credential storage and the current [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn). Never embed an API key in client-side code, a public repository, screenshots or downloadable evidence.
 
 The production calls used an authorized account key, but the key and private account data are excluded from every artifact. A per-call credit charge was not captured, so this case does not claim a credit cost.
 

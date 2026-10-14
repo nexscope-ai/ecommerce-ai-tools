@@ -173,7 +173,7 @@ For the Claude-specific access and permissions checklist, read [Amazon Selling P
 
 **Nexscope can support the independent public-market side of a scenario; it does not replace Canvas or Seller Central.** A seller may want a consistent snapshot of comparable products, keywords, reviews, current offers, or historical observations where supported, while keeping first-party inventory, sales, margin, and advertising data in authorized systems.
 
-Nexscope's [Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=seller_assistant_canvas&utm_content=article) can be used to build that external evidence block. Check the selected tool's marketplace coverage, fields, provenance, freshness, and credits. Estimates and public observations should never be relabeled as actual Seller Central results.
+Nexscope's [Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn) can be used to build that external evidence block. Check the selected tool's marketplace coverage, fields, provenance, freshness, and credits. Estimates and public observations should never be relabeled as actual Seller Central results.
 
 ## Frequently asked questions
 
@@ -204,6 +204,6 @@ No. Nexscope provides independent ecommerce data capabilities where documented. 
 - [Amazon Accelerate event page](https://sell.amazon.com/events)
 - [Amazon Accelerate 2026 seller AI workflow watchlist]({{ '/ecommerce-trends/amazon-accelerate-2026-seller-ai-workflow-watchlist/' | relative_url }})
 
-If Canvas appears in your account, prepare one scenario outside the tool first, then compare the Canvas result with the same baseline. To add a dated public-market evidence block, [explore Nexscope's Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=seller_assistant_canvas&utm_content=final_cta).
+If Canvas appears in your account, prepare one scenario outside the tool first, then compare the Canvas result with the same baseline. To add a dated public-market evidence block, [explore Nexscope's Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn).
 
 **Editorial status:** This article reflects Amazon's official materials checked September 24, 2026. Canvas availability, enabled data, actions, and controls may differ by account and may change after publication. Verify the live account and official documentation before operational use.

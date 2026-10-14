@@ -152,10 +152,10 @@ Conversational attributes improve the information available to supported systems
 
 **Nexscope can help research the questions and evidence around a product, but Merchant Center remains the place to submit and validate the feed.** The connection is strongest before implementation:
 
-- use the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=conversational_attributes) to map attribute and use-case language;
-- analyze public product reviews with the [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=conversational_attributes) to find recurring questions and complaints that require verification;
-- inspect comparable products and variants through the relevant [ecommerce APIs](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=conversational_attributes);
-- run the public destination through the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=conversational_attributes) to find crawlability and evidence gaps.
+- use the [SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn) to map attribute and use-case language;
+- analyze public product reviews with the [Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn) to find recurring questions and complaints that require verification;
+- inspect comparable products and variants through the relevant [ecommerce APIs](https://www.nexscope.ai/api-docs?co-from=learn);
+- run the public destination through the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) to find crawlability and evidence gaps.
 
 Review and substantiate every proposed value. Marketplace observations, keyword datasets, and customer reviews can reveal questions; they do not automatically provide the correct answer for your product.
 
@@ -163,7 +163,7 @@ Review and substantiate every proposed value. Marketplace observations, keyword 
 
 Select 20 products from one coherent category. Fix core feed inconsistencies first, then add one or two conversational attributes that answer a documented need. Record the baseline, upload date, affected items, validation result, and relevant AI Performance Insights segment. Review the same cohort after processing instead of comparing it with unrelated products.
 
-The best first result is not “all six fields completed.” It is a smaller catalog segment with fewer unanswered questions and a repeatable update process.
+The best first result is not “all six fields completed.” It is a smaller catalog segment with fewer unanswered questions and a repeatable update process. For the underlying SKU, page, markup, and feed checks, use the [product data enrichment checklist]({{ '/ecommerce-product-data-enrichment/' | relative_url }}) before adding optional attributes.
 
 ## Sources
 

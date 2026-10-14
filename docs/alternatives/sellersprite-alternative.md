@@ -70,7 +70,7 @@ For a non-technical team, the quality of the daily workflow can matter more than
 
 **Match the package to the same research job before comparing prices.** SellerSprite publishes separate API services for product research, competitor lookup, keyword mining, reverse ASIN, category insights, and other jobs, with service-specific quotas and concurrency. Nexscope applies Data Credits to documented capabilities. A lower plan price is not cheaper if it omits the endpoint, marketplace, fields, or request volume your workflow needs.
 
-Record the official pricing URL, review date, service name, monthly quota, concurrency, expected retries, and cost per accepted report. Use [SellerSprite's current API package page](https://www.sellersprite.com/en/price/api?type=service) and [Nexscope's current pricing page](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=sellersprite_alternative&utm_content=pricing_comparison) rather than an undated third-party summary.
+Record the official pricing URL, review date, service name, monthly quota, concurrency, expected retries, and cost per accepted report. Use [SellerSprite's current API package page](https://www.sellersprite.com/en/price/api?type=service) and [Nexscope's current pricing page](https://www.nexscope.ai/pricing?co-from=learn) rather than an undated third-party summary.
 
 ## Where Nexscope is different
 
@@ -121,7 +121,7 @@ SellerSprite is a strong fit when the buyer wants an Amazon seller research prod
 
 Neither decision should rest on the longest feature list. Start with one commercial question—such as finding the search terms shared by five competing books or products—and score each platform on relevance, explainability, locale coverage, integration effort, and cost per usable result.
 
-[Explore Nexscope's Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=sellersprite_alternative) to check the current capabilities before starting a pilot.
+[Explore Nexscope's Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn) to check the current capabilities before starting a pilot.
 
 Compare adjacent decisions: [Keepa API for Amazon history](../keepa-api/), [Rainforest API for Amazon product data](../rainforest-api/), or [Helium 10 for an all-in-one seller suite](../helium-10/).
 
@@ -145,8 +145,8 @@ Reviewed October 6, 2026. This article compares public positioning and documenta
 
 - [SellerSprite API pricing and packages](https://www.sellersprite.com/en/price/api?type=service)
 - [SellerSprite API introduction](https://www.sellersprite.com/v3/knowledge/feature/about-api)
-- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
-- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
-- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral)
+- [Nexscope Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn)
+- [Nexscope API documentation index](https://www.nexscope.ai/api-docs?co-from=learn)
+- [Nexscope pricing](https://www.nexscope.ai/pricing?co-from=learn)
 
 Nexscope is not affiliated with or endorsed by SellerSprite. Product names belong to their respective owners.

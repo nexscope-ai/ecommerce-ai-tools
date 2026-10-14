@@ -38,6 +38,8 @@ image_caption: Submit product details for editorial review and possible free lis
     </aside>
   </header>
 
+  {% include product-showcase-featured.html context="submit" %}
+
   <section class="submission-review" id="submission-review" aria-labelledby="submission-review-title">
     <div class="submission-review-intro">
       <span class="eyebrow">Before you submit</span>

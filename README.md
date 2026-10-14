@@ -4,9 +4,15 @@ Practical ecommerce research, SEO, creative AI, and API workflows from the Nexsc
 
 [![Learning Hub](https://img.shields.io/badge/Docs-Learning%20Hub-7C3AED?style=flat&labelColor=555)](https://learn.nexscope.ai/ecommerce-ai-tools/) [![Ecommerce Tools](https://img.shields.io/badge/Tools-Ecommerce%20Tools-2563EB?style=flat&labelColor=555)](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) [![API Docs](https://img.shields.io/badge/Developers-API%20Docs-0891B2?style=flat&labelColor=555)](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header) [![Community](https://img.shields.io/badge/Support-Community-D97706?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions)
 
-**For sellers:** [Which part of your product page is hardest to improve?](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16) Reply A, B, C, or D. No store link or private data is needed; the Nexscope team will respond with a practical first check or a relevant guide.
-
 New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header). Credit use and API access vary by action and account.
+
+## Product Gallery: get feedback on your product page
+
+[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module) gives sellers another public place to present a product and receive editorial suggestions. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. The Nexscope team reviews submissions before publication and suggests improvements to positioning, product details, visuals, video, or destination links based on the public material provided.
+
+**[Submit a product for review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_gallery_link) · [Ask a product-page question in Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_community&utm_content=readme_gallery_question)
+
+No store connection, seller token, or payment access is required. Submissions remain offline until reviewed and approved. Publication, search rankings, traffic, and sales are not guaranteed.
 
 ## Explore ecommerce tools
 
@@ -28,14 +34,6 @@ Create or refine product visuals, then investigate Amazon, 1688 and TikTok Shop 
 
 The Amazon-to-1688, TikTok Shop and SEO Keyword Planner workflows accept a visitor-provided API key; other tools may require sign-in. Credits may apply to requests you start.
 
-## Product Gallery: get feedback on your product page
-
-[Nexscope Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) gives sellers another public place to present a product and receive editorial suggestions. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. The Nexscope team reviews submissions before publication and suggests improvements to positioning, product details, visuals, video, or destination links based on the public material provided.
-
-**[Submit a product for review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [Browse the Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Share your product-page challenge](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
-
-No store connection, seller token, or payment access is required. Submissions remain offline until reviewed and approved. Publication, search rankings, traffic, and sales are not guaranteed.
-
 ## About Nexscope
 
 Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs).
@@ -55,6 +53,7 @@ Source: Nexscope production API usage aggregates. The line shows a seven-day rol
 | How can I analyze negative Amazon reviews and find product improvements? | [Review analysis guide](docs/guides/amazon-negative-review-analysis.md) and [dated case study](docs/case-studies/amazon-review-case-study.md) |
 | How can I plan ecommerce keywords and check competing products? | [SEO Keyword Planner workflow](docs/guides/seo-keyword-planner.md) and [dated API test](docs/api-evidence/portable-blender-keyword-competitor.md) |
 | How can I audit an ecommerce product page? | [Website SEO audit guide](docs/guides/website-seo-audit-guide.md) |
+| How can I audit SEO across an entire ecommerce store? | [Sitewide ecommerce SEO audit checklist](docs/guides/ecommerce-seo-audit.md) |
 | How can I optimize an Amazon listing with evidence? | [Listing optimization guide](docs/guides/amazon-listing-optimization-tool.md) |
 | How can I create accurate product images or videos? | [Image guide](docs/guides/ai-product-image-generator.md) · [Video guide](docs/guides/ai-video-generator.md) |
 | How can I use ecommerce data in an AI agent? | [API selection and integration guide](docs/guides/ecommerce-api-for-ai-agents.md) · [MCP server guide](docs/guides/what-is-an-mcp-server.md) |

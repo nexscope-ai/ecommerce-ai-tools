@@ -79,7 +79,7 @@ OpenAI says Shopify merchants' product data is integrated through Shopify Catalo
 
 **A product video answers a different question: what should the seller show on its own pages and campaigns?** Try-on is a shopper-side visualization inside ChatGPT. A seller-controlled clip can show a verified garment image, packaging, colorway, or styling context on the product page, in an email, or in social creative. It should not pretend to be a personalized fit preview.
 
-For an approved product image, the [Nexscope image-to-video workspace](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_virtual_try_on&utm_content=article_workflow) lets a seller upload an image, choose a product-showcase or other video template or a custom description, and select available video settings. A cautious first test is a short clip with one simple camera movement and an instruction to preserve the garment's color, cut, logo, and visible details. Preview the output before using it; the live tool shows the current models, settings, access, and credit requirements.
+For an approved product image, the [Nexscope image-to-video workspace](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn) lets a seller upload an image, choose a product-showcase or other video template or a custom description, and select available video settings. A cautious first test is a short clip with one simple camera movement and an instruction to preserve the garment's color, cut, logo, and visible details. Preview the output before using it; the live tool shows the current models, settings, access, and credit requirements.
 
 **Do not submit an AI clip as evidence of actual drape, fit, or performance.** If fit is the selling point, use measured specifications and genuine try-on footage where possible. See our [AI video generator review checklist](../../ai-video-generator/) for product-identity and claim checks.
 
@@ -87,7 +87,7 @@ For an approved product image, the [Nexscope image-to-video workspace](https://w
 
 **Measure the handoff you can observe, not an assumed ChatGPT impression count.** Keep a dated log of test prompts, visible product details, and errors. In your own analytics, separate referral visits, product-page engagement, add-to-cart rate, and returns by SKU or campaign where tracking permits. A change in one metric after October 1 does not by itself prove that virtual try-on caused it.
 
-Start with the lowest-risk fix: correct one product's photos, measurements, and return terms. Then, if a short visual explanation would help buyers on your owned channels, [create a product video from an approved image in Nexscope](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=chatgpt_virtual_try_on&utm_content=article_cta). Nexscope is not affiliated with OpenAI and cannot control ChatGPT product results or Try on availability.
+Start with the lowest-risk fix: correct one product's photos, measurements, and return terms. Then, if a short visual explanation would help buyers on your owned channels, [create a product video from an approved image in Nexscope](https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn). Nexscope is not affiliated with OpenAI and cannot control ChatGPT product results or Try on availability.
 
 ## Sources and related reading
 

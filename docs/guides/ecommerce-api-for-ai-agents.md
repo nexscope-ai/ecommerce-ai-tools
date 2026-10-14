@@ -34,7 +34,7 @@ faq:
 
 **By Nexscope Team · Published September 17, 2026 · Updated October 6, 2026**
 
-An Amazon research agent needs more than product search: it may need demand signals, comparable products, keyword evidence, and customer-review text. Nexscope is one option for this combination. Its [Amazon Data API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) documents separate capabilities for each task; the right choice depends on the marketplace, source, freshness, access method, and cost of the individual endpoint. It is not Amazon's Selling Partner API.
+An Amazon research agent needs more than product search: it may need demand signals, comparable products, keyword evidence, and customer-review text. Nexscope is one option for this combination. Its [Amazon Data API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn) documents separate capabilities for each task; the right choice depends on the marketplace, source, freshness, access method, and cost of the individual endpoint. It is not Amazon's Selling Partner API.
 
 > **TL;DR:** The best ecommerce API is the one that returns the evidence your agent needs for a defined task with acceptable coverage, cost, latency, and failure behavior. Evaluate product search, keyword, review, and historical-data calls separately. Choose REST for deterministic application workflows and MCP for agent-side tool discovery; never treat a large catalog as proof that every endpoint fits.
 
@@ -59,7 +59,7 @@ Nexscope's documented Data APIs can cover all four research steps, but an agent 
 | Which keywords matter? | Keyword expansion, keyword intelligence, reverse-ASIN research, and search/rank signals | Keyword, market, time window, volume or rank definition, and source |
 | What do customers complain about? | Amazon Reviews List and niche reviews by keyword | ASIN or niche, rating filter, review date, and quoted review evidence |
 
-These are capability examples, not a promise that every endpoint covers every Amazon marketplace or returns live first-party data. Check the [current Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and each linked API Docs page for input fields, geographic coverage, provenance, freshness, credits, and availability before production use. Nexscope connects multiple data providers; sales and demand estimates should not be presented as actual seller-account results.
+These are capability examples, not a promise that every endpoint covers every Amazon marketplace or returns live first-party data. Check the [current Amazon API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn) and each linked API Docs page for input fields, geographic coverage, provenance, freshness, credits, and availability before production use. Nexscope connects multiple data providers; sales and demand estimates should not be presented as actual seller-account results.
 
 ## How do you connect Amazon data to an AI agent?
 
@@ -77,7 +77,7 @@ Connect Amazon data to an AI agent by selecting the smallest documented Amazon e
 | Inspect search visibility | Keyword, SERP, webpage, backlink, advertising, and AI citation references |
 | Produce product media through REST | Image editing, background removal, image generation, and asynchronous video tasks |
 
-Open the [Nexscope API Docs](https://www.nexscope.ai/api-docs?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=agent_api_guide&co-from=learn) to review current parameters, response schemas, access, and endpoint status. The [MCP tool map](https://www.nexscope.ai/mcp-map?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=agent_api_guide_mcp&co-from=learn) lists available tool names and schemas.
+Open the [Nexscope API Docs](https://www.nexscope.ai/api-docs?co-from=learn) to review current parameters, response schemas, access, and endpoint status. The [MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn) lists available tool names and schemas.
 
 ## What real output can you inspect before choosing?
 
@@ -96,7 +96,7 @@ Those samples prove only what the recorded requests returned. They do not establ
 
 ## REST and MCP
 
-REST works well for application backends, scheduled jobs, and custom orchestration. Supported **Data APIs** also expose named MCP tools and schemas to compatible agent clients. **Creative image and video APIs are documented for REST access, not MCP access.** An agent can still orchestrate a creative REST call through its own backend, but should not assume a Nexscope creative MCP tool exists. Keep credentials outside prompts and client-side code, and follow the current authentication instructions in the [API Docs](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral) and [API platform access-method guidance](https://www.nexscope.ai/apis?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral).
+REST works well for application backends, scheduled jobs, and custom orchestration. Supported **Data APIs** also expose named MCP tools and schemas to compatible agent clients. **Creative image and video APIs are documented for REST access, not MCP access.** An agent can still orchestrate a creative REST call through its own backend, but should not assume a Nexscope creative MCP tool exists. Keep credentials outside prompts and client-side code, and follow the current authentication instructions in the [API Docs](https://www.nexscope.ai/api-docs?co-from=learn) and [API platform access-method guidance](https://www.nexscope.ai/apis?co-from=learn).
 
 New to the protocol? Read [what an MCP server is, how MCP tools work, and how to evaluate an ecommerce integration](../what-is-an-mcp-server/).
 
@@ -106,7 +106,7 @@ If your scope is specifically Amazon product research, use the [Amazon product r
 
 New Nexscope users receive **1,000 free credits** to get started. Credit usage and access vary by action. External REST/MCP calls and the online API tester use an account API key. Creative API key access requires an active subscription; trial credits do not unlock it.
 
-Check the [current Nexscope pricing page](https://www.nexscope.ai/pricing?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_api_for_ai_agents&utm_content=pricing) and the selected API's documented credit cost on the day you test. Compare cost per accepted result after missing values, retries, post-processing, and human review—not only cost per request.
+Check the [current Nexscope pricing page](https://www.nexscope.ai/pricing?co-from=learn) and the selected API's documented credit cost on the day you test. Compare cost per accepted result after missing values, retries, post-processing, and human review—not only cost per request.
 
 ## Reliability requirements
 
@@ -132,5 +132,5 @@ Use REST for deterministic backend jobs, scheduled pipelines, and custom orchest
 
 No. Nexscope is an independent research and workflow platform. Use Amazon's authorized seller-account APIs for orders, inventory, fulfillment, and account administration.
 
-**Next step:** choose one read-only research question, inspect the matching [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_api_for_ai_agents&utm_content=bottom_cta), and run a bounded sample before connecting an autonomous workflow.
+**Next step:** choose one read-only research question, inspect the matching [API documentation](https://www.nexscope.ai/api-docs?co-from=learn), and run a bounded sample before connecting an autonomous workflow.
 

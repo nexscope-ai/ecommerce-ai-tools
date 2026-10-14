@@ -132,7 +132,7 @@ If the plugin is not available, mark the experiment **not tested**. Do not repla
 
 **Public-market evidence can provide an independent baseline, but it should remain separate from seller-account truth.** For one SKU, capture comparable products, current offers, relevant search terms, review themes, and dated historical observations where available. Then compare whether an account-specific recommendation is consistent with that external context.
 
-Nexscope's [Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_claude_plugin&utm_content=article) can support product, competitor, keyword, review, and historical research where the selected API provides those fields. Nexscope is **not** the Amazon Selling Partner plugin, Amazon Seller Assistant, or a replacement for first-party Seller Central reporting. Verify each endpoint's marketplace coverage, provenance, freshness, response schema, and credit use before relying on it.
+Nexscope's [Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn) can support product, competitor, keyword, review, and historical research where the selected API provides those fields. Nexscope is **not** the Amazon Selling Partner plugin, Amazon Seller Assistant, or a replacement for first-party Seller Central reporting. Verify each endpoint's marketplace coverage, provenance, freshness, response schema, and credit use before relying on it.
 
 ## Frequently asked questions
 
@@ -163,6 +163,6 @@ No. Nexscope is an independent ecommerce data platform that can provide a public
 - [Amazon Accelerate event page](https://sell.amazon.com/events)
 - [Amazon Accelerate 2026 seller AI workflow watchlist]({{ '/ecommerce-trends/amazon-accelerate-2026-seller-ai-workflow-watchlist/' | relative_url }})
 
-If you can access the beta, test one read-only question and preserve its sources before granting broader permissions. If you also need a dated public-market baseline, [explore Nexscope's Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=amazon_claude_plugin&utm_content=final_cta).
+If you can access the beta, test one read-only question and preserve its sources before granting broader permissions. If you also need a dated public-market baseline, [explore Nexscope's Amazon data workflows](https://www.nexscope.ai/apis/amazon?co-from=learn).
 
 **Editorial status:** This article reflects Amazon's official materials checked September 24, 2026. Beta availability, supported markets, data access, and permissions may change. The live Amazon and Claude connection screens govern the actual experience for an eligible account.

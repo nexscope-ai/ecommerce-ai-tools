@@ -108,13 +108,13 @@ If an agent needs marketplace evidence, separate data retrieval from reasoning. 
 
 **Nexscope can provide a documented ecommerce data and tool layer; Claude can be one reasoning layer chosen by the developer.** Nexscope does not make Sonnet 5.5, control its output or claim that every endpoint is available through every Claude product.
 
-A developer can inspect the [Nexscope MCP workflow guide]({{ '/ecommerce-mcp-server/' | relative_url }}) and [current API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=claude_sonnet_55_ecommerce) before designing an integration. Confirm the current tool name, schema, authentication, marketplace coverage, credit use and permitted data handling before production use.
+A developer can inspect the [Nexscope MCP workflow guide]({{ '/ecommerce-mcp-server/' | relative_url }}) and [current API documentation](https://www.nexscope.ai/api-docs?co-from=learn) before designing an integration. Confirm the current tool name, schema, authentication, marketplace coverage, credit use and permitted data handling before production use.
 
 The safer architecture is simple: retrieve traceable evidence, ask the model a bounded question, validate the response, and require approval before a high-impact action. Changing the model should not change that evidence chain.
 
 <aside class="article-action" aria-label="Inspect ecommerce APIs for an agent evaluation">
   <div><span class="eyebrow">BUILD A CONTROLLED TEST</span><strong>Start with one evidence-backed ecommerce task.</strong><p>Inspect the available product, keyword, review and search APIs, then define the output and human-review rule before choosing a model.</p></div>
-  <a href="https://www.nexscope.ai/api-docs?co-from=learn&amp;utm_source=learn.nexscope.ai&amp;utm_medium=referral&amp;utm_campaign=claude_sonnet_55_ecommerce&amp;utm_content=final_cta">Explore Nexscope API docs ↗</a>
+  <a href="https://www.nexscope.ai/api-docs?co-from=learn">Explore Nexscope API docs ↗</a>
 </aside>
 
 ## Frequently asked questions

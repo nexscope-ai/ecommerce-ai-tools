@@ -13,7 +13,7 @@ next_step:
   title: Audit one page you can improve
   description: Start with a public URL, inspect the underlying evidence, and choose one fix to verify.
   label: Open Website SEO Auditor
-  url: https://www.nexscope.ai/tools/website-seo-auditor
+  url: "https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn"
 image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp
 image_small: /assets/images/ecommerce-product-page-seo-audit-720w.webp
 image_alt: Ecommerce product page inspected for crawlability, content, links, images, structured data, and mobile performance
@@ -47,7 +47,7 @@ Use the audit to remove technical conflicts, then strengthen the page's unique a
 
 ## Using the Nexscope Website SEO Auditor
 
-Enter one public URL in the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=seo_audit_guide&co-from=learn). The tool collects page-level SEO evidence and can request a separate mobile Lighthouse check. Review the source evidence before accepting an AI recommendation.
+Enter one public URL in the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn). The tool collects page-level SEO evidence and can request a separate mobile Lighthouse check. Review the source evidence before accepting an AI recommendation.
 
 ## Prioritize findings
 
@@ -66,4 +66,6 @@ Enter one public URL in the [Website SEO Auditor](https://www.nexscope.ai/tools/
 - Competitor, backlink, keyword, and index-coverage research require additional evidence.
 
 Use Search Console, analytics, server logs, merchant data, and a full crawler when the decision requires site-wide evidence.
+
+For a repeatable category-and-catalog workflow, use the [sitewide ecommerce SEO audit checklist]({{ '/ecommerce-seo-audit/' | relative_url }}). It covers sampling, discovery, filter URLs, product data, and prioritization beyond one page.
 
