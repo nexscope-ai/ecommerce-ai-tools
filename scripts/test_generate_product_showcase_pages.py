@@ -109,6 +109,8 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertIn("<title>SEO title for static product | Nexscope</title>", html)
             self.assertIn('<meta name="keywords" content="static product, workflow product">', html)
             self.assertIn('<html lang="en-US">', html)
+            self.assertNotIn('"@type":"Product","@id":"' + canonical + '#product"', html)
+            self.assertIn('"@type":"Thing","@id":"' + canonical + '#product"', html)
             self.assertIn(
                 '<meta name="robots" content="index,follow,max-image-preview:large">',
                 html,
@@ -135,8 +137,6 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             )
             self.assertIn('<h3 id="product-detail-section-1">Product benefits</h3>', html)
             self.assertIn("<strong>useful</strong>", html)
-            self.assertIn('"@type":"Product"', html)
-            self.assertIn('"brand":{"@type":"Brand","name":"Example Brand"}', html)
             self.assertIn(
                 '"@type":"Thing","@id":"https://learn.nexscope.ai/#workflow-product",'
                 '"name":"Workflow product"',
@@ -152,8 +152,9 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             )
             self.assertIsNotNone(json_ld_match)
             graph = json.loads(json_ld_match.group(1))["@graph"]
-            product_schema = next(node for node in graph if node.get("@type") == "Product")
-            self.assertEqual("Static product", product_schema["name"])
+            product_entity = next(node for node in graph if node.get("@id") == canonical + "#product")
+            self.assertEqual("Thing", product_entity["@type"])
+            self.assertEqual("Static product", product_entity["name"])
             self.assertIn('"@type":"VideoObject"', html)
             self.assertIn("product-side.webp", html)
             self.assertIn('<nav class="listing-tabs" aria-label="On this page">', html)
@@ -203,6 +204,21 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertEqual(f"/product-showcase/product/{PUBLIC_UUID}/", manifest[0]["path"])
             self.assertEqual("Static product", manifest[0]["title"])
             self.assertEqual("https://cdn.example.com/product.webp", manifest[0]["image"])
+
+    def test_product_schema_is_kept_when_commercial_evidence_is_available(self):
+        template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
+        canonical = f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/"
+        gallery = "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/"
+        product = self.product()
+        product["seoConfig"]["schema"]["offers"] = {
+            "@type": "Offer",
+            "price": "29.99",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+        }
+        html = render_product_page(template, product, canonical, gallery)
+        self.assertIn('"@type":"Product","@id":"' + canonical + '#product"', html)
+        self.assertIn('"price":"29.99"', html)
 
     def test_external_video_precedes_images_and_no_video_keeps_images_first(self):
         template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")

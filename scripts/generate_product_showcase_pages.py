@@ -542,6 +542,45 @@ def schema_has_type(node: dict, expected: str) -> bool:
     return isinstance(node_type, list) and expected in node_type
 
 
+def _has_valid_offer(value: object) -> bool:
+    if not isinstance(value, dict):
+        return False
+    currency = value.get("priceCurrency")
+    if not isinstance(currency, str) or not currency.strip():
+        return False
+    offer_type = value.get("@type")
+    if offer_type == "AggregateOffer":
+        return value.get("lowPrice") is not None or value.get("highPrice") is not None
+    return value.get("price") is not None
+
+
+def has_google_product_signal(schema: dict) -> bool:
+    """Return whether the page has enough commercial evidence for Product rich results."""
+    offers = schema.get("offers")
+    if _has_valid_offer(offers):
+        return True
+    if isinstance(offers, list) and any(_has_valid_offer(item) for item in offers):
+        return True
+
+    rating = schema.get("aggregateRating")
+    if isinstance(rating, dict):
+        return rating.get("ratingValue") is not None and (
+            rating.get("reviewCount") is not None or rating.get("ratingCount") is not None
+        )
+
+    review = schema.get("review")
+    if isinstance(review, dict):
+        return isinstance(review.get("author"), (dict, str)) and review.get("reviewRating") is not None
+    if isinstance(review, list):
+        return any(
+            isinstance(item, dict)
+            and isinstance(item.get("author"), (dict, str))
+            and item.get("reviewRating") is not None
+            for item in review
+        )
+    return False
+
+
 def json_for_html(value: object) -> str:
     return (
         json.dumps(value, ensure_ascii=False, separators=(",", ":"))
@@ -632,6 +671,24 @@ def structured_data(
             )
         else:
             graph.append(configured_node)
+
+    if not has_google_product_signal(product_schema):
+        # Product rich results require commercial evidence. Gallery pages intentionally
+        # do not invent prices, availability, ratings or reviews from a source listing.
+        # Keep the entity useful to crawlers while avoiding an incomplete Product node.
+        entity_schema = {
+            "@type": "Thing",
+            "@id": canonical_url + "#product",
+            "name": product_name,
+            "description": description,
+            "url": canonical_url,
+            "mainEntityOfPage": canonical_url + "#webpage",
+        }
+        if images:
+            entity_schema["image"] = images
+        if product_url:
+            entity_schema["sameAs"] = product_url
+        graph = [entity_schema if node is product_schema else node for node in graph]
     if images and video_url and re.search(r"\.(?:mp4|webm)(?:[?#].*)?$", video_url, re.I) and published:
         graph.append(
             {
@@ -809,7 +866,9 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
     unresolved = re.findall(r"\{\{[A-Z_]+}}", html)
     if unresolved:
         raise BuildError(f"product page template has unresolved placeholders: {', '.join(sorted(set(unresolved)))}")
-    if canonical_url not in html or '"@type":"Product"' not in html:
+    if canonical_url not in html or (
+        '"@type":"Product"' not in html and '"@type":"Thing"' not in html
+    ):
         raise BuildError("rendered product page failed its SEO validation")
     return html.replace("<!doctype html>", f"<!doctype html>\n{GENERATED_MARKER}", 1).rstrip() + "\n"
 
