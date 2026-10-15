@@ -122,6 +122,11 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
                 html,
             )
             self.assertIn(
+                '<meta property="og:image" content="https://cdn.example.com/product.webp">',
+                html,
+            )
+            self.assertNotIn("social-product.webp", html.split('<script type="application/json"')[0])
+            self.assertIn(
                 '<meta name="twitter:title" content="Twitter product title">',
                 html,
             )
@@ -219,6 +224,26 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
         html = render_product_page(template, product, canonical, gallery)
         self.assertIn('"@type":"Product","@id":"' + canonical + '#product"', html)
         self.assertIn('"price":"29.99"', html)
+        self.assertIn("product-evidence-fact", html)
+        self.assertIn('29.99 GBP', html)
+        self.assertIn('>In stock</strong>', html)
+
+    def test_incomplete_product_evidence_does_not_create_a_rich_result_signal(self):
+        template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")
+        canonical = f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/"
+        gallery = "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/"
+        product = self.product()
+        product["seoConfig"]["schema"]["offers"] = {
+            "@type": "Offer",
+            "price": "29.99",
+        }
+        html = render_product_page(template, product, canonical, gallery)
+        json_ld_match = re.search(r'<script type="application/ld\+json">(.*?)</script>', html)
+        self.assertIsNotNone(json_ld_match)
+        graph = json.loads(json_ld_match.group(1))["@graph"]
+        entity = next(node for node in graph if node.get("@id") == canonical + "#product")
+        self.assertEqual("Thing", entity["@type"])
+        self.assertNotIn("product-evidence-fact", html)
 
     def test_external_video_precedes_images_and_no_video_keeps_images_first(self):
         template = PRODUCT_TEMPLATE.read_text(encoding="utf-8")

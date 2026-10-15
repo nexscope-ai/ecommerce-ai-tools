@@ -74,6 +74,7 @@ def load_template(source_dir: Path) -> str:
         "{{PRODUCT_NAME}}",
         "{{PRODUCT_DETAILS}}",
         "{{JSON_LD}}",
+        "{{EVIDENCE_CARDS}}",
     )
     missing = [placeholder for placeholder in required if placeholder not in template]
     if missing:
@@ -385,6 +386,99 @@ def render_product_outline(headings: list[str]) -> str:
     )
 
 
+def offer_availability_label(value: object, language: str) -> str | None:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    token = value.rstrip("/").rsplit("/", 1)[-1].casefold()
+    labels = {
+        "instock": "In stock",
+        "outofstock": "Out of stock",
+        "preorder": "Preorder",
+        "presale": "Presale",
+        "soldout": "Sold out",
+    }
+    if language.casefold().startswith("zh"):
+        labels.update(
+            {
+                "instock": "有库存",
+                "outofstock": "无库存",
+                "preorder": "预售",
+                "presale": "预售",
+                "soldout": "已售罄",
+            }
+        )
+    return labels.get(token)
+
+
+def render_product_evidence(config: dict, language: str) -> str:
+    """Render the evidence that qualifies a Product rich result."""
+    properties = product_rich_result_properties(config)
+    if not properties:
+        return ""
+    is_zh = language.casefold().startswith("zh")
+    labels = {
+        "price": "价格" if is_zh else "Price",
+        "availability": "库存状态" if is_zh else "Availability",
+        "rating": "评分" if is_zh else "Rating",
+        "review": "用户评价" if is_zh else "Review",
+    }
+    cards: list[str] = []
+    offers = properties.get("offers")
+    offer_items = offers if isinstance(offers, list) else [offers]
+    for offer in offer_items[:3]:
+        if not isinstance(offer, dict):
+            continue
+        is_aggregate = offer.get("@type") == "AggregateOffer"
+        if is_aggregate:
+            low = offer.get("lowPrice")
+            high = offer.get("highPrice")
+            if low and high:
+                price_text = f"{low}–{high} {offer['priceCurrency']}"
+            else:
+                price_text = f"{low or high or offer.get('price')} {offer['priceCurrency']}"
+        else:
+            price_text = f"{offer.get('price')} {offer['priceCurrency']}"
+        cards.append(
+            f'<div class="fact product-evidence-fact"><span>{labels["price"]}</span>'
+            f"<strong>{escape(price_text)}</strong></div>"
+        )
+        availability = offer_availability_label(offer.get("availability"), language)
+        if availability:
+            cards.append(
+                f'<div class="fact product-evidence-fact"><span>{labels["availability"]}</span>'
+                f"<strong>{escape(availability)}</strong></div>"
+            )
+
+    rating = properties.get("aggregateRating")
+    if isinstance(rating, dict):
+        count = rating.get("ratingCount") or rating.get("reviewCount")
+        rating_text = f"{rating.get('ratingValue')}/5"
+        if count:
+            rating_text += f" ({count})"
+        cards.append(
+            f'<div class="fact product-evidence-fact"><span>{labels["rating"]}</span>'
+            f"<strong>{escape(rating_text)}</strong></div>"
+        )
+
+    reviews = properties.get("review")
+    review_items = reviews if isinstance(reviews, list) else [reviews]
+    for review in review_items[:2]:
+        if not isinstance(review, dict):
+            continue
+        author = review.get("author")
+        author_name = author.get("name") if isinstance(author, dict) else author
+        body = limited_text(review.get("reviewBody"), 260)
+        review_text = body or ""
+        if author_name:
+            review_text = f"{author_name}: {review_text}".strip()
+        if review_text:
+            cards.append(
+                f'<div class="fact product-evidence-fact"><span>{labels["review"]}</span>'
+                f"<strong>{escape(review_text)}</strong></div>"
+            )
+    return "".join(cards)
+
+
 def configured_canonical(config: dict, canonical_url: str) -> str:
     candidate = safe_url(config.get("canonicalUrl") or config.get("canonical"))
     if candidate and candidate.rstrip("/") == canonical_url.rstrip("/"):
@@ -400,6 +494,7 @@ def render_seo_head(
     canonical_url: str,
     product_name: str,
     first_image: str | None,
+    submitted_images: list[str] | None = None,
 ) -> str:
     canonical = configured_canonical(config, canonical_url)
     robots = limited_text(config.get("robots"), 200) or (
@@ -419,7 +514,9 @@ def render_seo_head(
     og_site_name = limited_text(
         open_graph.get("siteName") or config.get("siteName"), 100
     ) or "Nexscope Product Gallery"
-    og_image = safe_url(open_graph.get("image") or config.get("ogImage")) or first_image
+    allowed_images = set(submitted_images or ([] if not first_image else [first_image]))
+    configured_og_image = safe_url(open_graph.get("image") or config.get("ogImage"))
+    og_image = configured_og_image if configured_og_image in allowed_images else first_image
     og_image_alt = limited_text(open_graph.get("imageAlt"), 160) or (
         f"{product_name} product image" if og_image else None
     )
@@ -432,7 +529,8 @@ def render_seo_head(
         twitter_card = "summary_large_image" if og_image else "summary"
     twitter_title = limited_text(twitter.get("title"), 100) or og_title
     twitter_description = limited_text(twitter.get("description"), 200) or og_description
-    twitter_image = safe_url(twitter.get("image")) or og_image
+    configured_twitter_image = safe_url(twitter.get("image"))
+    twitter_image = configured_twitter_image if configured_twitter_image in allowed_images else og_image
     twitter_image_alt = limited_text(twitter.get("imageAlt"), 160) or og_image_alt
 
     def meta(attribute: str, name: str, content: str) -> str:
@@ -542,43 +640,129 @@ def schema_has_type(node: dict, expected: str) -> bool:
     return isinstance(node_type, list) and expected in node_type
 
 
-def _has_valid_offer(value: object) -> bool:
+def configured_product_schema(config: dict) -> dict:
+    """Merge Product extensions without creating a Product node by inference."""
+    merged: dict[str, object] = {}
+    for node in configured_schema_nodes(config):
+        if schema_has_type(node, "Product") or "@type" not in node:
+            merged.update(node)
+    return merged
+
+
+def schema_number(value: object) -> str | None:
+    """Return a finite non-negative decimal suitable for Product rich results."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)):
+        if value < 0:
+            return None
+        return str(value)
+    if isinstance(value, str):
+        candidate = value.strip()
+        if re.fullmatch(r"(?:0|[1-9][0-9]*)(?:\.[0-9]+)?", candidate):
+            return candidate
+    return None
+
+
+def valid_offer(value: object) -> dict | None:
     if not isinstance(value, dict):
-        return False
-    currency = value.get("priceCurrency")
-    if not isinstance(currency, str) or not currency.strip():
-        return False
+        return None
     offer_type = value.get("@type")
-    if offer_type == "AggregateOffer":
-        return value.get("lowPrice") is not None or value.get("highPrice") is not None
-    return value.get("price") is not None
+    is_offer = offer_type is None or offer_type == "Offer" or (
+        isinstance(offer_type, list) and "Offer" in offer_type
+    )
+    is_aggregate = offer_type == "AggregateOffer" or (
+        isinstance(offer_type, list) and "AggregateOffer" in offer_type
+    )
+    if not (is_offer or is_aggregate):
+        return None
+    currency = value.get("priceCurrency")
+    if not isinstance(currency, str) or not re.fullmatch(r"[A-Za-z]{3}", currency.strip()):
+        return None
+    price = schema_number(value.get("price"))
+    low_price = schema_number(value.get("lowPrice"))
+    high_price = schema_number(value.get("highPrice"))
+    if is_aggregate:
+        if not (low_price or high_price or price):
+            return None
+    elif not price:
+        return None
+    normalized = dict(value)
+    normalized["@type"] = "AggregateOffer" if is_aggregate else "Offer"
+    normalized["priceCurrency"] = currency.strip().upper()
+    if price:
+        normalized["price"] = price
+    if low_price:
+        normalized["lowPrice"] = low_price
+    if high_price:
+        normalized["highPrice"] = high_price
+    return normalized
+
+
+def valid_aggregate_rating(value: object) -> dict | None:
+    if not isinstance(value, dict):
+        return None
+    rating_value = schema_number(value.get("ratingValue"))
+    rating_count = schema_number(value.get("ratingCount"))
+    review_count = schema_number(value.get("reviewCount"))
+    count = rating_count or review_count
+    if not rating_value or not count or float(rating_value) <= 0 or float(rating_value) > 5 or float(count) <= 0:
+        return None
+    normalized = dict(value)
+    normalized["ratingValue"] = rating_value
+    if rating_count:
+        normalized["ratingCount"] = rating_count
+    if review_count:
+        normalized["reviewCount"] = review_count
+    return normalized
+
+
+def valid_review(value: object) -> dict | None:
+    if not isinstance(value, dict):
+        return None
+    author = value.get("author")
+    rating = value.get("reviewRating")
+    if not isinstance(author, (str, dict)) or not author:
+        return None
+    if not isinstance(rating, dict) or not schema_number(rating.get("ratingValue")):
+        return None
+    return dict(value)
+
+
+def product_rich_result_properties(config: dict) -> dict:
+    """Return only supported, evidence-bearing Product rich result properties."""
+    configured = configured_product_schema(config)
+    properties: dict[str, object] = {}
+    raw_offers = configured.get("offers")
+    if isinstance(raw_offers, list):
+        offers = [offer for value in raw_offers if (offer := valid_offer(value))]
+        if offers:
+            properties["offers"] = offers
+    elif (offer := valid_offer(raw_offers)):
+        properties["offers"] = offer
+
+    raw_reviews = configured.get("review")
+    if isinstance(raw_reviews, list):
+        reviews = [review for value in raw_reviews if (review := valid_review(value))]
+        if reviews:
+            properties["review"] = reviews
+    elif (review := valid_review(raw_reviews)):
+        properties["review"] = review
+
+    if rating := valid_aggregate_rating(configured.get("aggregateRating")):
+        properties["aggregateRating"] = rating
+    return properties
 
 
 def has_google_product_signal(schema: dict) -> bool:
     """Return whether the page has enough commercial evidence for Product rich results."""
-    offers = schema.get("offers")
-    if _has_valid_offer(offers):
-        return True
-    if isinstance(offers, list) and any(_has_valid_offer(item) for item in offers):
-        return True
-
-    rating = schema.get("aggregateRating")
-    if isinstance(rating, dict):
-        return rating.get("ratingValue") is not None and (
-            rating.get("reviewCount") is not None or rating.get("ratingCount") is not None
-        )
-
-    review = schema.get("review")
-    if isinstance(review, dict):
-        return isinstance(review.get("author"), (dict, str)) and review.get("reviewRating") is not None
-    if isinstance(review, list):
-        return any(
-            isinstance(item, dict)
-            and isinstance(item.get("author"), (dict, str))
-            and item.get("reviewRating") is not None
-            for item in review
-        )
-    return False
+    return bool(
+        valid_offer(schema.get("offers"))
+        or (isinstance(schema.get("offers"), list) and any(valid_offer(item) for item in schema["offers"]))
+        or valid_aggregate_rating(schema.get("aggregateRating"))
+        or (valid_review(schema.get("review")) if isinstance(schema.get("review"), dict) else False)
+        or (isinstance(schema.get("review"), list) and any(valid_review(item) for item in schema["review"]))
+    )
 
 
 def json_for_html(value: object) -> str:
@@ -602,6 +786,7 @@ def structured_data(
     language: str,
 ) -> str:
     product_name = product["productName"]
+    config = seo_config(product)
     product_schema: dict[str, object] = {
         "@type": "Product",
         "@id": canonical_url + "#product",
@@ -654,16 +839,21 @@ def structured_data(
         },
     ]
     product_protected = {
-        "@context", "@graph", "@id", "@type", "name", "url", "mainEntityOfPage"
+        "@context", "@graph", "@id", "@type", "name", "url", "mainEntityOfPage", "image"
     }
     web_page_protected = {
         "@context", "@graph", "@id", "@type", "url", "name", "description",
         "mainEntity", "isPartOf"
     }
-    for configured_node in configured_schema_nodes(seo_config(product)):
+    for configured_node in configured_schema_nodes(config):
         if schema_has_type(configured_node, "Product") or "@type" not in configured_node:
             product_schema.update(
-                {key: value for key, value in configured_node.items() if key not in product_protected}
+                {
+                    key: value
+                    for key, value in configured_node.items()
+                    if key not in product_protected
+                    and key not in {"offers", "review", "aggregateRating"}
+                }
             )
         elif schema_has_type(configured_node, "WebPage"):
             web_page.update(
@@ -672,6 +862,9 @@ def structured_data(
         else:
             graph.append(configured_node)
 
+    for key in ("offers", "review", "aggregateRating"):
+        product_schema.pop(key, None)
+    product_schema.update(product_rich_result_properties(config))
     if not has_google_product_signal(product_schema):
         # Product rich results require commercial evidence. Gallery pages intentionally
         # do not invent prices, availability, ratings or reviews from a source listing.
@@ -827,6 +1020,7 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
             canonical_url,
             product_name,
             first_image,
+            images,
         ),
         "{{SEO_CONFIG_JSON}}": json_for_html(config),
         "{{JSON_LD}}": structured_data(
@@ -853,6 +1047,7 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
         "{{CAROUSEL_ROLE}}": ' aria-roledescription="carousel"' if len(images) > 1 else "",
         "{{CAROUSEL_CONTROLS}}": carousel_controls,
         "{{PRODUCT_DETAILS}}": render_markdown(product.get("productDetails")),
+        "{{EVIDENCE_CARDS}}": render_product_evidence(config, language),
         "{{PUBLISHED_CARD}}": published_card,
         "{{SOURCE_CARD}}": source_card,
         "{{MEDIA_NAV}}": media_nav,
