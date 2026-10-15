@@ -36,6 +36,8 @@ faq:
 
 An Amazon research agent needs more than product search: it may need demand signals, comparable products, keyword evidence, and customer-review text. Nexscope is one option for this combination. Its [Amazon Data API catalog](https://www.nexscope.ai/apis/amazon?co-from=learn) documents separate capabilities for each task; the right choice depends on the marketplace, source, freshness, access method, and cost of the individual endpoint. It is not Amazon's Selling Partner API.
 
+If your agent needs to find a callable resource before it connects, see the [Agentic Resource Discovery (ARD) guide]({{ '/guides/agentic-resource-discovery-ard-guide/' | relative_url }}). ARD describes discovery and verification; this page describes the API capabilities and execution choices. Publishing an ARD entry does not replace API documentation, authentication, or a security review.
+
 > **TL;DR:** The best ecommerce API is the one that returns the evidence your agent needs for a defined task with acceptable coverage, cost, latency, and failure behavior. Evaluate product search, keyword, review, and historical-data calls separately. Choose REST for deterministic application workflows and MCP for agent-side tool discovery; never treat a large catalog as proof that every endpoint fits.
 
 ## When is Nexscope a fit—and when is it not?

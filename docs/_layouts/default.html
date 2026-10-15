@@ -68,6 +68,9 @@
           "url": "{{ page.url | absolute_url }}",
           "name": {{ page.title | default: site.title | jsonify }},
           "description": {{ page.description | default: site.description | jsonify }},
+          "inLanguage": {{ site.lang | default: 'en' | jsonify }},
+          "dateModified": {% if page.date_modified %}{{ page.date_modified | jsonify }}{% else %}null{% endif %},
+          {% if page.keywords %}"keywords": {{ page.keywords | jsonify }},{% endif %}
           "isPartOf": { "@id": "https://learn.nexscope.ai/ecommerce-ai-tools/#website" },
           "about": { "@id": "{% if page.subject_name %}{{ page.subject_url }}#entity{% else %}https://www.nexscope.ai/#organization{% endif %}" }{% if page.image %},
           "primaryImageOfPage": {
@@ -155,7 +158,7 @@
     <script src="{{ '/assets/trends.js' | relative_url }}?v=13" defer></script>
     {% unless page.private_page %}
     <script src="{{ '/assets/traffic-attribution.js' | relative_url }}?v=1" defer></script>
-    <script src="https://learn.nexscope.ai/analytics.js?v=9" defer></script>
+    <script src="{{ '/assets/analytics.js' | relative_url }}?v=1" defer></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="q6pDSjaAKMskPeTdzPWCtQ" async></script>
     {% endunless %}
     <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
