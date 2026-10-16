@@ -988,6 +988,13 @@
           managementUrl.host = window.location.host;
         }
         event('product_submission_success', { source_type: sourceType });
+        // Send GA4's recommended lead event only after a successful submission.
+        // Keep the product-specific event for funnel analysis; mark
+        // generate_lead as the conversion in GA4.
+        event('generate_lead', {
+          lead_type: 'product_page_feedback',
+          source_type: sourceType,
+        });
         window.location.replace(managementUrl.href);
       } catch (cause) {
         event('product_submission_failed', {

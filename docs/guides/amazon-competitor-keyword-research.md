@@ -17,6 +17,7 @@ keywords:
   - Amazon competitor keywords
   - find Amazon competitor keywords
   - Amazon competitor keyword research
+  - Amazon competitor keyword tool
   - reverse ASIN keyword research
   - competitor keyword research for Amazon
 next_step:

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Amazon Product Research API: Search, Keywords and Reviews"
-description: "Compare Amazon product research APIs for search, keywords, reviews, price history, marketplace coverage, access, and verifiable output."
+title: "Amazon Search Volume API & Product Research API: How to Compare"
+description: "Compare an Amazon search volume API and product research API for keywords, reviews, price history, marketplace coverage, access, and verifiable output."
 permalink: /best-amazon-product-research-api/
 date_published: 2026-10-06
 date_modified: 2026-10-16
@@ -17,6 +17,7 @@ image_caption: "Illustration: choose an Amazon product research API from the evi
 topic: research
 keywords:
   - best Amazon product research API
+  - Amazon search volume API comparison
   - Amazon product data API
   - Amazon product search API
   - Amazon search volume API
