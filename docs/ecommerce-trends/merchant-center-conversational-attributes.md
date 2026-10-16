@@ -3,6 +3,9 @@ layout: default
 title: "Merchant Center Attributes: 6-Field Guide"
 description: Learn what Google's six Merchant Center conversational attributes do, when to use them, and how to avoid duplicate or unsupported product claims.
 permalink: /ecommerce-trends/merchant-center-conversational-attributes/
+redirect_from:
+  - /merchant-center-conversational-attributes/
+  - /ecommerce-ai-tools/merchant-center-conversational-attributes/
 last_reviewed: 2026-09-22
 date_published: 2026-09-22
 date_modified: 2026-10-13

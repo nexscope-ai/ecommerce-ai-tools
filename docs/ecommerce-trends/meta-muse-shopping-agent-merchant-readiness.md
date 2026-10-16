@@ -3,6 +3,9 @@ layout: default
 title: "Meta Muse Shopping Agent: What Merchants Can Verify"
 description: "Can Meta Muse shop your store? See what Meta has confirmed, what remains unknown, and a merchant checklist for product facts, access and checkout approval."
 permalink: /ecommerce-trends/meta-muse-shopping-agent-merchant-readiness/
+redirect_from:
+  - /meta-muse-shopping-agent-merchant-readiness/
+  - /ecommerce-ai-tools/meta-muse-shopping-agent-merchant-readiness/
 last_reviewed: 2026-09-30
 date_published: 2026-09-22
 date_modified: 2026-10-08

@@ -3,6 +3,8 @@ layout: default
 title: "Amazon Competitor Keyword Research: Find and Validate Keywords"
 description: "Learn how to find Amazon competitor keywords with comparable ASINs, reverse-ASIN evidence, and first-party checks."
 permalink: /amazon-competitor-keyword-research/
+redirect_from:
+  - /ecommerce-ai-tools/amazon-competitor-keyword-research/
 date_published: 2026-09-15
 last_reviewed: 2026-10-10
 date_modified: 2026-10-16

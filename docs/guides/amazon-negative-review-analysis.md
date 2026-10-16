@@ -3,6 +3,8 @@ layout: default
 title: "Amazon Review Analyzer: Product Tests"
 description: "Use an Amazon review analyzer to preserve source comments, group recurring complaints and turn a bounded low-star sample into product tests."
 permalink: /amazon-negative-review-analysis/
+redirect_from:
+  - /ecommerce-ai-tools/amazon-negative-review-analysis/
 date_published: 2026-09-15
 last_reviewed: 2026-10-06
 date_modified: 2026-10-09

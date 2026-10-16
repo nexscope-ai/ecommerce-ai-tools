@@ -6,6 +6,7 @@ lang: en
 product_showcase_api_base: https://api.nexscope.ai/api/product-showcase
 plugins:
   - jekyll-sitemap
+  - jekyll-redirect-from
 defaults:
   - scope:
       path: google3bc8f2f206788fd5.html
