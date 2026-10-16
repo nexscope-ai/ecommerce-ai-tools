@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TikTok Shop Holiday Shopping 2026: BFCM, LIVE Shopping and Seller Checklist"
-description: "Prepare TikTok Shop products, creators, LIVE Shopping and holiday offers for the 2026 Black Friday and Cyber Monday campaign."
+title: "TikTok Shop Holiday Shopping 2026: Black Friday Seller Guide"
+description: "Prepare TikTok Shop products, creators, LIVE Shopping, and holiday offers for the 2026 Black Friday and Cyber Monday season."
 permalink: /ecommerce-trends/tiktok-shop-holiday-shopping-2026-seller-guide/
-last_reviewed: 2026-10-15
 date_published: 2026-10-15
-date_modified: 2026-10-15
-last_modified_at: 2026-10-15
+date_modified: 2026-10-16
+last_modified_at: 2026-10-16
+last_reviewed: 2026-10-16
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -32,7 +32,7 @@ faq:
     answer: "Nexscope can support documented public research, page inspection, and evidence logging. It does not connect a TikTok Shop account, publish campaigns, manage checkout, process payments, or guarantee TikTok distribution."
 ---
 
-# TikTok Shop holiday shopping 2026: how to prepare for BFCM and LIVE
+# TikTok Shop holiday shopping 2026: Black Friday seller guide
 
 **By Nexscope Team · Published and reviewed October 15, 2026**
 

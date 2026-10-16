@@ -9,7 +9,7 @@
   const learnHost = 'learn.nexscope.ai';
   const linkedDomains = ['learn.nexscope.ai', 'www.nexscope.ai', 'nexscope.ai'];
   let consent;
-  try { consent = localStorage.getItem(consentKey); } catch (_) { /* Storage unavailable. */ }
+  try { consent = window.localStorage.getItem(consentKey); } catch (_) { /* Storage unavailable. */ }
 
   window.dataLayer = window.dataLayer || [];
   // oxlint-disable-next-line prefer-rest-params -- Google gtag.js requires the Arguments object.
@@ -31,20 +31,44 @@
     if (value && /^[\w .-]{1,100}$/.test(value)) page.searchParams.set(name, value);
   }
   let referrer = '';
-  try { referrer = new URL(document.referrer).origin; } catch (_) { /* No usable referrer. */ }
-
+  try {
+    const sourceUrl = new URL(document.referrer);
+    referrer = sourceUrl.origin + sourceUrl.pathname.slice(0, 500);
+  } catch (_) { /* No usable referrer. */ }
   window.gtag('config', measurementId, {
     page_location: page.href,
     page_title: document.title,
-    page_referrer: referrer,
     page_hostname: learnHost,
     cookie_domain: 'nexscope.ai',
     linker: { domains: linkedDomains, decorate_forms: false },
+    send_page_view: false,
     content_group: 'learn',
     site_surface: 'learn',
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
+    url_passthrough: true,
   });
+
+  // Keep the page-view contract explicit. GA4's config call would otherwise
+  // send an automatic page_view while consent is denied and a second one could
+  // be sent when the visitor grants consent. This guard gives each document
+  // exactly one page_view and keeps the page URL/referrer available for QA.
+  let pageViewSent = false;
+  const sendPageView = () => {
+    if (pageViewSent) return;
+    pageViewSent = true;
+    window.gtag('event', 'page_view', {
+      page_location: page.href,
+      page_title: document.title,
+      page_referrer: referrer || undefined,
+      page_hostname: learnHost,
+      content_group: 'learn',
+      site_surface: 'learn',
+      transport_type: 'beacon',
+      ...(new URLSearchParams(location.search).get('ga_debug') === '1' ? { debug_mode: true } : {}),
+    });
+  };
+  sendPageView();
 
   const script = document.createElement('script');
   script.async = true;
@@ -66,7 +90,7 @@
       });
     }
     const isMainSite = ['www.nexscope.ai', 'nexscope.ai'].includes(url.hostname);
-    if (isMainSite && link.hasAttribute('data-track')) {
+    if (isMainSite) {
       window.gtag('event', 'start_using_click', {
         link_domain: url.hostname,
         link_path: url.pathname,
@@ -96,19 +120,27 @@
       ? 'padding:9px 12px;border:1px solid #6250e9;border-radius:8px;cursor:pointer;background:#6250e9;color:white;font-weight:600'
       : 'padding:9px 12px;border:1px solid #ded9f2;border-radius:8px;cursor:pointer;background:white;color:#4032a0;font-weight:600';
     button.onclick = () => {
-      try { localStorage.setItem(consentKey, value); } catch (_) { /* Choice applies this visit. */ }
+      try { window.localStorage.setItem(consentKey, value); } catch (_) { /* Choice applies this visit. */ }
       panel.remove();
       window.gtag('consent', 'update', { analytics_storage: value });
+      sendPageView();
     };
     actions.append(button);
   }
   panel.append(actions);
-  if (!consent) document.body.append(panel);
+  const showPanel = () => {
+    if (!document.body || panel.isConnected) return;
+    document.body.append(panel);
+  };
+  if (!consent) {
+    if (document.body) showPanel();
+    else document.addEventListener('DOMContentLoaded', showPanel, { once: true });
+  }
   document.addEventListener('click', (event) => {
     const trigger = event.target.closest?.('a[href]');
     if (!trigger || trigger.hash !== '#analytics-preferences' || trigger.origin !== location.origin) return;
     event.preventDefault();
-    document.body.append(panel);
+    showPanel();
     panel.querySelector('button')?.focus();
   }, true);
 })();

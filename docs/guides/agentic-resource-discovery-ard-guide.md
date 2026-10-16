@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Agentic Resource Discovery (ARD): How AI Agents Find Tools and APIs"
-description: "Understand Agentic Resource Discovery (ARD), its relationship to GEO, MCP, A2A, and AI Catalogs, and how to prepare a callable resource for agent discovery."
+title: "Agentic Resource Discovery (ARD): ARD.json, AI Agents and APIs"
+description: "What Agentic Resource Discovery (ARD) and ard.json mean for AI agent discovery, GEO, MCP, A2A, catalogs, and callable APIs."
 permalink: /guides/agentic-resource-discovery-ard-guide/
 date_published: 2026-10-15
-last_reviewed: 2026-10-15
-date_modified: 2026-10-15
-last_modified_at: 2026-10-15
+date_modified: 2026-10-16
+last_modified_at: 2026-10-16
+last_reviewed: 2026-10-16
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -19,6 +19,7 @@ keywords:
   - ard.json
   - AI agent discovery
   - AI Catalog
+  - what is ARD
 faq:
   - question: "What is Agentic Resource Discovery (ARD)?"
     answer: "Agentic Resource Discovery (ARD) is an open proposal for publishing, discovering, searching, and verifying callable AI resources such as MCP servers, A2A agents, skills, APIs, and workflows. It is a discovery layer, not an execution protocol or marketplace."
@@ -32,11 +33,11 @@ faq:
     answer: "No. A catalog and ARD entry make a capability easier for compatible registries to discover, but they do not guarantee indexing, ranking, trust approval, invocation, traffic, or business results."
 ---
 
-# Agentic Resource Discovery (ARD): how AI agents find tools and APIs
+# Agentic Resource Discovery (ARD): ard.json, AI agents and APIs
 
 **By Nexscope Team · Published and reviewed October 15, 2026**
 
-Agentic Resource Discovery (ARD) is a new open proposal for the step that happens **before** an AI agent calls a tool: finding the right capability, comparing alternatives, and checking who published it. It is related to the broader AI-discovery conversation around GEO, but it is not a new GEO ranking algorithm.
+**Agentic Resource Discovery (ARD) is the proposed discovery step before an AI agent calls a tool.** It helps a client find the right capability, compare alternatives, and check who published it. The related `ard.json` manifest describes a callable resource for compatible registries. ARD is part of the broader AI-discovery conversation around GEO, but it is not a new GEO ranking algorithm.
 
 Google announced ARD on June 17, 2026 as an open specification for publishing, discovering, and verifying AI capabilities across the web. The current public specification is version 0.91 and is marked **Proposal**, so names, paths, and conformance details may continue to change. [Read Google's announcement](https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/) and the [current ARD specification](https://github.com/ards-project/ard-spec/blob/main/spec/ard.md).
 

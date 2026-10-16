@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TikTok Shop API Guide: Product, Creator, Video and Seller Research with Nexscope"
-description: "A practical guide to Nexscope's TikTok Shop APIs for product discovery, creator research, video analysis, shop analytics, rankings, and REST or MCP workflows."
+title: "TikTok Shop API: Product, Creator and Video Research"
+description: "Use a TikTok Shop API workflow to research products, creators, videos, rankings, and shop signals with documented fields and limits."
 permalink: /guides/tiktok-shop-api-guide/
 date_published: 2026-10-13
-last_reviewed: 2026-10-13
-date_modified: 2026-10-13
-last_modified_at: 2026-10-13
+date_modified: 2026-10-16
+last_modified_at: 2026-10-16
+last_reviewed: 2026-10-16
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -27,7 +27,7 @@ faq:
     answer: "The documented run endpoints use POST with a Bearer API key, and the API pages expose MCP method names for compatible clients. Use the individual API page for the current endpoint, parameters, response fields, and credit estimate."
 ---
 
-# TikTok Shop API Guide: what sellers can research with Nexscope
+# TikTok Shop API: product, creator and video research
 
 **By Nexscope Team · Published October 13, 2026**
 

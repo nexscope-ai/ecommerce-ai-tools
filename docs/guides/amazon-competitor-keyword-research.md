@@ -1,12 +1,13 @@
 ---
 layout: default
-title: "Amazon Competitor Keywords: Find and Validate Gaps"
-description: "Find Amazon competitor keywords with comparable ASINs, reverse-ASIN evidence, and first-party checks. Includes a dated test and shortlist template."
+title: "Amazon Competitor Keyword Research: Find and Validate Keywords"
+description: "Learn how to find Amazon competitor keywords with comparable ASINs, reverse-ASIN evidence, and first-party checks."
 permalink: /amazon-competitor-keyword-research/
 date_published: 2026-09-15
 last_reviewed: 2026-10-10
-date_modified: 2026-10-13
-last_modified_at: 2026-10-13
+date_modified: 2026-10-16
+last_modified_at: 2026-10-16
+last_reviewed: 2026-10-16
 author: Nexscope Team
 schema_type: Article
 topic: research
@@ -15,6 +16,7 @@ keywords:
   - find Amazon competitor keywords
   - Amazon competitor keyword research
   - reverse ASIN keyword research
+  - competitor keyword research for Amazon
 next_step:
   id: amazon_asin_keywords
   title: Check one truly comparable ASIN
@@ -27,11 +29,11 @@ image_alt: A magnifying glass revealing keyword clusters and gaps across competi
 image_caption: "Illustration: select comparable ASINs, inspect associated terms, and validate each apparent gap."
 ---
 
-# How to find Amazon competitor keywords that matter
+# Amazon competitor keyword research: find and validate keywords
 
 {% include article-visual.html %}
 
-**To find Amazon competitor keywords, first select products that solve the same buyer problem in the same marketplace.** Record their ASINs, inspect available reverse-ASIN keyword evidence, and compare relevant terms with your own listing and first-party search reports. A term associated with a rival is a *candidate*, not proof that the rival converted or that your product should target it.
+**To find Amazon competitor keywords, first select products that solve the same buyer problem in the same marketplace.** This Amazon competitor keyword research workflow records comparable ASINs, inspects reverse-ASIN evidence, and compares relevant terms with your listing and first-party search reports. A term associated with a rival is a *candidate*, not proof that the rival converted or that your product should target it.
 
 **Quick answer:** Keep the query, marketplace, date, ASIN, source, and metric label together. Exclude products with a different function or variant. Prioritize terms that accurately describe your product and recur across comparable products; validate the shortlist with Amazon Brand Analytics or advertising search-term data when you have access. Do not relabel Google search volume as Amazon demand.
 

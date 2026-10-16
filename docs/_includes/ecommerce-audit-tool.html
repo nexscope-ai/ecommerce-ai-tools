@@ -1,0 +1,107 @@
+<section class="ecommerce-audit-tool" id="audit-prioritizer" aria-labelledby="audit-tool-title">
+  <div class="ecommerce-audit-tool__header">
+    <span class="eyebrow">Free self-assessment</span>
+    <h2 id="audit-tool-title">Ecommerce site audit prioritizer</h2>
+    <p>This free ecommerce audit tool asks nine checks about your store. It creates a readiness snapshot and puts the highest-risk work first. It runs in your browser and does not crawl, save, or send your site data.</p>
+  </div>
+  <form data-ecommerce-audit-form>
+    <div class="ecommerce-audit-tool__checks">
+      <fieldset data-audit-check data-weight="3" data-label="Crawlability and indexability">
+        <legend>Can search engines reach and index your important category and product URLs?</legend>
+        <p>Consider robots rules, noindex directives, response codes, rendering, and URL Inspection examples.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-crawl" value="good"> Good</label>
+          <label><input type="radio" name="audit-crawl" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-crawl" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="3" data-label="Canonical, robots, and sitemap alignment">
+        <legend>Do canonical, robots, redirects, and sitemap signals agree?</legend>
+        <p>Compare the URLs you want indexed with the canonical and index signals Google actually sees.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-signals" value="good"> Good</label>
+          <label><input type="radio" name="audit-signals" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-signals" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="3" data-label="Internal product discovery paths">
+        <legend>Can a crawler reach priority products through normal category links?</legend>
+        <p>Check category depth, pagination, descriptive anchors, and whether key products are hidden behind interactions.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-links" value="good"> Good</label>
+          <label><input type="radio" name="audit-links" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-links" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="2" data-label="Distinct page intent">
+        <legend>Does each category and product template answer a distinct shopper question?</legend>
+        <p>Look for useful selection guidance, accurate product details, and content that is not copied across templates.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-intent" value="good"> Good</label>
+          <label><input type="radio" name="audit-intent" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-intent" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="3" data-label="Product facts and structured data">
+        <legend>Do visible price, availability, variants, and structured data agree?</legend>
+        <p>Compare the page, Product or Offer markup, and Merchant Center feed where those surfaces are used.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-product-data" value="good"> Good</label>
+          <label><input type="radio" name="audit-product-data" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-product-data" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="2" data-label="Faceted navigation decisions">
+        <legend>Have you decided which filters deserve indexable landing pages?</legend>
+        <p>Separate useful search destinations from color, size, sort, or other parameter combinations that create crawl waste.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-facets" value="good"> Good</label>
+          <label><input type="radio" name="audit-facets" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-facets" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="2" data-label="Mobile experience and performance evidence">
+        <legend>Have you checked mobile UX and separated lab findings from field data?</legend>
+        <p>Review representative templates on mobile; do not treat one Lighthouse run as a history of real-user performance.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-mobile" value="good"> Good</label>
+          <label><input type="radio" name="audit-mobile" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-mobile" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="2" data-label="Search and business baseline">
+        <legend>Do Search Console and analytics baselines exist for the pages you will change?</legend>
+        <p>Record impressions, clicks, CTR, conversions, date range, market, device, and the exact URLs before editing.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-measurement" value="good"> Good</label>
+          <label><input type="radio" name="audit-measurement" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-measurement" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+      <fieldset data-audit-check data-weight="1" data-label="AI-search answer quality">
+        <legend>Does important buying content lead with an evidence-backed answer?</legend>
+        <p>Check whether the page states its method, date, limits, recommendation, and next action instead of only repeating keywords.</p>
+        <div class="ecommerce-audit-tool__options">
+          <label><input type="radio" name="audit-ai" value="good"> Good</label>
+          <label><input type="radio" name="audit-ai" value="needs-work"> Needs work</label>
+          <label><input type="radio" name="audit-ai" value="unknown" checked> Not checked</label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="ecommerce-audit-tool__actions">
+      <button type="submit">Generate priority plan</button>
+      <button type="button" class="ecommerce-audit-tool__reset" data-audit-reset>Reset</button>
+    </div>
+  </form>
+  <div class="ecommerce-audit-tool__results" data-audit-results hidden tabindex="-1" aria-live="polite">
+    <div class="ecommerce-audit-tool__score">
+      <span class="ecommerce-audit-tool__score-label">Readiness snapshot</span>
+      <strong data-audit-score>—</strong><span>/ 100</span>
+    </div>
+    <h3 data-audit-headline>Priorities for your next audit pass</h3>
+    <p data-audit-summary></p>
+    <ol data-audit-actions></ol>
+    <p class="ecommerce-audit-tool__next"><a data-track="start_using" href="https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn">Verify one public URL with the Website SEO Auditor →</a></p>
+    <p class="ecommerce-audit-tool__note">This is a planning snapshot, not a Google ranking score or a complete crawl. Confirm findings in first-party reports and a full crawler before making sitewide changes.</p>
+  </div>
+</section>
