@@ -178,8 +178,9 @@ html { scroll-behavior: smooth; }
 .showcase-form input:not([type=radio]), .showcase-form select { min-height: 50px; }
 .showcase-form textarea { min-height: 112px; resize: vertical; line-height: 1.55; }
 .showcase-form input::placeholder, .showcase-form textarea::placeholder { color: #a4a0aa; }
-.showcase-field-warning { margin: 12px 0 12px; padding: 10px 12px; border-left: 3px solid #e5a11a; border-radius: 6px; background: #fff9e8; color: #9a5b00; font-size: 13px; line-height: 1.55; }
-.showcase-field-warning strong { color: #7c4700; }
+.showcase-field-warning { position: relative; margin: 12px 0; padding: 10px 12px 10px 34px; border: 1px solid #f0cf76; border-left: 3px solid #e5a11a; border-radius: 7px; background: #fff9e8; color: #8a5a00; font-size: 13px; line-height: 1.5; }
+.showcase-field-warning:before { position: absolute; top: 10px; left: 11px; color: #d99100; content: '⚠'; font-size: 15px; line-height: 1; }
+.showcase-field-warning strong { color: #b26900; }
 .showcase-form input:hover, .showcase-form textarea:hover, .showcase-form select:hover { border-color: #bdb5d4; background: #fff; }
 .showcase-form input:focus, .showcase-form textarea:focus, .showcase-form select:focus, .management-edit-form input:focus, .management-edit-form textarea:focus, .management-edit-form select:focus { outline: 3px solid rgb(98 80 233 / 11%); border-color: var(--accent); background: #fff; }
 .required-mark { display: inline; margin-left: 2px; color: #d92d20 !important; font: 800 13px/1 Arial, Helvetica, sans-serif !important; }
