@@ -1,26 +1,27 @@
 ---
 layout: default
-title: "Ecommerce SEO Audit: How to Audit an Ecommerce Website"
-description: "Ecommerce SEO audit checklist for product pages: crawlability, metadata, content, links, structured data, and mobile performance."
+title: "Ecommerce Product Page SEO Audit: Checklist for One URL"
+description: "Audit one ecommerce product or category page for crawlability, metadata, content, links, structured data, and mobile performance."
 permalink: /website-seo-audit-guide/
 date_published: 2026-09-15
-date_modified: 2026-10-16
-last_modified_at: 2026-10-16
-last_reviewed: 2026-10-16
+date_modified: 2026-10-19
+last_modified_at: 2026-10-19
+last_reviewed: 2026-10-19
 author: Nexscope Team
 schema_type: Article
 topic: seo
 keywords:
-  - ecommerce SEO audit
-  - ecommerce website audit
+  - ecommerce product page SEO audit
+  - product page SEO audit
+  - single page ecommerce audit
   - website SEO audit
-  - audit SEO ecommerce
+  - ecommerce page audit
   - ecommerce product page SEO
 faq:
-  - question: "What is an ecommerce SEO audit?"
-    answer: "An ecommerce SEO audit checks whether product and category pages can be crawled, understood, and selected for search. It reviews technical signals, page content, internal links, structured data, images, and mobile experience; it does not guarantee rankings."
-  - question: "What should an ecommerce website audit check first?"
-    answer: "Start with HTTP status, robots directives, canonical URL, title, main heading, useful product content, internal links, and structured data. Then review images and mobile performance for issues that affect shoppers."
+  - question: "What is an ecommerce product page SEO audit?"
+    answer: "An ecommerce product page SEO audit checks one public product URL for crawlability, canonical signals, metadata, useful product content, internal links, images, structured data, and mobile performance. It does not guarantee rankings or indexing."
+  - question: "What should a single-page ecommerce audit check first?"
+    answer: "Start with HTTP status, robots directives, canonical URL, title, main heading, useful product facts, internal links, and structured data. Then review images and mobile performance for issues that affect shoppers."
   - question: "Can a page audit guarantee Google indexing?"
     answer: "No. A clean audit removes common conflicts, but Google still chooses whether and when to crawl and index a URL based on its systems, content quality, duplication, links, and demand."
 next_step:
@@ -35,13 +36,13 @@ image_alt: Ecommerce product page inspected for crawlability, content, links, im
 image_caption: "Illustration: a useful page audit combines crawl signals, content evidence, structured data, links, images, and performance checks."
 ---
 
-# Ecommerce SEO audit: how to audit an ecommerce website
+# Ecommerce product page SEO audit: how to audit one URL
 
 {% include article-visual.html %}
 
-**An ecommerce SEO audit checks whether a product or category page can be fetched, understood, and selected for search.** Start with crawlability and canonical signals, then review the title, description, headings, product content, internal links, images, structured data, and mobile performance. A single-page [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) report identifies evidence and risks; it does not replace a full-site crawl or guarantee rankings.
+**An ecommerce product page SEO audit checks whether one product or category URL can be fetched, understood, and selected for search.** Start with crawlability and canonical signals, then review the title, description, headings, product content, internal links, images, structured data, and mobile performance. A single-page [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) report identifies evidence and risks; it does not replace a sitewide ecommerce audit or guarantee rankings.
 
-**Quick answer:** For an ecommerce website audit, fix blocking technical signals first, make the page answer one buyer intent with specific product facts, and connect it to relevant category and guide pages. Recheck Search Console after publishing because a sitemap or a passing live test does not guarantee indexing.
+**Quick answer:** For a single-page ecommerce audit, fix blocking technical signals first, make the page answer one buyer intent with specific product facts, and connect it to relevant category and guide pages. If the same defect appears across a template or catalog, use the [sitewide ecommerce site audit checklist]({{ '/ecommerce-seo-audit/' | relative_url }}). Recheck Search Console after publishing because a sitemap or a passing live test does not guarantee indexing.
 
 ## Crawl eligibility and index selection are different checks
 

@@ -4,9 +4,9 @@ title: "Ecommerce Site Audit: SEO Checklist, Tools & Examples"
 description: "Use a free ecommerce site audit checklist and prioritizer to review crawlability, index signals, product data, internal links, and AI-search visibility."
 permalink: /ecommerce-seo-audit/
 date_published: 2026-10-12
-date_modified: 2026-10-16
-last_modified_at: 2026-10-16
-last_reviewed: 2026-10-16
+date_modified: 2026-10-19
+last_modified_at: 2026-10-19
+last_reviewed: 2026-10-19
 author: Nexscope Team
 schema_type: Article
 topic: research
@@ -15,8 +15,11 @@ keywords:
   - ecommerce SEO audit
   - ecommerce site audit
   - ecommerce website audit
+  - webshop audit
+  - audit SEO ecommerce
   - free ecommerce audit tool
   - ecommerce audit checklist
+  - ecommerce site audit checklist
 faq:
   - question: "What is the difference between an ecommerce site audit and a product-page audit?"
     answer: "A product-page audit inspects one URL. An ecommerce site audit also checks discovery, indexing, category and product templates, filter URLs, product data, and performance patterns across the store."
@@ -34,7 +37,7 @@ next_step:
 
 # Ecommerce site audit: SEO checklist, tools and examples
 
-**An ecommerce site audit is a repeatable check of whether shoppers and search engines can find, understand, and use your important category and product pages.** Start with the free prioritizer below, then verify the highest-risk findings in Search Console and with a representative URL sample. Inspect crawl and index signals, store architecture, page templates, product data, and measurable search outcomes. A single URL scan is useful evidence, but it cannot establish the health of the whole store.
+**An ecommerce site audit is a repeatable check of whether shoppers and search engines can find, understand, and use your important category and product pages.** Whether you call it an ecommerce website audit, webshop audit, or ecommerce SEO audit, start with the free prioritizer below, then verify the highest-risk findings in Search Console and with a representative URL sample. Inspect crawl and index signals, store architecture, page templates, product data, and measurable search outcomes. A single URL scan is useful evidence, but it cannot establish the health of the whole store.
 
 **Quick answer:** Prioritize broken access and index conflicts first, then high-value category and product templates, inconsistent product facts, and weak internal paths. Add an AI-search review only after the underlying pages are accessible and useful. Record a baseline and the exact URLs changed; no checklist guarantees rankings, AI citations, or sales.
 

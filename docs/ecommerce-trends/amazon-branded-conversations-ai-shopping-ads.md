@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Amazon Branded Conversations: AI Shopping Ads"
-description: "Learn how Amazon Branded Conversations use Alexa for Shopping, who is eligible, what advertisers control, and how to prepare product content."
+title: "Amazon Branded Conversations: Eligibility, Launch & Product Data Checklist"
+description: "Understand Amazon Branded Conversations, eligibility, the January 2027 launch, sponsored prompts, and the product data checklist for advertisers."
 permalink: /ecommerce-trends/amazon-branded-conversations-ai-shopping-ads/
-last_reviewed: 2026-10-06
+last_reviewed: 2026-10-19
 date_published: 2026-10-06
-date_modified: 2026-10-06
-last_modified_at: 2026-10-06
+date_modified: 2026-10-19
+last_modified_at: 2026-10-19
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -20,6 +20,8 @@ keywords:
   - Amazon conversational ads
   - Branded Conversations eligibility
   - Branded Conversations launch date
+  - Amazon Branded Conversations launch
+  - Amazon AI shopping ads
 faq:
   - question: What are Amazon Branded Conversations?
     answer: "Branded Conversations are sponsored, multi-turn conversations inside Alexa for Shopping. They begin when a shopper clicks a prompt on an eligible Sponsored Brands ad and use Amazon signals plus brand-supplied product information to help the shopper compare products and choose an option."
@@ -33,9 +35,9 @@ faq:
     answer: "No. Branded Conversations help shoppers research products through a sponsored Alexa for Shopping dialogue. Review Requests are a separate advertising feature that invites verified buyers to rate or review a product after purchase."
 ---
 
-# Amazon Branded Conversations: how AI shopping ads work
+# Amazon Branded Conversations: eligibility, launch and product data checklist
 
-**By Nexscope Team · Published and verified October 6, 2026**
+**By Nexscope Team · Published October 6, 2026 · Reviewed October 19, 2026**
 
 **Amazon Branded Conversations turn a Sponsored Brands prompt into a multi-turn, brand-informed conversation inside Alexa for Shopping.** The format is scheduled to launch in the United States in January 2027. It gives eligible advertisers a way to supply product expertise for a sponsored shopping dialogue, but it does not let a brand control every Alexa answer or guarantee a sale.
 

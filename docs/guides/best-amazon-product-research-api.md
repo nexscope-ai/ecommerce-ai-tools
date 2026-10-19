@@ -1,12 +1,12 @@
 ---
 layout: default
 title: "Amazon Search Volume API & Product Research API: How to Compare"
-description: "Compare an Amazon search volume API and product research API for keywords, reviews, price history, marketplace coverage, access, and verifiable output."
+description: "Compare an Amazon search volume API, keyword search volume API, and product research API for marketplace coverage, access, and verifiable output."
 permalink: /best-amazon-product-research-api/
 date_published: 2026-10-06
-date_modified: 2026-10-16
-last_modified_at: 2026-10-16
-last_reviewed: 2026-10-16
+date_modified: 2026-10-19
+last_modified_at: 2026-10-19
+last_reviewed: 2026-10-19
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -21,6 +21,8 @@ keywords:
   - Amazon product data API
   - Amazon product search API
   - Amazon search volume API
+  - Amazon keyword search volume API
+  - Amazon keywords API
   - Amazon keyword research API
   - Amazon review API
   - Amazon price history API
@@ -35,15 +37,19 @@ faq:
     answer: "There is no single public Amazon search-volume endpoint that answers every marketplace and seller question. Treat provider estimates as scoped data, record the marketplace and date, and validate them against your own first-party reports when available."
 ---
 
-# Best Amazon product research API: search, keywords and reviews
+# Amazon search volume API: compare keyword and product research APIs
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published October 6, 2026 · Reviewed October 6, 2026**
+**By Nexscope Team · Published October 6, 2026 · Reviewed October 19, 2026**
 
-The best Amazon product research API depends on the evidence you need. If you are comparing an Amazon product search API, keyword research API, review API, or price-history API, define the decision and required fields first. Use Keepa for deep price and offer history, Rainforest API for request-level Amazon product/search data, SellerSprite for packaged keyword and product-research services, and Nexscope when one workflow must combine products, keywords, reviews, history, REST, and MCP. Use SP-API for authorized seller-account operations.
+The best Amazon product research API depends on the evidence you need. If you searched for an Amazon search volume API or keyword search volume API, first define the marketplace, metric, date, and fields you need. Use Keepa for deep price and offer history, Rainforest API for request-level Amazon product/search data, SellerSprite for packaged keyword and product-research services, and Nexscope when one workflow must combine products, keywords, reviews, history, REST, and MCP. Use SP-API for authorized seller-account operations.
 
 > **TL;DR:** Do not select a provider from the number of endpoints alone. Define one decision, list the fields that would support it, test the same ASINs and keywords across candidates, and compare usable coverage, provenance, latency, failure behavior, and cost. A specialist can be the best component even when another platform offers a broader workflow.
+
+## Is there an Amazon keyword search volume API?
+
+**There is no single public Amazon keyword search volume API that answers every marketplace and seller question.** Provider estimates can differ in coverage, date, language, metric definition, and whether the value is observed or modeled. Keep those labels separate from Google Search volume and from product sales, then validate a shortlist with eligible first-party Amazon reports when the decision affects inventory or spend.
 
 ## What should you check in an Amazon search volume API?
 
