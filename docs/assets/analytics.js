@@ -6,10 +6,34 @@
   // can report Learn and the main site together. It is not an API credential.
   const measurementId = 'G-55CJ5T3HHS';
   const consentKey = 'nexscope_marketing_analytics_consent';
+  const consentCookieKey = 'nexscope_analytics_consent_v1';
   const learnHost = 'learn.nexscope.ai';
   const linkedDomains = ['learn.nexscope.ai', 'www.nexscope.ai', 'nexscope.ai'];
-  let consent;
-  try { consent = window.localStorage.getItem(consentKey); } catch (_) { /* Storage unavailable. */ }
+
+  const readConsentCookie = () => {
+    try {
+      const match = document.cookie.match(new RegExp('(?:^|; )' + consentCookieKey + '=([^;]*)'));
+      const value = match ? decodeURIComponent(match[1]) : '';
+      return value === 'granted' || value === 'denied' ? value : '';
+    } catch (_) { return ''; }
+  };
+  const readConsent = () => {
+    try {
+      const value = window.localStorage.getItem(consentKey);
+      if (value === 'granted' || value === 'denied') return value;
+    } catch (_) { /* Storage unavailable. */ }
+    return readConsentCookie();
+  };
+  const writeConsent = (value) => {
+    try { window.localStorage.setItem(consentKey, value); } catch (_) { /* Storage unavailable. */ }
+    // A first-party cookie is the only consent signal that can cross the Learn
+    // and main-site subdomains. The main site can adopt this key without
+    // exposing analytics identifiers or user data.
+    try {
+      document.cookie = `${consentCookieKey}=${encodeURIComponent(value)}; Max-Age=31536000; Path=/; Domain=.nexscope.ai; SameSite=Lax`;
+    } catch (_) { /* Cookie writes may be blocked. */ }
+  };
+  let consent = readConsent();
 
   window.dataLayer = window.dataLayer || [];
   // oxlint-disable-next-line prefer-rest-params -- Google gtag.js requires the Arguments object.
@@ -49,13 +73,12 @@
     url_passthrough: true,
   });
 
-  // Keep the page-view contract explicit. GA4's config call would otherwise
-  // send an automatic page_view while consent is denied and a second one could
-  // be sent when the visitor grants consent. This guard gives each document
-  // exactly one page_view and keeps the page URL/referrer available for QA.
+  // Keep the page-view contract explicit. A new visitor starts with consent
+  // denied, so do not queue a page_view until analytics is explicitly allowed.
+  // The guard still ensures that a document sends at most one page_view.
   let pageViewSent = false;
   const sendPageView = () => {
-    if (pageViewSent) return;
+    if (pageViewSent || consent !== 'granted') return;
     pageViewSent = true;
     window.gtag('event', 'page_view', {
       page_location: page.href,
@@ -68,7 +91,7 @@
       ...(new URLSearchParams(location.search).get('ga_debug') === '1' ? { debug_mode: true } : {}),
     });
   };
-  sendPageView();
+  if (consent === 'granted') sendPageView();
 
   const script = document.createElement('script');
   script.async = true;
@@ -120,10 +143,11 @@
       ? 'padding:9px 12px;border:1px solid #6250e9;border-radius:8px;cursor:pointer;background:#6250e9;color:white;font-weight:600'
       : 'padding:9px 12px;border:1px solid #ded9f2;border-radius:8px;cursor:pointer;background:white;color:#4032a0;font-weight:600';
     button.onclick = () => {
-      try { window.localStorage.setItem(consentKey, value); } catch (_) { /* Choice applies this visit. */ }
+      consent = value;
+      writeConsent(value);
       panel.remove();
       window.gtag('consent', 'update', { analytics_storage: value });
-      sendPageView();
+      if (value === 'granted') sendPageView();
     };
     actions.append(button);
   }

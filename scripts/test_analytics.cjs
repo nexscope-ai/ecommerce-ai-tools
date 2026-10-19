@@ -51,3 +51,108 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
   const click = window.dataLayer.map(entry => Array.from(entry)).find(entry => entry[0] === 'event' && entry[1] === 'start_using_click');
   assert.equal(click[2].co_from, 'learn');
 });
+
+test('Learn analytics waits for consent before sending the first page view', () => {
+  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
+  const appended = [];
+  const window = {
+    nexscopeAnalyticsLoaded: false,
+    dataLayer: [],
+    location: { href: 'https://learn.nexscope.ai/ecommerce-ai-tools/' },
+    localStorage: {
+      getItem() { return null; },
+      setItem() {},
+    },
+  };
+  const document = {
+    title: 'Learn',
+    referrer: '',
+    cookie: '',
+    head: { appendChild() {} },
+    body: { append(node) { appended.push(node); } },
+    createElement() {
+      return {
+        style: {},
+        children: [],
+        setAttribute() {},
+        append(...nodes) { this.children.push(...nodes); },
+        querySelector() { return { focus() {} }; },
+        remove() {},
+      };
+    },
+    addEventListener() {},
+  };
+  runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
+
+  const beforeConsent = window.dataLayer.map(entry => Array.from(entry));
+  assert.equal(beforeConsent.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 0);
+
+  const allowButton = appended[0].children[1].children[0];
+  allowButton.onclick();
+  const afterConsent = window.dataLayer.map(entry => Array.from(entry));
+  assert.equal(afterConsent.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
+  assert.equal(afterConsent.filter(entry => entry[0] === 'consent' && entry[1] === 'update')[0][2].analytics_storage, 'granted');
+});
+
+test('Learn analytics does not send a page view after rejecting analytics', () => {
+  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
+  const appended = [];
+  const window = {
+    nexscopeAnalyticsLoaded: false,
+    dataLayer: [],
+    location: { href: 'https://learn.nexscope.ai/ecommerce-ai-tools/' },
+    localStorage: {
+      getItem() { return null; },
+      setItem() {},
+    },
+  };
+  const document = {
+    title: 'Learn',
+    referrer: '',
+    cookie: '',
+    head: { appendChild() {} },
+    body: { append(node) { appended.push(node); } },
+    createElement() {
+      return {
+        style: {},
+        children: [],
+        setAttribute() {},
+        append(...nodes) { this.children.push(...nodes); },
+        querySelector() { return { focus() {} }; },
+        remove() {},
+      };
+    },
+    addEventListener() {},
+  };
+  runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
+
+  const rejectButton = appended[0].children[1].children[1];
+  rejectButton.onclick();
+  const calls = window.dataLayer.map(entry => Array.from(entry));
+  assert.equal(calls.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 0);
+  assert.equal(calls.filter(entry => entry[0] === 'consent' && entry[1] === 'update')[0][2].analytics_storage, 'denied');
+});
+
+test('Learn analytics can read the shared consent cookie across subdomains', () => {
+  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
+  const window = {
+    nexscopeAnalyticsLoaded: false,
+    dataLayer: [],
+    location: { href: 'https://learn.nexscope.ai/ecommerce-ai-tools/' },
+    localStorage: { getItem() { return null; } },
+  };
+  const document = {
+    title: 'Learn',
+    referrer: '',
+    cookie: 'nexscope_analytics_consent_v1=granted',
+    head: { appendChild() {} },
+    body: { append() {} },
+    createElement() {
+      return { style: {}, setAttribute() {}, append() {}, querySelector() { return { focus() {} }; } };
+    },
+    addEventListener() {},
+  };
+  runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
+  const calls = window.dataLayer.map(entry => Array.from(entry));
+  assert.equal(calls.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
+});
