@@ -80,6 +80,7 @@
   const sendPageView = () => {
     if (pageViewSent || consent !== 'granted') return;
     pageViewSent = true;
+    const attribution = window.nexscopeTrafficAttribution || {};
     window.gtag('event', 'page_view', {
       page_location: page.href,
       page_title: document.title,
@@ -87,6 +88,14 @@
       page_hostname: learnHost,
       content_group: 'learn',
       site_surface: 'learn',
+      // Keep the landing source available in GA4 even when the visitor moves
+      // between Learn pages before the first conversion. These are derived
+      // from UTM/referrer metadata and contain no user-identifying values.
+      landing_source: attribution.trafficSource || 'direct_or_unknown',
+      landing_medium: attribution.trafficMedium || 'none',
+      landing_campaign: attribution.trafficCampaign || undefined,
+      landing_referrer_host: attribution.trafficReferrerHost || undefined,
+      landing_path: attribution.trafficLandingPath || location.pathname,
       transport_type: 'beacon',
       ...(new URLSearchParams(location.search).get('ga_debug') === '1' ? { debug_mode: true } : {}),
     });

@@ -18,6 +18,13 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
     dataLayer: [],
     location: { href: 'https://learn.nexscope.ai/ecommerce-ai-tools/guides/?utm_source=chatgpt.com' },
     localStorage: { getItem() { return 'granted'; } },
+    nexscopeTrafficAttribution: {
+      trafficSource: 'chatgpt.com',
+      trafficMedium: 'ai_referral',
+      trafficCampaign: '',
+      trafficReferrerHost: 'chatgpt.com',
+      trafficLandingPath: '/ecommerce-ai-tools/guides/',
+    },
   };
   const document = {
     title: 'Learn',
@@ -46,6 +53,9 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
   const pageViews = calls.filter(entry => entry[0] === 'event' && entry[1] === 'page_view');
   assert.equal(pageViews.length, 1);
   assert.equal(pageViews[0][2].page_referrer, 'https://chatgpt.com/c/example');
+  assert.equal(pageViews[0][2].landing_source, 'chatgpt.com');
+  assert.equal(pageViews[0][2].landing_medium, 'ai_referral');
+  assert.equal(pageViews[0][2].landing_path, '/ecommerce-ai-tools/guides/');
 
   listeners.click[0]({ target: { closest(selector) { return selector === 'a[href]' ? link : null; } } });
   const click = window.dataLayer.map(entry => Array.from(entry)).find(entry => entry[0] === 'event' && entry[1] === 'start_using_click');
