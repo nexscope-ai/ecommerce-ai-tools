@@ -118,7 +118,7 @@ image_caption: Submit product details for free review and a possible public AI-d
               <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
             </div>
             <p class="showcase-field-warning" role="note"><strong>填写提醒：</strong>请认真填写真实、具体的商品信息。该内容会用于审核，并可能出现在公开详情页；描述越完整，搜索和 AI 越容易理解商品。虚假、重复或过短的内容可能影响审核和后续发现。</p>
-            <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="Who it is for: Describe one real use case.&#10;Key facts: Add verified size, capacity or compatibility.&#10;Limits: Note anything buyers should check before purchase."></textarea>
+            <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="What it is: Name the exact product and variant.&#10;Best for: Describe the buyer and one real use case.&#10;Key facts: Add verified size, material, capacity, compatibility and included items.&#10;How it works: Explain the main feature or workflow without unsupported claims.&#10;Limits: Note exclusions, conditions or what buyers should check before purchase.&#10;Write specific facts, not slogans or guesses."></textarea>
             <small class="field-error" id="productDetails-error" data-error-for="productDetails" role="alert" hidden></small>
             <small class="character-count" data-count="productDetails">0 / 5000</small>
           </div>
