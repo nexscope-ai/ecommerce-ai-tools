@@ -3,6 +3,8 @@ layout: default
 title: "TikTok Shop API: Product, Creator and Video Research"
 description: "Use a TikTok Shop API workflow to research products, creators, videos, rankings, and shop signals with documented fields and limits."
 permalink: /guides/tiktok-shop-api-guide/
+redirect_from:
+  - /ecommerce-ai-tools/guides/tiktok-shop-api-guide/
 date_published: 2026-10-13
 date_modified: 2026-10-16
 last_modified_at: 2026-10-16
@@ -228,7 +230,7 @@ No. The results are research signals. Validate product quality, inventory, prici
 
 ## Related resources
 
-- [Nexscope API capabilities and ecommerce workflows](/api-capabilities/)
-- [TikTok Shop AI UGC video seller workflow](/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/)
+- [Nexscope API capabilities and ecommerce workflows]({{ '/api-capabilities/' | relative_url }})
+- [TikTok Shop AI UGC video seller workflow]({{ '/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/' | relative_url }})
 - [Ecommerce APIs and MCP tools for AI agents](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=tiktok-shop-api-guide&utm_content=related-resource)
 

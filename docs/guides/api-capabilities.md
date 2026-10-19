@@ -3,6 +3,8 @@ layout: default
 title: Nexscope API capabilities and ecommerce workflows
 description: A practical map of Nexscope ecommerce data, SEO and GEO, creative AI, REST, and MCP capabilities with workflow examples and limitations.
 permalink: /api-capabilities/
+redirect_from:
+  - /ecommerce-ai-tools/api-capabilities/
 date_published: 2026-09-14
 last_reviewed: 2026-09-17
 date_modified: 2026-09-17
@@ -22,7 +24,7 @@ Nexscope exposes ecommerce research and creative AI capabilities through REST AP
 
 For the newer discovery layer that helps AI agents find callable resources, see the [Agentic Resource Discovery (ARD) guide]({{ '/guides/agentic-resource-discovery-ard-guide/' | relative_url }}). ARD can point a compatible registry toward an API or agent, but it does not replace this capability map, authentication guidance, or endpoint testing.
 
-For the TikTok-specific catalog, see the [TikTok Shop API guide](/guides/tiktok-shop-api-guide/), which groups the current product, creator, video, shop, advertising, and analytics APIs by seller decision.
+For the TikTok-specific catalog, see the [TikTok Shop API guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}), which groups the current product, creator, video, shop, advertising, and analytics APIs by seller decision.
 
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?co-from=learn). Credit usage and access vary by action. Creative API key access requires an active subscription; trial credits do not enable it.
 
