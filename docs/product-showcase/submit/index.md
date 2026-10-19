@@ -182,7 +182,7 @@ image_caption: Submit product details for free review and a possible public AI-d
     <div class="markdown-editor-grid">
       <section class="markdown-editor-pane" aria-labelledby="markdown-input-title">
         <div class="markdown-pane-heading"><strong id="markdown-input-title">Markdown</strong><span>Write</span></div>
-        <textarea data-markdown-input maxlength="5000" spellcheck="true" aria-labelledby="markdown-input-title"></textarea>
+        <textarea data-markdown-input maxlength="5000" spellcheck="true" aria-labelledby="markdown-input-title" placeholder="## Product overview&#10;[Example only — replace every fact with your own verified information.]&#10;&#10;The AlpineTrail 500 is a 500 ml insulated stainless-steel bottle for commuters and day hikes.&#10;&#10;### Best for&#10;- Commuters who want a compact bottle for short trips.&#10;&#10;### Verified facts&#10;- Capacity: 500 ml&#10;- Material: Stainless steel&#10;- Included: Bottle and screw-top lid&#10;&#10;### How it works&#10;The double-wall design helps keep the drink insulated.&#10;&#10;### Limits&#10;Check the lid seal before carrying it in a bag."></textarea>
       </section>
       <section class="markdown-preview-pane" aria-labelledby="markdown-preview-title">
         <div class="markdown-pane-heading"><strong id="markdown-preview-title">Rendered preview</strong><span class="markdown-readonly-label">Read only</span></div>
