@@ -4,6 +4,7 @@ title: "TikTok Shop API: Product, Creator and Video Research"
 description: "Use a TikTok Shop API workflow to research products, creators, videos, rankings, and shop signals with documented fields and limits."
 permalink: /guides/tiktok-shop-api-guide/
 redirect_from:
+  - /guides/tiktok-shop-api-guide/
   - /ecommerce-ai-tools/guides/tiktok-shop-api-guide/
 date_published: 2026-10-13
 date_modified: 2026-10-16
