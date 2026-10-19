@@ -3,9 +3,6 @@ layout: default
 title: "TikTok Shop Research to AI UGC Video"
 description: "Turn market, keyword, competitor and review evidence into a TikTok Shop AI UGC brief, then verify the product, disclose AI use and test results."
 permalink: /ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/
-redirect_from:
-  - /ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/
-  - /ecommerce-ai-tools/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/
 last_reviewed: 2026-10-06
 date_published: 2026-09-22
 date_modified: 2026-10-06
