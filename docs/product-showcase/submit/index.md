@@ -117,14 +117,14 @@ image_caption: Submit product details for free review and a possible public AI-d
               <div><strong id="product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Plain text or Markdown, 20–5000 characters. Explain who it is for, key specifications or compatibility, and important limits. Add only facts you can support.</span></div>
               <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
             </div>
-            <p class="showcase-field-warning" role="note"><strong>填写提醒：</strong>请认真填写真实、具体的商品信息。该内容会用于审核，并可能出现在公开详情页；描述越完整，搜索和 AI 越容易理解商品。虚假、重复或过短的内容可能影响审核和后续发现。</p>
+            <p class="showcase-field-warning" role="note"><strong>Writing reminder:</strong> Use accurate, specific product facts. This content is reviewed and may appear on the public detail page; complete descriptions help search and AI systems understand the product. False, duplicated or very short content may affect review and future discovery.</p>
             <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="What it is: Name the exact product and variant.&#10;Best for: Describe the buyer and one real use case.&#10;Key facts: Add verified size, material, capacity, compatibility and included items.&#10;How it works: Explain the main feature or workflow without unsupported claims.&#10;Limits: Note exclusions, conditions or what buyers should check before purchase.&#10;Write specific facts, not slogans or guesses."></textarea>
             <small class="field-error" id="productDetails-error" data-error-for="productDetails" role="alert" hidden></small>
             <small class="character-count" data-count="productDetails">0 / 5000</small>
           </div>
           <div class="media-field" data-media-upload="IMAGE" data-max-files="5" data-max-bytes="10485760">
             <div class="media-field-header"><div><strong>Product images <span class="required-mark" aria-label="required">*</span></strong><span>Upload 1–5 accurate JPEG, PNG or WebP images, up to 10 MB each. Show scale or a key feature when useful.</span></div><span class="media-limit">0 / 5</span></div>
-            <p class="showcase-field-warning" role="note"><strong>图片提醒：</strong>请上传清晰、真实且对应具体型号的图片。图片会影响编辑审核和 AI 对商品的理解，请勿使用模糊、无关或其他商品的图片。</p>
+            <p class="showcase-field-warning" role="note"><strong>Image reminder:</strong> Upload clear, accurate images of the exact product and variant. Images help editors and AI systems understand the item; do not use blurry, unrelated or other products' images.</p>
             <input type="hidden" name="imageUploadKeys" value="[]">
             <input class="media-file-input" data-media-input type="file" accept="image/jpeg,image/png,image/webp" multiple>
             <button class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
