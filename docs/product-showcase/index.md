@@ -61,6 +61,17 @@ faq:
 
 {% include product-showcase-featured.html context="hub" %}
 
+{% assign published_products = site.data.product_showcase_pages %}
+{% if published_products and published_products.size > 0 %}
+<nav class="sr-only" aria-label="Published product pages">
+  <ul>
+    {% for product in published_products %}
+    <li><a href="{{ product.path | relative_url }}">{{ product.title | escape }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+
 <section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
   <header class="showcase-section-heading">
     <div><span class="eyebrow">What sellers receive</span><h2 id="showcase-discovery-title">A useful review and a clearer AI source.</h2></div>
