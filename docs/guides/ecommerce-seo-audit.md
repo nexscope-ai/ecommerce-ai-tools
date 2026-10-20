@@ -4,9 +4,9 @@ title: "Ecommerce Site Audit: SEO Checklist, Tools & Examples"
 description: "Use a free ecommerce site audit checklist and prioritizer to review crawlability, index signals, product data, internal links, and AI-search visibility."
 permalink: /ecommerce-seo-audit/
 date_published: 2026-10-12
-date_modified: 2026-10-19
-last_modified_at: 2026-10-19
-last_reviewed: 2026-10-19
+date_modified: 2026-10-20
+last_modified_at: 2026-10-20
+last_reviewed: 2026-10-20
 author: Nexscope Team
 schema_type: Article
 topic: research
@@ -27,6 +27,8 @@ faq:
     answer: "No. Sitemaps and structured data can help Google discover and understand eligible pages, but they do not guarantee crawling, indexing, rich results, or rankings."
   - question: "Is GEO a separate technical requirement for Google AI search features?"
     answer: "No. Foundational SEO and Search eligibility still apply. Useful, original content and accurate product data remain the priority; an ecommerce audit can add an AI-answer quality review after technical checks."
+  - question: "What should be in an ecommerce SEO audit checklist?"
+    answer: "Cover crawl and index access, category and product templates, product data and structured markup, internal links, mobile experience, performance, and measurable outcomes. Prioritize issues by business risk and verify changes on representative URLs and first-party reports."
 next_step:
   id: website_seo_auditor
   title: Check the evidence on one priority page
@@ -137,7 +139,7 @@ Keep a change log with **URL pattern, sample URL, evidence, owner, release date,
 
 ## Where can Nexscope help, and what remains manual?
 
-Use the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) to inspect **one public URL** and review its page-level crawl, metadata, content, links, and structured-data evidence; a mobile Lighthouse check is a separate diagnostic. It is useful for verifying a representative page or a proposed fix. It does **not** crawl the complete store, read your private Search Console or Merchant Center reports, or prove that rankings improved. Pair it with those first-party reports and a full crawler for a true sitewide audit.
+Use the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) to inspect **one public URL** and review its page-level crawl, metadata, content, links, and structured-data evidence; a mobile Lighthouse check is a separate diagnostic. It is useful for verifying a representative page or a proposed fix. It does **not** crawl the complete store, read your private Search Console or Merchant Center reports, or prove that rankings improved. Pair it with those first-party reports and a full crawler for a true sitewide audit. If the question is whether live page facts match a catalog or feed, use the [ecommerce data extraction API guide]({{ '/ecommerce-data-extraction-api/' | relative_url }}) to choose the right evidence source.
 
 For a narrower workflow, use the [product-page SEO audit guide]({{ '/website-seo-audit-guide/' | relative_url }}). If your priority is what product information Google can use in newer shopping experiences, continue with the [Google AI Mode shopping readiness guide]({{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}).
 
@@ -159,6 +161,10 @@ No. Google says its generative AI search features use core Search systems and ha
 
 Recheck critical templates after releases, feed changes, or migrations. Review Search Console and merchant diagnostics regularly; schedule deeper crawls according to catalog size and rate of change.
 
+### What should be in an ecommerce SEO audit checklist?
+
+At minimum, check crawl and index access, category and product templates, product facts and structured data, internal links, mobile experience, performance, and measurable search outcomes. Rank each issue by business risk, verify the fix on representative URLs, and wait for first-party reports before claiming impact.
+
 ## Sources and scope
 
-This checklist is an editorial workflow for ecommerce sites, not a benchmark or a report on a specific store. It was reviewed on **October 12, 2026** against Google's [ecommerce SEO documentation](https://developers.google.com/search/docs/specialty/ecommerce), [faceted-navigation guidance](https://developers.google.com/crawling/docs/faceted-navigation), [merchant-listing requirements](https://developers.google.com/search/docs/appearance/structured-data/merchant-listing), and [generative AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide). Search features and reporting can change; confirm current requirements before changing production templates.
+This checklist is an editorial workflow for ecommerce sites, not a benchmark or a report on a specific store. It was reviewed on **October 20, 2026** against Google's [ecommerce SEO documentation](https://developers.google.com/search/docs/specialty/ecommerce), [faceted-navigation guidance](https://developers.google.com/crawling/docs/faceted-navigation), [merchant-listing requirements](https://developers.google.com/search/docs/appearance/structured-data/merchant-listing), and [generative AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide). Search features and reporting can change; confirm current requirements before changing production templates.
