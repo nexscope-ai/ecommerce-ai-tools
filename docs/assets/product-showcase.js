@@ -23,6 +23,12 @@
   if (document.querySelector('[data-showcase-view]')) event('product_showcase_view');
 
   document.addEventListener('click', clickEvent => {
+    const formJump = clickEvent.target.closest?.('[data-submission-form-jump]');
+    if (formJump) {
+      event('product_submission_form_open', {
+        cta_placement: formJump.dataset.submissionFormJump,
+      });
+    }
     const submitLink = clickEvent.target.closest?.('[data-showcase-submit-cta]');
     if (submitLink) {
       event('product_showcase_submit_click', {
@@ -1010,11 +1016,21 @@ Check the lid seal before carrying it in a bag.`;
         // Send GA4's recommended lead event only after a successful submission.
         // Keep the product-specific event for funnel analysis; mark
         // generate_lead as the conversion in GA4.
+        // Give the beacon a bounded chance to leave before navigating away.
+        // The timeout still advances when analytics is blocked or declined.
+        let navigated = false;
+        const navigate = () => {
+          if (navigated) return;
+          navigated = true;
+          window.location.replace(managementUrl.href);
+        };
+        window.setTimeout(navigate, 600);
         event('generate_lead', {
           lead_type: 'product_page_feedback',
           source_type: sourceType,
+          event_callback: navigate,
+          event_timeout: 600,
         });
-        window.location.replace(managementUrl.href);
       } catch (cause) {
         event('product_submission_failed', {
           failure_stage: failureStage,

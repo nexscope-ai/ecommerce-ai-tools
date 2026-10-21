@@ -12,7 +12,7 @@ keywords:
   - product GEO feedback
   - AI product discovery page
 permalink: /product-showcase/submit/
-last_modified_at: 2026-10-16
+last_modified_at: 2026-10-21
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -26,56 +26,25 @@ image_caption: Submit product details for free review and a possible public AI-d
 <section class="showcase-form-shell" data-showcase-form data-api-base="{{ site.product_showcase_api_base }}">
   <header class="showcase-form-intro">
     <div class="showcase-form-heading">
-      <span class="eyebrow">Submit for free AI-discovery and product-page review</span>
-      <h1>Give AI a clearer<br><span>source for your product.</span></h1>
-      <p>Submit one public Shopify, WooCommerce or other product URL—or an Amazon ASIN—with verified details and images. After editorial review, read professional feedback on what works and any evidence-based improvements on your private management page. If approved and published, your product can receive a free, fact-focused Nexscope Gallery page linking to the original listing. This supports Generative Engine Optimization (GEO); it is not paid advertising, a merchant-feed submission, or a guarantee of AI recommendations.</p>
+      <span class="eyebrow">Free product-page review and Gallery submission</span>
+      <h1>Get free feedback<br><span>on your product page.</span></h1>
+      <p>Share a public product URL or Amazon ASIN, verified details, and one accurate image. An editor will review your submission and leave specific feedback on a private page. If approved and published, your product also gets a free Gallery page linking to the original listing—another factual source that search and AI systems can discover. No payment or store login is required.</p>
       <div class="showcase-form-heading-actions">
-        <a class="showcase-primary submission-hero-jump" href="#product-submission-form">Request free product-page feedback <span aria-hidden="true">↓</span></a>
+        <a class="showcase-primary submission-hero-jump" href="#product-submission-form" data-submission-form-jump="hero">Start free submission <span aria-hidden="true">&nbsp;↓</span></a>
       </div>
     </div>
     <aside class="submission-promise" aria-label="Submission promises">
-      <span class="submission-promise-label">WHAT YOU GET</span>
-      <strong>Useful feedback and a clearer AI source</strong>
-      <p>Our editors review one product at a time. If a change would help, we explain it. If no material gap appears in what we checked, we say so. Your feedback appears on a private page after review; a public Gallery page that can support AI discovery is an approval-dependent benefit.</p>
+      <span class="submission-promise-label">BEFORE YOU START</span>
+      <strong>What you need to begin</strong>
+      <p>Have your product page URL or ASIN, exact product name, a short factual description, one clear image, and a contact email ready.</p>
       <ul>
-        <li>Professional feedback on product facts, images and buyer questions</li>
-        <li>A free public product page that can support AI discovery if approved and published</li>
-        <li>A private link to check status and update your submission</li>
+        <li>Submission and editorial review are completely free</li>
+        <li>No store account connection or payment</li>
+        <li>Save the private link to see feedback and status</li>
       </ul>
       <a class="submission-review-link" href="#submission-review">What happens after you submit? ↓</a>
     </aside>
   </header>
-
-  {% include product-showcase-featured.html context="submit" %}
-
-  <section class="submission-review" id="submission-review" aria-labelledby="submission-review-title">
-    <div class="submission-review-intro">
-      <span class="eyebrow">Before you submit</span>
-      <h2 id="submission-review-title">Know what happens next.</h2>
-      <p>Every reviewed submission receives written editorial feedback, whether or not it is published. We only suggest changes when the submitted materials show a meaningful reason. There is no fixed review deadline. Your product stays offline until an editor approves it and publishes a page. The purpose of that page is to give search and AI systems a clearer public source for product facts—not to buy impressions or guarantee traffic.</p>
-    </div>
-    <div class="submission-review-grid">
-      <article><strong>What should I prepare?</strong><p>Bring a public HTTPS product page or Amazon ASIN, the exact product name, verified details, at least one accurate image and a contact email. No store authorization is needed.</p></article>
-      <article><strong>Where will I find my feedback?</strong><p>Save the private management link shown after submission. It displays the editor's feedback after review, along with the review and publication status. No automatic status email is currently sent.</p></article>
-      <article><strong>What if changes are needed?</strong><p>A submission marked “Changes requested” remains offline. Read the editor's specific feedback on the private page, update the product information and resubmit for review.</p></article>
-    </div>
-  </section>
-
-  <section class="submission-visual" aria-labelledby="submission-visual-title">
-    <div class="submission-visual-copy">
-      <span class="eyebrow">More than a submission</span>
-      <h2 id="submission-visual-title">Prepare product facts that AI can use.</h2>
-      <p>Buyers and AI assistants need to know whether a product fits, works with an existing device or meets a budget. Our editors check the facts and images you provide, call out what is clear, and suggest changes only where a buyer question remains unanswered.</p>
-      <p>If approved and published, a public Gallery page gives search and AI systems another fact-focused source to discover and understand the product, while linking people to your original listing. This can support GEO, but it is not an ad placement, merchant feed or guarantee of visibility. Your store remains the source for current price, availability and purchase terms.</p>
-      <div class="submission-visual-actions">
-        <a class="showcase-quiet-link" href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How to prepare product facts for AI shopping <span aria-hidden="true">→</span></a>
-      </div>
-      <small class="showcase-disclaimer">Product submission, editorial review and approved Gallery listing and display are completely free. Gallery approval does not submit a merchant feed to ChatGPT or Google, or guarantee rankings, recommendations, traffic or sales.</small>
-    </div>
-    <figure class="submission-visual-art">
-      <img src="{{ '/assets/product-showcase-submission.webp' | relative_url }}" width="1200" height="800" loading="lazy" alt="Product details and media prepared for a reviewed product showcase">
-    </figure>
-  </section>
 
   <div class="submission-layout" id="product-submission-form">
     <form class="showcase-form" novalidate>
@@ -117,14 +86,14 @@ image_caption: Submit product details for free review and a possible public AI-d
               <div><strong id="product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Plain text or Markdown, 20–5000 characters. Explain who it is for, key specifications or compatibility, and important limits. Add only facts you can support.</span></div>
               <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
             </div>
-            <p class="showcase-field-warning" role="note"><strong>Writing reminder:</strong> Use accurate, specific product facts. This content is reviewed and may appear on the public detail page; complete descriptions help search and AI systems understand the product. False, duplicated or very short content may affect review and future discovery.</p>
+            <p class="showcase-field-warning" role="note"><strong>Writing reminder:</strong> Use specific, verifiable facts about this product. Vague or copied text may affect editorial review and make the public page less useful.</p>
             <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="## Product overview&#10;[Describe the exact product and variant in 1–2 sentences.]&#10;&#10;### Best for&#10;[Describe the buyer and one real use case.]&#10;&#10;### Verified facts&#10;- Size, material or capacity: [Add verified facts.]&#10;- Compatibility: [List supported devices, platforms or use cases.]&#10;- Included items: [List what the buyer receives.]&#10;&#10;### How it works&#10;[Explain the main feature or workflow without unsupported claims.]&#10;&#10;### Limits&#10;[Note exclusions, conditions or what buyers should check before purchase.]"></textarea>
             <small class="field-error" id="productDetails-error" data-error-for="productDetails" role="alert" hidden></small>
             <small class="character-count" data-count="productDetails">0 / 5000</small>
           </div>
           <div class="media-field" data-media-upload="IMAGE" data-max-files="5" data-max-bytes="10485760">
             <div class="media-field-header"><div><strong>Product images <span class="required-mark" aria-label="required">*</span></strong><span>Upload 1–5 accurate JPEG, PNG or WebP images, up to 10 MB each. Show scale or a key feature when useful.</span></div><span class="media-limit">0 / 5</span></div>
-            <p class="showcase-field-warning" role="note"><strong>Image reminder:</strong> Upload clear, accurate images of the exact product and variant. Images help editors and AI systems understand the item; do not use blurry, unrelated or other products' images.</p>
+            <p class="showcase-field-warning" role="note"><strong>Image reminder:</strong> Upload a clear image of this exact product and variant. Blurry or unrelated images may affect review.</p>
             <input type="hidden" name="imageUploadKeys" value="[]">
             <input class="media-file-input" data-media-input type="file" accept="image/jpeg,image/png,image/webp" multiple>
             <button class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
@@ -151,17 +120,6 @@ image_caption: Submit product details for free review and a possible public AI-d
         </div>
       </div>
 
-      <aside class="showcase-merchant-next" aria-labelledby="showcase-merchant-next-title">
-        <span class="eyebrow">A separate merchant step</span>
-        <h2 id="showcase-merchant-next-title">Submitting here does not enroll your store in shopping catalogs.</h2>
-        <p>We use your public link or ASIN to review a Gallery page. We do not connect your store, fetch live offers or submit products to ChatGPT or Google. Keep price, stock and checkout information current on the original selling page.</p>
-        <div class="showcase-merchant-next-links">
-          <a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How merchants reach ChatGPT Shopping →</a>
-          <a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">How merchants reach Google Shopping →</a>
-        </div>
-        <small>Submitting an Amazon ASIN alone does not authorize Nexscope to manage that seller's catalog.</small>
-      </aside>
-
       <div class="form-section form-section-submit" data-showcase-step="contact">
         <div class="form-section-heading"><span class="form-number">03</span><div><h2>Provide a secure contact</h2><p>This helps us verify important requests about your product information.</p></div></div>
         <div class="form-section-body">
@@ -173,6 +131,48 @@ image_caption: Submit product details for free review and a possible public AI-d
       </div>
     </form>
   </div>
+
+  <aside class="showcase-merchant-next" aria-labelledby="showcase-merchant-next-title">
+    <span class="eyebrow">A separate merchant step</span>
+    <h2 id="showcase-merchant-next-title">Submitting here does not enroll your store in shopping catalogs.</h2>
+    <p>We use your public link or ASIN to review a Gallery page. We do not connect your store, fetch live offers or submit products to ChatGPT or Google. Keep price, stock and checkout information current on the original selling page.</p>
+    <div class="showcase-merchant-next-links">
+      <a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How merchants reach ChatGPT Shopping →</a>
+      <a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">How merchants reach Google Shopping →</a>
+    </div>
+    <small>Submitting an Amazon ASIN alone does not authorize Nexscope to manage that seller's catalog.</small>
+  </aside>
+
+  {% include product-showcase-featured.html context="submit" %}
+
+  <section class="submission-review" id="submission-review" aria-labelledby="submission-review-title">
+    <div class="submission-review-intro">
+      <span class="eyebrow">After you submit</span>
+      <h2 id="submission-review-title">Know what happens next.</h2>
+      <p>Every reviewed submission receives written editorial feedback, whether or not it is published. We only suggest changes when the submitted materials show a meaningful reason. There is no fixed review deadline. Your product stays offline until an editor approves it and publishes a page. The purpose of that page is to give search and AI systems a clearer public source for product facts—not to buy impressions or guarantee traffic.</p>
+    </div>
+    <div class="submission-review-grid">
+      <article><strong>What should I prepare?</strong><p>Bring a public HTTPS product page or Amazon ASIN, the exact product name, verified details, at least one accurate image and a contact email. No store authorization is needed.</p></article>
+      <article><strong>Where will I find my feedback?</strong><p>Save the private management link shown after submission. It displays the editor's feedback after review, along with the review and publication status. No automatic status email is currently sent.</p></article>
+      <article><strong>What if changes are needed?</strong><p>A submission marked “Changes requested” remains offline. Read the editor's specific feedback on the private page, update the product information and resubmit for review.</p></article>
+    </div>
+  </section>
+
+  <section class="submission-visual" aria-labelledby="submission-visual-title">
+    <div class="submission-visual-copy">
+      <span class="eyebrow">More than a submission</span>
+      <h2 id="submission-visual-title">Prepare product facts that AI can use.</h2>
+      <p>Buyers and AI assistants need to know whether a product fits, works with an existing device or meets a budget. Our editors check the facts and images you provide, call out what is clear, and suggest changes only where a buyer question remains unanswered.</p>
+      <p>If approved and published, a public Gallery page gives search and AI systems another fact-focused source to discover and understand the product, while linking people to your original listing. This can support GEO, but it is not an ad placement, merchant feed or guarantee of visibility. Your store remains the source for current price, availability and purchase terms.</p>
+      <div class="submission-visual-actions">
+        <a class="showcase-quiet-link" href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How to prepare product facts for AI shopping <span aria-hidden="true">→</span></a>
+      </div>
+      <small class="showcase-disclaimer">Product submission, editorial review and approved Gallery listing and display are completely free. Gallery approval does not submit a merchant feed to ChatGPT or Google, or guarantee rankings, recommendations, traffic or sales.</small>
+    </div>
+    <figure class="submission-visual-art">
+      <img src="{{ '/assets/product-showcase-submission.webp' | relative_url }}" width="1200" height="800" loading="lazy" alt="Product details and media prepared for a reviewed product showcase">
+    </figure>
+  </section>
 
   <dialog class="markdown-editor-dialog" data-markdown-dialog aria-labelledby="markdown-editor-title">
     <div class="markdown-dialog-header">

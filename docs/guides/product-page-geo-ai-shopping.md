@@ -4,8 +4,8 @@ title: "Product Page GEO: Help AI Shoppers Understand Your Product"
 description: "See how accurate product facts can support AI-assisted shopping research. Learn what to show on a product page, what GEO cannot promise, and where free Gallery review fits."
 permalink: /product-page-geo-ai-shopping/
 date_published: 2026-10-12
-date_modified: 2026-10-12
-last_modified_at: 2026-10-12
+date_modified: 2026-10-21
+last_modified_at: 2026-10-21
 last_reviewed: 2026-10-12
 author: Nexscope Team
 schema_type: Article
@@ -27,6 +27,8 @@ next_step:
 **Product page GEO is the practice of making public product information clear, accurate, and useful when someone researches a purchase with an AI-assisted search tool.** It does not mean adding secret keywords or a special AI-only page. A shopper may ask about fit, compatibility, trade-offs, or alternatives; your page needs to answer those questions with facts a person can verify.
 
 **A useful starting point:** Pick three real buyer questions about one SKU. For each, publish a direct answer, the product fact or source that supports it, and any important limitation. Keep the same facts on the seller's page and every other public product surface.
+
+For one product you already sell, [request a free editorial review]({{ '/product-showcase/submit/' | relative_url }}) of its public URL or Amazon ASIN. You will receive feedback through a private link; an additional Gallery page is published only if the submission is approved.
 
 Google says its generative AI search features build on core Search systems and do not require a separate technical trick. Its [AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) emphasizes useful content and ordinary Search eligibility. OpenAI's [shopping research help](https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt) says that experience may use publicly available product information alongside merchant data and other sources. Neither source promises that a specific page will be quoted or a product recommended.
 
