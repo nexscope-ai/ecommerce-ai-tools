@@ -22,7 +22,7 @@ The [ecommerce-ai-tools repository](https://github.com/nexscope-ai/ecommerce-ai-
 
 You do not need to write a long post to take part. Start with one product-page choice, one tool question, or one reproducible problem. For private account or billing help, use [email support](mailto:service@nexscope.ai).
 
-<section class="resource-paths" aria-labelledby="community-start-title">
+<section class="resource-paths community-quick-start" aria-labelledby="community-start-title">
   <div class="section-heading"><div><span class="eyebrow">Start in about 60 seconds</span><h2 id="community-start-title">Bring one real decision.</h2></div><p>A short, specific reply is easier to answer than a general introduction.</p></div>
   <div class="resource-path-grid">
     <a data-track-community="product_page_clinic" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=learn.nexscope.ai&amp;utm_medium=community_hub&amp;utm_campaign=product_page_clinic&amp;utm_content=quick_start"><span class="resource-path-icon" aria-hidden="true">A–D</span><strong>Choose the hardest part of your product page</strong><span>Reply with A, B, C or D. Add your marketplace only if it helps.</span><b>Join the product-page clinic →</b></a>
