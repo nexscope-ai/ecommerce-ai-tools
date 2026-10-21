@@ -7,6 +7,7 @@ html { scroll-behavior: smooth; }
 .showcase-hero-copy > p:not(.showcase-status) { max-width: 650px; color: var(--muted); font-size: 18px; }
 .showcase-hero h1, .showcase-status-shell h1 { margin: 18px 0 24px; font-size: clamp(44px, 6vw, 76px); }
 .showcase-status { display: inline-flex; margin: 22px 0 0; padding: 7px 12px; border: 1px solid #cabfff; border-radius: 999px; background: #f5f2ff; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+.sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
 .showcase-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; }
 .showcase-primary, .showcase-secondary, .showcase-offline { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 12px 22px; border: 1px solid transparent; border-radius: 11px; font: inherit; font-weight: 800; text-decoration: none; cursor: pointer; }
 .showcase-primary { background: linear-gradient(135deg, #4f78ff, #7c3aed); color: #fff !important; box-shadow: 0 10px 24px rgb(109 61 245 / 20%); }
