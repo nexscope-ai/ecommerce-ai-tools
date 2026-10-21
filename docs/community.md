@@ -3,8 +3,8 @@ layout: default
 title: Nexscope Ecommerce Community and Support
 description: Ask Nexscope usage questions, suggest ecommerce workflows, report reproducible bugs, and find the right support channel.
 permalink: /community/
-last_modified_at: 2026-10-06
-last_reviewed: 2026-10-06
+last_modified_at: 2026-10-21
+last_reviewed: 2026-10-21
 community_page: true
 editorial_only: true
 faq:
@@ -20,7 +20,16 @@ faq:
 
 The [ecommerce-ai-tools repository](https://github.com/nexscope-ai/ecommerce-ai-tools) is Nexscope's official public library for practical ecommerce guides, community questions, product feedback, and reproducible issue reports. It supports the hosted Nexscope tools and APIs; it does not contain the hosted application's source code.
 
-Have a public question about a Nexscope tool or API? [Ask it in Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). For private account or billing help, use [email support](mailto:service@nexscope.ai).
+You do not need to write a long post to take part. Start with one product-page choice, one tool question, or one reproducible problem. For private account or billing help, use [email support](mailto:service@nexscope.ai).
+
+<section class="resource-paths" aria-labelledby="community-start-title">
+  <div class="section-heading"><div><span class="eyebrow">Start in about 60 seconds</span><h2 id="community-start-title">Bring one real decision.</h2></div><p>A short, specific reply is easier to answer than a general introduction.</p></div>
+  <div class="resource-path-grid">
+    <a data-track-community="product_page_clinic" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=learn.nexscope.ai&amp;utm_medium=community_hub&amp;utm_campaign=product_page_clinic&amp;utm_content=quick_start"><span class="resource-path-icon" aria-hidden="true">A–D</span><strong>Choose the hardest part of your product page</strong><span>Reply with A, B, C or D. Add your marketplace only if it helps.</span><b>Join the product-page clinic →</b></a>
+    <a data-track-community="community_q_and_a" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a?utm_source=learn.nexscope.ai&amp;utm_medium=community_hub&amp;utm_campaign=community_activation&amp;utm_content=quick_start"><span class="resource-path-icon" aria-hidden="true">?</span><strong>Ask one tool or API question</strong><span>State the goal, endpoint or tool, and what happened. Redact private data.</span><b>Ask in Q&amp;A →</b></a>
+    <a data-track-community="show_and_tell" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/show-and-tell?utm_source=learn.nexscope.ai&amp;utm_medium=community_hub&amp;utm_campaign=community_activation&amp;utm_content=quick_start"><span class="resource-path-icon" aria-hidden="true">↗</span><strong>Share one useful result</strong><span>Show the public input, observed result and limitation so another seller can learn from it.</span><b>Open Show and tell →</b></a>
+  </div>
+</section>
 
 ## Choose the right channel
 
@@ -34,6 +43,17 @@ Have a public question about a Nexscope tool or API? [Ask it in Q&A](https://git
 | Resolve an account, billing, or private-data matter | [Email private support](mailto:service@nexscope.ai) | A description of the problem without passwords, tokens, or payment credentials |
 
 [Read the pinned community guide](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/11) before posting, or [browse all Discussions](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions).
+
+## Connect Product Gallery feedback to a public conversation
+
+The [Nexscope Product Gallery]({{ '/product-showcase/' | relative_url }}) gives every reviewed submission private editorial feedback and may publish an approved product on a public Gallery page. The community is where sellers can discuss one public question raised by that process.
+
+1. [Submit one public product page]({{ '/product-showcase/submit/' | relative_url }}) with accurate facts and media.
+2. Keep the private management link private and read the editorial feedback there.
+3. If you want peer input, share only the public product URL or public Gallery page and ask one focused question in [Show and tell](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/show-and-tell?utm_source=learn.nexscope.ai&utm_medium=community_hub&utm_campaign=product_showcase_community&utm_content=gallery_loop).
+4. Return with the change you tested and what happened. A small before-and-after example is more useful than a promotional post.
+
+Good questions include “Which image explains the size fastest?”, “Is the compatibility limit clear?” and “Which buyer objection should the first three bullets answer?” Publication, search visibility, traffic and sales are not guaranteed, and community participation does not affect editorial approval.
 
 ## Ecommerce problems we can help investigate
 

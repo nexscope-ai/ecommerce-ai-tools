@@ -62,6 +62,44 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
   assert.equal(click[2].co_from, 'learn');
 });
 
+test('Learn analytics records attributed community entry clicks', () => {
+  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
+  const listeners = {};
+  const link = {
+    href: 'https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=learn.nexscope.ai',
+    textContent: 'Join the product-page clinic',
+    hasAttribute() { return false; },
+    getAttribute(name) { return name === 'data-track-community' ? 'product_page_clinic' : null; },
+  };
+  const window = {
+    nexscopeAnalyticsLoaded: false,
+    dataLayer: [],
+    location: {
+      href: 'https://learn.nexscope.ai/ecommerce-ai-tools/community/',
+      pathname: '/ecommerce-ai-tools/community/',
+    },
+    localStorage: { getItem() { return 'granted'; } },
+  };
+  const document = {
+    title: 'Community',
+    referrer: '',
+    head: { appendChild() {} },
+    body: { append() {} },
+    createElement() {
+      return { style: {}, setAttribute() {}, append() {}, querySelector() { return { focus() {} }; } };
+    },
+    addEventListener(name, listener) { (listeners[name] ||= []).push(listener); },
+  };
+  runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
+
+  listeners.click[0]({ target: { closest(selector) { return selector === 'a[href]' ? link : null; } } });
+  const click = window.dataLayer.map(entry => Array.from(entry))
+    .find(entry => entry[0] === 'event' && entry[1] === 'community_open_click');
+  assert.equal(click[2].community_action, 'product_page_clinic');
+  assert.equal(click[2].link_path, '/nexscope-ai/ecommerce-ai-tools/discussions/16');
+  assert.equal(click[2].source_page, '/ecommerce-ai-tools/community/');
+});
+
 test('Learn analytics waits for consent before sending the first page view', () => {
   const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
   const appended = [];

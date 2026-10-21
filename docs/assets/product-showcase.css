@@ -72,12 +72,12 @@ html { scroll-behavior: smooth; }
 .showcase-discovery-grid h3 { margin: 38px 0 10px; font-size: 22px; letter-spacing: -.03em; }
 .showcase-discovery-grid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .showcase-shopping-paths { margin-top: 20px; padding: 28px 32px; border: 1px solid #dcd5f3; border-radius: 18px; background: linear-gradient(110deg, #f7f5ff, #fff); }
-.showcase-shopping-paths-intro h3 { margin: 8px 0 10px; color: var(--ink); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -.03em; }
+.showcase-shopping-paths-intro h2, .showcase-shopping-paths-intro h3 { margin: 8px 0 10px; color: var(--ink); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -.03em; }
 .showcase-shopping-paths-intro p { max-width: 810px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .showcase-shopping-paths-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
 .showcase-shopping-paths-grid article { padding: 20px; border: 1px solid #e0daef; border-radius: 14px; background: #fff; }
 .showcase-shopping-paths-grid article > span { color: var(--accent); font-size: 11px; font-weight: 800; }
-.showcase-shopping-paths-grid h4 { margin: 8px 0; color: var(--ink); font-size: 19px; letter-spacing: -.025em; }
+.showcase-shopping-paths-grid h3, .showcase-shopping-paths-grid h4 { margin: 8px 0; color: var(--ink); font-size: 19px; letter-spacing: -.025em; }
 .showcase-shopping-paths-grid p { margin: 0 0 16px; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .showcase-shopping-paths-grid a, .showcase-shopping-paths-footnote a { color: var(--accent) !important; font-size: 12px; font-weight: 800; text-decoration: none; }
 .showcase-shopping-paths-grid a:hover, .showcase-shopping-paths-grid a:focus-visible, .showcase-shopping-paths-footnote a:hover, .showcase-shopping-paths-footnote a:focus-visible { text-decoration: underline; }

@@ -121,6 +121,20 @@
         transport_type: 'beacon',
       });
     }
+    const communityAction = link.getAttribute('data-track-community');
+    if (
+      communityAction
+      && /^[a-z0-9_-]{1,80}$/.test(communityAction)
+      && url.hostname === 'github.com'
+      && url.pathname.startsWith('/nexscope-ai/ecommerce-ai-tools/')
+    ) {
+      window.gtag('event', 'community_open_click', {
+        community_action: communityAction,
+        link_path: url.pathname,
+        source_page: location.pathname,
+        transport_type: 'beacon',
+      });
+    }
     const isMainSite = ['www.nexscope.ai', 'nexscope.ai'].includes(url.hostname);
     if (isMainSite) {
       window.gtag('event', 'start_using_click', {

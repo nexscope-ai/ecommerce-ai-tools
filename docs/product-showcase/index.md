@@ -12,7 +12,7 @@ keywords:
   - GEO for product pages
   - product visibility in AI search
 permalink: /product-showcase/
-last_modified_at: 2026-10-16
+last_modified_at: 2026-10-21
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -60,6 +60,22 @@ faq:
 </section>
 
 {% include product-showcase-featured.html context="hub" %}
+
+<section class="showcase-shopping-paths" aria-labelledby="showcase-community-title">
+  <div class="showcase-shopping-paths-intro">
+    <span class="eyebrow">A 60-second seller question</span>
+    <h2 id="showcase-community-title">Which part of your product page is hardest to improve?</h2>
+    <p>You do not need to submit a product or share a store link to join. Reply with A, B, C or D: main image, title and keywords, product details, or customer objections. The Nexscope team will respond with a practical first check or a relevant guide.</p>
+    <div class="showcase-actions">
+      <a class="showcase-primary" data-track-community="product_page_clinic" data-community-action="product_page_clinic" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=learn.nexscope.ai&amp;utm_medium=product_gallery&amp;utm_campaign=product_page_clinic&amp;utm_content=gallery_hub" target="_blank" rel="noopener noreferrer">Reply A, B, C or D on GitHub ↗</a>
+      <a class="showcase-quiet-link" href="{{ '/community/' | relative_url }}">See all community options →</a>
+    </div>
+  </div>
+  <div class="showcase-shopping-paths-grid">
+    <article><span>A or B</span><h3>Presentation and discovery</h3><p>Choose the main image if buyers cannot understand the product quickly, or title and keywords if the page does not match the language shoppers use.</p></article>
+    <article><span>C or D</span><h3>Clarity and objections</h3><p>Choose product details for specifications, dimensions or compatibility. Choose customer objections when reviews point in different directions.</p></article>
+  </div>
+</section>
 
 {% assign published_products = site.data.product_showcase_pages %}
 {% if published_products and published_products.size > 0 %}

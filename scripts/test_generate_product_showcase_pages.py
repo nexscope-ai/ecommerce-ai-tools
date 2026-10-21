@@ -187,6 +187,8 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
                 html.index('<section class="product-overview"'),
             )
             self.assertIn('class="product-sidebar"', html)
+            self.assertIn('data-track-community="published_product_clinic"', html)
+            self.assertIn('utm_content=published_product', html)
             self.assertNotIn('class="product-brief"', html)
             self.assertNotIn('class="product-outline"', html)
             self.assertNotIn('<span>Media</span>', html)

@@ -8,7 +8,7 @@ Practical ecommerce research, SEO, creative AI, and API workflows from the Nexsc
 
 [The free ecommerce product page review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) starts with feedback on the product page you already have. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. After editorial review, read what works and any evidence-based improvements on your private management page, whether or not the product is approved for publication. We do not invent changes to reach a target number. If approved and published, the product also receives a free public Gallery page, creating another discovery route to the original listing without guaranteed traffic.
 
-**[Request free product-page feedback](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [How the review works](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Share your product-page challenge](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
+**[Request free product-page feedback](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [How the review works](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Join the 60-second product-page clinic](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=github&utm_medium=referral&utm_campaign=product_page_clinic&utm_content=readme_first_module)
 
 No store connection, seller token, or payment access is required. Save the private management link shown after submission to read your feedback; there is no fixed review deadline or automatic status email. Submissions remain offline until approved and published. Publication, search rankings, traffic, and sales are not guaranteed.
 
@@ -65,7 +65,7 @@ External REST/MCP calls and the API tester require an account API key. Creative 
 | Suggest a workflow or feature | [Discussions Ideas](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/ideas) |
 | Report a reproducible bug | [Issue forms](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) |
 | Share a verified workflow | [Show and tell](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/show-and-tell) |
-| Help shape the planned open-source store workspace | [Share your most urgent store task](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/17) |
+| Get a first check on a product-page problem | [Reply A, B, C or D in the product-page clinic](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=github&utm_medium=referral&utm_campaign=product_page_clinic&utm_content=readme_community) |
 
 Start with the [welcome post](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/11) and [support process](SUPPORT.md). Describe your goal, the tool or endpoint, expected behavior, and observed result. Do not post API keys, tokens, payment details, private customer data, or unredacted screenshots. For private account or billing matters, contact [service@nexscope.ai](mailto:service@nexscope.ai). To improve these public resources, see [Contributing](CONTRIBUTING.md).
 
