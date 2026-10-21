@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Ecommerce Site Audit: SEO Checklist, Tools & Examples"
-description: "Use a free ecommerce site audit checklist and prioritizer to review crawlability, index signals, product data, internal links, and AI-search visibility."
+title: "Ecommerce SEO Audit Checklist: Site Audit, Tools & Examples"
+description: "Use a free ecommerce SEO audit checklist and site audit prioritizer to review crawlability, index signals, product data, internal links, and AI-search visibility."
 permalink: /ecommerce-seo-audit/
 date_published: 2026-10-12
-date_modified: 2026-10-20
-last_modified_at: 2026-10-20
-last_reviewed: 2026-10-20
+date_modified: 2026-10-21
+last_modified_at: 2026-10-21
+last_reviewed: 2026-10-21
 author: Nexscope Team
 schema_type: Article
 topic: research
@@ -37,7 +37,7 @@ next_step:
   url: "https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn"
 ---
 
-# Ecommerce site audit: SEO checklist, tools and examples
+# Ecommerce SEO audit checklist: site audit, tools and examples
 
 **An ecommerce site audit is a repeatable check of whether shoppers and search engines can find, understand, and use your important category and product pages.** Whether you call it an ecommerce website audit, webshop audit, or ecommerce SEO audit, start with the free prioritizer below, then verify the highest-risk findings in Search Console and with a representative URL sample. Inspect crawl and index signals, store architecture, page templates, product data, and measurable search outcomes. A single URL scan is useful evidence, but it cannot establish the health of the whole store.
 
