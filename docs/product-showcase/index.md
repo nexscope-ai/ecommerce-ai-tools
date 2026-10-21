@@ -63,11 +63,11 @@ faq:
 
 <section class="showcase-shopping-paths" aria-labelledby="showcase-community-title">
   <div class="showcase-shopping-paths-intro">
-    <span class="eyebrow">A 60-second seller question</span>
-    <h2 id="showcase-community-title">Which part of your product page is hardest to improve?</h2>
-    <p>You do not need to submit a product or share a store link to join. Reply with A, B, C or D: main image, title and keywords, product details, or customer objections. The Nexscope team will respond with a practical first check or a relevant guide.</p>
+    <span class="eyebrow">Weekly product-page clinic</span>
+    <h2 id="showcase-community-title">Get one focused public check on your product page.</h2>
+    <p>Share one public product URL and choose A, B, C or D: main image, title and keywords, product details, or buyer objections. This round accepts up to five products. The Nexscope team aims to reply within one business day with one strength, one unanswered buyer question, and one change worth testing.</p>
     <div class="showcase-actions">
-      <a class="showcase-primary" data-track-community="product_page_clinic" data-community-action="product_page_clinic" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=learn.nexscope.ai&amp;utm_medium=product_gallery&amp;utm_campaign=product_page_clinic&amp;utm_content=gallery_hub" target="_blank" rel="noopener noreferrer">Reply A, B, C or D on GitHub ↗</a>
+      <a class="showcase-primary" data-track-community="weekly_product_page_clinic" data-community-action="weekly_product_page_clinic" href="https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=learn.nexscope.ai&amp;utm_medium=product_gallery&amp;utm_campaign=weekly_product_page_clinic&amp;utm_content=gallery_hub" target="_blank" rel="noopener noreferrer">Join this week's clinic on GitHub ↗</a>
       <a class="showcase-quiet-link" href="{{ '/community/' | relative_url }}">See all community options →</a>
     </div>
   </div>
