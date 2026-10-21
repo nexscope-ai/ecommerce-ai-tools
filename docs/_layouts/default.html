@@ -156,7 +156,7 @@
     <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=52">
     {% if page.audit_tool %}<link rel="stylesheet" href="{{ '/assets/ecommerce-audit-tool.css' | relative_url }}?v=1">{% endif %}
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
-    <script src="{{ '/assets/trends.js' | relative_url }}?v=13" defer></script>
+    <script src="{{ '/assets/trends.js' | relative_url }}?v=14" defer></script>
     {% unless page.private_page %}
     <script src="{{ '/assets/traffic-attribution.js' | relative_url }}?v=1" defer></script>
     <script src="{{ '/assets/analytics.js' | relative_url }}?v=5" defer></script>
@@ -218,7 +218,7 @@
               <span class="eyebrow">Put this into practice</span>
               <h2>{{ page.next_step.title | escape }}</h2>
               <p>{{ page.next_step.description | escape }}</p>
-              <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
+              <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-end" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
             </section>
           {% else %}
           {% assign article_pages = site.pages | where: 'schema_type', 'Article' | where_exp: 'item', 'item.sitemap != false' | sort: 'url' %}

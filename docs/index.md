@@ -3,7 +3,7 @@ layout: default
 title: "Ecommerce AI Tools for Research, Automation & SEO | Nexscope"
 description: "Use ecommerce AI automation tools for bulk product data mapping, Amazon research, Shopify and TikTok workflows, product-page SEO, AI shopping visibility, and developer APIs."
 permalink: /
-last_modified_at: 2026-10-20
+last_modified_at: 2026-10-21
 last_reviewed: 2026-10-20
 resource_hub: true
 keywords:

@@ -1,17 +1,24 @@
 ---
 layout: default
-title: "Amazon Plugin for Claude: Seller Guide"
-description: "Learn how Amazon's Selling Partner plugin for Claude works, who can access the beta, which permissions to verify and which seller workflows to test."
+title: "Connect Claude to Amazon: Plugin Access & Research Tools"
+description: "Connecting Claude to Amazon? Check seller-plugin access, permissions and a read-only test, then explore MCP tools for public product and competitor research."
 permalink: /ecommerce-trends/amazon-selling-partner-plugin-claude/
 last_reviewed: 2026-09-24
 date_published: 2026-09-24
-date_modified: 2026-09-24
+date_modified: 2026-10-21
 date: 2026-09-24
 last_modified_at: 2026-09-24
 author: Nexscope Team
 schema_type: Article
+suppress_article_help: true
 og_type: article
 topic: agents
+next_step:
+  id: claude_amazon_research_tools
+  title: Give your agent a public-market research task
+  description: Need competitor products, keywords or reviews alongside your account analysis? Open Nexscope's MCP tool map to inspect available research tools and their input schemas, then follow the MCP setup guide below to connect a compatible client.
+  label: Browse Nexscope MCP research tools
+  url: "https://www.nexscope.ai/mcp-map?co-from=learn"
 keywords:
   - Amazon Selling Partner plugin for Claude
   - Claude Amazon seller plugin
@@ -41,6 +48,10 @@ The **Amazon Selling Partner plugin for Claude** is a newly announced beta conne
 > **Key takeaways:** The Claude Amazon seller plugin is a beta, not a universal release. Treat “connects in about 60 seconds” as a setup claim, not proof that a workflow is ready for production. Start with one read-only question, keep private account data separate from external research, require approval for consequential actions, and compare every recommendation with a dated baseline.
 
 Amazon announced the plugin on September 23 during Amazon Accelerate 2026. The [official Amazon announcement](https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude) is the source of truth for the launch status; the controls and capabilities shown in an eligible account are the source of truth for a particular seller.
+
+{% include article-action.html %}
+
+For the independent public-market research route, follow the [Nexscope MCP setup guide]({{ '/ecommerce-mcp-server/' | relative_url }}). A useful first prompt is: “Find products comparable to this ASIN in this marketplace and list the source, retrieval date and missing fields.” Choose the documented tool and verify its output before asking for a recommendation. This route provides separate research data; seller-plugin access remains governed by Amazon and Claude.
 
 ## What is the Amazon Selling Partner plugin for Claude?
 

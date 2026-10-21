@@ -102,6 +102,7 @@
       const destination = new URL(mainSiteLink.href, window.location.href);
       reportEvent('learn_to_main_click', {
         destination_path: destination.pathname,
+        cta_placement: mainSiteLink.dataset.ctaPlacement || 'body-or-navigation',
         learn_entry_source: learnEntrySource || 'unattributed',
       });
     }
@@ -110,6 +111,7 @@
     const destination = new URL(link.href, window.location.href);
     reportEvent('article_next_step_click', {
       next_step: link.dataset.stepId || 'unknown',
+      cta_placement: link.dataset.ctaPlacement || 'article-end',
       destination_host: destination.hostname,
       destination_path: destination.pathname,
     });

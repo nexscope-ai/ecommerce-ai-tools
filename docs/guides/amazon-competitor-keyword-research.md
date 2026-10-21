@@ -1,16 +1,17 @@
 ---
 layout: default
-title: "Amazon Competitor Keywords: Find & Validate Reverse-ASIN Terms"
-description: "Find Amazon competitor keywords with comparable ASINs, reverse-ASIN evidence, and first-party validation before changing a listing."
+title: "Find Amazon Competitor Keywords: A Reverse-ASIN Workflow"
+description: "Find Amazon competitor keywords with a six-step reverse-ASIN workflow. Choose comparable ASINs, check keyword gaps and inspect the API request before testing."
 permalink: /amazon-competitor-keyword-research/
 redirect_from:
   - /ecommerce-ai-tools/amazon-competitor-keyword-research/
 date_published: 2026-09-15
-date_modified: 2026-10-20
+date_modified: 2026-10-21
 last_modified_at: 2026-10-20
 last_reviewed: 2026-10-20
 author: Nexscope Team
 schema_type: Article
+suppress_article_help: true
 topic: research
 keywords:
   - Amazon competitor keywords
@@ -33,9 +34,9 @@ faq:
     answer: "It reports a rank or placement signal for a specified marketplace, query, product, date, and result type. It does not by itself prove demand, conversion, organic placement, or product quality; keep sponsored, organic, category, and query context separate."
 next_step:
   id: amazon_asin_keywords
-  title: Check one truly comparable ASIN
-  description: Read the current endpoint fields and access requirements, then compare its returned terms with your own listing and first-party reports.
-  label: View Amazon ASIN Keywords API
+  title: Start with one competitor ASIN
+  description: Have an ASIN ready. The Nexscope API page shows the request fields, response schema and access requirements so you can check what a keyword lookup returns before running it.
+  label: View the ASIN keyword request
   url: "https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn"
 image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
 image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp
@@ -45,11 +46,13 @@ image_caption: "Illustration: select comparable ASINs, inspect associated terms,
 
 # Amazon competitor keywords: find, validate and compare reverse-ASIN terms
 
-{% include article-visual.html %}
-
 **To find Amazon competitor keywords, first select products that solve the same buyer problem in the same marketplace.** This Amazon competitor keyword workflow records comparable ASINs, inspects reverse-ASIN evidence, and compares relevant terms with your listing and first-party search reports. A term associated with a rival is a *candidate*, not proof that the rival converted or that your product should target it.
 
 **Quick answer:** Keep the query, marketplace, date, ASIN, source, and metric label together. Exclude products with a different function or variant. Prioritize terms that accurately describe your product and recur across comparable products; validate the shortlist with Amazon Brand Analytics or advertising search-term data when you have access. Do not relabel Google search volume as Amazon demand.
+
+{% include article-action.html %}
+
+{% include article-visual.html %}
 
 ## Which products count as Amazon competitors?
 

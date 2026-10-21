@@ -1,0 +1,8 @@
+{% if page.next_step %}
+<section class="article-next article-next-focused" aria-label="Try this workflow">
+  <span class="eyebrow">Your next step</span>
+  <h2>{{ page.next_step.title | escape }}</h2>
+  <p>{{ page.next_step.description | escape }}</p>
+  <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="inline" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
+</section>
+{% endif %}

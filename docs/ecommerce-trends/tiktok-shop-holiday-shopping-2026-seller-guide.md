@@ -1,17 +1,24 @@
 ---
 layout: default
-title: "TikTok Shop Holiday Shopping 2026: Black Friday Seller Guide"
-description: "Prepare TikTok Shop products, creators, LIVE Shopping, and holiday offers for the 2026 Black Friday and Cyber Monday season."
+title: "TikTok Shop Black Friday 2026: Seller Prep Checklist"
+description: "Prepare for TikTok Shop Black Friday 2026 with a seller timeline, hero-product checklist and creator brief. Review product research inputs before your campaign."
 permalink: /ecommerce-trends/tiktok-shop-holiday-shopping-2026-seller-guide/
 date_published: 2026-10-15
-date_modified: 2026-10-16
+date_modified: 2026-10-21
 last_modified_at: 2026-10-16
 last_reviewed: 2026-10-16
 author: Nexscope Team
 schema_type: Article
+suppress_article_help: true
 og_type: article
 topic: shopping
 editorial_only: true
+next_step:
+  id: tiktok_holiday_product_discovery
+  title: Build your holiday product shortlist
+  description: Start with a category or gift keyword. Nexscope's TikTok Product Discovery API documentation shows product filters, response fields and access requirements for researching candidates before you choose hero SKUs.
+  label: View TikTok product discovery filters
+  url: "https://www.nexscope.ai/api-docs/tiktok-product-discovery?co-from=learn"
 keywords:
   - TikTok Shop holiday shopping 2026
   - TikTok Shop Black Friday 2026
@@ -41,6 +48,8 @@ TikTok Shop holiday shopping 2026 starts before the first Black Friday livestrea
 TikTok says its 2026 Black Friday and Cyber Monday TikTok Shop campaign runs **November 11 through November 30, 2026**. The company also reported that `#holidayshopping` content rose 263% in September compared with the prior month. Those are TikTok's own platform signals, not a guarantee that every category or seller will receive the same demand. [Read TikTok's holiday-season announcement](https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en).
 
 > **Key takeaways:** Start with three to five hero SKUs, map one buyer-intent keyword to each page, reconcile variant-level product facts, rehearse a shoppable LIVE, and measure discovery separately from orders and returns. The practical goal is not to chase a trend number; it is to make a gift decision easy to verify and easy to complete.
+
+{% include article-action.html %}
 
 ## When is TikTok Shop's 2026 Black Friday and Cyber Monday campaign?
 
@@ -112,6 +121,8 @@ Measure the LIVE in layers: viewers and average stay time for attention; product
 **Use API research to reduce product and competitor uncertainty, not to pretend an API can operate the campaign.** Start with a category or gift hypothesis, inspect documented product and review evidence, research creator or video examples, and save a dated brief with the source URLs and market.
 
 The [TikTok Shop API guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}) explains a practical research workflow. For a holiday sprint, keep the scope narrow:
+
+**Try one bounded research task:** write a gift keyword, target market and acceptable price band, then review the [TikTok Product Discovery request on Nexscope](https://www.nexscope.ai/api-docs/tiktok-product-discovery?co-from=learn). Check available filters and response fields before running a request. Save a shortlist with the product ID, source date and unanswered questions; confirm inventory, margin and promotion eligibility in your seller account before selecting a hero SKU.
 
 - **Product discovery:** compare a small set of products, price bands, variants, and visible attributes.
 - **Product detail and reviews:** record the claims buyers ask about, recurring objections, and evidence that can be safely repeated.
