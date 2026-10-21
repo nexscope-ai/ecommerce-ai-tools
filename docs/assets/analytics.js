@@ -113,6 +113,32 @@
     const link = event.target.closest?.('a[href]');
     if (!link) return;
     const url = new URL(link.href, location.href);
+    const productAction = link.getAttribute('data-track-product');
+    const productId = link.getAttribute('data-product-id');
+    const placement = link.getAttribute('data-product-placement');
+    if (
+      ['gallery', 'source', 'related'].includes(productAction)
+      && /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(productId || '')
+      && /^[a-z0-9-]{1,60}$/.test(placement || '')
+    ) {
+      const productPath = `/ecommerce-ai-tools/product-showcase/product/${productId}/`;
+      const isDetailLink = url.origin === location.origin && url.pathname === productPath;
+      const isCurrentDetailPage = /^\/ecommerce-ai-tools\/product-showcase\/product\/[0-9a-f-]{36}\/$/i.test(location.pathname);
+      if ((productAction === 'source' && location.pathname === productPath &&
+           /^https?:$/.test(url.protocol) && url.origin !== location.origin) ||
+          (productAction === 'gallery' && isDetailLink) ||
+          (productAction === 'related' && isCurrentDetailPage && isDetailLink)) {
+        window.gtag('event', `product_${productAction}_click`, {
+          product_id: productId,
+          placement,
+          source_page: location.pathname,
+          destination_host: url.hostname,
+          ...(isDetailLink ? { destination_path: url.pathname } : {}),
+          transport_type: 'beacon',
+          ...(new URLSearchParams(location.search).get('ga_debug') === '1' ? { debug_mode: true } : {}),
+        });
+      }
+    }
     const workflow = link.getAttribute('data-track-tool');
     if (workflow && /^[a-z0-9-]{1,80}$/.test(workflow) && url.origin === location.origin) {
       window.gtag('event', 'workflow_open_click', {
@@ -136,7 +162,7 @@
       });
     }
     const isMainSite = ['www.nexscope.ai', 'nexscope.ai'].includes(url.hostname);
-    if (isMainSite) {
+    if (isMainSite && productAction !== 'source') {
       window.gtag('event', 'start_using_click', {
         link_domain: url.hostname,
         link_path: url.pathname,

@@ -20,10 +20,10 @@
   </div>
   <div class="showcase-featured-list{% if published_products.size >= 3 %} is-stacked{% endif %}" aria-label="Highest-scoring published products">
     {% for product in published_products limit:3 %}
-    <a class="showcase-featured-card" href="{{ product.path | relative_url }}">
+    <a class="showcase-featured-card" href="{{ product.path | relative_url }}" data-track-product="gallery" data-product-id="{{ product.publicUuid | escape }}" data-product-placement="featured-{{ include.context }}">
       <span class="showcase-featured-rank" aria-hidden="true">0{{ forloop.index }}</span>
       <span class="showcase-featured-image">
-        {% if product.image %}<img src="{{ product.image | escape }}" alt="" loading="lazy" width="480" height="360">{% else %}<span class="showcase-featured-placeholder" aria-hidden="true">Product image unavailable</span>{% endif %}
+        {% if product.image %}<img src="{{ product.image | escape }}" alt="{{ product.title | escape }}" loading="lazy" width="480" height="360">{% else %}<span class="showcase-featured-placeholder" aria-hidden="true">Product image unavailable</span>{% endif %}
       </span>
       <span class="showcase-featured-copy">
         <strong>{{ product.title | escape }}</strong>

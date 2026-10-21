@@ -517,9 +517,7 @@ def render_seo_head(
     allowed_images = set(submitted_images or ([] if not first_image else [first_image]))
     configured_og_image = safe_url(open_graph.get("image") or config.get("ogImage"))
     og_image = configured_og_image if configured_og_image in allowed_images else first_image
-    og_image_alt = limited_text(open_graph.get("imageAlt"), 160) or (
-        f"{product_name} product image" if og_image else None
-    )
+    og_image_alt = product_name if og_image else None
 
     twitter = config.get("twitter")
     if not isinstance(twitter, dict):
@@ -531,7 +529,7 @@ def render_seo_head(
     twitter_description = limited_text(twitter.get("description"), 200) or og_description
     configured_twitter_image = safe_url(twitter.get("image"))
     twitter_image = configured_twitter_image if configured_twitter_image in allowed_images else og_image
-    twitter_image_alt = limited_text(twitter.get("imageAlt"), 160) or og_image_alt
+    twitter_image_alt = product_name if twitter_image else None
 
     def meta(attribute: str, name: str, content: str) -> str:
         return (
@@ -887,7 +885,7 @@ def structured_data(
             {
                 "@type": "VideoObject",
                 "@id": canonical_url + "#video",
-                "name": product_name + " product video",
+                "name": product_name,
                 "description": description,
                 "thumbnailUrl": [images[0]],
                 "uploadDate": published,
@@ -926,9 +924,9 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
             '<figure class="carousel-slide" data-carousel-slide '
             f'aria-label="Image {index + 1} of {len(images)}">'
             f'<a href="{escape(image, quote=True)}" target="_blank" rel="noopener noreferrer" '
-            f'aria-label="Open product image {index + 1} in a new tab">'
+            f'aria-label="Open {escape(product_name, quote=True)} image {index + 1} in a new tab">'
             f'<img src="{escape(image, quote=True)}" '
-            f'alt="{escape(product_name + " product image " + str(index + 1), quote=True)}" '
+            f'alt="{escape(product_name, quote=True)}" '
             f'loading="{"eager" if index == 0 else "lazy"}" decoding="async"></a></figure>'
             for index, image in enumerate(images)
         ) + '</div>'
@@ -941,9 +939,9 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
     if len(images) > 1:
         thumbnails = "".join(
             f'<button type="button" class="carousel-thumb" data-carousel-thumb="{index}" '
-            f'aria-label="Show image {index + 1} of {len(images)}" '
+            f'aria-label="Show {escape(product_name, quote=True)} image {index + 1} of {len(images)}" '
             f'aria-pressed="{"true" if index == 0 else "false"}">'
-            f'<img src="{escape(image, quote=True)}" alt="" loading="lazy" decoding="async"></button>'
+            f'<img src="{escape(image, quote=True)}" alt="{escape(product_name, quote=True)}" loading="lazy" decoding="async"></button>'
             for index, image in enumerate(images)
         )
         carousel_controls = (
@@ -962,6 +960,7 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
             video_hero = (
                 '<section class="listing-video-hero" aria-labelledby="product-video-title" data-video-hero>'
                 f'<video controls muted loop preload="metadata" playsinline '
+                f'aria-label="{escape(product_name, quote=True)}" '
                 f'src="{escape(video_url, quote=True)}"{poster}></video>'
                 '<div class="listing-video-intro"><span class="eyebrow" id="product-video-title">'
                 'Product in motion</span><span class="listing-video-hint">'
@@ -973,23 +972,28 @@ def render_product_page(template: str, product: dict, canonical_url: str, galler
         else:
             video_section = (
                 '<section class="external-video" aria-labelledby="product-video-title"><div>'
-                '<span class="eyebrow">Product video</span><h2 id="product-video-title">Watch the product video.</h2>'
+                f'<span class="eyebrow">Product video</span><h2 id="product-video-title">Watch {escape(product_name)} video.</h2>'
                 '<p>The submitted video is hosted on an external website.</p></div>'
                 f'<a href="{escape(video_url, quote=True)}" rel="nofollow noopener noreferrer">'
-                "Open product video ↗</a></section>"
+                f'Open {escape(product_name)} video ↗</a></section>'
             )
     source_button = ""
     source_card = ""
     facts_action = ""
     if product_url:
         escaped_product_url = escape(product_url, quote=True)
-        source_button = (
-            f'<a class="button button-primary" href="{escaped_product_url}" '
-            'rel="nofollow sponsored noopener noreferrer">Visit product website ↗</a>'
-        )
+        def source_link(placement: str) -> str:
+            return (
+                f'<a class="button button-primary" href="{escaped_product_url}" '
+                f'data-track-product="source" data-product-id="{public_uuid.lower()}" '
+                f'data-product-placement="{placement}" '
+                'rel="nofollow sponsored noopener noreferrer">Visit product website ↗</a>'
+            )
+
+        source_button = source_link("header")
         host = (urlsplit(product_url).hostname or "Product website").removeprefix("www.")
         source_card = f'<div class="fact"><span>Product source</span><strong>{escape(host)}</strong></div>'
-        facts_action = f'<div class="facts-action">{source_button}</div>'
+        facts_action = f'<div class="facts-action">{source_link("sidebar")}</div>'
     published = iso_timestamp(product.get("publishedAt"))
     published_card = ""
     if published:

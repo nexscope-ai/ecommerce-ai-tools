@@ -82,7 +82,7 @@ faq:
 <nav class="sr-only" aria-label="Published product pages">
   <ul>
     {% for product in published_products %}
-    <li><a href="{{ product.path | relative_url }}">{{ product.title | escape }}</a></li>
+    <li><a href="{{ product.path | relative_url }}" data-track-product="gallery" data-product-id="{{ product.publicUuid | escape }}" data-product-placement="published-list">{{ product.title | escape }}</a></li>
     {% endfor %}
   </ul>
 </nav>

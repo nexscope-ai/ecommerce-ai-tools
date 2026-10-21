@@ -105,6 +105,9 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
                 f"product-showcase/product/{PUBLIC_UUID}/"
             )
             self.assertIn(GENERATED_MARKER, html)
+            self.assertIn('data-track-product="source" data-product-id="' + PUBLIC_UUID + '"', html)
+            self.assertIn('data-product-placement="header"', html)
+            self.assertIn('data-product-placement="sidebar"', html)
             self.assertIn(canonical, html)
             self.assertIn("<title>SEO title for static product | Nexscope</title>", html)
             self.assertIn('<meta name="keywords" content="static product, workflow product">', html)
@@ -125,6 +128,8 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
                 '<meta property="og:image" content="https://cdn.example.com/product.webp">',
                 html,
             )
+            self.assertIn('<meta property="og:image:alt" content="Static product">', html)
+            self.assertIn('<meta name="twitter:image:alt" content="Static product">', html)
             self.assertNotIn("social-product.webp", html.split('<script type="application/json"')[0])
             self.assertIn(
                 '<meta name="twitter:title" content="Twitter product title">',
@@ -161,6 +166,10 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertEqual("Thing", product_entity["@type"])
             self.assertEqual("Static product", product_entity["name"])
             self.assertIn('"@type":"VideoObject"', html)
+            video_entity = next(node for node in graph if node.get("@type") == "VideoObject")
+            self.assertEqual("Static product", video_entity["name"])
+            self.assertIn('aria-label="Static product" src="https://cdn.example.com/product.mp4"', html)
+            self.assertEqual(4, html.count('alt="Static product"'))
             self.assertIn("product-side.webp", html)
             self.assertIn('<nav class="listing-tabs" aria-label="On this page">', html)
             self.assertIn('href="#product-media">Images</a>', html)
@@ -195,7 +204,7 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
             self.assertNotIn("Browse all products", html)
             self.assertNotIn('class="listing-meta"', html)
             self.assertNotIn("Published product", html)
-            self.assertIn('aria-label="Open product image 2 in a new tab"', html)
+            self.assertIn('aria-label="Open Static product image 2 in a new tab"', html)
             self.assertEqual(2, html.count('<figure class="carousel-slide" data-carousel-slide'))
             self.assertIn('<button type="button" data-carousel-prev', html)
             self.assertIn('<button type="button" data-carousel-next', html)
@@ -255,6 +264,8 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
         product["videoUrl"] = "https://videos.example.com/watch/product"
         html = render_product_page(template, product, canonical, gallery)
         self.assertNotIn('class="listing-video-hero"', html)
+        self.assertIn('Watch Static product video.', html)
+        self.assertIn('Open Static product video ↗', html)
         self.assertLess(
             html.index('<section class="external-video"'),
             html.index('<section class="product-preview"'),
