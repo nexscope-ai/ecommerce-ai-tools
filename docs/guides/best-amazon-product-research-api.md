@@ -156,7 +156,7 @@ Compare cost per accepted result after quotas, retries, missing fields, post-pro
 
 A search volume API estimates query demand. A product research API returns product-level evidence such as attributes, offers, reviews, rank snapshots, or price history. Use each for the decision it can actually support, and preserve the marketplace, timestamp, metric definition, and missing-value behavior.
 
-**Next step:** choose one read-only research question, create a 20–50-item test set, inspect the provider documentation, and compare the returned evidence before connecting a production workflow. Start with the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn) if the broader workflow is your target.
+**Next step:** choose one read-only research question, create a 20–50-item test set, inspect the provider documentation, and compare the returned evidence before connecting a production workflow. Use the [Amazon product research pilot]({{ '/amazon-product-research-api-pilot/' | relative_url }}) and [Data API pricing worksheet]({{ '/ecommerce-data-api-pricing-decision/' | relative_url }}) to decide whether to buy recurring credits. Start with the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn) if the broader workflow is your target.
 
 ## Sources and methodology
 

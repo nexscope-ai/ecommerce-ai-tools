@@ -80,6 +80,8 @@ When you want to run the workflow, use **Get an API key** on the API page. The p
 
 ## Related workflows
 
+- [Test an Amazon product research pilot before buying recurring credits]({{ '/amazon-product-research-api-pilot/' | relative_url }})
+- [Estimate Data API credits and compare buying options]({{ '/ecommerce-data-api-pricing-decision/' | relative_url }})
 - [Amazon Product Detail API](https://www.nexscope.ai/api-docs/amazon-product-detail?view=api&co-from=learn)
 - [Amazon Market Research API](https://www.nexscope.ai/api-docs/amazon-market-research?view=api&co-from=learn)
 - [Amazon Reviews List API](https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=learn)

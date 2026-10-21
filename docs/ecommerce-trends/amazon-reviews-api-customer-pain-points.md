@@ -160,6 +160,7 @@ When you are ready to call the API, use the **Get an API key** or authentication
 
 ## Related workflows
 
+- [Run a bounded Amazon research pilot before buying credits]({{ '/amazon-product-research-api-pilot/' | relative_url }})
 - [Amazon Search API](https://www.nexscope.ai/api-docs/amazon-search?view=api&co-from=learn)
 - [Amazon Product Detail API](https://www.nexscope.ai/api-docs/amazon-product-detail?view=api&co-from=learn)
 - [Amazon ASIN Keywords API](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn)

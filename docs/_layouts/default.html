@@ -202,6 +202,15 @@
       {% endunless %}
       <article>
         {% if page.resource_hub %}{% include resource-library.html %}{% else %}{{ content }}{% endif %}
+        {% if page.url == '/' %}
+        <section class="resource-paths" aria-labelledby="api-buying-guides-title">
+          <div class="section-heading"><div><span class="eyebrow">Before you buy</span><h2 id="api-buying-guides-title">Test the decision, then choose credits.</h2></div><p>Use a small real workflow to check output quality and cost before scaling.</p></div>
+          <div class="resource-path-grid">
+            <a href="{{ '/amazon-product-research-api-pilot/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">01</span><strong>Run an Amazon research pilot</strong><span>Check comparable products, detail coverage, review evidence and actual credit use.</span><b>Follow the pilot →</b></a>
+            <a href="{{ '/ecommerce-data-api-pricing-decision/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">02</span><strong>Estimate Data API credits</strong><span>Compare the trial, Data-only top-ups and subscriptions against a usable result.</span><b>Estimate your budget →</b></a>
+          </div>
+        </section>
+        {% endif %}
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
         {% if page.schema_type == 'Article' %}
           {% if page.next_step %}
