@@ -73,12 +73,12 @@
     url_passthrough: true,
   });
 
-  // Keep the page-view contract explicit. A new visitor starts with consent
-  // denied, so do not queue a page_view until analytics is explicitly allowed.
-  // The guard still ensures that a document sends at most one page_view.
+  // Send one page view per document under the current Consent Mode state.
+  // When analytics storage is denied, Google may receive a cookieless ping;
+  // granting consent later must not produce a duplicate page view.
   let pageViewSent = false;
   const sendPageView = () => {
-    if (pageViewSent || consent !== 'granted') return;
+    if (pageViewSent) return;
     pageViewSent = true;
     const attribution = window.nexscopeTrafficAttribution || {};
     window.gtag('event', 'page_view', {
@@ -100,7 +100,7 @@
       ...(new URLSearchParams(location.search).get('ga_debug') === '1' ? { debug_mode: true } : {}),
     });
   };
-  if (consent === 'granted') sendPageView();
+  sendPageView();
 
   const script = document.createElement('script');
   script.async = true;
@@ -170,7 +170,6 @@
       writeConsent(value);
       panel.remove();
       window.gtag('consent', 'update', { analytics_storage: value });
-      if (value === 'granted') sendPageView();
     };
     actions.append(button);
   }

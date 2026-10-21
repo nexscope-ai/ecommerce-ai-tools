@@ -100,7 +100,7 @@ test('Learn analytics records attributed community entry clicks', () => {
   assert.equal(click[2].source_page, '/ecommerce-ai-tools/community/');
 });
 
-test('Learn analytics waits for consent before sending the first page view', () => {
+test('Learn analytics sends one cookieless page view before consent and does not duplicate it after opt-in', () => {
   const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
   const appended = [];
   const window = {
@@ -133,7 +133,8 @@ test('Learn analytics waits for consent before sending the first page view', () 
   runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
 
   const beforeConsent = window.dataLayer.map(entry => Array.from(entry));
-  assert.equal(beforeConsent.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 0);
+  assert.equal(beforeConsent.find(entry => entry[0] === 'consent' && entry[1] === 'default')[2].analytics_storage, 'denied');
+  assert.equal(beforeConsent.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
 
   const allowButton = appended[0].children[1].children[0];
   allowButton.onclick();
@@ -142,7 +143,7 @@ test('Learn analytics waits for consent before sending the first page view', () 
   assert.equal(afterConsent.filter(entry => entry[0] === 'consent' && entry[1] === 'update')[0][2].analytics_storage, 'granted');
 });
 
-test('Learn analytics does not send a page view after rejecting analytics', () => {
+test('Learn analytics sends one cookieless page view when analytics is rejected', () => {
   const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
   const appended = [];
   const window = {
@@ -177,7 +178,7 @@ test('Learn analytics does not send a page view after rejecting analytics', () =
   const rejectButton = appended[0].children[1].children[1];
   rejectButton.onclick();
   const calls = window.dataLayer.map(entry => Array.from(entry));
-  assert.equal(calls.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 0);
+  assert.equal(calls.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
   assert.equal(calls.filter(entry => entry[0] === 'consent' && entry[1] === 'update')[0][2].analytics_storage, 'denied');
 });
 
