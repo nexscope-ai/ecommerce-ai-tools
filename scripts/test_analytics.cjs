@@ -11,7 +11,9 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
     href: 'https://www.nexscope.ai/api-docs?co-from=learn',
     textContent: 'API docs',
     hasAttribute() { return false; },
-    getAttribute() { return null; },
+    getAttribute(name) {
+      return { 'data-cta-placement': 'home-task', 'data-step-id': 'amazon_search' }[name] || null;
+    },
   };
   const window = {
     nexscopeAnalyticsLoaded: false,
@@ -60,6 +62,8 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
   listeners.click[0]({ target: { closest(selector) { return selector === 'a[href]' ? link : null; } } });
   const click = window.dataLayer.map(entry => Array.from(entry)).find(entry => entry[0] === 'event' && entry[1] === 'start_using_click');
   assert.equal(click[2].co_from, 'learn');
+  assert.equal(click[2].cta_placement, 'home-task');
+  assert.equal(click[2].step_id, 'amazon_search');
 });
 
 test('Learn analytics records attributed community entry clicks', () => {

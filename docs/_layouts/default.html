@@ -187,7 +187,13 @@
           <li><a href="{{ '/product-showcase/' | relative_url }}"{% if page.product_showcase_page %} aria-current="page"{% endif %}>Product Gallery</a></li>
           <li><a href="{{ '/community/' | relative_url }}"{% if page.community_page %} aria-current="page"{% endif %}>Community</a></li>
           <li><a href="https://www.nexscope.ai/api-docs?co-from=learn">API docs</a></li>
-          <li><a class="nav-cta" href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></li>
+          {% if page.next_step %}
+          <li><a class="nav-cta" data-cta-placement="nav" data-step-id="{{ page.next_step.id | escape }}" href="{{ page.next_step.url | escape }}">See the next step ↗</a></li>
+          {% elsif page.url == '/getting-started/' %}
+          <li><a class="nav-cta" href="#ai-video-generator">Pick a tool ↓</a></li>
+          {% else %}
+          <li><a class="nav-cta" href="{{ '/getting-started/' | relative_url }}">Choose a workflow ↗</a></li>
+          {% endif %}
         </ul>
       </nav>
     </div></header>

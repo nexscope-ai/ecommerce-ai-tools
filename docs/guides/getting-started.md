@@ -20,11 +20,10 @@ image_caption: "Illustration: start with one clear question, choose the smallest
 
 Choose a workflow from [our guide library](../), then sign in with your Nexscope account to run it.
 
-1. [Create a Nexscope account](https://www.nexscope.ai/?co-from=learn). New users get **1,000 free credits**. Credit usage varies by action.
-2. Choose a competitor ASIN, a keyword, a public page URL, or product images and a video prompt.
-3. Review the selected market, sample size, and credit requirements before starting. Some workflows require a separate second request.
-4. Inspect source evidence before acting on AI suggestions, and download results you want to keep.
-5. If something blocks you, use the [community and support guide](../community/) to choose the right public or private channel.
+1. Choose one task below and open its tool or API page. New Nexscope accounts receive **1,000 free credits**; credit usage and access vary by action. Some browser tools offer a separate limited free search.
+2. Bring the input for that task: a competitor ASIN, a keyword, a public page URL, or product images and a video prompt. Review the selected market, sample size, and credit requirements before starting. Some workflows require a separate second request.
+3. Inspect source evidence before acting on AI suggestions, and download results you want to keep. If the first result answers your question, check its actual credit use and decide whether you need to repeat the task before considering a paid plan.
+4. If something blocks you, use the [community and support guide](../community/) to choose the right public or private channel.
 
 ## When you need help
 
@@ -43,14 +42,18 @@ Include your goal, marketplace, product category, relevant tool or endpoint, exp
 
 ## Amazon Review Analyzer
 
-Enter a competitor ASIN and marketplace, request recent 1–2 star reviews, and generate an AI report from that sample. Download Markdown and source review CSV. A complaint about a leaking lid might suggest a gasket durability test; this is an illustrative idea, not a real product finding. The sample cannot establish overall defect rates or product authenticity.
+[Open Amazon Review Analyzer](https://www.nexscope.ai/tools/amazon-review-analyzer?co-from=learn) with a competitor ASIN and marketplace. Request recent 1–2 star reviews, then generate an AI report from that sample. Download Markdown and source review CSV. A complaint about a leaking lid might suggest a gasket durability test; this is an illustrative idea, not a real product finding. The sample cannot establish overall defect rates or product authenticity.
 
 ## SEO Keyword Planner
 
-Explore US English Google keyword candidates and metrics, then request matching Amazon US products and an AI comparison. Google search volume is not Amazon search volume. Product sales figures are estimates when available.
+[Open SEO Keyword Planner](https://www.nexscope.ai/tools/seo-keyword-planner?co-from=learn) with one product phrase. Compare US English Google keyword candidates and metrics, then decide whether the terms match your product page. Google search volume is not Amazon search volume. The tool's current free search has a daily limit; review the live page before using API credits for more research.
 
 See the [SEO Keyword Planner workflow]({{ '/seo-keyword-planner/' | relative_url }}) for a dated `portable blender` test, its source data, and the product-relevance check that excluded a shaker bottle from the comparison.
 
 ## Website SEO Auditor
 
-Collect evidence for one public page and separately request mobile Lighthouse. This is a single-page check, not a whole-site crawl.
+[Open Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) with one public page URL. Collect page evidence and separately request mobile Lighthouse. This is a single-page check, not a whole-site crawl.
+
+## Decide whether you need more capacity
+
+Use the first result to answer one real question. If you need the same workflow repeatedly, record the actual credits used, the outputs you could use, and how often your team will run it. Then [compare the current credit options]({{ '/ecommerce-data-api-pricing-decision/' | relative_url }}) for API research or check the selected tool's live access terms. A one-off free search does not by itself justify a subscription.
