@@ -3,7 +3,7 @@ layout: default
 title: Practical Ecommerce Guides and API Workflows
 description: Explore official Nexscope guides for product research, Amazon listing optimization, ecommerce SEO, AI product images and video, and API integrations.
 permalink: /guides/
-last_modified_at: 2026-10-12
+last_modified_at: 2026-10-22
 resource_hub: true
 resource_type: guide
 hero_title: From a question

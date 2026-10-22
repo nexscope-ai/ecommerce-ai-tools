@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Nano Banana",
+    "kind": "image",
+    "article": "/guides/nano-banana-image/",
+    "api": "banana-image-generation",
+    "capabilities": "Output: 1K only; References: Optional; up to 10 images"
+  },
+  {
+    "name": "Nano Banana Pro",
+    "kind": "image",
+    "article": "/guides/nano-banana-pro-image/",
+    "api": "banana-pro-image-generation",
+    "capabilities": "Output: 1K, 2K, 4K; References: Optional; up to 10 images"
+  },
+  {
+    "name": "Nano Banana 2",
+    "kind": "image",
+    "article": "/guides/nano-banana-2-image/",
+    "api": "banana-2-image-generation",
+    "capabilities": "Output: 1K, 2K, 4K; References: Optional; up to 10"
+  },
+  {
+    "name": "Nano Banana 2.1",
+    "kind": "image",
+    "article": "/guides/nano-banana-2-1-image/",
+    "api": "banana-2-1-image-generation",
+    "capabilities": "Output: 1K, 2K, 4K; References: Optional; up to 14"
+  },
+  {
+    "name": "Nano Banana 2 Lite",
+    "kind": "image",
+    "article": "/guides/nano-banana-2-lite-image/",
+    "api": "banana-2-lite-image-generation",
+    "capabilities": "Output: 1K only; References: Optional; up to 10 images"
+  },
+  {
+    "name": "Wan 2.7 Image",
+    "kind": "image",
+    "article": "/guides/wan-2-7-image/",
+    "api": "wan-2-7-image-generation",
+    "capabilities": "Output: 1K or 2K; References: Optional; up to 10 images"
+  },
+  {
+    "name": "Seedream 5 Pro",
+    "kind": "image",
+    "article": "/guides/seedream-5-pro-image/",
+    "api": "seedream-5-pro-image-generation",
+    "capabilities": "Output: 1K or 2K; References: Optional; up to 10 images"
+  },
+  {
+    "name": "GPT Image 2",
+    "kind": "image",
+    "article": "/guides/gpt-image-2-image/",
+    "api": "gpt-image-2-generation",
+    "capabilities": "Output: 1K, 2K, 4K; References: Optional; up to 10 images"
+  },
+  {
+    "name": "GPT Image 2.5 Sunburst",
+    "kind": "image",
+    "article": "/guides/gpt-image-2-5-sunburst-image/",
+    "api": "gpt-image-2-5-generation",
+    "capabilities": "Output: 1K, 2K, 4K; documented default 2K; References: Optional; up to 10 images"
+  },
+  {
+    "name": "GPT Image 2.5 Flare",
+    "kind": "image",
+    "article": "/guides/gpt-image-2-5-flare-image/",
+    "api": "gpt-image-2-5-flare-generation",
+    "capabilities": "Output: 1K, 2K, 4K; documented default 2K; References: Optional; up to 10 images"
+  },
+  {
+    "name": "Seedance 2.0",
+    "kind": "video",
+    "article": "/guides/seedance-2-0-video/",
+    "api": "seedance-2-0-video-generation",
+    "capabilities": "Duration: 4–15 seconds; Resolution: 480p, 720p, 1080p"
+  },
+  {
+    "name": "Seedance 2.0 Fast",
+    "kind": "video",
+    "article": "/guides/seedance-2-0-fast-video/",
+    "api": "seedance-2-0-fast-video-generation",
+    "capabilities": "Duration: 4–15 seconds; Resolution: 480p or 720p"
+  },
+  {
+    "name": "Seedance 2.0 Mini",
+    "kind": "video",
+    "article": "/guides/seedance-2-0-mini-video/",
+    "api": "seedance-2-0-mini-video-generation",
+    "capabilities": "Duration: 4–15 seconds; Resolution: 480p or 720p"
+  },
+  {
+    "name": "Seedance 2.5",
+    "kind": "video",
+    "article": "/guides/seedance-2-5-video/",
+    "api": "seedance-2-5-video-generation",
+    "capabilities": "Duration: 4–30 seconds; Resolution: 480p, 720p, 1080p"
+  },
+  {
+    "name": "Kling 2.6",
+    "kind": "video",
+    "article": "/guides/kling-2-6-video/",
+    "api": "kling-2-6-video-generation",
+    "capabilities": "Duration: 5 or 10 seconds; Resolution: 720p or 1080p"
+  },
+  {
+    "name": "Kling 3 Omni",
+    "kind": "video",
+    "article": "/guides/kling-3-omni-video/",
+    "api": "kling-3-omni-video-generation",
+    "capabilities": "Duration: 5, 10 or 15 seconds; Resolution: 720p or 1080p"
+  },
+  {
+    "name": "Wan 2.6",
+    "kind": "video",
+    "article": "/guides/wan-2-6-video/",
+    "api": "wan-2-6-video-generation",
+    "capabilities": "Duration: 5, 10 or 15 seconds; Resolution: 720p or 1080p"
+  },
+  {
+    "name": "Hailuo 2.3",
+    "kind": "video",
+    "article": "/guides/hailuo-2-3-video/",
+    "api": "hailuo-2-3-video-generation",
+    "capabilities": "Duration: 6 or 10 seconds; Resolution: 768p or 1080p; required setting"
+  },
+  {
+    "name": "Happy Horse 2",
+    "kind": "video",
+    "article": "/guides/happy-horse-2-video/",
+    "api": "happy-horse-2-video-generation",
+    "capabilities": "Duration: 5, 10 or 15 seconds; Resolution: 720p or 1080p; required setting"
+  },
+  {
+    "name": "Wan 3",
+    "kind": "video",
+    "article": "/guides/wan-3-video/",
+    "api": "wan-3-video-generation",
+    "capabilities": "Duration: 5, 10, 15, 20, 25 or 30 seconds; Resolution: 480p, 720p or 1080p"
+  },
+  {
+    "name": "MiniMax H3",
+    "kind": "video",
+    "article": "/guides/minimax-h3-video/",
+    "api": "minimax-h3-video-generation",
+    "capabilities": "Duration: 5, 10 or 15 seconds; Resolution: 768p or 2k"
+  },
+  {
+    "name": "MiniMax H3 Lite",
+    "kind": "video",
+    "article": "/guides/minimax-h3-lite-video/",
+    "api": "minimax-h3-lite-video-generation",
+    "capabilities": "Duration: 5, 10 or 15 seconds; Resolution: 768p only"
+  }
+]
