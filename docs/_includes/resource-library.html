@@ -3,6 +3,17 @@
   <div><p>{{ page.hero_description }}</p><a class="resource-start" href="{{ '/getting-started/' | relative_url }}">New here? Start with one workflow ↗</a></div>
 </section>
 
+{% if page.url == '/alternatives/' %}
+<section class="resource-paths" aria-labelledby="api-comparisons-title">
+  <div class="section-heading"><div><span class="eyebrow">Compare a specific task</span><h2 id="api-comparisons-title">Choose an Amazon data integration.</h2></div><p>Start with the interface you need, inspect evidence, then test the same task before switching providers.</p></div>
+  <div class="resource-path-grid">
+    <a href="{{ '/alternatives/helium-10/' | relative_url }}"><strong>Helium 10 API alternative</strong><span>Compare seller-suite, REST and MCP workflows for ASIN keywords and research.</span><b>Compare API and MCP access →</b></a>
+    <a href="{{ '/alternatives/rainforest-api/' | relative_url }}"><strong>Rainforest API alternative</strong><span>Inspect request mapping, detail enrichment, credit accounting and a migration checklist.</span><b>Compare search requests →</b></a>
+    <a href="{{ '/alternatives/jungle-scout-api/' | relative_url }}"><strong>Jungle Scout API alternative</strong><span>Evaluate keyword, product and historical-data requirements with a matched pilot.</span><b>Compare the research workflow →</b></a>
+  </div>
+</section>
+{% endif %}
+
 {% if page.url == '/' %}
 <section class="resource-paths" aria-labelledby="resource-paths-title">
   <div class="section-heading"><div><span class="eyebrow">Try a task on Nexscope</span><h2 id="resource-paths-title">What do you need to check?</h2></div><p>Choose a specific task. API pages show inputs, response fields and access requirements before you integrate.</p></div>
