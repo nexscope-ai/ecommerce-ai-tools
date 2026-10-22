@@ -354,8 +354,9 @@
     .product-sidebar .fact strong { color: #32374a; font-size: 13px; line-height: 1.4; }
     .product-sidebar .facts-action { padding: 20px 22px 22px; }
     .product-sidebar .facts-action .button { min-height: 46px; }
-    .sidebar-note { display: grid; grid-template-columns: 24px 1fr; gap: 11px; padding: 18px; border: 1px solid #e1ddf5; border-radius: 16px; background: #f5f2ff; color: #626177; font-size: 12px; line-height: 1.55; }
-    .sidebar-note-mark { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; background: #e8e2ff; color: var(--accent); font-weight: 850; }
+    .sidebar-note { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 11px; padding: 18px; border: 1px solid #e1ddf5; border-radius: 16px; background: #f5f2ff; color: #626177; font-size: 12px; line-height: 1.55; }
+    .sidebar-note-mark { display: grid; width: max-content; min-width: 24px; height: 24px; padding-inline: 5px; place-items: center; border-radius: 999px; background: #e8e2ff; color: var(--accent); font-weight: 850; line-height: 1; white-space: nowrap; }
+    .sidebar-note > div { min-width: 0; overflow-wrap: anywhere; }
     .sidebar-note strong { display: block; margin-bottom: 5px; color: var(--ink); font-size: 13px; }
     .sidebar-note p { margin: 0; }
     .sidebar-note a { display: inline-block; margin-top: 8px; color: #4e45a4; font-weight: 800; text-decoration: none; }
