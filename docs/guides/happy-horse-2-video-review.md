@@ -28,6 +28,8 @@ next_step:
 
 Happy Horse 2 is the name of a video-generation route in Nexscope's catalog. A careful introduction is important because similarly named websites describe different products or multi-model aggregators. This review describes the Nexscope route and makes the gaps in independent feedback explicit.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** The Nexscope route documents reference-image generation at 720p/1080p, with 5/10/15-second clips. We could not verify independent user reviews clearly attributable to this exact model and route. The available specification supports describing capabilities, but not scoring image quality, motion or customer satisfaction.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Happy Horse 2 is a video generation route with its own Playground. 
 | Resolution | 720p or 1080p; required setting |
 | References | Required image list; 1–9 images |
 | Aspect ratio | 9:16 or 16:9 |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ We therefore do not write that users praise or dislike Happy Horse 2, quote test
 ## Who should consider it?
 
 Treat this as an option to experience and evaluate, not a model with an established recommendation from this review. Its documented formats may fit a short reference-led concept, but a quality judgment needs actual attributable outputs. Readers requiring extensive independent review evidence should recognise that this article cannot supply it yet.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

@@ -28,6 +28,8 @@ next_step:
 
 Wan 2.6 on Nexscope is an image-led video-generation route. Its documented camera control distinguishes it from a generic prompt-only interface, but family-level discussion can blur hosted access, local models and model quality. This review keeps those questions separate.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Wan 2.6 supports a required primary image, 5/10/15-second clips and single/multi camera settings. It is relevant to image-led video briefs, but the public feedback reviewed here focuses heavily on hosted access and credit use. There is insufficient matched evidence to claim a quality lead or dependable scene continuity.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Wan 2.6 is a video generation route with its own Playground. The fo
 | Resolution | 720p or 1080p |
 | Primary image | Required |
 | Camera mode | single or multi |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ A [separate commercial-release discussion](https://www.reddit.com/r/comfyui/comm
 ## Who should consider it?
 
 Consider it when you want to animate a prepared image and evaluate its camera options. It is less appropriate if the brief requires a reference-video input or an image-free route not documented here. Keep quality, integration experience and openness preferences separate when comparing it with other video models.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

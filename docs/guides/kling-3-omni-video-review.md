@@ -28,6 +28,8 @@ next_step:
 
 Kling 3 Omni is a Nexscope video route with several image-reference options. “Omni” describes a wider model family elsewhere, but this review stays within the interface Nexscope currently documents. The central question is whether reference guidance translates into convincing subject continuity, not how many features a family brochure lists.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** The route supports up to seven image references, short 720p/1080p output and a supported final-frame mode. Public users describe useful character continuity, alongside crowd-identity and choreography problems. Those experiences justify closer evaluation, not a guarantee of consistent characters across every scene.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -43,6 +45,8 @@ On Nexscope, Kling 3 Omni is a video generation route with its own Playground. T
 | Image references | Conditional primary image or list of up to 7 |
 | Final frame | Optional; requires 1080p |
 | Aspect ratios | 1:1, 9:16 or 16:9 |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -65,8 +69,6 @@ That is useful because praise and criticism come from the same workflow account.
 ## Who should consider it?
 
 A candidate for reference-led character or product scenes where continuity matters. Do not assume it can reliably stage several interacting subjects or exact combat choreography in one generation. Its broader reference support is a reason to compare it with Kling 2.6, not evidence that it wins every shot.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

@@ -28,6 +28,8 @@ next_step:
 
 Nano Banana is the base image model listed in Nexscope's creative catalog. It supports image generation from a text description and optional visual references. This review looks at what that route offers, what public users have reported, and where the evidence is too limited for a confident recommendation.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Nano Banana is a useful baseline for scene concepts, but public comparisons raise identity-preservation concerns. Its Nexscope route is limited to 1K output. Consider it for exploratory images rather than assuming that an attractive result is an accurate product photograph.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, Nano Banana is a still-image generation route with its own Playgrou
 | Output | 1K only |
 | References | Optional; up to 10 images |
 | Image count | 1–10 per request |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ Comments on the same thread disagreed about aesthetic appeal, illustrating that 
 ## Who should consider it?
 
 Worth considering for early scene exploration when 1K is sufficient and you can review identity carefully. Less convincing as an automatic choice for exact-SKU photography or a high-resolution deliverable. Compare the base result with Pro or Nano Banana 2 using the same brief before paying for a larger batch.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

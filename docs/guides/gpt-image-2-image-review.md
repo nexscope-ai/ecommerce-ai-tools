@@ -28,6 +28,8 @@ next_step:
 
 GPT Image 2 is an image-generation and editing route available in Nexscope. The useful review question is where its layout and text handling outweigh possible weaknesses in texture or reference edits. This article combines the current route specification with attributed public reports, rather than claiming a new laboratory benchmark.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Public users often praise GPT Image 2 for text, composition and detailed instructions, but texture and image-to-image behaviour attract criticism. The Nexscope route offers 1K–4K output and quality controls. Clean lettering alone is not proof that a product label, diagram or factual claim is correct.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, GPT Image 2 is a still-image generation route with its own Playgrou
 | References | Optional; up to 10 images |
 | Quality | low, medium, high |
 | Custom size | Text-to-image only; use instead of resolution and ratio |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ An [April 22 nature-comparison thread](https://www.reddit.com/r/OpenAI/comments/
 ## Who should consider it?
 
 A good candidate to evaluate for text-led commercial compositions and structured visual briefs. Less certain as the default for subtle organic texture or strict reference reconstruction. Read every generated word, compare the subject with its reference and avoid interpreting a plausible-looking diagram as factual evidence.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

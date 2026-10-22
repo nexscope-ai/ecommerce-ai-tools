@@ -4,6 +4,38 @@ const { join } = require('node:path');
 const { runInNewContext } = require('node:vm');
 const { test } = require('node:test');
 
+test('model experience clicks retain top, middle and end placement in both conversion events', () => {
+  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'trends.js'), 'utf8');
+  for (const placement of ['article-top', 'article-middle', 'article-end']) {
+    const link = {
+      href: 'https://www.nexscope.ai/api-docs/seedance-2-0-video-generation?view=playground&co-from=learn',
+      dataset: { ctaPlacement: placement, stepId: 'seedance_2_0_video_generation' },
+      setAttribute(name, value) { this[name] = value; },
+    };
+    const events = [];
+    const window = {
+      location: new URL('https://learn.nexscope.ai/ecommerce-ai-tools/guides/seedance-2-0-video/'),
+      sessionStorage: { getItem: () => null, setItem() {}, removeItem() {} },
+      addEventListener() {},
+      gtag(...args) { events.push(args); },
+    };
+    const document = {
+      referrer: '',
+      querySelectorAll: () => [link],
+      querySelector: () => null,
+      addEventListener(name, listener) { if (name === 'click') this.click = listener; },
+    };
+    runInNewContext(script, { window, document, URL, URLSearchParams, Date, requestAnimationFrame() {} });
+    document.click({ target: { closest: () => link } });
+    const mainClick = events.find(e => e[1] === 'learn_to_main_click');
+    const modelClick = events.find(e => e[1] === 'article_next_step_click');
+    assert.equal(mainClick[2].cta_placement, placement);
+    assert.equal(modelClick[2].cta_placement, placement);
+    assert.equal(modelClick[2].next_step, 'seedance_2_0_video_generation');
+    assert.equal(new URL(link.href).searchParams.get('view'), 'playground');
+  }
+});
+
 test('Learn keeps the external source when linking to the main site', () => {
   const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'trends.js'), 'utf8');
   const link = {

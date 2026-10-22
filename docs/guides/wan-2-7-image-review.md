@@ -28,6 +28,8 @@ next_step:
 
 Wan 2.7 Image is the still-image route in Nexscope's Wan catalog. It should not be confused with a Wan video model or a separately labelled Pro image service. This review evaluates its documented image controls and the limited public feedback that specifically discusses still-image generation.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Wan 2.7 Image offers reference-led generation, 1K/2K settings and unusually wide or tall ratios on this Nexscope route. Some public users praise skin, text and colour rendering, but the evidence is narrow and largely hosted in a provider community. Image feedback must be kept separate from video criticism.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, Wan 2.7 Image is a still-image generation route with its own Playgr
 | Output | 1K or 2K |
 | References | Optional; up to 10 images |
 | Ratio options | Includes 1:4, 4:1, 21:9 and standard formats |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ The post sits in a provider-branded community and promotes access there; affilia
 ## Who should consider it?
 
 A candidate for product concepts and campaign layouts where its supported ratios are relevant. Less suitable when a documented 4K option is mandatory. Assess the actual text, colour and product identity before adopting it; the public feedback is not broad enough to call it an overall quality leader.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

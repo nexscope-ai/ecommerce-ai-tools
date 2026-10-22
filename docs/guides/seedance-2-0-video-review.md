@@ -28,6 +28,8 @@ next_step:
 
 Seedance 2.0 is a video-generation route available through Nexscope. Its range of reference inputs makes it relevant to creators who already have images or footage to guide a shot. This review examines those capabilities without assuming that an impressive short clip demonstrates reliable long-form storytelling.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Seedance 2.0 offers a broad reference system and up to 1080p on Nexscope. Public creators report useful visual and production results, but also describe identity drift and dialogue-related problems. The evidence supports evaluating it per shot, not treating it as an automatic substitute for a complete video production process.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Seedance 2.0 is a video generation route with its own Playground. T
 | Resolution | 480p, 720p, 1080p |
 | Visual inputs | Primary image, up to 9 image references, or reference-video mode |
 | Audio references | Up to 3 clips, total up to 15 seconds; requires image/video |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ An [April 8 cross-platform report](https://www.reddit.com/r/generativeAI/comment
 ## Who should consider it?
 
 Worth considering for reference-guided short shots, especially when the supported input modes match your material. Less certain for long dialogue, exact multi-shot identity or unattended commercial delivery. Evaluate standard, Fast and Mini separately; sharing a family name does not make their format limits or output behaviour identical.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

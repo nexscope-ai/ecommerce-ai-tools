@@ -152,7 +152,7 @@
       .reviewed { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
-    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=13">
+    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=14">
     <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=52">
     {% if page.audit_tool %}<link rel="stylesheet" href="{{ '/assets/ecommerce-audit-tool.css' | relative_url }}?v=1">{% endif %}
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
@@ -188,7 +188,7 @@
           <li><a href="{{ '/community/' | relative_url }}"{% if page.community_page %} aria-current="page"{% endif %}>Community</a></li>
           <li><a href="https://www.nexscope.ai/api-docs?co-from=learn">API docs</a></li>
           {% if page.next_step %}
-          <li><a class="nav-cta" data-cta-placement="nav" data-step-id="{{ page.next_step.id | escape }}" href="{{ page.next_step.url | escape }}">See the next step ↗</a></li>
+          <li><a class="nav-cta" data-cta-placement="nav" data-step-id="{{ page.next_step.id | escape }}" href="{{ page.next_step.url | escape }}">{% if page.model_kind %}Try {{ page.model_name | escape }} ↗{% else %}See the next step ↗{% endif %}</a></li>
           {% elsif page.url == '/getting-started/' %}
           <li><a class="nav-cta" href="#ai-video-generator">Pick a tool ↓</a></li>
           {% else %}
@@ -220,12 +220,16 @@
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
         {% if page.schema_type == 'Article' %}
           {% if page.next_step %}
+            {% if page.model_kind %}
+              {% include model-experience.html placement="article-end" %}
+            {% else %}
             <section class="article-next article-next-focused" aria-label="Recommended next step">
               <span class="eyebrow">Put this into practice</span>
               <h2>{{ page.next_step.title | escape }}</h2>
               <p>{{ page.next_step.description | escape }}</p>
               <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-end" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
             </section>
+            {% endif %}
           {% else %}
           {% assign article_pages = site.pages | where: 'schema_type', 'Article' | where_exp: 'item', 'item.sitemap != false' | sort: 'url' %}
           {% assign siblings = article_pages | where_exp: 'item', 'item.path contains section' %}

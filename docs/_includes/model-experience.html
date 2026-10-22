@@ -1,0 +1,6 @@
+{% if page.next_step and page.model_kind %}
+<div class="model-experience model-experience-{{ include.placement | default: 'article-top' | escape }}" role="group" aria-label="Experience {{ page.model_name | escape }}">
+  <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="{{ include.placement | default: 'article-top' | escape }}" href="{{ page.next_step.url | escape }}">Try {{ page.model_name | escape }} in Playground <span aria-hidden="true">→</span></a>
+  {% if include.placement == 'article-top' %}<p>New users get <strong>1,000 free credits</strong> to try models.<small>Valid for 3 days; usage varies by model and settings.</small></p>{% endif %}
+</div>
+{% endif %}

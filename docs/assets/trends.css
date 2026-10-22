@@ -199,6 +199,21 @@
 .resource-card .resource-card-footer .read-link { padding-top: 0; }
 .resource-card .resource-card-footer time { margin: 0 0 0 auto; white-space: nowrap; text-align: right; }
 
+/* Compact model links complement the single in-article experience card. */
+.model-experience { display:flex; align-items:center; flex-wrap:wrap; gap:12px 20px; margin:22px 0 28px; }
+.model-experience>a { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; max-width:100%; padding:10px 17px; border-radius:9px; background:var(--accent); color:#fff; font-size:14px; font-weight:700; line-height:1.5; text-decoration:none; overflow-wrap:anywhere; }
+.model-experience>a:hover { background:#5628d7; color:#fff; }
+.model-experience>a:focus-visible { outline:3px solid #8060ed; outline-offset:4px; }
+.model-experience p { margin:0; font-size:14px; line-height:1.6; }
+.model-experience small { display:block; color:var(--muted); font-size:12px; }
+.model-experience-article-end { margin-top:24px; }
+.model-experience-article-end>a { background:transparent; color:var(--accent); border:1px solid #dcd4f5; }
+.model-experience-article-end>a:hover { background:#f0ecff; color:#5628d7; }
+@media(max-width:600px) {
+  .model-experience { align-items:flex-start; gap:10px; }
+  .model-experience-article-top>a { width:100%; }
+}
+
 /* Fill the article column on larger screens; retain horizontal scrolling for narrow tables. */
 @media (min-width: 601px) {
   .trends-article article table {

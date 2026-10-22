@@ -28,6 +28,8 @@ next_step:
 
 Hailuo 2.3 is an image-to-video route on Nexscope that begins from a required primary image. This review focuses on its short-clip capability and the limited version-specific user evidence we could verify. General Hailuo complaints from before 2.3 are not treated as reviews of this version.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Hailuo 2.3 offers a focused image-led interface with 6- or 10-second output at 768p/1080p. A public creator example praises a transformation, but one successful clip cannot establish consistent motion or product fidelity. The available evidence is too narrow for a broad quality ranking.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Hailuo 2.3 is a video generation route with its own Playground. The
 | Resolution | 768p or 1080p; required setting |
 | Primary image | Required |
 | Framing | No separate aspect-ratio field in the reviewed request table |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ We did not establish a sufficiently broad, accessible set of independent 2.3 rep
 ## Who should consider it?
 
 Worth considering for short image-led motion or expressive scene concepts. Less certain for exact-SKU depictions, where an impressive transformation is not the intended outcome. If you need multiple subject references or a controlled final frame, compare the documented alternatives rather than assuming this route includes those controls.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

@@ -28,6 +28,8 @@ next_step:
 
 Seedance 2.0 Fast is a separate Nexscope video route within the Seedance 2.0 family. The name suggests an iteration-oriented option, but a useful review must separate a model label from the time a user actually waits. This article reviews its capabilities and the public experience around access and delivery.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Fast supports 4–15-second clips at 480p or 720p on Nexscope, with image, video and supported audio references. It may fit draft production, but “Fast” is not a measured end-to-end speed guarantee here. Public discussion shows that queues, caps and host policies can dominate the experience.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Seedance 2.0 Fast is a video generation route with its own Playgrou
 | Resolution | 480p or 720p |
 | Images | Primary image or up to 9 references |
 | Other references | Video mode; supported audio subject to mode rules |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ A [July 22 platform-experience report](https://www.reddit.com/r/HiggsfieldAI/com
 ## Who should consider it?
 
 A candidate for short draft shots when 720p is sufficient and its live estimate fits your trial. Choose the standard route if the documented 1080p option is a requirement. Compare accepted-shot turnaround rather than assuming that the fastest-sounding name must produce the fastest usable result.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

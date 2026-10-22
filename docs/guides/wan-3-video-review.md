@@ -28,6 +28,8 @@ next_step:
 
 Wan 3 is a Nexscope video route that accepts several types of visual guidance. Public articles use labels including Wan 3, Wan 3.0 and Wan 3.0 Prime, which should not be treated as interchangeable checkpoints. This review stays with the route you can actually open on Nexscope.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Wan 3 offers up to 30-second output and several reference modes on Nexscope. Those capabilities make it relevant to longer or reference-guided concepts, but they do not establish production-quality continuity. Public material includes provider-run comparisons; an independent user consensus for this exact route has not been verified.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Wan 3 is a video generation route with its own Playground. The foll
 | Resolution | 480p, 720p or 1080p |
 | Visual guidance | Primary image, up to 10 image references, reference video, or supported first/final frames |
 | Audio references | Up to 5 clips; total up to 15 seconds; requires image or video |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ We did not verify a representative independent-user sample for this exact route.
 ## Who should consider it?
 
 A candidate when your brief genuinely needs longer clips or the documented reference modes. Less certain as a default for strict product continuity across the entire duration. Treat the broader controls as reasons to compare actual outputs, not as a ranking above every other Wan or competing model.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

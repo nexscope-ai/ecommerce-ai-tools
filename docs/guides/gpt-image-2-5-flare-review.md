@@ -28,6 +28,8 @@ next_step:
 
 GPT Image 2.5 Flare is a separate Nexscope image route, not another name for Sunburst. Unlike most reviews in this collection, this article can refer to an existing Nexscope generation record. That record is useful because it shows both a completed result and a visible product-preservation failure.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Flare can complete a reference-image edit, but completion is not the same as product accuracy. In one recorded Nexscope test, the output simplified the scene while changing bottle and label details. Public comparisons also show tradeoffs rather than a universal winner against Sunburst.
 
 *Reviewed October 22, 2026. Combines one previously recorded Nexscope test with documented capabilities and attributed public feedback. No new generation was run for this article. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, GPT Image 2.5 Flare is a still-image generation route with its own 
 | Output | 1K, 2K, 4K; documented default 2K |
 | References | Optional; up to 10 images |
 | Quality | low, medium, high, xhigh, max |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ A [September 9 creator review](https://www.youtube.com/watch?v=SYShsjItheo) foun
 ## Who should consider it?
 
 Worth trying for concepts and bounded edits, with explicit product review before publication. Do not use task completion as the acceptance criterion. If the label, closure or proportions change, the asset has failed a factual product brief even when the scene itself looks cleaner.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

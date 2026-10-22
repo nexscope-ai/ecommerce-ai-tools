@@ -28,6 +28,8 @@ next_step:
 
 MiniMax H3 is a reference-image video route on Nexscope. It is also discussed widely in local-generation workflows, but a local configuration is not identical to a hosted API route. This review uses those creator reports as context while keeping Nexscope's actual supported inputs and formats separate.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** MiniMax H3 supports 1–9 required reference images and 768p/2K output on Nexscope. Users report creative flexibility and useful motion, but also describe face drift and substantial editing work. Local demonstrations are encouraging examples, not proof that the hosted route has the same speed, controls or acceptance rate.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, MiniMax H3 is a video generation route with its own Playground. The
 | Resolution | 768p or 2k |
 | References | Required image list; 1–9 images |
 | Ratios | Includes 1:1, 9:16, 16:9 and 21:9 |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ An [August 24 project report](https://www.reddit.com/r/StableDiffusion/comments/
 ## Who should consider it?
 
 Worth considering for short reference-led creative video, especially if the 2K option fits the deliverable. Less convincing as an unattended solution for exact face or product continuity. The public evidence supports creative potential and continued review, not a claim that post-production or rejected takes disappear.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

@@ -28,6 +28,8 @@ next_step:
 
 Nano Banana 2 Lite is the Lite-labelled image route in Nexscope's Nano Banana family. It supports text prompts and optional visual references. This review concentrates on what the route actually offers and how much confidence to place in public claims about speed, cost and quality.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Nano Banana 2 Lite is a fixed-1K image route on Nexscope. It may fit early creative exploration, but the available public discussion is strongly provider-led. Neither faster delivery nor a lower cost per accepted image has been established by a Nexscope comparison in this review.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, Nano Banana 2 Lite is a still-image generation route with its own P
 | Output | 1K only |
 | References | Optional; up to 10 images |
 | Controls | Aspect ratio and 1–10 outputs |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ A [local video creator's workflow report](https://www.reddit.com/r/StableDiffusi
 ## Who should consider it?
 
 Reasonable to shortlist for concept work that can stay at 1K, provided you review the result. Do not assume a Lite image is ready for final product publication, or that the label guarantees better economics. A higher-resolution route or a conventional retouch may be more suitable for the finished asset.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

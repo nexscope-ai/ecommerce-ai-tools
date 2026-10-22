@@ -28,6 +28,8 @@ next_step:
 
 Nano Banana Pro is a reference-capable image model available through Nexscope. The route offers more resolution choices than the base Nano Banana route. This review separates those documented capabilities from subjective claims about realism and considers both favourable and critical public reactions.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Nano Banana Pro is worth shortlisting when higher-resolution image options matter. Users praise detail and natural-looking scenes, but identity matching and perceived artificiality remain points of disagreement. Resolution support is verified; a universal quality advantage is not.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, Nano Banana Pro is a still-image generation route with its own Play
 | Output | 1K, 2K, 4K |
 | References | Optional; up to 10 images |
 | Controls | Aspect ratio and 1–10 outputs |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ In a [separate same-prompt fashion thread](https://www.reddit.com/r/GenAIGallery
 ## Who should consider it?
 
 A sensible candidate when output size and polished presentation are important, with human review still necessary for identity. Do not choose it solely because “Pro” sounds like a quality guarantee. Compare it with Nano Banana 2 on your own subject, including the details a customer would notice.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

@@ -28,6 +28,8 @@ next_step:
 
 Nano Banana 2 is a Nexscope image route for text-led generation and reference-based imagery. This review focuses on two questions that can lead to different answers: does it follow the requested concept, and do viewers like the resulting visual style? Neither should be mistaken for verified product accuracy.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Nano Banana 2 combines reference-based generation with 1K–4K output options. Some users find it stronger at following relationships and preserving identity than earlier variants, while others criticise its artificial look or unwanted edits. There is no single winner across those criteria.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, Nano Banana 2 is a still-image generation route with its own Playgr
 | Output | 1K, 2K, 4K |
 | References | Optional; up to 10 |
 | Formats | Includes square, portrait and landscape ratios |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ A [March 11, 2026 editing complaint](https://www.reddit.com/r/GeminiAI/comments/
 ## Who should consider it?
 
 Worth testing when following a detailed concept matters more than a particular photographic look. Keep style, identity and editing locality as separate criteria. If a small edit changes the product, reject it even when the scene is attractive; the model name does not override that failure.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

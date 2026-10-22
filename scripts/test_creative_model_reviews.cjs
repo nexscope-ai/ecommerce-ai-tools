@@ -37,7 +37,11 @@ test('every model has a substantive review and its own attributed feedback secti
     }
     assert.ok(body.includes('**Confidence:'), `${model.name}: feedback confidence`);
     assert.ok(body.includes('not a new hands-on') || body.includes('No new generation'), `${model.name}: review basis`);
-    assert.ok(body.includes('{% include article-action.html %}'), model.name);
+    assert.ok(body.includes('{% include model-experience.html placement="article-top" %}'), model.name);
+    assert.ok(body.includes('{% include article-action.html placement="article-middle" %}'), model.name);
+    assert.ok(body.indexOf('placement="article-top"') < body.indexOf('> **Our take:**'), model.name);
+    assert.ok(body.indexOf('placement="article-middle"') < body.indexOf('## What are its strengths?'), model.name);
+    assert.ok(!body.includes('{% include article-action.html %}'), `${model.name}: no late duplicate card`);
     assert.ok(body.includes('{% include creative-model-notes.html %}'), model.name);
     assert.ok(!body.includes('```'), `${model.name}: review should not be a prompt tutorial`);
     assert.ok(!/aggregateRating|ratingValue|five.star|5\/5/.test(text), `${model.name}: no invented ratings`);
@@ -88,8 +92,13 @@ test('built collection has all model links, canonical URLs, schema and sitemap e
     assert.ok(listing.includes(`/ecommerce-ai-tools${model.article}`), model.name);
     assert.ok(hub.includes(`/api-docs/${model.api}?view=playground`), model.name);
     assert.ok(html.includes(`href="https://www.nexscope.ai/api-docs/${model.api}?view=playground&amp;co-from=learn"`), model.name);
-    assert.ok(html.includes('data-cta-placement="inline"'), model.name);
+    assert.ok(html.includes('data-cta-placement="article-top"'), model.name);
+    assert.ok(html.includes('data-cta-placement="article-middle"'), model.name);
     assert.ok(html.includes('data-cta-placement="article-end"'), model.name);
+    assert.equal((html.match(/class="article-next article-next-focused"/g) || []).length, 1, `${model.name}: only one full card`);
+    assert.equal((html.match(/data-article-next-step/g) || []).length, 3, `${model.name}: three tracked experience links`);
+    assert.ok(html.indexOf('data-cta-placement="article-top"') < html.indexOf('<blockquote>'), model.name);
+    assert.ok(html.indexOf('data-cta-placement="article-middle"') < html.indexOf('id="what-are-its-strengths"'), model.name);
     assert.ok(html.includes('1,000 free credits'), model.name);
     assert.ok(html.includes(`rel="canonical" href="https://learn.nexscope.ai/ecommerce-ai-tools${model.article}"`), model.name);
     assert.ok(sitemap.includes(`/ecommerce-ai-tools${model.article}`), model.name);

@@ -28,6 +28,8 @@ next_step:
 
 Kling 2.6 is a reference-guided video model route available on Nexscope. Public demonstrations often combine different Kling modes and editing tools, so this review separates the route's actual inputs from broader claims about motion control, sound and lip sync.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Kling 2.6 offers short 720p/1080p clips and supported first/final-frame inputs. Public users praise some dynamic shots but also report choppy motion and unnatural lip movement. Those reports cover different hosts and modes; they are not a controlled assessment of Nexscope's generation route.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Kling 2.6 is a video generation route with its own Playground. The 
 | Resolution | 720p or 1080p |
 | References | Conditional primary image or image list of up to 2 |
 | Final frame | Optional; requires 1080p |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ In a [Kling community release discussion](https://www.reddit.com/r/KlingAI_Video
 ## Who should consider it?
 
 Worth considering for short reference-guided scenes and frame-constrained transitions. Less defensible as a promised one-click solution for exact choreography or convincing dialogue. Assess the movement between the reference frames, not only the look of a selected still or an edited demonstration.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

@@ -28,6 +28,8 @@ next_step:
 
 Nano Banana 2.1 is an image-generation and editing route in Nexscope's model catalog. Its documented inputs are useful for understanding what you can request, but they do not establish that every output is better than Nano Banana 2. This review examines the available evidence without treating an update as an automatic upgrade.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Nano Banana 2.1 offers up to 14 references and 1K–4K settings on Nexscope. Public feedback is divided: a provider's small comparison favours cleaner layouts, while community commenters report both improvements and instruction-following problems. A newer version number is not enough to justify switching.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, Nano Banana 2.1 is a still-image generation route with its own Play
 | Output | 1K, 2K, 4K |
 | References | Optional; up to 14 |
 | Outputs | 1–10 images per request |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ The [October 6 community discussion](https://www.reddit.com/r/singularity/commen
 ## Who should consider it?
 
 Consider 2.1 if its reference allowance fits your work or if text-layout examples resemble your task. Keep the previous route available until your own reference and instruction tests pass. It is premature to recommend switching an entire production workflow purely on the version number.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

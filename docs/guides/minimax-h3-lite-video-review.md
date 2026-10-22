@@ -28,6 +28,8 @@ next_step:
 
 MiniMax H3 Lite is a separate video route in Nexscope's catalog, not simply a quality setting inside the standard H3 interface. This review describes its supported formats and examines how little version-specific user evidence can safely be transferred from the much larger H3 discussion.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** H3 Lite supports 5/10/15-second reference-image clips at 768p on Nexscope. It may be relevant to concept work, but this review does not establish a speed or cost advantage. Independent feedback clearly identifying this Lite route is insufficient for a defensible overall quality rating.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, MiniMax H3 Lite is a video generation route with its own Playground
 | Resolution | 768p only |
 | References | Required image list; 1–9 images |
 | Ratios | Includes 1:1, 9:16, 16:9 and 21:9 |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ For context only, [standard H3 users have reported both creative value and ident
 ## Who should consider it?
 
 Consider experiencing it if 768p is enough for the task and you want to compare the current route with standard H3. Choose based on an acceptable complete clip, not an assumed Lite saving. If independent review evidence or a documented 2K option is essential, the limitations of this article and route should remain visible.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

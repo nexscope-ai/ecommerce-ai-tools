@@ -28,6 +28,8 @@ next_step:
 
 Seedream 5 Pro is a Nexscope image-generation route supporting prompts and optional references. Its appeal to a creative team is reference-led image work, including product scenes and edits. This review considers that positioning alongside public reports that praise editing control but also question consistency and access restrictions.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Seedream 5 Pro deserves consideration for reference-based image work, but claims of perfect editing control go beyond the available evidence. Public feedback includes both praise for local edits and complaints about face matching. The current Nexscope route lists 1K and 2K output, not a universal 4K capability.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -41,6 +43,8 @@ On Nexscope, Seedream 5 Pro is a still-image generation route with its own Playg
 | Output | 1K or 2K |
 | References | Optional; up to 10 images |
 | Controls | 1–10 outputs; square, portrait and landscape ratios |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -63,8 +67,6 @@ The replies are not uniformly positive. One reader asked how to retain face cons
 ## Who should consider it?
 
 Worth shortlisting for reference-led edits when you can inspect untouched areas as carefully as changed ones. Not enough evidence to promise exact identity, flawless labels or superior image quality. Compare the actual deliverable against another route and conventional compositing rather than choosing from promotional samples alone.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

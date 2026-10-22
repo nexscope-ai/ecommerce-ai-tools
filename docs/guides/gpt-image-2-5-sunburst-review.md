@@ -28,6 +28,8 @@ next_step:
 
 GPT Image 2.5 Sunburst is one of two separately labelled 2.5 image routes on Nexscope. It should not be reviewed as though Sunburst and Flare were interchangeable. This article focuses on the evidence for composition stability and detail, with clear limits on what public comparisons can establish.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Sunburst is worth comparing for detailed compositions and repeat editing, but public results do not establish that it is better for every image. Some reviewers prefer its object and scene detail, while others note latency or unwanted additions. This is a source-based review, not a new Nexscope speed benchmark.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, GPT Image 2.5 Sunburst is a still-image generation route with its o
 | References | Optional; up to 10 images |
 | Quality | low, medium, high, xhigh, max |
 | Custom size | Text-to-image only; separate from resolution/ratio mode |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ A [September 9, 2026 creator comparison](https://www.youtube.com/watch?v=SYShsjI
 ## Who should consider it?
 
 Consider Sunburst when preserving an approved composition and rendering detail matter enough to justify evaluating it separately. Do not assume the largest quality setting is always the best commercial choice. Compare the actual subject, scene and revision behaviour with Flare before deciding which belongs in your workflow.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

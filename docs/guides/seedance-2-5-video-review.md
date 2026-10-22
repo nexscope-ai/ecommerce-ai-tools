@@ -28,6 +28,8 @@ next_step:
 
 Seedance 2.5 is a video route in Nexscope's creative catalog with a wider duration range and reference allowance than its 2.0 routes. This review asks what those changes mean for creators, while keeping documented input capacity separate from claims about finished-video quality.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Seedance 2.5 offers up to 30-second output and up to 30 image references on Nexscope. Those are meaningful capability differences, but they do not prove accurate choreography or stable identity throughout a long clip. Public feedback includes praise for visual quality and concerns about missed actions and host restrictions.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Seedance 2.5 is a video generation route with its own Playground. T
 | Resolution | 480p, 720p, 1080p |
 | Images | Primary image or up to 30 references |
 | Audio references | Up to 10 clips; total up to 30 seconds; audio-only input is documented |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ A [separate user report on “unlimited” 2.5 platforms](https://www.reddit.com
 ## Who should consider it?
 
 A candidate for reference-rich creative work and ideas that genuinely need more than 15 seconds. Avoid assuming longer means better or that a new version guarantees correct actions. For a commercial asset, the decisive question remains whether the complete clip depicts the intended subject and event accurately.
-
-{% include article-action.html %}
 
 ## Related model reviews
 

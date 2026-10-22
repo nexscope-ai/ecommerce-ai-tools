@@ -28,6 +28,8 @@ next_step:
 
 Seedance 2.0 Mini is a compact-labelled video route on Nexscope, separate from both standard Seedance 2.0 and Fast. This review focuses on whether its documented formats and public examples make it relevant for creative exploration, without turning a smaller-model label into an unsupported quality or pricing claim.
 
+{% include model-experience.html placement="article-top" %}
+
 > **Our take:** Mini supports short clips at 480p/720p and retains several reference modes. A public action comparison found attractive images but missed movement instructions, which is a meaningful tradeoff for action-led briefs. There is not enough evidence here to assign a general quality score or claim a fixed saving.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
@@ -42,6 +44,8 @@ On Nexscope, Seedance 2.0 Mini is a video generation route with its own Playgrou
 | Resolution | 480p or 720p |
 | Image references | Primary image or up to 9 images |
 | Other inputs | Reference-video and supported audio modes, with compatibility limits |
+
+{% include article-action.html placement="article-middle" %}
 
 ## What are its strengths?
 
@@ -64,8 +68,6 @@ A [Mini-versus-Fast community discussion](https://www.reddit.com/r/HiggsfieldAI/
 ## Who should consider it?
 
 Worth considering for exploratory short clips where 720p is enough and you can reject missed actions. Less persuasive when precise choreography or a higher-resolution final is non-negotiable. Judge whether the required event actually occurs, not just whether the first frame and overall style look impressive.
-
-{% include article-action.html %}
 
 ## Related model reviews
 
