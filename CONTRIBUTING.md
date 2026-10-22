@@ -2,6 +2,8 @@
 
 Thanks for helping other ecommerce sellers and developers make better decisions with evidence. This repository contains public guides and support resources for hosted Nexscope tools. It does not contain the hosted application's source code.
 
+Participation in this repository is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). Report security concerns privately by following the [security policy](SECURITY.md), not through a public issue or discussion.
+
 ## Pick a contribution path
 
 - Ask a tool or REST/MCP integration question in [Discussions Q&A](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/q-a). Include the goal, the relevant tool or endpoint, what you tried, and what is unclear.
@@ -30,3 +32,7 @@ Maintainers can rebuild all approved and published Product Gallery pages from th
 The script replaces the generated `docs/product-showcase/product` directory, product manifest, and old `_site` output. It fetches the current published product JSON, applies each product's `seoConfig`, renders the product template, rebuilds the sitemap manifest, and runs a complete Jekyll build. Removed or ineligible products are therefore removed from the generated site and sitemap.
 
 The product template applies metadata, Open Graph and Twitter tags, alternate-language links, and Product/WebPage JSON-LD from the safely serialized configuration. Visible badges come only from `seoConfig.tags`; SEO keywords do not become visible badges. Submitted Markdown headings receive stable anchors, and a details table of contents appears when the content contains at least two sections.
+
+## License of contributions
+
+Unless explicitly stated otherwise, contributions accepted into this repository are licensed under the [Apache License 2.0](LICENSE). Only submit material that you have the right to share under those terms, and preserve attribution or third-party license notices when required.

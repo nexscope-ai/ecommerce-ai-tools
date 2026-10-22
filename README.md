@@ -2,7 +2,7 @@
 
 Practical ecommerce research, SEO, creative AI, and API workflows from the Nexscope team. This repository is a public library of guides, dated evidence, examples, and support resources for sellers and developers. The hosted Nexscope application runs separately; its source code is not in this repository.
 
-[![Learning Hub](https://img.shields.io/badge/Docs-Learning%20Hub-7C3AED?style=flat&labelColor=555)](https://learn.nexscope.ai/ecommerce-ai-tools/) [![Ecommerce Tools](https://img.shields.io/badge/Tools-Ecommerce%20Tools-2563EB?style=flat&labelColor=555)](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) [![API Docs](https://img.shields.io/badge/Developers-API%20Docs-0891B2?style=flat&labelColor=555)](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header&co-from=learn) [![Discussions](https://img.shields.io/badge/Community-Discussions-D97706?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![Issues](https://img.shields.io/badge/Feedback-Issues-2DA44E?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/issues) [![Enterprise Plans](https://img.shields.io/badge/Business-Enterprise%20Plans-6D28D9?style=flat&labelColor=555)](https://www.nexscope.ai/enterprise?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=readme_header)
+[![Learning Hub](https://img.shields.io/badge/Docs-Learning%20Hub-7C3AED?style=flat&labelColor=555)](https://learn.nexscope.ai/ecommerce-ai-tools/) [![Ecommerce Tools](https://img.shields.io/badge/Tools-Ecommerce%20Tools-2563EB?style=flat&labelColor=555)](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) [![API Docs](https://img.shields.io/badge/Developers-API%20Docs-0891B2?style=flat&labelColor=555)](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header&co-from=learn) [![Discussions](https://img.shields.io/badge/Community-Discussions-D97706?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![Issues](https://img.shields.io/badge/Feedback-Issues-2DA44E?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/issues) [![Enterprise Plans](https://img.shields.io/badge/Business-Enterprise%20Plans-6D28D9?style=flat&labelColor=555)](https://www.nexscope.ai/enterprise?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=readme_header) [![License](https://img.shields.io/badge/License-Apache%202.0-0F766E?style=flat&labelColor=555)](LICENSE)
 
 ## Product Gallery: get feedback on your product page
 
@@ -17,6 +17,15 @@ No store connection, seller token, or payment access is required. Save the priva
 Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_1).
 
 New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header&co-from=learn). Credit use and API access vary by action and account.
+
+### What this repository contains
+
+- **Practical guides** under [`docs/guides/`](docs/guides/) for marketplace research, listing improvement, creative production, SEO, REST APIs and MCP.
+- **Dated evidence and case studies** under [`docs/api-evidence/`](docs/api-evidence/) and [`docs/case-studies/`](docs/case-studies/) with observed outputs, limitations and source context.
+- **Public learning-site source** under [`docs/`](docs/) and maintenance scripts under [`scripts/`](scripts/) for the Product Gallery and documentation build.
+- **Community contribution paths** through [Discussions](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions), [Issues](https://github.com/nexscope-ai/ecommerce-ai-tools/issues/new/choose) and pull requests governed by [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+The hosted Nexscope application, credentials, private operations and customer data are outside this repository. Public examples should be treated as reproducible references rather than guaranteed live results.
 
 ## Explore ecommerce tools
 
@@ -70,5 +79,7 @@ External REST/MCP calls and the API tester require an account API key. Creative 
 Start with the [welcome post](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/11) and [support process](SUPPORT.md). Describe your goal, the tool or endpoint, expected behavior, and observed result. Do not post API keys, tokens, payment details, private customer data, or unredacted screenshots. For private account or billing matters, contact [service@nexscope.ai](mailto:service@nexscope.ai). To improve these public resources, see [Contributing](CONTRIBUTING.md).
 
 Related repositories: [Nexscope Ecommerce API](https://github.com/nexscope-ai/nexscope-ecommerce-api) · [Amazon Skills](https://github.com/nexscope-ai/Amazon-Skills) · [Ecommerce SEO and GEO Skills](https://github.com/nexscope-ai/ecommerce-seo-geo-skills).
+
+Directory editors and curators can use the factual descriptions, tags and canonical links in the [directory listing kit](DIRECTORY.md). Security concerns should be reported privately according to the [security policy](SECURITY.md). This repository is available under the [Apache License 2.0](LICENSE); third-party assets retain their respective licenses.
 
 Maintained by the official Nexscope team. Amazon and Google are trademarks of their respective owners; no affiliation or endorsement is implied.
