@@ -4,8 +4,8 @@ title: "GPT Image 2.5 Flare Review: Real Test & User Feedback"
 description: "Read a GPT Image 2.5 Flare review with a recorded Nexscope image edit, an exact-product limitation and public feedback. Try the corresponding Playground."
 permalink: /guides/gpt-image-2-5-flare-image/
 date_published: 2026-10-22
-date_modified: 2026-10-22
-last_modified_at: 2026-10-22
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -67,6 +67,8 @@ A [September 9 creator review](https://www.youtube.com/watch?v=SYShsjItheo) foun
 ## Who should consider it?
 
 Worth trying for concepts and bounded edits, with explicit product review before publication. Do not use task completion as the acceptance criterion. If the label, closure or proportions change, the asset has failed a factual product brief even when the scene itself looks cleaner.
+
+{% include model-decision-path.html %}
 
 ## Related model reviews
 

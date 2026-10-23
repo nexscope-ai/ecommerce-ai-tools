@@ -4,8 +4,8 @@ title: "GPT Image 2.5 Sunburst Review: Detail & User Feedback"
 description: "Review GPT Image 2.5 Sunburst's image controls, public comparisons, detail claims and editing tradeoffs. Experience the Sunburst model in Nexscope Playground."
 permalink: /guides/gpt-image-2-5-sunburst-image/
 date_published: 2026-10-22
-date_modified: 2026-10-22
-last_modified_at: 2026-10-22
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -68,6 +68,8 @@ A [September 9, 2026 creator comparison](https://www.youtube.com/watch?v=SYShsjI
 ## Who should consider it?
 
 Consider Sunburst when preserving an approved composition and rendering detail matter enough to justify evaluating it separately. Do not assume the largest quality setting is always the best commercial choice. Compare the actual subject, scene and revision behaviour with Flare before deciding which belongs in your workflow.
+
+{% include model-decision-path.html %}
 
 ## Related model reviews
 

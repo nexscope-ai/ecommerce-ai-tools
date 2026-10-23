@@ -4,8 +4,8 @@ title: "Kling 3 Omni Review: References & Character Consistency"
 description: "Explore Kling 3 Omni's reference-video capabilities, consistency strengths and user-reported limits. Experience the model in its Nexscope Playground."
 permalink: /guides/kling-3-omni-video/
 date_published: 2026-10-22
-date_modified: 2026-10-22
-last_modified_at: 2026-10-22
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -69,6 +69,8 @@ That is useful because praise and criticism come from the same workflow account.
 ## Who should consider it?
 
 A candidate for reference-led character or product scenes where continuity matters. Do not assume it can reliably stage several interacting subjects or exact combat choreography in one generation. Its broader reference support is a reason to compare it with Kling 2.6, not evidence that it wins every shot.
+
+{% include model-decision-path.html %}
 
 ## Related model reviews
 

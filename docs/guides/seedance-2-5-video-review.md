@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "Seedance 2.5 Review: Capabilities, Limits & User Views"
-description: "Explore Seedance 2.5's longer clips, reference options, motion feedback and real user concerns. Experience the model in its matching Nexscope Playground."
+description: "Explore Seedance 2.5's longer clips, reference options and user-reported limits. Compare the 2.0 API route or open the matching Nexscope Playground."
 permalink: /guides/seedance-2-5-video/
 date_published: 2026-10-22
-date_modified: 2026-10-22
-last_modified_at: 2026-10-22
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -68,6 +68,8 @@ A [separate user report on “unlimited” 2.5 platforms](https://www.reddit.com
 ## Who should consider it?
 
 A candidate for reference-rich creative work and ideas that genuinely need more than 15 seconds. Avoid assuming longer means better or that a new version guarantees correct actions. For a commercial asset, the decisive question remains whether the complete clip depicts the intended subject and event accurately.
+
+{% include model-decision-path.html %}
 
 ## Related model reviews
 

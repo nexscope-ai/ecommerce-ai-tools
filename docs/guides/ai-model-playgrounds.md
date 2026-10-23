@@ -4,7 +4,8 @@ title: "AI Model Reviews: 12 Video & 10 Image Models"
 description: "Compare 22 Nexscope image and video model reviews: capabilities, strengths, limitations and attributed user feedback. Open each model's dedicated Playground."
 permalink: /guides/ai-model-playgrounds/
 date_published: 2026-10-22
-last_modified_at: 2026-10-22
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -16,6 +17,18 @@ topic: creative
 Find a separate introduction and editorial review for each of the **12 video models and 10 image models** listed in the [Nexscope creative catalog](https://www.nexscope.ai/apis/creatives) when reviewed on October 22, 2026. Each review covers capabilities, strengths, limitations and attributable public feedback, with a direct link to experience that specific model.
 
 **New users receive 1,000 free credits to experience models.** Trial credits are valid for 3 days; credit use varies by model and settings. See the [current trial offer](https://www.nexscope.ai/pricing?co-from=learn).
+
+## Compare models, costs and access before you choose
+
+Start with the decision you need to make, then open the exact model's Playground. These guides complement the individual reviews rather than treating every model as interchangeable.
+
+- [Nano Banana 2 vs Pro: image quality, costs and a matched test]({{ '/guides/nano-banana-2-vs-pro/' | relative_url }})
+- [Kling AI pricing: official credits versus Nexscope access]({{ '/guides/kling-ai-pricing/' | relative_url }})
+- [Seedance API: 2.0 versus 2.5, access and task handling]({{ '/guides/seedance-api/' | relative_url }})
+- [AI product photography: create and check product images]({{ '/ai-product-image-generator/' | relative_url }})
+- [AI product video generator: turn a reference into a reviewed clip]({{ '/ai-video-generator/' | relative_url }})
+
+Creative API key access requires an active subscription. The trial balance does not guarantee access to every model or enough credits for every configuration.
 
 ## Video model reviews
 

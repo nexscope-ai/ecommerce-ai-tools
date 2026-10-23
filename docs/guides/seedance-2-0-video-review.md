@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "Seedance 2.0 Review: Video Quality & User Feedback"
-description: "Review Seedance 2.0's video capabilities, reference inputs, consistency concerns and public creator feedback. Experience the model in Nexscope Playground."
+description: "Review Seedance 2.0's reference inputs, video-quality feedback and consistency limits. Find the API access guide or experience its Nexscope Playground."
 permalink: /guides/seedance-2-0-video/
 date_published: 2026-10-22
-date_modified: 2026-10-22
-last_modified_at: 2026-10-22
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -68,6 +68,8 @@ An [April 8 cross-platform report](https://www.reddit.com/r/generativeAI/comment
 ## Who should consider it?
 
 Worth considering for reference-guided short shots, especially when the supported input modes match your material. Less certain for long dialogue, exact multi-shot identity or unattended commercial delivery. Evaluate standard, Fast and Mini separately; sharing a family name does not make their format limits or output behaviour identical.
+
+{% include model-decision-path.html %}
 
 ## Related model reviews
 
