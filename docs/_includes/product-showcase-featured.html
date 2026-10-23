@@ -38,7 +38,7 @@
       <strong>Want your product in the Gallery?</strong>
       <p>Submit a product page for free editorial review. Approved products may receive a public Gallery listing linked to the original selling page.</p>
     </div>
-    <a class="showcase-primary" data-showcase-submit-cta="featured-{{ include.context }}" href="{% if include.context == 'submit' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">Submit your product for Gallery review <span aria-hidden="true">↗</span></a>
+    <a class="showcase-primary" {% if include.context == 'submit' %}data-submission-form-jump="featured-submit"{% else %}data-showcase-submit-cta="featured-{{ include.context }}"{% endif %} href="{% if include.context == 'submit' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">Submit your product for Gallery review <span aria-hidden="true">↗</span></a>
   </div>
 </section>
 {% endif %}

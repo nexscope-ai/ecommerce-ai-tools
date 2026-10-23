@@ -12,12 +12,13 @@ keywords:
   - product GEO feedback
   - AI product discovery page
 permalink: /product-showcase/submit/
-last_modified_at: 2026-10-21
+last_modified_at: 2026-10-23
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
   changefreq: weekly
 standalone_page: true
+seller_help_page: true
 product_showcase_page: true
 image: /assets/product-showcase-submission.webp
 image_alt: Product information, images and video prepared for an editorially reviewed ecommerce showcase
@@ -47,6 +48,7 @@ image_caption: Submit product details for free review and a possible public AI-d
   </header>
 
   <div class="submission-layout" id="product-submission-form">
+    <noscript><p class="seller-scope">JavaScript is needed to upload images and submit this form. You can read the review process below or use the <a href="https://learn.nexscope.ai/contact/">official contact page</a> for help.</p></noscript>
     <form class="showcase-form" novalidate>
       <div class="form-section" data-showcase-step="source">
         <div class="form-section-heading"><span class="form-number">01</span><div><h2>Start with your product link or ASIN <span class="required-mark" aria-label="required">*</span></h2><p>Choose the source you already have. We use it for review; you will add and check the public product details in the next step.</p></div></div>
@@ -100,8 +102,9 @@ image_caption: Submit product details for free review and a possible public AI-d
             <div class="media-upload-list image-upload-list" data-media-list aria-live="polite"></div>
             <small class="field-error" id="imageUploadKeys-error" data-error-for="imageUploadKeys" role="alert" hidden></small>
           </div>
-          <div class="media-field video-field" data-video-field>
-            <div class="media-field-header"><div><strong>Product video</strong><span>Optional: MP4/WebM up to 100 MB or HTTPS URL. A good video may boost your media score and product reach. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn" data-utm-campaign="product_showcase_submission" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
+          <details class="media-field video-field" data-video-field>
+            <summary class="optional-media-summary">Add a product video <span>Optional · one accurate image is enough to begin</span></summary>
+            <div class="media-field-header"><div><strong>Product video</strong><span>Optional: MP4/WebM up to 100 MB or an HTTPS URL. Add video when it helps explain the product. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn" data-utm-campaign="product_showcase_submission" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
             <input type="hidden" name="videoUrl">
             <div class="media-mode-switch" role="tablist" aria-label="Video source">
               <button type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
@@ -116,7 +119,7 @@ image_caption: Submit product details for free review and a possible public AI-d
             </div>
             <div data-video-panel="URL" hidden><input data-video-url-input type="url" maxlength="2048" inputmode="url" placeholder="https://cdn.example.com/product-video.mp4"></div>
             <small class="field-error" id="videoUrl-error" data-error-for="videoUrl" role="alert" hidden></small>
-          </div>
+          </details>
         </div>
       </div>
 
@@ -132,16 +135,15 @@ image_caption: Submit product details for free review and a possible public AI-d
     </form>
   </div>
 
-  <aside class="showcase-merchant-next" aria-labelledby="showcase-merchant-next-title">
-    <span class="eyebrow">A separate merchant step</span>
-    <h2 id="showcase-merchant-next-title">Submitting here does not enroll your store in shopping catalogs.</h2>
+  <details class="seller-supplement">
+    <summary>Does this submit my product to ChatGPT or Google Shopping?</summary>
     <p>We use your public link or ASIN to review a Gallery page. We do not connect your store, fetch live offers or submit products to ChatGPT or Google. Keep price, stock and checkout information current on the original selling page.</p>
     <div class="showcase-merchant-next-links">
       <a href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How merchants reach ChatGPT Shopping →</a>
       <a href="{{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}">How merchants reach Google Shopping →</a>
     </div>
     <small>Submitting an Amazon ASIN alone does not authorize Nexscope to manage that seller's catalog.</small>
-  </aside>
+  </details>
 
   {% include product-showcase-featured.html context="submit" %}
 
@@ -158,21 +160,7 @@ image_caption: Submit product details for free review and a possible public AI-d
     </div>
   </section>
 
-  <section class="submission-visual" aria-labelledby="submission-visual-title">
-    <div class="submission-visual-copy">
-      <span class="eyebrow">More than a submission</span>
-      <h2 id="submission-visual-title">Prepare product facts that AI can use.</h2>
-      <p>Buyers and AI assistants need to know whether a product fits, works with an existing device or meets a budget. Our editors check the facts and images you provide, call out what is clear, and suggest changes only where a buyer question remains unanswered.</p>
-      <p>If approved and published, a public Gallery page gives search and AI systems another fact-focused source to discover and understand the product, while linking people to your original listing. This can support GEO, but it is not an ad placement, merchant feed or guarantee of visibility. Your store remains the source for current price, availability and purchase terms.</p>
-      <div class="submission-visual-actions">
-        <a class="showcase-quiet-link" href="{{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}">How to prepare product facts for AI shopping <span aria-hidden="true">→</span></a>
-      </div>
-      <small class="showcase-disclaimer">Product submission, editorial review and approved Gallery listing and display are completely free. Gallery approval does not submit a merchant feed to ChatGPT or Google, or guarantee rankings, recommendations, traffic or sales.</small>
-    </div>
-    <figure class="submission-visual-art">
-      <img src="{{ '/assets/product-showcase-submission.webp' | relative_url }}" width="1200" height="800" loading="lazy" alt="Product details and media prepared for a reviewed product showcase">
-    </figure>
-  </section>
+
 
   <dialog class="markdown-editor-dialog" data-markdown-dialog aria-labelledby="markdown-editor-title">
     <div class="markdown-dialog-header">

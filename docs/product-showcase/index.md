@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Free Product Gallery for AI Discovery & GEO | Nexscope
-description: Submit a product page for free editorial review and, if approved, a public page that gives search and AI systems clearer product facts. Support GEO without promising rankings or traffic.
+title: Free Product Page Review & Product Gallery | Nexscope
+description: Get free professional product-page feedback and, if approved, a public Gallery page linked to your store. Submit a product URL or Amazon ASIN.
 keywords:
   - free ecommerce product page review
   - professional product page feedback for sellers
@@ -12,12 +12,13 @@ keywords:
   - GEO for product pages
   - product visibility in AI search
 permalink: /product-showcase/
-last_modified_at: 2026-10-21
+last_modified_at: 2026-10-23
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
   changefreq: weekly
 standalone_page: true
+seller_help_page: true
 product_showcase_page: true
 image: /assets/product-showcase-visibility.webp
 image_alt: Ecommerce products connected to discovery touchpoints around the Nexscope mark
@@ -44,20 +45,35 @@ faq:
 ---
 <section class="showcase-hero" data-showcase-view>
   <div class="showcase-hero-copy">
-    <span class="eyebrow">Free product review and AI-discovery support for sellers</span>
-    <p class="showcase-status">FREE EDITORIAL REVIEW · AI-DISCOVERY SUPPORT IF APPROVED</p>
-    <h1>Help AI discover<br><span>your product sooner.</span></h1>
-    <p>Share one public product page, including a Shopify or WooCommerce page, or an Amazon ASIN. Our editors review its facts, images and buyer questions, then offer specific improvement advice where needed. If approved and published, your product receives a public, fact-focused Gallery page linking to the original listing. This is a free GEO support page—not paid advertising, a traffic exchange, or a promise of AI recommendations.</p>
+    <span class="eyebrow">Nexscope Product Gallery</span>
+    <p class="showcase-status">FREE PRODUCT-PAGE REVIEW &amp; APPROVED LISTING</p>
+    <h1>A second look.<br><span>A new place to be seen.</span></h1>
+    <p>Submit one product for professional feedback on its title, description and visuals. Read what works and any meaningful gaps on your private page after review. If approved and published, your product also gets a free public Gallery page linking to your store—an additional route for shoppers to discover it.</p>
     <div class="showcase-actions">
       <a class="showcase-primary" data-showcase-submit-cta="hero" href="{{ '/product-showcase/submit/' | relative_url }}">Request free product-page feedback ↗</a>
       <a class="showcase-quiet-link" href="#showcase-preview">See what you get <span aria-hidden="true">↓</span></a>
     </div>
+    <p class="seller-reassurance">No store connection or payment. Save your private review link. Publication, indexing, traffic and sales are not guaranteed.</p>
   </div>
   <figure class="showcase-hero-art">
     <img src="{{ '/assets/product-showcase-hero.webp' | relative_url }}" width="1200" height="800" alt="Illustration of ecommerce product cards and visual details">
-    <figcaption><strong>Feedback first.</strong><span>A public AI-discovery page if approved and published.</span></figcaption>
+    <figcaption><strong>Feedback first.</strong><span>A public product page linked to your store, if approved and published.</span></figcaption>
   </figure>
 </section>
+
+<section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
+  <header class="showcase-section-heading">
+    <div><span class="eyebrow">What sellers receive</span><h2 id="showcase-discovery-title">Clear feedback. An additional place to show your product.</h2></div>
+    <p><strong>Every reviewed submission receives written feedback on its product page.</strong> We call out useful strengths and recommend changes only when the submitted material supports them. If approved and published, the product also receives a free public Gallery page with clear facts, media and a link back to its original listing—an additional source that can support AI discovery and GEO.</p>
+  </header>
+  <div class="showcase-discovery-grid">
+    <article><span>01</span><h3>Feedback without filler</h3><p>See what works and which product facts, visuals or buyer questions need attention, if any.</p></article>
+    <article><span>02</span><h3>A public GEO support page</h3><p>If approved and published, give search and AI systems another public source with product context, images and optional video. It can support discovery, but it does not guarantee a mention or ranking.</p></article>
+    <article><span>03</span><h3>Your store stays the destination</h3><p>The Gallery page links to the original storefront or marketplace listing.</p></article>
+  </div>
+
+</section>
+
 
 {% include product-showcase-featured.html context="hub" %}
 
@@ -88,16 +104,9 @@ faq:
 </nav>
 {% endif %}
 
-<section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
-  <header class="showcase-section-heading">
-    <div><span class="eyebrow">What sellers receive</span><h2 id="showcase-discovery-title">A useful review and a clearer AI source.</h2></div>
-    <p><strong>Every reviewed submission receives written feedback on its product page.</strong> We call out useful strengths and recommend changes only when the submitted material supports them. If approved and published, the product also receives a free public Gallery page with clear facts, media and a link back to its original listing—an additional source that can support AI discovery and GEO.</p>
-  </header>
-  <div class="showcase-discovery-grid">
-    <article><span>01</span><h3>Feedback without filler</h3><p>See what works and which product facts, visuals or buyer questions need attention, if any.</p></article>
-    <article><span>02</span><h3>A public GEO support page</h3><p>If approved and published, give search and AI systems another public source with product context, images and optional video. It can support discovery, but it does not guarantee a mention or ranking.</p></article>
-    <article><span>03</span><h3>Your store stays the destination</h3><p>The Gallery page links to the original storefront or marketplace listing.</p></article>
-  </div>
+
+
+<details class="seller-supplement"><summary>Optional next step: shopping catalogs and AI visibility</summary>
   <section class="showcase-shopping-paths" aria-labelledby="showcase-shopping-paths-title">
     <div class="showcase-shopping-paths-intro">
       <span class="eyebrow">After the Gallery</span>
@@ -110,25 +119,7 @@ faq:
     </div>
     <p class="showcase-shopping-paths-footnote">Want to measure visibility first? <a href="https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn">Run a separate AI visibility check ↗</a> Results are time-bound observations, not a promise of recommendations.</p>
   </section>
-</section>
-
-<section class="showcase-growth" aria-labelledby="showcase-growth-title">
-  <div class="showcase-growth-copy">
-    <span class="eyebrow">More than a listing</span>
-    <h2 id="showcase-growth-title">Give AI a clearer source for your product.</h2>
-    <p><strong>Start with professional feedback you can use on your existing product page.</strong> Our editors review the facts and media you provide. If they find a meaningful gap, they explain a practical change; if not, they identify what already works within the reviewed scope. If approved and published, a free Gallery page provides an additional public, fact-focused route to your original listing that can support Generative Engine Optimization (GEO).</p>
-    <ul class="showcase-benefit-list">
-      <li><strong>Get product-page improvement advice</strong><span>Read evidence-based editorial feedback on your private management page after review.</span></li>
-      <li><strong>Support AI discovery</strong><span>An approved and published Gallery page brings product details, media and the original buying link together for a clearer public source.</span></li>
-    </ul>
-    <p>Submission, editorial review and, if approved, listing and display in the Gallery are completely free.</p>
-    <p>Start by improving your original listing: learn how <a href="{{ '/product-page-seo-for-ecommerce/' | relative_url }}">product page SEO helps shoppers find it</a> and how <a href="{{ '/product-page-geo-ai-shopping/' | relative_url }}">clear product facts support AI-assisted shopping research</a>. The Gallery adds feedback and, when approved, another public page to support GEO; it does not buy exposure, replace your store page, or guarantee an AI citation.</p>
-    <small class="showcase-disclaimer">Publication depends on editorial review. Nexscope does not guarantee indexing, AI recommendations, traffic or sales.</small>
-  </div>
-  <figure class="showcase-growth-art">
-    <img src="{{ '/assets/product-showcase-visibility.webp' | relative_url }}" width="1536" height="1024" loading="lazy" alt="Ecommerce products connected to discovery touchpoints around the Nexscope mark">
-  </figure>
-</section>
+</details>
 
 <section class="showcase-faq" aria-labelledby="showcase-faq-title">
   <header class="showcase-section-heading">

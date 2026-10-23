@@ -154,12 +154,13 @@
     </style>
     <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=14">
     <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=52">
+    {% if page.seller_help_page %}<link rel="stylesheet" href="{{ '/assets/seller-help.css' | relative_url }}?v=1">{% endif %}
     {% if page.audit_tool %}<link rel="stylesheet" href="{{ '/assets/ecommerce-audit-tool.css' | relative_url }}?v=1">{% endif %}
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
     <script src="{{ '/assets/trends.js' | relative_url }}?v=14" defer></script>
     {% unless page.private_page %}
     <script src="{{ '/assets/traffic-attribution.js' | relative_url }}?v=1" defer></script>
-    <script src="{{ '/assets/analytics.js' | relative_url }}?v=6" defer></script>
+    <script src="{{ '/assets/analytics.js' | relative_url }}?v=7" defer></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="q6pDSjaAKMskPeTdzPWCtQ" async></script>
     {% endunless %}
     <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
@@ -173,7 +174,7 @@
   {% if page.path contains 'ecommerce-trends/' %}{% assign section = 'ecommerce-trends' %}{% endif %}
   {% if page.path contains 'alternatives/' %}{% assign section = 'alternatives' %}{% endif %}
   {% if page.community_page %}{% assign section = 'community' %}{% endif %}
-  <body class="trends-page{% unless is_hub %} trends-article{% endunless %}{% if page.product_showcase_page %} product-showcase-page{% endif %}{% if page.not_found_page %} not-found-page{% endif %}">
+  <body data-seller-intent="{{ page.seller_intent | escape }}" class="trends-page{% unless is_hub %} trends-article{% endunless %}{% if page.product_showcase_page %} product-showcase-page{% endif %}{% if page.not_found_page %} not-found-page{% endif %}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="trends-header"><div class="wrap">
       <a class="brand" href="https://learn.nexscope.ai/" aria-label="Nexscope home"><img src="https://learn.nexscope.ai/logo.png" alt="Nexscope" width="166" height="42"></a>
@@ -187,7 +188,9 @@
           <li><a href="{{ '/product-showcase/' | relative_url }}"{% if page.product_showcase_page %} aria-current="page"{% endif %}>Product Gallery</a></li>
           <li><a href="{{ '/community/' | relative_url }}"{% if page.community_page %} aria-current="page"{% endif %}>Community</a></li>
           <li><a href="https://www.nexscope.ai/api-docs?co-from=learn">API docs</a></li>
-          {% if page.next_step %}
+          {% if page.url == '/' or page.seller_help_page or page.product_showcase_page %}
+          <li><a class="nav-cta" {% if page.url == '/product-showcase/submit/' %}data-submission-form-jump="navigation"{% else %}data-showcase-submit-cta="navigation"{% endif %} href="{% if page.url == '/product-showcase/submit/' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">{% if page.url == '/product-showcase/submit/' %}Review your product ↓{% else %}Get free feedback →{% endif %}</a></li>
+          {% elsif page.next_step %}
           <li><a class="nav-cta" data-cta-placement="nav" data-step-id="{{ page.next_step.id | escape }}" href="{{ page.next_step.url | escape }}">{% if page.model_kind %}Try {{ page.model_name | escape }} ↗{% else %}See the next step ↗{% endif %}</a></li>
           {% elsif page.url == '/getting-started/' %}
           <li><a class="nav-cta" href="#ai-video-generator">Pick a tool ↓</a></li>
@@ -208,15 +211,7 @@
       {% endunless %}
       <article>
         {% if page.resource_hub %}{% include resource-library.html %}{% else %}{{ content }}{% endif %}
-        {% if page.url == '/' %}
-        <section class="resource-paths" aria-labelledby="api-buying-guides-title">
-          <div class="section-heading"><div><span class="eyebrow">Before you buy</span><h2 id="api-buying-guides-title">Test the decision, then choose credits.</h2></div><p>Use a small real workflow to check output quality and cost before scaling.</p></div>
-          <div class="resource-path-grid">
-            <a href="{{ '/amazon-product-research-api-pilot/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">01</span><strong>Run an Amazon research pilot</strong><span>Check comparable products, detail coverage, review evidence and actual credit use.</span><b>Follow the pilot →</b></a>
-            <a href="{{ '/ecommerce-data-api-pricing-decision/' | relative_url }}"><span class="resource-path-icon" aria-hidden="true">02</span><strong>Estimate Data API credits</strong><span>Compare the trial, Data-only top-ups and subscriptions against a usable result.</span><b>Estimate your budget →</b></a>
-          </div>
-        </section>
-        {% endif %}
+
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
         {% if page.schema_type == 'Article' %}
           {% if page.next_step %}
@@ -259,7 +254,7 @@
       {% unless is_hub %}</div>{% endunless %}
     </main>
     <footer><div class="wrap resource-footer"><div><a class="brand" href="https://learn.nexscope.ai/">Nexscope</a><p>Practical knowledge for your next commerce workflow.</p></div><nav aria-label="Footer"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="{{ '/' | relative_url }}">Learn</a><a href="{{ '/guides/' | relative_url }}">Guides</a><a href="{{ '/case-studies/' | relative_url }}">Case studies</a><a href="{{ '/api-evidence/' | relative_url }}">API evidence</a><a href="https://learn.nexscope.ai/about/">About</a><a href="https://learn.nexscope.ai/security/">Security</a><a href="https://learn.nexscope.ai/contact/">Contact</a><a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a><a href="https://www.nexscope.ai/privacy">Privacy</a><a href="https://www.nexscope.ai/terms">Terms</a><a href="{{ '/community/' | relative_url }}">Community</a></nav></div></footer>
-    {% if page.product_showcase_page %}<script src="{{ '/assets/vendor/markdown-it-14.3.2.min.js' | relative_url }}" defer></script><script src="{{ '/assets/product-showcase-markdown.js' | relative_url }}?v=2" defer></script><script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=35" defer></script>{% endif %}
+    {% if page.product_showcase_page %}<script src="{{ '/assets/vendor/markdown-it-14.3.2.min.js' | relative_url }}" defer></script><script src="{{ '/assets/product-showcase-markdown.js' | relative_url }}?v=2" defer></script><script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=36" defer></script>{% endif %}
     {% if page.audit_tool %}<script src="{{ '/assets/ecommerce-audit-tool.js' | relative_url }}?v=1" defer></script>{% endif %}
     {% if page.not_found_page %}<script src="{{ '/assets/not-found.js' | relative_url }}?v=1" defer></script>{% endif %}
   </body>

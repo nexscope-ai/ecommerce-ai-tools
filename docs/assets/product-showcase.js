@@ -29,12 +29,6 @@
         cta_placement: formJump.dataset.submissionFormJump,
       });
     }
-    const submitLink = clickEvent.target.closest?.('[data-showcase-submit-cta]');
-    if (submitLink) {
-      event('product_showcase_submit_click', {
-        cta_placement: submitLink.dataset.showcaseSubmitCta,
-      });
-    }
     const communityLink = clickEvent.target.closest?.('[data-community-action][href]');
     if (!communityLink) return;
     const destination = new URL(communityLink.href, window.location.href);
@@ -743,6 +737,8 @@ Check the lid seal before carrying it in a bag.`;
     const target = validationTarget(form, name);
     const error = ensureFieldError(form, name);
     if (!target || !error) return target;
+    const optionalVideo = target.closest('details[data-video-field]');
+    if (optionalVideo) optionalVideo.open = true;
     error.textContent = message;
     error.hidden = false;
     target.setAttribute('aria-invalid', 'true');

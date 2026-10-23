@@ -1,12 +1,17 @@
 ---
 layout: default
-title: "Ecommerce AI Tools for Research, Automation & SEO | Nexscope"
-description: "Use ecommerce AI automation tools for bulk product data mapping, Amazon research, Shopify and TikTok workflows, product-page SEO, AI shopping visibility, and developer APIs."
+title: "Free Product Page Review & Ecommerce Seller Guides | Nexscope"
+description: "Get free product-page feedback and a public Gallery listing if approved. Explore Nexscope seller guides, product visibility help and ecommerce tools."
 permalink: /
-last_modified_at: 2026-10-21
-last_reviewed: 2026-10-20
+last_modified_at: 2026-10-23
+last_reviewed: 2026-10-23
 resource_hub: true
+seller_help_page: true
 keywords:
+  - free product page review
+  - professional product page feedback
+  - free product showcase for online sellers
+  - product visibility help
   - ecommerce AI tools
   - AI ecommerce automation
   - bulk product data mapping
@@ -20,9 +25,6 @@ keywords:
   - ecommerce SEO tools
   - Shopify and TikTok ecommerce tools
   - AI shopping
-hero_title: Ecommerce AI tools for real decisions.
-hero_accent: Tested, explained, reusable.
-hero_description: Map product data in bulk, read live product-page data, research Amazon demand and competitors, improve product-page SEO, explore Shopify and TikTok workflows, and connect evidence to AI agents through documented APIs.
 library_heading: All learning resources
 ---
 <!-- Rendered by the shared resource-library template. -->

@@ -4,6 +4,49 @@ const { join } = require('node:path');
 const { runInNewContext } = require('node:vm');
 const { test } = require('node:test');
 
+test('seller landing and submission clicks retain acquisition source and reject unrelated destinations', () => {
+  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
+  const location = new URL('https://learn.nexscope.ai/ecommerce-ai-tools/seller-help/product-visibility/?email=private@example.com');
+  const listeners = {};
+  const window = {
+    location,
+    localStorage: { getItem() { return 'granted'; } },
+    nexscopeTrafficAttribution: { trafficSource: 'outreach_email', trafficMedium: 'email', trafficCampaign: 'product_gallery_invite', trafficLandingPath: '/ecommerce-ai-tools/' },
+  };
+  const document = {
+    title: 'Product visibility help', referrer: '',
+    head: { appendChild() {} },
+    body: { append() {}, getAttribute() { return 'product-visibility'; } },
+    createElement() { return { style: {}, setAttribute() {}, append() {}, querySelector() { return { focus() {} }; } }; },
+    addEventListener(name, listener) { (listeners[name] ||= []).push(listener); },
+  };
+  const context = { window, document, location, URL, URLSearchParams, Date };
+  runInNewContext(script, context);
+  runInNewContext(script, context);
+  const click = (href, attributes) => {
+    const link = { href, textContent: 'Get feedback', getAttribute(name) { return attributes[name] || null; } };
+    listeners.click[0]({ target: { closest() { return link; } } });
+  };
+  click('https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?token=private', { 'data-showcase-submit-cta': 'product-visibility-hero' });
+  click('https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/', { 'data-cta-placement': 'article-end' });
+  click('https://learn.nexscope.ai/ecommerce-ai-tools/seller-help/product-page-review/', { 'data-seller-help': 'product-page-review' });
+  click('https://other.example/ecommerce-ai-tools/product-showcase/submit/', { 'data-showcase-submit-cta': 'wrong-site' });
+  click('https://learn.nexscope.ai/ecommerce-ai-tools/other/', { 'data-showcase-submit-cta': 'wrong-path' });
+  const events = window.dataLayer.map(entry => Array.from(entry)).filter(entry => entry[0] === 'event');
+  assert.equal(events.filter(entry => entry[1] === 'seller_help_view').length, 1);
+  const submission = events.filter(entry => entry[1] === 'product_showcase_submit_click');
+  assert.equal(submission.length, 2);
+  assert.equal(submission[1][2].cta_placement, 'article-end');
+  assert.equal(submission[0][2].traffic_source, 'outreach_email');
+  assert.equal(submission[0][2].traffic_campaign, 'product_gallery_invite');
+  assert.equal(submission[0][2].cta_placement, 'product-visibility-hero');
+  assert.equal(events.filter(entry => entry[1] === 'seller_help_open').length, 1);
+  assert.equal(JSON.stringify(events).includes('private@example.com'), false);
+  assert.equal(JSON.stringify(events).includes('token=private'), false);
+  // The shared analytics handler owns this click; the Gallery script must not send it again.
+  assert.equal(readFileSync(join(__dirname, '..', 'docs', 'assets', 'product-showcase.js'), 'utf8').includes("event('product_showcase_submit_click'"), false);
+});
+
 test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', () => {
   const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
   const listeners = {};

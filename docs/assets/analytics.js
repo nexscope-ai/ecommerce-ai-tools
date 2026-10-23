@@ -102,6 +102,24 @@
   };
   sendPageView();
 
+  const sellerIntents = new Set(['product-visibility', 'product-page-review', 'product-media-review']);
+  const sellerEvent = (name, properties) => {
+    const traffic = window.nexscopeTrafficAttribution || {};
+    window.gtag('event', name, {
+      ...properties,
+      traffic_source: traffic.trafficSource || 'direct_or_unknown',
+      traffic_medium: traffic.trafficMedium || 'none',
+      traffic_campaign: traffic.trafficCampaign || undefined,
+      traffic_landing_path: traffic.trafficLandingPath || page.pathname,
+      source_page: page.pathname,
+      transport_type: 'beacon',
+    });
+  };
+  const sellerIntent = document.body?.getAttribute?.('data-seller-intent');
+  if (sellerIntents.has(sellerIntent) && page.pathname === `/ecommerce-ai-tools/seller-help/${sellerIntent}/`) {
+    sellerEvent('seller_help_view', { seller_intent: sellerIntent });
+  }
+
   const script = document.createElement('script');
   script.async = true;
   script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
@@ -113,6 +131,18 @@
     const link = event.target.closest?.('a[href]');
     if (!link) return;
     const url = new URL(link.href, location.href);
+    const reviewPlacement = link.getAttribute('data-showcase-submit-cta')
+      || link.getAttribute('data-cta-placement') || 'body-link';
+    if (/^[a-z0-9-]{1,60}$/.test(reviewPlacement || '') && url.origin === page.origin
+        && url.pathname === '/ecommerce-ai-tools/product-showcase/submit/'
+        && url.pathname !== page.pathname) {
+      sellerEvent('product_showcase_submit_click', { cta_placement: reviewPlacement });
+    }
+    const intent = link.getAttribute('data-seller-help');
+    if (sellerIntents.has(intent) && url.origin === page.origin
+        && url.pathname === `/ecommerce-ai-tools/seller-help/${intent}/`) {
+      sellerEvent('seller_help_open', { seller_intent: intent });
+    }
     const productAction = link.getAttribute('data-track-product');
     const productId = link.getAttribute('data-product-id');
     const placement = link.getAttribute('data-product-placement');

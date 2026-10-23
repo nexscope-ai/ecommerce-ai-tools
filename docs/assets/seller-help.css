@@ -1,0 +1,46 @@
+.seller-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .85fr); gap: clamp(28px, 5vw, 72px); align-items: center; padding: 24px 0 54px; border-bottom: 1px solid var(--line); }
+.seller-hero h1 { margin: 18px 0 22px; }
+.seller-hero h1 span { color: #6250e9; }
+.seller-lead { max-width: 650px; font-size: 18px; line-height: 1.75; }
+.seller-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 26px; }
+.seller-text-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-size: 14px; font-weight: 700; text-decoration: none; }
+.seller-reassurance { margin: 16px 0 0; font-size: 12px; line-height: 1.65; }
+.seller-deliverables { min-width: 0; padding: 30px; background: #fff; border: 1px solid #ded5f4; border-radius: 22px; box-shadow: 0 18px 42px rgb(40 25 83 / 5%); }
+.seller-deliverables ol { display: grid; gap: 22px; margin: 24px 0; padding-left: 24px; }
+.seller-deliverables li { padding-left: 4px; }
+.seller-deliverables li::marker { color: var(--accent); font-weight: 700; }
+.seller-deliverables strong, .seller-deliverables li span { display: block; }
+.seller-deliverables strong { font-size: 17px; line-height: 1.4; }
+.seller-deliverables li span { margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.seller-deliverables small { display: block; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.65; }
+.seller-section { padding: 18px 0 38px; }
+.seller-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.seller-card { display: flex; flex-direction: column; min-width: 0; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: #fff; text-decoration: none; color: var(--ink); }
+.seller-card:hover { border-color: #b5a2ed; }
+.seller-card h3 { margin: 14px 0 10px; font-size: 23px; line-height: 1.25; letter-spacing: -.025em; }
+.seller-card p { margin: 0 0 24px; font-size: 14px; line-height: 1.7; }
+.seller-card > strong { margin-top: auto; color: var(--accent); font-size: 13px; }
+.seller-next { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 38px; margin: 18px 0 30px; padding: 32px; border-radius: 20px; background: #f0ecff; }
+.seller-next h2 { margin: 12px 0 18px; font-size: clamp(26px, 3vw, 34px); }
+.seller-next p { margin-bottom: 0; font-size: 14px; }
+.seller-next .seller-reassurance { font-size: 12px; }
+.seller-library-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 26px 0; }
+.seller-library-links a { color: var(--accent); font-size: 14px; font-weight: 700; text-decoration: none; }
+.seller-landing-breadcrumb { margin: 0 0 22px; }
+.seller-landing-breadcrumb a { color: var(--muted); font-size: 13px; }
+.seller-checklist { margin: 22px 0 28px; padding-left: 20px; }
+.seller-checklist li { margin: 10px 0; }
+.seller-scope { margin: 0 0 30px; padding: 22px 26px; border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; background: #f0ecff; }
+.seller-scope p { margin: 8px 0 0; font-size: 14px; }
+.seller-faq { margin: 28px 0; }
+.seller-faq details { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.seller-faq summary { cursor: pointer; font-weight: 700; }
+.seller-faq p { max-width: 800px; font-size: 14px; }
+.seller-supplement { margin: 24px 0; padding: 22px; border: 1px solid var(--line); border-radius: 14px; }
+.seller-supplement summary { cursor: pointer; font-size: 16px; font-weight: 700; }
+.seller-supplement > p { font-size: 14px; }
+.optional-media-summary { padding: 6px 0; cursor: pointer; color: var(--ink); font-weight: 700; }
+.optional-media-summary span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; font-weight: 400; }
+.video-field[open] .optional-media-summary { margin-bottom: 22px; }
+@media(max-width:900px) { .seller-hero { grid-template-columns: 1fr; gap: 28px; } .seller-card-grid { grid-template-columns: 1fr; } .seller-next { grid-template-columns: 1fr; gap: 18px; } }
+@media(max-width:600px) { .seller-hero { padding-top: 8px; padding-bottom: 32px; } .seller-hero h1 { font-size: clamp(36px, 10vw, 48px); } .seller-lead { font-size: 16px; } .seller-deliverables, .seller-card { padding: 24px; } .seller-actions .showcase-primary { width: 100%; font-size: 14px; } .seller-next { padding: 24px; } }
