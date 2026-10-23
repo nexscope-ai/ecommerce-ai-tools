@@ -1,0 +1,9 @@
+{% if page.faq %}
+<section class="api-guide-faq" aria-labelledby="api-guide-faq-title">
+  <h2 id="api-guide-faq-title">Frequently asked questions</h2>
+  {% for item in page.faq %}
+  <h3>{{ item.question | escape }}</h3>
+  <p>{{ item.answer | escape }}</p>
+  {% endfor %}
+</section>
+{% endif %}

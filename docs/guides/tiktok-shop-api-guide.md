@@ -4,9 +4,9 @@ title: "TikTok Shop API: Product, Creator and Video Research"
 description: "Use a TikTok Shop API workflow to research products, creators, videos, rankings, and shop signals with documented fields and limits."
 permalink: /guides/tiktok-shop-api-guide/
 date_published: 2026-10-13
-date_modified: 2026-10-16
-last_modified_at: 2026-10-16
-last_reviewed: 2026-10-16
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
+last_reviewed: 2026-10-23
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -20,7 +20,7 @@ keywords:
   - TikTok product discovery API
 faq:
   - question: "How many TikTok Shop APIs does Nexscope currently list?"
-    answer: "Nexscope's API directory currently lists 54 TikTok Shop and social-commerce data APIs. The catalog and credit cost can change, so confirm the individual API page before building a production workflow."
+    answer: "As reviewed on October 23, 2026, Nexscope's API directory lists 61 TikTok Shop and social-commerce research APIs. The catalog and credit cost can change, so confirm the individual API page before building a production workflow."
   - question: "Can Nexscope's TikTok Shop APIs publish posts or manage my TikTok Shop account?"
     answer: "These APIs are documented for public marketplace, product, creator, video, advertising, and analytics research. They should not be treated as an official TikTok Shop order-management, posting, ad-account, or store-connection API unless the relevant documentation explicitly says so."
   - question: "Can I call Nexscope TikTok APIs through REST and MCP?"
@@ -29,17 +29,17 @@ faq:
 
 # TikTok Shop API: product, creator and video research
 
-**By Nexscope Team · Published October 13, 2026**
+**By Nexscope Team · Published October 13, 2026 · Updated October 23, 2026**
 
 TikTok Shop research often starts with a deceptively simple question: **which product, creator, video, or shop should we investigate next?** A product search alone does not explain why an item is moving. You may need its regional sales signals, related creators, videos, reviews, livestreams, advertising references, or shop context before deciding what to test.
 
-Nexscope's current API directory lists **54 TikTok Shop and social-commerce research APIs**. They are available through documented REST endpoints and, where shown on the API page, MCP methods. This guide maps the catalog to seller decisions so you can choose the smallest useful workflow instead of calling every endpoint.
+As reviewed on October 23, 2026, Nexscope's API directory lists **61 TikTok Shop and social-commerce research APIs**. They are available through documented REST endpoints and, where shown on the API page, MCP methods. This guide maps the catalog to seller decisions so you can choose the smallest useful workflow instead of calling every endpoint.
 
 > **Important scope note:** These are research and analytics capabilities. They are not automatically a connection to your TikTok Shop account, order system, advertising account, or publishing workflow. Check the individual API documentation, supported region, access requirements, and current credit estimate before using a result in a business decision.
 
 ## What are the main TikTok Shop API groups?
 
-The 54 APIs fall into seven practical groups. Names and availability are based on the current [Nexscope API directory](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=tiktok-shop-api-guide&utm_content=api-directory); the catalog may change as endpoints are added or revised.
+The 61 APIs can be organized into the five practical task groups below. Names and availability are based on the current [Nexscope API directory](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=tiktok-shop-api-guide&utm_content=api-directory); the catalog may change as endpoints are added or revised. These are editorial task groups, not a claim that the underlying sources have identical fields or coverage.
 
 ### 1. Product discovery and product evidence
 
@@ -132,6 +132,22 @@ For competitor advertising research, use:
 - TikTok Creative Search
 
 An ad or creative result is evidence of what was observed, not evidence that the claim is true or that the campaign will perform for your SKU. Save the capture date and separate observed fields from your interpretation.
+
+## Which additional research routes are now in the catalog?
+
+The current directory includes seven routes absent from the older 54-interface inventory. Their names are useful discovery labels, but the current request contract determines what you can actually retrieve. Some similarly named routes come from different source families; do not substitute identifiers or merge their metrics without checking scope.
+
+| Current route | Research use | Check before requesting |
+| --- | --- | --- |
+| [Video Details in Bulk](https://www.nexscope.ai/api-docs/data-et-batch-video-detail?view=api&co-from=learn) | Review several selected videos together | Accepted list format and batch limits |
+| [Product Videos](https://www.nexscope.ai/api-docs/data-et-list-product-video?view=api&co-from=learn) | Inspect videos associated with a product | Required product ID and source compatibility |
+| [Seller Search](https://www.nexscope.ai/api-docs/data-et-list-seller?view=api&co-from=learn) | Find sellers for a regional comparison | Required region, sorting and returned scope |
+| [Seller Products](https://www.nexscope.ai/api-docs/data-et-list-seller-product?view=api&co-from=learn) | Inspect a selected seller's assortment | Required seller ID and pagination |
+| [Livestream Details](https://www.nexscope.ai/api-docs/data-kd-livestream-detail?view=api&co-from=learn) | Investigate a selected livestream | Required livestream ID and relevant period |
+| [Shop Rankings](https://www.nexscope.ai/api-docs/data-kd-shop-rank?view=api&co-from=learn) | Review the route's shop-ranking evidence | The current contract requires a shop ID; do not assume an unrestricted all-shop leaderboard |
+| [Video Rankings](https://www.nexscope.ai/api-docs/data-kd-video-rank?view=api&co-from=learn) | Review the route's video-ranking evidence | The current contract requires a video ID; do not assume keyword-only discovery |
+
+For a small data-only pilot, discover sellers in a supported region, inspect one seller's products, then retrieve associated video evidence for selected products. Batch detail requests only after confirming the accepted IDs and limits. This is an illustrative sequence, not a run performed for this update, and it does not require generating or publishing media.
 
 ## Which TikTok Shop API should you call first?
 

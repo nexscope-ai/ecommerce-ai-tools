@@ -4,9 +4,9 @@ title: Nexscope API capabilities and ecommerce workflows
 description: A practical map of Nexscope ecommerce data, SEO and GEO, creative AI, REST, and MCP capabilities with workflow examples and limitations.
 permalink: /api-capabilities/
 date_published: 2026-09-14
-last_reviewed: 2026-09-17
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+last_reviewed: 2026-10-23
+date_modified: 2026-10-23
+last_modified_at: 2026-10-23
 schema_type: Article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
 image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
@@ -25,6 +25,19 @@ For the newer discovery layer that helps AI agents find callable resources, see 
 For the TikTok-specific catalog, see the [TikTok Shop API guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}), which groups the current product, creator, video, shop, advertising, and analytics APIs by seller decision.
 
 **New users get 1,000 free credits to get started.** [Create your Nexscope account](https://www.nexscope.ai/?co-from=learn). Credit usage and access vary by action. Creative API key access requires an active subscription; trial credits do not enable it.
+
+## Start with a platform or research question
+
+Use a focused guide when you need to choose an interface and understand its evidence, rather than reading the whole catalog:
+
+- [Amazon Ads API: access, reports and campaign controls]({{ '/guides/amazon-ads-api/' | relative_url }}) — distinguish authorized advertising operations from public marketplace research.
+- [Etsy product research API]({{ '/guides/etsy-product-research-api/' | relative_url }}) — build a comparable product and shop shortlist.
+- [Walmart product and keyword APIs]({{ '/guides/walmart-product-keyword-api/' | relative_url }}) — connect search, details, categories and keyword evidence.
+- [Temu product research API]({{ '/guides/temu-product-research-api/' | relative_url }}) — preserve source families, regions and metric definitions.
+- [Competitor keyword and traffic APIs]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}) — turn bounded search evidence into relevant content briefs.
+- [Backlink and referring-domain APIs]({{ '/guides/backlink-referring-domains-api/' | relative_url }}) — inspect links without mistaking index scores for Google judgments.
+
+The [TikTok Shop guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}) was updated against the 61-interface directory on October 23, 2026. Catalog counts and contracts can change; inspect the current API page before running a request.
 
 ## What is in the API docs?
 

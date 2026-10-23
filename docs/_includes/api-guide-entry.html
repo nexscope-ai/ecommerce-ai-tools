@@ -1,0 +1,6 @@
+{% if page.next_step %}
+<div class="model-experience" role="group" aria-label="Inspect this API">
+  <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-top" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} <span aria-hidden="true">→</span></a>
+  <p>Inspect the inputs, access requirements and current credits before running a request.</p>
+</div>
+{% endif %}
