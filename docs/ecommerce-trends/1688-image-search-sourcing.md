@@ -128,6 +128,8 @@ For a broader procurement overview, see Nexscope's [1688 supplier sourcing guide
 
 For the exact documented request and response fields behind this step, inspect the [1688 Search By Image evidence record]({{ '/api-evidence/1688-image-search/' | relative_url }}). It separates observable API fields from supplier claims that still need verification.
 
+For a step-by-step keyword request, use the [1688 Product Search tutorial]({{ '/guides/1688-product-search-api/' | relative_url }}). For the selected offer, see [1688 Product Detail: SKU prices, MOQ and shipping]({{ '/guides/1688-product-detail-api/' | relative_url }}). These guides cover request construction and field interpretation beyond visual matching.
+
 ## How should you compare two similar offers?
 
 **Compare the same specification and order size before comparing price.** The `price` field is a listed wholesale signal, while `consignPrice`, when returned, is a separate dropship-price signal. `quantityBegin` and quantity-tier information may change which price applies. Sales counts, repurchase rates, seller identities, and service scores can help prioritize questions, but none proves sample quality or supplier ownership.

@@ -4,9 +4,9 @@ title: Nexscope API capabilities and ecommerce workflows
 description: A practical map of Nexscope ecommerce data, SEO and GEO, creative AI, REST, and MCP capabilities with workflow examples and limitations.
 permalink: /api-capabilities/
 date_published: 2026-09-14
-last_reviewed: 2026-10-23
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
+last_reviewed: 2026-10-26
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
 schema_type: Article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
 image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
@@ -34,6 +34,10 @@ Use a focused guide when you need to choose an interface and understand its evid
 - [Etsy product research API]({{ '/guides/etsy-product-research-api/' | relative_url }}) — build a comparable product and shop shortlist.
 - [Walmart product and keyword APIs]({{ '/guides/walmart-product-keyword-api/' | relative_url }}) — connect search, details, categories and keyword evidence.
 - [Temu product research API]({{ '/guides/temu-product-research-api/' | relative_url }}) — preserve source families, regions and metric definitions.
+- [1688 Product Search API]({{ '/guides/1688-product-search-api/' | relative_url }}) — build a shortlist with Chinese keywords, MOQ filters and dated sales signals.
+- [1688 Product Detail API]({{ '/guides/1688-product-detail-api/' | relative_url }}) — compare exact SKUs, quantity tiers, single-piece prices and shipping units.
+- [Shopee product research API]({{ '/guides/shopee-product-research-api/' | relative_url }}) — connect a station-specific search to eligible product-detail URLs.
+- [Ozon product research API]({{ '/guides/ozon-product-research-api/' | relative_url }}) — align product reports, detail windows, keyword periods and daily trends.
 - [Competitor keyword and traffic APIs]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}) — turn bounded search evidence into relevant content briefs.
 - [Backlink and referring-domain APIs]({{ '/guides/backlink-referring-domains-api/' | relative_url }}) — inspect links without mistaking index scores for Google judgments.
 
