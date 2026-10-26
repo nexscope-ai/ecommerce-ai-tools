@@ -32,6 +32,7 @@ faq:
     answer: "Use AI to extract and normalize approved facts from selected public pages, preserve the source URL and timestamp, reconcile them with your catalog or feed, and route high-risk fields to review. A page snapshot is evidence to check, not a complete product database or permission to republish content."
 next_step:
   id: website_seo_auditor
+  intent: free-tool-evaluation
   title: Check the page your product data creates
   description: Enter one public product URL in the Nexscope Website SEO Auditor. Inspect its content and structured-data evidence, then compare the findings with your SKU record or feed. Bulk mapping still belongs in your catalog or feed system.
   label: Check my product page

@@ -9,7 +9,7 @@ test('model experience clicks retain top, middle and end placement in both conve
   for (const placement of ['article-top', 'article-middle', 'article-end']) {
     const link = {
       href: 'https://www.nexscope.ai/api-docs/seedance-2-0-video-generation?view=playground&co-from=learn',
-      dataset: { ctaPlacement: placement, stepId: 'seedance_2_0_video_generation' },
+      dataset: { ctaPlacement: placement, stepId: 'seedance_2_0_video_generation', buyerIntent: 'api-evaluation' },
       setAttribute(name, value) { this[name] = value; },
     };
     const events = [];
@@ -18,6 +18,7 @@ test('model experience clicks retain top, middle and end placement in both conve
       sessionStorage: { getItem: () => null, setItem() {}, removeItem() {} },
       addEventListener() {},
       gtag(...args) { events.push(args); },
+      nexscopeTrafficAttribution: { trafficSource: 'google.com' },
     };
     const document = {
       referrer: '',
@@ -30,6 +31,9 @@ test('model experience clicks retain top, middle and end placement in both conve
     const mainClick = events.find(e => e[1] === 'learn_to_main_click');
     const modelClick = events.find(e => e[1] === 'article_next_step_click');
     assert.equal(mainClick[2].cta_placement, placement);
+    assert.equal(mainClick[2].next_step, 'seedance_2_0_video_generation');
+    assert.equal(mainClick[2].buyer_intent, 'api-evaluation');
+    assert.equal(mainClick[2].traffic_source, 'google.com');
     assert.equal(modelClick[2].cta_placement, placement);
     assert.equal(modelClick[2].next_step, 'seedance_2_0_video_generation');
     assert.equal(new URL(link.href).searchParams.get('view'), 'playground');

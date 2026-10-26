@@ -55,7 +55,7 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
     textContent: 'API docs',
     hasAttribute() { return false; },
     getAttribute(name) {
-      return { 'data-cta-placement': 'home-task', 'data-step-id': 'amazon_search' }[name] || null;
+      return { 'data-cta-placement': 'home-task', 'data-step-id': 'amazon_search', 'data-buyer-intent': 'api-evaluation' }[name] || null;
     },
   };
   const window = {
@@ -107,6 +107,8 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
   assert.equal(click[2].co_from, 'learn');
   assert.equal(click[2].cta_placement, 'home-task');
   assert.equal(click[2].step_id, 'amazon_search');
+  assert.equal(click[2].buyer_intent, 'api-evaluation');
+  assert.equal(click[2].landing_source, 'chatgpt.com');
 });
 
 test('Learn analytics records attributed community entry clicks', () => {

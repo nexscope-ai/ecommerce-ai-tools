@@ -157,10 +157,10 @@
     {% if page.seller_help_page %}<link rel="stylesheet" href="{{ '/assets/seller-help.css' | relative_url }}?v=1">{% endif %}
     {% if page.audit_tool %}<link rel="stylesheet" href="{{ '/assets/ecommerce-audit-tool.css' | relative_url }}?v=1">{% endif %}
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
-    <script src="{{ '/assets/trends.js' | relative_url }}?v=14" defer></script>
+    <script src="{{ '/assets/trends.js' | relative_url }}?v=15" defer></script>
     {% unless page.private_page %}
     <script src="{{ '/assets/traffic-attribution.js' | relative_url }}?v=1" defer></script>
-    <script src="{{ '/assets/analytics.js' | relative_url }}?v=7" defer></script>
+    <script src="{{ '/assets/analytics.js' | relative_url }}?v=8" defer></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="q6pDSjaAKMskPeTdzPWCtQ" async></script>
     {% endunless %}
     <link rel="icon" href="https://learn.nexscope.ai/favicon.png">
@@ -191,7 +191,7 @@
           {% if page.url == '/' or page.seller_help_page or page.product_showcase_page %}
           <li><a class="nav-cta" {% if page.url == '/product-showcase/submit/' %}data-submission-form-jump="navigation"{% else %}data-showcase-submit-cta="navigation"{% endif %} href="{% if page.url == '/product-showcase/submit/' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">{% if page.url == '/product-showcase/submit/' %}Review your product ↓{% else %}Get free feedback →{% endif %}</a></li>
           {% elsif page.next_step %}
-          <li><a class="nav-cta" data-cta-placement="nav" data-step-id="{{ page.next_step.id | escape }}" href="{{ page.next_step.url | escape }}">{% if page.model_kind %}Try {{ page.model_name | escape }} ↗{% else %}See the next step ↗{% endif %}</a></li>
+          <li><a class="nav-cta" data-cta-placement="nav" data-step-id="{{ page.next_step.id | escape }}" data-buyer-intent="{{ page.next_step.intent | default: 'unspecified' | escape }}" href="{{ page.next_step.url | escape }}">{% if page.model_kind %}Try {{ page.model_name | escape }} ↗{% else %}See the next step ↗{% endif %}</a></li>
           {% elsif page.url == '/getting-started/' %}
           <li><a class="nav-cta" href="#ai-video-generator">Pick a tool ↓</a></li>
           {% else %}
@@ -222,7 +222,7 @@
               <span class="eyebrow">Put this into practice</span>
               <h2>{{ page.next_step.title | escape }}</h2>
               <p>{{ page.next_step.description | escape }}</p>
-              <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-end" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
+              <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-end" data-buyer-intent="{{ page.next_step.intent | default: 'unspecified' | escape }}" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
             </section>
             {% endif %}
           {% else %}

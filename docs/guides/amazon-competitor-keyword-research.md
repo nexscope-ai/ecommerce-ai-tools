@@ -34,9 +34,10 @@ faq:
     answer: "It reports a rank or placement signal for a specified marketplace, query, product, date, and result type. It does not by itself prove demand, conversion, organic placement, or product quality; keep sponsored, organic, category, and query context separate."
 next_step:
   id: amazon_asin_keywords
+  intent: api-evaluation
   title: Start with one competitor ASIN
-  description: Have an ASIN ready. The Nexscope API page shows the request fields, response schema and access requirements so you can check what a keyword lookup returns before running it.
-  label: View the ASIN keyword request
+  description: Have one comparable ASIN and marketplace ready. Check the required inputs, returned keyword fields, credit estimate and access requirements before a pilot request.
+  label: Evaluate the ASIN keyword request
   url: "https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn"
 image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
 image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp

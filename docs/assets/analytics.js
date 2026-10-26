@@ -200,6 +200,8 @@
         co_from: url.searchParams.get('co-from') || undefined,
         cta_placement: link.getAttribute('data-cta-placement') || undefined,
         step_id: link.getAttribute('data-step-id') || undefined,
+        buyer_intent: link.getAttribute('data-buyer-intent') || 'unspecified',
+        landing_source: window.nexscopeTrafficAttribution?.trafficSource || 'direct_or_unknown',
         source_page: location.pathname,
         site_surface: learnHost,
         transport_type: 'beacon',

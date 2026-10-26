@@ -12,9 +12,10 @@ schema_type: Article
 suppress_article_help: true
 next_step:
   id: page_evidence_api
+  intent: api-evaluation
   title: Inspect evidence from one public URL
-  description: Review the Page Evidence inputs, snapshot fields, missing-data limits and current access conditions before requesting a page. This is not a bulk parser or feed-writing workflow.
-  label: Open Page Evidence Playground
+  description: Bring one public product URL. Check which fields the Page Evidence API captures, where data is missing and what a request costs before you add it to a workflow. It does not bulk-parse a catalog.
+  label: Evaluate Page Evidence for one URL
   url: https://www.nexscope.ai/api-docs/seo-page-evidence?view=playground&co-from=learn
 og_type: article
 image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp

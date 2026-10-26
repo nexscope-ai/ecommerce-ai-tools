@@ -103,6 +103,9 @@
       reportEvent('learn_to_main_click', {
         destination_path: destination.pathname,
         cta_placement: mainSiteLink.dataset.ctaPlacement || 'body-or-navigation',
+        next_step: mainSiteLink.dataset.stepId || 'none',
+        buyer_intent: mainSiteLink.dataset.buyerIntent || 'unspecified',
+        traffic_source: window.nexscopeTrafficAttribution?.trafficSource || 'direct_or_unknown',
         learn_entry_source: learnEntrySource || 'unattributed',
       });
     }
