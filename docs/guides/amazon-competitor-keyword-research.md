@@ -6,9 +6,9 @@ permalink: /amazon-competitor-keyword-research/
 redirect_from:
   - /ecommerce-ai-tools/amazon-competitor-keyword-research/
 date_published: 2026-09-15
-date_modified: 2026-10-21
-last_modified_at: 2026-10-20
-last_reviewed: 2026-10-20
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
+last_reviewed: 2026-10-26
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -80,6 +80,23 @@ If you need to discover products programmatically, the [Amazon Search API refere
 This is the practical meaning of **find Amazon competitor keywords**: find comparable products first, then keep each candidate tied to its ASIN, marketplace, retrieval date, provider, and metric. If the next decision also needs product attributes, offers, or history, compare the [Amazon search volume and product research API guide]({{ '/best-amazon-product-research-api/' | relative_url }}) rather than assuming a keyword export answers both questions.
 
 Amazon says [Brand Analytics](https://sell.amazon.com/tools/amazon-brand-analytics) includes Search Query Performance and Top Search Terms for eligible brand representatives. Amazon's [Sponsored Products search-term report](https://advertising.amazon.com/help/G3HEFZYWZF84NPS9) contains terms with at least one ad click, so it is useful for campaign learning but is not a complete list of all searches. Access and reporting scope depend on account eligibility and campaigns.
+
+## Which Nexscope API finds Amazon competitor keywords?
+
+Use [Amazon ASIN Keywords](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn) for an ASIN-first reverse lookup. Its current REST contract requires one `asin`; `country` selects the marketplace, and period, sorting and pagination inputs refine the result. This is a different dataset from the [Google keyword ranking API]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}).
+
+| Question before a lookup | Current input or check | Why it matters |
+| --- | --- | --- |
+| Which comparable product? | One `asin` per request | A multi-product comparison requires separately scoped lookups |
+| Which marketplace? | `country`, default US | Do not mix different marketplaces in one apparent gap |
+| Which observation period? | `timePieceType` and `timePieceValue` | Current recent-day values are 7 or 30; month and week use their documented date formats |
+| How much of the result is returned? | `pageNum` and `pageSize`; documented page size 10–100 | A first page is not a complete reverse-ASIN export |
+
+Optional fields include `keyword`, `conditions` and `sortBy`; inspect the exact accepted values instead of copying filters from a general Google SEO API. Organic and advertising ranks, traffic shares and volume-related fields must retain their provider definitions. The schema is not evidence that every metric is available for every ASIN or period.
+
+**Reviewed October 26, 2026 from the current documentation and catalog contract. This update did not execute a reverse-ASIN request.** For integration details, continue to the existing [ASIN keyword API shortlist guide]({{ '/ecommerce-trends/amazon-keywords-by-asin-api/' | relative_url }}); for the term-qualification method, use [reverse-ASIN keyword research]({{ '/reverse-asin-keyword-research/' | relative_url }}). They are supporting workflows, not additional copies of this discovery guide.
+
+{% include article-action.html placement="article-middle" %}
 
 ## What did our dated keyword-and-competitor test actually show?
 

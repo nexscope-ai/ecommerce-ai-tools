@@ -9,6 +9,13 @@ last_modified_at: 2026-10-26
 last_reviewed: 2026-10-26
 author: Nexscope Team
 schema_type: Article
+suppress_article_help: true
+next_step:
+  id: page_evidence_api
+  title: Inspect evidence from one public URL
+  description: Review the Page Evidence inputs, snapshot fields, missing-data limits and current access conditions before requesting a page. This is not a bulk parser or feed-writing workflow.
+  label: Open Page Evidence Playground
+  url: https://www.nexscope.ai/api-docs/seo-page-evidence?view=playground&co-from=learn
 og_type: article
 image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp
 image_small: /assets/images/ecommerce-product-page-seo-audit-720w.webp
@@ -41,13 +48,15 @@ faq:
 
 If you need to read and parse data from a live ecommerce website, **choose the source by the job**: an extraction API for repeated observations of permitted public pages, your store's catalog API or feed for records you own, and a page audit to diagnose one public URL. No single platform is best for all three. A page snapshot can disagree with the catalog, checkout, or selected variant, so preserve the URL, retrieval time, and evidence for each important field.
 
+{% include api-guide-entry.html %}
+
 | Your job | Start with | Check before relying on it |
 | --- | --- | --- |
 | Collect selected fields from many permitted live pages | A page extraction API with the rendering and variant coverage you need | Access rules, field provenance, missing values, retries, and cost per usable record |
 | Update products in a store you control | Its catalog API, PIM, or merchant feed | Record ownership, SKU and variant mapping, and synchronization with the live offer |
 | Find why one public product page is hard to understand or validate | A page-level audit | Visible facts, metadata, structured data, and differences from the approved record |
 
-Nexscope's Website SEO Auditor supports the **one-page audit** use case. This guide does not present it as a bulk website parser or catalog-management API.
+Nexscope's Website SEO Auditor supports the **one-page audit** use case. Developers can inspect the separate [SEO Page Evidence API](https://www.nexscope.ai/api-docs/seo-page-evidence?view=api&co-from=learn) for bounded observations of one public URL. Neither is presented here as a bulk website parser or catalog-management API.
 
 > **TL;DR:** Use a catalog or merchant feed to operate the business, live product-page data to verify what shoppers can see, structured data to inspect machine-readable declarations, and a page audit to diagnose one URL. Preserve the source URL, retrieval time, raw evidence, and field-level confidence. Reconcile price, availability, identifiers, variants, and other high-risk facts before publishing or making inventory decisions.
 
@@ -110,6 +119,16 @@ This structure also makes an **ecommerce data API** easier to evaluate. Ask whet
 - total cost per accepted record, including retries, storage, normalization, and review.
 
 Do not infer completeness from a long schema or a successful HTTP status. Test a small set of normal pages, JavaScript-heavy pages, variant pages, out-of-stock pages, and pages with conflicting visible and structured data.
+
+## Which Nexscope API can collect evidence from one public URL?
+
+The [SEO Page Evidence reference](https://www.nexscope.ai/api-docs/seo-page-evidence?view=playground&co-from=learn) documents a single public HTTP(S) `url` input. Its snapshots preserve capture time, final URL, source and missing information. Depending on the snapshot, available evidence can include page metadata, bounded HTML, text or links. Separate snapshots are observations to reconcile, not necessarily one atomic product record.
+
+This gives a developer a narrower starting point than an unrestricted ecommerce parser: inspect what the contract actually returns for your page type, then define any additional extraction and validation work. A successful call does not establish complete JavaScript rendering, variant coverage or normalized SKU, price and stock fields. Keep truncation and missing evidence visible.
+
+Review access and the current estimate before execution. This October 26, 2026 update checked documentation and the repository contract only; it did not execute a paid extraction test. The [product feed enrichment workflow]({{ '/ecommerce-product-data-enrichment/' | relative_url }}) explains how to turn a reviewed observation into a proposed catalog correction without letting the API write your feed.
+
+{% include article-action.html placement="article-middle" %}
 
 ## When should you use a page audit instead of extraction?
 

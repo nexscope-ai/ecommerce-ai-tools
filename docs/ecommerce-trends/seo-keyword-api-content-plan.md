@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "SEO Keyword Metrics API: Plan Ecommerce Pages"
-description: "Use keyword metrics to group ecommerce search intent, choose the right page type and prioritize one content test. Includes a page-brief example and API next step."
+title: "Keyword Research API: Ideas, Metrics & Limits"
+description: "Choose a keyword research API for seed expansion, list metrics or category ideas. Review US English inputs, missing data and the matching Nexscope Playground."
 permalink: /ecommerce-trends/seo-keyword-api-content-plan/
 last_reviewed: 2026-10-26
 date_published: 2026-10-20
@@ -36,13 +36,30 @@ faq:
     answer: "Use the closest product action. A guide about keyword metrics should link directly to the matching API detail or playground page so readers can review the schema and use the page-level authentication flow."
 ---
 
-# SEO keyword metrics API: plan ecommerce pages by search intent
+# Keyword research API: choose ideas, metrics and a content action
 
-An SEO keyword API can return search evidence, but a list of terms is not a content plan. Before drafting, decide which question the searcher needs answered, which page should answer it, and what evidence would make that answer useful.
+A **keyword research API** or **keyword data API** can help discover candidates or assess a supplied list. Those are different operations: generating ideas does not verify every metric, and a volume estimate does not show which domain ranks. Before drafting, choose the evidence needed for one content decision.
 
 The Nexscope SEO and marketing APIs can support keyword research, search analysis, content planning, and related marketing workflows. This guide is for teams using API data to decide **which ecommerce page to build or improve**. If you want a browser-based starting point, use the [SEO Keyword Planner]({{ '/seo-keyword-planner/' | relative_url }}).
 
 **Quick answer:** Classify keywords by intent, map each cluster to one page type, record the metric definition and date, and send the reader to the matching API feature page. Keyword data should guide prioritization, not become a promise of rankings or traffic.
+
+{% include api-guide-entry.html %}
+
+## Which keyword research API fits your input?
+
+Use a seed-based endpoint when you need ideas and a list-based endpoint when you already know the terms to check. The current contracts below are scoped to **US English**, not unrestricted worldwide keyword coverage. Reviewed October 26, 2026; no paid requests were executed for this update.
+
+| Your input | Nexscope API | Current request boundary | Use the result for |
+| --- | --- | --- | --- |
+| One seed phrase | [Keyword Expansion](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=playground&co-from=learn) | `keyword`, `market: US`, `language: en`; up to 20 results | Suggestions and related-term candidates |
+| A prepared list | [Keyword Metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=playground&co-from=learn) | `keywords`: 1–20 inputs; US English | Available volume, difficulty and advertising metrics |
+| Seeds for category-based ideas | [Category-based Keyword Ideas](https://www.nexscope.ai/api-docs/seo-keyword-ideas?view=playground&co-from=learn) | `keywords`: 1–20 seeds; `limit`: up to 20; US English | Ideas with documented category and source context |
+| A competitor domain | [Keyword ranking API guide]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}) | A separate domain-first contract | Ranking terms and URLs, not just demand metrics |
+
+For Keyword Expansion and Keyword Metrics, each input phrase is currently limited to 80 characters and ten whitespace-separated words. Do not send a full customer prompt as a keyword or silently truncate it. Validate the exact interface before integration; the examples on the documentation page are not live market findings.
+
+{% include article-action.html placement="article-middle" %}
 
 ## Classify every keyword by intent
 

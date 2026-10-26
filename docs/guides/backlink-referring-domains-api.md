@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Backlink API Guide: Referring Domains, Links & History"
-description: "Research backlink profiles using overview, referring-domain, record and new/lost APIs. Preserve source scope and manually verify links before drawing SEO conclusions."
+title: "Backlink API: Referring Domains & New or Lost Links"
+description: "Choose a backlink API by task: profile overview, referring domains, link records or new/lost history. Check sample limits and inspect the matching Playground."
 permalink: /guides/backlink-referring-domains-api/
 date_published: 2026-10-23
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
-last_reviewed: 2026-10-23
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
+last_reviewed: 2026-10-26
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -35,7 +35,7 @@ A **backlink API** can identify link sources worth inspecting. It does not measu
 
 > **Quick answer:** Nexscope's backlink APIs support link-profile research through overview, referring-domain, individual-link and new/lost views. Start with an exact domain or page, then inspect selected source evidence. Use the results for manual review, not automatic disavowal or exhaustive link counts. Index observations and proprietary scores are not Google's judgments about your site.
 
-*Reviewed October 23, 2026. Documentation-based guide by Nexscope Team. No paid backlink request, link acquisition or ranking experiment was performed for this article.*
+*Reviewed October 26, 2026 against public documentation and repository contracts. Documentation-based guide by Nexscope Team. No paid backlink request, link acquisition or ranking experiment was performed for this article.*
 
 ## Is this API workflow right for you?
 
@@ -68,6 +68,27 @@ Use the endpoint that answers the next unanswered question. Nexscope's current d
 
 Do not assume pagination or complete web coverage. Check the actual result contract and limits; an endpoint with a bounded result does not become an exhaustive export because the reader wants a larger number.
 
+## How do you request referring domains without changing the target scope?
+
+The current [Referring Domains reference](https://www.nexscope.ai/api-docs/seo-referring-domains?view=playground&co-from=learn) accepts a target object, with `kind` set to `DOMAIN` or `PAGE`. Its `limit` defaults to 10 and allows at most 20. This **documentation-derived input example was not executed**:
+
+```json
+{
+  "target": { "kind": "DOMAIN", "target": "nexscope.ai" },
+  "limit": 10
+}
+```
+
+Check the completed result's `returnedCount`, `providerTotalCount`, `truncated` and `missing` alongside its domain rows. The provider's reported total and the rows returned are different quantities. Even an untruncated response describes the provider index, not the entire web or Google's private link inventory.
+
+For a page-level question, inspect the `PAGE` contract and use the precise page URL. Do not silently broaden the request to the whole domain merely to obtain more rows.
+
+## What do individual backlink records add?
+
+Use [Backlink Records](https://www.nexscope.ai/api-docs/seo-backlink-records?view=playground&co-from=learn) when you need the evidence behind a profile count. Its documented fields include source `fromUrl`, destination `toUrl`, `anchor`, `dofollow`, observation dates and missing reasons. The current request also uses a target object and a 1–20 item limit.
+
+Retain the linking page and destination together, then inspect important links manually. A link attribute is not a promise of ranking value, referral traffic or a safe disavow decision. For an integration pilot, first confirm that the selected source pages answer the research question before expanding the study.
+
 ## How do you compare a competitor's link profile fairly?
 
 Compare like-for-like targets and retain collection dates. A useful competitor is one whose content solves a similar problem, not simply a site with the largest link count.
@@ -83,6 +104,8 @@ If the question concerns an article, compare relevant pages rather than comparin
 It is a dated observation within the provider's index and the endpoint's bucket policy. It is not necessarily the exact time a publisher added or removed a link, and it is not proof of the cause of a traffic change.
 
 Retain the requested period and returned observation fields. A recently missing record might reflect crawling or coverage as well as a page change. Check the source page before treating it as a confirmed removal or contacting its publisher.
+
+The [New/Lost Backlinks contract](https://www.nexscope.ai/api-docs/seo-backlink-new-lost?view=api&co-from=learn) uses a **string** `target` plus `dateFrom`, `dateTo` and optional `groupRange`; it does not reuse the target object above. Date buckets describe aggregate observations, not a list of every changed source URL. Review `bucketPolicy`, `zeroMeaning` and missing evidence before interpreting an empty bucket as zero change.
 
 For a hypothetical alert, define which source pages are important, verify a changed link manually and record the outcome. Do not send an automatic accusation based on an index difference.
 
@@ -109,7 +132,7 @@ For content opportunities, read the [competitor keyword and traffic API guide]({
 
 ## Evidence checked and what remains untested
 
-Documentation review date: **October 23, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
+Documentation review date: **October 26, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
 
 The [Referring Domains contract](https://www.nexscope.ai/api-docs/seo-referring-domains?view=api) documents `limit` and the target object's `kind` and `target` fields. Response fields include `domain`, `backlinks`, `referringPages`, `firstSeenAt` and `lostAt`. These are index observations for the specified scope, not verified dates of a publisher's edit.
 

@@ -46,7 +46,7 @@ next_step:
 
 {% include article-action.html %}
 
-### What should you compare in a sample audit?
+## What should you compare in a sample audit?
 
 For one SKU, keep the approved catalog record beside the page audit. Check whether the page identifies the exact variant, whether key specifications are visible, and whether structured data describes the same offer. For example, a catalog's two-pack and a page's single-item description should become a review task before AI drafts more copy. This is a suggested review workflow, not a report that Nexscope has performed a bulk enrichment test.
 
@@ -107,6 +107,23 @@ Google's specification requires the feed's price and availability to match the l
 
 Use Google's [ecommerce structured-data overview](https://developers.google.com/search/docs/specialty/ecommerce/include-structured-data-relevant-to-ecommerce) to choose relevant markup. Markup is not a substitute for a usable page or a correct feed, and eligibility for a search feature does not mean the feature will appear. For a broader page-template check, follow the [sitewide ecommerce SEO audit checklist]({{ '/ecommerce-seo-audit/' | relative_url }}).
 
+## How can Nexscope APIs support product feed enrichment?
+
+**Use Nexscope for bounded evidence collection and page review, then reconcile the evidence in the system that owns your catalog or feed.** The [SEO Page Evidence API](https://www.nexscope.ai/api-docs/seo-page-evidence?view=api&co-from=learn) accepts one public `url` and documents separate snapshots with capture time, source and missing evidence. It is not a bulk product feed enrichment service or a catalog-write API.
+
+The following is an **illustrative review sheet, not a returned API result**. It shows what to do after collecting permitted evidence and comparing it with an approved SKU record:
+
+| Field | Approved record versus page or feed | Review action |
+| --- | --- | --- |
+| Variant | Catalog says two-pack; selected page offer says single item | Hold the mapping and identify the correct variant |
+| Capacity | Manufacturer record has 750 ml; feed has no capacity | Propose the sourced attribute for review; do not infer it from an image |
+| Availability | Feed and current page disagree | Ask the commerce owner to reconcile stock and timestamps |
+| Identifier | GTIN missing from both approved record and evidence | Leave unresolved; never generate an identifier |
+
+Store each field with its SKU, variant, source URL, capture time, owner and decision. Page metadata or HTML evidence does not guarantee a normalized price, stock or GTIN field. Incomplete, blocked or truncated evidence needs review, not AI-generated replacement facts. Google's [product-data specification](https://support.google.com/merchants/answer/7052112?hl=en) remains the destination's rulebook for applicable feed attributes and offer consistency.
+
+For a human-readable check, use the existing [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn). For a developer integration, [inspect the Page Evidence request](https://www.nexscope.ai/api-docs/seo-page-evidence?view=playground&co-from=learn) before any call. Neither entry point establishes Merchant Center submission, automatic feed synchronization or approval of the proposed changes. Publish through your authorized PIM, store or feed system and verify its diagnostics separately.
+
 ## How do you run an AI product data enrichment workflow safely?
 
 1. **Choose a bounded pilot.** Pick 20–50 SKUs from one category, including variants, top sellers, and products with known data gaps. This is a practical pilot size, not a platform requirement.
@@ -135,7 +152,9 @@ For AI-search or GEO review, test a fixed set of product questions and record th
 
 ## Where can Nexscope help—and where can't it?
 
-The [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) can inspect **one public product URL** for page-level crawl, metadata, content, links, and structured-data evidence. Compare those findings manually with your approved catalog facts and channel feed. It is **not** a PIM, bulk feed-enrichment pipeline, or a substitute for Merchant Center diagnostics. The [product-page audit guide]({{ '/website-seo-audit-guide/' | relative_url }}) explains this narrower workflow.
+The [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) can inspect **one public product URL** for page-level crawl, metadata, content, links, and structured-data evidence. The separate Page Evidence API provides a documented integration entry point for bounded observations. Compare available evidence manually with your approved catalog facts and channel feed. These are **not** a PIM, bulk feed-enrichment pipeline, or a substitute for Merchant Center diagnostics. The [product-page audit guide]({{ '/website-seo-audit-guide/' | relative_url }}) explains the audit workflow.
+
+*Nexscope API scope rechecked October 26, 2026 from the public Page Evidence reference and repository contract. No paid page request, catalog write or feed submission was executed for this update.*
 
 ## Frequently asked questions
 

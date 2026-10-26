@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Competitor Keyword API: Rankings, Gaps & Traffic Research"
-description: "Find competitor ranking keywords, compare shared search terms and inspect traffic estimates with Nexscope SEO APIs. Build a relevant shortlist without copying pages."
+title: "Keyword Ranking API: Competitor Keywords & Traffic"
+description: "Find competitor keywords and ranking URLs with Nexscope's keyword ranking API. Compare ranking data, SERP snapshots and tracking needs before opening Playground."
 permalink: /guides/competitor-keyword-traffic-api/
 date_published: 2026-10-23
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
-last_reviewed: 2026-10-23
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
+last_reviewed: 2026-10-26
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -27,15 +27,15 @@ next_step:
   url: https://www.nexscope.ai/api-docs/seo-domain-ranked-keywords?view=playground&co-from=learn
 ---
 
-# Competitor keyword API: turn ranking evidence into a content shortlist
+# Keyword ranking API: research competitor keywords and traffic
 
-A **competitor keyword API** can show which terms and pages deserve closer investigation. It cannot tell you that a competitor's visitors will buy your product, or that copying a ranking page will produce traffic. Start with competitors that solve the same customer problem and compare the same search market.
+A **keyword ranking API** can help answer which organic terms a competitor domain ranks for and which URLs appear with them. Nexscope's Domain Organic Ranked Keywords interface serves this domain-first research task. It is different from checking one query's search results or operating a scheduled rank tracker.
 
 {% include api-guide-entry.html %}
 
-> **Quick answer:** Nexscope's competitor SEO APIs help identify ranking terms, relevant pages and keyword overlap for a defined market and language. Use them to prioritize original content or updates, not to copy competitors or forecast guaranteed visits. Results and traffic estimates are bounded research signals. Use your own analytics to measure actual clicks and conversions.
+> **Quick answer:** Nexscope's keyword ranking API returns a bounded organic-keyword sample for a domain in US English, including available positions and ranking URLs. Use it for competitor research, not as a complete rank tracker. Choose a SERP request for one query's results; a recurring monitoring workflow also needs scheduling, storage and comparison logic.
 
-*Reviewed October 23, 2026. Documentation-based guide by Nexscope Team. No paid SEO request or competitor benchmark was run, and no traffic gain is claimed.*
+*Reviewed October 26, 2026 against public documentation and repository contracts. Documentation-based guide by Nexscope Team. No paid SEO request or competitor benchmark was run, and no traffic gain is claimed.*
 
 ## Is this API workflow right for you?
 
@@ -46,6 +46,20 @@ A **competitor keyword API** can show which terms and pages deserve closer inves
 | Fit | Prioritize briefs with a useful product next step | Review relevance and original evidence, not volume alone. |
 | Not a fit | Measure a competitor's actual sessions or revenue | Only authorized first-party analytics can establish those account metrics. |
 | Not a fit | Guarantee traffic or justify copied content | Test original content and measure your own outcomes. |
+
+## Keyword ranking API or keyword tracking API: which task do you need?
+
+Start with the input you already have. A domain-first database lookup, a query-first SERP observation and a recurring tracking service answer different questions. Nexscope documents the first two request types; neither request alone is a configured tracking project with scheduled alerts.
+
+| Your starting point | Appropriate request or workflow | Important boundary |
+| --- | --- | --- |
+| A competitor domain | Domain Organic Ranked Keywords | US English; default 10, maximum 20 returned items; no pagination |
+| One search phrase | [SEO SERP](https://www.nexscope.ai/api-docs/seo-serp?view=playground&co-from=learn) | Current contract: US, English, desktop; up to 10 results |
+| A topic with no keyword shortlist | [Keyword Expansion](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=api&co-from=learn) | Candidate discovery, not evidence that your domain ranks |
+| A supplied list needing demand metrics | [Keyword research and metrics guide]({{ '/ecommerce-trends/seo-keyword-api-content-plan/' | relative_url }}) | Volume and difficulty do not identify your current position |
+| Daily checks and change alerts | A separately designed monitoring workflow | Needs authorized execution, a schedule, stored observations and alert rules; not established by the lookup contract |
+
+If you searched for a **keyword tracking API**, first specify the query list, target, locale, device, frequency, observation depth and retention you need. Do not relabel a domain database sample as a live position check for every supplied keyword. A target missing from the returned sample has an unknown position, not a measured last-place ranking.
 
 ## What can each competitor research API tell you?
 
@@ -60,6 +74,25 @@ Different endpoints describe different parts of the search picture. Use them to 
 | How does a comparison change over time? | [Domain Traffic History](https://www.nexscope.ai/api-docs/seo-domain-traffic-history?view=api) | A modelled change does not establish its cause |
 
 Read the current contracts for supported target forms, market, language and limits. The ranked-keyword and intersection interfaces document bounded database results; do not invent pagination or describe a fixed-size sample as exhaustive.
+
+For Amazon listing terms, use the separate [Amazon competitor keyword workflow]({{ '/amazon-competitor-keyword-research/' | relative_url }}). Google organic positions are not Amazon organic or advertising ranks.
+
+## What does a domain ranking request actually contain?
+
+The [current ranked-keyword reference](https://www.nexscope.ai/api-docs/seo-domain-ranked-keywords?view=api&co-from=learn) requires `target`; its current market and language are fixed to `US` and `en`. The following is a **documentation-derived input example, not an executed request or measured result**:
+
+```json
+{
+  "target": "nexscope.ai",
+  "market": "US",
+  "language": "en",
+  "limit": 10
+}
+```
+
+After a permitted call completes, inspect `data.status`, coverage and `data.result` before using its items. Keep `keyword`, `url`, `rankAbsolute`, `rankGroup` and missing reasons with the requested scope. Do not substitute search volume for rank, or collapse differently defined rank fields into one unlabeled position.
+
+For a proposed repeat check, save the original observation and compare only matching scopes. A collection timestamp is not proof the provider refreshed every database row at that moment. A non-completed or partial call must not become a fabricated ranking history.
 
 ## How do you choose the right competitors?
 
@@ -106,7 +139,7 @@ For keyword planning on your own site, use the [SEO keyword planner guide]({{ '/
 
 ## Evidence checked and what remains untested
 
-Documentation review date: **October 23, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
+Documentation review date: **October 26, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
 
 The [Domain Ranked Keywords contract](https://www.nexscope.ai/api-docs/seo-domain-ranked-keywords?view=api) documents `target`, `market`, `language` and `limit`. Returned fields include `keyword`, `rankAbsolute`, `searchVolume` and `url`. Pair the keyword with its ranking URL and requested scope; the result limit is not a complete record of all searches.
 
