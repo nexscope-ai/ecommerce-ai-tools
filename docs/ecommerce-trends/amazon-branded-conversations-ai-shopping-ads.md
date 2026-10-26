@@ -1,17 +1,25 @@
 ---
 layout: default
-title: "Amazon Branded Conversations: Eligibility, Launch & Product Data Checklist"
-description: "Understand Amazon Branded Conversations, eligibility, the January 2027 launch, sponsored prompts, and the product data checklist for advertisers."
+title: "Amazon Branded Conversations: Launch, Cost & Brand Brief"
+description: "Check January 2027 eligibility and CPC pricing, then build a sourced brand brief from buyer questions. Includes a downloadable worksheet and measurement plan."
 permalink: /ecommerce-trends/amazon-branded-conversations-ai-shopping-ads/
-last_reviewed: 2026-10-19
+last_reviewed: 2026-10-26
 date_published: 2026-10-06
-date_modified: 2026-10-19
-last_modified_at: 2026-10-19
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
 author: Nexscope Team
 schema_type: Article
 og_type: article
 topic: shopping
 editorial_only: true
+suppress_article_help: true
+next_step:
+  id: branded_conversations_review_questions
+  intent: api_evaluation
+  title: Find the buyer questions your brand brief needs to answer
+  description: Inspect the Amazon Reviews List API before collecting a dated sample. Keep review IDs, verify your own product facts and use the brief worksheet below to connect the two.
+  label: Inspect review collection inputs
+  url: "https://www.nexscope.ai/api-docs/amazon-reviews-list?view=api&co-from=learn"
 keywords:
   - Amazon Branded Conversations
   - Amazon AI shopping ads
@@ -35,20 +43,15 @@ faq:
     answer: "No. Branded Conversations help shoppers research products through a sponsored Alexa for Shopping dialogue. Review Requests are a separate advertising feature that invites verified buyers to rate or review a product after purchase."
 ---
 
-# Amazon Branded Conversations: eligibility, launch and product data checklist
+# Amazon Branded Conversations: launch, cost and a usable brand brief
 
-**By Nexscope Team · Published October 6, 2026 · Reviewed October 19, 2026**
+**By Nexscope Team · Published October 6, 2026 · Reviewed October 26, 2026**
 
 **Amazon Branded Conversations turn a Sponsored Brands prompt into a multi-turn, brand-informed conversation inside Alexa for Shopping.** The format is scheduled to launch in the United States in January 2027. It gives eligible advertisers a way to supply product expertise for a sponsored shopping dialogue, but it does not let a brand control every Alexa answer or guarantee a sale.
 
-> **Key takeaways**
->
-> - Branded Conversations start when a shopper clicks a prompt on an eligible Sponsored Brands collections ad.
-> - Amazon says the conversation can draw on the product catalog, product guides, compatibility information, usage tips, and a campaign-level brand brief.
-> - Eligible US endemic advertisers, excluding authors, are scheduled to receive the feature starting in January 2027.
-> - Amazon charges CPC on the conversation-starter prompt; follow-up turns are free.
-> - Eligible campaigns are automatically enrolled, but advertisers can pause prompts or opt out at the campaign or account level.
-> - Amazon's early engagement figure is not a conversion guarantee; advertisers still need an SKU-level baseline and controlled measurement plan.
+**What to do now:** prepare one product-line brief and an advertising baseline. The [Amazon launch notice](https://advertising.amazon.com/resources/whats-new/unboxed-2026-branded-conversations), rechecked October 26, still describes a January launch. A missing account feature today is not evidence that your product data failed.
+
+{% include api-guide-entry.html %}
 
 ## What are Amazon Branded Conversations?
 
@@ -127,56 +130,42 @@ For example, “works with Model X” is more useful than “universal compatibi
 
 Marketplace keyword and review evidence can help identify the questions shoppers already ask. Nexscope's [Amazon competitor keyword workflow](../../amazon-competitor-keyword-research/) and [negative-review analysis guide](../../amazon-negative-review-analysis/) show how to collect that evidence. Nexscope does not power Branded Conversations and cannot guarantee Alexa placement or campaign performance.
 
-## What should advertisers avoid claiming?
+## Worked example: turn a capacity complaint into a verified answer
 
-**Do not turn a launch announcement into an undocumented ranking formula.** Amazon has not published a general model-weighting system for Branded Conversations, an independent conversion study, or the complete Ads API schema.
+**A review gives you a question to investigate; your own product measurement supplies the answer.** In our [published Amazon review case]({{ '/amazon-review-case-study/' | relative_url }}), a September 15, 2026 run for US ASIN `B0G1FVPYNW` requested 20 low-star reviews and returned 10 unique reviews. Four explicitly mentioned size or capacity. This is a selected sample, not a 40% complaint rate among all buyers.
 
-Avoid claims such as:
+One returned source ID, `RS466G2JW5LZH`, described difficulty fitting ten cards and cash. The case did not establish whether the current listing lacked dimensions. For an advertiser selling its own comparable card case, that evidence suggests the question **“What can it actually carry?”**, rather than the claim **“Our case solves this competitor's problem.”**
 
-- adding keywords guarantees Alexa recommendations;
-- every Sponsored Brands campaign is eligible today;
-- follow-up turns are free, so conversations have no cost;
-- the brand brief overrides Amazon's other signals;
-- the early 20% continuation figure is a purchase rate;
-- Branded Conversations improve organic Amazon ranking.
+| Brief field | What to enter for your own SKU | Approval gate |
+| --- | --- | --- |
+| Buyer question | Will ten cards and folded cash fit? | Trace to the sampled review ID; label as a research question |
+| Product evidence | Measured internal dimensions and a photographed capacity test | Test the actual SKU and closure; do not infer capacity from a title |
+| Approved answer | Fill with tested card count, cash configuration and limitations | Product owner verifies the wording |
+| Unsupported answer | Universal fit, unlimited capacity or claims about every buyer | Exclude from the brief |
+| Recheck trigger | Material, dimensions, supplier or variant changes | Re-test before reusing the answer |
 
-The safer approach is to label the experience as sponsored, use current product facts, and measure the campaign in the advertiser's own account.
+Download the [brand-brief evidence worksheet]({{ '/assets/downloads/branded-conversations-brief.csv' | relative_url }}). It is an empty template. Keep one row for each buyer question and SKU, attach the evidence internally and leave unverified answers unapproved. A review collection can identify questions; it cannot certify your product's specifications.
 
-## Are Branded Conversations the same as Review Requests?
+{% include article-action.html placement="article-middle" %}
 
-**No—Amazon announced two different advertising products at unBoxed.** Branded Conversations support pre-purchase research inside Alexa for Shopping. Review Requests invite verified buyers to leave a rating or review from high-traffic Amazon surfaces after purchase.
+## How will you tell whether conversations produce useful clicks?
 
-Amazon says Review Requests will launch in November 2026 and reports that products in its early testing received around three times as many ratings and reviews each week. That is a separate Amazon test result, not evidence that Branded Conversations create more reviews or that every advertiser will reproduce the lift.
+**Measure the paid entry click and the downstream order separately.** The initial report should retain prompt text, campaign, date window, impressions, clicks, spend and attributed orders where the account exposes them. Keep conversation continuation separate from purchase conversion.
 
-## What should ecommerce teams do now?
+Use these definitions consistently:
 
-**Prepare one accurate product decision set and wait for account-level access.** A strong first test is not “make Alexa say our product is best.” It is “can the sponsored conversation correctly distinguish these three products for five common customer needs?”
+- **Starter-prompt CTR:** starter-prompt clicks divided by starter-prompt impressions.
+- **Click-to-order rate:** attributed orders divided by the corresponding clicks, using the same attribution window.
+- **Cost per attributed order:** corresponding ad spend divided by attributed orders. Mark it undefined when orders are zero.
+- **Answer accuracy:** supported answers divided by the answers your team actually reviewed; report sample size and selection method.
 
-Keep the answer source, SKU, prompt, campaign state, click, order, and discrepancy in the same dated record. That creates a defensible way to decide whether Branded Conversations improve product discovery or merely add another paid interaction.
+For example, **hypothetical** counts of 1,000 impressions, 40 clicks, four orders and $20 spend yield 4% CTR, 10% click-to-order rate and $5 per attributed order. They say nothing about incremental profit without margin, attribution and a suitable comparison. This is arithmetic, not a Branded Conversations campaign result.
 
-For the broader distinction between paid conversations and organic AI product discovery, see the [agentic commerce visibility guide](../what-is-agentic-commerce-ai-shopping-visibility/) and [ChatGPT product discovery checklist](../chatgpt-product-discovery/).
+Record changes to bids, price, stock and promotions alongside a test. Where possible, use comparable campaign groups; a before-and-after increase during a holiday period cannot isolate the effect of the new conversation format.
 
-## Frequently asked questions
+For the separate question of organic AI product discovery, use the [ChatGPT product discovery checklist](../chatgpt-product-discovery/). Sponsored conversation performance is not an organic ranking result.
 
-### What are Amazon Branded Conversations?
-
-They are sponsored, multi-turn Alexa for Shopping conversations that begin from a prompt on an eligible Sponsored Brands ad and use Amazon signals plus brand-supplied product expertise.
-
-### When do Branded Conversations launch?
-
-Amazon says they will launch in the United States in January 2027, starting with eligible Sponsored Brands collections campaigns for US endemic advertisers other than authors.
-
-### How are advertisers charged?
-
-Amazon says the conversation-starter prompt uses CPC pricing and follow-up turns are free. Existing campaign targeting and budgets apply.
-
-### Can advertisers opt out?
-
-Yes. Amazon says advertisers can pause individual conversations and opt out at the campaign or account level through self-service controls.
-
-### Do Branded Conversations improve organic Amazon rankings?
-
-Amazon does not document Branded Conversations as an organic ranking factor. They are a clearly marked sponsored experience and should be measured as advertising.
+{% include api-guide-faq.html %}
 
 ## Sources and scope
 
