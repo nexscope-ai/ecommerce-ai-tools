@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TikTok Shop Black Friday 2026: Seller Prep Checklist"
-description: "Prepare for TikTok Shop Black Friday 2026 with a seller timeline, hero-product checklist and creator brief. Review product research inputs before your campaign."
+title: "TikTok Shop Black Friday 2026 Dates & Seller Checklist"
+description: "TikTok Shop's announced Black Friday campaign runs Nov 11–30, 2026. Use this seller checklist for hero SKUs, creator briefs, LIVE Shopping and delivery checks."
 permalink: /ecommerce-trends/tiktok-shop-holiday-shopping-2026-seller-guide/
 date_published: 2026-10-15
-date_modified: 2026-10-21
-last_modified_at: 2026-10-16
-last_reviewed: 2026-10-16
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
+last_reviewed: 2026-10-26
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -39,11 +39,11 @@ faq:
     answer: "Nexscope can support documented public research, page inspection, and evidence logging. It does not connect a TikTok Shop account, publish campaigns, manage checkout, process payments, or guarantee TikTok distribution."
 ---
 
-# TikTok Shop holiday shopping 2026: Black Friday seller guide
+# TikTok Shop Black Friday 2026: dates and seller checklist
 
-**By Nexscope Team · Published and reviewed October 15, 2026**
+**By Nexscope Team · Published October 15, 2026 · Reviewed October 26, 2026**
 
-TikTok Shop holiday shopping 2026 starts before the first Black Friday livestream. Sellers need product facts, gift-oriented content, creator coordination, inventory, and a clear measurement plan ready while shoppers are still discovering ideas.
+**TikTok Shop's announced 2026 Black Friday and Cyber Monday campaign runs November 11–30.** A seller can use the weeks before it to choose hero products, confirm inventory and delivery promises, prepare creator briefs, and test shoppable LIVE links. The checklist below separates TikTok's announced dates from our suggested preparation schedule.
 
 TikTok says its 2026 Black Friday and Cyber Monday TikTok Shop campaign runs **November 11 through November 30, 2026**. The company also reported that `#holidayshopping` content rose 263% in September compared with the prior month. Those are TikTok's own platform signals, not a guarantee that every category or seller will receive the same demand. [Read TikTok's holiday-season announcement](https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en).
 
@@ -55,15 +55,14 @@ TikTok says its 2026 Black Friday and Cyber Monday TikTok Shop campaign runs **N
 
 **TikTok's announced 2026 TikTok Shop BFCM campaign window is November 11–30.** Use that as the public planning anchor, then verify the exact promotion, account eligibility, market rules, and Seller Center deadlines for each offer. A seller should be campaign-ready before November 11 rather than treating that date as the start of preparation.
 
-The following is a recommended seller timeline, not an additional TikTok deadline:
+The following is a recommended seller sequence, not an additional TikTok deadline. If you are starting late, begin with product and offer accuracy before adding more creative:
 
-| Dates | Seller work | Evidence to keep |
+| Timing | Seller work | Evidence to keep |
 | --- | --- | --- |
-| Oct 15–22 | Choose hero SKUs, gift recipients, margins, inventory limits, and target markets | SKU list, variant facts, price floor, stock snapshot |
-| Oct 23–Nov 3 | Send creator samples, write product-accurate hooks, and produce listing and short-form assets | Sample log, briefs, approved claims, draft links |
-| Nov 4–10 | Rehearse LIVE order, verify links, test coupons or eligible offers, and confirm support coverage | Rehearsal notes, offer rules, delivery and returns check |
+| Before the final week | Choose hero SKUs and target markets; confirm margins and inventory; send creator samples and draft listings | SKU list, variant facts, price floor, stock snapshot, approved briefs |
+| Final week before November 11 | Rehearse LIVE order, verify links, test eligible offers, and confirm support coverage | Rehearsal notes, offer rules, delivery and returns check |
 | Nov 11–30 | Run the campaign, rotate gift angles, answer product questions, and monitor stock | Dated content, LIVE metrics, product and order events |
-| Dec 1 onward | Handle delivery, returns, support, and post-campaign analysis | Refund and return reasons, SKU readout, next-test list |
+| After November 30 | Handle delivery, returns, support, and post-campaign analysis | Refund and return reasons, SKU readout, next-test list |
 
 If a promotion has a shorter seller-submission deadline, use the earlier deadline. If a product cannot be delivered within the promised window, remove it from a time-sensitive gift angle instead of relying on a last-minute disclaimer.
 

@@ -1,11 +1,12 @@
 ---
 layout: default
-title: "SEO Keyword API: Turn Search Data into a Content Plan"
-description: Use SEO keyword and trend evidence to choose page types, prioritize content, and connect search intent to the right Nexscope API workflow.
+title: "SEO Keyword Metrics API: Plan Ecommerce Pages"
+description: "Use keyword metrics to group ecommerce search intent, choose the right page type and prioritize one content test. Includes a page-brief example and API next step."
 permalink: /ecommerce-trends/seo-keyword-api-content-plan/
-last_reviewed: 2026-10-20
+last_reviewed: 2026-10-26
 date_published: 2026-10-20
-date_modified: 2026-10-20
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -35,11 +36,11 @@ faq:
     answer: "Use the closest product action. A guide about keyword metrics should link directly to the matching API detail or playground page so readers can review the schema and use the page-level authentication flow."
 ---
 
-# SEO Keyword API: turn search data into a content plan
+# SEO keyword metrics API: plan ecommerce pages by search intent
 
-Keyword exports become useful when they answer three questions: what should we publish, who is the page for, and what action should the reader take next?
+An SEO keyword API can return search evidence, but a list of terms is not a content plan. Before drafting, decide which question the searcher needs answered, which page should answer it, and what evidence would make that answer useful.
 
-The Nexscope SEO and marketing APIs can support keyword research, search analysis, content planning, and related marketing workflows. Use them to collect evidence, then apply editorial judgment before publishing.
+The Nexscope SEO and marketing APIs can support keyword research, search analysis, content planning, and related marketing workflows. This guide is for teams using API data to decide **which ecommerce page to build or improve**. If you want a browser-based starting point, use the [SEO Keyword Planner]({{ '/seo-keyword-planner/' | relative_url }}).
 
 **Quick answer:** Classify keywords by intent, map each cluster to one page type, record the metric definition and date, and send the reader to the matching API feature page. Keyword data should guide prioritization, not become a promise of rankings or traffic.
 
@@ -54,6 +55,14 @@ Group terms into:
 
 Each group should have a different page type and CTA. An educational article should not force a pricing CTA before answering the question.
 
+| Example search intent | Better page type | First useful answer | Next action |
+| --- | --- | --- | --- |
+| "How do I choose product-page keywords?" | Practical guide | Explain how product facts, buyer questions, and search terms are reconciled | Audit one existing product page |
+| "Portable blender vs shaker bottle" | Comparison | Clarify that the two products serve different needs before comparing attributes | Inspect verified product specifications |
+| "SEO keyword metrics API" | API guide | Explain the supported inputs, output definitions, access, and limits | Open the matching API documentation |
+
+These are **illustrative briefs**, not measured keyword-volume results. Do not publish three near-identical articles merely because the phrases differ. Give each distinct intent one clear destination, and update an existing page when it already answers the same question.
+
 ## Build a page brief from evidence
 
 For each topic, record:
@@ -64,6 +73,16 @@ For each topic, record:
 - competition and missing coverage;
 - the Nexscope capability that solves the problem;
 - the next action: read another guide, open an API page, or get an API Key.
+
+For example, if several terms describe the same product-page decision, choose one primary page and group the remaining phrases as supporting questions. Compare the available keyword metrics for the same search engine, market, language, and retrieval date. Then check whether the page has an accurate product example and a next step that fits the query. A high-volume phrase with the wrong buyer intent should not outrank a smaller, relevant question in the brief.
+
+Keep **Google search estimates separate from Amazon search demand**. A keyword metric does not measure purchases, and a search trend index is not an absolute monthly volume. Use the [keyword expansion](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=api&co-from=learn) and [keyword metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api&co-from=learn) documentation to confirm the current request fields, metric definitions, and access rules before building an automated workflow.
+
+## What can the current Keyword Metrics API tell you?
+
+**The documented endpoint checks a supplied list; it does not invent a complete content calendar.** Its current request accepts 1–20 keywords for `market: US` and `language: en`. The response describes each input's available search-volume and difficulty fields, with competition and estimated ad-cost fields where returned. Preserve the result's retrieval date and missing-value information. A missing metric is not a zero, and paid-ad competition is not the same as SEO difficulty. Check the [current request and response reference](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api&co-from=learn) before calling it because coverage and schema can change.
+
+If you start with only a topic, use the separate [Keyword Expansion API](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=api&co-from=learn) to find candidates, remove phrases that do not match your product or audience, and then check metrics for the remaining shortlist. The editorial decision still belongs to the page owner.
 
 The best article CTA is the closest product action. A guide about Amazon review analysis should link to the Amazon Reviews API, while a guide about keyword research should link to the relevant keyword API.
 
