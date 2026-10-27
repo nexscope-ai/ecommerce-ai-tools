@@ -1,4 +1,7 @@
 ---
+learning_topic: research
+related_topics: [visibility]
+content_kind: guide
 layout: default
 title: Optimize an Amazon Listing with Evidence
 description: Use the Nexscope AI Amazon Listing Optimizer to audit an ASIN and turn marketplace evidence into prioritized changes you can verify and test.

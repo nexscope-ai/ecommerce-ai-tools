@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: case-study
 layout: default
 title: Amazon Negative Review Analysis Case Study
 description: A real production run with input parameters, traceable review evidence, human review of AI claims, and a product improvement validation plan.

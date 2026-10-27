@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: Amazon Competitor Analysis Template
 description: Build an Amazon competitor shortlist with a practical template that separates product facts, keyword evidence and review signals before choosing a test.

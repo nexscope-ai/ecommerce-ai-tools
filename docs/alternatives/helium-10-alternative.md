@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: comparison
 layout: default
 title: "Helium 10 API Alternative: Compare REST & MCP Access"
 description: "Need a Helium 10 API alternative? Compare REST and MCP access, ASIN keyword workflows, pricing models and a dated Nexscope response before choosing your stack."

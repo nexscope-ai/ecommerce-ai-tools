@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "Google AI Mode Shopping: Seller Guide"
 description: Learn how to prepare product data, pages, Merchant Center feeds, and measurement for Google AI Mode shopping experiences.

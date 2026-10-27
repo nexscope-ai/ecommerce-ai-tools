@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Amazon Seller Assistant Canvas: Test Guide"
 description: "See what Amazon Seller Assistant Canvas is, how scenario modeling may help sellers, which guardrails to verify, and a practical one-SKU test plan."

@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Amazon Product Research API: A Trial-to-Paid Pilot | Nexscope"
 description: "Run a small Amazon product research API pilot with Nexscope Search, Product Detail, and Reviews List before committing to recurring credits."

@@ -14,3 +14,4 @@
 /docs/_data/product_showcase_pages.json
 __pycache__/
 *.py[cod]
+/.tmp-geo-rebuild/

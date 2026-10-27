@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: Reverse ASIN Keyword Research Guide
 description: Qualify reverse ASIN keywords by buyer intent, product fit, marketplace and evidence quality before using them in listing or advertising tests.

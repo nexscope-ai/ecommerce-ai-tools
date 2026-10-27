@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: "Find Amazon Competitor Keywords: A Reverse-ASIN Workflow"
 description: "Find Amazon competitor keywords with a six-step reverse-ASIN workflow. Choose comparable ASINs, check keyword gaps and inspect the API request before testing."

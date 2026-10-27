@@ -1,4 +1,7 @@
 ---
+learning_topic: research
+related_topics: [visibility, agents]
+content_kind: guide
 layout: default
 title: "Ecommerce Product Data Enrichment: SKU and Feed Workflow"
 description: "Learn how to enrich product data across SKUs, pages and feeds. Check missing attributes, variant mismatches and AI-drafted copy before publishing."

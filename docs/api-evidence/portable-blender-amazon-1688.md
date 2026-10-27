@@ -1,4 +1,6 @@
 ---
+learning_topic: sourcing
+content_kind: evidence
 layout: default
 title: Portable Blender Amazon-to-1688 API Test
 description: Inspect a dated Amazon product, low-star review, 1688 image-search and supplier-detail workflow with sanitized evidence and explicit limits.

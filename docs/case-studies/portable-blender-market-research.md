@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: case-study
 layout: default
 title: Portable Blender Market Research Case Study
 description: A real Nexscope API workflow connecting Google keywords, Amazon competitors and reviews, and 1688 sourcing candidates to a bounded product test plan.

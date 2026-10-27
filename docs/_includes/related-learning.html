@@ -1,0 +1,9 @@
+{% assign article_topic = site.data.learning_topics | where: 'id', page.learning_topic | first %}
+{% if article_topic %}
+<section class="article-next" aria-label="Related workflow resources"><span class="eyebrow">Continue this task</span><h2>More on {{ article_topic.title | downcase }}</h2><div>
+<a href="{{ article_topic.id | prepend: '/topics/' | append: '/' | relative_url }}">Explore the complete learning path →</a>
+{% assign candidates = site.pages | where: 'learning_topic', page.learning_topic | where: 'schema_type', 'Article' | sort: 'date_modified' | reverse %}
+{% assign related_count = 0 %}{% for item in candidates %}{% if item.url != page.url and item.content_kind == page.content_kind and item.sitemap != false %}{% if related_count < 3 %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }} →</a>{% assign related_count = related_count | plus: 1 %}{% endif %}{% endif %}{% endfor %}
+<a href="{{ article_topic.tool }}">{{ article_topic.tool_label }} →</a><a href="{{ article_topic.product }}">Verify current product access and documentation →</a>
+</div></section>
+{% endif %}

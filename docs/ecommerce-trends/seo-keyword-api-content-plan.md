@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "Keyword Research API: Ideas, Metrics & Limits"
 description: "Choose a keyword research API for seed expansion, list metrics or category ideas. Review US English inputs, missing data and the matching Nexscope Playground."

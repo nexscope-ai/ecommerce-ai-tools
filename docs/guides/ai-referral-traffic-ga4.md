@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: guide
 layout: default
 title: How to Track AI Referral Traffic in GA4
 description: Build a practical GA4 workflow for AI referral traffic, landing pages, scroll depth, engagement, conversions, and source limitations.

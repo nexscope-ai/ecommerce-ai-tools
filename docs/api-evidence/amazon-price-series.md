@@ -1,4 +1,7 @@
 ---
+learning_topic: research
+related_topics: [agents]
+content_kind: evidence
 layout: default
 title: Amazon Product Price Series API Test
 description: Inspect a real Nexscope Amazon price-series response with four dated price observations, an empty deal array and explicit coverage limitations.

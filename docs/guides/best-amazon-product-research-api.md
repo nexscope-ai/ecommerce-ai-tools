@@ -1,4 +1,7 @@
 ---
+learning_topic: agents
+related_topics: [research]
+content_kind: guide
 layout: default
 title: "Amazon Search Volume API: Compare Data & Test Coverage"
 description: "Compare Amazon search volume and product research APIs by marketplace, keyword metrics, history and cost. Inspect dated response examples before choosing a provider."

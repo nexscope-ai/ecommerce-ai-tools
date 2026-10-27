@@ -1,9 +1,20 @@
-# Nexscope Ecommerce AI Tools
+# Nexscope Learn Resource Library
 
 > Official Nexscope learning library with ecommerce guides, comparisons, case studies, trend analysis, and documented API evidence.
 
 Canonical section: https://learn.nexscope.ai/ecommerce-ai-tools/
 Language: English
+
+Official learning homepage: https://learn.nexscope.ai/
+
+## Task-based learning paths
+
+- https://learn.nexscope.ai/ecommerce-ai-tools/topics/research/ — product, market, keyword and competitor research
+- https://learn.nexscope.ai/ecommerce-ai-tools/topics/visibility/ — SEO, AI visibility and referral measurement
+- https://learn.nexscope.ai/ecommerce-ai-tools/topics/sourcing/ — sourcing and 1688 verification workflows
+- https://learn.nexscope.ai/ecommerce-ai-tools/topics/agents/ — ecommerce APIs and AI agents
+- https://learn.nexscope.ai/ecommerce-ai-tools/topics/creative/ — product image and video workflows
+- https://learn.nexscope.ai/ecommerce-ai-tools/topics/evidence/ — test records and case studies
 
 ## Core guides
 

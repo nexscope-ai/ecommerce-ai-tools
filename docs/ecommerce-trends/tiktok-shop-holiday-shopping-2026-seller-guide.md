@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "TikTok Shop Black Friday 2026 Dates & Seller Checklist"
 description: "TikTok Shop's announced Black Friday campaign runs Nov 11–30, 2026. Use this seller checklist for hero SKUs, creator briefs, LIVE Shopping and delivery checks."

@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Nano Banana Pro Review: Quality, Limits & Nano Banana 2"
 description: "Review Nano Banana Pro's image controls, realism feedback and product-identity risks. Compare Nano Banana 2 before choosing, then inspect the Playground."

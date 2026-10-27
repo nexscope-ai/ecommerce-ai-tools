@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "AI Holiday Shopping 2026: Seller Readiness Guide"
 description: "Prepare gift-ready product data, offers, and creative for AI holiday shopping in 2026 without confusing product discovery with autonomous checkout."

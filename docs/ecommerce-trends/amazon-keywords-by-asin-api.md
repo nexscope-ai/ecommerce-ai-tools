@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Amazon ASIN Keywords API: Build a Competitor Keyword Shortlist"
 description: Use the Nexscope Amazon ASIN Keywords API to collect competitor keyword evidence and turn comparable ASINs into a focused listing plan.

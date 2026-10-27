@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Wan 3 Review: Video Capabilities, Limits & Public Views"
 description: "Review Wan 3's Nexscope video route, longer clips, reference modes and limited independent feedback. Experience the model in its corresponding Playground."

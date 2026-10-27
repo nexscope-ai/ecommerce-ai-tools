@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "MiniMax H3 Lite Review: Formats, Limits & User Evidence"
 description: "Understand MiniMax H3 Lite's reference-image video route, fixed resolution and limits of independent user evidence. Experience its Nexscope Playground."

@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: What Is Agentic Commerce? AI Shopping Visibility
 description: Learn how AI shopping agents discover products and use a practical workflow to research keywords, competitors, reviews, product pages, and AI visibility.

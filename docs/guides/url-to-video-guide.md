@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "How to Make a Product Video from a Listing URL"
 description: "Paste a product URL into Nexscope, verify imported details and images, choose a script and video settings, and review the finished ecommerce video."

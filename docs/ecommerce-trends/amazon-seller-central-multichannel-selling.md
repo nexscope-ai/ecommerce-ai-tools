@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: insight
 layout: default
 title: "Amazon Seller Central Multichannel Selling Guide"
 description: "See how Amazon Seller Central connects Shopify, TikTok, eBay, and Walmart, what is available now, and how sellers can test multichannel workflows."

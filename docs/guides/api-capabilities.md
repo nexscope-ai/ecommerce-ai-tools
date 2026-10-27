@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: Nexscope API capabilities and ecommerce workflows
 description: A practical map of Nexscope ecommerce data, SEO and GEO, creative AI, REST, and MCP capabilities with workflow examples and limitations.

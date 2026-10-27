@@ -1,4 +1,7 @@
 ---
+learning_topic: research
+related_topics: [agents]
+content_kind: evidence
 layout: default
 title: Portable Blender Keyword & Competitor API Test
 description: Inspect a dated Nexscope test connecting Google US keyword estimates to a bounded Amazon US competitor sample, with exact inputs and limitations.

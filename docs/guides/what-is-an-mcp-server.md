@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: MCP Server Guide for Ecommerce Tools
 description: Learn what an MCP server is, how hosts, clients, and tools work, and how ecommerce agents can use Nexscope APIs through MCP safely.

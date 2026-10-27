@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: Getting started with Nexscope ecommerce tools
 description: Start using Nexscope browser tools and API documentation for Amazon review analysis, keyword research, and webpage SEO audits.

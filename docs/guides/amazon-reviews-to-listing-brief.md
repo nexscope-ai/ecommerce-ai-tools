@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: Amazon Reviews to a Clearer Product Listing
 description: Create an evidence-backed Amazon listing brief from review themes, then separate product defects from unclear expectations and plan testable changes.

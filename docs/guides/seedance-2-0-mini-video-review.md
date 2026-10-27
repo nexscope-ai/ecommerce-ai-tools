@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Seedance 2.0 Mini Review: Motion, Limits & User Views"
 description: "Read a balanced Seedance 2.0 Mini review of clip formats, reference support, action-following concerns and public feedback. Experience its Nexscope Playground."

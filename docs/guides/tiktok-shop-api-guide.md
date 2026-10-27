@@ -1,4 +1,7 @@
 ---
+learning_topic: agents
+related_topics: [research, creative]
+content_kind: guide
 layout: default
 title: "TikTok Shop API: Product, Creator and Video Research"
 description: "Use a TikTok Shop API workflow to research products, creators, videos, rankings, and shop signals with documented fields and limits."

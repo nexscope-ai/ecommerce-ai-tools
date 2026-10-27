@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Nano Banana 2.1 Review: Improvements & User Reactions"
 description: "Explore Nano Banana 2.1's image capabilities and mixed public feedback on text, consistency and prompt following. Open its corresponding Nexscope Playground."

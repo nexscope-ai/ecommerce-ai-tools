@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Kling 3 Omni Review: References & Character Consistency"
 description: "Explore Kling 3 Omni's reference-video capabilities, consistency strengths and user-reported limits. Experience the model in its Nexscope Playground."

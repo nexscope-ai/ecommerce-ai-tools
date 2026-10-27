@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: "Amazon Keyword Researcher for Product Ideas"
 description: "Use Nexscope Amazon Keyword Researcher to compare related search terms, estimated sales and competition signals, then inspect product samples before sourcing."

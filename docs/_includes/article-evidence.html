@@ -1,0 +1,12 @@
+{% assign article_topic = site.data.learning_topics | where: 'id', page.learning_topic | first %}
+{% assign matched_evidence = site.data.learning_evidence[page.url] %}
+{% assign evidence_url = matched_evidence | default: '/api-evidence/' %}
+{% if article_topic %}
+<aside class="article-evidence" aria-label="Source and scope">
+  <p><strong>{% case page.content_kind %}{% when 'evidence' %}Recorded test{% when 'case-study' %}Evidence-led case study{% when 'comparison' %}Workflow comparison{% when 'insight' %}Dated analysis{% else %}Practical guide{% endcase %}</strong> · By <a href="{{ '/about/' | relative_url }}">{{ page.author | default: 'Nexscope Team' }}</a>{% if page.date_published %} · Published <time datetime="{{ page.date_published | date: '%Y-%m-%d' }}">{{ page.date_published | date: '%b %-d, %Y' }}</time>{% endif %}{% if page.date_modified %} · Content updated <time datetime="{{ page.date_modified | date: '%Y-%m-%d' }}">{{ page.date_modified | date: '%b %-d, %Y' }}</time>{% endif %}{% if page.last_reviewed %} · Reviewed {{ page.last_reviewed | date: '%b %-d, %Y' }}{% endif %}</p>
+  <p><strong>Scope:</strong> {{ article_topic.boundary }}</p>
+  {% assign intent = site.data.learning_intents[page.url] %}{% if intent %}<p><strong>What this page covers:</strong> {{ intent.scope }} <a href="{{ intent.related | relative_url }}">{{ intent.label }}</a></p>{% endif %}
+  {% if page.content_kind == 'insight' %}<p>This analysis reflects the sources and product announcements available on its stated date. Check the linked primary sources for subsequent changes.</p>{% elsif page.content_kind == 'comparison' %}<p>Nexscope publishes this comparison about its own product. Confirm current vendor pricing, marketplace coverage and access with each provider; compare the same input and output fields in a matched pilot.</p>{% endif %}
+  <p><a href="{{ article_topic.id | prepend: '/topics/' | append: '/' | relative_url }}">{{ article_topic.title }} learning path →</a>{% unless page.url == evidence_url %} · <a data-evidence-link href="{{ evidence_url | relative_url }}">{% if matched_evidence %}Related test and its limitations{% else %}Browse documented tests{% endif %} →</a>{% endunless %} · <a href="{{ '/editorial-policy/' | relative_url }}">Evidence policy →</a></p>
+</aside>
+{% endif %}

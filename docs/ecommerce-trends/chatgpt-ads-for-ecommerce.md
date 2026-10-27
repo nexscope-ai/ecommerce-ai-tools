@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "ChatGPT Ads: Ecommerce Readiness Guide"
 description: Learn what ChatGPT Ads mean for ecommerce, how to prepare product data and creative, and how to measure qualified traffic without guessing.

@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Temu Product Research API: Products, Shops & Keywords"
 description: "Plan a Temu research workflow using product, shop, category and keyword APIs. Keep source IDs, regions and metric definitions aligned before comparing candidates."

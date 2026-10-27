@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Kling AI Pricing: Plans, Credits & Cost per Usable Video"
 description: "Understand Kling AI pricing, official credit rules and Nexscope access costs. Separate subscriptions, API access and trial credits before budgeting a video."

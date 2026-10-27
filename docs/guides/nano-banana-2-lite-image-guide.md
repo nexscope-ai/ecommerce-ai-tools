@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Nano Banana 2 Lite Review: Capabilities & Tradeoffs"
 description: "Understand Nano Banana 2 Lite's fixed 1K output, likely use cases and limited independent feedback. Experience the model in its dedicated Nexscope Playground."

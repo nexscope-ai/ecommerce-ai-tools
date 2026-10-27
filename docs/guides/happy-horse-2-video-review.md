@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Happy Horse 2 Review: Capabilities & Evidence Gaps"
 description: "Understand Happy Horse 2's Nexscope video route, supported inputs and limits in public review evidence. Experience the matching model Playground."

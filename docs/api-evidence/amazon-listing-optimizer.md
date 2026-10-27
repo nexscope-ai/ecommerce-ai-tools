@@ -1,4 +1,7 @@
 ---
+learning_topic: visibility
+related_topics: [research, agents]
+content_kind: evidence
 layout: default
 title: Amazon Listing Optimizer | ASIN Audit
 description: Review a recorded Nexscope Amazon Listing Optimizer test, including its ASIN, marketplace, readiness scores, sources, credit uncertainty, and limits.

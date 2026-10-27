@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: guide
 layout: default
 title: "Ecommerce SEO Audit Checklist: Site Audit, Tools & Examples"
 description: "Use a free ecommerce SEO audit checklist and site audit prioritizer to review crawlability, index signals, product data, internal links, and AI-search visibility."

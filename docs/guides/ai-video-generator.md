@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "AI Product Video Generator: Images to Reviewed Product Clips"
 description: "Turn product images into video with an AI product video generator. Compare model reviews, inspect pricing and check product accuracy before publishing."

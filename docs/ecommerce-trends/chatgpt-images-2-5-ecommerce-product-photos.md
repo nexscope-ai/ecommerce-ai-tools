@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: insight
 layout: default
 title: "ChatGPT Images 2.5 for Ecommerce Product Photos"
 description: "Use GPT-Image-2.5 for ecommerce product-photo edits through Nexscope's Flare and Sunburst APIs, with an evidence-based workflow and SKU review checklist."

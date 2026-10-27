@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: insight
 layout: default
 title: "YouTube Ads Business Agent: Seller Guide"
 description: Learn how Google's Business Agent for YouTube Ads works and what ecommerce teams should verify across product data, pages, video, and measurement.

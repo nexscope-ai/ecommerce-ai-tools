@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Amazon Competitor Research API: Build a Dated Comparison Workflow"
 description: Combine Amazon product, review, price, market, and keyword APIs into a dated competitor comparison without building a data pipeline from scratch.

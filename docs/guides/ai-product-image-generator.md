@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "AI Product Photography: Generate & Check Product Images"
 description: "Use an AI product image generator for product photography and lifestyle concepts. Compare Nano Banana 2 vs Pro, check real output evidence and review accuracy."

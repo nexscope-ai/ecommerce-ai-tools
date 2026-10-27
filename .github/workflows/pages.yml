@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Test the product page generator
-        run: python -m unittest scripts.test_generate_product_showcase_pages scripts.test_attribute_outbound_links
+        run: python -m unittest scripts.test_generate_product_showcase_pages scripts.test_attribute_outbound_links scripts.test_finalize_learning_site
       - name: Test product showcase Markdown rendering
         run: node --test scripts/test_analytics.cjs scripts/test_product_showcase_markdown.cjs scripts/test_trends_attribution.cjs
       - name: Generate static product pages
@@ -42,6 +42,8 @@ jobs:
         run: |
           sudo chown -R "$(id -u):$(id -g)" _site
           python scripts/attribute_outbound_links.py _site
+      - name: Validate learning architecture and generate canonical sitemap
+        run: python scripts/finalize_learning_site.py _site
       - name: Upload the Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

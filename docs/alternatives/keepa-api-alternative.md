@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: comparison
 layout: default
 title: "Nexscope vs Keepa API: Amazon Data Comparison"
 description: "Compare Keepa API and Nexscope for Amazon price history, BSR signals, tracking, broader ecommerce APIs, MCP access, and AI-agent workflows."

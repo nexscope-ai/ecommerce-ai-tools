@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: comparison
 layout: default
 title: "Nexscope vs SellerSprite: Amazon Research Comparison"
 description: "Compare SellerSprite and Nexscope for Amazon keyword research, reverse ASIN, product research, APIs, MCP access, pricing, and developer workflows."

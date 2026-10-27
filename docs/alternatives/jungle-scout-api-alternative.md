@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: comparison
 layout: default
 title: "Jungle Scout API Alternative: Compare Data & Workflow"
 description: "Compare Jungle Scout API and Nexscope for ASIN keywords, historical search volume and custom research workflows. Inspect evidence and plan a field-by-field pilot."

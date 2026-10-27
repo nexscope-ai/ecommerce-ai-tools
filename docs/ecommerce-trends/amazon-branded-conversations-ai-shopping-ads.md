@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "Amazon Branded Conversations: Eligibility, Launch & Product Data Checklist"
 description: "Understand Amazon Branded Conversations, eligibility, the January 2027 launch, sponsored prompts, and the product data checklist for advertisers."

@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Amazon Reviews API: Find Product Pain Points in Customer Feedback"
 description: Use the Nexscope Amazon Reviews API to retrieve dated review evidence, group recurring product pain points, and decide what to validate next.

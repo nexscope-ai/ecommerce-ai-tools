@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Codex for Ecommerce: 10 Nexscope API Workflows"
 description: Combine new Codex models with Nexscope REST APIs for Amazon research, reviews, SEO, AI visibility, sourcing, and creative production.

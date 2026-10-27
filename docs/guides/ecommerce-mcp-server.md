@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Ecommerce MCP Server: Nexscope Tools, Setup, and Safety"
 description: Connect an AI agent to the Nexscope ecommerce MCP server. Review the live endpoint, OAuth setup, current tools, async media workflow, and safety checks.

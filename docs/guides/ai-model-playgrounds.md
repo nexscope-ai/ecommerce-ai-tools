@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "AI Model Reviews: 12 Video & 10 Image Models"
 description: "Compare 22 Nexscope image and video model reviews: capabilities, strengths, limitations and attributed user feedback. Open each model's dedicated Playground."

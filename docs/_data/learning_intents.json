@@ -1,0 +1,16 @@
+{
+  "/amazon-competitor-keyword-research/": {"scope":"Find keywords associated with a comparable competitor ASIN and review gaps against your own listing.","related":"/reverse-asin-keyword-research/","label":"Need the reverse-ASIN method and metric definitions?"},
+  "/reverse-asin-keyword-research/": {"scope":"Understand reverse-ASIN inputs, marketplace selection and how to interpret returned keyword fields.","related":"/amazon-competitor-keyword-research/","label":"Ready to run a competitor-keyword workflow?"},
+  "/amazon-keyword-researcher-guide/": {"scope":"Use a seed term to investigate product ideas before choosing competitor ASINs.","related":"/amazon-competitor-keyword-research/","label":"Already have a competitor ASIN?"},
+  "/ecommerce-seo-audit/": {"scope":"Prioritize a sitewide audit across index access, templates, internal links and search outcomes.","related":"/website-seo-audit-guide/","label":"Need to inspect one product URL?"},
+  "/website-seo-audit-guide/": {"scope":"Inspect one ecommerce product page and document URL-level defects and missing facts.","related":"/ecommerce-seo-audit/","label":"Need a sitewide audit and prioritization checklist?"},
+  "/product-page-seo-for-ecommerce/": {"scope":"Improve how a product page matches buyer search intent and communicates accurate product details.","related":"/product-page-geo-ai-shopping/","label":"Need to assess AI shopping answers and product facts?"},
+  "/product-page-geo-ai-shopping/": {"scope":"Make product facts clear and verifiable when an AI assistant evaluates a product.","related":"/ai-referral-traffic-ga4/","label":"Need to measure visits rather than mentions?"},
+  "/ecommerce-mcp-server/": {"scope":"Evaluate Nexscope's ecommerce MCP workflow, tool discovery and permission boundaries.","related":"/what-is-an-mcp-server/","label":"New to MCP concepts?"},
+  "/what-is-an-mcp-server/": {"scope":"Learn MCP clients, servers, tools and resources before configuring an ecommerce integration.","related":"/ecommerce-mcp-server/","label":"Ready to evaluate an ecommerce MCP integration?"},
+  "/amazon-negative-review-analysis/": {"scope":"Preserve source comments and turn a bounded low-star sample into product-test hypotheses.","related":"/amazon-reviews-to-listing-brief/","label":"Need to turn verified review themes into listing copy?"},
+  "/amazon-reviews-to-listing-brief/": {"scope":"Translate validated review themes into a listing brief while preserving claim evidence.","related":"/amazon-negative-review-analysis/","label":"Need to build the source review sample first?"},
+  "/best-amazon-product-research-api/": {"scope":"Compare research providers by search-volume definitions, field coverage and evidence requirements.","related":"/amazon-product-research-api-pilot/","label":"Need a trial-to-paid pilot plan?"},
+  "/amazon-product-research-api-pilot/": {"scope":"Run a bounded API acceptance pilot with pass criteria and a budget before buying more access.","related":"/ecommerce-data-api-pricing-decision/","label":"Need to estimate credits and cost first?"},
+  "/ai-video-generator/": {"scope":"Follow a detailed image-to-video workflow and review the generated product clip.","related":"/url-to-video-guide/","label":"Starting from a product listing URL?"}
+}

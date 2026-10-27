@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Nano Banana Review: Strengths, Limits & User Opinions"
 description: "A balanced Nano Banana review covering image capabilities, identity limitations and public user feedback. Try the model with 1,000 new-user credits on Nexscope."

@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "TikTok Shop Product and Creator APIs: A Research Workflow"
 description: Combine TikTok Shop product, video, live, and creator evidence into a focused affiliate and content research workflow with Nexscope APIs.

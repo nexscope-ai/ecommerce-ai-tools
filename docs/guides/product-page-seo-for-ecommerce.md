@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: guide
 layout: default
 title: "Product Page SEO: Help Shoppers Find the Right Item"
 description: "Learn how product page SEO helps ecommerce shoppers find and evaluate a specific item. Check crawlability, useful details, product data, and a free review option."

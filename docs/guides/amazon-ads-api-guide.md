@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Amazon Ads API Guide: Access, Reports & Campaign Controls"
 description: "Explore Amazon Ads APIs on Nexscope: account authorization, campaign reads, reporting and approval boundaries for Sponsored Products, Brands and Display."

@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: "Amazon Price History: Price, BSR & Sales"
 description: Learn how to check Amazon price history, BSR history, ratings, seller counts, and monthly sales for an ASIN with Nexscope.

@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: guide
 layout: default
 title: "Ecommerce Product Page SEO Audit: Checklist for One URL"
 description: "Audit one ecommerce product or category page for crawlability, metadata, content, links, structured data, and mobile performance."

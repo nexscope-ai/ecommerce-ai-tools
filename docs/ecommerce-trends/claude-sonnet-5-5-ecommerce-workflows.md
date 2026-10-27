@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Claude Sonnet 5.5 for Ecommerce: A Practical Test"
 description: "Evaluate Claude Sonnet 5.5 for ecommerce research, review analysis and catalog workflows using quality, speed, cost and human-review checks."

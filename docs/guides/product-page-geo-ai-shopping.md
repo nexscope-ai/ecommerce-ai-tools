@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: guide
 layout: default
 title: "Product Page GEO: Help AI Shoppers Understand Your Product"
 description: "See how accurate product facts can support AI-assisted shopping research. Learn what to show on a product page, what GEO cannot promise, and where free Gallery review fits."

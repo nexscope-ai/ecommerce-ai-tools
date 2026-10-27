@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "ChatGPT Product Cards vs Offer Cards: A Seller Audit"
 description: "Learn what a 2026 shopper study actually found about ChatGPT product cards, then audit one SKU's product details, seller offer, and landing page."

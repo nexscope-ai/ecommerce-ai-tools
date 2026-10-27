@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Seedance 2.0 Fast Review: Speed Claims & User Views"
 description: "Understand Seedance 2.0 Fast's video formats, reference capabilities and public feedback on queues and access. Try the dedicated Nexscope Playground."

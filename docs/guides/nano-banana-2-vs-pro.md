@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Nano Banana 2 vs Pro: Quality, Cost & Which to Choose"
 description: "Compare Nano Banana 2 and Pro for product images: supported settings, credit estimates, mixed user feedback and a fair testing checklist. Open both Playgrounds."

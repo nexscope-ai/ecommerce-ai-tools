@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Ecommerce APIs for AI Agents"
 description: "Choose ecommerce APIs for an AI agent by task, evidence, marketplace coverage, REST or MCP access, credit cost, reliability, and human approval boundaries."

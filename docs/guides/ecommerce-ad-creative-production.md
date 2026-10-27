@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: Ecommerce Ad Creative Production Guide for Sellers
 description: Build an ad-ready product image pack from verified SKU facts, buyer questions, and channel requirements. See when Nexscope can plan or produce the visuals.

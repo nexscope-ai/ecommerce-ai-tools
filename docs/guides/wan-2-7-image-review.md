@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Wan 2.7 Image Review: Quality, Limits & User Feedback"
 description: "Review Wan 2.7 Image's visual capabilities, output limits and public feedback without confusing it with Wan video. Experience its dedicated Playground."

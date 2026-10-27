@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: "Compare Amazon Rankings and New Launches"
 description: "Browse Nexscope Amazon Product Rankings by marketplace and subcategory, compare estimated best sellers with new launches, and export a focused ASIN shortlist."

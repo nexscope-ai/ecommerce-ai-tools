@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Walmart Product API: Search, Keywords & Market Research"
 description: "Use Walmart research APIs to search products, inspect details and explore category and keyword evidence. Separate provider signals from private seller-account data."

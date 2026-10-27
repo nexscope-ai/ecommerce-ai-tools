@@ -1,4 +1,6 @@
 ---
+learning_topic: sourcing
+content_kind: evidence
 layout: default
 title: 1688 Search By Image API Evidence | Base64 Test
 description: Inspect a real Nexscope 1688 image-search test with the input method, returned rows, credit use, earlier URL failures and supplier-verification limits.

@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Kling 2.6 Review: Image-to-Video Quality, Limits & Cost"
 description: "Review Kling 2.6 for image-to-video: motion feedback, frame controls and product-fidelity risks, with a pricing guide and the matching Playground."

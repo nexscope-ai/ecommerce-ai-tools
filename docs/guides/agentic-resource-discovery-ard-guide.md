@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Agentic Resource Discovery (ARD): ARD.json, AI Agents and APIs"
 description: "What Agentic Resource Discovery (ARD) and ard.json mean for AI agent discovery, GEO, MCP, A2A, catalogs, and callable APIs."

@@ -1,0 +1,10 @@
+.article-evidence { margin: 24px 0 32px; padding: 18px 22px; background: #f6f3ff; border: 1px solid #e3dcfa; border-radius: 12px; font-size: 14px; }
+.article-evidence p { margin: 8px 0; }
+.learning-topic-section { margin: 48px 0; }
+.resource-note h2 { margin: 0 0 12px; }
+.resource-path-grid { margin: 28px 0; }
+.resource-path-grid a { color: #252039; text-decoration: none; }
+.resource-path-grid strong, .resource-path-grid span, .resource-path-grid b { display: block; }
+.resource-path-grid span { margin: 10px 0; line-height: 1.6; }
+.primary-navigation ul { flex-wrap: wrap; }
+@media (max-width: 700px) { .article-evidence { padding: 16px; } .resource-path-grid { grid-template-columns: 1fr; } }

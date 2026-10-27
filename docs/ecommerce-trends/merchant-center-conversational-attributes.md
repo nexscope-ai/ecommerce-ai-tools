@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "Merchant Center Attributes: 6-Field Guide"
 description: Learn what Google's six Merchant Center conversational attributes do, when to use them, and how to avoid duplicate or unsupported product claims.

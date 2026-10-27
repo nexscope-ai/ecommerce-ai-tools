@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "GPT Image 2.5 Sunburst Review: Detail & User Feedback"
 description: "Review GPT Image 2.5 Sunburst's image controls, public comparisons, detail claims and editing tradeoffs. Experience the Sunburst model in Nexscope Playground."

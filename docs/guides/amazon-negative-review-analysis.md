@@ -1,4 +1,6 @@
 ---
+learning_topic: research
+content_kind: guide
 layout: default
 title: "Amazon Review Analyzer: Product Tests"
 description: "Use an Amazon review analyzer to preserve source comments, group recurring complaints and turn a bounded low-star sample into product tests."

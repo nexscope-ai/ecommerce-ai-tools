@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: comparison
 layout: default
 title: "Rainforest API Alternative: Compare Fields & Migration"
 description: "Evaluating a Rainforest API alternative? Compare search requests, product fields, credits and migration checks, with a Nexscope request and dated response evidence."

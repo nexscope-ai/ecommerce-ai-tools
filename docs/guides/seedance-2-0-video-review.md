@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Seedance 2.0 Review: Video Quality & User Feedback"
 description: "Review Seedance 2.0's reference inputs, video-quality feedback and consistency limits. Find the API access guide or experience its Nexscope Playground."

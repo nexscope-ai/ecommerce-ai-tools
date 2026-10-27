@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "GPT Image 2 Review: Text, Editing & User Opinions"
 description: "Explore GPT Image 2's image capabilities, text and editing strengths, texture complaints and public user feedback. Experience its Nexscope Playground."

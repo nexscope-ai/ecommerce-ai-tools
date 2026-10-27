@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "Merchant Center AI Insights: Seller Guide"
 description: Learn how to read Google Merchant Center AI Performance Insights, interpret AI share of voice, and prioritize product-data improvements.

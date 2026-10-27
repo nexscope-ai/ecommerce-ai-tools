@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: guide
 layout: default
 title: "SEO Keyword Planner for Ecommerce: A Tested Workflow"
 description: Plan ecommerce keywords with a dated Google US keyword and Amazon US competitor test. See the actual inputs, estimates, mismatches, and next checks.

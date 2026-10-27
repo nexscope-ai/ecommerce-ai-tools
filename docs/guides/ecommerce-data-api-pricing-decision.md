@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Ecommerce Data API Pricing: Estimate Credits Before You Buy | Nexscope"
 description: "Estimate Nexscope ecommerce Data API credits from a real workflow, compare a subscription with Data-only top-ups, and decide when to move beyond the free trial."

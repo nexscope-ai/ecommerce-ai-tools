@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Connect Claude to Amazon: Plugin Access & Research Tools"
 description: "Connecting Claude to Amazon? Check seller-plugin access, permissions and a read-only test, then explore MCP tools for public product and competitor research."

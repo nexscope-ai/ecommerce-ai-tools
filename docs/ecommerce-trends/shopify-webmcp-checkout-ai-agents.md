@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Shopify WebMCP Checkout: How Browser Agents Buy"
 description: "Learn how Shopify WebMCP checkout lets browser agents read and update checkout, where buyer approval is required, and which limitations merchants should test."

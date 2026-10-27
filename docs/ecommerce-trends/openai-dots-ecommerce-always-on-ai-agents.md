@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "OpenAI Dots for Ecommerce: What Teams Should Know"
 description: "Learn what OpenAI Dots are, which plans include them, how ecommerce teams can test recurring work, and where approval, memory, and data controls matter."

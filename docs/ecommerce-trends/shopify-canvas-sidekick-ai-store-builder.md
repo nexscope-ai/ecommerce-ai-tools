@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: insight
 layout: default
 title: "Shopify Canvas: Build Stores with Sidekick AI"
 description: "Learn how Shopify Canvas and Sidekick build and edit themes, who has early access, which limitations matter, and how to test changes safely."

@@ -1,4 +1,6 @@
 ---
+learning_topic: sourcing
+content_kind: insight
 layout: default
 title: "1688 Search by Image: Compare Products & Suppliers"
 description: "Search 1688 by image to compare similar offers, prices, MOQ and supplier details. Includes a real API test and checks to make before ordering."

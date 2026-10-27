@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "AI Coworkers for Ecommerce: 5 Workflows to Test"
 description: "Learn how ecommerce teams can test AI coworkers for research, catalog QA, support and marketing with clear permissions, evidence and human approval."

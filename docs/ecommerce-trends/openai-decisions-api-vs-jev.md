@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "OpenAI Decisions API vs Jev: Did OpenAI Kill Jev?"
 description: "OpenAI Decisions API vs Jev, fact-checked: early latency tests, unknown pricing, $10B valuation claims, feature differences, and a builder benchmark plan."

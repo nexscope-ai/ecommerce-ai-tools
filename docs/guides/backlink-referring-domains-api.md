@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Backlink API: Referring Domains & New or Lost Links"
 description: "Choose a backlink API by task: profile overview, referring domains, link records or new/lost history. Check sample limits and inspect the matching Playground."

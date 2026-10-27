@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "ChatGPT Product Discovery: Merchant Guide"
 description: Prepare products for ChatGPT shopping research with accurate facts, evidence and measurement. See where Nexscope Product Gallery fits and its limits.

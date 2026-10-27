@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Hailuo 2.3 Review: Motion, Image Guidance & User Views"
 description: "Review Hailuo 2.3's image-to-video capabilities, short-clip limits and public creator feedback. Experience the model with its dedicated Nexscope Playground."

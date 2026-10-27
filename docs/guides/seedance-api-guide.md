@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Seedance API Guide: 2.0 vs 2.5, Access & Playground"
 description: "Start with the Seedance API on Nexscope: compare 2.0 and 2.5, check subscription access, submit a reference-led request and retrieve the completed video."

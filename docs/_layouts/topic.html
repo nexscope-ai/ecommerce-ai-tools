@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% assign current_topic = site.data.learning_topics | where: 'id', page.learning_topic | first %}
+<section class="trends-hero resource-hero"><div><span class="eyebrow">Official Nexscope learning path</span><h1>{{ current_topic.title }}</h1></div><div><p>{{ current_topic.description }}</p><p><strong>For:</strong> {{ current_topic.audience }}</p></div></section>
+<nav class="resource-sections" aria-label="Learning paths">{% for item in site.data.learning_topics %}<a href="{{ item.id | prepend: '/topics/' | append: '/' | relative_url }}"{% if item.id == page.learning_topic %} aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}</nav>
+<section class="resource-note"><h2>Start with one workflow</h2><p>{{ current_topic.workflow }}</p><p><a href="{{ current_topic.guide | relative_url }}">{{ current_topic.guide_label }} →</a> · <a href="{{ current_topic.tool }}">{{ current_topic.tool_label }} →</a> · <a href="{{ current_topic.evidence | relative_url }}">Inspect a real test →</a> · <a href="{{ current_topic.product }}">Check official product access →</a></p><p><strong>Evidence limits:</strong> {{ current_topic.boundary }}</p></section>
+{% if page.learning_topic == 'research' %}<nav class="resource-sections" aria-label="Research marketplaces"><a href="https://learn.nexscope.ai/amazon-research/">Amazon</a><a href="https://learn.nexscope.ai/shopify-competitor-product-research/">Shopify</a><a href="https://learn.nexscope.ai/tools/tiktok-shop-new-product-validator/">TikTok Shop</a><a href="{{ '/topics/sourcing/' | relative_url }}">1688 sourcing</a></nav>{% endif %}
+{% assign resources = site.pages | where: 'schema_type', 'Article' | where_exp: 'item', 'item.sitemap != false' | sort: 'title' %}
+{% assign overviews = site.data.site_guides | where: 'learning_topic', page.learning_topic %}
+{% if overviews.size > 0 %}<section class="learning-topic-section"><h2>Workflow overviews</h2><div class="trend-grid resource-grid">{% for item in overviews %}<article class="trend-card resource-card"><a href="{{ item.url }}"><div class="card-body"><span class="card-tag">WORKFLOW OVERVIEW</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p><span class="read-link">Follow the workflow →</span></div></a></article>{% endfor %}</div></section>{% endif %}
+{% assign kinds = 'guide,comparison,evidence,case-study,insight' | split: ',' %}
+{% for kind in kinds %}
+  {% assign count = 0 %}{% capture cards %}{% for item in resources %}
+    {% assign matches = false %}
+    {% if item.learning_topic == page.learning_topic or item.related_topics contains page.learning_topic %}{% assign matches = true %}{% endif %}
+    {% if page.learning_topic == 'evidence' and item.content_kind == 'evidence' or page.learning_topic == 'evidence' and item.content_kind == 'case-study' %}{% assign matches = true %}{% endif %}
+    {% if matches and item.content_kind == kind %}{% assign count = count | plus: 1 %}
+    <article class="trend-card resource-card"><a href="{{ item.url | relative_url }}"><div class="card-body"><span class="card-tag">{{ kind | replace: '-', ' ' | upcase }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p><span class="read-link">Inspect this resource →</span></div></a></article>
+    {% endif %}
+  {% endfor %}{% endcapture %}
+  {% if count > 0 %}<section class="learning-topic-section"><h2>{% case kind %}{% when 'guide' %}Practical guides{% when 'comparison' %}Compare workflow fit{% when 'evidence' %}Recorded tests{% when 'case-study' %}Case studies{% when 'insight' %}Dated analysis and insights{% endcase %}</h2><div class="trend-grid resource-grid">{{ cards }}</div></section>{% endif %}
+{% endfor %}
+<aside class="resource-note"><strong>Continue your research.</strong><p><a href="{{ '/' | relative_url }}">Search every resource →</a> · <a href="{{ '/community/' | relative_url }}">Ask a workflow question →</a></p></aside>

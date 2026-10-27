@@ -1,4 +1,7 @@
 ---
+learning_topic: research
+related_topics: [agents]
+content_kind: evidence
 layout: default
 title: Amazon Reviews API | Low-Star Sample
 description: Inspect a real Nexscope Amazon review collection with its ASIN, marketplace, requested ratings, returned count, source IDs and analysis limitations.

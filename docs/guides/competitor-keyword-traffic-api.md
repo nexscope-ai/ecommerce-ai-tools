@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Keyword Ranking API: Competitor Keywords & Traffic"
 description: "Find competitor keywords and ranking URLs with Nexscope's keyword ranking API. Compare ranking data, SERP snapshots and tracking needs before opening Playground."

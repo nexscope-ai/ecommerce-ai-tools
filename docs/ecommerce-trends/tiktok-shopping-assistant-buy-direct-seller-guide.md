@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "TikTok Shopping Assistant vs Buy Direct: Seller Readiness Guide"
 description: "Compare TikTok Shopping Assistant and Buy Direct, then use a practical seller checklist for product data, checkout, measurement, and safe AI-commerce tests."

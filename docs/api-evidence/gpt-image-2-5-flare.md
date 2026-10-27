@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: evidence
 layout: default
 title: GPT 2.5 Flare API | Product Concept Test
 description: Inspect a real Nexscope GPT 2.5 Flare run with its reference image, observed output, credit use and exact-SKU preservation failure.

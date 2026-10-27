@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: insight
 layout: default
 title: "ChatGPT Virtual Try-On: Ecommerce Seller Guide"
 description: "Learn how ChatGPT virtual try-on works, what apparel sellers can verify, and where accurate product photos and videos fit into the shopping journey."

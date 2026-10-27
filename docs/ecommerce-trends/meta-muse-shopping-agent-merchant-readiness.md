@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "Meta Muse Shopping Agent: What Merchants Can Verify"
 description: "Can Meta Muse shop your store? See what Meta has confirmed, what remains unknown, and a merchant checklist for product facts, access and checkout approval."

@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: insight
 layout: default
 title: "TikTok Shop Research to AI UGC Video"
 description: "Turn market, keyword, competitor and review evidence into a TikTok Shop AI UGC brief, then verify the product, disclose AI use and test results."

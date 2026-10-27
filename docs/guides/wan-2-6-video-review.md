@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Wan 2.6 Review: Image-to-Video & User Feedback"
 description: "Review Wan 2.6's image-led video capabilities, camera modes, access questions and public user feedback. Experience the model in Nexscope Playground."

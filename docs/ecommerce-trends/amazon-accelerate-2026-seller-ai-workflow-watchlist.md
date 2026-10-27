@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Amazon Accelerate 2026: Seller Assistant, Canvas & AI"
 description: "What did Amazon announce at Accelerate 2026? Compare Seller Assistant, Canvas and plugin access, then use a one-SKU checklist to test seller AI workflows."

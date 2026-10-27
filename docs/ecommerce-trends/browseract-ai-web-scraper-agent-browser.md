@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "BrowserAct AI Web Scraper Review for AI Agent Automation"
 description: "Compare BrowserAct as a browser automation tool for AI agents and a no-code web scraper, including Google Maps scraping, pricing, limits, and alternatives."

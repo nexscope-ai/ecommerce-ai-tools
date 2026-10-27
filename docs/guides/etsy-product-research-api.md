@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: guide
 layout: default
 title: "Etsy Product Research API: Listings, Shops & Competitors"
 description: "Research Etsy products with Nexscope APIs: find categories, filter listings, inspect shops and validate public listing details without treating estimates as sales proof."

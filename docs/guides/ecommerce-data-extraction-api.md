@@ -1,4 +1,7 @@
 ---
+learning_topic: agents
+related_topics: [research, visibility]
+content_kind: guide
 layout: default
 title: "Live Ecommerce Data Extraction: API vs Feed vs Page Audit"
 description: "Need to parse a live product page? Choose between a data extraction API, catalog feed and page audit, then check variants, source evidence and field accuracy."

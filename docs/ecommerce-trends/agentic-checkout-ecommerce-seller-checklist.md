@@ -1,4 +1,6 @@
 ---
+learning_topic: agents
+content_kind: insight
 layout: default
 title: "Agentic Checkout for Ecommerce: A Seller Checklist"
 description: "Compare AI agent checkout paths and use a practical seller checklist to test product discovery, page accuracy, buyer approval, and measurement."

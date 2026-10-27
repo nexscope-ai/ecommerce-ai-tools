@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "GPT Image 2.5 Flare Review: Real Test & User Feedback"
 description: "Read a GPT Image 2.5 Flare review with a recorded Nexscope image edit, an exact-product limitation and public feedback. Try the corresponding Playground."

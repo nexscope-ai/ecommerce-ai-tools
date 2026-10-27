@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Seedance 2.5 Review: Capabilities, Limits & User Views"
 description: "Explore Seedance 2.5's longer clips, reference options and user-reported limits. Compare the 2.0 API route or open the matching Nexscope Playground."

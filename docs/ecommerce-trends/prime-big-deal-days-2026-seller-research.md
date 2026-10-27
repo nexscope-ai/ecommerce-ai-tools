@@ -1,4 +1,6 @@
 ---
+learning_topic: visibility
+content_kind: insight
 layout: default
 title: "Prime Big Deal Days 2026: Seller Checklist"
 description: "Prepare for Prime Big Deal Days 2026 with an Amazon competitor checklist, real price-series API evidence and a practical monitoring plan."

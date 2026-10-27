@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "Seedream 5 Pro Review: Editing, Detail & User Views"
 description: "A balanced Seedream 5 Pro review of reference editing, product detail and mixed community feedback. Try the model in its corresponding Nexscope Playground."

@@ -1,4 +1,6 @@
 ---
+learning_topic: creative
+content_kind: guide
 layout: default
 title: "MiniMax H3 Review: Reference Video Quality & User Views"
 description: "Explore MiniMax H3's image-reference video capabilities, identity concerns and public creator opinions. Experience the model in its Nexscope Playground."
