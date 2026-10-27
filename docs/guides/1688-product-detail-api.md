@@ -1,68 +1,114 @@
 ---
-layout: default
-title: "1688 Product Detail API: SKU Prices, MOQ & Evidence"
-description: "Inspect one 1688 offer with Nexscope: separate SKU prices, quantity tiers and MOQ, review dated detail evidence, and validate supplier terms before buying."
-permalink: /guides/1688-product-detail-api/
-schema_type: Article
 learning_topic: sourcing
 related_topics: [agents]
 content_kind: guide
-topic: sourcing
+layout: default
+title: "1688 Product Detail API: SKU Prices, MOQ & Shipping"
+description: "Read 1688 SKU prices, quantity tiers, MOQ and shipping fields with Nexscope. See a request example and learn what to verify before comparing supplier offers."
+permalink: /guides/1688-product-detail-api/
+date_published: 2026-10-26
+date_modified: 2026-10-26
+last_modified_at: 2026-10-26
+last_reviewed: 2026-10-26
 author: Nexscope Team
-date_published: 2026-10-27
-date_modified: 2026-10-27
-last_modified_at: 2026-10-27
+schema_type: Article
+og_type: article
+topic: api
+suppress_article_help: true
+faq:
+  - question: "Does the 1688 Product Detail API accept a product URL?"
+    answer: "The documented request requires offerId as a positive-integer string. Extract and check the offer identifier from the product URL, or keep it from a search result. Do not substitute a URL for offerId."
+  - question: "Which price should I use for a one-piece order?"
+    answer: "Inspect retailPrice where available and check the documented pricing model, exact SKU and applicable quantity. Missing retail prices are unknown. A wholesale tier or legacy consignPrice field does not establish a confirmed one-piece quote."
+  - question: "Does companyName prove that a seller is a factory?"
+    answer: "No. A supplier or store name is listing evidence. Verify company identity, manufacturing role, samples, commercial terms and relevant product requirements separately before purchasing."
 next_step:
-  id: 1688_product_detail_analyzer
-  title: Inspect the evidence for one offer
-  description: Start with a public 1688 offer URL or string ID, inspect the returned fields, and export the SKU table before requesting any AI interpretation.
-  label: Open 1688 Product Detail Analyzer
-  url: https://learn.nexscope.ai/tools/1688-product-detail-analyzer/
+  id: 1688_product_detail_api
+  title: Inspect the SKU and price fields for your offer
+  description: "New users receive 1,000 free credits to get started. Check this endpoint's access and current credit requirements before running a request."
+  label: Open 1688 Product Detail Playground
+  url: https://www.nexscope.ai/api-docs/1688-product-detail?view=playground&co-from=learn
 ---
 
-# 1688 Product Detail API: how do you inspect one offer?
+# 1688 product detail API: compare SKU prices, MOQ and shipping
 
-Use a 1688 product-detail request to inspect a specific offer's returned listing fields, SKU variants, quantity-price tiers, MOQ and available shipping information. Keep each price attached to its variant, quantity and unit. The response supports a supplier inquiry or sample-order checklist; it does not verify the factory, guarantee order eligibility or establish landed cost.
+A **1688 product detail API** helps answer a question that search results leave open: what does this exact offer say about the variant and quantity you want to buy? Nexscope documents product, SKU, pricing, shipping and seller fields for a supplied offer identifier. Begin with the [API capability map]({{ '/api-capabilities/' | relative_url }}) if you still need to choose a research task.
 
-## When should you use product detail instead of image search?
+{% include api-guide-entry.html %}
 
-Image search finds candidate offers from a product picture. Product detail examines one identified offer. Start with [the Amazon-to-1688 sourcing workflow](https://learn.nexscope.ai/1688-supplier-product-sourcing/) if you do not yet have an offer. Open detail records only after checking that the candidate appears relevant to the required product specifications.
+> **Quick answer:** Nexscope's 1688 Product Detail API retrieves a selected offer using a string `offerId`. Inspect `skuList`, `saleInfo`, `shippingInfo` and seller fields together. Keep single-piece prices, wholesale tiers, currencies and weight units separate. The result supports an offer comparison; it does not confirm a purchase quote or certify a supplier.
 
-| Task | Appropriate next step |
-| --- | --- |
-| Find visually related offers | Run image search, then inspect candidate relevance. |
-| Compare variants within one offer | Inspect product detail and preserve the returned SKU attributes. |
-| Estimate a merchandise subtotal | Select a reported price and quantity, retaining the unit and tier assumptions. |
-| Confirm the final order price or supplier reliability | Ask the supplier for a current written quote and obtain independent verification. |
+## What do you need before requesting product details?
 
-## What did a recorded Nexscope detail test return?
+You need the offer identifier, not a screenshot or a loosely similar product name. Keep `offerId` from [1688 product search]({{ '/guides/1688-product-search-api/' | relative_url }}) or an eligible listing URL. For visual discovery, use the [1688 image-search workflow]({{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}) first, then inspect the shortlisted offers individually.
 
-In the [October 7, 2026 portable-blender sourcing test]({{ '/api-evidence/portable-blender-amazon-1688/' | relative_url }}), two detail requests inspected offers `902856167524` and `1036978647065`. Each response reported five SKUs, MOQ 1 and a tier of 1+ at ¥33. The returned company names and dispatch locations provided inquiry targets. They were not independently verified factory identities.
+The current request requires `offerId` as a positive-integer **string**. Preserve it from input through storage and export. Converting long IDs into floating-point numbers can change the identifier. A spreadsheet should also treat the field as text.
 
-Those observations apply to that dated test. They do not show that every offer has five SKUs, that the same prices are still available, or that a sample order will be accepted. The evidence record links a sanitized JSON artifact and describes missing credit-charge evidence; no credit amount should be inferred from it.
+| Input | Documented use | Practical choice |
+| --- | --- | --- |
+| `offerId` | Required offer identifier as a string | Keep the exact ID from the source |
+| `currency` | Optional three-letter currency code | Record the requested currency alongside returned converted fields |
+| `country` | Optional upstream compatibility field | Usually omit; it is not a promise of translated product content |
 
-## How should you review a response?
+## How do you call the 1688 Product Detail API?
 
-1. Enter one public offer URL or string ID in the [1688 Product Detail Analyzer](https://learn.nexscope.ai/tools/1688-product-detail-analyzer/).
-2. Verify that the returned offer matches the intended item. Preserve the source ID and retrieval date.
-3. Review SKU attributes and prices together. A product-level range does not establish the price of every SKU.
-4. Keep quantity tiers, MOQ and pack units separate. A minimum quantity and a pricing threshold may describe different conditions.
-5. Inspect shipping fields only when returned. Missing freight, dispatch or weight information remains unknown.
-6. Export the available SKU table before leaving the page. Request an AI report separately if you need a review checklist; source retrieval and analysis may each consume credits.
-7. Confirm the exact specification, quantity, pack unit and current terms with the supplier before committing to an order.
+The [current reference](https://www.nexscope.ai/api-docs/1688-product-detail?view=api&co-from=learn) documents this REST operation with bearer authentication:
 
-The tool's illustrative example is not a live API result. Running your own lookup requires a Nexscope API key and may consume credits. The tool explains its browser key storage; the key should never be copied into published evidence, downloads or an AI prompt.
+```text
+POST https://api.nexscope.ai/alibaba1688/productDetail
+```
 
-## Which facts need separate verification?
+The following is a **request template**, using an identifier from the documentation, not a fresh test or a supplier recommendation. Replace it with the offer you intend to inspect.
 
-| Returned field or calculation | What it cannot establish |
-| --- | --- |
-| Company name or membership label | Factory ownership, production capacity or independently checked credentials. |
-| Listed SKU price | A negotiated quote, price validity or eligibility for your requested quantity. |
-| Merchandise subtotal | Freight, duties, taxes, inspection, payment fees, returns or final landed cost. |
-| Similar product image | Identical materials, battery, motor, dimensions, certification or warranty. |
-| AI interpretation | Physical sample quality, compliance approval or a guaranteed commercial outcome. |
+```bash
+curl -X POST 'https://api.nexscope.ai/alibaba1688/productDetail' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{"offerId":"1040473674152","currency":"USD"}'
+```
 
-For an integration, inspect the current [1688 Product Detail API documentation](https://www.nexscope.ai/api-docs/1688-product-detail?co-from=learn). Check the documented request parameters, returned fields and credit requirements before sending a batch. Keep IDs as strings and retain missing values as unknown rather than converting them to zero.
+For MCP, inspect the `nexscope_1688_product_detail` tool and its own input schema. Do not assume an SDK method or response nesting from another provider. Keep your API key in a server-side secret store, inspect both HTTP and business status, and retain a redacted error and trace identifier if returned. HTTP 200 alone does not prove usable product data.
 
-Continue with the [complete product-research case]({{ '/portable-blender-market-research-case-study/' | relative_url }}) to connect demand questions, review evidence and supplier samples into a bounded validation plan.
+## How should you read SKU prices and quantity tiers?
+
+Choose the exact variant and intended order size before comparing any price. The contract separates `skuList` from product-level `saleInfo`. A product headline price, a SKU price and a one-piece price can describe different purchase conditions.
+
+| Field or group | What to inspect | Comparison mistake to avoid |
+| --- | --- | --- |
+| `skuList` | Variant attributes, SKU identifiers, available stock and documented price fields | Comparing different materials or pack sizes |
+| `retailPrice` | Single-piece RMB price when supplied | Replacing a missing retail price with a wholesale minimum |
+| `saleInfo.priceRanges` | Quantity thresholds and their associated prices | Applying a large-order tier to a small trial order |
+| `minOrderQuantity`, `batchNumber` | Minimum quantity and lot information when returned | Assuming every offer permits a one-piece purchase |
+| Foreign-currency fields | Converted values for the requested currency where supplied | Relabeling the original RMB price as USD |
+| `consignPrice` | Legacy compatibility information that may be absent | Treating it as a guaranteed dropshipping quote |
+
+The documented newer pricing model distinguishes a one-piece retail price from a wholesale SKU price for quantities of at least two. Older offers still require their own tier interpretation. Check the selected offer rather than applying that newer rule to every response.
+
+For a proposed 50-unit test, save the exact SKU, pack size, applicable quantity threshold and currency in the same row. If the requested tier is absent, mark the price **pending supplier confirmation**. This comparison procedure is an example, not an executed order or a measured sourcing result.
+
+{% include article-action.html placement="article-middle" %}
+
+## Which shipping fields need special care?
+
+Shipping weights do not all share one unit. The current contract documents product-level `weight` and `officialWeight` in kilograms, `skuShippingInfoList` weights in grams, and `skuShippingDetails` weight fields in kilograms. Keep the field path and unit with each value before converting it for a freight estimate.
+
+Retain the dispatch location, delivery-time information and available SKU dimensions. Missing dimensions or packaging information should remain unknown. Do not derive a binding international shipping quote from a bare product weight; packaging, route, destination and carrier rules still matter.
+
+## What can supplier fields establish?
+
+`companyName`, `sellerOpenId` and `sellerDataInfo` provide identity and service signals where available. They help organize follow-up questions. A trading medal, service score or certificate image is not an independent audit of the business or product.
+
+Ask finalists to confirm the SKU, material, quantity, price tier, production role, sample process and dispatch terms. Preserve replies alongside the API observation date. If the decision depends on a product certificate, verify its scope and relevance rather than treating the presence of a returned field as approval.
+
+For each shortlisted offer, keep one comparison row: source URL, observation date, string offer ID, SKU, intended quantity, applicable price, currency, MOQ, weight source and unresolved questions. Keep estimated landed costs in separate columns with your assumptions. The API does not negotiate, place an order or calculate your final margin.
+
+## Evidence, cost and next steps
+
+Reviewed **October 26, 2026** against the [public Product Detail reference](https://www.nexscope.ai/api-docs/1688-product-detail?view=api&co-from=learn) and its published request and response contracts. This is a vendor-authored documentation guide. No paid detail request, supplier verification, latency benchmark or purchase was performed for this article.
+
+Check [current pricing and access](https://www.nexscope.ai/pricing?co-from=learn) before execution. Search, detail and any separate analysis request can be separate actions; an upstream `costToken` field is not a substitute for your account's actual credit record.
+
+Continue with the [1688 search and filtering tutorial]({{ '/guides/1688-product-search-api/' | relative_url }}) to find alternatives, or the [dated image-search evidence]({{ '/api-evidence/1688-image-search/' | relative_url }}) to see the limits of one observed visual search.
+
+{% include api-guide-faq.html %}
+
