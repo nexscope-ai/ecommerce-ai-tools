@@ -2,7 +2,7 @@
 <figure class="article-visual">
   <img
     src="{{ page.image | relative_url }}"
-    srcset="{{ page.image_small | relative_url }} 720w, {{ page.image | relative_url }} 1440w"
+    {% if page.image_small and page.image_small != empty %}srcset="{{ page.image_small | relative_url }} 720w, {{ page.image | relative_url }} 1440w"{% endif %}
     sizes="(max-width: 860px) calc(100vw - 36px), 780px"
     width="1440"
     height="810"

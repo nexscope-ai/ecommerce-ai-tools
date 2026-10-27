@@ -33,5 +33,17 @@ class CanonicalSitemapTests(unittest.TestCase):
         first = ET.tostring(self.run_finalize().getroot())
         second = ET.tostring(self.run_finalize().getroot())
         self.assertEqual(first, second)
+    def test_missing_srcset_url_fails_the_build(self):
+        self.page('broken-image/', body='<img srcset="720w, /ecommerce-ai-tools/large.webp 1440w">')
+        with self.assertRaisesRegex(SystemExit, 'Malformed srcset: 720w'): self.run_finalize()
+    def test_missing_srcset_file_fails_even_when_main_image_exists(self):
+        (self.directory / 'large.webp').write_bytes(b'fixture')
+        self.page('broken-image/', body='<img src="/ecommerce-ai-tools/large.webp" srcset="/ecommerce-ai-tools/missing.webp 720w, /ecommerce-ai-tools/large.webp 1440w">')
+        with self.assertRaisesRegex(SystemExit, 'Missing img srcset'): self.run_finalize()
+    def test_single_image_without_srcset_is_a_valid_fallback(self):
+        (self.directory / 'image.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg"/>', encoding='utf-8')
+        self.page('single-image/', body='<img src="/ecommerce-ai-tools/image.svg">')
+        tree = self.run_finalize()
+        self.assertEqual(len(tree.findall(f'{{{NS}}}url')), 7)
 
 if __name__ == '__main__': unittest.main()

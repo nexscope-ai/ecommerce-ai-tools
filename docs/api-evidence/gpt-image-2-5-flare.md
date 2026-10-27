@@ -12,6 +12,7 @@ last_modified_at: 2026-09-23
 schema_type: Article
 topic: creative
 image: /assets/images/gpt-image-25-api-evidence-1440w.webp
+image_small: /assets/images/gpt-image-25-api-evidence-720w.webp
 image_alt: Evidence summary for one Nexscope GPT 2.5 Flare reference-image test
 ---
 

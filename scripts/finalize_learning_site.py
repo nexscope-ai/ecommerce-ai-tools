@@ -6,7 +6,8 @@ from collections import Counter
 from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlsplit, unquote
+from urllib.parse import urlsplit, unquote, urljoin
+import re
 import xml.etree.ElementTree as ET
 
 ORIGIN = 'https://learn.nexscope.ai'
@@ -24,6 +25,8 @@ class Page(HTMLParser):
         self.redirect = False
         self.links = []
         self.images = []
+        self.resources = []
+        self.resource_errors = []
         self.dates = []
         self.h1_count = 0
         self.jsonld = []
@@ -38,6 +41,20 @@ class Page(HTMLParser):
             if a.get('http-equiv', '').lower() == 'refresh': self.redirect = True
             if a.get('property') == 'article:modified_time': self.dates.append(a.get('content', ''))
             if a.get('property') == 'og:image': self.images.append(a.get('content', ''))
+            if a.get('property') == 'og:image' or a.get('name') == 'twitter:image': self.resources.append(('social image', a.get('content', '')))
+        if tag in ('img', 'source', 'script') and a.get('src'): self.resources.append((tag + ' src', a['src']))
+        if tag == 'video' and a.get('poster'): self.resources.append(('video poster', a['poster']))
+        if tag == 'link' and a.get('rel') in ('stylesheet', 'icon', 'apple-touch-icon', 'preload', 'modulepreload') and a.get('href'):
+            self.resources.append(('link ' + a['rel'], a['href']))
+        if tag in ('img', 'source') and a.get('srcset'):
+            srcset = a['srcset'].strip()
+            if not srcset.startswith('data:'):
+                for candidate in srcset.split(','):
+                    tokens = candidate.split()
+                    if not tokens: continue
+                    if re.fullmatch(r'(?:\d+w|[\d.]+x)', tokens[0]) or len(tokens) > 2 or (len(tokens) == 2 and not re.fullmatch(r'(?:\d+w|[\d.]+x)', tokens[1])):
+                        self.resource_errors.append('Malformed srcset: ' + candidate.strip())
+                    else: self.resources.append((tag + ' srcset', tokens[0]))
         if tag == 'a': self.links.append(a.get('href', ''))
         if tag == 'h1': self.h1_count += 1
         if tag == 'script':
@@ -49,6 +66,19 @@ class Page(HTMLParser):
         if tag == 'script':
             if self.script_type == 'application/ld+json': self.jsonld.append(json.loads(self.script_text))
             self.script_type = ''
+
+def resource_errors(page, canonical, directory, root_site=None):
+    errors = [f'{canonical}: {error}' for error in page.resource_errors]
+    for kind, href in page.resources:
+        parsed = urlsplit(urljoin(canonical, href))
+        if parsed.scheme not in ('http', 'https') or parsed.netloc != 'learn.nexscope.ai': continue
+        if parsed.path.startswith(BASE + '/'):
+            target = Path(directory) / unquote(parsed.path[len(BASE)+1:])
+        elif root_site:
+            target = Path(root_site) / unquote(parsed.path.lstrip('/'))
+        else: continue
+        if not target.is_file(): errors.append(f'Missing {kind}: {canonical} -> {href}')
+    return errors
 
 def finalize(directory, root_site=None):
     directory = Path(directory)
@@ -112,6 +142,7 @@ def finalize(directory, root_site=None):
             if page.canonical and not page.redirect and 'noindex' not in page.robots:
                 link_sources[page.canonical] = page
     for canonical, page in link_sources.items():
+        errors.extend(resource_errors(page, canonical, directory, root_site))
         for href in page.links:
             parsed = urlsplit(href)
             if parsed.scheme not in ('', 'https', 'http') or parsed.netloc not in ('', 'learn.nexscope.ai'): continue
