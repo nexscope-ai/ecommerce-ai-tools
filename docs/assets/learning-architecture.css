@@ -7,4 +7,5 @@
 .resource-path-grid strong, .resource-path-grid span, .resource-path-grid b { display: block; }
 .resource-path-grid span { margin: 10px 0; line-height: 1.6; }
 .primary-navigation ul { flex-wrap: wrap; }
+.trends-header .primary-navigation a[aria-current]:not(.nav-cta) { color: var(--accent); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
 @media (max-width: 700px) { .article-evidence { padding: 16px; } .resource-path-grid { grid-template-columns: 1fr; } }

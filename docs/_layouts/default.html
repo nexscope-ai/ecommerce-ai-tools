@@ -159,7 +159,7 @@
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
     <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=14">
-    <link rel="stylesheet" href="{{ '/assets/learning-architecture.css' | relative_url }}?v=1">
+    <link rel="stylesheet" href="{{ '/assets/learning-architecture.css' | relative_url }}?v=2">
     <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=52">
     {% if page.seller_help_page %}<link rel="stylesheet" href="{{ '/assets/seller-help.css' | relative_url }}?v=1">{% endif %}
     {% if page.audit_tool %}<link rel="stylesheet" href="{{ '/assets/ecommerce-audit-tool.css' | relative_url }}?v=1">{% endif %}
@@ -189,14 +189,15 @@
         <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
       <nav class="primary-navigation" id="primary-navigation" aria-label="Primary">
+        {% assign topic_current = 'location' %}{% if page.layout == 'topic' %}{% assign topic_current = 'page' %}{% endif %}
         <ul>
           <li><a href="https://learn.nexscope.ai/tools/">Tools</a></li>
           <li><a href="{{ '/product-showcase/' | relative_url }}"{% if page.product_showcase_page %} aria-current="page"{% endif %}>Product Gallery</a></li>
-          <li><a href="{{ '/topics/research/' | relative_url }}">Research</a></li>
-          <li><a href="{{ '/topics/visibility/' | relative_url }}">SEO &amp; AI visibility</a></li>
-          <li><a href="{{ '/topics/creative/' | relative_url }}">Creative</a></li>
-          <li><a href="{{ '/topics/agents/' | relative_url }}">APIs &amp; agents</a></li>
-          <li><a href="{{ '/topics/evidence/' | relative_url }}">Evidence</a></li>
+          <li><a href="{{ '/topics/research/' | relative_url }}"{% if page.learning_topic == 'research' %} aria-current="{{ topic_current }}"{% endif %}>Research</a></li>
+          <li><a href="{{ '/topics/visibility/' | relative_url }}"{% if page.learning_topic == 'visibility' %} aria-current="{{ topic_current }}"{% endif %}>SEO &amp; AI visibility</a></li>
+          <li><a href="{{ '/topics/creative/' | relative_url }}"{% if page.learning_topic == 'creative' %} aria-current="{{ topic_current }}"{% endif %}>Creative</a></li>
+          <li><a href="{{ '/topics/agents/' | relative_url }}"{% if page.learning_topic == 'agents' %} aria-current="{{ topic_current }}"{% endif %}>APIs &amp; agents</a></li>
+          <li><a href="{{ '/topics/evidence/' | relative_url }}"{% if page.learning_topic == 'evidence' %} aria-current="{{ topic_current }}"{% endif %}>Evidence</a></li>
           {% if page.url == '/' or page.seller_help_page or page.product_showcase_page %}
           <li><a class="nav-cta" {% if page.url == '/product-showcase/submit/' %}data-submission-form-jump="navigation"{% else %}data-showcase-submit-cta="navigation"{% endif %} href="{% if page.url == '/product-showcase/submit/' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">{% if page.url == '/product-showcase/submit/' %}Review your product ↓{% else %}Get free feedback →{% endif %}</a></li>
           {% elsif page.next_step %}
