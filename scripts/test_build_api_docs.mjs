@@ -23,9 +23,24 @@ test('aggregate counts sort categories and API cards without summing distinct us
   const all=root.slice(root.indexOf('<section data-results-kind="apis"'));
   assert.ok(all.indexOf('Popular API')<all.indexOf('Other API'));
   assert.ok(all.indexOf('Other API')<all.indexOf('Test API'));
-  assert.match(root,/<strong>60<\/strong> calls/);
+  assert.match(root,/aria-label="60 recorded calls"/);
+  assert.match(root,/<div class="api-card-actions"><div class="api-usage"/);
+  assert.match(root,/aria-label="8 distinct API users"/);
+  assert.doesNotMatch(root,/Explore category|View official API docs|<\/strong> calls|<\/strong> users/);
   assert.match(root,/Includes test accounts and all request statuses/);
   assert.doesNotMatch(root,/api-io|api-preview|Preview input/);
+});
+
+test('usage icons cap display values while retaining exact counts and sorting',()=>{
+  const entries=[entry,{...entry,slug:'larger-api',name:'Larger API'}];
+  const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:34:41Z',
+    apis:{'test-api':{callCount:10000,userCount:100},'larger-api':{callCount:10001,userCount:101}},categories:{}};
+  const category=buildPages(applyUsage({...snapshot,entries},usage)).get(entry.categorySlug+'.md');
+  assert.match(category,/title="10,001 recorded calls"[^>]*>[\s\S]*?<strong>9999\+<\/strong>/);
+  assert.match(category,/title="101 distinct API users"[^>]*>[\s\S]*?<strong>99\+<\/strong>/);
+  assert.match(category,/title="10,000 recorded calls"[^>]*>[\s\S]*?<strong>10,000<\/strong>/);
+  assert.match(category,/title="100 distinct API users"[^>]*>[\s\S]*?<strong>100<\/strong>/);
+  assert.ok(category.indexOf('Larger API')<category.indexOf('Test API'));
 });
 
 test('unknown counts remain unknown, and public metrics reject private identifiers',()=>{
@@ -199,6 +214,8 @@ test('preview projection exposes only bounded published input examples and decla
   const category=buildPages(result).get('data-amazon-front-data.md');
   assert.ok(!category.includes('api-io'));
   assert.ok(!category.includes('data-api-preview'));
-  assert.ok(category.includes('View official API docs'));
+  assert.ok(category.includes('class="api-main-link"'));
+  assert.ok(category.includes('co-from=learn'));
+  assert.ok(category.includes('class="api-card-actions"'));
   assert.ok(!category.includes('<details><a'));
 });

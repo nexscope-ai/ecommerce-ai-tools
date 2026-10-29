@@ -29,9 +29,9 @@
 .api-card p { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; margin:0 0 20px; color:#7a7287; font-size:.82rem; line-height:1.7; }
 .api-card-content { flex:1; }
 .api-card-actions { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:15px; margin-top:auto; border-top:1px solid #f0edf4; color:#655973; font-size:.78rem; font-weight:600; }
-.api-card-actions svg { width:26px; height:26px; padding:5px; border:1px solid #ece8f1; border-radius:50%; color:#8a7c9d; transition:background .18s,color .18s; }
+.api-card-actions > svg { width:26px; height:26px; padding:5px; border:1px solid #ece8f1; border-radius:50%; color:#8a7c9d; transition:background .18s,color .18s; }
 .api-card:hover .api-card-actions { color:var(--card-accent,#7953cb); }
-.api-card:hover .api-card-actions svg { color:var(--card-accent); background:var(--card-soft); border-color:transparent; }
+.api-card:hover .api-card-actions > svg { color:var(--card-accent); background:var(--card-soft); border-color:transparent; }
 .api-filters { margin:30px 0 0; padding:18px 20px; border:1px solid #e6e2ec; border-radius:14px; background:#fff; box-shadow:0 4px 20px #28203e03; }
 .api-filters label { display:block; margin-bottom:9px; color:#554c65; font-size:.78rem; font-weight:600; }
 .api-filters input { display:block; width:100%; min-height:44px; padding:10px 14px; border:1px solid #e0dae9; border-radius:9px; background:#fcfbfe; color:#302a3c; font:inherit; font-size:.9rem; }
@@ -41,9 +41,9 @@
 .api-root-footer { padding:28px 24px; text-align:center; border-top:1px solid #e6e2ec; font-size:.8rem; color:#7a7287; }
 @media(max-width:950px) { .api-directory { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:580px) { .api-root-header { flex-direction:column; align-items:flex-start; gap:16px; padding:20px; } .api-root-header nav { gap:16px; font-size:.78rem; } .api-reference { margin-top:32px; padding:0 20px; } .api-directory { grid-template-columns:minmax(0,1fr); gap:14px; } .api-reference .api-card { padding:20px; } .api-card-top { margin-bottom:18px; } }
-@media(prefers-reduced-motion:reduce) { .api-reference .api-card,.api-card-actions svg { transition:none; } .api-reference .api-card:hover { transform:none; } }
+@media(prefers-reduced-motion:reduce) { .api-reference .api-card,.api-card-actions > svg { transition:none; } .api-reference .api-card:hover { transform:none; } }
 
-/* Platform filters, cross-category discovery and read-only examples. */
+/* Platform filters and cross-category discovery. */
 .api-platform-filters { display:flex; flex-wrap:wrap; gap:8px; margin:28px 0 0; }
 .api-platform-filters button,.api-view-switch button,.api-search-row button,.api-empty button { font:inherit; cursor:pointer; }
 .api-platform-filters button { display:inline-flex; align-items:center; gap:7px; min-height:40px; padding:8px 12px; border:1px solid #e3deec; border-radius:100px; color:#63596f; background:white; font-size:.75rem; transition:border-color .15s,background .15s; }
@@ -70,6 +70,11 @@
 @media(max-width:580px) { .api-platform-filters { flex-wrap:nowrap; overflow-x:auto; padding:3px 1px 10px; scrollbar-width:thin; } .api-platform-filters button { flex:0 0 auto; } }
 .api-operation-card .api-main-link { display:flex; flex:1; flex-direction:column; }
 
-.api-usage{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 18px;color:#777185;font-size:13px}
+.api-usage{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:0;color:#888091;font-size:12px}
+.api-usage-metric{display:inline-flex;align-items:center;gap:6px;cursor:help}
+.api-usage-metric svg{display:block;width:16px;height:16px;flex:none}
+.api-usage-metric:hover{color:#5e477e}
+.api-card-actions > svg{flex:none;margin-left:auto}
+.api-card:focus-within{border-color:var(--card-accent,#7953cb);box-shadow:0 0 0 3px var(--card-soft,#f1edfb)}
 .api-usage strong{font-variant-numeric:tabular-nums;color:#272331;font-weight:650}
 .api-usage-note{font-size:12px!important;line-height:1.6;color:#777185;max-width:920px;margin:16px 0 24px}

@@ -139,14 +139,18 @@ function usageMarkup(metrics) {
   const full = value => new Intl.NumberFormat('en').format(value);
   const calls = metrics?.callCount, users = metrics?.userCount;
   if (calls == null && users == null) return '';
-  return `<div class="api-usage" aria-label="All-time recorded usage">${calls != null ? `<span><strong>${full(calls)}</strong> calls</span>` : ''}${users != null ? `<span title="Distinct recorded users of this API"><strong>${full(users)}</strong> users</span>` : ''}</div>`;
+  const icon = body => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+  const activity = icon('<path d="M3 12h4l3-8 4 16 3-8h4"/>');
+  const people = icon('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/><circle cx="9" cy="7" r="4"/>');
+  const metric = (value,label,symbol,threshold,capped) => `<span class="api-usage-metric" title="${full(value)} ${label}" aria-label="${full(value)} ${label}">${symbol}<strong>${value > threshold ? capped : full(value)}</strong></span>`;
+  return `<div class="api-usage" aria-label="All-time recorded usage">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,'distinct API users',people,100,'99+') : ''}</div>`;
 }
 function usageNote(snapshot) {
   return snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Category calls total the APIs listed; users are distinct per API.</p>` : '';
 }
 function renderOperation(e, category, name) {
   const contract=e.preview || {};
-  const content=`<a class="api-main-link" href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${cardTop(category,e.method)}<div class="api-card-content"><span class="api-platform-label">${esc(name)}</span><h3>${esc(e.name)}</h3><p>${esc(e.description)}</p></div></a>${usageMarkup(e.usage)}<div class="api-card-actions"><a href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">View official API docs ↗</a></div>`;
+  const content=`<a class="api-main-link" href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${cardTop(category,e.method)}<div class="api-card-content"><span class="api-platform-label">${esc(name)}</span><h3>${esc(e.name)}</h3><p>${esc(e.description)}</p></div><div class="api-card-actions">${usageMarkup(e.usage)}${arrow}</div></a>`;
   return `<article class="api-card api-operation-card" style="${cardStyle(category)}" data-platform="${esc(categoryVisual(category).kind)}" data-api-search="${esc([e.name,e.slug,e.path,e.description,name,...(contract.inputs||[]).map(f=>f.name)].join(' ').toLowerCase())}">${content}</article>`;
 }
 export function buildPages(snapshot) {
@@ -166,7 +170,7 @@ export function buildPages(snapshot) {
     const previous=platforms.get(visual.kind);
     platforms.set(visual.kind,{...visual,count:(previous?.count||0)+entries.length});
     const {name,description} = categoryCopy(category,entries);
-    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div>${usageMarkup(snapshot.categoryUsage?.[category])}<div class="api-card-actions"><span>Explore category</span>${arrow}</div></a>`;
+    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions">${usageMarkup(snapshot.categoryUsage?.[category])}${arrow}</div></a>`;
     categories.push(card);
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
