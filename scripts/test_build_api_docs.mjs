@@ -123,9 +123,10 @@ test('root export generates category pages, no local API details, and removes st
   assert.deepEqual(await buildRoot(snapshot,output),['/data/','/data/amazon-front-data/']);
   const page=await readFile(join(output,'amazon-front-data/index.html'),'utf8');
   assert.ok(page.includes('href="https://learn.nexscope.ai/data/amazon-front-data/"'));
-  assert.ok(page.includes('href="/data/api-reference.css"'));
+  assert.match(page,/href="\/data\/api-reference\.css\?v=[a-f0-9]{12}"/);
   assert.ok(page.includes(officialApiUrl('test-api')));
-  assert.ok(page.includes('src="/data/api-directory.js"'));
+  assert.match(page,/src="\/data\/api-directory\.js\?v=[a-f0-9]{12}"/);
+  assert.match(page,/href="\/data\/api-reference\.css\?v=[a-f0-9]{12}"/);
   assert.ok((await readFile(join(output,'logos','amazon.webp'))).length > 0);
   assert.ok(!page.includes('href="/data/test-api/"'));
   assert.ok(!(await readdir(output)).includes('test-api'));

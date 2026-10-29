@@ -3,6 +3,7 @@ import { readFile, writeFile, mkdir, readdir, rm, lstat, realpath } from 'node:f
 import { resolve, dirname, join, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runInNewContext } from 'node:vm';
+import { createHash } from 'node:crypto';
 import { loadUsage, applyUsage, compareUsage } from './data-api-usage.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -189,7 +190,7 @@ export function renderStandalone(source, snapshot) {
   const path = source.match(/^permalink: (.+)$/m)[1];
   const modifiedAt = snapshot.usageUpdatedAt && Date.parse(snapshot.usageUpdatedAt) > Date.parse(snapshot.generatedAt) ? snapshot.usageUpdatedAt : snapshot.generatedAt;
   const body = source.slice(source.indexOf('{% raw %}') + '{% raw %}'.length).replace(/\{% (?:endraw|raw) %\}/g, '');
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(modifiedAt)}"><link rel="stylesheet" href="/data/api-reference.css"></head><body class="api-root"><header class="api-root-header"><a href="/" aria-label="Nexscope Learn home"><img src="/logo.png" alt="Nexscope" width="166" height="40"></a><nav aria-label="Main navigation"><a href="/tools/">Tools</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a><a href="/ecommerce-ai-tools/">Learning library</a><a href="/data/" aria-current="${path==='/data/'?'page':'location'}">Data APIs</a></nav></header><main class="api-reference">${body}</main><footer class="api-root-footer"><a href="/data/">Data API documentation</a> · <a href="/ecommerce-ai-tools/community/">Community</a> · <a href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></footer><script src="/data/api-directory.js" defer></script></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(modifiedAt)}"><link rel="stylesheet" href="/data/api-reference.css${snapshot.assetVersions?.css ? `?v=${snapshot.assetVersions.css}` : ''}"></head><body class="api-root"><header class="api-root-header"><a href="/" aria-label="Nexscope Learn home"><img src="/logo.png" alt="Nexscope" width="166" height="40"></a><nav aria-label="Main navigation"><a href="/tools/">Tools</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a><a href="/ecommerce-ai-tools/">Learning library</a><a href="/data/" aria-current="${path==='/data/'?'page':'location'}">Data APIs</a></nav></header><main class="api-reference">${body}</main><footer class="api-root-footer"><a href="/data/">Data API documentation</a> · <a href="/ecommerce-ai-tools/community/">Community</a> · <a href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></footer><script src="/data/api-directory.js${snapshot.assetVersions?.js ? `?v=${snapshot.assetVersions.js}` : ''}" defer></script></body></html>`;
 }
 
 async function cleanGenerated(output) {
@@ -221,6 +222,8 @@ export async function build(snapshot, output = OUTPUT) {
 
 export async function buildRoot(snapshot, output, usage) {
   snapshot = applyUsage(snapshot, usage || await loadUsage(join(ROOT,'scripts/data/api-usage.public.json')));
+  const assetVersion = async path => createHash('sha256').update(await readFile(join(ROOT,path))).digest('hex').slice(0,12);
+  snapshot = {...snapshot,assetVersions:{css:await assetVersion('docs/assets/css/api-reference.css'),js:await assetVersion('docs/assets/api-directory.js')}};
   const pages = buildPages(snapshot);
   output = await cleanGenerated(output);
   const paths = [];
