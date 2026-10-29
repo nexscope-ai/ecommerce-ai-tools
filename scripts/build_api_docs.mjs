@@ -68,6 +68,37 @@ function page(title, description, slug, body) {
   return `---\nlayout: api-reference\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\npermalink: /data/${slug ? slug + '/' : ''}\nlearning_topic: agents\napi_directory: ${!slug}\n---\n{% raw %}\n${body}\n{% endraw %}\n`.replaceAll(/href="(\{\{[^\n]+?\}\})"/g, 'href="{% endraw %}$1{% raw %}"');
 }
 
+function categoryVisual(category) {
+  if (['data-sf-search-intelligence','data-ss','data-js','data-st','data-jm','data-kp'].includes(category)) category = 'amazon';
+  const platforms = [
+    ['1688','1688','1688','#d66b10','#fff2e5'], ['amazon','Amazon','a','#bd7614','#fff4df'],
+    ['tiktok','TikTok','♪','#27334d','#edf0f8'], ['ebay','eBay','e','#2765bd','#eaf2ff'],
+    ['etsy','Etsy','E','#bc5a2b','#fff0e8'], ['shopify','Shopify','S','#497b32','#eef5e7'],
+    ['temu','Temu','T','#cb661b','#fff1e5'], ['walmart','Walmart','W','#266da9','#eaf4fc'],
+    ['google','Google','G','#397555','#edf6f0'], ['web-search','Web search','↗','#5678ae','#edf2fb'],
+    ['shopee','Shopee','S','#ce572e','#fff0e9'], ['ozon','Ozon','O','#3865cb','#edf1ff'],
+    ['patent','IP research','IP','#7755ae','#f2ecfa'], ['detection','Risk research','IP','#7755ae','#f2ecfa'],
+  ];
+  const match=platforms.find(([token])=>category.includes(token));
+  const [,label,mark,color,soft]=match || ['', 'Data API','D','#7050c5','#f1edfb'];
+  return {label,mark,color,soft};
+}
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+function cardTop(category,badge) {
+  const visual=categoryVisual(category);
+  return `<div class="api-card-top"><span class="api-category-icon${visual.mark.length > 2 ? ' api-icon--word' : ''}" aria-hidden="true">${esc(visual.mark)}</span><span class="api-count-badge">${esc(badge)}</span></div>`;
+}
+function cardStyle(category) {
+  const visual=categoryVisual(category);
+  return `--card-accent:${visual.color};--card-soft:${visual.soft}`;
+}
+function categoryCopy(category,entries) {
+  const legacyNames={'amazon-advertising':'Amazon Advertising','amazon-marketplace-intelligence':'Amazon Marketplace Intelligence','patent-ip-risk':'Design Registration Research','product-market-research':'Product & Market Research'};
+  const name=legacyNames[category] || entries[0].group;
+  const topics=entries.slice(0,3).map(e=>e.name.replace(/ API$/,'')).join(', ');
+  return {name,description:`Explore ${topics}${entries.length>3?', and more':''}.`};
+}
+
 export function categoryPath(category) { return `/data/${category.replace(/^data-/, '')}/`; }
 function searchControls(label, unit, total) {
   return `<div class="api-filters api-filters--search" data-api-filters hidden><div><label for="api-search">${label}</label><input type="search" id="api-search" placeholder="Search by name or keyword…" autocomplete="off"></div><select id="api-category" hidden aria-label="Category"><option value="">All categories</option></select></div><p data-api-count data-unit="${unit}" role="status" aria-live="polite">${total} ${unit === 'category' ? 'categories' : 'APIs'} available</p><p data-api-empty hidden>No matches. Try another keyword.</p>`;
@@ -82,11 +113,10 @@ export function buildPages(snapshot) {
     const route = categoryPath(category);
     if (routes.has(route)) throw new Error(`Duplicate category route: ${route}`);
     routes.add(route);
-    const name = entries[0].group;
-    const description = entries[0].categoryDescription || `Explore ${name} data APIs for your research and application workflows.`;
-    const card = `<article class="api-card" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}"><span>${entries.length} APIs</span><h3><a href="${route}" data-data-category="${esc(category)}">${esc(name)}</a></h3><p>${esc(description)}</p><div class="api-card-actions"><a href="${route}" data-data-category="${esc(category)}">Explore category →</a></div></article>`;
+    const {name,description} = categoryCopy(category,entries);
+    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(categoryVisual(category).label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span>Explore category</span>${arrow}</div></a>`;
     categories.push(card);
-    const cards = entries.map(e=>`<article class="api-card" data-api-search="${esc([e.name,e.slug,e.path,e.description].join(' ').toLowerCase())}"><span>${esc(e.method)}</span><h3><a href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${esc(e.name)}</a></h3><p>${esc(e.description)}</p><div class="api-card-actions"><a href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">View on Nexscope ↗</a></div></article>`).join('');
+    const cards = entries.map(e=>`<a class="api-card api-operation-card" style="${cardStyle(category)}" href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}" data-api-search="${esc([e.name,e.slug,e.path,e.description].join(' ').toLowerCase())}">${cardTop(category,e.method)}<div class="api-card-content"><span class="api-platform-label">${esc(name)}</span><h3>${esc(e.name)}</h3><p>${esc(e.description)}</p></div><div class="api-card-actions"><span>View on Nexscope</span>${arrow}</div></a>`).join('');
     const content = `<nav aria-label="Breadcrumb"><a href="/data/">Data API categories</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p><p>Browse the APIs below. Each card opens the matching API documentation on the official Nexscope website, where you can review parameters and access its online test.</p><p class="api-caption">Access and credit requirements vary by operation. Review the official documentation before running a request.</p>${searchControls('Find an API','API',entries.length)}<section data-api-group="${esc(name)}"><div class="api-directory">${cards}</div></section>`;
     pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content));
   }
