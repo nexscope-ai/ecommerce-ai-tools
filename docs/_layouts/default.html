@@ -164,7 +164,8 @@
     {% if page.seller_help_page %}<link rel="stylesheet" href="{{ '/assets/seller-help.css' | relative_url }}?v=1">{% endif %}
     {% if page.audit_tool %}<link rel="stylesheet" href="{{ '/assets/ecommerce-audit-tool.css' | relative_url }}?v=1">{% endif %}
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
-    <script src="{{ '/assets/trends.js' | relative_url }}?v=15" defer></script>
+    <link rel="stylesheet" href="{{ '/assets/primary-navigation.css' | relative_url }}?v=1">
+    <script src="{{ '/assets/trends.js' | relative_url }}?v=16" defer></script>
     {% unless page.private_page %}
     <script src="{{ '/assets/traffic-attribution.js' | relative_url }}?v=1" defer></script>
     <script src="{{ '/assets/analytics.js' | relative_url }}?v=8" defer></script>
@@ -193,11 +194,21 @@
         <ul>
           <li><a href="https://learn.nexscope.ai/tools/">Tools</a></li>
           <li><a href="{{ '/product-showcase/' | relative_url }}"{% if page.product_showcase_page %} aria-current="page"{% endif %}>Product Gallery</a></li>
-          <li><a href="{{ '/topics/research/' | relative_url }}"{% if page.learning_topic == 'research' %} aria-current="{{ topic_current }}"{% endif %}>Research</a></li>
-          <li><a href="{{ '/topics/visibility/' | relative_url }}"{% if page.learning_topic == 'visibility' %} aria-current="{{ topic_current }}"{% endif %}>SEO &amp; AI visibility</a></li>
-          <li><a href="{{ '/topics/creative/' | relative_url }}"{% if page.learning_topic == 'creative' %} aria-current="{{ topic_current }}"{% endif %}>Creative</a></li>
-          <li><a href="{{ '/topics/agents/' | relative_url }}"{% if page.learning_topic == 'agents' %} aria-current="{{ topic_current }}"{% endif %}>APIs &amp; agents</a></li>
-          <li><a href="{{ '/topics/evidence/' | relative_url }}"{% if page.learning_topic == 'evidence' %} aria-current="{{ topic_current }}"{% endif %}>Evidence</a></li>
+          <li class="learning-menu-item">
+            <details class="learning-menu"{% if page.learning_topic %} data-current-topic="true"{% endif %}>
+              <summary>Learning paths <span class="learning-menu-chevron" aria-hidden="true">⌄</span></summary>
+              <div class="learning-menu-panel">
+                <span class="learning-menu-heading">What would you like to do?</span>
+                <ul>
+                  {% for topic in site.data.learning_topics %}
+                  {% assign topic_url = '/topics/' | append: topic.id | append: '/' %}
+                  <li><a href="{{ topic_url | relative_url }}"{% if page.learning_topic == topic.id %} aria-current="{{ topic_current }}"{% endif %}><strong>{{ topic.title | escape }}</strong><span>{% case topic.id %}{% when 'research' %}Explore demand, keywords and competitors{% when 'visibility' %}Improve search and AI discovery{% when 'sourcing' %}Find and compare sourcing candidates{% when 'agents' %}Build connected ecommerce workflows{% when 'creative' %}Create and review product assets{% when 'evidence' %}Explore real tests and worked examples{% endcase %}</span></a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </details>
+          </li>
+          <li><a href="{{ '/community/' | relative_url }}"{% if page.community_page %} aria-current="page"{% endif %}>Community</a></li>
           {% if page.url == '/' or page.seller_help_page or page.product_showcase_page %}
           <li><a class="nav-cta" {% if page.url == '/product-showcase/submit/' %}data-submission-form-jump="navigation"{% else %}data-showcase-submit-cta="navigation"{% endif %} href="{% if page.url == '/product-showcase/submit/' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">{% if page.url == '/product-showcase/submit/' %}Review your product ↓{% else %}Get free feedback →{% endif %}</a></li>
           {% elsif page.next_step %}

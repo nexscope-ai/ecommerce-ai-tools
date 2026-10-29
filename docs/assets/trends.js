@@ -79,9 +79,27 @@
     });
     document.addEventListener('keydown', keyEvent => {
       if (keyEvent.key !== 'Escape' || primaryMenuToggle.getAttribute('aria-expanded') !== 'true') return;
+      if (document.querySelector('.learning-menu[open]')) return;
       setPrimaryMenuOpen(false, true);
     });
     compactNavigation.addEventListener?.('change', () => setPrimaryMenuOpen(false));
+  }
+
+  const learningMenu = document.querySelector('.learning-menu');
+  if (learningMenu) {
+    document.addEventListener('click', event => {
+      if (!learningMenu.contains(event.target)) learningMenu.open = false;
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && learningMenu.open) {
+        event.preventDefault();
+        learningMenu.open = false;
+        learningMenu.querySelector('summary').focus();
+      }
+    });
+    learningMenu.addEventListener('focusout', event => {
+      if (event.relatedTarget && !learningMenu.contains(event.relatedTarget)) learningMenu.open = false;
+    });
   }
 
   document.addEventListener('click', event => {
