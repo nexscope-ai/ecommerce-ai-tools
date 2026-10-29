@@ -5,6 +5,7 @@ description: "Browse Nexscope guides, API evidence, comparisons and dated analys
 permalink: /
 last_modified_at: 2026-10-27
 resource_hub: true
+seller_help_page: true
 keywords:
   - ecommerce AI tools
   - AI ecommerce automation

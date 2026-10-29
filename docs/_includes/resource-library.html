@@ -1,5 +1,5 @@
 {% if page.url == '/' %}
-<section class="trends-hero resource-hero"><div><span class="eyebrow">Nexscope Learn · Resource library</span><h1>Find the workflow<br><span>for your next question.</span></h1></div><div><p>Browse guides, comparisons, dated analysis, cases and API evidence. Start at the <a href="https://learn.nexscope.ai/">Nexscope Learn homepage</a> for task-based paths.</p></div></section>
+{% include seller-home.html %}
 <nav class="resource-path-grid" aria-label="Choose a learning path">{% for item in site.data.learning_topics %}<a href="{{ item.id | prepend: '/topics/' | append: '/' | relative_url }}"><strong>{{ item.title }}</strong><span>{{ item.description }}</span><b>Explore this path →</b></a>{% endfor %}</nav>
 {% else %}
 <section class="trends-hero resource-hero">

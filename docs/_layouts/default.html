@@ -191,12 +191,13 @@
       <nav class="primary-navigation" id="primary-navigation" aria-label="Primary">
         <ul>
           <li><a href="https://learn.nexscope.ai/tools/">Tools</a></li>
+          <li><a href="{{ '/product-showcase/' | relative_url }}"{% if page.product_showcase_page %} aria-current="page"{% endif %}>Product Gallery</a></li>
           <li><a href="{{ '/topics/research/' | relative_url }}">Research</a></li>
           <li><a href="{{ '/topics/visibility/' | relative_url }}">SEO &amp; AI visibility</a></li>
           <li><a href="{{ '/topics/creative/' | relative_url }}">Creative</a></li>
           <li><a href="{{ '/topics/agents/' | relative_url }}">APIs &amp; agents</a></li>
           <li><a href="{{ '/topics/evidence/' | relative_url }}">Evidence</a></li>
-          {% if page.seller_help_page or page.product_showcase_page %}
+          {% if page.url == '/' or page.seller_help_page or page.product_showcase_page %}
           <li><a class="nav-cta" {% if page.url == '/product-showcase/submit/' %}data-submission-form-jump="navigation"{% else %}data-showcase-submit-cta="navigation"{% endif %} href="{% if page.url == '/product-showcase/submit/' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">{% if page.url == '/product-showcase/submit/' %}Review your product ↓{% else %}Get free feedback →{% endif %}</a></li>
           {% elsif page.next_step %}
           <li><a class="nav-cta" data-cta-placement="nav" data-step-id="{{ page.next_step.id | escape }}" data-buyer-intent="{{ page.next_step.intent | default: 'unspecified' | escape }}" href="{{ page.next_step.url | escape }}">{% if page.model_kind %}Try {{ page.model_name | escape }} ↗{% else %}See the next step ↗{% endif %}</a></li>
