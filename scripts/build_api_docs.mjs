@@ -70,6 +70,7 @@ function page(title, description, slug, body) {
 
 function categoryVisual(category) {
   if (['data-sf-search-intelligence','data-ss','data-js','data-st','data-jm','data-kp'].includes(category)) category = 'amazon';
+  if (category === 'product-market-research') category = 'mercado';
   const platforms = [
     ['1688','1688','1688','#d66b10','#fff2e5'], ['amazon','Amazon','a','#bd7614','#fff4df'],
     ['tiktok','TikTok','♪','#27334d','#edf0f8'], ['ebay','eBay','e','#2765bd','#eaf2ff'],
@@ -77,16 +78,25 @@ function categoryVisual(category) {
     ['temu','Temu','T','#cb661b','#fff1e5'], ['walmart','Walmart','W','#266da9','#eaf4fc'],
     ['google','Google','G','#397555','#edf6f0'], ['web-search','Web search','↗','#5678ae','#edf2fb'],
     ['shopee','Shopee','S','#ce572e','#fff0e9'], ['ozon','Ozon','O','#3865cb','#edf1ff'],
+    ['mercado','Mercado Libre','M','#94731d','#fff8d6'],
     ['patent','IP research','IP','#7755ae','#f2ecfa'], ['detection','Risk research','IP','#7755ae','#f2ecfa'],
   ];
   const match=platforms.find(([token])=>category.includes(token));
   const [,label,mark,color,soft]=match || ['', 'Data API','D','#7050c5','#f1edfb'];
-  return {label,mark,color,soft};
+  const logos = {'1688':'1688.webp',amazon:'amazon.webp',tiktok:'tiktok.webp',ebay:'ebay.webp',etsy:'etsy.webp',shopify:'shopify.webp',temu:'temu.webp',walmart:'walmart.webp',google:'google.webp',shopee:'shopee.webp',ozon:'ozon.webp',mercado:'mercado-libre.png'};
+  return {label,mark,color,soft,logo:logos[match?.[0]],kind:match?.[0] || 'data'};
 }
 const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 function cardTop(category,badge) {
   const visual=categoryVisual(category);
-  return `<div class="api-card-top"><span class="api-category-icon${visual.mark.length > 2 ? ' api-icon--word' : ''}" aria-hidden="true">${esc(visual.mark)}</span><span class="api-count-badge">${esc(badge)}</span></div>`;
+  const symbols = {
+    'web-search':'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 4v13M4 10.5h13"/>',
+    patent:'<path d="M7 3h7l4 4v14H7zM14 3v5h5M10 12h5M10 16h5"/>',
+    detection:'<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/>',
+    data:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>',
+  };
+  const icon = visual.logo ? `<img src="/data/logos/${visual.logo}" alt="" width="40" height="40" loading="lazy" decoding="async">` : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${symbols[visual.kind] || symbols.data}</svg>`;
+  return `<div class="api-card-top"><span class="api-category-icon${visual.logo ? ' api-category-icon--brand' : ''}" aria-hidden="true">${icon}</span><span class="api-count-badge">${esc(badge)}</span></div>`;
 }
 function cardStyle(category) {
   const visual=categoryVisual(category);
@@ -172,6 +182,11 @@ export async function buildRoot(snapshot, output) {
   }
   for (const [source,target] of [['docs/assets/css/api-reference.css','api-reference.css'],['docs/assets/api-directory.js','api-directory.js']]) {
     await writeFile(join(output,target),await readFile(join(ROOT,source),'utf8'));
+  }
+  const logoSource = join(ROOT,'docs/assets/data-logos');
+  await mkdir(join(output,'logos'),{recursive:true});
+  for (const name of await readdir(logoSource)) {
+    if (/^[a-z0-9-]+\.(?:webp|png)$/.test(name)) await writeFile(join(output,'logos',name),await readFile(join(logoSource,name)));
   }
   await writeFile(join(output,'.api-docs-generated'),JSON.stringify(paths));
   return paths;

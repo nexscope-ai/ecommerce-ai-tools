@@ -38,6 +38,8 @@ test('category square links to category pages and category cards link to officia
   assert.ok(category.includes('&lt;example&gt;'));
   assert.ok(category.includes(officialApiUrl('test-api')));
   assert.ok(category.includes('data-track="start_using"'));
+  assert.ok(category.includes('src="/data/logos/amazon.webp"'));
+  assert.ok(!category.includes('api-icon--word'));
   assert.ok(!category.includes('#online-test'));
   assert.ok(!category.includes('href="/data/test-api/"'));
 });
@@ -73,6 +75,7 @@ test('root export generates category pages, no local API details, and removes st
   assert.ok(page.includes('href="/data/api-reference.css"'));
   assert.ok(page.includes(officialApiUrl('test-api')));
   assert.ok(page.includes('src="/data/api-directory.js"'));
+  assert.ok((await readFile(join(output,'logos','amazon.webp'))).length > 0);
   assert.ok(!page.includes('href="/data/test-api/"'));
   assert.ok(!(await readdir(output)).includes('test-api'));
 });

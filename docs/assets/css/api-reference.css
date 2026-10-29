@@ -20,6 +20,9 @@
 .api-card-top { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:22px; }
 .api-category-icon { display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border:1px solid color-mix(in srgb,var(--card-accent) 14%,transparent); border-radius:14px; background:var(--card-soft,#f1edfb); color:var(--card-accent,#7953cb); font-weight:800; font-size:1.35rem; letter-spacing:-.055em; }
 .api-category-icon.api-icon--word { font-size:1rem; letter-spacing:-.045em; }
+.api-category-icon--brand { background:#fff; border-color:#eeeaf2; overflow:hidden; }
+.api-category-icon img { display:block; width:40px; height:40px; object-fit:contain; border-radius:8px; }
+.api-category-icon svg { width:26px; height:26px; }
 .api-count-badge { padding:4px 10px; border:1px solid #e9e5ef; border-radius:100px; color:#786e88; background:#fbfafc; font-size:.7rem; font-weight:600; white-space:nowrap; }
 .api-platform-label { display:block; margin-bottom:6px; color:var(--card-accent,#7953cb); font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.09em; }
 .api-card h3 { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; margin:0 0 12px; color:#282332; font-size:1.05rem; letter-spacing:-.02em; line-height:1.35; }
