@@ -10,13 +10,13 @@ import {applyUsage, validateUsage} from './data-api-usage.mjs';
 const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
 
-test('aggregate counts sort categories and API cards without summing distinct users',()=>{
+test('aggregate counts sort cards and show clearly labelled category user sums',()=>{
   const entries=[entry,{...entry,slug:'popular-api',name:'Popular API'},
     {...entry,slug:'other-api',name:'Other API',categorySlug:'data-1688-sourcing'}];
   const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:34:41.999Z',
     apis:{'test-api':{callCount:10,userCount:3},'popular-api':{callCount:50,userCount:8},'other-api':{callCount:40,userCount:6}},categories:{}};
   const result=applyUsage({...snapshot,entries},usage);
-  assert.deepEqual(result.categoryUsage['data-amazon-front-data'],{callCount:60,userCount:null});
+  assert.deepEqual(result.categoryUsage['data-amazon-front-data'],{callCount:60,userCount:11,userCountBasis:'sum'});
   const pages=buildPages(result);
   const root=pages.get('index.md');
   assert.ok(root.indexOf('href="/data/amazon-front-data/"')<root.indexOf('href="/data/1688-sourcing/"'));
@@ -26,6 +26,7 @@ test('aggregate counts sort categories and API cards without summing distinct us
   assert.match(root,/aria-label="60 recorded calls"/);
   assert.match(root,/<div class="api-card-actions"><span class="api-card-cta">Explore category/);
   assert.match(root,/aria-label="8 distinct API users"/);
+  assert.match(root,/title="11 summed API users; users of multiple APIs count more than once"/);
   assert.match(root,/class="api-card-cta">View API docs/);
   assert.doesNotMatch(root,/<\/strong> calls|<\/strong> users/);
   assert.match(root,/Includes test accounts and all request statuses/);
@@ -47,6 +48,7 @@ test('usage icons cap display values while retaining exact counts and sorting',(
 test('unknown counts remain unknown, and public metrics reject private identifiers',()=>{
   const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:34:41Z',apis:{},categories:{}};
   assert.equal(applyUsage(snapshot,usage).categoryUsage[entry.categorySlug].callCount,null);
+  assert.equal(applyUsage(snapshot,usage).categoryUsage[entry.categorySlug].userCount,null);
   assert.throws(()=>validateUsage({...usage,apis:{'test-api':{callCount:1,userId:'private'}}}),/aggregate/);
   assert.throws(()=>validateUsage({...usage,apis:{'test-api':{callCount:1,userCount:2}}}),/exceeds/);
 });

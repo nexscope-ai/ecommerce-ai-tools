@@ -34,7 +34,10 @@ export function applyUsage(snapshot, usage) {
     const userCount = usage.categories[category]?.userCount ?? null;
     const knownUsers = items.map(e=>e.usage.userCount).filter(value=>value != null);
     if (userCount != null && knownUsers.length && (userCount < Math.max(...knownUsers) || (knownUsers.length===items.length && userCount > knownUsers.reduce((a,b)=>a+b,0)))) throw new Error(`Inconsistent distinct category users: ${category}`);
-    categoryUsage[category] = {callCount,userCount};
+    // The directory displays the sum of per-API users, not a distinct category union.
+    const userTotal = knownUsers.length === items.length ? knownUsers.reduce((a,b)=>a+b,0) : null;
+    if (!count(userTotal)) throw new Error(`Category user total exceeds supported range: ${category}`);
+    categoryUsage[category] = {callCount,userCount:userTotal,userCountBasis:'sum'};
   }
   return {...snapshot,entries,categoryUsage,usageUpdatedAt:usage.updatedAt};
 }

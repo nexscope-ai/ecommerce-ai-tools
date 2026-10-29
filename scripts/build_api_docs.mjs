@@ -144,10 +144,11 @@ function usageMarkup(metrics) {
   const activity = icon('<path d="M3 12h4l3-8 4 16 3-8h4"/>');
   const people = icon('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/><circle cx="9" cy="7" r="4"/>');
   const metric = (value,label,symbol,threshold,capped) => `<span class="api-usage-metric" title="${full(value)} ${label}" aria-label="${full(value)} ${label}">${symbol}<strong>${value > threshold ? capped : full(value)}</strong></span>`;
-  return `<div class="api-usage" aria-label="All-time recorded usage">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,'distinct API users',people,100,'99+') : ''}</div>`;
+  const userLabel = metrics?.userCountBasis === 'sum' ? 'summed API users; users of multiple APIs count more than once' : 'distinct API users';
+  return `<div class="api-usage" aria-label="All-time recorded usage">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,100,'99+') : ''}</div>`;
 }
 function usageNote(snapshot) {
-  return snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Category calls total the APIs listed; users are distinct per API.</p>` : '';
+  return snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Categories sum calls and users across listed APIs; a user of multiple APIs may count more than once.</p>` : '';
 }
 function renderOperation(e, category, name) {
   const contract=e.preview || {};

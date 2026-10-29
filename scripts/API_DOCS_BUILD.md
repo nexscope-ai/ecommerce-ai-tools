@@ -40,8 +40,10 @@ slugs have no retained records in this exhaustive export and display zero;
 historical aliases/shared proxy traffic are not estimated or redistributed.
 The source's global 105,076 calls includes APIs outside this directory.
 Users are distinct recorded users per API, excluding anonymous calls. Category
-calls sum only listed APIs. Category distinct users are omitted because the
-per-API CSVs cannot establish the union of users across APIs.
+calls sum only listed APIs. Category users sum per-API user counts, as requested;
+the tooltip clarifies that users of multiple APIs may count more than once.
+This total is not the distinct union of users across a category. Missing per-API
+counts keep the category user total unknown rather than showing an incomplete sum.
 
 Cards and categories sort by calls descending, preserving original order for
 ties. Replace the aggregate snapshot to refresh counts and its publication date.
