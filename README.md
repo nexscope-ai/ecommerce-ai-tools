@@ -1,22 +1,47 @@
 # Nexscope Ecommerce AI Tools
 
-Practical ecommerce research, SEO, creative AI, and API workflows from the Nexscope team. This repository is a public library of guides, dated evidence, examples, and support resources for sellers and developers. The hosted Nexscope application runs separately; its source code is not in this repository.
+**Ecommerce Data APIs for builders. Free product listings for sellers.**
 
-[![Learning Hub](https://img.shields.io/badge/Docs-Learning%20Hub-7C3AED?style=flat&labelColor=555)](https://learn.nexscope.ai/ecommerce-ai-tools/) [![Ecommerce Tools](https://img.shields.io/badge/Tools-Ecommerce%20Tools-2563EB?style=flat&labelColor=555)](https://learn.nexscope.ai/tools/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header) [![API Docs](https://img.shields.io/badge/Developers-API%20Docs-0891B2?style=flat&labelColor=555)](https://www.nexscope.ai/api-docs?utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_header&co-from=learn) [![Discussions](https://img.shields.io/badge/Community-Discussions-D97706?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![Issues](https://img.shields.io/badge/Feedback-Issues-2DA44E?style=flat&labelColor=555)](https://github.com/nexscope-ai/ecommerce-ai-tools/issues) [![Enterprise Plans](https://img.shields.io/badge/Business-Enterprise%20Plans-6D28D9?style=flat&labelColor=555)](https://www.nexscope.ai/enterprise?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=enterprise_api_mcp_partnership&utm_content=readme_header) [![License](https://img.shields.io/badge/License-Apache%202.0-0F766E?style=flat&labelColor=555)](LICENSE)
+[![Data APIs](https://img.shields.io/badge/Explore-Data%20APIs-7353C6)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](https://img.shields.io/badge/Product%20Gallery-100%25%20Free-397B60)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](https://img.shields.io/badge/Community-Discussions-D97706)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](https://img.shields.io/badge/License-Apache%202.0-0F766E)](LICENSE)
 
-## Product Gallery: get feedback on your product page
+Find the data for your next workflow, or give your product a free public page built for search and AI discovery. Start with the two features on [Nexscope Learn](https://learn.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_home).
 
-[The free ecommerce product page review](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) starts with feedback on the product page you already have. Submit a public product URL or Amazon ASIN, product details, and images; video is optional. After editorial review, read what works and any evidence-based improvements on your private management page, whether or not the product is approved for publication. We do not invent changes to reach a target number. If approved and published, the product also receives a free public Gallery page, creating another discovery route to the original listing without guaranteed traffic.
+| What do you want to do? | Start here |
+| --- | --- |
+| Find ecommerce data for an application, research task or AI workflow | **[Explore the Data API directory →](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_data)** |
+| Give your product a public page with facts, images and a link to your store | **[List your product for free →](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_primary_gallery)** |
 
-**[Request free product-page feedback](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_first_module)** · [How the review works](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/) · [Join this week's product-page clinic](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16?utm_source=github&utm_medium=referral&utm_campaign=weekly_product_page_clinic&utm_content=readme_first_module)
+## 1. Data APIs: find the right operation before you build
 
-No store connection, seller token, or payment access is required. Save the private management link shown after submission to read your feedback; there is no fixed review deadline or automatic status email. Submissions remain offline until approved and published. Publication, search rankings, traffic, and sales are not guaranteed.
+Browse ecommerce APIs for Amazon, TikTok, 1688, Shopify, Shopee, Walmart and other platforms. Filter by platform, search for the information you need, and open the exact official API documentation and online test.
+
+- **Find the data for your task:** product search, reviews, sourcing, keywords, marketplace research and more.
+- **Compare operations:** inspect descriptions and recorded usage before choosing a starting point.
+- **Test, then integrate:** check the required inputs, returned fields, coverage and credit requirements in the official documentation.
+
+**[Explore Data APIs →](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_data_feature)** · [API selection guide](docs/guides/api-capabilities.md) · [Official API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_data_docs)
+
+The directory is free to browse. API requests follow each operation's account, access and credit requirements.
+
+## 2. Product Gallery: list and display your product completely free
+
+Give search and AI systems a clearer source about what you sell. An approved Gallery page brings your product facts, images, optional video and original store link together in one public page. This can support **AI discovery and generative engine optimization (GEO)**, while shoppers follow the link to your store to buy.
+
+**Product submission, editorial review, and approved listing and display are completely free.** No payment or store account connection is required.
+
+1. **Add your product:** share a public product URL or Amazon ASIN, accurate product details and at least one clear image.
+2. **Save your private management link:** check status, read editorial feedback and make changes when needed.
+3. **Get a public page after approval:** your product remains offline until reviewed, approved and published.
+
+**[List your product for free →](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_gallery_feature)** · [Browse the Product Gallery](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_gallery_browse) · [Join the product-page clinic](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/16)
+
+A public product page provides another source of product information. Publication, indexing, AI citations, traffic and sales are not guaranteed.
 
 ## About Nexscope
 
 Nexscope helps ecommerce teams research marketplaces, analyze customer feedback, improve listings and search visibility, create product images and videos, and connect data to their own applications or AI agents through REST APIs and MCP. Sellers can use the browser tools; developers can inspect endpoint schemas, examples, and access requirements in the [API documentation](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=api_docs_launch&utm_content=readme_api_1).
 
-New users receive 1,000 free credits to get started. [Create an account](https://www.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=tools_launch&utm_content=readme_header&co-from=learn). Credit use and API access vary by action and account.
+Credit use and API access vary by action and account. Check the selected operation's official documentation for current requirements.
 
 ### What this repository contains
 
