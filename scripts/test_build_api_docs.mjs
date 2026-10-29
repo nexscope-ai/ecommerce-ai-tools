@@ -24,9 +24,10 @@ test('aggregate counts sort categories and API cards without summing distinct us
   assert.ok(all.indexOf('Popular API')<all.indexOf('Other API'));
   assert.ok(all.indexOf('Other API')<all.indexOf('Test API'));
   assert.match(root,/aria-label="60 recorded calls"/);
-  assert.match(root,/<div class="api-card-actions"><div class="api-usage"/);
+  assert.match(root,/<div class="api-card-actions"><span class="api-card-cta">Explore category/);
   assert.match(root,/aria-label="8 distinct API users"/);
-  assert.doesNotMatch(root,/Explore category|View official API docs|<\/strong> calls|<\/strong> users/);
+  assert.match(root,/class="api-card-cta">View API docs/);
+  assert.doesNotMatch(root,/<\/strong> calls|<\/strong> users/);
   assert.match(root,/Includes test accounts and all request statuses/);
   assert.doesNotMatch(root,/api-io|api-preview|Preview input/);
 });

@@ -151,7 +151,7 @@ function usageNote(snapshot) {
 }
 function renderOperation(e, category, name) {
   const contract=e.preview || {};
-  const content=`<a class="api-main-link" href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${cardTop(category,e.method)}<div class="api-card-content"><span class="api-platform-label">${esc(name)}</span><h3>${esc(e.name)}</h3><p>${esc(e.description)}</p></div><div class="api-card-actions">${usageMarkup(e.usage)}${arrow}</div></a>`;
+  const content=`<a class="api-main-link" href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${cardTop(category,e.method)}<div class="api-card-content"><span class="api-platform-label">${esc(name)}</span><h3>${esc(e.name)}</h3><p>${esc(e.description)}</p></div><div class="api-card-actions"><span class="api-card-cta">View API docs <span aria-hidden="true">↗</span></span>${usageMarkup(e.usage)}</div></a>`;
   return `<article class="api-card api-operation-card" style="${cardStyle(category)}" data-platform="${esc(categoryVisual(category).kind)}" data-api-search="${esc([e.name,e.slug,e.path,e.description,name,...(contract.inputs||[]).map(f=>f.name)].join(' ').toLowerCase())}">${content}</article>`;
 }
 export function buildPages(snapshot) {
@@ -171,7 +171,7 @@ export function buildPages(snapshot) {
     const previous=platforms.get(visual.kind);
     platforms.set(visual.kind,{...visual,count:(previous?.count||0)+entries.length});
     const {name,description} = categoryCopy(category,entries);
-    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions">${usageMarkup(snapshot.categoryUsage?.[category])}${arrow}</div></a>`;
+    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
     categories.push(card);
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
