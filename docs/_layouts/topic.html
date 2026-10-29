@@ -2,13 +2,20 @@
 layout: default
 ---
 {% assign current_topic = site.data.learning_topics | where: 'id', page.learning_topic | first %}
-<section class="trends-hero resource-hero"><div><span class="eyebrow">Official Nexscope learning path</span><h1>{{ current_topic.title }}</h1></div><div><p>{{ current_topic.description }}</p><p><strong>For:</strong> {{ current_topic.audience }}</p></div></section>
-<nav class="resource-sections" aria-label="Learning paths">{% for item in site.data.learning_topics %}<a href="{{ item.id | prepend: '/topics/' | append: '/' | relative_url }}"{% if item.id == page.learning_topic %} aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}</nav>
-<section class="resource-note"><h2>Start with one workflow</h2><p>{{ current_topic.workflow }}</p><p><a href="{{ current_topic.guide | relative_url }}">{{ current_topic.guide_label }} →</a> · <a href="{{ current_topic.tool }}">{{ current_topic.tool_label }} →</a> · <a href="{{ current_topic.evidence | relative_url }}">Inspect a real test →</a> · <a href="{{ current_topic.product }}">Check official product access →</a></p><p><strong>Evidence limits:</strong> {{ current_topic.boundary }}</p></section>
+<div class="topic-page">
+<section class="topic-hero"><div><span class="eyebrow">Nexscope Learn / Learning paths</span><h1>{{ current_topic.title }}</h1><p class="topic-description">{{ current_topic.description }}</p></div><aside class="topic-audience"><span>Built for</span><p>{{ current_topic.audience }}</p><a href="#topic-resources">Browse the resources <span aria-hidden="true">↓</span></a></aside></section>
+<nav class="topic-tabs" aria-label="Learning paths">{% for item in site.data.learning_topics %}<a href="{{ item.id | prepend: '/topics/' | append: '/' | relative_url }}"{% if item.id == page.learning_topic %} aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}</nav>
+<section class="topic-start" aria-labelledby="topic-start-title"><div class="topic-section-heading"><div><span class="eyebrow">Your starting point</span><h2 id="topic-start-title">One question. A clear path forward.</h2></div><p>{{ current_topic.workflow }}</p></div><div class="topic-steps">
+<a href="{{ current_topic.guide | relative_url }}"><span class="topic-step-number">01 / LEARN</span><h3>{{ current_topic.guide_label }}</h3><span class="topic-step-action">Read the guide <span aria-hidden="true">↗</span></span></a>
+<a href="{{ current_topic.tool }}"><span class="topic-step-number">02 / TRY</span><h3>{{ current_topic.tool_label }}</h3><span class="topic-step-action">Explore the tool <span aria-hidden="true">↗</span></span></a>
+<a href="{{ current_topic.evidence | relative_url }}"><span class="topic-step-number">03 / VERIFY</span><h3>See the inputs and results.</h3><span class="topic-step-action">Inspect a real test <span aria-hidden="true">↗</span></span></a>
+<a href="{{ current_topic.product }}"><span class="topic-step-number">04 / APPLY</span><h3>Take the next step with Nexscope.</h3><span class="topic-step-action">Check product access <span aria-hidden="true">↗</span></span></a>
+</div><details class="topic-boundary"><summary>Before you use these resources</summary><p>{{ current_topic.boundary }}</p></details></section>
+<div id="topic-resources" class="topic-resources">
 {% if page.learning_topic == 'research' %}<nav class="resource-sections" aria-label="Research marketplaces"><a href="https://learn.nexscope.ai/amazon-research/">Amazon</a><a href="https://learn.nexscope.ai/shopify-competitor-product-research/">Shopify</a><a href="https://learn.nexscope.ai/tools/tiktok-shop-new-product-validator/">TikTok Shop</a><a href="{{ '/topics/sourcing/' | relative_url }}">1688 sourcing</a></nav>{% endif %}
 {% assign resources = site.pages | where: 'schema_type', 'Article' | where_exp: 'item', 'item.sitemap != false' | sort: 'title' %}
 {% assign overviews = site.data.site_guides | where: 'learning_topic', page.learning_topic %}
-{% if overviews.size > 0 %}<section class="learning-topic-section"><h2>Workflow overviews</h2><div class="trend-grid resource-grid">{% for item in overviews %}<article class="trend-card resource-card"><a href="{{ item.url }}"><div class="card-body"><span class="card-tag">WORKFLOW OVERVIEW</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p><span class="read-link">Follow the workflow →</span></div></a></article>{% endfor %}</div></section>{% endif %}
+{% if overviews.size > 0 %}<section class="learning-topic-section topic-overviews"><div class="topic-section-heading"><h2>The complete workflow</h2><span class="topic-count">{{ overviews.size }} {% if overviews.size == 1 %}overview{% else %}overviews{% endif %}</span></div><div class="topic-overview-grid">{% for item in overviews %}<article class="topic-overview"><a href="{{ item.url }}"><div><span class="eyebrow">Workflow overview</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div><span class="topic-overview-action">Follow the workflow <span aria-hidden="true">↗</span></span></a></article>{% endfor %}</div></section>{% endif %}
 {% assign kinds = 'guide,comparison,evidence,case-study,insight' | split: ',' %}
 {% for kind in kinds %}
   {% assign count = 0 %}{% capture cards %}{% for item in resources %}
@@ -19,6 +26,8 @@ layout: default
     <article class="trend-card resource-card"><a href="{{ item.url | relative_url }}"><div class="card-body"><span class="card-tag">{{ kind | replace: '-', ' ' | upcase }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.description | escape }}</p><span class="read-link">Inspect this resource →</span></div></a></article>
     {% endif %}
   {% endfor %}{% endcapture %}
-  {% if count > 0 %}<section class="learning-topic-section"><h2>{% case kind %}{% when 'guide' %}Practical guides{% when 'comparison' %}Compare workflow fit{% when 'evidence' %}Recorded tests{% when 'case-study' %}Case studies{% when 'insight' %}Dated analysis and insights{% endcase %}</h2><div class="trend-grid resource-grid">{{ cards }}</div></section>{% endif %}
+  {% if count > 0 %}<section class="learning-topic-section"><div class="topic-section-heading"><h2>{% case kind %}{% when 'guide' %}Practical guides{% when 'comparison' %}Compare workflow fit{% when 'evidence' %}Recorded tests{% when 'case-study' %}Case studies{% when 'insight' %}Analysis and insights{% endcase %}</h2><span class="topic-count">{{ count }} {% if count == 1 %}resource{% else %}resources{% endif %}</span></div><div class="trend-grid resource-grid topic-resource-grid{% if count == 1 %} topic-resource-single{% endif %}">{{ cards }}</div></section>{% endif %}
 {% endfor %}
-<aside class="resource-note"><strong>Continue your research.</strong><p><a href="{{ '/' | relative_url }}">Search every resource →</a> · <a href="{{ '/community/' | relative_url }}">Ask a workflow question →</a></p></aside>
+</div>
+<aside class="topic-continue"><div><span class="eyebrow">Keep exploring</span><h2>Find your next answer.</h2></div><div><a href="{{ '/' | relative_url }}">Browse every resource <span aria-hidden="true">↗</span></a><a href="{{ '/community/' | relative_url }}">Ask the community <span aria-hidden="true">↗</span></a></div></aside>
+</div>
