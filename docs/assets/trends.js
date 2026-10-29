@@ -51,7 +51,7 @@
   const primaryMenuToggle = document.querySelector('.primary-menu-toggle');
   const primaryNavigation = document.querySelector('.primary-navigation');
   if (primaryMenuToggle && primaryNavigation) {
-    const compactNavigation = window.matchMedia('(max-width: 900px)');
+    const compactNavigation = window.matchMedia('(max-width: 1180px)');
     const setPrimaryMenuOpen = (open, returnFocus = false) => {
       const shouldOpen = Boolean(open && compactNavigation.matches);
       primaryMenuToggle.setAttribute('aria-expanded', String(shouldOpen));
