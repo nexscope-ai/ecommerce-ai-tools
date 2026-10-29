@@ -6,13 +6,23 @@ import {join} from 'node:path';
 import {project, validate, build, renderEntry, officialTestUrl} from './build_api_docs.mjs';
 import {runInNewContext} from 'node:vm';
 
-const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
-const snapshot={schemaVersion:1,generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
+const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
+const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
 test('projection preserves public endpoints and excludes internal fields',()=>{
   const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:{route:{kind:'upstream-skill',record:{...entry,mcpToolName:'private_tool',primaryProxy:'internal'}},catalog:{skills:[{...entry,endpoint:'/public/test'}],categories:[]}}}});
   assert.equal(result.entries[0].path,'/public/test');
   assert.equal(result.entries[0].mcpToolName,undefined);
   assert.equal(result.entries[0].primaryProxy,undefined);
+});
+test('projection excludes SEO, creative, routing and account contracts',()=>{
+  const categories=['data-tiktok','amazon-advertising','video-generation-models','image-generation-models','multimodal-ai','ai-content-generation','jev','marketing','account-apis'];
+  const models=Object.fromEntries(categories.map((categorySlug,index)=>{
+    const slug=`sample-${index}`;
+    return [slug,{route:{kind:categorySlug==='marketing'?'marketing-contract':categorySlug==='account-apis'?'account-doc':'upstream-skill',record:entry},catalog:{skills:[{...entry,slug,categorySlug,endpoint:'/test'}],categories:[]}}];
+  }));
+  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:Object.keys(models),apiDetailsBySlug:models});
+  assert.deepEqual(result.entries.map(e=>e.slug),['sample-0','sample-1']);
+  assert.throws(()=>validate({...snapshot,entries:[{...entry,categorySlug:'video-generation-models'}]}),/Non-data/);
 });
 test('validation rejects traversal, duplicate contracts and literal keys',()=>{
   for(const e of [{...entry,slug:'../escape'},{...entry,slug:'quickstart'},{...entry,path:'//other.example'},{...entry,path:"/test'bad"},{...entry,description:'nk-abcdefghijklmnopqrstuv'}]) assert.throws(()=>validate({...snapshot,entries:[e]}));

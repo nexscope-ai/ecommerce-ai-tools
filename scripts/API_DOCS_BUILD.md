@@ -27,3 +27,5 @@ This reads `src/generated/skill-api-docs.publication.generated.ts` without modif
 The API reference is served at `/ecommerce-ai-tools/api/`, with an index, quick start and one page per published API slug. Examples describe the published contract; they do not claim that live calls were executed. Conditional and nested requirements remain available in the full JSON schemas. Incomplete upstream examples are not presented as runnable requests.
 
 The directory supports client-side keyword and category filters over server-built HTML. Each API has a separate static page at `/api/<slug>/`. Both directory cards and detail pages link to `https://www.nexscope.ai/api-docs/<slug>?co-from=learn#online-test`, which selects the official online tester. No API request or key entry is performed on the learning site.
+
+Scope is limited to published Data contracts: data-* categories and legacy marketplace/research categories. SEO, image/video generation, AI content generation, JEV routing and account endpoints are excluded during import; snapshot validation also rejects non-Data entries.

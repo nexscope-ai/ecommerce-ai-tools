@@ -9,6 +9,10 @@ const SNAPSHOT = join(ROOT, 'scripts/data/api-docs.public.json');
 const OUTPUT = join(ROOT, 'docs/api-docs');
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const API_ORIGIN = 'https://api.nexscope.ai';
+// Marketplace and research contracts include older category names alongside
+// the newer data-* taxonomy. Keep generation/routing/account/SEO APIs out.
+const LEGACY_DATA_CATEGORIES = new Set(['amazon-advertising','amazon-marketplace-intelligence','patent-ip-risk','product-market-research']);
+const isDataCategory = category => typeof category === 'string' && (category.startsWith('data-') || LEGACY_DATA_CATEGORIES.has(category));
 const clean = value => String(value ?? '').replace(/[^.!?\n]*\bMCP\b[^.!?\n]*[.!?]?/gi, '').trim();
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const json = value => JSON.stringify(value, null, 2);
@@ -26,35 +30,37 @@ function apiPath(value) {
 // Export only customer-facing contract fields. No environment files, credentials,
 // proxy metadata, MCP contracts, internal counters or execution-only slugs.
 export function project(publication) {
-  const entries = publication.apiSlugs.map(slug => {
+  const entries = publication.apiSlugs.flatMap(slug => {
     if (!SLUG.test(slug)) throw new Error(`Unsafe API slug: ${slug}`);
     const model = publication.apiDetailsBySlug[slug];
     const record = model?.route?.record;
     if (!record) throw new Error(`Missing published contract: ${slug}`);
     const skill = model.catalog.skills.find(item => item.slug === slug) || {};
+    if (model.route.kind !== 'upstream-skill' || !isDataCategory(skill.categorySlug)) return [];
     const account = model.route.kind === 'account-doc';
     const path = apiPath(account ? record.path : skill.endpoint || record.endpoint);
     if (!path?.startsWith('/') || path.startsWith('//') || /[\s"'<>]/.test(path)) throw new Error(`Invalid public endpoint: ${slug}`);
     const group = account ? 'Account APIs' : model.catalog.categories.find(c => c.slug === skill.categorySlug)?.name || 'Marketing & SEO';
     const entry = {
       slug, name: clean(skill.name || record.name), description: clean(record.description || skill.description),
-      group, method: account ? 'GET' : record.run?.method || 'POST', path,
+      group, categorySlug: skill.categorySlug, method: record.run?.method || 'POST', path,
     };
     for (const field of ['requestSchema','responseSchema','requestExample','responseExample','requestFields','requiredAnyGroups','assetUploadConstraints','asyncTask','taskResultEndpoint','acceptedSchema','errorSchema']) {
       const value = record[field] ?? skill[field];
       if (value !== undefined) entry[field] = field === 'taskResultEndpoint' ? apiPath(value) : value;
     }
-    return entry;
+    return [entry];
   });
-  const result = { schemaVersion: 1, generatedAt: publication.generatedAt, entries };
+  const result = { schemaVersion: 1, scope: 'data', generatedAt: publication.generatedAt, entries };
   validate(result);
   return result;
 }
 
 export function validate(snapshot) {
-  if (snapshot.schemaVersion !== 1 || !snapshot.entries?.length) throw new Error('Empty or unsupported API publication');
+  if (snapshot.schemaVersion !== 1 || snapshot.scope !== 'data' || !snapshot.entries?.length) throw new Error('Empty or unsupported Data API publication');
   const seen = new Set();
   for (const e of snapshot.entries) {
+    if (!isDataCategory(e.categorySlug)) throw new Error(`Non-data API is not allowed: ${e.slug}`);
     if (!SLUG.test(e.slug) || ['index','quickstart'].includes(e.slug) || seen.has(e.slug) || !e.name || !e.path?.startsWith('/') || e.path.startsWith('//') || /[\s"'<>]/.test(e.path) || !['GET','POST','PUT','PATCH','DELETE'].includes(e.method)) throw new Error(`Invalid API entry: ${e.slug}`);
     seen.add(e.slug);
   }
@@ -114,8 +120,8 @@ export async function build(snapshot, output = OUTPUT) {
   const pages = new Map(snapshot.entries.map(e=>[`${e.slug}.md`,renderEntry(e)]));
   const groups = Map.groupBy(snapshot.entries, e=>e.group);
   const directory = [...groups].map(([name,entries])=>`<section data-api-group="${esc(name)}"><h2>${esc(name)} <small>${entries.length} APIs</small></h2><div class="api-directory">${entries.map(e=>`<article class="api-card" data-api-search="${esc([e.name,e.slug,e.path,e.description].join(' ').toLowerCase())}"><span>${esc(e.method)}</span><h3><a href="${link(e.slug)}">${esc(e.name)}</a></h3><p>${esc(e.description)}</p><div class="api-card-actions"><a href="${link(e.slug)}">View API docs →</a><a href="${officialTestUrl(e.slug)}" aria-label="Try ${esc(e.name)} online">Try online ↗</a></div></article>`).join('')}</div></section>`).join('\n');
-  const filters = `<div class="api-filters" data-api-filters hidden><div><label for="api-search">Find an API</label><input type="search" id="api-search" placeholder="Search Amazon reviews, SEO, image generation…" autocomplete="off"></div><div><label for="api-category">Category</label><select id="api-category"><option value="">All categories</option>${[...groups.keys()].map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('')}</select></div></div><p data-api-count role="status" aria-live="polite">${snapshot.entries.length} APIs available</p><p data-api-empty hidden>No APIs match your search. Try a broader keyword or another category.</p>`;
-  pages.set('index.md',page('Nexscope REST API documentation','Explore ecommerce data, SEO and marketing, creative AI and account API request parameters, examples and response schemas.','',`<p class="api-eyebrow">Nexscope developer reference</p><h1>Find the API for your next workflow</h1><p>Explore ecommerce data, SEO and marketing intelligence, and creative AI. Read the input and response contract, then try the matching API on Nexscope.</p><p><a href="${link('quickstart')}">Start with authentication →</a></p>${filters}${directory}`));
+  const filters = `<div class="api-filters" data-api-filters hidden><div><label for="api-search">Find an API</label><input type="search" id="api-search" placeholder="Search Amazon reviews, TikTok, 1688, Shopify…" autocomplete="off"></div><div><label for="api-category">Category</label><select id="api-category"><option value="">All categories</option>${[...groups.keys()].map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('')}</select></div></div><p data-api-count role="status" aria-live="polite">${snapshot.entries.length} APIs available</p><p data-api-empty hidden>No APIs match your search. Try a broader keyword or another category.</p>`;
+  pages.set('index.md',page('Nexscope Data API documentation','Explore Nexscope ecommerce Data API parameters, request examples and response schemas for marketplace and product research.','',`<p class="api-eyebrow">Nexscope Data API reference</p><h1>Find the API for your next workflow</h1><p>Explore marketplace data, product research, advertising intelligence and search data. Read the input and response contract, then try the matching API on Nexscope.</p><p><a href="${link('quickstart')}">Start with authentication →</a></p>${filters}${directory}`));
   pages.set('quickstart.md',page('Nexscope API quick start','Call Nexscope REST APIs from a developer application or a normal Codex session using a local environment variable.','quickstart',`<nav><a href="${link('')}">← API reference</a></nav><h1>Make your first API request</h1><h2>1. Prepare your account</h2><p>Create an API key in Nexscope and review access and credit requirements for your selected endpoint. Store the key in your local environment as <code>NEXSCOPE_API_KEY</code>. Do not paste it into public code, screenshots or documentation.</p><h2>2. Choose an operation</h2><p>Open an endpoint in the <a href="${link('')}">API directory</a>. Read its required parameters, conditional requirements and media limits. Save your JSON input as <code>request.json</code>.</p><h2>For developers</h2><p>The endpoint pages provide HTTP methods, cURL templates and complete JSON schemas. Pass <code>Authorization: Bearer YOUR_API_KEY</code>. Send JSON for body parameters and query strings for GET parameters. Parse success and error responses; retrieve asynchronous results using the endpoint's documented task route.</p><h2>For ordinary Codex users</h2><p>In a Codex session with local command execution, provide the endpoint documentation URL and describe your goal. You can use this prompt after setting your API key locally:</p>${code('Read this Nexscope REST API reference: [paste the endpoint documentation URL]. Help me prepare the required inputs for [my task]. Use NEXSCOPE_API_KEY from my local environment without displaying it. Explain the request and any missing inputs before running it. Ask before making a paid call. Save the response locally and summarize the results and limitations.')}<h2>Validate the result</h2><p>A request can fail because of authentication, input validation, permissions, insufficient credits or an upstream error. Inspect the documented error response before retrying. Retry policies must account for charges and duplicate work. Do not treat a task acceptance or a sample response as a completed result.</p>`));
   output = resolve(output);
   if (dirname(output) === output || output === ROOT || ROOT.startsWith(output + sep)) throw new Error('Refusing to clean a repository ancestor or filesystem root');
