@@ -2,16 +2,38 @@
 
 Requirements: Node.js 22.18+ or Node.js 24. No npm packages or API key.
 
-Refresh the public Data API directory snapshot from the trusted local web publication (read-only):
+Refresh the Data API directory from the official public catalog and published sitemap:
 
 ```sh
-node scripts/build_api_docs.mjs --web-root ../web
+node scripts/build_api_docs.mjs --refresh
 node --test scripts/test_build_api_docs.mjs
 ```
 
 Only customer-facing directory fields are exported. Full schemas, credentials, proxy metadata and non-Data APIs are not included. Bounded input/output field descriptions and illustrative request examples are projected from the public contract; credential-like example fields are redacted.
 
-The root Learn repository checks out this repository on each deployment and calls `buildRoot`. It cleans `dist/client/data/`, generates the Data category square and category pages, and adds their canonical URLs to the root sitemap. Cards link to official API detail pages with `co-from=learn`. No local API detail pages are generated.
+The root Learn repository checks out this repository on each deployment, calls
+`refreshSnapshot`, then calls `buildRoot`. Every root build fetches
+`https://www.nexscope.ai/api/skill-api/catalog` and the official main-site sitemap.
+Only server-backed, published Data API records survive; unavailable, withdrawn,
+unpublished and non-Data entries are excluded. Network or validation failure stops
+the build before clearing generated pages; it never silently publishes an old feed.
+Reviewed public names are retained while availability, summaries and contracts refresh.
+Unchanged projected content retains its existing modification date.
+
+The build cleans `dist/client/data/`, generates the Data category square and category pages, and adds their canonical URLs to the root sitemap. Cards link to official API detail pages with `co-from=learn`. No local API detail pages are generated. Usage numbers remain the separately reviewed historical aggregate snapshot; the public catalog does not supply live usage counts. Newly added APIs without a metrics record show no invented usage counts.
+
+For offline fixture/recovery work only, `node scripts/build_api_docs.mjs --web-root ../web`
+can read the existing local web publication without running or changing that project.
+The deployment path does not depend on the web repository.
+
+## User-facing SEO and GEO
+
+The root directory and each category have self-canonical titles and descriptions,
+social metadata, visible selection guidance and four practical FAQs. JSON-LD uses
+CollectionPage, ItemList, BreadcrumbList and FAQPage with the same visible content
+and official API links. No ratings or private analytics are published. The sitemap
+continues to list only canonical root/category pages. SEO markup does not guarantee
+indexing, rich results, AI citations or traffic.
 
 The learning-library build generates only the legacy `/ecommerce-ai-tools/api/` redirect to `/data/`; this redirect is excluded from its sitemap. Static GitHub Pages redirects cannot return HTTP 301.
 

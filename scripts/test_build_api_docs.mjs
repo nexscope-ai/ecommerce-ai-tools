@@ -6,9 +6,50 @@ import {join} from 'node:path';
 import {project, validate, build, buildRoot, buildPages, officialApiUrl} from './build_api_docs.mjs';
 import {runInNewContext} from 'node:vm';
 import {applyUsage, validateUsage} from './data-api-usage.mjs';
+import {projectFeed} from './refresh-data-api-snapshot.mjs';
 
 const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
+
+test('live refresh publishes only current canonical Data APIs and excludes withdrawn or non-Data entries',()=>{
+  const skills=[{...entry,apiReady:true,endpoint:'/public/test'},
+    {...entry,slug:'retired-api',apiReady:true,endpoint:'/retired'},
+    {...entry,slug:'creative-api',categorySlug:'video-generation-models',endpoint:'/video'},
+    {...entry,slug:'unpublished-api',endpoint:'/private'},
+    {...entry,slug:'disabled-api',apiReady:false,endpoint:'/disabled'}];
+  const payload={source:'server',categories:[{slug:entry.categorySlug,name:'Amazon'}],skills,withdrawnSlugs:['retired-api']};
+  const sitemap='<urlset>'+['test-api','retired-api','creative-api','disabled-api'].map(slug=>`<url><loc>https://www.nexscope.ai/api-docs/${slug}</loc></url>`).join('')+'</urlset>';
+  const result=projectFeed(payload,sitemap,snapshot,'2026-10-29T10:00:00Z');
+  assert.deepEqual(result.entries.map(item=>item.slug),['test-api']);
+  assert.equal(result.entries[0].path,'/public/test');
+  assert.equal(result.entries[0].name,entry.name);
+  assert.equal(projectFeed(payload,sitemap,result,'2026-10-30T10:00:00Z').generatedAt,result.generatedAt);
+  assert.throws(()=>projectFeed({...payload,source:'snapshot'},sitemap,snapshot),/current server/);
+  assert.throws(()=>projectFeed(payload,'<urlset/>',snapshot),/sitemap/);
+  assert.throws(()=>projectFeed({...payload,skills:[{...skills[0],endpoint:'https://example.com/steal'}]},sitemap,snapshot),/endpoint/);
+});
+
+test('generated SEO metadata and structured data describe visible category content and official API links',async()=>{
+  const dir=await mkdtemp(join(tmpdir(),'data-seo-'));
+  await buildRoot(snapshot,dir,{schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T00:00:00Z',apis:{},categories:{}});
+  const root=await readFile(join(dir,'index.html'),'utf8');
+  const category=await readFile(join(dir,'amazon-front-data/index.html'),'utf8');
+  for (const html of [root,category]) {
+    assert.match(html,/<meta name="robots" content="index,follow,max-image-preview:large">/);
+    assert.match(html,/<meta name="twitter:card"/);
+    const schema=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+    const graph=schema['@graph'];
+    assert.ok(graph.some(node=>node['@type']==='CollectionPage'));
+    assert.ok(graph.some(node=>node['@type']==='BreadcrumbList'));
+    const faq=graph.find(node=>node['@type']==='FAQPage');
+    assert.equal(faq.mainEntity.length,4);
+    for (const question of faq.mainEntity) assert.ok(html.includes(question.name));
+    assert.match(html,/From API discovery to a first request/);
+  }
+  const schema=JSON.parse(category.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+  assert.equal(schema['@graph'].find(node=>node['@type']==='ItemList').itemListElement[0].url,officialApiUrl(entry.slug));
+  assert.doesNotMatch(category,/AggregateRating|ratingValue|PRIVATE KEY/);
+});
 
 test('aggregate counts sort cards and show clearly labelled category user sums',()=>{
   const entries=[entry,{...entry,slug:'popular-api',name:'Popular API'},
@@ -31,6 +72,20 @@ test('aggregate counts sort cards and show clearly labelled category user sums',
   assert.doesNotMatch(root,/<\/strong> calls|<\/strong> users/);
   assert.match(root,/Includes test accounts and all request statuses/);
   assert.doesNotMatch(root,/api-io|api-preview|Preview input/);
+});
+
+test('platform filters sort by API count across categories, keeping All platforms first',()=>{
+  const entries=[{...entry,slug:'amazon-one'},
+    {...entry,slug:'amazon-two',categorySlug:'amazon-advertising'},
+    {...entry,slug:'sourcing-api',categorySlug:'data-1688-sourcing'}];
+  const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:34:41Z',
+    apis:{'amazon-one':{callCount:40,userCount:2},'amazon-two':{callCount:40,userCount:2},'sourcing-api':{callCount:70,userCount:2}},categories:{}};
+  const root=buildPages(applyUsage({...snapshot,entries},usage)).get('index.md');
+  const chips=root.split('class="api-platform-filters"')[1].split('</div>')[0];
+  assert.ok(chips.indexOf('data-platform-filter=""')<chips.indexOf('data-platform-filter="amazon"'));
+  assert.ok(chips.indexOf('data-platform-filter="amazon"')<chips.indexOf('data-platform-filter="1688"'));
+  // Sourcing has more calls, but Amazon has more APIs across its categories.
+  assert.ok(root.indexOf('href="/data/1688-sourcing/"')<root.indexOf('href="/data/amazon-front-data/"'));
 });
 
 test('usage icons cap display values while retaining exact counts and sorting',()=>{

@@ -33,6 +33,9 @@ faq:
     answer: "Cost varies by endpoint and request. Set a call limit, review the live credit estimate, and inspect your usage records after each step instead of assuming one fixed price."
 ---
 
+Compare other marketplace options in the [Nexscope ecommerce Data API directory](/data/) before choosing the APIs for your pilot.
+
+
 # Amazon product research API: a small pilot before a recurring purchase
 
 If you are evaluating an **Amazon product research API**, the useful question is whether it helps your team make one better product or listing decision. A long API catalog cannot answer that for your category. A short pilot can.

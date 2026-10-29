@@ -32,6 +32,9 @@ faq:
     answer: "Only after verifying that the series share a comparable scale, region, time window and collection method. Independently normalized peaks can both equal 100 while representing very different search volumes."
 ---
 
+Use the [Nexscope ecommerce Data API directory](/data/) to find related search-demand and marketplace-research APIs.
+
+
 # Google Trends API: access, examples and data limits
 
 **Use a Google Trends API to investigate seasonality and build search-interest reports.** This guide compares Google's official alpha with Nexscope's keyword and trending-topic endpoints, shows a request example and explains how to keep relative interest separate from search volume.

@@ -32,7 +32,7 @@ jobs:
       - name: Test the API documentation generator
         run: node --test scripts/test_build_api_docs.mjs
       - name: Clean and regenerate public REST API documentation
-        run: node scripts/build_api_docs.mjs
+        run: node scripts/build_api_docs.mjs --refresh
       - name: Test the product page generator
         run: python -m unittest scripts.test_generate_product_showcase_pages scripts.test_attribute_outbound_links scripts.test_finalize_learning_site
       - name: Test product showcase Markdown rendering

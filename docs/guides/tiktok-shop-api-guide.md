@@ -30,6 +30,9 @@ faq:
     answer: "The documented run endpoints use POST with a Bearer API key, and the API pages expose MCP method names for compatible clients. Use the individual API page for the current endpoint, parameters, response fields, and credit estimate."
 ---
 
+Browse the [Nexscope Data API directory](/data/) to compare TikTok operations with other marketplaces and open their official testers.
+
+
 # TikTok Shop API: product, creator and video research
 
 **By Nexscope Team · Published October 13, 2026 · Updated October 23, 2026**

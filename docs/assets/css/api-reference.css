@@ -83,3 +83,15 @@
 .api-card-actions{gap:10px;min-height:40px;padding-top:14px}
 .api-card:hover .api-card-cta{color:var(--card-accent,#7953cb)}
 @media(max-width:370px){.api-card-actions{flex-wrap:wrap;row-gap:14px}.api-usage{gap:10px}}
+
+.api-directory-title{font-size:1.15rem;line-height:1.4;margin:0 0 20px}
+.api-selection-help,.api-faq{margin-top:44px;padding-top:28px;border-top:1px solid #e8e3ef}
+.api-selection-help h2,.api-faq h2{font-size:1.25rem;line-height:1.35;margin:0 0 18px}
+.api-selection-help ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:0;list-style:none}
+.api-selection-help li{padding:18px;border:1px solid #e8e3ef;border-radius:12px;background:white;font-size:13px;color:#766b82}
+.api-selection-help li strong{display:block;color:#342b40;margin-bottom:6px}
+.api-selection-help p{font-size:13px}
+.api-faq details{border-bottom:1px solid #e8e3ef;padding:16px 0}
+.api-faq summary{cursor:pointer;font-size:14px;font-weight:600;color:#44374f}
+.api-faq p{max-width:850px;margin:12px 0 0;font-size:14px;color:#766b82}
+@media(max-width:580px){.api-selection-help ol{grid-template-columns:1fr;gap:12px}}

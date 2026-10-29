@@ -193,6 +193,7 @@
         {% assign topic_current = 'location' %}{% if page.layout == 'topic' %}{% assign topic_current = 'page' %}{% endif %}
         <ul>
           <li><a href="https://learn.nexscope.ai/tools/">Tools</a></li>
+          <li><a href="/data/">Data APIs</a></li>
           <li><a href="{{ '/product-showcase/' | relative_url }}"{% if page.product_showcase_page %} aria-current="page"{% endif %}>Product Gallery</a></li>
           <li class="learning-menu-item">
             <details class="learning-menu"{% if page.learning_topic %} data-current-topic="true"{% endif %}>
