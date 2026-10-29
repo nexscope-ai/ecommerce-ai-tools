@@ -140,16 +140,22 @@ function searchControls(label, unit, total, root = false) {
 function usageMarkup(metrics) {
   const full = value => new Intl.NumberFormat('en').format(value);
   const calls = metrics?.callCount, users = metrics?.userCount;
-  if (calls == null && users == null) return '';
   const icon = body => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
   const activity = icon('<path d="M3 12h4l3-8 4 16 3-8h4"/>');
   const people = icon('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/><circle cx="9" cy="7" r="4"/>');
+  const coins = icon('<ellipse cx="9" cy="6" rx="6" ry="3"/><path d="M3 6v4c0 1.66 2.69 3 6 3m-6-3v4c0 1.66 2.69 3 6 3m0-11v4m6-4v3"/><ellipse cx="15" cy="12" rx="6" ry="3"/><path d="M9 12v6c0 1.66 2.69 3 6 3s6-1.34 6-3v-6m-12 3c0 1.66 2.69 3 6 3s6-1.34 6-3"/>');
   const metric = (value,label,symbol,threshold,capped) => `<span class="api-usage-metric" title="${full(value)} ${label}" aria-label="${full(value)} ${label}">${symbol}<strong>${value > threshold ? capped : full(value)}</strong></span>`;
   const userLabel = metrics?.userCountBasis === 'sum' ? 'summed API users; users of multiple APIs count more than once' : 'distinct API users';
-  return `<div class="api-usage" aria-label="All-time recorded usage">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,100,'99+') : ''}</div>`;
+  const hasRange = metrics?.creditMin != null;
+  const range = hasRange ? (metrics.creditMin === metrics.creditMax ? full(metrics.creditMin) : `${full(metrics.creditMin)}～${full(metrics.creditMax)}`) : '—';
+  const coverage = metrics?.creditTotalApis ? ` Across ${metrics.creditKnownApis} of ${metrics.creditTotalApis} APIs with positive charge records.` : '';
+  const creditLabel = hasRange ? `${range} historical credits per successful call; positive actual charges only, not a current price quote.${coverage}` : 'Historical credit range unavailable; no verified positive charge records. Check official API docs for current pricing.';
+  const credits = `<span class="api-usage-metric api-credit-range" title="${esc(creditLabel)}" aria-label="${esc(creditLabel)}">${coins}<strong>${range}</strong></span>`;
+  return `<div class="api-usage" aria-label="Recorded usage and historical credit range">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,100,'99+') : ''}${credits}</div>`;
 }
 function usageNote(snapshot) {
-  return snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Categories sum calls and users across listed APIs; a user of multiple APIs may count more than once.</p>` : '';
+  const credits = snapshot.creditUpdatedAt ? `<p class="api-usage-note">Credit ranges · Updated ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Recorded positive charges for successful calls, not a current price quote. Category ranges cover APIs with charge records. Check official documentation for current costs; — means no recorded range.</p>` : '';
+  return (snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Categories sum calls and users across listed APIs; a user of multiple APIs may count more than once.</p>` : '') + credits;
 }
 function renderOperation(e, category, name) {
   const contract=e.preview || {};
@@ -192,7 +198,7 @@ export function renderStandalone(source, snapshot) {
   const title = JSON.parse(source.match(/^title: (.+)$/m)[1]);
   const description = JSON.parse(source.match(/^description: (.+)$/m)[1]);
   const path = source.match(/^permalink: (.+)$/m)[1];
-  const modifiedAt = snapshot.usageUpdatedAt && Date.parse(snapshot.usageUpdatedAt) > Date.parse(snapshot.generatedAt) ? snapshot.usageUpdatedAt : snapshot.generatedAt;
+  const modifiedAt = [snapshot.generatedAt,snapshot.usageUpdatedAt,snapshot.creditUpdatedAt].filter(Boolean).sort((a,b)=>Date.parse(b)-Date.parse(a))[0];
   const category=path==='/data/' ? null : snapshot.entries.find(e=>categoryPath(e.categorySlug)===path)?.categorySlug;
   const selected=[...snapshot.entries.filter(e=>!category||e.categorySlug===category)].sort((a,b)=>compareUsage(a.usage,b.usage));
   const groups=new Map([...Map.groupBy(snapshot.entries,e=>e.categorySlug)].sort(([a],[b])=>compareUsage(snapshot.categoryUsage?.[a],snapshot.categoryUsage?.[b])));

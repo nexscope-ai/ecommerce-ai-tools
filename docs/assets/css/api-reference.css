@@ -70,7 +70,7 @@
 @media(max-width:580px) { .api-platform-filters { flex-wrap:nowrap; overflow-x:auto; padding:3px 1px 10px; scrollbar-width:thin; } .api-platform-filters button { flex:0 0 auto; } }
 .api-operation-card .api-main-link { display:flex; flex:1; flex-direction:column; }
 
-.api-usage{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:14px;margin:0 0 0 auto;color:#89828f;font-size:12px;line-height:1}
+.api-usage{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:10px;margin:0 0 0 auto;color:#89828f;font-size:12px;line-height:1}
 .api-usage-metric{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;line-height:1;cursor:help}
 .api-card-actions .api-usage-metric svg{display:block;width:16px;height:16px;flex:none;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:inherit}
 .api-usage-metric:hover{color:#5e477e}
@@ -81,8 +81,11 @@
 
 .api-card-cta{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;font-size:12px;color:#6c52a3;font-weight:600}
 .api-card-actions{gap:10px;min-height:40px;padding-top:14px}
+.api-card-actions{flex-wrap:wrap;row-gap:12px}
+.api-credit-range{color:#795ab2}
 .api-card:hover .api-card-cta{color:var(--card-accent,#7953cb)}
 @media(max-width:370px){.api-card-actions{flex-wrap:wrap;row-gap:14px}.api-usage{gap:10px}}
+@media(max-width:400px){.api-card-actions{display:grid;grid-template-columns:minmax(0,1fr);row-gap:12px}.api-usage{justify-self:end}}
 
 .api-directory-title{font-size:1.15rem;line-height:1.4;margin:0 0 20px}
 .api-selection-help,.api-faq{margin-top:44px;padding-top:28px;border-top:1px solid #e8e3ef}

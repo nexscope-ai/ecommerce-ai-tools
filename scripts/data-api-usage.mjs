@@ -5,15 +5,20 @@ const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const count = value => value === null || value === undefined || (Number.isSafeInteger(value) && value >= 0);
 export function validateUsage(data) {
   if (data?.schemaVersion !== 1 || data.period !== 'all-time') throw new Error('Unsupported API usage statistics contract');
-  if (Object.keys(data).some(key=>!['schemaVersion','period','updatedAt','apis','categories'].includes(key))) throw new Error('Only public aggregate statistics fields are allowed');
+  if (Object.keys(data).some(key=>!['schemaVersion','period','updatedAt','creditUpdatedAt','creditBasis','apis','categories'].includes(key))) throw new Error('Only public aggregate statistics fields are allowed');
+  if (data.creditBasis != null && data.creditBasis !== 'successful-positive-actual-charge') throw new Error('Unsupported credit range basis');
+  if (data.creditUpdatedAt != null && (typeof data.creditUpdatedAt !== 'string' || Number.isNaN(Date.parse(data.creditUpdatedAt)))) throw new Error('Credit statistics need a publication timestamp');
   for (const group of ['apis','categories']) {
     if (!data[group] || typeof data[group] !== 'object' || Array.isArray(data[group])) throw new Error(`Invalid usage ${group}`);
     for (const [key,metrics] of Object.entries(data[group])) {
       if (!slug.test(key) || !metrics || typeof metrics !== 'object' || Array.isArray(metrics)) throw new Error(`Invalid usage record: ${key}`);
-      const allowed = group === 'apis' ? ['callCount','userCount'] : ['userCount'];
+      const allowed = group === 'apis' ? ['callCount','userCount','creditMin','creditMax'] : ['userCount'];
       if (Object.keys(metrics).some(field=>!allowed.includes(field))) throw new Error(`Only public aggregate counts are allowed: ${key}`);
       if (!count(metrics.callCount) || !count(metrics.userCount)) throw new Error(`Invalid usage counts: ${key}`);
       if (metrics.callCount != null && metrics.userCount != null && metrics.userCount > metrics.callCount) throw new Error(`User count exceeds calls: ${key}`);
+      const hasCredits = metrics.creditMin != null || metrics.creditMax != null;
+      if (hasCredits && (!Number.isSafeInteger(metrics.creditMin) || !Number.isSafeInteger(metrics.creditMax) || metrics.creditMin <= 0 || metrics.creditMax < metrics.creditMin)) throw new Error(`Invalid positive credit range: ${key}`);
+      if (hasCredits && (!data.creditUpdatedAt || data.creditBasis !== 'successful-positive-actual-charge')) throw new Error('Credit statistics require timestamp and basis');
     }
   }
   if ((Object.keys(data.apis).length || Object.keys(data.categories).length) && (typeof data.updatedAt !== 'string' || !/^\d{4}-\d{2}-\d{2}T/.test(data.updatedAt) || Number.isNaN(Date.parse(data.updatedAt)))) throw new Error('Usage statistics need an ISO publication timestamp');
@@ -37,9 +42,14 @@ export function applyUsage(snapshot, usage) {
     // The directory displays the sum of per-API users, not a distinct category union.
     const userTotal = knownUsers.length === items.length ? knownUsers.reduce((a,b)=>a+b,0) : null;
     if (!count(userTotal)) throw new Error(`Category user total exceeds supported range: ${category}`);
-    categoryUsage[category] = {callCount,userCount:userTotal,userCountBasis:'sum'};
+    const ranges = items.map(e=>e.usage).filter(metrics=>metrics.creditMin != null);
+    categoryUsage[category] = {callCount,userCount:userTotal,userCountBasis:'sum',...(ranges.length ? {
+      creditMin:Math.min(...ranges.map(metrics=>metrics.creditMin)),
+      creditMax:Math.max(...ranges.map(metrics=>metrics.creditMax)),
+      creditKnownApis:ranges.length,creditTotalApis:items.length,
+    } : {})};
   }
-  return {...snapshot,entries,categoryUsage,usageUpdatedAt:usage.updatedAt};
+  return {...snapshot,entries,categoryUsage,usageUpdatedAt:usage.updatedAt,creditUpdatedAt:usage.creditUpdatedAt};
 }
 export function compareUsage(a,b) {
   const left = a?.callCount, right = b?.callCount;
