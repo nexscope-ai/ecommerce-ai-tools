@@ -91,18 +91,18 @@ test('platform filters sort by API count across categories, keeping All platform
 test('historical positive credit ranges aggregate category extrema without adding API costs',()=>{
   const entries=[entry,{...entry,slug:'other-api'},{...entry,slug:'missing-api'},{...entry,slug:'fixed-api',categorySlug:'data-1688-sourcing'}];
   const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:00:00Z',creditUpdatedAt:'2026-10-29T10:36:38Z',creditBasis:'successful-positive-actual-charge',
-    apis:{'test-api':{callCount:5,userCount:2,creditMin:1,creditMax:3},'other-api':{callCount:5,userCount:2,creditMin:2,creditMax:9},'fixed-api':{creditMin:10,creditMax:10}},categories:{}};
+    apis:{'test-api':{callCount:5,userCount:2,creditMin:1,creditMax:10},'other-api':{callCount:5,userCount:2,creditMin:2,creditMax:19},'fixed-api':{creditMin:10,creditMax:10}},categories:{}};
   const result=applyUsage({...snapshot,entries},usage);
   assert.equal(result.categoryUsage[entry.categorySlug].creditMin,1);
-  assert.equal(result.categoryUsage[entry.categorySlug].creditMax,9);
+  assert.equal(result.categoryUsage[entry.categorySlug].creditMax,19);
   assert.equal(result.categoryUsage[entry.categorySlug].creditKnownApis,2);
   assert.equal(result.categoryUsage[entry.categorySlug].creditTotalApis,3);
   const root=buildPages(result).get('index.md');
-  assert.match(root,/1～9 historical credits per successful call/);
+  assert.match(root,/10～19 credits per call/);
   assert.match(root,/Across 2 of 3 APIs with positive charge records/);
-  assert.match(root,/1～3 historical credits per successful call/);
-  assert.match(root,/10 historical credits per successful call/);
-  assert.doesNotMatch(root,/10～10|0～/);
+  assert.match(root,/10 credits per call/);
+  assert.doesNotMatch(root,/<strong>(?:10～10|1～10|0～)/);
+  assert.match(root,/api-credit-range[^]*?<strong>-<\/strong>/);
   assert.match(root,/Historical credit range unavailable/);
   assert.match(root,/not a current price quote/);
   assert.throws(()=>validateUsage({...usage,apis:{'test-api':{creditMin:0,creditMax:3}}}),/positive credit range/);

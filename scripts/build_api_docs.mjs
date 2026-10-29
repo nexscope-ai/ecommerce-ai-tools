@@ -147,14 +147,16 @@ function usageMarkup(metrics) {
   const metric = (value,label,symbol,threshold,capped) => `<span class="api-usage-metric" title="${full(value)} ${label}" aria-label="${full(value)} ${label}">${symbol}<strong>${value > threshold ? capped : full(value)}</strong></span>`;
   const userLabel = metrics?.userCountBasis === 'sum' ? 'summed API users; users of multiple APIs count more than once' : 'distinct API users';
   const hasRange = metrics?.creditMin != null;
-  const range = hasRange ? (metrics.creditMin === metrics.creditMax ? full(metrics.creditMin) : `${full(metrics.creditMin)}～${full(metrics.creditMax)}`) : '—';
+  const minimum = hasRange ? Math.max(10,metrics.creditMin) : null;
+  const maximum = hasRange ? Math.max(10,metrics.creditMax) : null;
+  const range = hasRange ? (minimum === maximum ? full(minimum) : `${full(minimum)}～${full(maximum)}`) : '-';
   const coverage = metrics?.creditTotalApis ? ` Across ${metrics.creditKnownApis} of ${metrics.creditTotalApis} APIs with positive charge records.` : '';
-  const creditLabel = hasRange ? `${range} historical credits per successful call; positive actual charges only, not a current price quote.${coverage}` : 'Historical credit range unavailable; no verified positive charge records. Check official API docs for current pricing.';
+  const creditLabel = hasRange ? `${range} credits per call; 10-credit minimum applied to recorded positive charges, not a current price quote.${coverage}` : 'Historical credit range unavailable; no verified positive charge records. Check official API docs for current pricing.';
   const credits = `<span class="api-usage-metric api-credit-range" title="${esc(creditLabel)}" aria-label="${esc(creditLabel)}">${coins}<strong>${range}</strong></span>`;
   return `<div class="api-usage" aria-label="Recorded usage and historical credit range">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,100,'99+') : ''}${credits}</div>`;
 }
 function usageNote(snapshot) {
-  const credits = snapshot.creditUpdatedAt ? `<p class="api-usage-note">Credit ranges · Updated ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Recorded positive charges for successful calls, not a current price quote. Category ranges cover APIs with charge records. Check official documentation for current costs; — means no recorded range.</p>` : '';
+  const credits = snapshot.creditUpdatedAt ? `<p class="api-usage-note">Credit ranges · Updated ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Minimum 10 credits per call. Ranges use recorded positive charges for successful calls with this minimum applied, not a current price quote. Check official documentation for current costs; - means no recorded range.</p>` : '';
   return (snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Categories sum calls and users across listed APIs; a user of multiple APIs may count more than once.</p>` : '') + credits;
 }
 function renderOperation(e, category, name) {
