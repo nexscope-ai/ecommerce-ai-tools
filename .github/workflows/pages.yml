@@ -51,7 +51,7 @@ jobs:
           sudo chown -R "$(id -u):$(id -g)" _site
           python scripts/attribute_outbound_links.py _site
       - name: Validate learning architecture and generate canonical sitemap
-        run: python scripts/finalize_learning_site.py _site --api-snapshot scripts/data/api-docs.public.json
+        run: python scripts/finalize_learning_site.py _site
       - name: Upload the Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

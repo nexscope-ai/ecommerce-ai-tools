@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtemp, readFile, writeFile, readdir, mkdir} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {project, validate, build, renderEntry, officialTestUrl} from './build_api_docs.mjs';
+import {project, validate, build, buildRoot, renderEntry, officialTestUrl} from './build_api_docs.mjs';
 import {runInNewContext} from 'node:vm';
 
 const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
@@ -31,7 +31,7 @@ test('validation rejects traversal, duplicate contracts and literal keys',()=>{
 test('render escapes HTML, retains Liquid links and never invents a successful result',()=>{
   const result=renderEntry(entry);
   assert.ok(result.includes('&lt;example&gt;'));
-  assert.ok(result.includes('{% endraw %}{{'));
+  assert.ok(result.includes('href="/api/"'));
   assert.ok(result.includes('--data-binary @request.json'));
   assert.ok(!result.includes('\n+  --'));
   assert.ok(!result.includes('/api-docs//'));
@@ -49,9 +49,8 @@ test('build clears all old output before regeneration and leaves sibling files a
   await build(snapshot,dir);
   assert.equal(await readFile(join(dir,'test-api.md'),'utf8'),first);
   const index = await readFile(join(dir,'index.md'),'utf8');
-  assert.ok(index.includes("'/api/test-api/' | relative_url"));
-  assert.ok(index.includes(officialTestUrl('test-api')));
-  assert.ok(index.includes('data-api-search'));
+  assert.ok(index.includes('https://learn.nexscope.ai/api/'));
+  assert.ok(index.includes('http-equiv="refresh"'));
   await writeFile(join(dir,'orphan.md'),'stale page missing from old manifest');
   await mkdir(join(dir,'old-api'));
   await writeFile(join(dir,'old-api','index.html'),'stale rendered page');
@@ -61,6 +60,19 @@ test('build clears all old output before regeneration and leaves sibling files a
   assert.ok(!(await readdir(dir)).includes('old-api'));
   assert.equal(await readFile(join(parent,'keep.txt'),'utf8'),'outside generated output');
   assert.deepEqual((await readdir(dir)).sort(),['.api-docs-generated','index.md','new-api.md','quickstart.md']);
+});
+test('root export uses root canonical URLs and assets, and cleans retired details',async()=>{
+  const output=await mkdtemp(join(tmpdir(),'nexscope-root-api-'));
+  assert.deepEqual(await buildRoot(snapshot,output),['/api/test-api/','/api/','/api/quickstart/']);
+  const page=await readFile(join(output,'test-api/index.html'),'utf8');
+  assert.ok(page.includes('href="https://learn.nexscope.ai/api/test-api/"'));
+  assert.ok(page.includes('href="/api/api-reference.css"'));
+  assert.ok(page.includes(officialTestUrl('test-api')));
+  assert.ok(!page.includes('{%'));
+  assert.ok(!page.includes('{{'));
+  assert.ok((await readFile(join(output,'index.html'),'utf8')).includes('data-api-search'));
+  await buildRoot({...snapshot,entries:[{...entry,slug:'new-api'}]},output);
+  assert.ok(!(await readdir(output)).includes('test-api'));
 });
 test('invalid input never clears previously generated documentation',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'nexscope-api-docs-invalid-'));

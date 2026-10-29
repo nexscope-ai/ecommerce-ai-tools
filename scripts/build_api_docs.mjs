@@ -17,7 +17,7 @@ const clean = value => String(value ?? '').replace(/[^.!?\n]*\bMCP\b[^.!?\n]*[.!
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const json = value => JSON.stringify(value, null, 2);
 const code = (value, lang = '') => `<pre><code class="language-${lang}">${esc(value)}</code></pre>`;
-const link = slug => `{{ '/api/${slug ? slug + '/' : ''}' | relative_url }}`;
+const link = slug => `/api/${slug ? slug + '/' : ''}`;
 export const officialTestUrl = slug => `https://www.nexscope.ai/api-docs/${encodeURIComponent(slug)}?co-from=learn#online-test`;
 function apiPath(value) {
   if (value?.startsWith(API_ORIGIN + '/')) {
@@ -115,7 +115,7 @@ ${e.assetUploadConstraints?.length ? `<h2>Media requirements</h2>${code(json(e.a
 `);
 }
 
-export async function build(snapshot, output = OUTPUT) {
+export function buildPages(snapshot) {
   validate(snapshot);
   const pages = new Map(snapshot.entries.map(e=>[`${e.slug}.md`,renderEntry(e)]));
   const groups = Map.groupBy(snapshot.entries, e=>e.group);
@@ -123,6 +123,18 @@ export async function build(snapshot, output = OUTPUT) {
   const filters = `<div class="api-filters" data-api-filters hidden><div><label for="api-search">Find an API</label><input type="search" id="api-search" placeholder="Search Amazon reviews, TikTok, 1688, Shopify…" autocomplete="off"></div><div><label for="api-category">Category</label><select id="api-category"><option value="">All categories</option>${[...groups.keys()].map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('')}</select></div></div><p data-api-count role="status" aria-live="polite">${snapshot.entries.length} APIs available</p><p data-api-empty hidden>No APIs match your search. Try a broader keyword or another category.</p>`;
   pages.set('index.md',page('Nexscope Data API documentation','Explore Nexscope ecommerce Data API parameters, request examples and response schemas for marketplace and product research.','',`<p class="api-eyebrow">Nexscope Data API reference</p><h1>Find the API for your next workflow</h1><p>Explore marketplace data, product research, advertising intelligence and search data. Read the input and response contract, then try the matching API on Nexscope.</p><p><a href="${link('quickstart')}">Start with authentication →</a></p>${filters}${directory}`));
   pages.set('quickstart.md',page('Nexscope API quick start','Call Nexscope REST APIs from a developer application or a normal Codex session using a local environment variable.','quickstart',`<nav><a href="${link('')}">← API reference</a></nav><h1>Make your first API request</h1><h2>1. Prepare your account</h2><p>Create an API key in Nexscope and review access and credit requirements for your selected endpoint. Store the key in your local environment as <code>NEXSCOPE_API_KEY</code>. Do not paste it into public code, screenshots or documentation.</p><h2>2. Choose an operation</h2><p>Open an endpoint in the <a href="${link('')}">API directory</a>. Read its required parameters, conditional requirements and media limits. Save your JSON input as <code>request.json</code>.</p><h2>For developers</h2><p>The endpoint pages provide HTTP methods, cURL templates and complete JSON schemas. Pass <code>Authorization: Bearer YOUR_API_KEY</code>. Send JSON for body parameters and query strings for GET parameters. Parse success and error responses; retrieve asynchronous results using the endpoint's documented task route.</p><h2>For ordinary Codex users</h2><p>In a Codex session with local command execution, provide the endpoint documentation URL and describe your goal. You can use this prompt after setting your API key locally:</p>${code('Read this Nexscope REST API reference: [paste the endpoint documentation URL]. Help me prepare the required inputs for [my task]. Use NEXSCOPE_API_KEY from my local environment without displaying it. Explain the request and any missing inputs before running it. Ask before making a paid call. Save the response locally and summarize the results and limitations.')}<h2>Validate the result</h2><p>A request can fail because of authentication, input validation, permissions, insufficient credits or an upstream error. Inspect the documented error response before retrying. Retry policies must account for charges and duplicate work. Do not treat a task acceptance or a sample response as a completed result.</p>`));
+  return pages;
+}
+
+export function renderStandalone(source, snapshot) {
+  const title = JSON.parse(source.match(/^title: (.+)$/m)[1]);
+  const description = JSON.parse(source.match(/^description: (.+)$/m)[1]);
+  const path = source.match(/^permalink: (.+)$/m)[1];
+  const body = source.slice(source.indexOf('{% raw %}') + '{% raw %}'.length).replace(/\{% (?:endraw|raw) %\}/g, '');
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(snapshot.generatedAt)}"><link rel="stylesheet" href="/api/api-reference.css"></head><body class="api-root"><header class="api-root-header"><a href="/" aria-label="Nexscope Learn home"><img src="/logo.png" alt="Nexscope" width="166" height="40"></a><nav aria-label="Main navigation"><a href="/tools/">Tools</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a><a href="/ecommerce-ai-tools/">Learning library</a><a href="/api/" aria-current="${path==='/api/'?'page':'location'}">Data APIs</a></nav></header><main class="api-reference">${body}</main><footer class="api-root-footer"><a href="/api/">Data API documentation</a> · <a href="/ecommerce-ai-tools/community/">Community</a> · <a href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></footer>${path==='/api/'?'<script src="/api/api-directory.js" defer></script>':''}</body></html>`;
+}
+
+async function cleanGenerated(output) {
   output = resolve(output);
   if (dirname(output) === output || output === ROOT || ROOT.startsWith(output + sep)) throw new Error('Refusing to clean a repository ancestor or filesystem root');
   await mkdir(output,{recursive:true});
@@ -135,9 +147,39 @@ export async function build(snapshot, output = OUTPUT) {
   // fresh so removed APIs and orphan files cannot survive a later deployment.
   await rm(output,{recursive:true,force:true});
   await mkdir(output,{recursive:true});
-  await writeFile(marker,JSON.stringify([...pages.keys()]));
-  for (const [name,body] of pages) await writeFile(join(output,name),body);
+  await writeFile(marker,'[]');
+  return output;
+}
+
+export async function build(snapshot, output = OUTPUT) {
+  const pages = buildPages(snapshot);
+  output = await cleanGenerated(output);
+  for (const [name,body] of pages) {
+    const path = body.match(/^permalink: (.+)$/m)[1];
+    const target = `https://learn.nexscope.ai${path}`;
+    const redirect = `---\nlayout: null\npermalink: ${path}\nsitemap: false\n---\n<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="${target}"><title>API documentation moved | Nexscope</title></head><body><p>Continue to <a href="${target}">Nexscope Data API documentation</a>.</p><script>location.replace(${JSON.stringify(target)} + location.search + location.hash)</script></body></html>`;
+    await writeFile(join(output,name),redirect);
+  }
+  await writeFile(join(output,'.api-docs-generated'),JSON.stringify([...pages.keys()]));
   return pages.size;
+}
+
+export async function buildRoot(snapshot, output) {
+  const pages = buildPages(snapshot);
+  output = await cleanGenerated(output);
+  const paths = [];
+  for (const source of pages.values()) {
+    const path = source.match(/^permalink: (.+)$/m)[1];
+    const destination = join(output,path.slice('/api/'.length),'index.html');
+    await mkdir(dirname(destination),{recursive:true});
+    await writeFile(destination,renderStandalone(source,snapshot));
+    paths.push(path);
+  }
+  for (const [source,target] of [['docs/assets/css/api-reference.css','api-reference.css'],['docs/assets/api-directory.js','api-directory.js']]) {
+    await writeFile(join(output,target),await readFile(join(ROOT,source),'utf8'));
+  }
+  await writeFile(join(output,'.api-docs-generated'),JSON.stringify(paths));
+  return paths;
 }
 
 async function main() {

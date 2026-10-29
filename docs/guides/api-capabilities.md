@@ -18,7 +18,7 @@ image_caption: "Illustration: Nexscope capabilities can be combined into focused
 
 # Nexscope API capabilities and ecommerce workflows
 
-Browse the [REST API reference]({{ '/api/' | relative_url }}) for endpoint parameters, request examples and response schemas, or start with the [API quick start]({{ '/api/quickstart/' | relative_url }}).
+Browse the [Data API reference](/api/) for endpoint parameters, request examples and response schemas, or start with the [API quick start](/api/quickstart/).
 
 {% include article-visual.html %}
 

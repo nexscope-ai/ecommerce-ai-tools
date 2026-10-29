@@ -35,3 +35,13 @@
 .api-reference summary { cursor: pointer; font-weight: 600; }
 @media (max-width: 900px) { .api-directory { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 580px) { .api-directory { grid-template-columns: minmax(0,1fr); } .api-reference { margin-top: 24px; } }
+.api-root { margin: 0; color: #24212c; background: #faf9f6; font-family: Arial, sans-serif; line-height: 1.65; }
+.api-root a { color: #6b48df; }
+.api-root-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1120px; padding: 24px; margin: auto; border-bottom: 1px solid #e2ddec; }
+.api-root-header img { object-fit: contain; }
+.api-root-header nav { display: flex; gap: 22px; flex-wrap: wrap; font-size: .875rem; }
+.api-root-header nav a { text-decoration: none; color: inherit; }
+.api-root-header nav a[aria-current] { color: #6b48df; font-weight: 600; }
+.api-root .api-reference { padding: 0 24px; }
+.api-root-footer { padding: 28px 24px; text-align: center; border-top: 1px solid #e2ddec; font-size: .875rem; }
+@media (max-width: 580px) { .api-root-header { flex-direction: column; align-items: flex-start; } .api-root-header nav { gap: 14px; } }
