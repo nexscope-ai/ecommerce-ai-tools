@@ -26,3 +26,22 @@ To publish directory changes, deploy this repository, then redeploy the root Lea
 The root directory provides platform chips, Categories / All APIs views, and keyword search across every public Data API. Category pages retain local API search. Cards show the platform logo, API name and description without inline parameter panels or examples. Users open the official documentation for technical details; no local API detail routes are added. Search terms are not sent in custom analytics events. Platform selections have dedicated events in addition to existing category and outbound attribution.
 
 Inline INPUT/OUTPUT labels and expandable examples have been removed from both category cards and global API search results. Existing navigation, platform filters, search, outbound attribution and click events remain active.
+# Public usage snapshot
+
+`scripts/data/api-usage.public.json` contains only approved aggregate counts,
+embedded during the static build; no runtime statistics API or credentials are used.
+The snapshot exported on 2026-10-29 covers all retained historical requests,
+including test/deleted accounts, all invocation types and all request statuses.
+It is not a success-only or production-customer statistic.
+
+The exported CSVs identify APIs by canonical `api_slug`. The 233 current Data
+APIs match 176 rows and contain 89,220 recorded requests. The other 57 canonical
+slugs have no retained records in this exhaustive export and display zero;
+historical aliases/shared proxy traffic are not estimated or redistributed.
+The source's global 105,076 calls includes APIs outside this directory.
+Users are distinct recorded users per API, excluding anonymous calls. Category
+calls sum only listed APIs. Category distinct users are omitted because the
+per-API CSVs cannot establish the union of users across APIs.
+
+Cards and categories sort by calls descending, preserving original order for
+ties. Replace the aggregate snapshot to refresh counts and its publication date.

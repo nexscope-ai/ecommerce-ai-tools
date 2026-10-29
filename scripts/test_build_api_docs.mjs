@@ -5,9 +5,43 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {project, validate, build, buildRoot, buildPages, officialApiUrl} from './build_api_docs.mjs';
 import {runInNewContext} from 'node:vm';
+import {applyUsage, validateUsage} from './data-api-usage.mjs';
 
 const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
+
+test('aggregate counts sort categories and API cards without summing distinct users',()=>{
+  const entries=[entry,{...entry,slug:'popular-api',name:'Popular API'},
+    {...entry,slug:'other-api',name:'Other API',categorySlug:'data-1688-sourcing'}];
+  const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:34:41.999Z',
+    apis:{'test-api':{callCount:10,userCount:3},'popular-api':{callCount:50,userCount:8},'other-api':{callCount:40,userCount:6}},categories:{}};
+  const result=applyUsage({...snapshot,entries},usage);
+  assert.deepEqual(result.categoryUsage['data-amazon-front-data'],{callCount:60,userCount:null});
+  const pages=buildPages(result);
+  const root=pages.get('index.md');
+  assert.ok(root.indexOf('href="/data/amazon-front-data/"')<root.indexOf('href="/data/1688-sourcing/"'));
+  const all=root.slice(root.indexOf('<section data-results-kind="apis"'));
+  assert.ok(all.indexOf('Popular API')<all.indexOf('Other API'));
+  assert.ok(all.indexOf('Other API')<all.indexOf('Test API'));
+  assert.match(root,/<strong>60<\/strong> calls/);
+  assert.match(root,/Includes test accounts and all request statuses/);
+  assert.doesNotMatch(root,/api-io|api-preview|Preview input/);
+});
+
+test('unknown counts remain unknown, and public metrics reject private identifiers',()=>{
+  const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:34:41Z',apis:{},categories:{}};
+  assert.equal(applyUsage(snapshot,usage).categoryUsage[entry.categorySlug].callCount,null);
+  assert.throws(()=>validateUsage({...usage,apis:{'test-api':{callCount:1,userId:'private'}}}),/aggregate/);
+  assert.throws(()=>validateUsage({...usage,apis:{'test-api':{callCount:1,userCount:2}}}),/exceeds/);
+});
+
+test('published statistics match the approved retained-record snapshot',async()=>{
+  const usage=JSON.parse(await readFile(new URL('./data/api-usage.public.json',import.meta.url),'utf8'));
+  validateUsage(usage);
+  assert.equal(Object.keys(usage.apis).length,233);
+  assert.deepEqual(usage.apis['1688-product-detail'],{callCount:14559,userCount:93});
+  assert.equal(Object.values(usage.apis).reduce((sum,item)=>sum+item.callCount,0),89220);
+});
 test('projection preserves public endpoints and excludes internal fields',()=>{
   const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:{route:{kind:'upstream-skill',record:{...entry,mcpToolName:'private_tool',primaryProxy:'internal'}},catalog:{skills:[{...entry,endpoint:'/public/test'}],categories:[]}}}});
   assert.equal(result.entries[0].path,'/public/test');

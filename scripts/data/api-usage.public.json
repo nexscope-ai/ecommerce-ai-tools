@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 1,
+  "period": "all-time",
+  "updatedAt": "2026-10-29T08:34:41.999Z",
+  "apis": {
+    "1688-product-billboard": {
+      "callCount": 474,
+      "userCount": 28
+    },
+    "1688-product-detail": {
+      "callCount": 14559,
+      "userCount": 93
+    },
+    "1688-product-search": {
+      "callCount": 11478,
+      "userCount": 125
+    },
+    "1688-search-by-image": {
+      "callCount": 11713,
+      "userCount": 110
+    },
+    "amazon-ads-api-access": {
+      "callCount": 222,
+      "userCount": 3
+    },
+    "amazon-ads-manager": {
+      "callCount": 215,
+      "userCount": 2
+    },
+    "amazon-ads-reporting": {
+      "callCount": 14,
+      "userCount": 2
+    },
+    "amazon-ads-sp-audience-report": {
+      "callCount": 3,
+      "userCount": 2
+    },
+    "amazon-ads-sp-insights-report-download": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "amazon-ads-sp-insights-report-status": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "amazon-ads-sp-search-impression-share-report": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "amazon-advertising": {
+      "callCount": 7,
+      "userCount": 1
+    },
+    "amazon-alexa-search": {
+      "callCount": 23,
+      "userCount": 10
+    },
+    "amazon-asin-keywords": {
+      "callCount": 744,
+      "userCount": 27
+    },
+    "amazon-asin-traffic-summary": {
+      "callCount": 47,
+      "userCount": 14
+    },
+    "amazon-broad-product-search": {
+      "callCount": 594,
+      "userCount": 21
+    },
+    "amazon-category-lookup": {
+      "callCount": 20,
+      "userCount": 8
+    },
+    "amazon-competitor-lookup": {
+      "callCount": 364,
+      "userCount": 21
+    },
+    "amazon-keyword-expansion": {
+      "callCount": 510,
+      "userCount": 26
+    },
+    "amazon-keyword-intelligence": {
+      "callCount": 186,
+      "userCount": 18
+    },
+    "amazon-keyword-overview": {
+      "callCount": 215,
+      "userCount": 17
+    },
+    "amazon-keyword-search-history": {
+      "callCount": 235,
+      "userCount": 17
+    },
+    "amazon-keyword-share-of-voice": {
+      "callCount": 134,
+      "userCount": 9
+    },
+    "amazon-keyword-summary": {
+      "callCount": 87,
+      "userCount": 4
+    },
+    "amazon-market-product-detail": {
+      "callCount": 333,
+      "userCount": 25
+    },
+    "amazon-market-product-search": {
+      "callCount": 132,
+      "userCount": 15
+    },
+    "amazon-market-research": {
+      "callCount": 83,
+      "userCount": 12
+    },
+    "amazon-market-statistics": {
+      "callCount": 25,
+      "userCount": 6
+    },
+    "amazon-niche-info": {
+      "callCount": 7,
+      "userCount": 4
+    },
+    "amazon-niche-info-by-asin": {
+      "callCount": 14,
+      "userCount": 7
+    },
+    "amazon-niche-info-by-keyword": {
+      "callCount": 109,
+      "userCount": 16
+    },
+    "amazon-niche-reviews-by-keyword": {
+      "callCount": 16,
+      "userCount": 7
+    },
+    "amazon-opportunity-report-by-keyword": {
+      "callCount": 14,
+      "userCount": 7
+    },
+    "amazon-opportunity-search-by-metrics": {
+      "callCount": 38,
+      "userCount": 7
+    },
+    "amazon-policy-feed": {
+      "callCount": 6,
+      "userCount": 2
+    },
+    "amazon-product-database": {
+      "callCount": 147,
+      "userCount": 8
+    },
+    "amazon-product-database-search": {
+      "callCount": 194,
+      "userCount": 14
+    },
+    "amazon-product-detail": {
+      "callCount": 678,
+      "userCount": 47
+    },
+    "amazon-product-discovery": {
+      "callCount": 699,
+      "userCount": 12
+    },
+    "amazon-product-history": {
+      "callCount": 497,
+      "userCount": 20
+    },
+    "amazon-product-price-series": {
+      "callCount": 577,
+      "userCount": 26
+    },
+    "amazon-product-research": {
+      "callCount": 16,
+      "userCount": 11
+    },
+    "amazon-related-asins": {
+      "callCount": 14,
+      "userCount": 8
+    },
+    "amazon-reviews-list": {
+      "callCount": 280,
+      "userCount": 39
+    },
+    "amazon-sales-estimates": {
+      "callCount": 164,
+      "userCount": 23
+    },
+    "amazon-search": {
+      "callCount": 919,
+      "userCount": 53
+    },
+    "amazon-search-by-image": {
+      "callCount": 629,
+      "userCount": 16
+    },
+    "amazon-traffic-keywords": {
+      "callCount": 415,
+      "userCount": 14
+    },
+    "chuhaijiang-tiktok-ad-detail": {
+      "callCount": 673,
+      "userCount": 4
+    },
+    "chuhaijiang-tiktok-ad-related-products": {
+      "callCount": 3,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-ad-search": {
+      "callCount": 96,
+      "userCount": 6
+    },
+    "chuhaijiang-tiktok-creative-detail": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "chuhaijiang-tiktok-creative-search": {
+      "callCount": 14,
+      "userCount": 3
+    },
+    "chuhaijiang-tiktok-creator-detail": {
+      "callCount": 928,
+      "userCount": 6
+    },
+    "chuhaijiang-tiktok-creator-rankings-agencies": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "chuhaijiang-tiktok-creator-rankings-commercial": {
+      "callCount": 5,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-creator-rankings-growth": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "chuhaijiang-tiktok-creator-related-lives": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "chuhaijiang-tiktok-creator-related-products": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "chuhaijiang-tiktok-creator-related-videos": {
+      "callCount": 4,
+      "userCount": 3
+    },
+    "chuhaijiang-tiktok-creator-search": {
+      "callCount": 309,
+      "userCount": 7
+    },
+    "chuhaijiang-tiktok-live-detail": {
+      "callCount": 10,
+      "userCount": 4
+    },
+    "chuhaijiang-tiktok-live-related-products": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "chuhaijiang-tiktok-live-search": {
+      "callCount": 5,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-product-detail": {
+      "callCount": 603,
+      "userCount": 9
+    },
+    "chuhaijiang-tiktok-product-image-search": {
+      "callCount": 287,
+      "userCount": 3
+    },
+    "chuhaijiang-tiktok-product-rankings-most-promoted": {
+      "callCount": 266,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-product-rankings-new-arrivals": {
+      "callCount": 55,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-product-rankings-top-selling": {
+      "callCount": 338,
+      "userCount": 7
+    },
+    "chuhaijiang-tiktok-product-related-creators": {
+      "callCount": 5,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-product-related-lives": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "chuhaijiang-tiktok-product-related-videos": {
+      "callCount": 115,
+      "userCount": 4
+    },
+    "chuhaijiang-tiktok-product-reviews": {
+      "callCount": 136,
+      "userCount": 6
+    },
+    "chuhaijiang-tiktok-product-search": {
+      "callCount": 659,
+      "userCount": 15
+    },
+    "chuhaijiang-tiktok-shop-detail": {
+      "callCount": 4,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-shop-rankings-most-promoted": {
+      "callCount": 2,
+      "userCount": 1
+    },
+    "chuhaijiang-tiktok-shop-rankings-top-selling": {
+      "callCount": 12,
+      "userCount": 5
+    },
+    "chuhaijiang-tiktok-shop-related-creators": {
+      "callCount": 264,
+      "userCount": 4
+    },
+    "chuhaijiang-tiktok-shop-related-products": {
+      "callCount": 3,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-shop-related-videos": {
+      "callCount": 66,
+      "userCount": 3
+    },
+    "chuhaijiang-tiktok-shop-search": {
+      "callCount": 52,
+      "userCount": 5
+    },
+    "chuhaijiang-tiktok-video-detail": {
+      "callCount": 9,
+      "userCount": 3
+    },
+    "chuhaijiang-tiktok-video-related-products": {
+      "callCount": 2,
+      "userCount": 2
+    },
+    "chuhaijiang-tiktok-video-reviews": {
+      "callCount": 11,
+      "userCount": 3
+    },
+    "chuhaijiang-tiktok-video-search": {
+      "callCount": 41,
+      "userCount": 5
+    },
+    "data-amazon-ads-authorized-stores": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "data-amazon-ads-developer-proxy-ads-api-v1-create-reports": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-ads-api-v1-query-advertiser-accounts": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-ads-api-v1-retrieve-reports": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-amazon-ads-developer-proxy": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-reporting-reports": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-reporting-reports-report-id": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-ad-groups": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-ads-creatives-creative-type": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-ads-creatives-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-budget-rules": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-campaigns": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-keywords": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-targets": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-targets-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-v4-ad-groups": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-v4-ad-groups-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-v4-ads": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-v4-ads-ad-type": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-v4-ads-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-v4-campaigns": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sb-v4-campaigns-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-ad-groups": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-ad-groups-extended": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-budget-rules": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-campaigns": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-campaigns-extended": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-creatives": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-negative-targets": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-negative-targets-extended": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-product-ads": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-product-ads-extended": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-targets": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sd-targets-extended": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-ad-groups": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-ad-groups-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-budget-rules": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-budget-rules-association": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-campaign-negative-keywords": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-campaign-negative-targets": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-campaigns": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-keywords": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-keywords-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-negative-keywords": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-negative-keywords-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-negative-targets": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-product-ads": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-product-ads-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-targets": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-developer-proxy-sp-targets-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-profiles": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "data-amazon-ads-refresh-token": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-ads-store-tokens": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-amazon-policy-feed-detail": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-et-batch-video-detail": {
+      "callCount": 3,
+      "userCount": 2
+    },
+    "data-et-list-product-video": {
+      "callCount": 11,
+      "userCount": 2
+    },
+    "data-et-list-seller": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "data-et-list-seller-product": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-kd-livestream-detail": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-kd-shop-rank": {
+      "callCount": 5,
+      "userCount": 1
+    },
+    "data-kd-video-rank": {
+      "callCount": 6,
+      "userCount": 3
+    },
+    "design-similarity-search": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "ebay-search": {
+      "callCount": 22,
+      "userCount": 7
+    },
+    "etsy-category-search": {
+      "callCount": 149,
+      "userCount": 8
+    },
+    "etsy-product-detail": {
+      "callCount": 46,
+      "userCount": 7
+    },
+    "etsy-product-query": {
+      "callCount": 394,
+      "userCount": 16
+    },
+    "etsy-store-query": {
+      "callCount": 161,
+      "userCount": 9
+    },
+    "geekbi-temu-category-list": {
+      "callCount": 32,
+      "userCount": 4
+    },
+    "geekbi-temu-category-search": {
+      "callCount": 295,
+      "userCount": 7
+    },
+    "geekbi-temu-goods-detail": {
+      "callCount": 214,
+      "userCount": 12
+    },
+    "geekbi-temu-goods-image-search": {
+      "callCount": 14,
+      "userCount": 4
+    },
+    "geekbi-temu-goods-search": {
+      "callCount": 1449,
+      "userCount": 18
+    },
+    "geekbi-temu-keyword-search": {
+      "callCount": 69,
+      "userCount": 4
+    },
+    "geekbi-temu-mall-search": {
+      "callCount": 16,
+      "userCount": 3
+    },
+    "geekbi-temu-site-list": {
+      "callCount": 16,
+      "userCount": 13
+    },
+    "google-ai-mode-search": {
+      "callCount": 20,
+      "userCount": 5
+    },
+    "google-patent-search": {
+      "callCount": 43,
+      "userCount": 3
+    },
+    "google-trends-by-keywords": {
+      "callCount": 377,
+      "userCount": 27
+    },
+    "google-trends-by-time": {
+      "callCount": 24,
+      "userCount": 10
+    },
+    "maidalv-product-tro-detection": {
+      "callCount": 4,
+      "userCount": 1
+    },
+    "mercado-market-intelligence": {
+      "callCount": 224,
+      "userCount": 11
+    },
+    "mercado-product-selection": {
+      "callCount": 237,
+      "userCount": 6
+    },
+    "ozon-brand-products": {
+      "callCount": 17,
+      "userCount": 4
+    },
+    "ozon-category-products": {
+      "callCount": 56,
+      "userCount": 13
+    },
+    "ozon-category-search": {
+      "callCount": 230,
+      "userCount": 14
+    },
+    "ozon-keyword-back-search": {
+      "callCount": 125,
+      "userCount": 13
+    },
+    "ozon-keyword-mining": {
+      "callCount": 146,
+      "userCount": 17
+    },
+    "ozon-market-keyword-search": {
+      "callCount": 289,
+      "userCount": 20
+    },
+    "ozon-product-detail": {
+      "callCount": 855,
+      "userCount": 32
+    },
+    "ozon-product-detail-search": {
+      "callCount": 312,
+      "userCount": 27
+    },
+    "ozon-product-report-search": {
+      "callCount": 4889,
+      "userCount": 38
+    },
+    "ozon-product-search": {
+      "callCount": 649,
+      "userCount": 32
+    },
+    "ozon-product-trend": {
+      "callCount": 111,
+      "userCount": 13
+    },
+    "ozon-seller-products": {
+      "callCount": 24,
+      "userCount": 6
+    },
+    "ozon-shop-search": {
+      "callCount": 103,
+      "userCount": 5
+    },
+    "patent-abstract-image-data": {
+      "callCount": 7,
+      "userCount": 3
+    },
+    "patent-cited-by": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "patent-claims": {
+      "callCount": 7,
+      "userCount": 3
+    },
+    "patent-claims-translation": {
+      "callCount": 6,
+      "userCount": 2
+    },
+    "patent-core-bibliography": {
+      "callCount": 4,
+      "userCount": 2
+    },
+    "patent-description-data": {
+      "callCount": 8,
+      "userCount": 4
+    },
+    "patent-description-data-translation": {
+      "callCount": 6,
+      "userCount": 2
+    },
+    "patent-detailed-bibliography": {
+      "callCount": 16,
+      "userCount": 3
+    },
+    "patent-family-data": {
+      "callCount": 2,
+      "userCount": 1
+    },
+    "patent-fulltext-images": {
+      "callCount": 117,
+      "userCount": 4
+    },
+    "patent-legal-status-data": {
+      "callCount": 12,
+      "userCount": 3
+    },
+    "patent-references": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "patent-search": {
+      "callCount": 35,
+      "userCount": 5
+    },
+    "patent-title-abstract-translation": {
+      "callCount": 6,
+      "userCount": 2
+    },
+    "reverse-product-image-search": {
+      "callCount": 72,
+      "userCount": 3
+    },
+    "ruiguan-copyright-detection": {
+      "callCount": 3,
+      "userCount": 1
+    },
+    "ruiguan-detection-patent-design": {
+      "callCount": 111,
+      "userCount": 5
+    },
+    "ruiguan-gun-parts-search": {
+      "callCount": 3,
+      "userCount": 1
+    },
+    "ruiguan-trademark-graphic-detection": {
+      "callCount": 5,
+      "userCount": 3
+    },
+    "shopee-product-detail": {
+      "callCount": 1887,
+      "userCount": 31
+    },
+    "shopee-product-search": {
+      "callCount": 7748,
+      "userCount": 68
+    },
+    "shopify-product-query": {
+      "callCount": 334,
+      "userCount": 14
+    },
+    "shopify-store-query": {
+      "callCount": 55,
+      "userCount": 11
+    },
+    "temu-category-search": {
+      "callCount": 29,
+      "userCount": 10
+    },
+    "temu-product-source-query": {
+      "callCount": 551,
+      "userCount": 29
+    },
+    "temu-store-source-query": {
+      "callCount": 29,
+      "userCount": 7
+    },
+    "text-trademark-detector": {
+      "callCount": 132,
+      "userCount": 7
+    },
+    "tiktok-batch-product-detail": {
+      "callCount": 103,
+      "userCount": 24
+    },
+    "tiktok-creator-analytics": {
+      "callCount": 1513,
+      "userCount": 10
+    },
+    "tiktok-creator-search": {
+      "callCount": 57,
+      "userCount": 7
+    },
+    "tiktok-livestream-analytics": {
+      "callCount": 118,
+      "userCount": 4
+    },
+    "tiktok-new-product-rank": {
+      "callCount": 110,
+      "userCount": 25
+    },
+    "tiktok-product-analytics": {
+      "callCount": 47,
+      "userCount": 9
+    },
+    "tiktok-product-analytics-api": {
+      "callCount": 22,
+      "userCount": 5
+    },
+    "tiktok-product-discovery": {
+      "callCount": 560,
+      "userCount": 34
+    },
+    "tiktok-product-search": {
+      "callCount": 329,
+      "userCount": 51
+    },
+    "tiktok-seller-detail": {
+      "callCount": 688,
+      "userCount": 7
+    },
+    "tiktok-shop-analytics": {
+      "callCount": 208,
+      "userCount": 5
+    },
+    "tiktok-shop-product-detail": {
+      "callCount": 252,
+      "userCount": 11
+    },
+    "tiktok-top-selling-products": {
+      "callCount": 5847,
+      "userCount": 32
+    },
+    "tiktok-video-analytics": {
+      "callCount": 1109,
+      "userCount": 14
+    },
+    "tiktok-video-download-url": {
+      "callCount": 209,
+      "userCount": 17
+    },
+    "tiktok-video-rank": {
+      "callCount": 1452,
+      "userCount": 9
+    },
+    "tiktok-video-search": {
+      "callCount": 247,
+      "userCount": 21
+    },
+    "utility-patent-detector": {
+      "callCount": 5,
+      "userCount": 1
+    },
+    "walmart-category-market": {
+      "callCount": 12,
+      "userCount": 3
+    },
+    "walmart-keyword-research": {
+      "callCount": 7,
+      "userCount": 4
+    },
+    "walmart-product-analysis": {
+      "callCount": 21,
+      "userCount": 3
+    },
+    "walmart-product-detail": {
+      "callCount": 29,
+      "userCount": 4
+    },
+    "walmart-search": {
+      "callCount": 175,
+      "userCount": 8
+    },
+    "web-search": {
+      "callCount": 290,
+      "userCount": 21
+    },
+    "zhihuiya-patent-image-search": {
+      "callCount": 145,
+      "userCount": 7
+    },
+    "zhihuiya-utility-patent-image-search": {
+      "callCount": 3,
+      "userCount": 1
+    }
+  },
+  "categories": {}
+}

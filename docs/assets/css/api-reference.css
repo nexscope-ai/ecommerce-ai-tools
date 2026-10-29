@@ -69,3 +69,7 @@
 
 @media(max-width:580px) { .api-platform-filters { flex-wrap:nowrap; overflow-x:auto; padding:3px 1px 10px; scrollbar-width:thin; } .api-platform-filters button { flex:0 0 auto; } }
 .api-operation-card .api-main-link { display:flex; flex:1; flex-direction:column; }
+
+.api-usage{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 18px;color:#777185;font-size:13px}
+.api-usage strong{font-variant-numeric:tabular-nums;color:#272331;font-weight:650}
+.api-usage-note{font-size:12px!important;line-height:1.6;color:#777185;max-width:920px;margin:16px 0 24px}
