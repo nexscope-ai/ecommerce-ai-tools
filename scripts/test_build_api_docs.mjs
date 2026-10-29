@@ -34,7 +34,9 @@ test('category square links to category pages and category cards link to officia
   const index=pages.get('index.md');
   const category=pages.get('data-amazon-front-data.md');
   assert.ok(index.includes('href="/data/amazon-front-data/"'));
-  assert.ok(!index.includes('href="https://www.nexscope.ai/api-docs/'));
+  assert.ok(index.includes('data-results-kind="apis"'));
+  assert.ok(index.includes('data-platform-filter="amazon"'));
+  assert.ok(index.includes(officialApiUrl('test-api')));
   assert.ok(category.includes('&lt;example&gt;'));
   assert.ok(category.includes(officialApiUrl('test-api')));
   assert.ok(category.includes('data-track="start_using"'));
@@ -86,26 +88,37 @@ test('invalid input never clears previously generated documentation',async()=>{
   await assert.rejects(build({...snapshot,entries:[]},dir));
   assert.equal(await readFile(join(dir,'index.md'),'utf8'),previous);
 });
-test('directory combines word search with category selection and recovers from no matches',async()=>{
+test('platform filters and global search switch between categories and direct API results',async()=>{
   const source=await readFile(new URL('../docs/assets/api-directory.js',import.meta.url),'utf8');
-  const input={value:'',addEventListener(type,handler){this[type]=handler;}};
-  const select={value:'',addEventListener(type,handler){this[type]=handler;}};
-  const card1={dataset:{apiSearch:'amazon reviews list'},hidden:false};
-  const card2={dataset:{apiSearch:'seo keyword research'},hidden:false};
-  const groups=[{dataset:{apiGroup:'Amazon'},querySelectorAll:()=>[card1]}, {dataset:{apiGroup:'SEO'},querySelectorAll:()=>[card2]}];
-  const filters={hidden:true},count={},empty={hidden:true};
-  const document={addEventListener(){},querySelector:s=>({'[data-api-filters]':filters,'[data-api-count]':count,'[data-api-empty]':empty}[s]),getElementById:id=>id==='api-search'?input:select,querySelectorAll:()=>groups};
-  runInNewContext(source,{document});
-  assert.equal(filters.hidden,false);
-  input.value='Amazon reviews'; input.input();
-  assert.equal(card1.hidden,false); assert.equal(card2.hidden,true);
-  select.value='SEO'; select.change();
-  assert.equal(empty.hidden,false);
-  input.value=''; input.input();
-  assert.equal(card2.hidden,false); assert.equal(empty.hidden,true);
-  select.value=''; select.change();
-  assert.equal(card1.hidden,false); assert.equal(card2.hidden,false);
+  const control=(attrs={})=>({hidden:true,value:'',attrs,events:{},dataset:{},focus(){},addEventListener(t,h){this.events[t]=h;},setAttribute(k,v){this.attrs[k]=v;},getAttribute(k){return this.attrs[k];}});
+  const search=control(),count=control(),empty=control(),clear=control(),reset=control(),filters=control();
+  const platforms=['','amazon','tiktok'].map(value=>control({'data-platform-filter':value}));
+  const views=['categories','apis'].map(value=>control({'data-directory-view':value}));
+  const card=(platform,text)=>({dataset:{platform,apiSearch:text},hidden:false});
+  const categories=[card('amazon','amazon data'),card('tiktok','tiktok data')];
+  const apis=[card('amazon','amazon reviews list'),card('amazon','amazon product detail'),card('tiktok','tiktok creators')];
+  const sections=[{dataset:{resultsKind:'categories'},querySelectorAll:()=>categories},{dataset:{resultsKind:'apis'},querySelectorAll:()=>apis}];
+  const directory={dataset:{directoryKind:'root'},querySelector:s=>({'[data-api-count]':count,'[data-api-empty]':empty,'[data-clear-search]':clear,'[data-reset-filters]':reset}[s]),querySelectorAll:s=>s==='[data-platform-filter]'?platforms:s==='[data-directory-view]'?views:s==='[data-results-kind]'?sections:[filters]};
+  const document={addEventListener(){},querySelector:()=>directory,getElementById:()=>search};
+  const window={location:{pathname:'/data/'},gtag(){}};
+  runInNewContext(source,{document,window,URL});
+  assert.equal(filters.hidden,false);assert.equal(sections[0].hidden,false);assert.equal(sections[1].hidden,true);
+  platforms[1].events.click();
+  assert.equal(categories[0].hidden,false);assert.equal(categories[1].hidden,true);
+  assert.equal(platforms[1].attrs['aria-pressed'],'true');
+  search.value='reviews';search.events.input();
+  assert.equal(sections[0].hidden,true);assert.equal(sections[1].hidden,false);
+  assert.equal(apis[0].hidden,false);assert.equal(apis[1].hidden,true);assert.equal(apis[2].hidden,true);
+  assert.equal(count.textContent,'1 API matching your selection');
+  search.value='creators';search.events.input();assert.equal(empty.hidden,false);
+  platforms[2].events.click();assert.equal(empty.hidden,true);assert.equal(apis[2].hidden,false);
+  clear.events.click();assert.equal(search.value,'');assert.equal(sections[0].hidden,false);
+  reset.events.click();assert.equal(platforms[0].attrs['aria-pressed'],'true');
+  assert.ok(categories.every(c=>!c.hidden));
+  views[1].events.click();assert.equal(sections[1].hidden,false);assert.ok(apis.every(c=>!c.hidden));
+  views[0].events.click();assert.equal(sections[0].hidden,false);
 });
+
 test('never overwrites an existing unmanaged directory',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'nexscope-api-docs-unmanaged-'));
   await writeFile(join(dir,'index.md'),'manual');
@@ -116,7 +129,7 @@ test('category and API clicks retain source context without resetting acquisitio
   const source=await readFile(new URL('../docs/assets/api-directory.js',import.meta.url),'utf8');
   let click;
   const calls=[];
-  const document={addEventListener(type,handler){click=handler;},querySelector:()=>null};
+  const document={addEventListener(type,handler){if(type==='click') click=handler;},querySelector:()=>null};
   const window={location:{pathname:'/data/amazon-front-data/',href:'https://learn.nexscope.ai/data/amazon-front-data/'},nexscopeTrafficAttribution:{trafficSource:'google',trafficMedium:'organic',trafficLandingPath:'/data/'},gtag:(...args)=>calls.push(args)};
   runInNewContext(source,{document,window,URL});
   const attrs={'data-api-slug':'test-api','data-data-category':'data-amazon-front-data'};
@@ -129,4 +142,19 @@ test('category and API clicks retain source context without resetting acquisitio
   delete attrs['data-api-slug'];link.href='/data/amazon-front-data/';
   click({target:{closest:()=>link}});
   assert.equal(calls[1][1],'data_api_category_click');
+});
+
+test('preview projection exposes only bounded published input examples and declared output fields',()=>{
+  const record={...entry,requestExample:{query:'example',apiKey:'sensitive-value'},responseSchema:{fields:[{name:'code',description:'Status'},{name:'rating',description:'Product rating'}]}};
+  const model={route:{kind:'upstream-skill',record},catalog:{skills:[{...record,endpoint:'/public/test'}],categories:[]}};
+  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:model}});
+  const preview=result.entries[0].preview;
+  assert.equal(preview.inputs[0].name,'query');assert.equal(preview.inputs[0].required,true);
+  assert.equal(preview.outputs[0].name,'rating');
+  assert.equal(preview.requestExample.apiKey,'[YOUR_CREDENTIAL]');
+  assert.ok(!JSON.stringify(result).includes('sensitive-value'));
+  const category=buildPages(result).get('data-amazon-front-data.md');
+  assert.ok(category.includes('Preview input &amp; output'));
+  assert.ok(category.includes('No API call is made here.'));
+  assert.ok(!category.includes('<details><a'));
 });

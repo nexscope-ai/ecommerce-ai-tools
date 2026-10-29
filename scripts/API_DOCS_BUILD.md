@@ -9,7 +9,7 @@ node scripts/build_api_docs.mjs --web-root ../web
 node --test scripts/test_build_api_docs.mjs
 ```
 
-Only customer-facing directory fields are exported. Schemas, credentials, proxy metadata and non-Data APIs are not included.
+Only customer-facing directory fields are exported. Full schemas, credentials, proxy metadata and non-Data APIs are not included. Bounded input/output field descriptions and illustrative request examples are projected from the public contract; credential-like example fields are redacted.
 
 The root Learn repository checks out this repository on each deployment and calls `buildRoot`. It cleans `dist/client/data/`, generates the Data category square and category pages, and adds their canonical URLs to the root sitemap. Cards link to official API detail pages with `co-from=learn`. No local API detail pages are generated.
 
@@ -20,3 +20,7 @@ To publish directory changes, deploy this repository, then redeploy the root Lea
 ## Current directory structure
 
 `/data/` lists Data API categories; `/data/<category>/` contains a short introduction and that category’s API cards. Cards open `https://www.nexscope.ai/api-docs/<slug>?co-from=learn` directly. No local API detail pages are generated. The root sitemap includes the square and category pages; `/api/` remains only a redirect. GA events `data_api_category_click` and `data_api_open` retain page/category/API context and original channel fields without internal UTMs.
+
+## Discovery controls
+
+The root directory provides platform chips, Categories / All APIs views, and keyword search across every public Data API. Category pages retain local API search. Cards show bounded declared input/output names and a native read-only preview, without calling an API or adding local API detail routes. Search terms are not sent in custom analytics events. Platform selections and preview opens have dedicated events in addition to existing category and outbound attribution.
