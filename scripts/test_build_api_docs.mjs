@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtemp, readFile, writeFile, readdir, mkdir} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {project, validate, build, buildRoot, buildPages, officialTestUrl} from './build_api_docs.mjs';
+import {project, validate, build, buildRoot, buildPages, officialApiUrl} from './build_api_docs.mjs';
 import {runInNewContext} from 'node:vm';
 
 const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
@@ -28,14 +28,18 @@ test('validation rejects traversal, duplicate contracts and literal keys',()=>{
   for(const e of [{...entry,slug:'../escape'},{...entry,slug:'quickstart'},{...entry,path:'//other.example'},{...entry,path:"/test'bad"},{...entry,description:'nk-abcdefghijklmnopqrstuv'}]) assert.throws(()=>validate({...snapshot,entries:[e]}));
   assert.throws(()=>validate({...snapshot,entries:[entry,entry]}));
 });
-test('directory escapes content and links only to official testers',()=>{
+test('category square links to category pages and category cards link to official API details',()=>{
   const pages=buildPages(snapshot);
-  assert.deepEqual([...pages.keys()],['index.md']);
-  const result=pages.get('index.md');
-  assert.ok(result.includes('&lt;example&gt;'));
-  assert.ok(result.includes(officialTestUrl('test-api')));
-  assert.ok(!result.includes('href="/api/test-api/"'));
-  assert.ok(!result.includes('/api/quickstart/'));
+  assert.deepEqual([...pages.keys()],['index.md','data-amazon-front-data.md']);
+  const index=pages.get('index.md');
+  const category=pages.get('data-amazon-front-data.md');
+  assert.ok(index.includes('href="/data/amazon-front-data/"'));
+  assert.ok(!index.includes('href="https://www.nexscope.ai/api-docs/'));
+  assert.ok(category.includes('&lt;example&gt;'));
+  assert.ok(category.includes(officialApiUrl('test-api')));
+  assert.ok(category.includes('data-track="start_using"'));
+  assert.ok(!category.includes('#online-test'));
+  assert.ok(!category.includes('href="/data/test-api/"'));
 });
 test('build clears all old output before regeneration and leaves sibling files alone',async()=>{
   const parent=await mkdtemp(join(tmpdir(),'nexscope-api-docs-'));
@@ -46,7 +50,7 @@ test('build clears all old output before regeneration and leaves sibling files a
   await build(snapshot,dir);
   assert.equal(await readFile(join(dir,'index.md'),'utf8'),first);
   const index = await readFile(join(dir,'index.md'),'utf8');
-  assert.ok(index.includes('https://learn.nexscope.ai/api/'));
+  assert.ok(index.includes('https://learn.nexscope.ai/data/'));
   assert.ok(index.includes('http-equiv="refresh"'));
   await writeFile(join(dir,'orphan.md'),'stale page missing from old manifest');
   await mkdir(join(dir,'old-api'));
@@ -58,21 +62,19 @@ test('build clears all old output before regeneration and leaves sibling files a
   assert.equal(await readFile(join(parent,'keep.txt'),'utf8'),'outside generated output');
   assert.deepEqual((await readdir(dir)).sort(),['.api-docs-generated','index.md']);
 });
-test('root export keeps only the square and removes all old detail pages',async()=>{
-  const output=await mkdtemp(join(tmpdir(),'nexscope-root-api-'));
+test('root export generates category pages, no local API details, and removes stale output',async()=>{
+  const output=await mkdtemp(join(tmpdir(),'nexscope-root-data-'));
   await buildRoot(snapshot,output);
   await mkdir(join(output,'test-api'));
   await writeFile(join(output,'test-api/index.html'),'old detail page');
-  await mkdir(join(output,'quickstart'));
-  await writeFile(join(output,'quickstart/index.html'),'old quick start');
-  assert.deepEqual(await buildRoot(snapshot,output),['/api/']);
-  const page=await readFile(join(output,'index.html'),'utf8');
-  assert.ok(page.includes('href="https://learn.nexscope.ai/api/"'));
-  assert.ok(page.includes('href="/api/api-reference.css"'));
-  assert.ok(page.includes(officialTestUrl('test-api')));
-  assert.ok(page.includes('data-api-search'));
-  assert.ok(!page.includes('/api/test-api/'));
-  assert.deepEqual((await readdir(output)).sort(),['.api-docs-generated','api-directory.js','api-reference.css','index.html']);
+  assert.deepEqual(await buildRoot(snapshot,output),['/data/','/data/amazon-front-data/']);
+  const page=await readFile(join(output,'amazon-front-data/index.html'),'utf8');
+  assert.ok(page.includes('href="https://learn.nexscope.ai/data/amazon-front-data/"'));
+  assert.ok(page.includes('href="/data/api-reference.css"'));
+  assert.ok(page.includes(officialApiUrl('test-api')));
+  assert.ok(page.includes('src="/data/api-directory.js"'));
+  assert.ok(!page.includes('href="/data/test-api/"'));
+  assert.ok(!(await readdir(output)).includes('test-api'));
 });
 test('invalid input never clears previously generated documentation',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'nexscope-api-docs-invalid-'));
@@ -89,7 +91,7 @@ test('directory combines word search with category selection and recovers from n
   const card2={dataset:{apiSearch:'seo keyword research'},hidden:false};
   const groups=[{dataset:{apiGroup:'Amazon'},querySelectorAll:()=>[card1]}, {dataset:{apiGroup:'SEO'},querySelectorAll:()=>[card2]}];
   const filters={hidden:true},count={},empty={hidden:true};
-  const document={querySelector:s=>({'[data-api-filters]':filters,'[data-api-count]':count,'[data-api-empty]':empty}[s]),getElementById:id=>id==='api-search'?input:select,querySelectorAll:()=>groups};
+  const document={addEventListener(){},querySelector:s=>({'[data-api-filters]':filters,'[data-api-count]':count,'[data-api-empty]':empty}[s]),getElementById:id=>id==='api-search'?input:select,querySelectorAll:()=>groups};
   runInNewContext(source,{document});
   assert.equal(filters.hidden,false);
   input.value='Amazon reviews'; input.input();
@@ -105,4 +107,23 @@ test('never overwrites an existing unmanaged directory',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'nexscope-api-docs-unmanaged-'));
   await writeFile(join(dir,'index.md'),'manual');
   await assert.rejects(build(snapshot,dir),/unmanaged/);
+});
+
+test('category and API clicks retain source context without resetting acquisition',async()=>{
+  const source=await readFile(new URL('../docs/assets/api-directory.js',import.meta.url),'utf8');
+  let click;
+  const calls=[];
+  const document={addEventListener(type,handler){click=handler;},querySelector:()=>null};
+  const window={location:{pathname:'/data/amazon-front-data/',href:'https://learn.nexscope.ai/data/amazon-front-data/'},nexscopeTrafficAttribution:{trafficSource:'google',trafficMedium:'organic',trafficLandingPath:'/data/'},gtag:(...args)=>calls.push(args)};
+  runInNewContext(source,{document,window,URL});
+  const attrs={'data-api-slug':'test-api','data-data-category':'data-amazon-front-data'};
+  const link={href:officialApiUrl('test-api'),getAttribute:name=>attrs[name]};
+  click({target:{closest:()=>link}});
+  assert.equal(calls[0][1],'data_api_open');
+  assert.equal(calls[0][2].co_from,'learn');
+  assert.equal(calls[0][2].source_page,'/data/amazon-front-data/');
+  assert.equal(calls[0][2].traffic_source,'google');
+  delete attrs['data-api-slug'];link.href='/data/amazon-front-data/';
+  click({target:{closest:()=>link}});
+  assert.equal(calls[1][1],'data_api_category_click');
 });

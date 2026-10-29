@@ -18,7 +18,7 @@ image_caption: "Illustration: Nexscope capabilities can be combined into focused
 
 # Nexscope API capabilities and ecommerce workflows
 
-Browse the [Data API directory](/api/) to find an endpoint and open its official documentation and online test.
+Browse the [Data API categories](/data/) to find an endpoint and open its official documentation and online test.
 
 {% include article-visual.html %}
 

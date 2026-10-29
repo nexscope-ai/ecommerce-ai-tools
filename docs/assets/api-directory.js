@@ -1,5 +1,22 @@
 /* All API links and content remain available when JavaScript is disabled. */
 (() => {
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('a[data-data-category]');
+    if (!link || typeof window.gtag !== 'function') return;
+    const apiSlug = link.getAttribute('data-api-slug');
+    const traffic = window.nexscopeTrafficAttribution || {};
+    window.gtag('event', apiSlug ? 'data_api_open' : 'data_api_category_click', {
+      data_category: link.getAttribute('data-data-category'),
+      api_slug: apiSlug || undefined,
+      source_page: window.location.pathname,
+      link_path: new URL(link.href, window.location.href).pathname,
+      co_from: apiSlug ? 'learn' : undefined,
+      traffic_source: traffic.trafficSource || 'direct_or_unknown',
+      traffic_medium: traffic.trafficMedium || 'none',
+      traffic_landing_path: traffic.trafficLandingPath || window.location.pathname,
+      transport_type: 'beacon',
+    });
+  });
   const filters = document.querySelector('[data-api-filters]');
   if (!filters) return;
   const search = document.getElementById('api-search');
@@ -21,7 +38,8 @@
       group.hidden = visible === 0;
       total += visible;
     }
-    count.textContent = `${total} ${total === 1 ? 'API matches' : 'APIs match'} your selection`;
+    const unit = count.dataset?.unit === 'category' ? (total === 1 ? 'category matches' : 'categories match') : (total === 1 ? 'API matches' : 'APIs match');
+    count.textContent = `${total} ${unit} your selection`;
     empty.hidden = total > 0;
   }
   filters.hidden = false;

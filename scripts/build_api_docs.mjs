@@ -16,7 +16,7 @@ const isDataCategory = category => typeof category === 'string' && (category.sta
 const clean = value => String(value ?? '').replace(/[^.!?\n]*\bMCP\b[^.!?\n]*[.!?]?/gi, '').trim();
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const json = value => JSON.stringify(value, null, 2);
-export const officialTestUrl = slug => `https://www.nexscope.ai/api-docs/${encodeURIComponent(slug)}?co-from=learn#online-test`;
+export const officialApiUrl = slug => `https://www.nexscope.ai/api-docs/${encodeURIComponent(slug)}?co-from=learn`;
 function apiPath(value) {
   if (value?.startsWith(API_ORIGIN + '/')) {
     const url = new URL(value);
@@ -38,10 +38,11 @@ export function project(publication) {
     const account = model.route.kind === 'account-doc';
     const path = apiPath(account ? record.path : skill.endpoint || record.endpoint);
     if (!path?.startsWith('/') || path.startsWith('//') || /[\s"'<>]/.test(path)) throw new Error(`Invalid public endpoint: ${slug}`);
-    const group = account ? 'Account APIs' : model.catalog.categories.find(c => c.slug === skill.categorySlug)?.name || 'Marketing & SEO';
+    const category = model.catalog.categories.find(c => c.slug === skill.categorySlug);
+    const group = category?.name || 'Marketplace data';
     const entry = {
       slug, name: clean(skill.name || record.name), description: clean(record.description || skill.description),
-      group, categorySlug: skill.categorySlug, method: record.run?.method || 'POST', path,
+      group, categoryDescription: clean(category?.description), categorySlug: skill.categorySlug, method: record.run?.method || 'POST', path,
     };
     return [entry];
   });
@@ -54,7 +55,7 @@ export function validate(snapshot) {
   if (snapshot.schemaVersion !== 1 || snapshot.scope !== 'data' || !snapshot.entries?.length) throw new Error('Empty or unsupported Data API publication');
   const seen = new Set();
   for (const e of snapshot.entries) {
-    if (!isDataCategory(e.categorySlug)) throw new Error(`Non-data API is not allowed: ${e.slug}`);
+    if (!SLUG.test(e.categorySlug) || !isDataCategory(e.categorySlug)) throw new Error(`Non-data API is not allowed: ${e.slug}`);
     if (!SLUG.test(e.slug) || ['index','quickstart'].includes(e.slug) || seen.has(e.slug) || !e.name || !e.path?.startsWith('/') || e.path.startsWith('//') || /[\s"'<>]/.test(e.path) || !['GET','POST','PUT','PATCH','DELETE'].includes(e.method)) throw new Error(`Invalid API entry: ${e.slug}`);
     seen.add(e.slug);
   }
@@ -64,16 +65,33 @@ export function validate(snapshot) {
 }
 
 function page(title, description, slug, body) {
-  return `---\nlayout: api-reference\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\npermalink: /api/${slug ? slug + '/' : ''}\nlearning_topic: agents\napi_directory: ${!slug}\n---\n{% raw %}\n${body}\n{% endraw %}\n`.replaceAll(/href="(\{\{[^\n]+?\}\})"/g, 'href="{% endraw %}$1{% raw %}"');
+  return `---\nlayout: api-reference\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\npermalink: /data/${slug ? slug + '/' : ''}\nlearning_topic: agents\napi_directory: ${!slug}\n---\n{% raw %}\n${body}\n{% endraw %}\n`.replaceAll(/href="(\{\{[^\n]+?\}\})"/g, 'href="{% endraw %}$1{% raw %}"');
 }
 
+export function categoryPath(category) { return `/data/${category.replace(/^data-/, '')}/`; }
+function searchControls(label, unit, total) {
+  return `<div class="api-filters api-filters--search" data-api-filters hidden><div><label for="api-search">${label}</label><input type="search" id="api-search" placeholder="Search by name or keyword…" autocomplete="off"></div><select id="api-category" hidden aria-label="Category"><option value="">All categories</option></select></div><p data-api-count data-unit="${unit}" role="status" aria-live="polite">${total} ${unit === 'category' ? 'categories' : 'APIs'} available</p><p data-api-empty hidden>No matches. Try another keyword.</p>`;
+}
 export function buildPages(snapshot) {
   validate(snapshot);
-  const groups = Map.groupBy(snapshot.entries, e=>e.group);
-  const directory = [...groups].map(([name,entries])=>`<section data-api-group="${esc(name)}"><h2>${esc(name)} <small>${entries.length} APIs</small></h2><div class="api-directory">${entries.map(e=>`<article class="api-card" data-api-search="${esc([e.name,e.slug,e.path,e.description].join(' ').toLowerCase())}"><span>${esc(e.method)}</span><h3><a href="${officialTestUrl(e.slug)}">${esc(e.name)}</a></h3><p>${esc(e.description)}</p><div class="api-card-actions"><a href="${officialTestUrl(e.slug)}" aria-label="Try ${esc(e.name)} online">Try online on Nexscope ↗</a></div></article>`).join('')}</div></section>`).join('\n');
-  const filters = `<div class="api-filters" data-api-filters hidden><div><label for="api-search">Find an API</label><input type="search" id="api-search" placeholder="Search Amazon reviews, TikTok, 1688, Shopify…" autocomplete="off"></div><div><label for="api-category">Category</label><select id="api-category"><option value="">All categories</option>${[...groups.keys()].map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('')}</select></div></div><p data-api-count role="status" aria-live="polite">${snapshot.entries.length} APIs available</p><p data-api-empty hidden>No APIs match your search. Try a broader keyword or another category.</p>`;
-  const content = `<p class="api-eyebrow">Nexscope Data API directory</p><h1>Find the API for your next workflow</h1><p>Explore marketplace data, product research, advertising intelligence and search data. Choose an API to open its online test on the official Nexscope website.</p><p class="api-caption">API access and credit requirements vary by operation. Review the official documentation before running a request.</p>${filters}${directory}`;
-  return new Map([['index.md',page('Nexscope Data API directory','Find Nexscope ecommerce Data APIs for marketplace and product research, and open each API in the official online tester.','',content)]]);
+  const groups = Map.groupBy(snapshot.entries, e=>e.categorySlug);
+  const pages = new Map();
+  const categories = [];
+  const routes = new Set();
+  for (const [category, entries] of groups) {
+    const route = categoryPath(category);
+    if (routes.has(route)) throw new Error(`Duplicate category route: ${route}`);
+    routes.add(route);
+    const name = entries[0].group;
+    const description = entries[0].categoryDescription || `Explore ${name} data APIs for your research and application workflows.`;
+    const card = `<article class="api-card" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}"><span>${entries.length} APIs</span><h3><a href="${route}" data-data-category="${esc(category)}">${esc(name)}</a></h3><p>${esc(description)}</p><div class="api-card-actions"><a href="${route}" data-data-category="${esc(category)}">Explore category →</a></div></article>`;
+    categories.push(card);
+    const cards = entries.map(e=>`<article class="api-card" data-api-search="${esc([e.name,e.slug,e.path,e.description].join(' ').toLowerCase())}"><span>${esc(e.method)}</span><h3><a href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${esc(e.name)}</a></h3><p>${esc(e.description)}</p><div class="api-card-actions"><a href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">View on Nexscope ↗</a></div></article>`).join('');
+    const content = `<nav aria-label="Breadcrumb"><a href="/data/">Data API categories</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p><p>Browse the APIs below. Each card opens the matching API documentation on the official Nexscope website, where you can review parameters and access its online test.</p><p class="api-caption">Access and credit requirements vary by operation. Review the official documentation before running a request.</p>${searchControls('Find an API','API',entries.length)}<section data-api-group="${esc(name)}"><div class="api-directory">${cards}</div></section>`;
+    pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content));
+  }
+  const content = `<p class="api-eyebrow">Nexscope Data API directory</p><h1>Explore Data API categories</h1><p>Choose a category to discover marketplace data, product research, advertising intelligence and search APIs.</p>${searchControls('Find a category','category',groups.size)}<section data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section>`;
+  return new Map([['index.md',page('Data API categories | Nexscope','Browse Nexscope Data API categories for ecommerce research and open official documentation for each API.','',content)],...pages]);
 }
 
 export function renderStandalone(source, snapshot) {
@@ -81,7 +99,7 @@ export function renderStandalone(source, snapshot) {
   const description = JSON.parse(source.match(/^description: (.+)$/m)[1]);
   const path = source.match(/^permalink: (.+)$/m)[1];
   const body = source.slice(source.indexOf('{% raw %}') + '{% raw %}'.length).replace(/\{% (?:endraw|raw) %\}/g, '');
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(snapshot.generatedAt)}"><link rel="stylesheet" href="/api/api-reference.css"></head><body class="api-root"><header class="api-root-header"><a href="/" aria-label="Nexscope Learn home"><img src="/logo.png" alt="Nexscope" width="166" height="40"></a><nav aria-label="Main navigation"><a href="/tools/">Tools</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a><a href="/ecommerce-ai-tools/">Learning library</a><a href="/api/" aria-current="${path==='/api/'?'page':'location'}">Data APIs</a></nav></header><main class="api-reference">${body}</main><footer class="api-root-footer"><a href="/api/">Data API documentation</a> · <a href="/ecommerce-ai-tools/community/">Community</a> · <a href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></footer>${path==='/api/'?'<script src="/api/api-directory.js" defer></script>':''}</body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(snapshot.generatedAt)}"><link rel="stylesheet" href="/data/api-reference.css"></head><body class="api-root"><header class="api-root-header"><a href="/" aria-label="Nexscope Learn home"><img src="/logo.png" alt="Nexscope" width="166" height="40"></a><nav aria-label="Main navigation"><a href="/tools/">Tools</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a><a href="/ecommerce-ai-tools/">Learning library</a><a href="/data/" aria-current="${path==='/data/'?'page':'location'}">Data APIs</a></nav></header><main class="api-reference">${body}</main><footer class="api-root-footer"><a href="/data/">Data API documentation</a> · <a href="/ecommerce-ai-tools/community/">Community</a> · <a href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></footer><script src="/data/api-directory.js" defer></script></body></html>`;
 }
 
 async function cleanGenerated(output) {
@@ -104,14 +122,11 @@ async function cleanGenerated(output) {
 export async function build(snapshot, output = OUTPUT) {
   const pages = buildPages(snapshot);
   output = await cleanGenerated(output);
-  for (const [name,body] of pages) {
-    const path = body.match(/^permalink: (.+)$/m)[1];
-    const target = `https://learn.nexscope.ai${path}`;
-    const redirect = `---\nlayout: null\npermalink: ${path}\nsitemap: false\n---\n<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="${target}"><title>API documentation moved | Nexscope</title></head><body><p>Continue to <a href="${target}">Nexscope Data API documentation</a>.</p><script>location.replace(${JSON.stringify(target)} + location.search + location.hash)</script></body></html>`;
-    await writeFile(join(output,name),redirect);
-  }
-  await writeFile(join(output,'.api-docs-generated'),JSON.stringify([...pages.keys()]));
-  return pages.size;
+  const target = 'https://learn.nexscope.ai/data/';
+  const redirect = `---\nlayout: null\npermalink: /api/\nsitemap: false\n---\n<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="${target}"><title>Data API categories | Nexscope</title></head><body><a href="${target}">Explore Data API categories</a><script>location.replace(${JSON.stringify(target)} + location.search + location.hash)</script></body></html>`;
+  await writeFile(join(output,'index.md'),redirect);
+  await writeFile(join(output,'.api-docs-generated'),JSON.stringify(['index.md']));
+  return 1;
 }
 
 export async function buildRoot(snapshot, output) {
@@ -120,7 +135,7 @@ export async function buildRoot(snapshot, output) {
   const paths = [];
   for (const source of pages.values()) {
     const path = source.match(/^permalink: (.+)$/m)[1];
-    const destination = join(output,path.slice('/api/'.length),'index.html');
+    const destination = join(output,path.slice('/data/'.length),'index.html');
     await mkdir(dirname(destination),{recursive:true});
     await writeFile(destination,renderStandalone(source,snapshot));
     paths.push(path);

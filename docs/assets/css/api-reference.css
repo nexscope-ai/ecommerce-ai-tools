@@ -17,6 +17,7 @@
 .api-reference .api-primary { display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; color: #fff; background: #7354f6; border-radius: 10px; text-decoration: none; font-weight: 600; }
 .api-reference .api-caption { color: #5f6478; font-size: .85rem; }
 .api-filters { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 32px; padding: 24px; border: 1px solid #e2ddec; border-radius: 16px; background: #fff; }
+.api-filters--search { grid-template-columns: 1fr; }
 .api-filters label { display: block; font-weight: 600; font-size: .875rem; margin-bottom: 8px; }
 .api-filters input, .api-filters select { box-sizing: border-box; width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #ccc5df; border-radius: 8px; background: #fff; color: #211d30; font: inherit; font-size: 1rem; }
 .api-reference a:focus-visible, .api-filters input:focus-visible, .api-filters select:focus-visible { outline: 3px solid #9e87ff; outline-offset: 3px; }
