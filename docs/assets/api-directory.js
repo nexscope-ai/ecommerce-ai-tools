@@ -37,6 +37,7 @@
     const words = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
     const activeView = words.length && isRoot ? 'apis' : view;
     let total = 0;
+    const matchingCounts = {categories: 0, apis: 0};
     for (const section of sections) {
       let visible = 0;
       for (const card of section.querySelectorAll('[data-api-search]')) {
@@ -45,13 +46,19 @@
         if (match) visible++;
       }
       section.hidden = section.dataset.resultsKind !== activeView || visible === 0;
+      matchingCounts[section.dataset.resultsKind] += visible;
       if (section.dataset.resultsKind === activeView) total += visible;
     }
     count.textContent = `${total} ${activeView === 'categories' ? (total === 1 ? 'category' : 'categories') : (total === 1 ? 'API' : 'APIs')} ${words.length || platform ? 'matching your selection' : 'available'}`;
     empty.hidden = total > 0;
     clear.hidden = words.length === 0;
     for (const button of platformButtons) button.setAttribute('aria-pressed', String(button.getAttribute('data-platform-filter') === platform));
-    for (const button of viewButtons) button.setAttribute('aria-pressed', String(button.getAttribute('data-directory-view') === activeView));
+    for (const button of viewButtons) {
+      const kind = button.getAttribute('data-directory-view');
+      button.setAttribute('aria-pressed', String(kind === activeView));
+      const badge = button.querySelector('span');
+      if (badge) badge.textContent = String(matchingCounts[kind]);
+    }
   }
   search.addEventListener('input', update);
   clear.addEventListener('click', () => { search.value = ''; update(); search.focus(); });

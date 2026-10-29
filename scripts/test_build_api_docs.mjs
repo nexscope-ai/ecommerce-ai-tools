@@ -128,6 +128,10 @@ test('platform filters and global search switch between categories and direct AP
   const search=control(),count=control(),empty=control(),clear=control(),reset=control(),filters=control();
   const platforms=['','amazon','tiktok'].map(value=>control({'data-platform-filter':value}));
   const views=['categories','apis'].map(value=>control({'data-directory-view':value}));
+  for (const button of views) {
+    button.badge = {textContent:''};
+    button.querySelector = selector => selector === 'span' ? button.badge : null;
+  }
   const card=(platform,text)=>({dataset:{platform,apiSearch:text},hidden:false});
   const categories=[card('amazon','amazon data'),card('tiktok','tiktok data')];
   const apis=[card('amazon','amazon reviews list'),card('amazon','amazon product detail'),card('tiktok','tiktok creators')];
@@ -137,18 +141,23 @@ test('platform filters and global search switch between categories and direct AP
   const window={location:{pathname:'/data/'},gtag(){}};
   runInNewContext(source,{document,window,URL});
   assert.equal(filters.hidden,false);assert.equal(sections[0].hidden,false);assert.equal(sections[1].hidden,true);
+  assert.deepEqual(views.map(button=>button.badge.textContent),['2','3']);
   platforms[1].events.click();
   assert.equal(categories[0].hidden,false);assert.equal(categories[1].hidden,true);
   assert.equal(platforms[1].attrs['aria-pressed'],'true');
+  assert.deepEqual(views.map(button=>button.badge.textContent),['1','2']);
   search.value='reviews';search.events.input();
   assert.equal(sections[0].hidden,true);assert.equal(sections[1].hidden,false);
   assert.equal(apis[0].hidden,false);assert.equal(apis[1].hidden,true);assert.equal(apis[2].hidden,true);
   assert.equal(count.textContent,'1 API matching your selection');
+  assert.deepEqual(views.map(button=>button.badge.textContent),['0','1']);
   search.value='creators';search.events.input();assert.equal(empty.hidden,false);
+  assert.deepEqual(views.map(button=>button.badge.textContent),['0','0']);
   platforms[2].events.click();assert.equal(empty.hidden,true);assert.equal(apis[2].hidden,false);
   clear.events.click();assert.equal(search.value,'');assert.equal(sections[0].hidden,false);
   reset.events.click();assert.equal(platforms[0].attrs['aria-pressed'],'true');
   assert.ok(categories.every(c=>!c.hidden));
+  assert.deepEqual(views.map(button=>button.badge.textContent),['2','3']);
   views[1].events.click();assert.equal(sections[1].hidden,false);assert.ok(apis.every(c=>!c.hidden));
   views[0].events.click();assert.equal(sections[0].hidden,false);
 });
