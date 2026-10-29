@@ -21,12 +21,6 @@
       co_from: apiSlug ? 'learn' : undefined,
     });
   });
-  document.addEventListener('toggle', event => {
-    const preview = event.target;
-    if (preview.matches?.('[data-api-preview]') && preview.open) {
-      track('data_api_preview', { api_slug: preview.getAttribute('data-api-preview'), data_category: preview.getAttribute('data-data-category') });
-    }
-  }, true);
   const directory = document.querySelector('[data-data-directory]');
   if (!directory) return;
   const search = document.getElementById('api-search');

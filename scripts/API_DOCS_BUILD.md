@@ -23,4 +23,6 @@ To publish directory changes, deploy this repository, then redeploy the root Lea
 
 ## Discovery controls
 
-The root directory provides platform chips, Categories / All APIs views, and keyword search across every public Data API. Category pages retain local API search. Cards show bounded declared input/output names and a native read-only preview, without calling an API or adding local API detail routes. Search terms are not sent in custom analytics events. Platform selections and preview opens have dedicated events in addition to existing category and outbound attribution.
+The root directory provides platform chips, Categories / All APIs views, and keyword search across every public Data API. Category pages retain local API search. Cards show the platform logo, API name and description without inline parameter panels or examples. Users open the official documentation for technical details; no local API detail routes are added. Search terms are not sent in custom analytics events. Platform selections have dedicated events in addition to existing category and outbound attribution.
+
+Inline INPUT/OUTPUT labels and expandable examples have been removed from both category cards and global API search results. Existing navigation, platform filters, search, outbound attribution and click events remain active.

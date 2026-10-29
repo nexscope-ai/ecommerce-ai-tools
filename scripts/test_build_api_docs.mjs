@@ -154,7 +154,8 @@ test('preview projection exposes only bounded published input examples and decla
   assert.equal(preview.requestExample.apiKey,'[YOUR_CREDENTIAL]');
   assert.ok(!JSON.stringify(result).includes('sensitive-value'));
   const category=buildPages(result).get('data-amazon-front-data.md');
-  assert.ok(category.includes('Preview input &amp; output'));
-  assert.ok(category.includes('No API call is made here.'));
+  assert.ok(!category.includes('api-io'));
+  assert.ok(!category.includes('data-api-preview'));
+  assert.ok(category.includes('View official API docs'));
   assert.ok(!category.includes('<details><a'));
 });
