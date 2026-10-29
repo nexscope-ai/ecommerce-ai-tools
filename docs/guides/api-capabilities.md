@@ -18,6 +18,8 @@ image_caption: "Illustration: Nexscope capabilities can be combined into focused
 
 # Nexscope API capabilities and ecommerce workflows
 
+Browse the [REST API reference]({{ '/api/' | relative_url }}) for endpoint parameters, request examples and response schemas, or start with the [API quick start]({{ '/api/quickstart/' | relative_url }}).
+
 {% include article-visual.html %}
 
 Nexscope exposes ecommerce research and creative AI capabilities through REST APIs and MCP tools. Use [the official API docs](https://www.nexscope.ai/api-docs?co-from=learn) to inspect parameters, response fields, examples, and testing instructions for the endpoint you need.

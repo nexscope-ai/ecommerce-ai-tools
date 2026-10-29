@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/api-reference.css' | relative_url }}">
+<div class="api-reference">
+  {{ content }}
+</div>
+{% if page.api_directory %}<script src="{{ '/assets/api-directory.js' | relative_url }}" defer></script>{% endif %}

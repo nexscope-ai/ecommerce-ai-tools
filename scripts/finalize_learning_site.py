@@ -80,8 +80,14 @@ def resource_errors(page, canonical, directory, root_site=None):
         if not target.is_file(): errors.append(f'Missing {kind}: {canonical} -> {href}')
     return errors
 
-def finalize(directory, root_site=None):
+def finalize(directory, root_site=None, api_snapshot=None):
     directory = Path(directory)
+    api_contract = json.loads(Path(api_snapshot).read_text(encoding='utf-8')) if api_snapshot else None
+    api_prefix = f'{ORIGIN}{BASE}/api/'
+    expected_apis = None
+    if api_contract:
+        expected_apis = {api_prefix, api_prefix + 'quickstart/'}
+        expected_apis.update(api_prefix + item['slug'] + '/' for item in api_contract['entries'])
     old_dates = {}
     old_sitemap = directory / 'sitemap.xml'
     if old_sitemap.exists():
@@ -120,8 +126,12 @@ def finalize(directory, root_site=None):
         entry = ET.SubElement(sitemap, f'{{{NS}}}url')
         ET.SubElement(entry, f'{{{NS}}}loc').text = page.canonical
         dates = [old_dates.get(page.canonical, ''), *page.dates]
+        if api_contract and page.canonical.startswith(api_prefix):
+            # API pages share the source contract's publication time, not the
+            # deployment time or an unrelated editorial release date.
+            dates = [api_contract['generatedAt']]
         # This fixed release changes navigation and evidence context, not editorial review dates.
-        if 'product-showcase/product/' not in canonical.path: dates.append('2026-10-27')
+        if 'product-showcase/product/' not in canonical.path and not canonical.path.startswith(BASE + '/api/'): dates.append('2026-10-27')
         valid_dates = []
         for date in dates:
             if not date: continue
@@ -156,6 +166,10 @@ def finalize(directory, root_site=None):
                 errors.append(f'Broken local link: {canonical} -> {href}')
     for topic in ('research', 'visibility', 'sourcing', 'agents', 'creative', 'evidence'):
         if f'{ORIGIN}{BASE}/topics/{topic}/' not in pages: errors.append(f'Missing topic hub: {topic}')
+    if expected_apis is not None:
+        actual_apis = {url for url in pages if url.startswith(api_prefix)}
+        for url in sorted(expected_apis - actual_apis): errors.append(f'Missing API sitemap page: {url}')
+        for url in sorted(actual_apis - expected_apis): errors.append(f'Stale API sitemap page: {url}')
     if errors: raise SystemExit('\n'.join(sorted(set(errors))))
     ET.indent(sitemap)
     ET.ElementTree(sitemap).write(old_sitemap, encoding='utf-8', xml_declaration=True)
@@ -165,5 +179,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('directory')
     parser.add_argument('--root-site')
+    parser.add_argument('--api-snapshot', help='Verify the API sitemap exactly matches the current public contract snapshot')
     args = parser.parse_args()
-    finalize(args.directory, args.root_site)
+    finalize(args.directory, args.root_site, args.api_snapshot)

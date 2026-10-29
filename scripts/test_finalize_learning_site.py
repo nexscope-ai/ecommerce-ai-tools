@@ -1,6 +1,7 @@
 from contextlib import redirect_stdout
 from io import StringIO
 from pathlib import Path
+import json
 from tempfile import TemporaryDirectory
 import unittest
 import xml.etree.ElementTree as ET
@@ -33,6 +34,24 @@ class CanonicalSitemapTests(unittest.TestCase):
         first = ET.tostring(self.run_finalize().getroot())
         second = ET.tostring(self.run_finalize().getroot())
         self.assertEqual(first, second)
+    def api_snapshot(self):
+        path = self.directory / 'contract.json'
+        path.write_text(json.dumps({'generatedAt': '2026-10-28T09:45:47.193Z', 'entries': [{'slug': 'example-api'}]}), encoding='utf-8')
+        return path
+    def test_api_pages_match_current_contract_and_use_its_publication_date(self):
+        for route in ('api/', 'api/quickstart/', 'api/example-api/'): self.page(route)
+        finalize(self.directory, api_snapshot=self.api_snapshot())
+        tree = ET.parse(self.directory / 'sitemap.xml')
+        api_urls = [node for node in tree.findall(f'{{{NS}}}url') if '/api/' in node.findtext(f'{{{NS}}}loc')]
+        self.assertEqual(len(api_urls), 3)
+        self.assertTrue(all(node.findtext(f'{{{NS}}}lastmod') == '2026-10-28T09:45:47.193Z' for node in api_urls))
+    def test_missing_or_stale_api_page_blocks_deployment(self):
+        for route in ('api/', 'api/quickstart/', 'api/retired-api/'): self.page(route)
+        with self.assertRaisesRegex(SystemExit, 'Missing API sitemap page'):
+            finalize(self.directory, api_snapshot=self.api_snapshot())
+        self.page('api/example-api/')
+        with self.assertRaisesRegex(SystemExit, 'Stale API sitemap page'):
+            finalize(self.directory, api_snapshot=self.api_snapshot())
     def test_missing_srcset_url_fails_the_build(self):
         self.page('broken-image/', body='<img srcset="720w, /ecommerce-ai-tools/large.webp 1440w">')
         with self.assertRaisesRegex(SystemExit, 'Malformed srcset: 720w'): self.run_finalize()

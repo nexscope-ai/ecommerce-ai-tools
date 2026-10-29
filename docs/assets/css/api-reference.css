@@ -1,0 +1,37 @@
+.api-reference { max-width: 1120px; margin: 40px auto 80px; }
+.api-reference h1 { max-width: 950px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.12; overflow-wrap: anywhere; }
+.api-reference h2 { margin-top: 42px; }
+.api-reference p { max-width: 850px; }
+.api-reference .api-eyebrow { color: #7250df; text-transform: uppercase; font-size: .75rem; letter-spacing: .12em; }
+.api-directory { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.api-directory .api-card { display: block; padding: 24px; background: #fff; border: 1px solid #e2ddec; border-radius: 16px; color: inherit; text-decoration: none; }
+.api-directory .api-card:hover { border-color: #7354f6; box-shadow: 0 6px 20px #45318a0d; }
+.api-card span { color: #7250df; font-size: .75rem; font-weight: 700; }
+.api-card h3 { margin: 10px 0; font-size: 1.1rem; }
+.api-card p { font-size: .875rem; color: #5f6478; line-height: 1.6; }
+.api-reference [hidden] { display: none !important; }
+.api-reference .api-card { display: flex; flex-direction: column; }
+.api-card h3 a { color: inherit; text-decoration: none; }
+.api-card-actions { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 16px; font-size: .85rem; font-weight: 600; }
+.api-reference .api-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin: 24px 0 10px; }
+.api-reference .api-primary { display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; color: #fff; background: #7354f6; border-radius: 10px; text-decoration: none; font-weight: 600; }
+.api-reference .api-caption { color: #5f6478; font-size: .85rem; }
+.api-filters { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 32px; padding: 24px; border: 1px solid #e2ddec; border-radius: 16px; background: #fff; }
+.api-filters label { display: block; font-weight: 600; font-size: .875rem; margin-bottom: 8px; }
+.api-filters input, .api-filters select { box-sizing: border-box; width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #ccc5df; border-radius: 8px; background: #fff; color: #211d30; font: inherit; font-size: 1rem; }
+.api-reference a:focus-visible, .api-filters input:focus-visible, .api-filters select:focus-visible { outline: 3px solid #9e87ff; outline-offset: 3px; }
+.api-reference h2 small { color: #686176; font-weight: 400; font-size: .8rem; margin-left: 10px; }
+@media (max-width: 580px) { .api-filters { grid-template-columns: 1fr; padding: 16px; } }
+.api-reference pre { overflow-x: auto; max-width: 100%; padding: 20px; background: #211d30; color: #f1edf9; border-radius: 12px; white-space: pre; }
+.api-reference pre code { color: inherit; background: none; font-size: .85rem; }
+.api-endpoint { padding: 18px; background: #eee9ff; border-radius: 12px; overflow-wrap: anywhere; }
+.api-endpoint strong { color: #6242c4; margin-right: 12px; }
+.api-table { overflow-x: auto; }
+.api-table table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.api-table th, .api-table td { text-align: left; vertical-align: top; padding: 14px; border-bottom: 1px solid #e2ddec; }
+.api-table td { min-width: 100px; }
+.api-table td:last-child { min-width: 260px; }
+.api-reference details { margin: 12px 0; padding: 18px; border: 1px solid #e2ddec; border-radius: 12px; background: #fff; }
+.api-reference summary { cursor: pointer; font-weight: 600; }
+@media (max-width: 900px) { .api-directory { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 580px) { .api-directory { grid-template-columns: minmax(0,1fr); } .api-reference { margin-top: 24px; } }

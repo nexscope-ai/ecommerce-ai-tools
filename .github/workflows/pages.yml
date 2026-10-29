@@ -25,6 +25,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Set up Node for the API reference build
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test the API documentation generator
+        run: node --test scripts/test_build_api_docs.mjs
+      - name: Clean and regenerate public REST API documentation
+        run: node scripts/build_api_docs.mjs
       - name: Test the product page generator
         run: python -m unittest scripts.test_generate_product_showcase_pages scripts.test_attribute_outbound_links scripts.test_finalize_learning_site
       - name: Test product showcase Markdown rendering
@@ -43,7 +51,7 @@ jobs:
           sudo chown -R "$(id -u):$(id -g)" _site
           python scripts/attribute_outbound_links.py _site
       - name: Validate learning architecture and generate canonical sitemap
-        run: python scripts/finalize_learning_site.py _site
+        run: python scripts/finalize_learning_site.py _site --api-snapshot scripts/data/api-docs.public.json
       - name: Upload the Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
