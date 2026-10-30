@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.generate_product_showcase_pages import BuildError, GENERATED_MARKER, generate, render_product_page
+from scripts.generate_product_showcase_pages import BuildError, GENERATED_MARKER, generate, render_markdown, render_product_page
 
 
 PUBLIC_UUID = "b05186f4-94f9-43d0-9fc7-931404589234"
@@ -535,6 +535,47 @@ class GenerateProductShowcasePagesTest(unittest.TestCase):
                 (source / "_data" / "product_showcase_pages.json").read_text(encoding="utf-8")
             )
             self.assertEqual([], manifest)
+
+    def test_renders_product_specifications_as_a_table_and_keeps_following_content(self):
+        product = self.product()
+        product["productDetails"] = (
+            "## Specifications\n\nRetailer-listed information:\n"
+            "| Feature | Value |\n|---|---:|\n"
+            "| Battery | **24V 20Ah** |\n| Weight | 114 lb |\n\n"
+            "## Transport\n\nPlan assisted loading."
+        )
+        html = render_product_page(
+            PRODUCT_TEMPLATE.read_text(encoding="utf-8"), product,
+            f"https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/product/{PUBLIC_UUID}/",
+            "https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/",
+        )
+        self.assertIn('<div class="product-table-wrap"', html)
+        self.assertIn('<th scope="col" style="text-align:left">Feature</th>', html)
+        self.assertIn('<td style="text-align:right"><strong>24V 20Ah</strong></td>', html)
+        self.assertIn('<td style="text-align:right">114 lb</td>', html)
+        self.assertNotIn("|---|---:|", html)
+        self.assertIn('<h3 id="product-detail-section-2">Transport</h3>', html)
+        self.assertIn("Plan assisted loading.", html)
+
+    def test_table_cells_keep_escaped_pipes_and_escape_unsafe_content(self):
+        html = render_markdown(
+            "Feature | Value\n--- | ---\n"
+            r"Input \| output | <script>alert(1)</script>" "\n"
+            "Link | [Unsafe](javascript:alert(1))"
+        )
+        self.assertIn('>Input | output</td>', html)
+        self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;', html)
+        self.assertNotIn('<script>', html)
+        self.assertNotIn('href="javascript:', html)
+        self.assertNotIn("<table>", render_markdown("Name | Value\nnot a delimiter"))
+
+    def test_product_price_link_renders_nested_emphasis_and_escapes_html(self):
+        html = render_markdown(
+            '[Retailer price **USD 849.00** <img src=x>](https://shop.example.com/product)'
+        )
+        self.assertIn('Retailer price <strong>USD 849.00</strong> &lt;img src=x&gt;</a>', html)
+        self.assertNotIn('**USD 849.00**', html)
+        self.assertNotIn('<img', html)
 
     def test_escapes_user_content_in_html_and_json_ld(self):
         with tempfile.TemporaryDirectory() as directory:

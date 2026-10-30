@@ -215,7 +215,7 @@ def render_inline(source: str) -> str:
         if match.group(2) is not None and safe_url(match.group(3)):
             output.append(
                 f'<a href="{escape(match.group(3), quote=True)}" '
-                f'rel="nofollow noopener noreferrer">{escape(match.group(2))}</a>'
+                f'rel="nofollow noopener noreferrer">{render_inline(match.group(2))}</a>'
             )
         elif match.group(4) is not None or match.group(5) is not None:
             output.append(f"<strong>{escape(match.group(4) or match.group(5))}</strong>")
@@ -246,6 +246,32 @@ def product_detail_headings(value: object) -> list[str]:
             label = limited_text(plain_markdown(match.group(1)), 90)
             headings.append(label or f"Section {len(headings) + 1}")
     return headings
+
+
+def markdown_table_cells(line: str) -> list[str]:
+    source = line.strip()
+    if source.startswith("|"):
+        source = source[1:]
+    if source.endswith("|") and not source.endswith(r"\|"):
+        source = source[:-1]
+    return [cell.strip().replace(r"\|", "|") for cell in re.split(r"(?<!\\)\|", source)]
+
+
+def markdown_table_header(lines: list[str], index: int) -> tuple[list[str], list[str]] | None:
+    if index + 1 >= len(lines) or "|" not in lines[index]:
+        return None
+    headers = markdown_table_cells(lines[index])
+    separators = markdown_table_cells(lines[index + 1])
+    if len(headers) != len(separators) or not all(
+        re.fullmatch(r":?-{3,}:?", cell) for cell in separators
+    ):
+        return None
+    alignments = [
+        "center" if cell.startswith(":") and cell.endswith(":")
+        else "right" if cell.endswith(":") else "left"
+        for cell in separators
+    ]
+    return headers, alignments
 
 
 def render_markdown(value: object) -> str:
@@ -301,9 +327,32 @@ def render_markdown(value: object) -> str:
                 index += 1
             output.append(f"<blockquote><p>{render_inline(' '.join(quote))}</p></blockquote>")
             continue
+        table_header = markdown_table_header(lines, index)
+        if table_header:
+            headers, alignments = table_header
+            head = "".join(
+                f'<th scope="col" style="text-align:{alignment}">{render_inline(cell)}</th>'
+                for cell, alignment in zip(headers, alignments)
+            )
+            rows: list[str] = []
+            index += 2
+            while index < len(lines) and lines[index].strip() and "|" in lines[index]:
+                cells = markdown_table_cells(lines[index])
+                cells = (cells + [""] * len(headers))[:len(headers)]
+                rows.append("<tr>" + "".join(
+                    f'<td style="text-align:{alignment}">{render_inline(cell)}</td>'
+                    for cell, alignment in zip(cells, alignments)
+                ) + "</tr>")
+                index += 1
+            output.append(
+                '<div class="product-table-wrap" role="region" '
+                'aria-label="Product details table" tabindex="0"><table>'
+                f"<thead><tr>{head}</tr></thead><tbody>{''.join(rows)}</tbody></table></div>"
+            )
+            continue
         paragraph = [line.strip()]
         index += 1
-        while index < len(lines) and lines[index].strip() and not re.match(
+        while index < len(lines) and lines[index].strip() and not markdown_table_header(lines, index) and not re.match(
             r"^(?:#{1,3}\s+|```|>\s?|[-*]\s+|\d+\.\s+).*$",
             lines[index],
         ):
