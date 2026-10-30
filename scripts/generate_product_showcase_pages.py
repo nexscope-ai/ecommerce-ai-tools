@@ -1122,6 +1122,7 @@ def generate(
                 "publicUuid": public_uuid,
                 "path": public_path,
                 "title": product.get("productName") or "Product",
+                "description": seo_metadata(product)[1],
                 "lastModified": iso_timestamp(product.get("publishedAt")),
                 "image": valid_images[0] if valid_images else None,
             }
