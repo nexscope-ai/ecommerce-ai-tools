@@ -7,6 +7,7 @@
       <li><a href="{{ '/product-showcase/' | relative_url }}" data-track-tool="product-gallery"{% if page.product_showcase_page %} aria-current="{% if page.url == '/product-showcase/' %}page{% else %}location{% endif %}"{% endif %}>Product Gallery</a></li>
       <li><a href="https://learn.nexscope.ai/tools/">Tools</a></li>
       <li><a href="{{ '/' | relative_url }}"{% unless page.product_showcase_page %} aria-current="{% if page.url == '/' %}page{% else %}location{% endif %}"{% endunless %}>Guides &amp; resources</a></li>
+      <li><a href="https://learn.nexscope.ai/pricing/">Pricing</a></li>
       <li><a class="nav-cta" {% if page.url == '/product-showcase/submit/' %}data-submission-form-jump="navigation"{% else %}data-showcase-submit-cta="navigation"{% endif %} href="{% if page.url == '/product-showcase/submit/' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">List a product free →</a></li>
     </ul>
   </nav>
