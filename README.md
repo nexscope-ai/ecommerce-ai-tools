@@ -2,7 +2,7 @@
 
 **Ecommerce Data APIs for builders. Free product listings for sellers.**
 
-[![Data APIs](https://img.shields.io/badge/Explore-Data%20APIs-7353C6)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](https://img.shields.io/badge/Product%20Gallery-100%25%20Free-397B60)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](https://img.shields.io/badge/Community-Discussions-D97706)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](https://img.shields.io/badge/License-Apache%202.0-0F766E)](LICENSE)
+[![Data APIs](assets/badges/data-apis.svg)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](assets/badges/product-gallery.svg)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](assets/badges/discussions.svg)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](assets/badges/license.svg)](LICENSE)
 
 Find the data for your next workflow, or give your product a free public page built for search and AI discovery. Start with the two features on [Nexscope Learn](https://learn.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_home).
 
