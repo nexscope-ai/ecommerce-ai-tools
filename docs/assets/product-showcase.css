@@ -31,12 +31,13 @@ html { scroll-behavior: smooth; }
 .showcase-featured-heading > p { max-width: 390px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .showcase-featured-scoring { margin-bottom: 22px; padding: 14px 0 2px; border-top: 1px solid var(--line); }
 .showcase-featured-scoring > p { margin: 0 0 12px; color: var(--muted); font-size: 12px; font-weight: 600; }
-.showcase-featured-scoring dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0 0 10px; }
+.showcase-featured-scoring dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 0 0 10px; }
 .showcase-featured-scoring dl > div { display: flex; min-width: 0; align-items: baseline; justify-content: space-between; gap: 8px; padding: 2px 16px; border-left: 1px solid var(--line); }
 .showcase-featured-scoring dl > div:first-child { padding-left: 0; border-left: 0; }
 .showcase-featured-scoring dt { color: var(--muted); font-size: 12px; font-weight: 500; line-height: 1.45; }
-.showcase-featured-scoring dd { flex: 0 0 auto; margin: 0; color: var(--ink); font-size: 12px; font-weight: 700; line-height: 1.45; }
+.showcase-featured-scoring dd { flex: 0 0 auto; margin: 0; color: var(--ink); font-size: 12px; font-weight: 700; line-height: 1.45; white-space: nowrap; }
 .showcase-featured-scoring > small { display: block; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.showcase-featured-scoring > small + small { margin-top: 5px; }
 .showcase-featured-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .showcase-featured-list.is-stacked { position: relative; display: block; width: min(100%, 960px); height: clamp(300px, 50vw, 470px); margin-inline: auto; isolation: isolate; }
 .showcase-featured-card { position: relative; display: block; min-width: 0; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid #e6e2ef; border-radius: 18px; background: #fff; color: #fff !important; text-decoration: none; box-shadow: 0 18px 40px rgb(31 23 59 / 15%); transition: transform .25s ease, box-shadow .25s ease; }
@@ -418,6 +419,7 @@ html { scroll-behavior: smooth; }
 .management-review-insights { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 22px 32px; padding: clamp(28px, 3vw, 36px); border: 1px solid #ddd8e8; border-radius: 20px; background: linear-gradient(135deg, #faf9ff 0%, #f1ecff 100%); box-shadow: 0 16px 48px rgb(43 34 72 / 6%); }
 .management-review-insights[hidden] { display: none; }
 .management-review-insights > header { grid-column: 1; min-width: 0; max-width: 760px; border: 0; background: transparent; }
+.management-review-insights > .showcase-featured-scoring { grid-column: 1 / -1; min-width: 0; margin: 0; }
 .management-review-source { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; margin-bottom: 16px; }
 .management-review-source img { display: block; width: 116px; height: auto; }
 .management-review-source span { padding: 5px 9px; border: 1px solid #d8cff7; border-radius: 999px; background: #f4f1ff; color: #5944cf; font-size: 8px; font-weight: 900; letter-spacing: .1em; line-height: 1.3; text-transform: uppercase; }
@@ -544,8 +546,8 @@ html { scroll-behavior: smooth; }
   .showcase-discovery-grid { grid-template-columns: 1fr; }
   .showcase-featured-heading { align-items: start; flex-direction: column; gap: 12px; }
   .showcase-featured-heading > p { max-width: 680px; }
-  .showcase-featured-scoring dl { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
-  .showcase-featured-scoring dl > div:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .showcase-featured-scoring dl { grid-template-columns: 1fr; row-gap: 10px; }
+  .showcase-featured-scoring dl > div { padding: 0; border-left: 0; }
   .showcase-featured-cta { align-items: start; flex-direction: column; gap: 16px; }
   .showcase-featured-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .showcase-discovery-grid article { min-height: 0; }
@@ -613,7 +615,7 @@ html { scroll-behavior: smooth; }
   .showcase-featured { margin-bottom: 52px; padding-top: 44px; }
   .showcase-featured-heading { margin-bottom: 20px; }
   .showcase-featured-scoring dl { row-gap: 10px; }
-  .showcase-featured-scoring dl > div { flex-direction: column; align-items: flex-start; gap: 2px; padding-right: 10px; }
+  .showcase-featured-scoring dl > div { flex-direction: row; align-items: baseline; gap: 12px; padding-right: 0; }
   .showcase-featured-list { grid-template-columns: 1fr; gap: 16px; }
   .showcase-featured-copy { padding: 68px 20px 20px; }
   .showcase-featured-copy strong { font-size: 18px; }

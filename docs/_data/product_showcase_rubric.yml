@@ -1,0 +1,13 @@
+version: "0.8.0"
+effective_from: "2026-10-30"
+total: 100
+dimensions:
+  - id: seo
+    label: Submitted page SEO
+    points: 45
+  - id: geo
+    label: Submitted page GEO
+    points: 45
+  - id: media
+    label: Submitted images and video
+    points: 10

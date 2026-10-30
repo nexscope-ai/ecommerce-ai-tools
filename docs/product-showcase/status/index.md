@@ -47,10 +47,11 @@ private_page: true
         <p class="management-review-privacy">Share only public product information. Never post this private management link or unpublished review details.</p>
       </header>
       <div class="management-score-badge" data-review-score hidden>
-        <span>Product score</span>
+        <span>Product page score</span>
         <strong data-review-score-value>—</strong>
         <small>/ 100</small>
       </div>
+      {% include product-showcase-scoring.html %}
       <div class="management-suggestion-toolbar" data-review-suggestion-toolbar hidden>
         <span>SEO / GEO suggestions</span>
         <button type="button" data-copy-review-suggestion>Copy Markdown</button>
@@ -89,7 +90,7 @@ private_page: true
               <small class="field-error" data-error-for="imageUploadKeys" role="alert" hidden></small>
             </div>
             <div class="media-field video-field" data-video-field>
-              <div class="media-field-header"><div><strong>Product video</strong><span>Optional: keep, replace (MP4/WebM up to 100 MB), or use a link. A good video may boost your media score and reach. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn" data-utm-campaign="product_showcase_management" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
+              <div class="media-field-header"><div><strong>Product video</strong><span>Optional: keep, replace (MP4/WebM up to 100 MB), or use a link. No points are deducted for not submitting a video. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn" data-utm-campaign="product_showcase_management" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
               <input type="hidden" name="videoUrl">
               <div class="media-mode-switch" role="tablist" aria-label="Video source">
                 <button type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>

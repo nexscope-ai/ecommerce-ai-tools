@@ -8,16 +8,7 @@
     </div>
     <p>Up to three of the highest-scoring approved, published products are featured on Nexscope's Gallery and submission pages for added visibility. Rankings may change; traffic and sales are not guaranteed.</p>
   </header>
-  <div class="showcase-featured-scoring" aria-label="Nexscope editorial score criteria">
-    <p>Nexscope's 100-point editorial review includes:</p>
-    <dl>
-      <div><dt>Submitted page SEO</dt><dd>30 points</dd></div>
-      <div><dt>Submitted page GEO</dt><dd>30 points</dd></div>
-      <div><dt>Product description</dt><dd>20 points</dd></div>
-      <div><dt>Images and video</dt><dd>20 points</dd></div>
-    </dl>
-    <small>Scores assess the submitted product detail page and materials, not customer ratings, sales or product performance.</small>
-  </div>
+  {% include product-showcase-scoring.html %}
   <div class="showcase-featured-list{% if published_products.size >= 3 %} is-stacked{% endif %}" aria-label="Highest-scoring published products">
     {% for product in published_products limit:3 %}
     <a class="showcase-featured-card" href="{{ product.path | relative_url }}" data-track-product="gallery" data-product-id="{{ product.publicUuid | escape }}" data-product-placement="featured-{{ include.context }}">

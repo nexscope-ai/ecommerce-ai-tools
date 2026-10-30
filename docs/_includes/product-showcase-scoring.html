@@ -1,0 +1,11 @@
+{% assign review_rubric = site.data.product_showcase_rubric %}
+<div class="showcase-featured-scoring" aria-label="Nexscope product page scoring criteria">
+  <p>How new reviews are scored: {{ review_rubric.total }} points</p>
+  <dl>
+    {% for dimension in review_rubric.dimensions %}
+    <div><dt>{{ dimension.label | escape }}</dt><dd>{{ dimension.points }} points</dd></div>
+    {% endfor %}
+  </dl>
+  <small>Scores assess the submitted product detail page and media. Submitted descriptions are fact-checked, not separately scored. Video is optional; an image-only submission can earn full media points.</small>
+  <small>These weights apply to reviews from {{ review_rubric.effective_from | date: "%B %-d, %Y" }}. Earlier reviews may use different weights. Scores do not measure customer satisfaction, sales or product performance.</small>
+</div>

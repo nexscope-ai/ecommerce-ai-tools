@@ -1184,7 +1184,7 @@ Check the lid seal before carrying it in a bag.`;
             : score >= 40
               ? 'needs-work'
               : 'critical';
-        reviewScore.setAttribute('aria-label', `Product score ${Math.round(score)} out of 100`);
+        reviewScore.setAttribute('aria-label', `Product page score ${Math.round(score)} out of 100`);
       } else {
         reviewScoreValue.textContent = '—';
         reviewScore.removeAttribute('data-tone');
