@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Free Product Page Review & Product Gallery | Nexscope
-description: Get free professional product-page feedback and, if approved, a public Gallery page linked to your store. Submit a product URL or Amazon ASIN.
+title: Free Ecommerce Product Listing & Page Review | Nexscope
+description: Submit your ecommerce product for free editorial review. Approved products receive a free public Gallery page with product facts, images and a link to your store.
 keywords:
+  - free ecommerce product listing
   - free ecommerce product page review
   - professional product page feedback for sellers
   - product listing improvement advice
@@ -46,14 +47,14 @@ faq:
 <section class="showcase-hero" data-showcase-view>
   <div class="showcase-hero-copy">
     <span class="eyebrow">Nexscope Product Gallery</span>
-    <p class="showcase-status">FREE PRODUCT-PAGE REVIEW &amp; APPROVED LISTING</p>
-    <h1>A second look.<br><span>A new place to be seen.</span></h1>
-    <p>Submit one product for professional feedback on its title, description and visuals. Read what works and any meaningful gaps on your private page after review. If approved and published, your product also gets a free public Gallery page linking to your store—an additional route for shoppers to discover it.</p>
+    <p class="showcase-status">SUBMISSION, REVIEW &amp; APPROVED DISPLAY — COMPLETELY FREE</p>
+    <h1>List your product free.<br><span>Make its facts easier to find.</span></h1>
+    <p>For Shopify, WooCommerce and other ecommerce sellers, including Amazon listings: submit one product for free editorial feedback. If approved and published, it gets a public Gallery page with clear product facts, images and a link to your original listing. This gives search and AI systems another source to understand your product and can support GEO.</p>
     <div class="showcase-actions">
-      <a class="showcase-primary" data-showcase-submit-cta="hero" href="{{ '/product-showcase/submit/' | relative_url }}">Request free product-page feedback ↗</a>
-      <a class="showcase-quiet-link" href="#showcase-preview">See what you get <span aria-hidden="true">↓</span></a>
+      <a class="showcase-primary" data-showcase-submit-cta="hero" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product free ↗</a>
+      <a class="showcase-quiet-link" href="#published-example-hub">See a real example <span aria-hidden="true">↓</span></a>
     </div>
-    <p class="seller-reassurance">No store connection or payment. Save your private review link. Publication, indexing, traffic and sales are not guaranteed.</p>
+    <p class="seller-reassurance">No store connection or payment. Submission, review, approved listing and display are completely free. Save your private review link. Publication, indexing, AI recommendations, traffic and sales are not guaranteed.</p>
   </div>
   <figure class="showcase-hero-art">
     <img src="{{ '/assets/product-showcase-hero.webp' | relative_url }}" width="1200" height="800" alt="Illustration of ecommerce product cards and visual details">
@@ -63,7 +64,7 @@ faq:
 
 <section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
   <header class="showcase-section-heading">
-    <div><span class="eyebrow">What sellers receive</span><h2 id="showcase-discovery-title">Clear feedback. An additional place to show your product.</h2></div>
+    <div><span class="eyebrow">What sellers receive</span><h2 id="showcase-discovery-title">A clearer product page for search and AI discovery.</h2></div>
     <p><strong>Every reviewed submission receives written feedback on its product page.</strong> We call out useful strengths and recommend changes only when the submitted material supports them. If approved and published, the product also receives a free public Gallery page with clear facts, media and a link back to its original listing—an additional source that can support AI discovery and GEO.</p>
   </header>
   <div class="showcase-discovery-grid">
@@ -151,7 +152,7 @@ faq:
       <li><span>02</span><div><strong>Add the useful detail</strong><small>Description, images and optional video</small></div></li>
       <li><span>03</span><div><strong>Read your feedback</strong><small>Specific feedback after review; public display if approved and published</small></div></li>
     </ol>
-    <a class="showcase-primary" data-showcase-submit-cta="footer" href="{{ '/product-showcase/submit/' | relative_url }}">Request free product-page feedback ↗</a>
+    <a class="showcase-primary" data-showcase-submit-cta="footer" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product free ↗</a>
   </div>
   <figure class="showcase-path-art">
     <img src="{{ '/assets/product-showcase-submission.webp' | relative_url }}" width="1200" height="800" alt="Product links, images and video moving into a curated ecommerce showcase">

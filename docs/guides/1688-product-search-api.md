@@ -2,13 +2,13 @@
 learning_topic: sourcing
 content_kind: guide
 layout: default
-title: "1688 Product Search API: Filters, MOQ & Supplier Leads"
-description: "Build a 1688 product shortlist with Chinese keywords, price and MOQ filters, sorting and pagination. Inspect Nexscope request examples and supplier-data limits."
+title: "How to Filter 1688 Products by MOQ and Price | Nexscope"
+description: "Shortlist 1688 products by minimum order quantity, price and specification. Follow a small search workflow, check SKU tiers and troubleshoot empty results."
 permalink: /guides/1688-product-search-api/
 date_published: 2026-10-26
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-10-30
+last_modified_at: 2026-10-30
+last_reviewed: 2026-10-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -29,13 +29,24 @@ next_step:
   url: https://www.nexscope.ai/api-docs/1688-product-search?view=playground&co-from=learn
 ---
 
-# 1688 product search API: filter products before comparing suppliers
+# How to filter 1688 products by MOQ and price
 
-The **1688 product search API** is useful when you know a product specification and need candidates you can compare. Start with a Simplified Chinese keyword, then narrow by price, minimum order quantity and relevant seller signals. Use the [API capability map]({{ '/api-capabilities/' | relative_url }}) for broader discovery, or this tutorial for a reproducible keyword-to-shortlist request.
+**Start with the product specification, then use price and minimum order quantity (MOQ) to narrow the offers.** A low listing price is only useful when it applies to the variant and order size you actually need. This guide helps you build a small comparison list with Nexscope, then check the shortlisted offers before contacting suppliers.
+
+> **Quick answer:** Write a Simplified Chinese product keyword, set your price band and maximum acceptable MOQ, and request one small page. Compare specification before price. Keep unknown quantities visible, then open product details to check the intended SKU and pricing tier. A search match is a sourcing lead, not a verified supplier.
+
+## Start with a sourcing brief
+
+For the example below, the brief is a yoga mat with an illustrative listing-price band of 10–50 and a maximum reported MOQ of 50. Confirm currency in the returned data before comparing prices. These are example constraints, not observed offers or a purchasing recommendation.
+
+1. Write the required material, dimensions and pack size before searching.
+2. Search one page using the Chinese keyword and the two purchasing filters.
+3. Remove accessories and variants that fail the specification, even if they are cheaper.
+4. Keep a few eligible offers for a detail check and supplier questions.
+
+**What you will have:** a shortlist with a listing link, observed price, MOQ, unresolved questions and an explicit include/exclude decision. Keep the collection date beside it.
 
 {% include api-guide-entry.html %}
-
-> **Quick answer:** Nexscope's 1688 Product Search API supports Simplified Chinese keywords, price and minimum-quantity filters, seller classifications, sorting and pagination. Keep the statistical period with every sales metric. Search produces candidate offers; query product details for exact variants and tiers, then verify commercial terms directly before sourcing.
 
 ## Which 1688 API matches your starting point?
 
@@ -69,7 +80,7 @@ This **illustrative request body** searches for yoga mats and requests ten candi
 }
 ```
 
-The documented REST operation is `POST https://api.nexscope.ai/dl/productSearch`, with bearer authentication and JSON. MCP users should inspect `nexscope_1688_product_search` and its tool schema. This article uses a keyword-only query; do not add `goodsUrl` to that same request, because those inputs are mutually exclusive in the documented contract.
+The documented REST operation is `POST https://api.nexscope.ai/dl/productSearch`, with bearer authentication and JSON. This article uses a keyword-only query; do not add `goodsUrl` to that same request, because those inputs are mutually exclusive in the documented contract.
 
 Start with a small allowed page and only the filters that matter to your decision. If nothing matches, relax one filter at a time. That makes it possible to distinguish a restrictive price band from an irrelevant keyword or an upstream failure.
 
@@ -100,6 +111,26 @@ Screen for comparable specification before ranking by price. A thinner yoga mat,
 
 Then query [Product Detail]({{ '/guides/1688-product-detail-api/' | relative_url }}) for a bounded number of selected offers. That step can expose variants and quantity-tier conditions that a search row does not resolve. Compare the intended SKU and order size, and separate the supplier's quoted terms from the API's observed fields.
 
+## A real example: why the cheapest offer needs another check
+
+In the [October 7 portable-blender sourcing test]({{ '/api-evidence/portable-blender-amazon-1688/' | relative_url }}), image search returned ten candidates. The lowest displayed price was ¥28, but that offer had no returned MOQ. Two other offers were checked in detail and each returned a 1+ tier at ¥33.
+
+| Recorded observation | Shortlist decision | Next check |
+| --- | --- | --- |
+| Offer `957433112906`: ¥28, MOQ unknown | Leave order-size eligibility unresolved | Ask for the intended SKU's quantity and tier conditions |
+| Offer `902856167524`: ¥33, MOQ 1; detail returned five SKUs | Consider a sample candidate, subject to specification | Confirm which SKU the tier applies to and request a sample |
+
+This was an **image-search and detail test**, not a keyword-search or filter-accuracy benchmark. The recorded prices are dated observations, not current quotes. It illustrates why an unknown MOQ must not become zero and why a cheap search row does not settle a buying decision.
+
+## Why did the search return no usable products?
+
+| What you see | What to check next |
+| --- | --- |
+| A successful response with an empty product list | Check the Chinese keyword, then relax only the price band or MOQ cap and compare again |
+| Products match the words but not the required item | Refine the material, size or product type; inspect exact versus fuzzy matching |
+| A low price changes on the detail page | Check SKU, quantity tier, currency and observation time before comparing |
+| An authentication, parameter or provider error | Fix that error before treating it as evidence of no market supply |
+
 ## How should pagination and failures be handled?
 
 Increment `pageIndex` from 1 while keeping the original keyword, filters, period and sort. Use `pageSize` from 10 to 100; the documented default is 20. Save page numbers and deduplicate observed candidates by the exact offer identifier. A changing source dataset may shift between requests, so do not describe the collected pages as an atomic marketplace snapshot.
@@ -108,7 +139,7 @@ Check HTTP status and the business status and payload documented for the selecte
 
 ## Evidence, access and related guides
 
-Reviewed **October 26, 2026** against the [published Product Search contract](https://www.nexscope.ai/api-docs/1688-product-search?view=api&co-from=learn). This vendor-authored tutorial documents inputs and interpretation; no paid search, accuracy comparison, supplier audit or purchasing outcome was measured for it.
+Reviewed **October 30, 2026** against the [published Product Search contract](https://www.nexscope.ai/api-docs/1688-product-search?view=api&co-from=learn). This vendor-authored tutorial documents inputs and interpretation; no paid search, accuracy comparison, supplier audit or purchasing outcome was measured for it.
 
 Check [current pricing and access](https://www.nexscope.ai/pricing?co-from=learn) before running the sequence. Budget for each search page and each subsequent detail lookup. Preserve actual charges separately from upstream cost fields and avoid assuming that a signup credit balance grants every endpoint entitlement.
 

@@ -3,13 +3,13 @@ layout: default
 learning_topic: agents
 related_topics: [visibility, research]
 content_kind: guide
-title: "Google Trends API: Official Access, Examples & Limits"
-description: "Compare Google's Trends API alpha with Nexscope access. Inspect keyword and trending-topic requests, interpret interest scores and plan a repeatable data workflow."
+title: "How to Check Product Seasonality with Google Trends | Nexscope"
+description: "Check product seasonality with a fixed keyword, country and date window. Interpret Google Trends scores, compare periods and avoid confusing interest with sales."
 permalink: /guides/google-trends-api/
 date_published: 2026-10-28
-date_modified: 2026-10-28
-last_modified_at: 2026-10-28
-last_reviewed: 2026-10-28
+date_modified: 2026-10-30
+last_modified_at: 2026-10-30
+last_reviewed: 2026-10-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -21,8 +21,8 @@ next_step:
   title: Inspect the Google Trends keyword request
   description: Choose a keyword, region and date window. Review the current access and credit cost, then inspect the returned series before using it in a report.
   label: Open the Google Trends API tester
-  url: "https://www.nexscope.ai/api-docs/google-trends-by-keywords?view=api#online-test"
-keywords: [google trends api, google trends api python, google trends data api, search interest api]
+  url: "https://www.nexscope.ai/api-docs/google-trends-by-keywords?view=playground&co-from=learn"
+keywords: [product seasonality, google trends for product research, compare seasonal search interest, Nexscope Google Trends workflow]
 faq:
   - question: Does Google have an official Google Trends API?
     answer: "Yes. Google's page checked October 28, 2026 describes a limited-access API alpha and accepts applications. A third-party Trends endpoint uses its own access, billing and response contract; it is not the Google alpha."
@@ -32,18 +32,27 @@ faq:
     answer: "Only after verifying that the series share a comparable scale, region, time window and collection method. Independently normalized peaks can both equal 100 while representing very different search volumes."
 ---
 
-Use the [Nexscope ecommerce Data API directory](/data/) to find related search-demand and marketplace-research APIs.
+# How to check product seasonality with Google Trends
 
+**Use Google Trends to investigate when interest changes, then verify whether that interest relates to your product.** Fix the keyword, country and dates before reading a chart. A peak is a reason to investigate timing, not proof that shoppers will buy or that inventory should increase.
 
-# Google Trends API: access, examples and data limits
+> **Quick answer:** Start with one product term, a target country and a past annual window. Inspect the dated interest series for recurring patterns and gaps. Compare equivalent periods under a compatible scale. Add keyword-volume and marketplace evidence separately before deciding what to test in your assortment or content plan.
 
-**Use a Google Trends API to investigate seasonality and build search-interest reports.** This guide compares Google's official alpha with Nexscope's keyword and trending-topic endpoints, shows a request example and explains how to keep relative interest separate from search volume.
+## Start with one product question
+
+For example: “When does interest in portable blenders rise in the US?” The request example below uses `portable blender`, `US` and a completed annual window. It shows how to frame the question; it has not been run for this article.
+
+1. Pick a product-specific term instead of an unrelated trending news query.
+2. Keep country and dates fixed, and save the response and collection time.
+3. Check whether a rise recurs in comparable periods or is a one-off spike.
+4. Record missing points and normalization rules before comparing another term.
+5. Use the result to plan a small test, then check marketplace relevance.
+
+**Your output:** a dated seasonality note with the observed pattern, its limits and one next action. Keep interest scores, search-volume estimates and units sold in separate fields.
 
 {% include api-guide-entry.html %}
 
-> **Quick answer:** Use a keyword-interest request when you already know the term to investigate. Use a trending-topic request to discover recent queries. Keep the provider, country, dates and scale beside each result. Use a separate keyword-metrics source when the question is monthly search volume.
-
-*Documentation reviewed October 28, 2026 by Nexscope Team. No paid Trends request was executed for this article. Input examples are integration examples, not observed trend results.*
+*Documentation reviewed October 30, 2026 by Nexscope Team. No paid Trends request was executed for this article. Input examples are integration examples, not observed trend results.*
 
 ## Is there an official Google Trends API?
 
@@ -62,9 +71,9 @@ The distinction matters in a dashboard: labeling every column “Google Trends v
 
 ## Which Nexscope Trends endpoint matches your task?
 
-The [keyword endpoint](https://www.nexscope.ai/api-docs/google-trends-by-keywords?view=api) accepts `keyword`, `region`, `dayRangeStart` and `dayRangeEnd`. Its documented series includes `trendInfoForKeys`, keyword labels and dated `trendValues`.
+The [keyword endpoint](https://www.nexscope.ai/api-docs/google-trends-by-keywords?view=api&co-from=learn) accepts `keyword`, `region`, `dayRangeStart` and `dayRangeEnd`. Its documented series includes `trendInfoForKeys`, keyword labels and dated `trendValues`.
 
-The [time-based endpoint](https://www.nexscope.ai/api-docs/google-trends-by-time?view=api) accepts `region` and `days`. It describes recent query records rather than the same keyword-history series. Inspect the definitions of any returned volume or growth field before mixing it with another dataset.
+The [time-based endpoint](https://www.nexscope.ai/api-docs/google-trends-by-time?view=api&co-from=learn) accepts `region` and `days`. It describes recent query records rather than the same keyword-history series. Inspect the definitions of any returned volume or growth field before mixing it with another dataset.
 
 For example, a team considering a seasonal product starts with the product term and a fixed historical window. A team scanning recent public interest starts with the time-based route, then checks whether the discovered queries have any relevant commercial intent. A breaking news query can be popular and still have no useful connection to the product.
 
@@ -122,6 +131,24 @@ Retain returned values as supplied before converting types. If a field is a stri
 6. Add marketplace evidence before making an assortment or inventory decision.
 
 Use the [keyword research API workflow]({{ '/ecommerce-trends/seo-keyword-api-content-plan/' | relative_url }}) for demand estimates and the [Google SERP API guide]({{ '/guides/google-serp-api/' | relative_url }}) to inspect query intent. These are different questions, so keep the original field names and source labels in your report.
+
+## How do you compare two product terms fairly?
+
+Write down the same region, date window, aggregation interval and collection method for both terms. Then confirm how the provider scales those responses. Matching dates alone do not prove that two independently normalized series share an absolute scale.
+
+For `portable blender` and `smoothie blender`, start with a keyword request for each term only if the current contract supports that workflow. Do not add a JSON array to a string field. If shared scaling is not established, compare the timing and shape within each series; do not claim that one product has twice the demand because its index is twice as high.
+
+If the decision needs absolute demand, use a separate keyword-volume estimate and label its provider and period. Inspect actual result pages to check that each term refers to the kind of product you sell.
+
+## What if the series is empty or a point is zero?
+
+| Observation | Check before acting |
+| --- | --- |
+| Business or authentication error | Resolve the request error; it is not evidence of no demand |
+| A successful response with no usable series | Check the accepted term, region and dates; retain the absence as missing evidence |
+| A returned zero | Preserve zero as returned, but do not translate it into zero searches or zero buyers |
+| An isolated spike | Check query intent and surrounding periods before calling it seasonality |
+| Two unrelated terms both peak at 100 | Check normalization; peaks alone cannot establish equal search volume |
 
 ## What should you validate before scheduling repeat calls?
 

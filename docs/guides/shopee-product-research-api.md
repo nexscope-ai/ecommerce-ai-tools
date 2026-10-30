@@ -2,13 +2,13 @@
 learning_topic: agents
 content_kind: guide
 layout: default
-title: "Shopee Product Research API: Search, Sales & Details"
-description: "Research Shopee products with site-specific search, sales filters and product-detail requests. Follow Nexscope examples while keeping estimates and currencies separate."
+title: "How to Compare Shopee Products and Sales Metrics | Nexscope"
+description: "Compare Shopee products within one market using price, variants and separate sales metrics. Build a shortlist and avoid treating historical sales as monthly demand."
 permalink: /guides/shopee-product-research-api/
 date_published: 2026-10-26
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-10-30
+last_modified_at: 2026-10-30
+last_reviewed: 2026-10-30
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -29,13 +29,27 @@ next_step:
   url: https://www.nexscope.ai/api-docs/shopee-product-search?view=playground&co-from=learn
 ---
 
-# Shopee product research API: search, compare and inspect details
+# How to compare Shopee products without mixing sales metrics
 
-A **Shopee product research API** helps you compare products within a chosen marketplace before deciding which listings deserve closer investigation. Nexscope provides product search with research filters and a separate product-detail lookup. This guide follows a bounded search-to-detail workflow; see the [API capability map]({{ '/api-capabilities/' | relative_url }}) to compare tasks across platforms.
+**Compare products in one Shopee market, with the same function, size and bundle.** Then check price and sales fields separately. A larger historical sales count does not automatically mean stronger demand this month, and the cheapest variant may be an accessory rather than the product you need.
+
+> **Quick answer:** Choose one station and product brief, collect a small search page, and shortlist comparable listings. Keep reported 30-day units, estimated 30-day units and historical units in separate columns. Inspect the exact variant and currency before comparing price. Use product details to resolve missing specifications before making a decision.
+
+## Build a comparison you can actually use
+
+This guide uses a storage-box search in Singapore (`SG`) as an **input example**, not a live market test. Start with a brief such as a single lidded storage box of a specified capacity, then check each returned listing against that brief.
+
+| Record for each candidate | Why it matters |
+| --- | --- |
+| Station, currency, product URL and collection date | Keeps the comparison tied to its market and observation |
+| Capacity, dimensions, material and pack count | Separates similar products from accessories and bundles |
+| Variant price and the applicable SKU | Avoids comparing an accessory price with a complete item |
+| `sold`, `estimateSold`, `historicalSold` in separate columns | Preserves their different periods and estimate status |
+| Missing facts and the next verification step | Makes uncertainty visible before a buying decision |
+
+**Finish with a few comparable candidates and the questions still to resolve**, rather than a ranked list built from unrelated numbers.
 
 {% include api-guide-entry.html %}
-
-> **Quick answer:** Start Nexscope's Shopee Product Search with a supported `station`, a relevant keyword and a small page. Compare like-for-like products in local currency, keeping reported 30-day units, estimated units and historical units separate. Pass an eligible product URL to Product Detail for closer inspection; these research calls do not manage a seller account.
 
 ## Which Shopee API should you start with?
 
@@ -73,7 +87,7 @@ The current REST reference documents this operation with a Nexscope bearer API k
 POST https://api.nexscope.ai/yy/shopee/getProductInfos
 ```
 
-For MCP, inspect `nexscope_shopee_product_search` and its input schema. Keep credentials server-side and record the station, query, filters, sorting, page and observation date with the response.
+Keep credentials server-side and record the station, query, filters, sorting, page and observation date with the response.
 
 `keywordType` documents `1` for exact phrase, `2` for multi-word AND and `3` for multi-word OR. The example requires both words. If it yields too little useful evidence, change one condition at a time rather than combining a new market, keyword and price range in the same comparison.
 
@@ -110,9 +124,29 @@ Compare `price`, `minPrice` and `maxPrice` with the actual variation and pack si
 
 For a storage-box study, retain capacity, dimensions, bundle count, station, price range, reported and estimated activity, rating, rating count and unresolved questions. Missing attributes remain unknown. Do not have an AI fill missing dimensions or substitute a Google search-volume number for a Shopee sales metric.
 
+## Worked example: historical scale is not monthly demand
+
+The following numbers are **illustrative only**, not API results or actual Shopee listings. Assume both candidates already match the same storage-box specification, market, currency and pack count.
+
+| Candidate | Reported 30-day units (`sold`) | Estimated 30-day units (`estimateSold`) | Historical units (`historicalSold`) |
+| --- | ---: | ---: | ---: |
+| A | 40 | 55 | 2,000 |
+| B | 80 | 90 | 500 |
+
+Candidate A has the larger historical total; B has the larger reported 30-day value. For a recent-activity question, comparing A's 2,000 historical units with B's 80 monthly units would be invalid. Keep estimates in their own column, and use the same metric for both rows. Neither row establishes future sales or the private sales performance of a merchant account.
+
+## What if the comparison looks wrong?
+
+| Problem | Next action |
+| --- | --- |
+| Prices appear unusually far apart | Check station, currency, variant and bundle before interpreting demand |
+| The response is valid but the list is empty | Keep the station fixed and relax one keyword or filter at a time |
+| A detail request rejects the selected item | Use the documented supported HTTPS product URL rather than a bare `pid` or short link |
+| A sales or specification field is missing | Mark it unknown; do not invent a value or rank it as zero |
+
 ## Evidence, access and the next research step
 
-Reviewed **October 26, 2026** against the public [search](https://www.nexscope.ai/api-docs/shopee-product-search?view=api&co-from=learn) and [detail](https://www.nexscope.ai/api-docs/shopee-product-detail?view=api&co-from=learn) contracts. This vendor-authored guide contains request templates, not fresh API results, an independent accuracy benchmark or customer testimonials. No paid search or detail call was executed for it.
+Reviewed **October 30, 2026** against the public [search](https://www.nexscope.ai/api-docs/shopee-product-search?view=api&co-from=learn) and [detail](https://www.nexscope.ai/api-docs/shopee-product-detail?view=api&co-from=learn) contracts. This vendor-authored guide contains request templates, not fresh API results, an independent accuracy benchmark or customer testimonials. No paid search or detail call was executed for it.
 
 Inspect [current pricing and access](https://www.nexscope.ai/pricing?co-from=learn), and budget search pages and selected detail requests separately. Check HTTP and business errors before retrying, and keep actual charged credits with the pilot record.
 
