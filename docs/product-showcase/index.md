@@ -12,7 +12,7 @@ keywords:
   - GEO for product pages
   - product visibility in AI search
 permalink: /product-showcase/
-last_modified_at: 2026-10-23
+last_modified_at: 2026-10-30
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -74,6 +74,8 @@ faq:
 
 </section>
 
+
+{% include product-showcase-published-example.html context="hub" %}
 
 {% include product-showcase-featured.html context="hub" %}
 

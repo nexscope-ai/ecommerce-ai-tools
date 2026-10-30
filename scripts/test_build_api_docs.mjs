@@ -7,9 +7,61 @@ import {project, validate, build, buildRoot, buildPages, officialApiUrl} from '.
 import {runInNewContext} from 'node:vm';
 import {applyUsage, validateUsage} from './data-api-usage.mjs';
 import {projectFeed} from './refresh-data-api-snapshot.mjs';
+import {projectCreditStatistics, fetchPublicCreditStatistics, withPublicCreditStatistics} from './public-credit-statistics.mjs';
 
 const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
+
+test('public credit projection accepts decimal history and strips non-statistical fields',()=>{
+  const projected=projectCreditStatistics({code:0,data:{available:true,statistics:{'test-api':{minimum:'22',average:'41.46',maximum:'44',apiKey:'private'},bad:{minimum:'44',average:'20',maximum:'22'},zero:{minimum:'0',average:'1',maximum:'2'}}}},'2026-10-30T00:00:00Z');
+  assert.deepEqual(projected.statistics,{'test-api':{minimum:22,average:41.46,maximum:44}});
+  assert.equal(JSON.stringify(projected).includes('private'),false);
+  assert.throws(()=>projectCreditStatistics({code:0,data:{available:false,statistics:{}}}),/unavailable/);
+});
+
+test('credit refresh failure clears old ranges without changing approved usage counts',async()=>{
+  let attempts=0;
+  const failed=await fetchPublicCreditStatistics(async()=>{attempts++;throw new Error('offline');});
+  assert.equal(attempts,2);assert.equal(failed.available,false);
+  const old={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T00:00:00Z',creditUpdatedAt:'2026-10-29T00:00:00Z',creditBasis:'successful-positive-actual-charge',apis:{'test-api':{callCount:10,userCount:3,creditMin:20,creditMax:30}},categories:{}};
+  const merged=withPublicCreditStatistics(old,failed);
+  assert.deepEqual(merged.apis['test-api'],{callCount:10,userCount:3});
+  const dir=await mkdtemp(join(tmpdir(),'credit-unavailable-'));
+  await buildRoot(snapshot,dir,old,failed);
+  const html=await readFile(join(dir,'index.html'),'utf8');
+  assert.match(html,/Historical credit estimates are currently unavailable/);
+  assert.match(html,/api-credit-range[\s\S]*?<strong>-<\/strong>/);
+});
+
+test('live credit ranges replace CSV values and aggregate category extrema with the minimum floor',async()=>{
+  const old={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T00:00:00Z',apis:{'test-api':{callCount:10,userCount:3}},categories:{}};
+  const stats=projectCreditStatistics({code:0,data:{available:true,statistics:{'test-api':{minimum:'1',average:'15.5',maximum:'44'}}}});
+  const dir=await mkdtemp(join(tmpdir(),'credit-live-'));
+  await buildRoot(snapshot,dir,old,stats);
+  const html=await readFile(join(dir,'index.html'),'utf8');
+  assert.match(html,/<strong>10～44<\/strong>/);
+  assert.match(html,/Historical credit statistics/);
+  assert.equal(old.apis['test-api'].creditMin,undefined);
+});
+
+test('Data directory and category pages share the Learn navigation, footer and responsive shell assets',async()=>{
+  const dir=await mkdtemp(join(tmpdir(),'data-shell-'));
+  await buildRoot(snapshot,dir,{schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T00:00:00Z',apis:{},categories:{}});
+  for(const path of ['index.html','amazon-front-data/index.html']) {
+    const html=await readFile(join(dir,path),'utf8');
+    const header=html.match(/<header[\s\S]*?<\/header>/)[0];
+    for(const href of ['/data/','/ecommerce-ai-tools/product-showcase/','/tools/','/ecommerce-ai-tools/','/pricing/','/ecommerce-ai-tools/product-showcase/submit/']) assert.ok(header.includes(`href="${href}"`));
+    assert.match(header,/aria-controls="primary-navigation"/);
+    assert.match(header,/aria-current="(?:page|location)"/);
+    assert.match(html,/learn-shell\.css\?v=[a-f0-9]{12}/);
+    assert.match(html,/learn-shell\.js\?v=[a-f0-9]{12}/);
+    assert.match(html,/data-showcase-submit-cta="data-footer"/);
+    assert.match(html,/privacy\?co-from=learn/);
+    assert.match(html,/Submission|Product submission/);
+  }
+  assert.match(await readFile(join(dir,'learn-shell.css'),'utf8'),/max-width: 1180px/);
+  assert.match(await readFile(join(dir,'learn-shell.js'),'utf8'),/Escape/);
+});
 
 test('live refresh publishes only current canonical Data APIs and excludes withdrawn or non-Data entries',()=>{
   const skills=[{...entry,apiReady:true,endpoint:'/public/test'},

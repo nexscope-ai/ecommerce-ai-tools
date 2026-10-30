@@ -6,6 +6,8 @@ import { runInNewContext } from 'node:vm';
 import { createHash } from 'node:crypto';
 import { loadUsage, applyUsage, compareUsage } from './data-api-usage.mjs';
 import { selectionCopy, selectionHelp, directorySchema } from './data-api-seo.mjs';
+import { learnDataHeader, learnDataFooter } from './learn-data-shell.mjs';
+import { withPublicCreditStatistics } from './public-credit-statistics.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SNAPSHOT = join(ROOT, 'scripts/data/api-docs.public.json');
@@ -151,12 +153,14 @@ function usageMarkup(metrics) {
   const maximum = hasRange ? Math.max(10,metrics.creditMax) : null;
   const range = hasRange ? (minimum === maximum ? full(minimum) : `${full(minimum)}～${full(maximum)}`) : '-';
   const coverage = metrics?.creditTotalApis ? ` Across ${metrics.creditKnownApis} of ${metrics.creditTotalApis} APIs with positive charge records.` : '';
-  const creditLabel = hasRange ? `${range} credits per call; 10-credit minimum applied to recorded positive charges, not a current price quote.${coverage}` : 'Historical credit range unavailable; no verified positive charge records. Check official API docs for current pricing.';
+  const creditLabel = hasRange ? `${range} credits per call; 10-credit minimum applied to historical charges, not a current price quote.${coverage}` : 'Historical credit range unavailable. Check official API docs for current pricing.';
   const credits = `<span class="api-usage-metric api-credit-range" title="${esc(creditLabel)}" aria-label="${esc(creditLabel)}">${coins}<strong>${range}</strong></span>`;
   return `<div class="api-usage" aria-label="Recorded usage and historical credit range">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,100,'99+') : ''}${credits}</div>`;
 }
 function usageNote(snapshot) {
-  const credits = snapshot.creditUpdatedAt ? `<p class="api-usage-note">Credit ranges · Updated ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Minimum 10 credits per call. Ranges use recorded positive charges for successful calls with this minimum applied, not a current price quote. Check official documentation for current costs; - means no recorded range.</p>` : '';
+  const credits = snapshot.creditBasis === 'public-historical-statistics'
+    ? `<p class="api-usage-note">${snapshot.creditStatisticsAvailable === false ? 'Historical credit estimates are currently unavailable.' : `Historical credit statistics · Checked ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Minimum 10 credits per call. Ranges reflect public historical statistics, not a fixed price quote.`} Check official API documentation for current costs; - means no available estimate.</p>`
+    : snapshot.creditUpdatedAt ? `<p class="api-usage-note">Credit ranges · Updated ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Minimum 10 credits per call. Ranges use recorded positive charges for successful calls with this minimum applied, not a current price quote. Check official documentation for current costs; - means no recorded range.</p>` : '';
   return (snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Categories sum calls and users across listed APIs; a user of multiple APIs may count more than once.</p>` : '') + credits;
 }
 function renderOperation(e, category, name) {
@@ -200,7 +204,7 @@ export function renderStandalone(source, snapshot) {
   const title = JSON.parse(source.match(/^title: (.+)$/m)[1]);
   const description = JSON.parse(source.match(/^description: (.+)$/m)[1]);
   const path = source.match(/^permalink: (.+)$/m)[1];
-  const modifiedAt = [snapshot.generatedAt,snapshot.usageUpdatedAt,snapshot.creditUpdatedAt].filter(Boolean).sort((a,b)=>Date.parse(b)-Date.parse(a))[0];
+  const modifiedAt = [snapshot.generatedAt,snapshot.usageUpdatedAt,snapshot.creditBasis === 'public-historical-statistics' ? null : snapshot.creditUpdatedAt].filter(Boolean).sort((a,b)=>Date.parse(b)-Date.parse(a))[0];
   const category=path==='/data/' ? null : snapshot.entries.find(e=>categoryPath(e.categorySlug)===path)?.categorySlug;
   const selected=[...snapshot.entries.filter(e=>!category||e.categorySlug===category)].sort((a,b)=>compareUsage(a.usage,b.usage));
   const groups=new Map([...Map.groupBy(snapshot.entries,e=>e.categorySlug)].sort(([a],[b])=>compareUsage(snapshot.categoryUsage?.[a],snapshot.categoryUsage?.[b])));
@@ -208,7 +212,7 @@ export function renderStandalone(source, snapshot) {
   const copy=selectionCopy(category?categoryCopy(category,selected).name:'Ecommerce Data',selected,category?categoryVisual(category).kind:'root');
   const schema=directorySchema({title,description,path,modifiedAt,items,faqs:copy.faqs});
   const body = source.slice(source.indexOf('{% raw %}') + '{% raw %}'.length).replace(/\{% (?:endraw|raw) %\}/g, '');
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="Nexscope Learn"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(modifiedAt)}"><script type="application/ld+json">${schema}</script><link rel="stylesheet" href="/data/api-reference.css${snapshot.assetVersions?.css ? `?v=${snapshot.assetVersions.css}` : ''}"></head><body class="api-root"><header class="api-root-header"><a href="/" aria-label="Nexscope Learn home"><img src="/logo.png" alt="Nexscope" width="166" height="40"></a><nav aria-label="Main navigation"><a href="/tools/">Tools</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a><a href="/ecommerce-ai-tools/">Learning library</a><a href="/data/" aria-current="${path==='/data/'?'page':'location'}">Data APIs</a></nav></header><main class="api-reference">${body}</main><footer class="api-root-footer"><a href="/data/">Data API documentation</a> · <a href="/ecommerce-ai-tools/community/">Community</a> · <a href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></footer><script src="/data/api-directory.js${snapshot.assetVersions?.js ? `?v=${snapshot.assetVersions.js}` : ''}" defer></script></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="Nexscope Learn"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(modifiedAt)}"><script type="application/ld+json">${schema}</script><link rel="stylesheet" href="/data/api-reference.css${snapshot.assetVersions?.css ? `?v=${snapshot.assetVersions.css}` : ''}"><link rel="stylesheet" href="/data/learn-shell.css?v=${snapshot.assetVersions?.shellCss || "1"}"><noscript><style>.trends-header .primary-menu-toggle{display:none}.trends-header>.wrap{flex-wrap:wrap;padding-block:16px}.trends-header .primary-navigation{display:block;position:static;width:100%;box-shadow:none;border:0}</style></noscript></head><body class="api-root trends-page">${learnDataHeader(path)}<main class="api-reference">${body}</main>${learnDataFooter()}<script src="/data/learn-shell.js?v=${snapshot.assetVersions?.shellJs || "1"}" defer></script><script src="/data/api-directory.js${snapshot.assetVersions?.js ? `?v=${snapshot.assetVersions.js}` : ''}" defer></script></body></html>`;
 }
 
 async function cleanGenerated(output) {
@@ -238,10 +242,14 @@ export async function build(snapshot, output = OUTPUT) {
   return 1;
 }
 
-export async function buildRoot(snapshot, output, usage) {
-  snapshot = applyUsage(snapshot, usage || await loadUsage(join(ROOT,'scripts/data/api-usage.public.json')));
+export async function buildRoot(snapshot, output, usage, creditStatistics) {
+  let metrics = usage || await loadUsage(join(ROOT,'scripts/data/api-usage.public.json'));
+  if (creditStatistics) metrics = withPublicCreditStatistics(metrics, creditStatistics);
+  snapshot = applyUsage(snapshot, metrics);
+  snapshot.creditBasis = metrics.creditBasis;
+  snapshot.creditStatisticsAvailable = creditStatistics?.available;
   const assetVersion = async path => createHash('sha256').update(await readFile(join(ROOT,path))).digest('hex').slice(0,12);
-  snapshot = {...snapshot,assetVersions:{css:await assetVersion('docs/assets/css/api-reference.css'),js:await assetVersion('docs/assets/api-directory.js')}};
+  snapshot = {...snapshot,assetVersions:{css:await assetVersion('docs/assets/css/api-reference.css'),js:await assetVersion('docs/assets/api-directory.js'),shellCss:await assetVersion('docs/assets/primary-navigation.css'),shellJs:await assetVersion('docs/assets/learn-shell.js')}};
   const pages = buildPages(snapshot);
   output = await cleanGenerated(output);
   const paths = [];
@@ -252,7 +260,7 @@ export async function buildRoot(snapshot, output, usage) {
     await writeFile(destination,renderStandalone(source,snapshot));
     paths.push(path);
   }
-  for (const [source,target] of [['docs/assets/css/api-reference.css','api-reference.css'],['docs/assets/api-directory.js','api-directory.js']]) {
+  for (const [source,target] of [['docs/assets/css/api-reference.css','api-reference.css'],['docs/assets/api-directory.js','api-directory.js'],['docs/assets/primary-navigation.css','learn-shell.css'],['docs/assets/learn-shell.js','learn-shell.js']]) {
     await writeFile(join(output,target),await readFile(join(ROOT,source),'utf8'));
   }
   const logoSource = join(ROOT,'docs/assets/data-logos');

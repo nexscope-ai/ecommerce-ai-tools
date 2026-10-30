@@ -12,7 +12,7 @@ keywords:
   - product GEO feedback
   - AI product discovery page
 permalink: /product-showcase/submit/
-last_modified_at: 2026-10-23
+last_modified_at: 2026-10-30
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -46,6 +46,8 @@ image_caption: Submit product details for free review and a possible public AI-d
       <a class="submission-review-link" href="#submission-review">What happens after you submit? ↓</a>
     </aside>
   </header>
+
+  <details class="submission-example-preview"><summary>What will my free product page look like? See a published example.</summary>{% include product-showcase-published-example.html context="submit" %}</details>
 
   <div class="submission-layout" id="product-submission-form">
     <noscript><p class="seller-scope">JavaScript is needed to upload images and submit this form. You can read the review process below or use the <a href="https://learn.nexscope.ai/contact/">official contact page</a> for help.</p></noscript>
