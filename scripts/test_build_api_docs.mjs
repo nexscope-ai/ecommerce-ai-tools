@@ -47,11 +47,17 @@ test('live credit ranges replace CSV values and aggregate category extrema with 
 
 test('Data directory and category pages share the Learn navigation, footer and responsive shell assets',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'data-shell-'));
+  const libraryHeader=await readFile(new URL('../docs/_includes/site-header.html',import.meta.url),'utf8');
+  const navLabels=html=>[...html.matchAll(/<li><a\b[^>]*>([^<]*)<\/a><\/li>/g)].map(match=>match[1].replaceAll('&amp;','&').trim());
+  assert.match(libraryHeader,/href="\/video\/"/);
+  assert.doesNotMatch(libraryHeader,/href="https:\/\/learn\.nexscope\.ai\/tools\/"/);
+  assert.match(await readFile(new URL('../docs/_includes/site-footer.html',import.meta.url),'utf8'),/href="\/video\/"/);
   await buildRoot(snapshot,dir,{schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T00:00:00Z',apis:{},categories:{}});
   for(const path of ['index.html','amazon-front-data/index.html']) {
     const html=await readFile(join(dir,path),'utf8');
     const header=html.match(/<header[\s\S]*?<\/header>/)[0];
-    for(const href of ['/data/','/ecommerce-ai-tools/product-showcase/','/ecommerce-ai-tools/','/pricing/','/ecommerce-ai-tools/product-showcase/submit/']) assert.ok(header.includes(`href="${href}"`));
+    for(const href of ['/data/','/video/','/ecommerce-ai-tools/product-showcase/','/ecommerce-ai-tools/','/pricing/','/ecommerce-ai-tools/product-showcase/submit/']) assert.ok(header.includes(`href="${href}"`));
+    assert.deepEqual(navLabels(header),navLabels(libraryHeader));
     assert.ok(!header.includes('href="/tools/"'));
     assert.match(html.match(/<footer[\s\S]*?<\/footer>/)[0], /href="\/tools\/"/);
     assert.match(header,/aria-controls="primary-navigation"/);
