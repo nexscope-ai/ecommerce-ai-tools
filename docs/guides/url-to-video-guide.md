@@ -19,6 +19,8 @@ og_type: article
 
 **Goal:** Paste an existing product listing, check the imported facts and images, prepare a script, choose video settings, and review the finished video before publishing it. This is Nexscope's **URL to Video** workflow, distinct from the image-to-video generator that starts with an uploaded photo.
 
+Still choosing your starting material? [Compare product-link, image, avatar, reference and bulk video workflows](https://learn.nexscope.ai/video/) with official examples and preparation guidance. Choose URL to Video when you already have an accessible product listing to import and review.
+
 ## 1. Import a product page
 
 Open [Nexscope URL to Video](https://www.nexscope.ai/url-to-video?co-from=learn) and select **Create product video** to enter the workspace. Sign in when requested. Paste a link to an individual product page in **Product URL**, then select **Analyze URL**. The supported-platform list currently shows **Amazon, Shopify, Walmart, Etsy, and eBay**. A valid link is required; an unsupported, private, or inaccessible page may not import usable details.

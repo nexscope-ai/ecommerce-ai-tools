@@ -39,6 +39,8 @@ faq:
 
 An **AI product video generator** turns a supported product image and motion brief into candidate footage for a listing or ad. Nexscope's browser tool lets sellers choose an available model, inspect its estimated cost and preview the result. The essential step is reviewing the whole clip: a moving product must still match the item for sale.
 
+Not sure whether to start from photos, a product link, an avatar or a reference clip? [Compare Nexscope's five product video workflows and watch official examples](https://learn.nexscope.ai/video/). The directory explains each workflow's inputs and output before you open its matching workspace.
+
 **[Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn). New users receive 1,000 free credits, valid for 3 days.** Usage depends on the model and settings; this is a finite trial balance, not unlimited generation or a guarantee that every configuration fits the balance.
 
 Already have a public product listing instead of a standalone image? Follow the [URL-to-video guide]({{ '/url-to-video-guide/' | relative_url }}) to import the listing, verify its product details, and prepare a script before generating. The image-to-video workflow below starts from uploaded product images.
