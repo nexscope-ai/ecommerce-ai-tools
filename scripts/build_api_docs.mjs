@@ -110,18 +110,25 @@ function categoryVisual(category) {
   const match=platforms.find(([token])=>category.includes(token));
   const [,label,mark,color,soft]=match || ['', 'Data API','D','#7050c5','#f1edfb'];
   const logos = {'1688':'1688.webp',amazon:'amazon.webp',tiktok:'tiktok.webp',ebay:'ebay.webp',etsy:'etsy.webp',shopify:'shopify.webp',temu:'temu.webp',walmart:'walmart.webp',google:'google.webp',shopee:'shopee.webp',ozon:'ozon.webp',mercado:'mercado-libre.png'};
-  return {label,mark,color,soft,logo:logos[match?.[0]],kind:match?.[0] || 'data'};
+  return {label,mark,color,soft,logo:match?.[0] === 'woocommerce' ? 'woocommerce.svg' : logos[match?.[0]],kind:match?.[0] || 'data'};
 }
 const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-function cardTop(category,badge) {
-  const visual=categoryVisual(category);
+function platformIcon(visual,size) {
   const symbols = {
     'web-search':'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 4v13M4 10.5h13"/>',
     patent:'<path d="M7 3h7l4 4v14H7zM14 3v5h5M10 12h5M10 16h5"/>',
     detection:'<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/>',
+    jev:'<path d="M9 3h6l1 3h4v15H4V6h4zM9 3v4h6V3M8 12l2 2 5-5M8 18h8"/>',
     data:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>',
   };
-  const icon = visual.logo ? `<img src="/data/logos/${visual.logo}" alt="" width="40" height="40" loading="lazy" decoding="async">` : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${symbols[visual.kind] || symbols.data}</svg>`;
+  return visual.logo ? `<img src="/data/logos/${visual.logo}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">` : `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${symbols[visual.kind] || symbols.data}</svg>`;
+}
+function platformNew(visual) {
+  return visual.kind === 'woocommerce' ? '<span class="api-new-badge" aria-label="New platform"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m6 0 1.5 4.5L12 6 7.5 7.5 6 12 4.5 7.5 0 6l4.5-1.5z"/></svg>NEW</span>' : '';
+}
+function cardTop(category,badge) {
+  const visual=categoryVisual(category);
+  const icon=platformIcon(visual,40);
   return `<div class="api-card-top"><span class="api-category-icon${visual.logo ? ' api-category-icon--brand' : ''}" aria-hidden="true">${icon}</span><span class="api-count-badge">${esc(badge)}</span></div>`;
 }
 function cardStyle(category) {
@@ -197,14 +204,14 @@ export function buildPages(snapshot) {
     platforms.set(visual.kind,{...visual,count:(previous?.count||0)+entries.length});
     const {name,description} = categoryCopy(category,entries);
     const copy=categorySelectionCopy(category,entries);
-    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
+    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}${platformNew(visual)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
     categories.push(card);
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
     const content = `<nav aria-label="Breadcrumb"><a href="/data/">Data API categories</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p>${copy.chooseWhen?`<aside class="api-choice-note"><h2>Is this the right category for your task?</h2><p>${esc(copy.chooseWhen)}</p></aside>`:''}<p class="api-caption">Access and credit requirements vary by operation.</p><div data-data-directory data-directory-kind="category">${searchControls('Find an API','API',entries.length)}<section data-results-kind="apis" data-api-group="${esc(name)}"><h2 class="api-directory-title">Explore ${esc(name)} APIs</h2><div class="api-directory">${cards}</div></section></div>${selectionHelp(copy)}${usageNote(snapshot)}`;
     pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content));
   }
-  const chips=`<div class="api-platform-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${visual.logo?`<img src="/data/logos/${visual.logo}" alt="" width="20" height="20">`:''}${esc(visual.label)} <span>${visual.count}</span></button>`).join('')}</div>`;
+  const chips=`<div class="api-platform-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${platformIcon(visual,20)}${esc(visual.label)} <span>${visual.count}</span>${platformNew(visual)}</button>`).join('')}</div>`;
   const switcher=`<div class="api-view-switch" role="group" aria-label="Browse directory" data-view-switch hidden><button type="button" data-directory-view="categories" aria-pressed="true">Categories <span>${groups.size}</span></button><button type="button" data-directory-view="apis" aria-pressed="false">All APIs <span>${snapshot.entries.length}</span></button></div>`;
   const rootCopy=selectionCopy('Ecommerce Data',orderedEntries);
   const content = `<p class="api-eyebrow">Nexscope Data API directory</p><h1>Ecommerce Data APIs</h1><p>${esc(rootCopy.summary)}</p><p>Browse ${snapshot.entries.length} APIs across ${groups.size} categories.</p>${workflowMarkup(groups)}<div data-data-directory data-directory-kind="root"><h2 class="api-directory-title">Browse APIs by platform and task</h2>${chips}${searchControls('Search all APIs','category',groups.size,true)}${switcher}<section data-results-kind="categories" data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section><section data-results-kind="apis" data-api-group="APIs" hidden><div class="api-directory">${operations.sort((a,b)=>compareUsage(a.entry.usage,b.entry.usage)).map(item=>item.html).join('')}</div></section></div>${selectionHelp(rootCopy)}${usageNote(snapshot)}`;
@@ -277,7 +284,7 @@ export async function buildRoot(snapshot, output, usage, creditStatistics) {
   const logoSource = join(ROOT,'docs/assets/data-logos');
   await mkdir(join(output,'logos'),{recursive:true});
   for (const name of await readdir(logoSource)) {
-    if (/^[a-z0-9-]+\.(?:webp|png)$/.test(name)) await writeFile(join(output,'logos',name),await readFile(join(logoSource,name)));
+    if (/^[a-z0-9-]+\.(?:webp|png|svg)$/.test(name)) await writeFile(join(output,'logos',name),await readFile(join(logoSource,name)));
   }
   await writeFile(join(output,'.api-docs-generated'),JSON.stringify(paths));
   return paths;

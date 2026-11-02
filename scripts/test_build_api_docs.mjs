@@ -15,6 +15,19 @@ const entry={slug:'test-api',collection:'ecommerce',name:'Test API',description:
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
 const membership=(...slugs)=>({collection:'ecommerce',slugs});
 
+test('every platform filter has an icon and only WooCommerce gets the NEW badge',()=>{
+  const categories=['woocommerce','patent-research','detection','jev','web-search','unknown-platform'];
+  const index=buildPages({...snapshot,entries:categories.map((categorySlug,i)=>({...entry,slug:`icon-test-${i}`,categorySlug}))}).get('index.md');
+  const buttons=[...index.matchAll(/<button[^>]*data-platform-filter="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)];
+  assert.equal(buttons.length,categories.length);
+  for(const [,kind,content] of buttons){
+    assert.match(content,/<(?:img|svg)\b/);
+    assert.equal(content.includes('api-new-badge'),kind==='woocommerce');
+  }
+  assert.match(index,/src="\/data\/logos\/woocommerce.svg"/);
+  assert.equal((index.match(/class="api-new-badge"/g)||[]).length,2);
+});
+
 test('official tab membership includes new platforms and excludes marketing by actual partition',()=>{
   const page={catalogAvailable:true,directoryCounts:{data:2},catalog:{skills:[],categories:[]},
     marketingGroups:[{skills:[{slug:'data-looking-seo'}]}],
@@ -339,6 +352,7 @@ test('root export generates category pages, no local API details, and removes st
   assert.match(page,/src="\/data\/api-directory\.js\?v=[a-f0-9]{12}"/);
   assert.match(page,/href="\/data\/api-reference\.css\?v=[a-f0-9]{12}"/);
   assert.ok((await readFile(join(output,'logos','amazon.webp'))).length > 0);
+  assert.ok((await readFile(join(output,'logos','woocommerce.svg'),'utf8')).includes('<svg'));
   assert.ok(!page.includes('href="/data/test-api/"'));
   assert.ok(!(await readdir(output)).includes('test-api'));
 });
