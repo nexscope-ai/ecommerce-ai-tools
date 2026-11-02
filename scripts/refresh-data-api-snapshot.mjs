@@ -2,39 +2,43 @@
 import {readFile, writeFile, rename} from 'node:fs/promises';
 import {join, resolve, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {fetchDirectoryMembership, dataCollectionSlugs} from './data-directory-membership.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 export const FEED='https://www.nexscope.ai/api/skill-api/catalog';
 export const SITEMAP='https://www.nexscope.ai/sitemap.xml';
-const legacy=new Set(['amazon-advertising','amazon-marketplace-intelligence','patent-ip-risk','product-market-research']);
 const slugPattern=/^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const clean=value=>String(value??'').replace(/[^.!?\n]*\bMCP\b[^.!?\n]*[.!?]?/gi,'').trim();
 
-export function projectFeed(payload, sitemap, previous, now=new Date().toISOString()) {
+export function projectFeed(payload, sitemap, previous, now=new Date().toISOString(), membership) {
   if (payload?.code != null && payload.code !== 0) throw new Error('Public API feed rejected the request');
   const data=payload.data??payload;
   if (data.source !== 'server') throw new Error('Official catalog is not backed by current server data');
   if (!Array.isArray(data.skills)||!data.skills.length||!Array.isArray(data.categories)) throw new Error('Empty or malformed public API feed');
+  const eligible=dataCollectionSlugs(membership);
   const published=new Set([...sitemap.matchAll(/<loc>https:\/\/www\.nexscope\.ai\/api-docs\/([a-z0-9-]+)\/?<\/loc>/g)].map(match=>match[1]));
   if (!published.size) throw new Error('Official sitemap has no published API detail pages');
   const withdrawn=new Set(data.withdrawnSlugs??[]);
-  const categories=new Map(data.categories.map(item=>[item.slug,item]));
+  const categories=new Map([...(membership.categories??[]),...data.categories].map(item=>[item.slug,item]));
   const old=new Map((previous?.entries??[]).map(item=>[item.slug,item]));
   const entries=new Map();
   const sourceSlugs=new Set();
-  for (const skill of data.skills) {
+  const liveSlugs=new Set(data.skills.map(item=>item.slug));
+  const skills=[...data.skills,...(membership.skills??[]).filter(item=>eligible.has(item.slug)&&!liveSlugs.has(item.slug))];
+  for (const skill of skills) {
     if (sourceSlugs.has(skill.slug)) throw new Error(`Duplicate API source slug: ${skill.slug}`);
     sourceSlugs.add(skill.slug);
-    if (typeof skill.categorySlug !== 'string'||(!skill.categorySlug.startsWith('data-')&&!legacy.has(skill.categorySlug))||skill.apiReady===false) continue;
+    if (!eligible.has(skill.slug)||skill.apiReady===false) continue;
     const slug=skill.slug;
     if (!slugPattern.test(slug)||withdrawn.has(skill.slug)||withdrawn.has(slug)||!published.has(slug)) continue;
     const prior=old.get(slug);
     const category=categories.get(skill.categorySlug)||(prior?{name:prior.group,description:prior.categoryDescription}:null);
     if (!category) throw new Error(`Missing public API category: ${skill.categorySlug}`);
+    if (typeof skill.endpoint !== 'string'||!skill.endpoint.trim()) throw new Error(`Missing public API contract: ${slug}`);
     const endpoint=new URL(skill.endpoint,'https://api.nexscope.ai');
     if (endpoint.origin !== 'https://api.nexscope.ai'||endpoint.username||endpoint.password||endpoint.search||endpoint.hash) throw new Error(`Invalid official API endpoint: ${slug}`);
     // Keep reviewed customer-facing names; refresh availability, category and API contract summary.
-    const entry={slug,name:prior?.name||clean(skill.name),description:clean(skill.description||skill.summary)||prior?.description||clean(skill.name),
+    const entry={slug,collection:'ecommerce',name:prior?.name||clean(skill.name),description:clean(skill.description||skill.summary)||prior?.description||clean(skill.name),
       group:clean(category.name),categoryDescription:clean(category.description),categorySlug:skill.categorySlug,method:'POST',path:endpoint.pathname};
     if (!entry.name||!entry.description) throw new Error(`Empty public API copy: ${slug}`);
     entries.set(slug,entry);
@@ -59,8 +63,8 @@ async function publicText(url) {
 
 export async function refreshSnapshot(directory=root) {
   const file=join(directory,'scripts/data/api-docs.public.json');
-  const [feed,sitemap,previous]=await Promise.all([publicText(FEED),publicText(SITEMAP),readFile(file,'utf8').then(JSON.parse)]);
-  const snapshot=projectFeed(JSON.parse(feed),sitemap,previous);
+  const [feed,sitemap,previous,membership]=await Promise.all([publicText(FEED),publicText(SITEMAP),readFile(file,'utf8').then(JSON.parse),fetchDirectoryMembership()]);
+  const snapshot=projectFeed(JSON.parse(feed),sitemap,previous,new Date().toISOString(),membership);
   // Validate the safe public projection before changing the snapshot or generated output.
   const {validate}=await import('./build_api_docs.mjs');
   validate(snapshot);

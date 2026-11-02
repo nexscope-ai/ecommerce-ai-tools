@@ -3,6 +3,9 @@
 export const copyReviewedAt = '2026-11-02T00:00:00Z';
 const category = (name, description, chooseWhen) => ({name, description, chooseWhen});
 export const categoryCopyMap = {
+  'woocommerce': category('WooCommerce Products, Variations & Store Research', 'Research products, variations, reviews, taxonomies and collection statistics within one specified public WooCommerce store.', 'Start with a public store URL, then inspect products and their variations. Store version and configuration affect available data; this is not a global store search or access to private orders.'),
+  'jev': category('API Discovery & Content Evaluation', 'Discover a matching published API or evaluate supplied content with Nexscope JEV.', 'Use routing to inspect a suggested API, or evaluate content you are authorized to submit. Routing does not execute the suggested API; review results and current access requirements.'),
+  'ai-content-generation': category('Product Description Generation', 'Generate product-description copy from supplied product information.', 'Provide accurate product facts and review the generated wording before publication. Generation does not verify product claims.'),
   'data-1688-sourcing': category('1688 Product & Supplier Research', 'Find wholesale offers by keyword or image, then inspect product, SKU and supplier details.', 'You need to shortlist wholesale offers. Use search to discover products and detail lookup to check a specific offer before comparing suppliers.'),
   'data-shopee-product-selection': category('Shopee Product Search & Details', 'Search Shopee listings and inspect individual products for marketplace research.', 'You want to move from a product keyword to listing details. Keep the marketplace consistent when comparing products.'),
   'data-fm-tiktok': category('TikTok Product Discovery & Bestsellers', 'Explore product discovery and top-selling product operations to build a research shortlist.', 'You are looking for product candidates rather than detailed creator, video or shop analytics.'),
@@ -42,6 +45,20 @@ export const categoryCopyMap = {
 
 // Focused overrides for frequently searched tasks. Unmapped operations retain feed copy.
 export const operationCopyMap = {
+  'jev-route': 'Match an intent to a published API or evaluation preset. Returns discovery metadata; it does not execute the suggested API or invent missing inputs.',
+  'jev-evaluate': 'Evaluate content you are authorized to submit using a preset or typed questions. Review advisory results before making a decision.',
+  'product-description-generator': 'Generate description copy from supplied product facts, then review accuracy and claims before publication.',
+  'woocommerce-products': 'Search products within one specified public WooCommerce store. Keep the store URL with each product ID and check pagination before treating the catalog as complete.',
+  'woocommerce-product-detail': 'Inspect a product in its source WooCommerce store. Review its facts before making a separate request for variations.',
+  'woocommerce-product-variations': 'Retrieve variations for a selected parent product within one store. Preserve the store and parent identity when comparing SKUs.',
+  'woocommerce-product-categories': 'Retrieve public product categories from a specified WooCommerce store to plan product research.',
+  'woocommerce-product-tags': 'Retrieve public product tags within one WooCommerce store. Tag coverage depends on the store.',
+  'woocommerce-product-brands': 'Retrieve public product brands from a supported WooCommerce store. Store version and configuration determine availability.',
+  'woocommerce-product-attributes': 'List public product attributes within one specified WooCommerce store.',
+  'woocommerce-product-attribute-detail': 'Inspect a selected product attribute within its WooCommerce store.',
+  'woocommerce-product-attribute-terms': 'Retrieve terms for a selected product attribute, such as the values used for size or color.',
+  'woocommerce-product-reviews': 'Retrieve public reviews from a specified WooCommerce store, optionally restricted to a product or category. Protected product reviews remain hidden.',
+  'woocommerce-product-collection-data': 'Request collection statistics such as price ranges, ratings, stock-status counts and taxonomy counts. Unsupported store fields may be absent or null.',
   '1688-product-search': 'Find wholesale product candidates from a keyword. Follow up with product detail lookup to compare the relevant offer and SKU information.',
   '1688-search-by-image': 'Start a sourcing shortlist from a reference image, then inspect candidate offers before comparing suppliers.',
   '1688-product-detail': 'Inspect one 1688 offer, including its available SKU, pricing, logistics and supplier information.',
@@ -67,6 +84,7 @@ export function operationEditorialCopy(entry) {
 }
 
 export const researchWorkflows = [
+  {category:'woocommerce',title:'Research a public WooCommerce store',description:'Find products in one store, inspect selected variations and review public product facts.',guide:'/ecommerce-ai-tools/guides/woocommerce-products-python/',guideLabel:'Follow the WooCommerce Python workflow'},
   {category:'data-amazon-front-data',title:'Compare Amazon listings and reviews',description:'Discover candidates, inspect listing facts and collect review content for a focused comparison.',guide:'/ecommerce-ai-tools/amazon-product-research-api-pilot/',guideLabel:'Plan a product research pilot'},
   {category:'data-sf-search-intelligence',title:'Research competitor ASIN keywords',description:'Start from an ASIN and inspect its keyword and traffic context before planning content or ads.',guide:'/ecommerce-ai-tools/amazon-competitor-keyword-research/',guideLabel:'Follow the competitor keyword workflow'},
   {category:'data-tiktok-shop-product-detail',title:'Inspect a TikTok Shop product',description:'Check a specific product, then choose discovery or creator research when you need a broader shortlist.',guide:'/ecommerce-ai-tools/guides/tiktok-shop-api-guide/',guideLabel:'Choose a TikTok research workflow'},

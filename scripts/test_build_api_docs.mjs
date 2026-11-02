@@ -9,9 +9,37 @@ import {applyUsage, validateUsage} from './data-api-usage.mjs';
 import {projectFeed} from './refresh-data-api-snapshot.mjs';
 import {projectCreditStatistics, fetchPublicCreditStatistics, withPublicCreditStatistics} from './public-credit-statistics.mjs';
 import {categoryCopyMap, operationCopyMap, researchWorkflows} from './data-api-copy.mjs';
+import {projectDirectoryMembership} from './data-directory-membership.mjs';
 
-const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
+const entry={slug:'test-api',collection:'ecommerce',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
+const membership=(...slugs)=>({collection:'ecommerce',slugs});
+
+test('official tab membership includes new platforms and excludes marketing by actual partition',()=>{
+  const page={catalogAvailable:true,directoryCounts:{data:2},catalog:{skills:[],categories:[]},
+    marketingGroups:[{skills:[{slug:'data-looking-seo'}]}],
+    _publicDirectoryFallback:{apis:[{slug:'woocommerce-products',platformSlug:'woocommerce'},
+      {slug:'future-store-products',platformSlug:'future-store'},
+      {slug:'data-looking-seo',platformSlug:'cross-platform'},
+      {slug:'seo-keyword-metrics',platformSlug:'marketing'}]}};
+  const html=value=>`<script id="__NEXT_DATA__" type="application/json">${JSON.stringify({props:{pageProps:value}})}</script>`;
+  assert.deepEqual(projectDirectoryMembership(html(page)).slugs,['future-store-products','woocommerce-products']);
+  assert.throws(()=>projectDirectoryMembership(html({...page,directoryCounts:{data:3}})),/count/);
+  assert.throws(()=>projectDirectoryMembership(html({...page,catalogAvailable:false})),/publication/);
+  assert.throws(()=>projectDirectoryMembership('<html>Unavailable</html>'),/publication/);
+});
+
+test('feed selection accepts unprefixed categories and supplements published-only public contracts',()=>{
+  const woo={slug:'woocommerce-products',categorySlug:'woocommerce',apiReady:true,name:'WooCommerce Products',description:'Read one public store.',endpoint:'/woocommerce/products'};
+  const evaluation={slug:'evaluate-content',categorySlug:'evaluation',apiReady:true,name:'Evaluate content',summary:'Review supplied content.',endpoint:'/evaluate'};
+  const payload={source:'server',categories:[{slug:'woocommerce',name:'WooCommerce'}],skills:[woo,{...woo,slug:'data-looking-seo',categorySlug:'data-seo'}]};
+  const selected={...membership(woo.slug,evaluation.slug),skills:[evaluation],categories:[{slug:'evaluation',name:'Evaluation'}]};
+  const sitemap='<urlset>'+[woo.slug,evaluation.slug,'data-looking-seo'].map(slug=>`<url><loc>https://www.nexscope.ai/api-docs/${slug}</loc></url>`).join('')+'</urlset>';
+  const result=projectFeed(payload,sitemap,snapshot,undefined,selected);
+  assert.deepEqual(result.entries.map(item=>item.slug),['evaluate-content','woocommerce-products']);
+  assert.equal(result.entries.every(item=>item.collection==='ecommerce'),true);
+  assert.throws(()=>projectFeed(payload,sitemap,snapshot,undefined,{...selected,skills:[{...evaluation,endpoint:''}]}),/Missing public API contract/);
+});
 
 test('public credit projection accepts decimal history and strips non-statistical fields',()=>{
   const projected=projectCreditStatistics({code:0,data:{available:true,statistics:{'test-api':{minimum:'22',average:'41.46',maximum:'44',apiKey:'private'},bad:{minimum:'44',average:'20',maximum:'22'},zero:{minimum:'0',average:'1',maximum:'2'}}}},'2026-10-30T00:00:00Z');
@@ -80,14 +108,16 @@ test('live refresh publishes only current canonical Data APIs and excludes withd
     {...entry,slug:'disabled-api',apiReady:false,endpoint:'/disabled'}];
   const payload={source:'server',categories:[{slug:entry.categorySlug,name:'Amazon'}],skills,withdrawnSlugs:['retired-api']};
   const sitemap='<urlset>'+['test-api','retired-api','creative-api','disabled-api'].map(slug=>`<url><loc>https://www.nexscope.ai/api-docs/${slug}</loc></url>`).join('')+'</urlset>';
-  const result=projectFeed(payload,sitemap,snapshot,'2026-10-29T10:00:00Z');
+  const selected=membership('test-api','retired-api','disabled-api','unpublished-api');
+  const result=projectFeed(payload,sitemap,snapshot,'2026-10-29T10:00:00Z',selected);
   assert.deepEqual(result.entries.map(item=>item.slug),['test-api']);
   assert.equal(result.entries[0].path,'/public/test');
   assert.equal(result.entries[0].name,entry.name);
-  assert.equal(projectFeed(payload,sitemap,result,'2026-10-30T10:00:00Z').generatedAt,result.generatedAt);
-  assert.throws(()=>projectFeed({...payload,source:'snapshot'},sitemap,snapshot),/current server/);
-  assert.throws(()=>projectFeed(payload,'<urlset/>',snapshot),/sitemap/);
-  assert.throws(()=>projectFeed({...payload,skills:[{...skills[0],endpoint:'https://example.com/steal'}]},sitemap,snapshot),/endpoint/);
+  assert.equal(projectFeed(payload,sitemap,result,'2026-10-30T10:00:00Z',selected).generatedAt,result.generatedAt);
+  assert.throws(()=>projectFeed({...payload,source:'snapshot'},sitemap,snapshot,undefined,selected),/current server/);
+  assert.throws(()=>projectFeed(payload,'<urlset/>',snapshot,undefined,selected),/sitemap/);
+  assert.throws(()=>projectFeed({...payload,skills:[{...skills[0],endpoint:'https://example.com/steal'}]},sitemap,snapshot,undefined,selected),/endpoint/);
+  assert.throws(()=>projectFeed(payload,sitemap,snapshot),/membership/);
 });
 
 test('generated SEO metadata and structured data describe visible category content and official API links',async()=>{
@@ -238,20 +268,20 @@ test('published statistics match the approved retained-record snapshot',async()=
   assert.equal(Object.values(usage.apis).reduce((sum,item)=>sum+item.callCount,0),89220);
 });
 test('projection preserves public endpoints and excludes internal fields',()=>{
-  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:{route:{kind:'upstream-skill',record:{...entry,mcpToolName:'private_tool',primaryProxy:'internal'}},catalog:{skills:[{...entry,endpoint:'/public/test'}],categories:[]}}}});
+  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:{route:{kind:'upstream-skill',record:{...entry,mcpToolName:'private_tool',primaryProxy:'internal'}},catalog:{skills:[{...entry,endpoint:'/public/test'}],categories:[]}}}},membership(entry.slug));
   assert.equal(result.entries[0].path,'/public/test');
   assert.equal(result.entries[0].mcpToolName,undefined);
   assert.equal(result.entries[0].primaryProxy,undefined);
 });
-test('projection excludes SEO, creative, routing and account contracts',()=>{
-  const categories=['data-tiktok','amazon-advertising','video-generation-models','image-generation-models','multimodal-ai','ai-content-generation','jev','marketing','account-apis'];
+test('projection follows E-commerce Data membership regardless of category spelling',()=>{
+  const categories=['data-tiktok','woocommerce','video-generation-models','image-generation-models','multimodal-ai','ai-content-generation','jev','marketing','account-apis','data-marketing'];
   const models=Object.fromEntries(categories.map((categorySlug,index)=>{
     const slug=`sample-${index}`;
     return [slug,{route:{kind:categorySlug==='marketing'?'marketing-contract':categorySlug==='account-apis'?'account-doc':'upstream-skill',record:entry},catalog:{skills:[{...entry,slug,categorySlug,endpoint:'/test'}],categories:[]}}];
   }));
-  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:Object.keys(models),apiDetailsBySlug:models});
-  assert.deepEqual(result.entries.map(e=>e.slug),['sample-0','sample-1']);
-  assert.throws(()=>validate({...snapshot,entries:[{...entry,categorySlug:'video-generation-models'}]}),/Non-data/);
+  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:Object.keys(models),apiDetailsBySlug:models},membership('sample-0','sample-1','sample-5','sample-6'));
+  assert.deepEqual(result.entries.map(e=>e.slug),['sample-0','sample-1','sample-5','sample-6']);
+  assert.throws(()=>validate({...snapshot,entries:[{...entry,collection:'marketing'}]}),/Non-data/);
 });
 test('validation rejects traversal, duplicate contracts and literal keys',()=>{
   for(const e of [{...entry,slug:'../escape'},{...entry,slug:'quickstart'},{...entry,path:'//other.example'},{...entry,path:"/test'bad"},{...entry,description:'nk-abcdefghijklmnopqrstuv'}]) assert.throws(()=>validate({...snapshot,entries:[e]}));
@@ -392,7 +422,7 @@ test('category and API clicks retain source context without resetting acquisitio
 test('preview projection exposes only bounded published input examples and declared output fields',()=>{
   const record={...entry,requestExample:{query:'example',apiKey:'sensitive-value'},responseSchema:{fields:[{name:'code',description:'Status'},{name:'rating',description:'Product rating'}]}};
   const model={route:{kind:'upstream-skill',record},catalog:{skills:[{...record,endpoint:'/public/test'}],categories:[]}};
-  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:model}});
+  const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:model}},membership(entry.slug));
   const preview=result.entries[0].preview;
   assert.equal(preview.inputs[0].name,'query');assert.equal(preview.inputs[0].required,true);
   assert.equal(preview.outputs[0].name,'rating');

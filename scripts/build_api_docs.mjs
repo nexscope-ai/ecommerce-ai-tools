@@ -9,16 +9,13 @@ import { selectionCopy, selectionHelp, directorySchema } from './data-api-seo.mj
 import { learnDataHeader, learnDataFooter } from './learn-data-shell.mjs';
 import { withPublicCreditStatistics } from './public-credit-statistics.mjs';
 import { categoryEditorialCopy, operationEditorialCopy, researchWorkflows, copyReviewedAt } from './data-api-copy.mjs';
+import {dataCollectionSlugs, fetchDirectoryMembership} from './data-directory-membership.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SNAPSHOT = join(ROOT, 'scripts/data/api-docs.public.json');
 const OUTPUT = join(ROOT, 'docs/api-docs');
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const API_ORIGIN = 'https://api.nexscope.ai';
-// Marketplace and research contracts include older category names alongside
-// the newer data-* taxonomy. Keep generation/routing/account/SEO APIs out.
-const LEGACY_DATA_CATEGORIES = new Set(['amazon-advertising','amazon-marketplace-intelligence','patent-ip-risk','product-market-research']);
-const isDataCategory = category => typeof category === 'string' && (category.startsWith('data-') || LEGACY_DATA_CATEGORIES.has(category));
 const clean = value => String(value ?? '').replace(/[^.!?\n]*\bMCP\b[^.!?\n]*[.!?]?/gi, '').trim();
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const json = value => JSON.stringify(value, null, 2);
@@ -54,21 +51,22 @@ function apiPath(value) {
 
 // Export only customer-facing contract fields. No environment files, credentials,
 // proxy metadata, MCP contracts, internal counters or execution-only slugs.
-export function project(publication) {
+export function project(publication, membership) {
+  const eligible=dataCollectionSlugs(membership);
   const entries = publication.apiSlugs.flatMap(slug => {
     if (!SLUG.test(slug)) throw new Error(`Unsafe API slug: ${slug}`);
     const model = publication.apiDetailsBySlug[slug];
     const record = model?.route?.record;
     if (!record) throw new Error(`Missing published contract: ${slug}`);
     const skill = model.catalog.skills.find(item => item.slug === slug) || {};
-    if (model.route.kind !== 'upstream-skill' || !isDataCategory(skill.categorySlug)) return [];
+    if (model.route.kind !== 'upstream-skill' || !eligible.has(slug)) return [];
     const account = model.route.kind === 'account-doc';
     const path = apiPath(account ? record.path : skill.endpoint || record.endpoint);
     if (!path?.startsWith('/') || path.startsWith('//') || /[\s"'<>]/.test(path)) throw new Error(`Invalid public endpoint: ${slug}`);
     const category = model.catalog.categories.find(c => c.slug === skill.categorySlug);
     const group = category?.name || 'Marketplace data';
     const entry = {
-      slug, name: clean(skill.name || record.name), description: clean(record.description || skill.description),
+      slug, collection:'ecommerce', name: clean(skill.name || record.name), description: clean(record.description || skill.description),
       group, categoryDescription: clean(category?.description), categorySlug: skill.categorySlug, method: record.run?.method || 'POST', path, preview:previewContract(record,skill),
     };
     return [entry];
@@ -82,7 +80,7 @@ export function validate(snapshot) {
   if (snapshot.schemaVersion !== 1 || snapshot.scope !== 'data' || !snapshot.entries?.length) throw new Error('Empty or unsupported Data API publication');
   const seen = new Set();
   for (const e of snapshot.entries) {
-    if (!SLUG.test(e.categorySlug) || !isDataCategory(e.categorySlug)) throw new Error(`Non-data API is not allowed: ${e.slug}`);
+    if (!SLUG.test(e.categorySlug) || e.collection !== 'ecommerce') throw new Error(`Non-data API is not allowed: ${e.slug}`);
     if (!SLUG.test(e.slug) || ['index','quickstart'].includes(e.slug) || seen.has(e.slug) || !e.name || !e.path?.startsWith('/') || e.path.startsWith('//') || /[\s"'<>]/.test(e.path) || !['GET','POST','PUT','PATCH','DELETE'].includes(e.method)) throw new Error(`Invalid API entry: ${e.slug}`);
     seen.add(e.slug);
   }
@@ -102,6 +100,7 @@ function categoryVisual(category) {
     ['1688','1688','1688','#d66b10','#fff2e5'], ['amazon','Amazon','a','#bd7614','#fff4df'],
     ['tiktok','TikTok','♪','#27334d','#edf0f8'], ['ebay','eBay','e','#2765bd','#eaf2ff'],
     ['etsy','Etsy','E','#bc5a2b','#fff0e8'], ['shopify','Shopify','S','#497b32','#eef5e7'],
+    ['woocommerce','WooCommerce','Woo','#7353c6','#f3edfb'], ['jev','API evaluation','JEV','#576aa5','#eef1fa'],
     ['temu','Temu','T','#cb661b','#fff1e5'], ['walmart','Walmart','W','#266da9','#eaf4fc'],
     ['google','Google','G','#397555','#edf6f0'], ['web-search','Web search','↗','#5678ae','#edf2fb'],
     ['shopee','Shopee','S','#ce572e','#fff0e9'], ['ozon','Ozon','O','#3865cb','#edf1ff'],
@@ -171,8 +170,8 @@ function usageMarkup(metrics) {
 }
 function usageNote(snapshot) {
   const credits = snapshot.creditBasis === 'public-historical-statistics'
-    ? `<p class="api-usage-note">${snapshot.creditStatisticsAvailable === false ? 'Historical credit estimates are currently unavailable.' : `Historical credit statistics · Checked ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Minimum 10 credits per call. Ranges reflect public historical statistics, not a fixed price quote.`} Check official API documentation for current costs; - means no available estimate.</p>`
-    : snapshot.creditUpdatedAt ? `<p class="api-usage-note">Credit ranges · Updated ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Minimum 10 credits per call. Ranges use recorded positive charges for successful calls with this minimum applied, not a current price quote. Check official documentation for current costs; - means no recorded range.</p>` : '';
+    ? `<p class="api-usage-note">${snapshot.creditStatisticsAvailable === false ? 'Historical credit estimates are currently unavailable.' : `Historical credit statistics · Checked ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Historical ranges apply a 10-credit reporting floor, not a universal per-call price. Current charges can differ.`} Check official API documentation for current costs; - means no available estimate.</p>`
+    : snapshot.creditUpdatedAt ? `<p class="api-usage-note">Credit ranges · Updated ${esc(snapshot.creditUpdatedAt.slice(0,10))}. Historical ranges use recorded positive charges for successful calls with a 10-credit reporting floor, not a current price quote. Check official documentation for current costs; - means no recorded range.</p>` : '';
   return (snapshot.usageUpdatedAt ? `<p class="api-usage-note">All-time recorded usage · Updated ${esc(snapshot.usageUpdatedAt.slice(0,10))}. Includes test accounts and all request statuses. Categories sum calls and users across listed APIs; a user of multiple APIs may count more than once.</p>` : '') + credits;
 }
 function renderOperation(e, category, name) {
@@ -297,7 +296,7 @@ async function main() {
     const source=await readFile(resolve(root,'src/generated/skill-api-docs.publication.generated.ts'),'utf8');
     const context={};
     runInNewContext(stripTypeScriptTypes(source).replace('export default publication;','globalThis.publication=publication;'),context,{timeout:15000});
-    snapshot=project(context.publication);
+    snapshot=project(context.publication,await fetchDirectoryMembership());
     await mkdir(dirname(SNAPSHOT),{recursive:true});
     await writeFile(SNAPSHOT,json(snapshot)+'\n');
   } else snapshot=JSON.parse(await readFile(SNAPSHOT,'utf8'));
