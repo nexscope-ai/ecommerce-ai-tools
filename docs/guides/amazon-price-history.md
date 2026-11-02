@@ -105,6 +105,8 @@ Compare the period before, during, and after a promotion. Record what changed, h
 
 ## Can an AI agent monitor Amazon price history?
 
+For a daily estimated-units export with explicit ASIN and date checks, use the [Amazon Sales Estimator API Python tutorial]({{ '/guides/amazon-sales-estimator-api-python/' | relative_url }}). It keeps missing dates and parent/variant scope visible; it does not convert estimates into actual orders.
+
 Yes. A backend or agent can request the documented price-series capability, store the returned timestamps, compare changes, and create a review queue. The agent should not invent missing values or change prices without an explicit business rule and approval step.
 
 For agent integrations, read [what an MCP server is and how ecommerce tools connect to AI](../what-is-an-mcp-server/) and the [ecommerce API for AI agents guide](../ecommerce-api-for-ai-agents/). Keep credentials server-side and follow the current authentication instructions in the API documentation.

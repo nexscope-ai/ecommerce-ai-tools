@@ -250,6 +250,7 @@ No. The results are research signals. Validate product quality, inventory, prici
 
 ## Related resources
 
+- [Python batch export: match returned product IDs and inspect missing records]({{ '/guides/tiktok-shop-api-python/' | relative_url }})
 - [Nexscope API capabilities and ecommerce workflows]({{ '/api-capabilities/' | relative_url }})
 - [TikTok Shop AI UGC video seller workflow]({{ '/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/' | relative_url }})
 - [Ecommerce APIs and MCP tools for AI agents](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=tiktok-shop-api-guide&utm_content=related-resource)
