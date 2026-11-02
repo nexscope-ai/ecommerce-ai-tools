@@ -1,17 +1,30 @@
 # Nexscope Ecommerce AI Tools
 
-**Ecommerce Data APIs for builders. Free product listings for sellers.**
+**AI product video workflows. Ecommerce Data APIs. Free product listings.**
 
-[![Data APIs](assets/badges/data-apis.svg)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](assets/badges/product-gallery.svg)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](assets/badges/discussions.svg)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](assets/badges/license.svg)](LICENSE)
+[![Video Workflows](assets/badges/video-workflows.svg)](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_video) [![Data APIs](assets/badges/data-apis.svg)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](assets/badges/product-gallery.svg)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](assets/badges/discussions.svg)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](assets/badges/license.svg)](LICENSE)
 
-Find the data for your next workflow, or give your product a free public page built for search and AI discovery. Start with the two features on [Nexscope Learn](https://learn.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_home).
+Create product videos from photos, listing links or reference clips. Explore ecommerce Data APIs, or give your product a free public page built for search and AI discovery. Choose a starting point on [Nexscope Learn](https://learn.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_home).
 
 | What do you want to do? | Start here |
 | --- | --- |
+| Create a product video from images, a listing link, an avatar or a reference clip | **[Compare video workflows and watch examples →](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_video)** |
 | Find ecommerce data for an application, research task or AI workflow | **[Explore the Data API directory →](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_data)** |
 | Give your product a public page with facts, images and a link to your store | **[List your product for free →](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_primary_gallery)** |
 
-## 1. Data APIs: find the right operation before you build
+## 1. AI product videos: choose a workflow for the materials you have
+
+Compare five Nexscope browser workflows: **Image to Video**, **URL to Video**, **Avatar Video**, **Video Clone** and **Bulk Video**.
+
+- **Start from your existing materials:** use product photos, an accessible listing URL, an avatar or a reference clip; prepare multiple products for a batch.
+- **Watch official examples:** preview sample outputs and compare the inputs, use cases and expected output of each workflow.
+- **Open the matching tool:** follow the directory's button into the corresponding Nexscope workspace, review the available settings and check the credit estimate before generating.
+
+**[Explore video workflows →](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_video_feature)** · [Watch official examples](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_video_examples#examples)
+
+The directory and examples are free to browse. Video generation uses credits; review the current estimate in the selected workspace before generating.
+
+## 2. Data APIs: find the right operation before you build
 
 Browse ecommerce APIs for Amazon, TikTok, 1688, Shopify, Shopee, Walmart and other platforms. Filter by platform, search for the information you need, and open the exact official API documentation and online test.
 
@@ -23,7 +36,7 @@ Browse ecommerce APIs for Amazon, TikTok, 1688, Shopify, Shopee, Walmart and oth
 
 The directory is free to browse. API requests follow each operation's account, access and credit requirements.
 
-## 2. Product Gallery: list and display your product completely free
+## 3. Product Gallery: list and display your product completely free
 
 Give search and AI systems a clearer source about what you sell. An approved Gallery page brings your product facts, images, optional video and original store link together in one public page. This can support **AI discovery and generative engine optimization (GEO)**, while shoppers follow the link to your store to buy.
 

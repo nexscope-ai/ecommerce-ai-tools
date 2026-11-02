@@ -9,6 +9,7 @@ This page gives directory editors, maintainers and list curators factual informa
 | Name | Nexscope Ecommerce AI Tools |
 | Repository | https://github.com/nexscope-ai/ecommerce-ai-tools |
 | Learning site | https://learn.nexscope.ai/ecommerce-ai-tools/ |
+| Video workflow directory | https://learn.nexscope.ai/video/ |
 | Project type | Public ecommerce resource library, documentation site and supporting scripts |
 | Maintainer | Nexscope team |
 | Primary audiences | Ecommerce sellers, operators, developers and AI-agent builders |
@@ -20,7 +21,7 @@ The hosted Nexscope application runs separately. Its source code, credentials, c
 
 ## One-line description
 
-Public ecommerce AI guides, API evidence, product-page workflows and REST/MCP integration resources.
+Public guides for AI product video workflows, ecommerce Data APIs, product-page discovery and REST/MCP integrations.
 
 ## Short descriptions
 
@@ -42,6 +43,7 @@ Nexscope Ecommerce AI Tools documents ecommerce data workflows for AI agents, in
 
 ## Key public entry points
 
+- [AI product video workflows and official examples](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools_directory&utm_content=directory_kit_video)
 - [Product Gallery and free product-page feedback](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools_directory&utm_content=directory_kit_product_gallery)
 - [Ecommerce guides](https://learn.nexscope.ai/ecommerce-ai-tools/guides/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools_directory&utm_content=directory_kit_guides)
 - [API evidence library](https://learn.nexscope.ai/ecommerce-ai-tools/api-evidence/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools_directory&utm_content=directory_kit_api_evidence)
