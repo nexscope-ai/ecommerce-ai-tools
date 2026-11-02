@@ -38,6 +38,8 @@ TikTok now offers its own [AI Video Maker in Seller Center](https://seller-us.ti
 
 For the data layer behind product, creator, and video research, see the [TikTok Shop API guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}).
 
+Ready to turn a reviewed brief into creative? Use the [Avatar Video tutorial]({{ '/guides/ai-avatar-product-video-guide/' | relative_url }}) for presenter selection and script plans, or the [Video Clone tutorial]({{ '/guides/ai-ad-cloning-guide/' | relative_url }}) for reference selection and prompt review. For separate tasks across several products, follow the [Bulk Video guide]({{ '/guides/bulk-product-video-guide/' | relative_url }}).
+
 > **Key takeaways:** Start with approved images and claims for one exact SKU. Use AI to test a hook or visual treatment, not to invent product performance or a customer's experience. Review the generated item against the listing before publishing. Disclose fully or significantly AI-generated content as TikTok Shop requires in your market. Measure product clicks and orders alongside views, and keep a record of the input, final video, and approval decision.
 
 ## How do you go from market research to an AI UGC video?
