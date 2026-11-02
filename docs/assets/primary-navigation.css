@@ -15,7 +15,7 @@
 .trends-header .primary-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity:0; }
 .trends-header .primary-menu-toggle[aria-expanded="true"] span:last-child { transform:translateY(-7px) rotate(-45deg); }
 .trends-page .learn-site-footer { border-top: 0; padding: 0; background: #fbf9f4; color: #686571; font: 12px/1.6 Arial, Helvetica, sans-serif; }
-.trends-page .learn-site-footer .resource-footer { display: flex; flex-direction: row; align-items: initial; justify-content: space-between; flex-wrap: wrap; gap: 20px; width: min(1200px, calc(100% - 64px)); padding-block: 30px; border-top: 1px solid #211f261a; }
+.trends-page .learn-site-footer .resource-footer { display: flex; flex-direction: row; align-items: initial; justify-content: space-between; flex-wrap: wrap; gap: 20px; width: min(1200px, calc(100% - 64px)); margin-inline: auto; padding-block: 30px; border-top: 1px solid #211f261a; }
 .trends-page .learn-site-footer a { color: inherit; font-size: inherit; font-weight: 400; text-decoration: none; }
 .trends-page .learn-site-footer a:hover { color: #6250e9; }
 .trends-page .learn-site-footer p { margin-top: 14px; color: inherit; }
