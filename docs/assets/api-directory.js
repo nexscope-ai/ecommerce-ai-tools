@@ -12,6 +12,11 @@
     });
   }
   document.addEventListener('click', event => {
+    const guide = event.target.closest?.('a[data-data-workflow]');
+    if (guide) track('data_api_workflow_guide_open', {
+      data_category: guide.getAttribute('data-data-workflow'),
+      link_path: new URL(guide.href, window.location.href).pathname,
+    });
     const link = event.target.closest?.('a[data-data-category]');
     if (!link) return;
     const apiSlug = link.getAttribute('data-api-slug');

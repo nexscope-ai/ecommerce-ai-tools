@@ -8,6 +8,7 @@ import { loadUsage, applyUsage, compareUsage } from './data-api-usage.mjs';
 import { selectionCopy, selectionHelp, directorySchema } from './data-api-seo.mjs';
 import { learnDataHeader, learnDataFooter } from './learn-data-shell.mjs';
 import { withPublicCreditStatistics } from './public-credit-statistics.mjs';
+import { categoryEditorialCopy, operationEditorialCopy, researchWorkflows, copyReviewedAt } from './data-api-copy.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SNAPSHOT = join(ROOT, 'scripts/data/api-docs.public.json');
@@ -129,10 +130,21 @@ function cardStyle(category) {
   return `--card-accent:${visual.color};--card-soft:${visual.soft}`;
 }
 function categoryCopy(category,entries) {
-  const legacyNames={'amazon-advertising':'Amazon Advertising','amazon-marketplace-intelligence':'Amazon Marketplace Intelligence','patent-ip-risk':'Design Registration Research','product-market-research':'Product & Market Research'};
-  const name=legacyNames[category] || entries[0].group;
-  const topics=entries.slice(0,3).map(e=>e.name.replace(/ API$/,'')).join(', ');
-  return {name,description:`Explore ${topics}${entries.length>3?', and more':''}.`};
+  return categoryEditorialCopy(category,entries);
+}
+
+function categorySelectionCopy(category, entries) {
+  const editorial=categoryCopy(category,entries);
+  const copy={...selectionCopy(editorial.name,entries,categoryVisual(category).kind),...editorial};
+  const task=researchWorkflows.find(task=>task.category===category || (category==='amazon-advertising' && task.category==='data-amazon-ads'));
+  if (task) copy.guide={url:task.guide,name:task.guideLabel};
+  return copy;
+}
+
+function workflowMarkup(groups) {
+  const workflows=researchWorkflows.filter(task=>groups.has(task.category));
+  if (!workflows.length) return '';
+  return `<section class="api-task-section" aria-labelledby="api-tasks-title"><div class="api-section-heading"><p class="api-eyebrow">Start with your question</p><h2 id="api-tasks-title">What are you researching?</h2><p>Choose a workflow to see which data to request and how to use it. Then compare the available APIs.</p></div><div class="api-task-grid">${workflows.map(task=>`<article class="api-task-card"><h3>${esc(task.title)}</h3><p>${esc(task.description)}</p><a href="${categoryPath(task.category)}" data-data-category="${esc(task.category)}">Find matching APIs →</a><a href="${esc(task.guide)}" data-data-workflow="${esc(task.category)}">${esc(task.guideLabel)} →</a></article>`).join('')}</div></section>`;
 }
 
 export function categoryPath(category) { return `/data/${category.replace(/^data-/, '')}/`; }
@@ -170,7 +182,7 @@ function renderOperation(e, category, name) {
 }
 export function buildPages(snapshot) {
   validate(snapshot);
-  const orderedEntries = [...snapshot.entries].sort((a,b)=>compareUsage(a.usage,b.usage));
+  const orderedEntries = snapshot.entries.map(operationEditorialCopy).sort((a,b)=>compareUsage(a.usage,b.usage));
   const groups = new Map([...Map.groupBy(orderedEntries,e=>e.categorySlug)].sort(([a],[b])=>compareUsage(snapshot.categoryUsage?.[a],snapshot.categoryUsage?.[b])));
   const pages = new Map();
   const categories = [];
@@ -185,18 +197,18 @@ export function buildPages(snapshot) {
     const previous=platforms.get(visual.kind);
     platforms.set(visual.kind,{...visual,count:(previous?.count||0)+entries.length});
     const {name,description} = categoryCopy(category,entries);
-    const copy=selectionCopy(name,entries,visual.kind);
+    const copy=categorySelectionCopy(category,entries);
     const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
     categories.push(card);
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
-    const content = `<nav aria-label="Breadcrumb"><a href="/data/">Data API categories</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(copy.summary)}</p><p>${esc(description)}</p><p class="api-caption">Access and credit requirements vary by operation.</p><div data-data-directory data-directory-kind="category">${searchControls('Find an API','API',entries.length)}<section data-results-kind="apis" data-api-group="${esc(name)}"><h2 class="api-directory-title">Explore ${esc(name)} APIs</h2><div class="api-directory">${cards}</div></section></div>${selectionHelp(copy)}${usageNote(snapshot)}`;
-    pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,`${name} APIs for ecommerce research. Compare ${entries.length} operations, review marketplace coverage and credit requirements, and open the official online tester.`,route.slice('/data/'.length,-1),content));
+    const content = `<nav aria-label="Breadcrumb"><a href="/data/">Data API categories</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p>${copy.chooseWhen?`<aside class="api-choice-note"><h2>Is this the right category for your task?</h2><p>${esc(copy.chooseWhen)}</p></aside>`:''}<p class="api-caption">Access and credit requirements vary by operation.</p><div data-data-directory data-directory-kind="category">${searchControls('Find an API','API',entries.length)}<section data-results-kind="apis" data-api-group="${esc(name)}"><h2 class="api-directory-title">Explore ${esc(name)} APIs</h2><div class="api-directory">${cards}</div></section></div>${selectionHelp(copy)}${usageNote(snapshot)}`;
+    pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content));
   }
   const chips=`<div class="api-platform-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${visual.logo?`<img src="/data/logos/${visual.logo}" alt="" width="20" height="20">`:''}${esc(visual.label)} <span>${visual.count}</span></button>`).join('')}</div>`;
   const switcher=`<div class="api-view-switch" role="group" aria-label="Browse directory" data-view-switch hidden><button type="button" data-directory-view="categories" aria-pressed="true">Categories <span>${groups.size}</span></button><button type="button" data-directory-view="apis" aria-pressed="false">All APIs <span>${snapshot.entries.length}</span></button></div>`;
   const rootCopy=selectionCopy('Ecommerce Data',orderedEntries);
-  const content = `<p class="api-eyebrow">Nexscope Data API directory</p><h1>Ecommerce Data APIs</h1><p>${esc(rootCopy.summary)}</p><p>Browse ${snapshot.entries.length} APIs across ${groups.size} categories.</p><div data-data-directory data-directory-kind="root">${chips}${searchControls('Search all APIs','category',groups.size,true)}${switcher}<section data-results-kind="categories" data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section><section data-results-kind="apis" data-api-group="APIs" hidden><div class="api-directory">${operations.sort((a,b)=>compareUsage(a.entry.usage,b.entry.usage)).map(item=>item.html).join('')}</div></section></div>${selectionHelp(rootCopy)}${usageNote(snapshot)}`;
+  const content = `<p class="api-eyebrow">Nexscope Data API directory</p><h1>Ecommerce Data APIs</h1><p>${esc(rootCopy.summary)}</p><p>Browse ${snapshot.entries.length} APIs across ${groups.size} categories.</p>${workflowMarkup(groups)}<div data-data-directory data-directory-kind="root"><h2 class="api-directory-title">Browse APIs by platform and task</h2>${chips}${searchControls('Search all APIs','category',groups.size,true)}${switcher}<section data-results-kind="categories" data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section><section data-results-kind="apis" data-api-group="APIs" hidden><div class="api-directory">${operations.sort((a,b)=>compareUsage(a.entry.usage,b.entry.usage)).map(item=>item.html).join('')}</div></section></div>${selectionHelp(rootCopy)}${usageNote(snapshot)}`;
   return new Map([['index.md',page('Ecommerce Data APIs for Developers & AI Agents | Nexscope','Explore Nexscope ecommerce Data APIs for Amazon, TikTok, 1688 and more. Compare operations by platform and open official documentation and online testing.','',content)],...pages]);
 }
 
@@ -204,12 +216,12 @@ export function renderStandalone(source, snapshot) {
   const title = JSON.parse(source.match(/^title: (.+)$/m)[1]);
   const description = JSON.parse(source.match(/^description: (.+)$/m)[1]);
   const path = source.match(/^permalink: (.+)$/m)[1];
-  const modifiedAt = [snapshot.generatedAt,snapshot.usageUpdatedAt,snapshot.creditBasis === 'public-historical-statistics' ? null : snapshot.creditUpdatedAt].filter(Boolean).sort((a,b)=>Date.parse(b)-Date.parse(a))[0];
+  const modifiedAt = [copyReviewedAt,snapshot.generatedAt,snapshot.usageUpdatedAt,snapshot.creditBasis === 'public-historical-statistics' ? null : snapshot.creditUpdatedAt].filter(Boolean).sort((a,b)=>Date.parse(b)-Date.parse(a))[0];
   const category=path==='/data/' ? null : snapshot.entries.find(e=>categoryPath(e.categorySlug)===path)?.categorySlug;
   const selected=[...snapshot.entries.filter(e=>!category||e.categorySlug===category)].sort((a,b)=>compareUsage(a.usage,b.usage));
   const groups=new Map([...Map.groupBy(snapshot.entries,e=>e.categorySlug)].sort(([a],[b])=>compareUsage(snapshot.categoryUsage?.[a],snapshot.categoryUsage?.[b])));
   const items=category ? selected.map(e=>({name:e.name,url:officialApiUrl(e.slug)})) : [...groups].map(([key,entries])=>({name:categoryCopy(key,entries).name,url:'https://learn.nexscope.ai'+categoryPath(key)}));
-  const copy=selectionCopy(category?categoryCopy(category,selected).name:'Ecommerce Data',selected,category?categoryVisual(category).kind:'root');
+  const copy=category?categorySelectionCopy(category,selected):selectionCopy('Ecommerce Data',selected);
   const schema=directorySchema({title,description,path,modifiedAt,items,faqs:copy.faqs});
   const body = source.slice(source.indexOf('{% raw %}') + '{% raw %}'.length).replace(/\{% (?:endraw|raw) %\}/g, '');
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="https://learn.nexscope.ai${path}"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="Nexscope Learn"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://learn.nexscope.ai${path}"><meta property="article:modified_time" content="${esc(modifiedAt)}"><script type="application/ld+json">${schema}</script><link rel="stylesheet" href="/data/api-reference.css${snapshot.assetVersions?.css ? `?v=${snapshot.assetVersions.css}` : ''}"><link rel="stylesheet" href="/data/learn-shell.css?v=${snapshot.assetVersions?.shellCss || "1"}"><noscript><style>.trends-header .primary-menu-toggle{display:none}.trends-header>.wrap{flex-wrap:wrap;padding-block:16px}.trends-header .primary-navigation{display:block;position:static;width:100%;box-shadow:none;border:0}</style></noscript></head><body class="api-root trends-page">${learnDataHeader(path)}<main class="api-reference">${body}</main>${learnDataFooter()}<script src="/data/learn-shell.js?v=${snapshot.assetVersions?.shellJs || "1"}" defer></script><script src="/data/api-directory.js${snapshot.assetVersions?.js ? `?v=${snapshot.assetVersions.js}` : ''}" defer></script></body></html>`;

@@ -27,7 +27,7 @@ export function selectionCopy(name, entries, kind='root') {
     google:{url:'/ecommerce-ai-tools/guides/google-trends-api/',name:'Use Google Trends APIs for demand research'},
   };
   return {
-    summary:isRoot?'Nexscope Data APIs let developers and AI agents find ecommerce research operations across marketplaces, sourcing, search and product-risk research. Choose a platform, compare API purposes and open the exact official documentation to inspect inputs, returned fields and credit requirements.':(useCases[kind]||`Explore ${name} operations for a focused ecommerce data workflow.`),
+    summary:isRoot?'Find the data for your next product decision: compare marketplace listings, research competitor keywords, shortlist wholesale offers or check seasonal interest. Start with a task below, then open the matching Nexscope API documentation to check inputs, returned fields and credit requirements.':(useCases[kind]||`Explore ${name} operations for a focused ecommerce data workflow.`),
     guide:guides[kind],
     faqs:[
       {q:isRoot?'How do I choose an ecommerce data API?':`Which ${name} API should I choose?`,a:isRoot?'Start with the marketplace and the question you need to answer. Search for a task such as product search, reviews or keywords, then open that API’s official documentation to check required identifiers and returned fields.':`Available operations include ${examples}. Choose the operation that matches the information you need, then inspect its required identifiers and response fields in the official documentation.`},

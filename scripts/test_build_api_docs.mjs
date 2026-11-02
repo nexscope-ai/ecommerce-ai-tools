@@ -8,6 +8,7 @@ import {runInNewContext} from 'node:vm';
 import {applyUsage, validateUsage} from './data-api-usage.mjs';
 import {projectFeed} from './refresh-data-api-snapshot.mjs';
 import {projectCreditStatistics, fetchPublicCreditStatistics, withPublicCreditStatistics} from './public-credit-statistics.mjs';
+import {categoryCopyMap, operationCopyMap, researchWorkflows} from './data-api-copy.mjs';
 
 const entry={slug:'test-api',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
@@ -137,7 +138,43 @@ test('platform filters sort by API count across categories, keeping All platform
   assert.ok(chips.indexOf('data-platform-filter=""')<chips.indexOf('data-platform-filter="amazon"'));
   assert.ok(chips.indexOf('data-platform-filter="amazon"')<chips.indexOf('data-platform-filter="1688"'));
   // Sourcing has more calls, but Amazon has more APIs across its categories.
-  assert.ok(root.indexOf('href="/data/1688-sourcing/"')<root.indexOf('href="/data/amazon-front-data/"'));
+  const categoryCards=root.split('<section data-results-kind="categories"')[1].split('</section>')[0];
+  assert.ok(categoryCards.indexOf('href="/data/1688-sourcing/"')<categoryCards.indexOf('href="/data/amazon-front-data/"'));
+});
+
+test('editorial mappings cover published categories without changing contracts or official destinations',async()=>{
+  const current=JSON.parse(await readFile(new URL('./data/api-docs.public.json',import.meta.url),'utf8'));
+  const before=JSON.stringify(current);
+  const pages=buildPages(current);
+  for(const key of new Set(current.entries.map(e=>e.categorySlug))) {
+    assert.ok(categoryCopyMap[key],`missing editorial category: ${key}`);
+    const html=pages.get(key+'.md');
+    assert.ok(html.includes(categoryCopyMap[key].name.replaceAll('&','&amp;')));
+    assert.match(html,/Is this the right category for your task/);
+    for(const entry of current.entries.filter(e=>e.categorySlug===key)) assert.ok(html.includes(officialApiUrl(entry.slug)));
+  }
+  for(const slug of Object.keys(operationCopyMap)) assert.ok(current.entries.some(e=>e.slug===slug),`stale operation mapping: ${slug}`);
+  assert.equal(JSON.stringify(current),before,'rendering must not mutate the refreshed contracts');
+  const future={...entry,categorySlug:'data-new-market',group:'Future Market',categoryDescription:'Research a new marketplace.'};
+  const fallback=buildPages({...snapshot,entries:[future]}).get('data-new-market.md');
+  assert.match(fallback,/Future Market/); assert.match(fallback,/Research a new marketplace/);
+  assert.ok(fallback.includes(officialApiUrl(entry.slug)));
+});
+
+test('workflow recommendations link only present categories and existing guides in server-rendered HTML',async()=>{
+  const current=JSON.parse(await readFile(new URL('./data/api-docs.public.json',import.meta.url),'utf8'));
+  const root=buildPages(current).get('index.md');
+  assert.match(root,/What are you researching/);
+  const workflow=root.split('<section class="api-task-section"')[1].split('</section>')[0];
+  assert.doesNotMatch(workflow,/hidden|onclick=/);
+  const guideFiles=await readdir(new URL('../docs/guides/',import.meta.url));
+  const guides=await Promise.all(guideFiles.filter(f=>f.endsWith('.md')).map(f=>readFile(new URL('../docs/guides/'+f,import.meta.url),'utf8')));
+  for(const task of researchWorkflows) {
+    assert.ok(workflow.includes(`href="${task.guide}"`));
+    assert.ok(guides.some(text=>text.includes('permalink: '+task.guide.replace('/ecommerce-ai-tools',''))),task.guide);
+  }
+  const fixtureRoot=buildPages(snapshot).get('index.md');
+  assert.ok(!fixtureRoot.includes('href="/data/1688-sourcing/"'),'do not recommend absent categories');
 });
 
 test('historical positive credit ranges aggregate category extrema without adding API costs',()=>{
@@ -328,14 +365,20 @@ test('category and API clicks retain source context without resetting acquisitio
   runInNewContext(source,{document,window,URL});
   const attrs={'data-api-slug':'test-api','data-data-category':'data-amazon-front-data'};
   const link={href:officialApiUrl('test-api'),getAttribute:name=>attrs[name]};
-  click({target:{closest:()=>link}});
+  click({target:{closest:selector=>selector==='a[data-data-category]'?link:null}});
   assert.equal(calls[0][1],'data_api_open');
   assert.equal(calls[0][2].co_from,'learn');
   assert.equal(calls[0][2].source_page,'/data/amazon-front-data/');
   assert.equal(calls[0][2].traffic_source,'google');
   delete attrs['data-api-slug'];link.href='/data/amazon-front-data/';
-  click({target:{closest:()=>link}});
+  click({target:{closest:selector=>selector==='a[data-data-category]'?link:null}});
   assert.equal(calls[1][1],'data_api_category_click');
+  const guide={href:'/ecommerce-ai-tools/guides/tiktok-shop-api-guide/',getAttribute:()=> 'data-tiktok-shop-product-detail'};
+  click({target:{closest:selector=>selector==='a[data-data-workflow]'?guide:null}});
+  assert.equal(calls.length,3,'a guide click must emit one event');
+  assert.equal(calls[2][1],'data_api_workflow_guide_open');
+  assert.equal(calls[2][2].traffic_source,'google');
+  assert.equal(calls[2][2].link_path,guide.href);
 });
 
 test('preview projection exposes only bounded published input examples and declared output fields',()=>{

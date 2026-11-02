@@ -88,6 +88,21 @@
 @media(max-width:400px){.api-card-actions{display:grid;grid-template-columns:minmax(0,1fr);row-gap:12px}.api-usage{justify-self:end}}
 
 .api-directory-title{font-size:1.15rem;line-height:1.4;margin:0 0 20px}
+.api-task-section{margin:36px 0 44px}
+.api-section-heading h2{font-size:1.55rem;line-height:1.25;margin:8px 0 12px;letter-spacing:-.025em}
+.api-section-heading>p:not(.api-eyebrow){max-width:760px;color:#6d677a;font-size:.9rem}
+.api-task-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.api-task-card{min-width:0;display:flex;flex-direction:column;padding:22px;border:1px solid #e5dfef;border-radius:14px;background:#fff}
+.api-task-card h3{font-size:1rem;line-height:1.4;margin:0 0 10px;color:#30283e}
+.api-task-card p{font-size:.85rem;color:#6d677a;margin:0 0 18px;flex:1}
+.api-task-card a{font-size:.8rem;line-height:1.5;padding:5px 0;text-decoration:none;overflow-wrap:anywhere}
+.api-task-card a:hover{text-decoration:underline}
+.api-task-card a:first-of-type{font-weight:700}
+.api-choice-note{max-width:860px;padding:20px 24px;margin:24px 0;background:#f1edfa;border:1px solid #e4dcf3;border-radius:14px}
+.api-choice-note h2{font-size:1rem;margin:0 0 8px;color:#392e4f}
+.api-choice-note p{font-size:.9rem;margin:0;color:#63576f}
+@media(max-width:950px){.api-task-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.api-task-grid{grid-template-columns:minmax(0,1fr)}.api-task-card{padding:18px}.api-task-section{margin:28px 0 32px}}
 .api-selection-help,.api-faq{margin-top:44px;padding-top:28px;border-top:1px solid #e8e3ef}
 .api-selection-help h2,.api-faq h2{font-size:1.25rem;line-height:1.35;margin:0 0 18px}
 .api-selection-help ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:0;list-style:none}
