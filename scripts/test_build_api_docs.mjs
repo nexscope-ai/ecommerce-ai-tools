@@ -51,7 +51,9 @@ test('Data directory and category pages share the Learn navigation, footer and r
   for(const path of ['index.html','amazon-front-data/index.html']) {
     const html=await readFile(join(dir,path),'utf8');
     const header=html.match(/<header[\s\S]*?<\/header>/)[0];
-    for(const href of ['/data/','/ecommerce-ai-tools/product-showcase/','/tools/','/ecommerce-ai-tools/','/pricing/','/ecommerce-ai-tools/product-showcase/submit/']) assert.ok(header.includes(`href="${href}"`));
+    for(const href of ['/data/','/ecommerce-ai-tools/product-showcase/','/ecommerce-ai-tools/','/pricing/','/ecommerce-ai-tools/product-showcase/submit/']) assert.ok(header.includes(`href="${href}"`));
+    assert.ok(!header.includes('href="/tools/"'));
+    assert.match(html.match(/<footer[\s\S]*?<\/footer>/)[0], /href="\/tools\/"/);
     assert.match(header,/aria-controls="primary-navigation"/);
     assert.match(header,/aria-current="(?:page|location)"/);
     assert.match(html,/learn-shell\.css\?v=[a-f0-9]{12}/);

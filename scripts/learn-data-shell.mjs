@@ -7,7 +7,6 @@ export function learnDataHeader(path) {
     <li><a href="/data/" data-track-tool="data-directory" aria-current="${path === '/data/' ? 'page' : 'location'}">Data APIs</a></li>
     <li><a href="/video/" data-track-tool="video-directory">Video workflows</a></li>
     <li><a href="/ecommerce-ai-tools/product-showcase/" data-track-tool="product-gallery">Product Gallery</a></li>
-    <li><a href="/tools/">Tools</a></li>
     <li><a href="/ecommerce-ai-tools/">Guides &amp; resources</a></li>
     <li><a href="/pricing/">Pricing</a></li>
     <li><a class="nav-cta" href="/ecommerce-ai-tools/product-showcase/submit/" data-showcase-submit-cta="data-navigation">List a product free →</a></li>
