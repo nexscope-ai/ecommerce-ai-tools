@@ -18,7 +18,7 @@
 .trends-page .learn-site-footer .resource-footer { display: flex; flex-direction: row; align-items: initial; justify-content: space-between; flex-wrap: wrap; gap: 20px; width: min(1200px, calc(100% - 64px)); margin-inline: auto; padding-block: 30px; border-top: 1px solid #211f261a; }
 .trends-page .learn-site-footer a { color: inherit; font-size: inherit; font-weight: 400; text-decoration: none; }
 .trends-page .learn-site-footer a:hover { color: #6250e9; }
-.trends-page .learn-site-footer p { margin-top: 14px; color: inherit; }
+.trends-page .learn-site-footer p { margin: 14px 0 1em; color: inherit; }
 .trends-page .learn-site-footer nav { display: flex; gap: 24px; align-items: center; justify-content: flex-start; flex-wrap: wrap; margin: 0; }
 .trends-page .learn-site-footer .learn-footer-disclosure { width: 100%; font-size: 11px; }
 @media (max-width: 1180px) {
@@ -31,6 +31,6 @@
   .trends-header .primary-navigation a:hover, .trends-header .primary-navigation a[aria-current] { background: transparent; }
   .trends-header .primary-navigation .nav-cta { margin-top: 8px; padding: 0 20px; border-radius: 999px; }
 }
-@media (max-width: 600px) { .trends-page .learn-site-footer .resource-footer { width: calc(100% - 36px); } }
+@media (max-width: 700px) { .trends-page .learn-site-footer .resource-footer { width: calc(100% - 36px); } .trends-page .learn-site-footer nav { gap: 18px; } }
 @media (max-width: 440px) { .trends-header .brand img { width: 140px; height: auto; } }
 @media (prefers-reduced-motion: reduce) { .trends-header .primary-menu-toggle span { transition:none; } }
