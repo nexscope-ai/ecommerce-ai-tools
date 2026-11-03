@@ -10,6 +10,7 @@ import { learnDataHeader, learnDataFooter } from './learn-data-shell.mjs';
 import { withPublicCreditStatistics } from './public-credit-statistics.mjs';
 import { categoryEditorialCopy, operationEditorialCopy, researchWorkflows, copyReviewedAt } from './data-api-copy.mjs';
 import {dataCollectionSlugs, fetchDirectoryMembership} from './data-directory-membership.mjs';
+import {dataStarts} from './data-api-starts.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SNAPSHOT = join(ROOT, 'scripts/data/api-docs.public.json');
@@ -148,9 +149,20 @@ function categorySelectionCopy(category, entries) {
 }
 
 function workflowMarkup(groups) {
-  const workflows=researchWorkflows.filter(task=>groups.has(task.category));
+  const featured=['data-amazon-front-data','data-1688-sourcing','data-amazon-ads'];
+  const workflows=researchWorkflows.filter(task=>groups.has(task.category)).sort((a,b)=>(featured.includes(a.category)?featured.indexOf(a.category):10)-(featured.includes(b.category)?featured.indexOf(b.category):10));
   if (!workflows.length) return '';
-  return `<section class="api-task-section" aria-labelledby="api-tasks-title"><div class="api-section-heading"><p class="api-eyebrow">Start with your question</p><h2 id="api-tasks-title">What are you researching?</h2><p>Choose a workflow to see which data to request and how to use it. Then compare the available APIs.</p></div><div class="api-task-grid">${workflows.map(task=>`<article class="api-task-card"><h3>${esc(task.title)}</h3><p>${esc(task.description)}</p><a href="${categoryPath(task.category)}" data-data-category="${esc(task.category)}">Find matching APIs →</a><a href="${esc(task.guide)}" data-data-workflow="${esc(task.category)}">${esc(task.guideLabel)} →</a></article>`).join('')}</div></section>`;
+  const quickNavigation='<nav class="api-intent-navigation" aria-label="Choose how to browse"><a href="#api-tasks-title">Choose by task →</a><a href="#api-search">Search all APIs →</a></nav>';
+  const card=task=>{const start=dataStarts[task.category];return `<article class="api-task-card"><h3>${esc(task.title)}</h3><p>${esc(task.description)}</p>${start?`<dl class="api-task-facts"><div><dt>You bring</dt><dd>${esc(start.bring)}</dd></div><div><dt>You get</dt><dd>${esc(start.result)}</dd></div></dl>`:''}<a href="${categoryPath(task.category)}" data-data-category="${esc(task.category)}" data-cta-placement="data-task">Choose an API for this task →</a><a href="${esc(task.guide)}" data-data-workflow="${esc(task.category)}">${esc(task.guideLabel)} →</a></article>`;};
+  return quickNavigation + `<section class="api-task-section" aria-labelledby="api-tasks-title"><div class="api-section-heading"><p class="api-eyebrow">Start with one useful request</p><h2 id="api-tasks-title">What do you need to find out?</h2><p>Choose a task, check what you need to provide, then inspect one result before integrating.</p></div><div class="api-task-grid">${workflows.filter(t=>featured.includes(t.category)).map(card).join('')}</div>${workflows.some(t=>!featured.includes(t.category))?`<details class="api-more-tasks"><summary>More research tasks: stores, keywords, TikTok & seasonality</summary><div class="api-task-grid">${workflows.filter(t=>!featured.includes(t.category)).map(card).join('')}</div></details>`:''}</section>`;
+}
+
+function startingPoint(category, entries) {
+  const start=dataStarts[category];
+  if (!start) return '';
+  const steps=start.steps.flatMap(([slug,label,help])=>entries.some(entry=>entry.slug===slug)?[`<li><h3>${esc(label)}</h3><p>${esc(help)}</p><a href="${officialApiUrl(slug)}" data-data-category="${esc(category)}" data-api-slug="${esc(slug)}" data-cta-placement="data-recommended-start">Open ${esc(entries.find(entry=>entry.slug===slug).name)} ↗</a></li>`]:[]);
+  if (!steps.length) return '';
+  return `<section class="api-start" aria-labelledby="api-start-title"><p class="api-eyebrow">A practical starting point</p><h2 id="api-start-title">${esc(start.title)}</h2><dl class="api-task-facts"><div><dt>You bring</dt><dd>${esc(start.bring)}</dd></div><div><dt>You get</dt><dd>${esc(start.result)}</dd></div></dl><ol>${steps.join('')}</ol><p class="api-caption">Open the official documentation to review required inputs, credentials and current credit costs before running a request.</p></section>`;
 }
 
 export function categoryPath(category) { return `/data/${category.replace(/^data-/, '')}/`; }
@@ -209,7 +221,7 @@ export function buildPages(snapshot) {
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
     const content = `<nav aria-label="Breadcrumb"><a href="/data/">Data API categories</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p>${copy.chooseWhen?`<aside class="api-choice-note"><h2>Is this the right category for your task?</h2><p>${esc(copy.chooseWhen)}</p></aside>`:''}<p class="api-caption">Access and credit requirements vary by operation.</p><div data-data-directory data-directory-kind="category">${searchControls('Find an API','API',entries.length)}<section data-results-kind="apis" data-api-group="${esc(name)}"><h2 class="api-directory-title">Explore ${esc(name)} APIs</h2><div class="api-directory">${cards}</div></section></div>${selectionHelp(copy)}${usageNote(snapshot)}`;
-    pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content));
+    pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content.replace('<div data-data-directory',`${startingPoint(category,entries)}<div data-data-directory`)));
   }
   const chips=`<div class="api-platform-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${platformIcon(visual,20)}${esc(visual.label)} <span>${visual.count}</span>${platformNew(visual)}</button>`).join('')}</div>`;
   const switcher=`<div class="api-view-switch" role="group" aria-label="Browse directory" data-view-switch hidden><button type="button" data-directory-view="categories" aria-pressed="true">Categories <span>${groups.size}</span></button><button type="button" data-directory-view="apis" aria-pressed="false">All APIs <span>${snapshot.entries.length}</span></button></div>`;

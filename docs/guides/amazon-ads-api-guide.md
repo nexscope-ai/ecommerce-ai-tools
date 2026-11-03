@@ -123,4 +123,8 @@ The [campaign-list reference](https://www.nexscope.ai/api-docs/amazon-advertisin
 
 Check [current Nexscope pricing and access](https://www.nexscope.ai/pricing?co-from=learn) alongside the endpoint's current estimate. Plan the whole workflow, not just one request; no measured total is available from this article.
 
+## Choose your first reporting request
+
+Use the [Amazon Ads reporting starting point](/data/amazon-ads/#api-start-title) to check account access, find report creation and status operations, and review what you need before testing. Start with a reporting task for an account you are authorized to access; campaign-management operations can make changes.
+
 {% include api-guide-faq.html %}

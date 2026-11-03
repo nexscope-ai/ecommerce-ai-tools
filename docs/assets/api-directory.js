@@ -24,6 +24,7 @@
       data_category: link.getAttribute('data-data-category'), api_slug: apiSlug || undefined,
       link_path: new URL(link.href, window.location.href).pathname,
       co_from: apiSlug ? 'learn' : undefined,
+      cta_placement: link.getAttribute('data-cta-placement') || 'data-directory',
     });
   });
   const directory = document.querySelector('[data-data-directory]');
@@ -64,8 +65,15 @@
       const badge = button.querySelector('span');
       if (badge) badge.textContent = String(matchingCounts[kind]);
     }
+    return total;
   }
   search.addEventListener('input', update);
+  search.addEventListener('change', () => {
+    if (search.value.trim()) track('data_api_search', {
+      query_length: Math.min(search.value.trim().length,500),
+      result_count: update(), data_platform: platform || 'all',
+    });
+  });
   clear.addEventListener('click', () => { search.value = ''; update(); search.focus(); });
   for (const button of platformButtons) button.addEventListener('click', () => {
     platform = button.getAttribute('data-platform-filter'); update();
@@ -75,6 +83,7 @@
     view = button.getAttribute('data-directory-view');
     if (view === 'categories') search.value = '';
     update();
+    track('data_api_view_change', { directory_view: view });
   });
   directory.querySelector('[data-reset-filters]').addEventListener('click', () => { platform = ''; search.value = ''; view = isRoot ? 'categories' : 'apis'; update(); search.focus(); });
   for (const control of directory.querySelectorAll('[data-api-filters], [data-platform-filters], [data-view-switch]')) control.hidden = false;

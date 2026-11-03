@@ -215,7 +215,7 @@ test('editorial mappings cover published categories without changing contracts o
 test('workflow recommendations link only present categories and existing guides in server-rendered HTML',async()=>{
   const current=JSON.parse(await readFile(new URL('./data/api-docs.public.json',import.meta.url),'utf8'));
   const root=buildPages(current).get('index.md');
-  assert.match(root,/What are you researching/);
+  assert.match(root,/What do you need to find out/);
   const workflow=root.split('<section class="api-task-section"')[1].split('</section>')[0];
   assert.doesNotMatch(workflow,/hidden|onclick=/);
   const guideFiles=await readdir(new URL('../docs/guides/',import.meta.url));
@@ -226,6 +226,21 @@ test('workflow recommendations link only present categories and existing guides 
   }
   const fixtureRoot=buildPages(snapshot).get('index.md');
   assert.ok(!fixtureRoot.includes('href="/data/1688-sourcing/"'),'do not recommend absent categories');
+});
+
+test('task starting points link only published operations and retain channel and placement context',async()=>{
+  const current=JSON.parse(await readFile(new URL('./data/api-docs.public.json',import.meta.url),'utf8'));
+  const pages=buildPages(current);
+  for(const category of ['data-amazon-front-data','data-amazon-ads','data-1688-sourcing']) {
+    const html=pages.get(category+'.md');
+    const start=html.split('<section class="api-start"')[1].split('</section>')[0];
+    assert.match(start,/You bring/);assert.match(start,/You get/);
+    const links=[...start.matchAll(/href="([^"]+)"[^>]*data-api-slug="([^"]+)"/g)];
+    assert.ok(links.length>0);
+    for(const [,url,slug] of links){assert.ok(current.entries.some(e=>e.slug===slug&&e.categorySlug===category));assert.equal(new URL(url).searchParams.get('co-from'),'learn');}
+  }
+  const absent=buildPages(snapshot).get(entry.categorySlug+'.md');
+  assert.ok(!absent.includes('class="api-start"'),'a missing API must not create a dead starting point');
 });
 
 test('historical positive credit ranges aggregate category extrema without adding API costs',()=>{
@@ -379,7 +394,8 @@ test('platform filters and global search switch between categories and direct AP
   const sections=[{dataset:{resultsKind:'categories'},querySelectorAll:()=>categories},{dataset:{resultsKind:'apis'},querySelectorAll:()=>apis}];
   const directory={dataset:{directoryKind:'root'},querySelector:s=>({'[data-api-count]':count,'[data-api-empty]':empty,'[data-clear-search]':clear,'[data-reset-filters]':reset}[s]),querySelectorAll:s=>s==='[data-platform-filter]'?platforms:s==='[data-directory-view]'?views:s==='[data-results-kind]'?sections:[filters]};
   const document={addEventListener(){},querySelector:()=>directory,getElementById:()=>search};
-  const window={location:{pathname:'/data/'},gtag(){}};
+  const searchEvents=[];
+  const window={location:{pathname:'/data/'},gtag:(...args)=>searchEvents.push(args)};
   runInNewContext(source,{document,window,URL});
   assert.equal(filters.hidden,false);assert.equal(sections[0].hidden,false);assert.equal(sections[1].hidden,true);
   assert.deepEqual(views.map(button=>button.badge.textContent),['2','3']);
@@ -391,6 +407,12 @@ test('platform filters and global search switch between categories and direct AP
   assert.equal(sections[0].hidden,true);assert.equal(sections[1].hidden,false);
   assert.equal(apis[0].hidden,false);assert.equal(apis[1].hidden,true);assert.equal(apis[2].hidden,true);
   assert.equal(count.textContent,'1 API matching your selection');
+  search.events.change();
+  const searchEvent=searchEvents.find(args=>args[1]==='data_api_search');
+  assert.equal(searchEvent[2].query_length,7);
+  assert.equal(searchEvent[2].result_count,1);
+  assert.equal('search_term' in searchEvent[2],false);
+  assert.equal('query' in searchEvent[2],false);
   assert.deepEqual(views.map(button=>button.badge.textContent),['0','1']);
   search.value='creators';search.events.input();assert.equal(empty.hidden,false);
   assert.deepEqual(views.map(button=>button.badge.textContent),['0','0']);

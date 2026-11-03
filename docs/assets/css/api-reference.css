@@ -121,3 +121,17 @@
 .api-faq summary{cursor:pointer;font-size:14px;font-weight:600;color:#44374f}
 .api-faq p{max-width:850px;margin:12px 0 0;font-size:14px;color:#766b82}
 @media(max-width:580px){.api-selection-help ol{grid-template-columns:1fr;gap:12px}}
+.api-task-facts{display:grid;gap:12px;margin:0 0 16px;font-size:13px;line-height:1.6}
+.api-intent-navigation{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.api-intent-navigation a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:1px solid #ded4ef;border-radius:9px;font-size:14px;text-decoration:none;background:white}
+.api-task-facts dt{font-weight:700;color:#3f3155}
+.api-task-facts dd{margin:2px 0 0;color:#6d677a;overflow-wrap:anywhere}
+.api-more-tasks{margin-top:20px}.api-more-tasks>summary{cursor:pointer;min-height:44px;padding:12px 0;color:#654393;font-size:14px}
+.api-start{margin:28px 0;padding:24px;border:1px solid #e4dbf3;border-radius:16px;background:#f5f1fc}
+.api-start h2{font-size:1.4rem;line-height:1.35;margin:8px 0 20px}
+.api-start>.api-task-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.api-start ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0;list-style:none}
+.api-start li{min-width:0;padding:18px;border:1px solid #e4dbf3;border-radius:12px;background:white}
+.api-start h3{font-size:15px;margin:0 0 8px}.api-start li p{font-size:13px;color:#6d677a}
+.api-start a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.api-task-card a{min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:768px){.api-start ol,.api-start>.api-task-facts{grid-template-columns:1fr}.api-start{padding:20px}}

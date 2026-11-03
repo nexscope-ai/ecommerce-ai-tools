@@ -91,4 +91,6 @@ If your main question is keyword demand rather than product comparability, use t
 
 ## Sources and scope
 
+Ready to select an operation? The [Amazon product-data starting point](/data/amazon-front-data/#api-start-title) separates product discovery, known-ASIN lookup and review retrieval, with links to each operation's official documentation.
+
 Reviewed on October 21, 2026 against Nexscope's public [Amazon Search](https://www.nexscope.ai/api-docs/amazon-search), [Product Detail](https://www.nexscope.ai/api-docs/amazon-product-detail), [Reviews List](https://www.nexscope.ai/api-docs/amazon-reviews-list), and [pricing](https://www.nexscope.ai/pricing) pages. This is a test plan, not a reported customer pilot or a promise of sales, traffic, or fixed API costs.

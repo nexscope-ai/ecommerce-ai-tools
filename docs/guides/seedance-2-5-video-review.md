@@ -75,6 +75,8 @@ A candidate for reference-rich creative work and ideas that genuinely need more 
 
 ## Related model reviews
 
+Prefer a guided product-video workflow? [Compare product-photo, product-link and presenter workflows, with official examples](/video/#examples). For an integration, [browse Video & Image APIs](/video/#apis) and check each model's supported inputs before opening its Playground.
+
 - [Compare all image and video model reviews]({{ '/guides/ai-model-playgrounds/' | relative_url }})
 - [Seedance 2 0 Video review]({{ '/guides/seedance-2-0-video/' | relative_url }})
 - [Wan 3 Video review]({{ '/guides/wan-3-video/' | relative_url }})
