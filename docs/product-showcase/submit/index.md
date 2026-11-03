@@ -20,6 +20,10 @@ sitemap:
 standalone_page: true
 seller_help_page: true
 product_showcase_page: true
+social_image: /assets/og-product-showcase.png
+social_image_width: 1672
+social_image_height: 941
+social_image_alt: Submit a product to Nexscope for editorial review, expert feedback and an approved public product page
 image: /assets/product-showcase-submission.webp
 image_alt: Product information, images and video prepared for an editorially reviewed ecommerce showcase
 image_caption: Submit product details for free review and a possible public AI-discovery page in Nexscope Product Gallery.

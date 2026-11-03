@@ -21,6 +21,10 @@ sitemap:
 standalone_page: true
 seller_help_page: true
 product_showcase_page: true
+social_image: /assets/og-product-showcase.png
+social_image_width: 1672
+social_image_height: 941
+social_image_alt: Submit a product to Nexscope for editorial review, expert feedback and an approved public product page
 image: /assets/product-showcase-visibility.webp
 image_alt: Ecommerce products connected to discovery touchpoints around the Nexscope mark
 image_caption: Nexscope Product Gallery creates a reviewed public product page that can support AI discovery and GEO.

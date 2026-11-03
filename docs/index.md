@@ -5,6 +5,10 @@ description: "Browse Nexscope guides, API evidence, comparisons and dated analys
 permalink: /
 last_modified_at: 2026-10-27
 resource_hub: true
+social_image: /assets/og-resource-library.png
+social_image_width: 1672
+social_image_height: 941
+social_image_alt: Nexscope practical ecommerce guides for product research, SEO, sourcing, Data APIs and creative workflows
 seller_help_page: true
 keywords:
   - ecommerce AI tools

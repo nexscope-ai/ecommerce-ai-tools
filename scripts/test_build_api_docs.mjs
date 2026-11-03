@@ -140,7 +140,17 @@ test('generated SEO metadata and structured data describe visible category conte
   const category=await readFile(join(dir,'amazon-front-data/index.html'),'utf8');
   for (const html of [root,category]) {
     assert.match(html,/<meta name="robots" content="index,follow,max-image-preview:large">/);
-    assert.match(html,/<meta name="twitter:card"/);
+    const head=html.slice(0,html.indexOf('</head>'));
+    assert.match(head,/<meta name="twitter:card" content="summary_large_image">/);
+    assert.match(head,/<meta property="og:image" content="https:\/\/learn\.nexscope\.ai\/og-data\.png">/);
+    assert.match(head,/<meta property="og:image:type" content="image\/png">/);
+    assert.match(head,/<meta property="og:image:width" content="1672">/);
+    assert.match(head,/<meta property="og:image:height" content="941">/);
+    assert.match(head,/<meta property="og:image:alt" content="[^"]+">/);
+    assert.match(head,/<meta name="twitter:image" content="https:\/\/learn\.nexscope\.ai\/og-data\.png">/);
+    assert.match(head,/<meta name="twitter:image:alt" content="[^"]+">/);
+    assert.equal((head.match(/property="og:image"/g)||[]).length,1);
+    assert.equal((head.match(/name="twitter:image"/g)||[]).length,1);
     const schema=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
     const graph=schema['@graph'];
     assert.ok(graph.some(node=>node['@type']==='CollectionPage'));
