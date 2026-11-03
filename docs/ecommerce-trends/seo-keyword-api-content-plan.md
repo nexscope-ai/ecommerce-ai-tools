@@ -1,24 +1,19 @@
 ---
 learning_topic: visibility
-content_kind: insight
+content_kind: guide
 layout: default
-title: "Keyword Research API: Ideas, Metrics & Limits"
-description: "Choose a keyword research API for seed expansion, list metrics or category ideas. Review US English inputs, missing data and the matching Nexscope Playground."
+title: "Keyword Search Volume API: Python to CSV"
+description: "Export keyword search volume with Python. Check processing states, retrieve stored results and preserve missing metrics in a CSV for content planning."
 permalink: /ecommerce-trends/seo-keyword-api-content-plan/
-last_reviewed: 2026-10-26
+last_reviewed: 2026-11-03
 date_published: 2026-10-20
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
+date_modified: 2026-11-03
+last_modified_at: 2026-11-03
 author: Nexscope Team
 schema_type: Article
 og_type: article
 topic: api
-keywords:
-  - SEO Keyword API
-  - SEO keyword research API
-  - keyword data content plan
-  - search intent content strategy
-  - Google keyword metrics API
+keywords: [keyword search volume api, keyword research api, keyword data api, keyword metrics python]
 next_step:
   id: seo_keyword_metrics_api
   title: Inspect keyword metrics for a real content decision
@@ -29,95 +24,126 @@ image: /assets/images/ecommerce-product-page-seo-audit-1440w.webp
 image_small: /assets/images/ecommerce-product-page-seo-audit-720w.webp
 image_alt: SEO keyword evidence connected to a prioritized ecommerce content plan
 image_caption: "Illustration: connect keyword evidence, page intent, and the next measurable product action."
+suppress_article_help: true
 faq:
-  - question: "What is an SEO keyword API used for?"
-    answer: "It can provide documented keyword or search evidence that helps a team group topics, compare demand and competition fields, and choose a page or content action. Confirm the current endpoint schema and metric definitions before using a field."
-  - question: "Does keyword volume guarantee traffic?"
-    answer: "No. Search metrics are estimates or provider-defined signals, and traffic depends on ranking, intent, snippet appeal, seasonality, competition, and the quality of the page."
-  - question: "Which CTA should an SEO article use?"
-    answer: "Use the closest product action. A guide about keyword metrics should link directly to the matching API detail or playground page so readers can review the schema and use the page-level authentication flow."
+  - question: "Does missing search volume mean zero searches?"
+    answer: "No. Missing data, a NO_COVERAGE item or an omitted input is not a measured zero. Preserve the returned state and missing reasons."
+  - question: "Should I rerun a processing keyword request?"
+    answer: "Use the returned callId to retrieve the stored result. The starter makes one explicit lookup and does not automatically repeat the paid run."
+  - question: "Were these keyword metrics collected in a live test?"
+    answer: "No paid keyword request was made for this update. The code is verified with synthetic offline responses; configure the sample request for your own decision."
 ---
 
-# Keyword research API: choose ideas, metrics and a content action
+# Keyword search volume API: export a reviewed CSV with Python
 
-A **keyword research API** or **keyword data API** can help discover candidates or assess a supplied list. Those are different operations: generating ideas does not verify every metric, and a volume estimate does not show which domain ranks. Before drafting, choose the evidence needed for one content decision.
-
-The Nexscope SEO and marketing APIs can support keyword research, search analysis, content planning, and related marketing workflows. This guide is for teams using API data to decide **which ecommerce page to build or improve**. If you want a browser-based starting point, use the [SEO Keyword Planner]({{ '/seo-keyword-planner/' | relative_url }}).
-
-**Quick answer:** Classify keywords by intent, map each cluster to one page type, record the metric definition and date, and send the reader to the matching API feature page. Keyword data should guide prioritization, not become a promise of rankings or traffic.
+**Use a keyword search volume API to check a prepared list, then export the returned metrics with their scope and missing-data information.** This guide provides a Python starter for Nexscope Keyword Metrics: one request, the original JSON, a CSV and a manifest. It also explains how to retrieve an existing processing result without starting another paid run.
 
 {% include api-guide-entry.html %}
 
-## Which keyword research API fits your input?
+> **Quick answer:** Prepare 1–20 US English phrases, run the starter once, and inspect both the envelope `code` and `data.status`. Export completed results for review; use the returned `callId` for a later result lookup when the status is `PROCESSING`. An unavailable metric is not zero, and monthly search volume is not a forecast of clicks to your page.
 
-Use a seed-based endpoint when you need ideas and a list-based endpoint when you already know the terms to check. The current contracts below are scoped to **US English**, not unrestricted worldwide keyword coverage. Reviewed October 26, 2026; no paid requests were executed for this update.
+## Which keyword API fits your task?
 
-| Your input | Nexscope API | Current request boundary | Use the result for |
-| --- | --- | --- | --- |
-| One seed phrase | [Keyword Expansion](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=playground&co-from=learn) | `keyword`, `market: US`, `language: en`; up to 20 results | Suggestions and related-term candidates |
-| A prepared list | [Keyword Metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=playground&co-from=learn) | `keywords`: 1–20 inputs; US English | Available volume, difficulty and advertising metrics |
-| Seeds for category-based ideas | [Category-based Keyword Ideas](https://www.nexscope.ai/api-docs/seo-keyword-ideas?view=playground&co-from=learn) | `keywords`: 1–20 seeds; `limit`: up to 20; US English | Ideas with documented category and source context |
-| A competitor domain | [Keyword ranking API guide]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}) | A separate domain-first contract | Ranking terms and URLs, not just demand metrics |
+**Use Keyword Metrics for a list you already have, and a separate discovery endpoint when you need ideas.** This distinction keeps a content plan from treating a suggestion as verified demand.
 
-For Keyword Expansion and Keyword Metrics, each input phrase is currently limited to 80 characters and ten whitespace-separated words. Do not send a full customer prompt as a keyword or silently truncate it. Validate the exact interface before integration; the examples on the documentation page are not live market findings.
+| Starting point | Next operation | What to check |
+| --- | --- | --- |
+| One seed phrase | [Keyword Expansion](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=api) | Suggested phrases and their relevance |
+| A prepared list | [Keyword Metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api) | Available volume, difficulty, advertising metrics and missing fields |
+| Several seeds for ideas | [Category-based Keyword Ideas](https://www.nexscope.ai/api-docs/seo-keyword-ideas?view=api) | Supported inputs and categories |
+| A competitor domain | [Keyword ranking API guide]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}) | Returned ranking terms and URLs |
+
+The current Keyword Metrics reference supports `market: US` and `language: en`, with 1–20 phrases. Each phrase is limited to 80 characters and ten whitespace-separated words. The downloadable starter rejects duplicate normalized inputs so a repeated phrase cannot create an ambiguous join. It does not split a large list into repeated paid requests.
+
+For a browser-based research task, use the [SEO Keyword Planner guide]({{ '/seo-keyword-planner/' | relative_url }}). The workflow below is for developers who want the returned data in their own review sheet.
+
+## How do you query search volume with Python?
+
+**Download the starter and request example, set your key locally, then execute one bounded request.** The script uses Python 3.10 or later and the standard library.
+
+Save [research-api-export.py]({{ '/assets/downloads/research-api-export.py' | relative_url }}) and [keyword-metrics-request.json]({{ '/assets/downloads/keyword-metrics-request.json' | relative_url }}) in the same working directory. The request contains:
+
+```json
+{
+  "keywords": ["keyword research api", "keyword search volume api"],
+  "language": "en",
+  "market": "US"
+}
+```
+
+These are illustrative inputs, not a report of current search demand. Replace them with the distinct phrases you need for one decision. In PowerShell 7, set your key through a masked prompt:
+
+```powershell
+$env:NEXSCOPE_API_KEY = Read-Host 'Nexscope API key' -MaskInput
+```
+
+Run:
+
+```bash
+python research-api-export.py keywords keyword-metrics-request.json --output keyword-run-01
+```
+
+The live mode sends one POST to `https://api.nexscope.ai/seo/keywordMetrics`. Review the current documentation, access requirements and estimate before running. The output directory must be new; this prevents overwriting earlier evidence and stops an accidental repeat with the same directory before a network request is sent.
+
+The script saves the original body as `response.json` and records the endpoint, input and client observation time in `manifest.json`. It does not print or save your Authorization header. Keep those files in your own working environment rather than committing research responses to a public repository.
+
+## What happens if the keyword request is still processing?
+
+**Retrieve the existing result using its returned identifier. Do not repeat the POST merely because a completed table has not appeared.** A successful HTTP response and outer `code: 0` can mean acceptance rather than completion.
+
+| `data.status` | Starter behavior | Your next step |
+| --- | --- | --- |
+| `SUCCESS` or `PARTIAL` with a valid result | Export rows and preserve coverage | Inspect the CSV and missing fields |
+| `EMPTY` with a valid empty result | Preserve the empty coverage | Check whether the input has usable coverage |
+| `PROCESSING` | Save response and identifier; no CSV | Query the same result later |
+| `UNKNOWN`, `FAILED` or an unrecognized state | Preserve the response; no CSV | Inspect the reason before deciding what to do |
+
+For an existing keyword call, copy the UUID from `data.callId` and run a separate lookup:
+
+```bash
+python research-api-export.py keywords keyword-metrics-request.json --call-id YOUR_CALL_UUID --output keyword-result-01
+```
+
+This sends one GET to `/seo/keywordMetrics/calls/{callId}`. The [current API reference](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api) describes this lookup as reading the stored result without spending credits. Use the same account key and the original request file. If it is still processing, inspect the saved status and look it up later; the starter does not poll or automatically start a replacement request. An `EMPTY` response without a usable result object also stops for inspection.
 
 {% include article-action.html placement="article-middle" %}
 
-## Classify every keyword by intent
+## How do you interpret the exported CSV?
 
-Group terms into:
+**Match records by their returned `inputKeyword`, preserve the request scope and leave missing metrics blank.** The starter does not join records by their position in the returned array or guess whether `inputIndex` is zero-based or one-based.
 
-- learning: “what is” and “how to” questions;
-- evaluation: comparisons, alternatives, and best-of queries;
-- decision: pricing, API, demo, and purchase queries;
-- implementation: setup, examples, templates, and integrations.
+| CSV field | How to use it |
+| --- | --- |
+| `inputKeyword`, `normalizedKeyword`, `inputIndex` | Retain the requested phrase and returned identity fields |
+| `itemStatus` | Distinguish available data, no coverage and an input not returned |
+| `searchVolume` | Compare the provider's volume estimate within the stated market |
+| `keywordDifficulty` | Use as a provider-defined screening signal |
+| `competition`, `competitionLevel`, `cpcUsd` | Inspect the documented advertising metrics separately |
+| `monthlySearches` | Retain the returned monthly observations as JSON |
+| `dataUpdatedAt`, `missing`, `missing_fields` | Review freshness and gaps before making a decision |
 
-Each group should have a different page type and CTA. An educational article should not force a pricing CTA before answering the question.
+If a requested input is absent from the result, the script adds a clearly labeled `NOT_RETURNED` row and lists the omission in the manifest. It preserves numeric zero and records field absence separately. Returned phrases that cannot be matched, or duplicate returned labels, stop the export for inspection.
 
-| Example search intent | Better page type | First useful answer | Next action |
-| --- | --- | --- | --- |
-| "How do I choose product-page keywords?" | Practical guide | Explain how product facts, buyer questions, and search terms are reconciled | Audit one existing product page |
-| "Portable blender vs shaker bottle" | Comparison | Clarify that the two products serve different needs before comparing attributes | Inspect verified product specifications |
-| "SEO keyword metrics API" | API guide | Explain the supported inputs, output definitions, access, and limits | Open the matching API documentation |
+Do not add volume estimates for close variants and call the sum an article's expected traffic. The same page can answer multiple queries, searchers can choose other results, and demand metrics do not establish ranking or click-through rate. The CSV is evidence for a page brief, not an acquisition report.
 
-These are **illustrative briefs**, not measured keyword-volume results. Do not publish three near-identical articles merely because the phrases differ. Give each distinct intent one clear destination, and update an existing page when it already answers the same question.
+## How do you turn keyword data into an article decision?
 
-## Build a page brief from evidence
+**Group by search intent first, then choose an existing page or a genuinely different task.** A prepared list can include informational, comparison and implementation terms, even when the phrases share the same product noun.
 
-For each topic, record:
+For each candidate, write the question the reader needs answered, the page already covering it, the missing evidence and the closest next product action. A phrase about search-volume integration belongs with an API example; a phrase about discovering ideas may fit the browser planner. Keep competitor rankings, Google Trends interest and search-volume estimates as separate evidence sources.
 
-- target query and related terms;
-- audience and job to be done;
-- evidence of demand or trend;
-- competition and missing coverage;
-- the Nexscope capability that solves the problem;
-- the next action: read another guide, open an API page, or get an API Key.
+If the task is to put product data into a spreadsheet, the [n8n Amazon-to-Sheets tutorial]({{ '/guides/n8n-amazon-google-sheets/' | relative_url }}) demonstrates a different implementation intent. For the relationship between interest and volume, read the [Google Trends API guide]({{ '/guides/google-trends-api/' | relative_url }}).
 
-For example, if several terms describe the same product-page decision, choose one primary page and group the remaining phrases as supporting questions. Compare the available keyword metrics for the same search engine, market, language, and retrieval date. Then check whether the page has an accurate product example and a next step that fits the query. A high-volume phrase with the wrong buyer intent should not outrank a smaller, relevant question in the brief.
+## Frequently asked questions
 
-Keep **Google search estimates separate from Amazon search demand**. A keyword metric does not measure purchases, and a search trend index is not an absolute monthly volume. Use the [keyword expansion](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=api&co-from=learn) and [keyword metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api&co-from=learn) documentation to confirm the current request fields, metric definitions, and access rules before building an automated workflow.
+### Does missing search volume mean zero searches?
 
-## What can the current Keyword Metrics API tell you?
+No. Missing data, a `NO_COVERAGE` item or an omitted input is not a measured zero. Preserve the returned state and missing reasons rather than inventing a value.
 
-**The documented endpoint checks a supplied list; it does not invent a complete content calendar.** Its current request accepts 1–20 keywords for `market: US` and `language: en`. The response describes each input's available search-volume and difficulty fields, with competition and estimated ad-cost fields where returned. Preserve the result's retrieval date and missing-value information. A missing metric is not a zero, and paid-ad competition is not the same as SEO difficulty. Check the [current request and response reference](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api&co-from=learn) before calling it because coverage and schema can change.
+### Should I rerun a processing keyword request?
 
-If you start with only a topic, use the separate [Keyword Expansion API](https://www.nexscope.ai/api-docs/seo-keyword-expand?view=api&co-from=learn) to find candidates, remove phrases that do not match your product or audience, and then check metrics for the remaining shortlist. The editorial decision still belongs to the page owner.
+Use the returned `callId` to retrieve the stored result. The starter makes one explicit lookup and does not automatically repeat the paid run.
 
-The best article CTA is the closest product action. A guide about Amazon review analysis should link to the Amazon Reviews API, while a guide about keyword research should link to the relevant keyword API.
+### Were these keyword metrics collected in a live test?
 
-## Use the API detail page as the conversion destination
-
-Open the [SEO Keyword Metrics API](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=playground&co-from=learn&content=seo-keyword-api-content-plan&signup_module=api-docs&signup_entry=play). The feature page shows the current request, response, authentication, usage, and **Get an API key** flow. Use the [SEO and Marketing API catalog](https://www.nexscope.ai/api-docs?tab=marketing&co-from=learn) when you need a different capability.
-
-Keep the reader on the selected feature page. That page can explain the request, response, authentication, usage, and credits before the user registers or creates a key.
-
-## A simple content loop
-
-1. Collect keyword and trend evidence.
-2. Publish one page for one search intent.
-3. Link to the matching API capability.
-4. Measure API detail views, API Key creation, and first calls.
-5. Expand the topics that generate qualified API activity.
-
-Traffic is only useful when it creates the next measurable product action.
-
+No paid keyword request was made for this update. The downloadable code is verified with labeled synthetic responses; the sample request is for you to configure and run.

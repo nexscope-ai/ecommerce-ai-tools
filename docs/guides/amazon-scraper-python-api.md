@@ -178,6 +178,8 @@ Start with a small representative sample and record accepted products, missing r
 
 Product detail does not replace a dedicated review collection. Use the [Amazon review analysis guide]({{ '/amazon-negative-review-analysis/' | relative_url }}) when the task requires review text and source IDs. Use the [Amazon price-history guide]({{ '/amazon-price-history/' | relative_url }}) when the question requires past observations rather than a current product record.
 
+For a configurable workflow that sends one validated product observation to a spreadsheet, follow the [n8n Amazon API to Google Sheets tutorial]({{ '/guides/n8n-amazon-google-sheets/' | relative_url }}).
+
 The example produces evidence for your application. It does not establish sales, full category coverage, permission to republish third-party content or access to a seller's private inventory and orders.
 
 {% include api-guide-faq.html %}

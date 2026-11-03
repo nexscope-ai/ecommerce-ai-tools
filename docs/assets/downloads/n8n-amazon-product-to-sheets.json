@@ -1,0 +1,170 @@
+{
+  "name": "Nexscope - One Amazon Product to Google Sheets (manual starter)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Edit only these two values. One product per manual starter execution.\nconst asin = 'REPLACE_WITH_ASIN';\nconst amazonDomain = 'amazon.com';\nif (!/^[A-Z0-9]{10}$/.test(asin)) throw new Error('Set one uppercase 10-character ASIN before running.');\nif (amazonDomain !== 'amazon.com') throw new Error('This starter uses amazon.com; review the contract before changing markets.');\nreturn [{json: {asins: asin, amazonDomain}}];"
+      },
+      "id": "product-input",
+      "name": "Product input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.nexscope.ai/amazon/product/detail",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({asins: $json.asins, amazonDomain: $json.amazonDomain}) }}",
+        "options": {
+          "timeout": 90000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "api",
+      "name": "Nexscope Product Detail",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "retryOnFail": false,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json;\nconst request = $('Product input').first().json;\nif (typeof body.code !== 'number' || body.code !== 0) throw new Error('API business error: inspect the HTTP node output. Do not automatically rerun.');\nif (!body.data || !Array.isArray(body.data.products)) throw new Error('No data.products array: inspect the raw output for a task identifier or schema change.');\nif (body.data.products.length !== 1) throw new Error('Expected exactly one returned product; inspect the raw output.');\nconst product = body.data.products[0];\nif (!product || product.asin !== request.asins) throw new Error('Returned ASIN does not match the requested ASIN.');\nif (product.statusCode != null && product.statusCode !== 200) throw new Error('Product record reports an error; no row written.');\nconst fields = ['title', 'brand', 'price', 'currency', 'rating', 'ratings', 'stock'];\nconst missingFields = fields.filter(k => product[k] == null);\nconst cell = value => {\n  if (value == null) return '';\n  if (typeof value === 'object') return JSON.stringify(value);\n  if (typeof value === 'string' && (/^[\\t\\r\\n]/.test(value) || /^[=+\\-@]/.test(value.trimStart()))) return \"'\" + value;\n  return value;\n};\nconst row = {asin: product.asin, requested_domain: request.amazonDomain};\nfor (const field of fields) row[field] = cell(product[field]);\nrow.missing_fields = missingFields.join(';');\nrow.observed_at_utc = new Date().toISOString();\nrow.execution_id = String($execution.id);\nreturn [{json: row}];"
+      },
+      "id": "validate",
+      "name": "Validate and map",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Product research",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      },
+      "id": "sheets",
+      "name": "Append to Google Sheets - configure then enable",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "disabled": true,
+      "position": [
+        880,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Configure before running\n1. Set the ASIN in Product input.\n2. Select a Header Auth credential on the HTTP node: Authorization = Bearer YOUR_KEY. Never put a key in this JSON.\n3. First run with Sheets disabled; inspect Validate and map.\n4. Create the sheet headers from the companion CSV. Select your own Google credential, spreadsheet and sheet. Keep RAW cell format. Enable the Sheets node only when ready to append.\n5. Manual execution only, no automatic retry. A repeated run can charge credits and append a duplicate row. Check and unpin all sample data before a real run.",
+        "height": 320,
+        "width": 650
+      },
+      "id": "notes",
+      "name": "Setup notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        150,
+        -100
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Product input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Product input": {
+      "main": [
+        [
+          {
+            "node": "Nexscope Product Detail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nexscope Product Detail": {
+      "main": [
+        [
+          {
+            "node": "Validate and map",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate and map": {
+      "main": [
+        [
+          {
+            "node": "Append to Google Sheets - configure then enable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}
