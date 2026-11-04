@@ -3,13 +3,13 @@ learning_topic: agents
 related_topics: [research, visibility]
 content_kind: guide
 layout: default
-title: "Live Ecommerce Data Extraction: API vs Feed vs Page Audit"
-description: "Need to parse a live product page? Choose between a data extraction API, catalog feed and page audit, then check variants, source evidence and field accuracy."
+title: "Web Scraping vs API for Ecommerce Data"
+description: "Compare web scraping vs APIs for ecommerce data. Evaluate custom parsers, provider APIs and your own store API using coverage and cost per accepted record."
 permalink: /ecommerce-data-extraction-api/
 date_published: 2026-10-20
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-11-04
+last_modified_at: 2026-11-04
+last_reviewed: 2026-11-04
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -44,11 +44,11 @@ faq:
     answer: "No. Accuracy depends on rendering, page changes, variants, access rules, missing fields, and timestamp. Preserve raw evidence and validate high-risk fields such as price, availability, identifiers, compatibility, and shipping."
 ---
 
-# How to parse live ecommerce product data: API, feed, or page audit?
+# Web scraping vs API: choosing ecommerce product data sources
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published October 20, 2026 · Reviewed October 26, 2026**
+**By Nexscope Team · Published October 20, 2026 · Reviewed November 4, 2026**
 
 If you need to read and parse data from a live ecommerce website, **choose the source by the job**: an extraction API for repeated observations of permitted public pages, your store's catalog API or feed for records you own, and a page audit to diagnose one public URL. No single platform is best for all three. A page snapshot can disagree with the catalog, checkout, or selected variant, so preserve the URL, retrieval time, and evidence for each important field.
 
@@ -69,6 +69,43 @@ Nexscope's Website SEO Auditor supports the **one-page audit** use case. Develop
 **An ecommerce data extraction API is a service that fetches an allowed web or commerce source, identifies selected fields, and returns structured output such as JSON.** Depending on the implementation, an ecommerce website parser API may read visible text, HTML, JSON-LD, offer blocks, variant selectors, images, breadcrumbs, or metadata. The useful unit is not “everything on the page”; it is a field with a source, timestamp, extraction method, and coverage note.
 
 The result is a dated observation. A page can be personalized, rendered by JavaScript, changed after the request, blocked, incomplete for a selected variant, or inconsistent with the merchant feed. An API response therefore supports verification and analysis; it does not prove demand, legal permission to republish content, or that the returned price and stock remain current.
+
+## Web scraping vs API: which should you choose?
+
+**Use your own store's authorized API for operational records, a provider API for supported research fields, and a custom scraper when permitted page evidence needs custom extraction.** An API is an interface, not proof of where data came from: a provider can also use scraping upstream. Compare collection method, ownership and coverage separately.
+
+| Decision | Custom scraper you maintain | Third-party research or extraction API | Authorized API for your own store |
+| --- | --- | --- | --- |
+| Best starting task | Read custom fields on permitted pages | Retrieve supported fields without maintaining that parser yourself | Read or change records in a store you control |
+| Who maintains collection logic? | Your team owns selectors, rendering and changes | Provider maintains its supported collection; you validate the response | Platform maintains its contract; your team maintains the integration |
+| Coverage to test | Page types, variants, locale and rendering | Documented schema, missing fields and source scope | Granted permissions, resources and version support |
+| Main failure to expose | A changed page silently produces wrong values | A successful response omits the fields your task needs | Permissions or synchronization leave records incomplete |
+| Appropriate output | Dated page evidence with provenance | Dated, validated response with source and limitations | Owned records with identifiers and update history |
+| What it does not establish | Permission to collect or republish, or true current stock | Complete coverage, first-party access or guaranteed freshness | What a shopper sees on every localized page |
+
+For example, an analyst comparing public Etsy listings can begin with the [Etsy Python-to-CSV tutorial]({{ '/guides/etsy-product-research-api/' | relative_url }}). A merchant updating its own WooCommerce catalog should use the [authorized WooCommerce Python workflow]({{ '/guides/woocommerce-products-python/' | relative_url }}). A developer checking one public page can inspect Nexscope's Page Evidence response. These are different jobs with different acceptance checks.
+
+## How do you compare cost per usable record?
+
+**Divide the complete pilot cost by records that pass your acceptance criteria.** A cheap request that omits price, currency or the selected variant can be more expensive for your task than a higher-priced request that produces a usable record. Count repeated observations and duplicate products consistently before comparing methods.
+
+```text
+Cost per accepted record =
+  (collection charges + allocated engineering + infrastructure + storage + review)
+  / unique records that pass the agreed checks
+```
+
+Use the same accounting currency and time horizon for both approaches. Convert credits using your applicable plan, disclose how engineering cost is allocated and report initial setup separately from recurring maintenance. If no record passes, report zero accepted records and an undefined unit cost; do not divide by zero or call the pilot free.
+
+Download the [blank extraction pilot worksheet]({{ '/assets/downloads/extraction-pilot-worksheet.csv' | relative_url }}). It contains headers only, with no invented provider results. Complete one row per candidate method and scope after the same permitted sample has been reviewed.
+
+1. Define required fields and acceptable staleness before collection. For one product, a price without currency or variant identity may fail your check.
+2. Use the same representative sample and record requested, returned, unique and accepted counts separately.
+3. Include known difficult cases: variant selectors, unavailable products, localization and conflicting page declarations.
+4. Record failures and manual review time alongside charges. Do not automatically retry paid requests to make a success rate look better.
+5. Investigate disagreements with the owning catalog or feed. Accept records against the agreed evidence rule, rather than whichever method returned more rows.
+
+No measured cost advantage is claimed here. This worksheet is a proposed evaluation method. Nexscope Page Evidence remains a bounded observation of one public URL; a bulk crawler, renderer, variant resolver and normalized catalog pipeline would require separately verified capabilities.
 
 ## Should you read a live product page, a catalog feed, or structured data?
 
@@ -130,7 +167,7 @@ The [SEO Page Evidence reference](https://www.nexscope.ai/api-docs/seo-page-evid
 
 This gives a developer a narrower starting point than an unrestricted ecommerce parser: inspect what the contract actually returns for your page type, then define any additional extraction and validation work. A successful call does not establish complete JavaScript rendering, variant coverage or normalized SKU, price and stock fields. Keep truncation and missing evidence visible.
 
-Review access and the current estimate before execution. This October 26, 2026 update checked documentation and the repository contract only; it did not execute a paid extraction test. The [product feed enrichment workflow]({{ '/ecommerce-product-data-enrichment/' | relative_url }}) explains how to turn a reviewed observation into a proposed catalog correction without letting the API write your feed.
+Review access and the current estimate before execution. This November 4, 2026 update checked documentation and repository contracts; it did not execute a paid extraction test. The [product feed enrichment workflow]({{ '/ecommerce-product-data-enrichment/' | relative_url }}) explains how to turn a reviewed observation into a proposed catalog correction without letting the API write your feed.
 
 {% include article-action.html placement="article-middle" %}
 
@@ -162,6 +199,6 @@ No. Accuracy depends on rendering, page changes, variants, access rules, missing
 
 ## Sources and scope
 
-This guide is an editorial workflow, not a benchmark of a particular extraction provider. It was reviewed on **October 20, 2026** against Google's [ecommerce structured-data guidance](https://developers.google.com/search/docs/specialty/ecommerce/include-structured-data-relevant-to-ecommerce), [product-data guidance](https://developers.google.com/search/docs/specialty/ecommerce/share-your-product-data-with-google), [robots meta-tag documentation](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), and [crawling troubleshooting guidance](https://developers.google.com/search/docs/crawling-indexing/troubleshoot-crawling-errors). Requirements, page behavior, and provider capabilities can change; test the exact URLs and fields used in production.
+This guide is an editorial workflow, not a benchmark of a particular extraction provider. It was reviewed on **November 4, 2026** against Google's [ecommerce structured-data guidance](https://developers.google.com/search/docs/specialty/ecommerce/include-structured-data-relevant-to-ecommerce), [product-data guidance](https://developers.google.com/search/docs/specialty/ecommerce/share-your-product-data-with-google), [robots meta-tag documentation](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), and [crawling troubleshooting guidance](https://developers.google.com/search/docs/crawling-indexing/troubleshoot-crawling-errors). Requirements, page behavior, and provider capabilities can change; test the exact URLs and fields used in production.
 
 **Next step:** choose 10–20 representative URLs, define the fields and evidence you need, compare a live-page observation with the owning catalog or feed, and record every mismatch before automating a larger workflow.

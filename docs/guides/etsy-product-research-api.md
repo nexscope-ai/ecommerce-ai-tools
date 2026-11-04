@@ -2,13 +2,13 @@
 learning_topic: agents
 content_kind: guide
 layout: default
-title: "Etsy Product Research API: Listings, Shops & Competitors"
-description: "Research Etsy products with Nexscope APIs: find categories, filter listings, inspect shops and validate public listing details without treating estimates as sales proof."
+title: "Etsy Scraper Python: Product Research API to CSV"
+description: "Export Etsy product research to CSV with a Python starter. Query one small page, preserve listing URLs and check missing prices, reviews and sales signals."
 permalink: /guides/etsy-product-research-api/
 date_published: 2026-10-23
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
-last_reviewed: 2026-10-23
+date_modified: 2026-11-04
+last_modified_at: 2026-11-04
+last_reviewed: 2026-11-04
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -29,7 +29,7 @@ next_step:
   url: https://www.nexscope.ai/api-docs/etsy-product-query?view=api&co-from=learn
 ---
 
-# Etsy product research API: from a broad idea to a reviewable shortlist
+# Etsy scraper Python: export a product-research shortlist to CSV
 
 An **Etsy product research API** is useful when a team needs repeatable listing and shop comparisons, not another unverified list of winning products. A public research result can help narrow the questions to investigate. It cannot prove future demand, a seller's profit or permission to copy a design.
 
@@ -37,7 +37,7 @@ An **Etsy product research API** is useful when a team needs repeatable listing 
 
 > **Quick answer:** Nexscope's Etsy research APIs help teams compare public listings and shops through category search, product queries and listing details. Use them for a reproducible shortlist, not shop management or sales forecasts. Retain dates, currencies and missing fields. For private orders or listing updates, evaluate an authorized seller integration instead.
 
-*Reviewed October 23, 2026. Documentation-based guide by Nexscope Team. No paid API requests or live listing tests were run for this article; the workflow is a proposed pilot.*
+*Reviewed November 4, 2026. Documentation-based guide by Nexscope Team. No paid API requests or live listing tests were run for this article; the executable starter was checked with constructed offline fixtures.*
 
 ## Is this API workflow right for you?
 
@@ -61,6 +61,53 @@ Start with the smallest endpoint that answers your question. Nexscope's current 
 | Inspect one listing | [Product Detail](https://www.nexscope.ai/api-docs/etsy-product-detail?view=api) | Retrieve public details from a validated marketplace URL |
 
 Keep those jobs separate. A category match does not establish demand, and an attractive shop does not establish that one listing is a sound launch opportunity.
+
+## Etsy scraper Python tutorial: export one research page to CSV
+
+**Use Python to call the product-research API and export a small, reviewable shortlist.** This approach avoids maintaining an HTML parser in your own script. It still depends on the provider's coverage and access conditions. If you need private orders or listing edits, choose an authorized Etsy seller integration instead.
+
+Download the [Python 3.10+ starter]({{ '/assets/downloads/etsy-ranking-export.py' | relative_url }}) and [Etsy request template]({{ '/assets/downloads/etsy-shortlist-request.json' | relative_url }}). Both use the standard library; no package installation is required. Save the two files together. The starter intentionally supports a smaller request surface than the full endpoint: one search phrase, page 1, USD and at most 10 items. The supplied template requests five.
+
+```json
+{
+  "searchKey": "desk organizer",
+  "page": 1,
+  "pageSize": 5,
+  "currencyCode": "USD"
+}
+```
+
+This is an input example, not a tested profitable niche. Review the [current Etsy Product Query contract](https://www.nexscope.ai/api-docs/etsy-product-query?view=api#online-test), access and charge estimate before execution. Each invocation below makes one POST to `https://api.nexscope.ai/eh/etsy/productQuery`. It does not request subsequent pages or retry a paid call.
+
+Set `NEXSCOPE_API_KEY` in your local environment using your normal secret-management method. Do not put it in the JSON file, source control or exported spreadsheet. Then run:
+
+```shell
+python etsy-ranking-export.py etsy etsy-shortlist-request.json --output etsy-run-001
+```
+
+Choose a new output directory for each run. A completed export writes:
+
+| File | What it preserves | How to use it |
+| --- | --- | --- |
+| `response.json` | The original response bytes | Inspect the envelope and marketplace evidence before interpreting rows |
+| `manifest.json` | Inputs, endpoint, client observation time and reported counts | Establish the scope; collection time does not establish source freshness |
+| `rows.csv` | Listing URL, title, shop, price and available research metrics | Review candidates; blank values remain unknown |
+
+## What should you check before using the Etsy CSV?
+
+**Check listing identity first, then comparability.** The starter reads `data.products`, derives a listing ID from each returned Etsy listing URL and stops on missing, invalid or duplicate identities. It does not silently merge conflicting records. Reported `productNum` can describe matching products beyond the fetched page; it is not the number exported.
+
+The CSV retains `requestedCurrency`, not a claim that every returned price was independently currency-verified. Confirm item type, bundle size, shipping and currency before comparing offers. `salesWeekly` and `salesTotal` remain provider-reported signals with the limitations discussed below. A zero stays zero; an absent field stays blank and appears in `missing_fields`. Returned titles and tags are escaped when they could be interpreted as spreadsheet formulas.
+
+Add your own notes in `comparable` and `research_note`. Select a few candidates for Product Detail rather than treating the whole first page as a recommendation. The starter performs no detail calls, shop lookups or AI analysis automatically.
+
+To reprocess an existing saved response without a key or network call:
+
+```shell
+python etsy-ranking-export.py etsy etsy-shortlist-request.json --from-response etsy-run-001/response.json --output etsy-offline-001
+```
+
+Use the original request file for that response. An empty `products` array creates a header-only CSV with zero rows; a missing array or failed envelope stops the export. Check the manifest rather than treating the existence of a CSV as proof of a useful shortlist. These checks were exercised with constructed offline fixtures, not paid live Etsy results.
 
 ## How do you choose useful product-query filters?
 
@@ -105,7 +152,7 @@ For another marketplace, compare the [Walmart research workflow]({{ '/guides/wal
 
 ## Evidence checked and what remains untested
 
-Documentation review date: **October 23, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
+Documentation review date: **November 4, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
 
 The [Etsy Product Detail contract](https://www.nexscope.ai/api-docs/etsy-product-detail?view=api) requires `productUrl`, a validated public Etsy listing URL. Its response schema includes `productId`, `shopId`, `shopUrl` and `productUrl`. Use these as identity checks when connecting listing and shop evidence, not as a claim that every optional metric will be populated.
 

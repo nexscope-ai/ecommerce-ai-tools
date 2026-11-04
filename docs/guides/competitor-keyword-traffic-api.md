@@ -2,13 +2,13 @@
 learning_topic: agents
 content_kind: guide
 layout: default
-title: "Keyword Ranking API: Competitor Keywords & Traffic"
-description: "Find competitor keywords and ranking URLs with Nexscope's keyword ranking API. Compare ranking data, SERP snapshots and tracking needs before opening Playground."
+title: "Keyword Ranking API: Python Export to CSV"
+description: "Call a keyword ranking API with Python, export competitor keywords and ranking URLs to CSV, and validate US English scope, partial coverage and missing positions."
 permalink: /guides/competitor-keyword-traffic-api/
 date_published: 2026-10-23
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-11-04
+last_modified_at: 2026-11-04
+last_reviewed: 2026-11-04
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -24,12 +24,12 @@ faq:
 next_step:
   id: competitor_keyword_api
   title: Inspect the keywords a competitor ranks for
-  description: "Set a comparable market and language, review the result limit and current cost, then investigate relevant ranking pages."
+  description: "Inspect the US English scope, result limit and current cost, then investigate relevant ranking pages."
   label: Open ranked-keyword Playground
   url: https://www.nexscope.ai/api-docs/seo-domain-ranked-keywords?view=playground&co-from=learn
 ---
 
-# Keyword ranking API: research competitor keywords and traffic
+# Keyword ranking API: Python tutorial and CSV export
 
 A **keyword ranking API** can help answer which organic terms a competitor domain ranks for and which URLs appear with them. Nexscope's Domain Organic Ranked Keywords interface serves this domain-first research task. It is different from checking one query's search results or operating a scheduled rank tracker.
 
@@ -37,7 +37,7 @@ A **keyword ranking API** can help answer which organic terms a competitor domai
 
 > **Quick answer:** Nexscope's keyword ranking API returns a bounded organic-keyword sample for a domain in US English, including available positions and ranking URLs. Use it for competitor research, not as a complete rank tracker. Choose a SERP request for one query's results; a recurring monitoring workflow also needs scheduling, storage and comparison logic.
 
-*Reviewed October 26, 2026 against public documentation and repository contracts. Documentation-based guide by Nexscope Team. No paid SEO request or competitor benchmark was run, and no traffic gain is claimed.*
+*Reviewed November 4, 2026 against public documentation and repository contracts. Documentation-based guide by Nexscope Team. No paid SEO request or competitor benchmark was run, and no traffic gain is claimed.*
 
 ## Is this API workflow right for you?
 
@@ -96,6 +96,51 @@ After a permitted call completes, inspect `data.status`, coverage and `data.resu
 
 For a proposed repeat check, save the original observation and compare only matching scopes. A collection timestamp is not proof the provider refreshed every database row at that moment. A non-completed or partial call must not become a fabricated ranking history.
 
+## How to call the keyword ranking API with Python
+
+**Start with one domain and export its returned keyword sample before building a larger pipeline.** Download the [Python 3.10+ starter]({{ '/assets/downloads/etsy-ranking-export.py' | relative_url }}) and [domain ranking request]({{ '/assets/downloads/domain-ranking-request.json' | relative_url }}). Save them together; the script uses only Python's standard library.
+
+The template targets `nexscope.ai`, requests 10 items and fixes the scope to US English. Replace the domain with the competitor you intend to research. This starter accepts bare domains only; it deliberately excludes schemes, paths and ports. Keep the request file alongside the saved response so its scope can be checked later.
+
+Set `NEXSCOPE_API_KEY` in your local environment. Inspect the [current ranking reference and charge estimate](https://www.nexscope.ai/api-docs/seo-domain-ranked-keywords?view=api#online-test) first. The command makes one POST to `https://api.nexscope.ai/seo/domainRankedKeywords`:
+
+```shell
+python etsy-ranking-export.py rankings domain-ranking-request.json --output ranking-run-001
+```
+
+There are no automatic retries, recurring jobs or pagination. The script writes the original `response.json` before transforming it and records the request, observation time and result metadata in `manifest.json`. Use a new output directory for every invocation.
+
+If the response is `PROCESSING`, the script exits with code 2 and creates no CSV. Inspect its `callId` and retrieve that same request through the documented owner-result lookup, rather than sending the POST again. Replace the UUID placeholder below with the returned ID:
+
+```shell
+python etsy-ranking-export.py rankings domain-ranking-request.json --call-id RETURNED_CALL_UUID --output ranking-result-001
+```
+
+This command makes one authenticated GET to the same endpoint's `/calls/{callId}` route and verifies the returned call ID. It does not poll. A timeout or failed request also requires inspecting saved evidence and usage before deciding whether to run again.
+
+## How should you validate the ranking CSV?
+
+**Match the domain and search scope before comparing positions.** The starter accepts completed `SUCCESS`, `PARTIAL` and `EMPTY` states, checks the returned target, market, language, requested limit and item count, and rejects malformed positions. It keeps partial coverage and missing reasons in the manifest. An unexpected response shape stops for inspection.
+
+| CSV field | Meaning | Review rule |
+| --- | --- | --- |
+| `keyword` and `url` | A returned term and its ranking page | Review together; a keyword alone does not reveal page intent |
+| `rankAbsolute`, `rankGroup` | Separate provider-defined position measures | Keep separate labels; missing positions stay blank |
+| `url_scope_check` | Local check of the returned URL's host | Exact target or a subdomain matches; another host is flagged for review |
+| `searchVolume`, `cpcUsd` | Available demand and advertising estimates | They do not measure your site's clicks or revenue |
+| `missing`, `missing_fields` | Provider reasons and locally absent values | Do not turn unknown values into zero |
+| `content_action`, `evidence_note` | Empty columns for your decisions | Choose update, new brief, exclude or further investigation |
+
+A URL on `competitor.example.evil.example` does not match `competitor.example`; the check uses a hostname boundary, not a substring. Missing URLs remain unknown. Duplicate keyword-and-URL rows stop the export for inspection instead of inflating counts. The script retains flagged rows so you can investigate provider scope.
+
+Reprocess a saved response without another API request:
+
+```shell
+python etsy-ranking-export.py rankings domain-ranking-request.json --from-response ranking-result-001/response.json --output ranking-offline-001
+```
+
+The code has been checked with constructed offline fixtures, including partial results, mismatched scope, missing positions and processing states. No paid domain request or production accuracy benchmark was run for this tutorial. A successful export proves that a response met the starter's checks, not that the database contains every ranking keyword.
+
 ## How do you choose the right competitors?
 
 Choose sites or pages that address the same buyer task. A large marketplace, a tool provider and a news publisher may rank for the same phrase for different reasons. Their content is not necessarily interchangeable.
@@ -141,7 +186,7 @@ For keyword planning on your own site, use the [SEO keyword planner guide]({{ '/
 
 ## Evidence checked and what remains untested
 
-Documentation review date: **October 26, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
+Documentation review date: **November 4, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
 
 The [Domain Ranked Keywords contract](https://www.nexscope.ai/api-docs/seo-domain-ranked-keywords?view=api) documents `target`, `market`, `language` and `limit`. Returned fields include `keyword`, `rankAbsolute`, `searchVolume` and `url`. Pair the keyword with its ranking URL and requested scope; the result limit is not a complete record of all searches.
 
