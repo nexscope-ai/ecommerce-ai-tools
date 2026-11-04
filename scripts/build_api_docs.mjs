@@ -11,6 +11,8 @@ import { withPublicCreditStatistics } from './public-credit-statistics.mjs';
 import { categoryEditorialCopy, operationEditorialCopy, researchWorkflows, copyReviewedAt } from './data-api-copy.mjs';
 import {dataCollectionSlugs, fetchDirectoryMembership} from './data-directory-membership.mjs';
 import {dataStarts} from './data-api-starts.mjs';
+import {categoryPath, categoryRedirects, renderCategoryRedirect} from './data-category-routes.mjs';
+export {categoryPath} from './data-category-routes.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SNAPSHOT = join(ROOT, 'scripts/data/api-docs.public.json');
@@ -165,7 +167,6 @@ function startingPoint(category, entries) {
   return `<section class="api-start" aria-labelledby="api-start-title"><p class="api-eyebrow">A practical starting point</p><h2 id="api-start-title">${esc(start.title)}</h2><dl class="api-task-facts"><div><dt>You bring</dt><dd>${esc(start.bring)}</dd></div><div><dt>You get</dt><dd>${esc(start.result)}</dd></div></dl><ol>${steps.join('')}</ol><p class="api-caption">Open the official documentation to review required inputs, credentials and current credit costs before running a request.</p></section>`;
 }
 
-export function categoryPath(category) { return `/data/${category.replace(/^data-/, '')}/`; }
 function searchControls(label, unit, total, root = false) {
   return `<div class="api-filters api-filters--search" data-api-filters hidden><div><label for="api-search">${label}</label><div class="api-search-row"><input type="search" id="api-search" placeholder="${root?'Try Amazon reviews, TikTok products, or 1688 suppliers…':'Search this category by API name or keyword…'}" autocomplete="off"><button type="button" data-clear-search hidden>Clear</button></div></div></div><p data-api-count data-unit="${unit}" role="status" aria-live="polite">${total} ${unit === 'category' ? 'categories' : 'APIs'} available</p><div class="api-empty" data-api-empty hidden><h2>No matches found</h2><p>Try fewer words or choose another platform.</p><button type="button" data-reset-filters>Reset filters</button></div>`;
 }
@@ -275,6 +276,7 @@ export async function build(snapshot, output = OUTPUT) {
 }
 
 export async function buildRoot(snapshot, output, usage, creditStatistics) {
+  const redirects = categoryRedirects(snapshot.entries.map(entry=>entry.categorySlug));
   let metrics = usage || await loadUsage(join(ROOT,'scripts/data/api-usage.public.json'));
   if (creditStatistics) metrics = withPublicCreditStatistics(metrics, creditStatistics);
   snapshot = applyUsage(snapshot, metrics);
@@ -291,6 +293,13 @@ export async function buildRoot(snapshot, output, usage, creditStatistics) {
     await mkdir(dirname(destination),{recursive:true});
     await writeFile(destination,renderStandalone(source,snapshot));
     paths.push(path);
+  }
+  // Redirects are written beside canonical pages but never returned to sitemap
+  // generation. The root deployment also skips analytics for these aliases.
+  for (const [previous,target] of redirects) {
+    const destination = join(output,previous.slice('/data/'.length),'index.html');
+    await mkdir(dirname(destination),{recursive:true});
+    await writeFile(destination,renderCategoryRedirect(target));
   }
   for (const [source,target] of [['docs/assets/css/api-reference.css','api-reference.css'],['docs/assets/api-directory.js','api-directory.js'],['docs/assets/primary-navigation.css','learn-shell.css'],['docs/assets/learn-shell.js','learn-shell.js']]) {
     await writeFile(join(output,target),await readFile(join(ROOT,source),'utf8'));

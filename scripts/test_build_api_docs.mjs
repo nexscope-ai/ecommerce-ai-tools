@@ -10,10 +10,63 @@ import {projectFeed} from './refresh-data-api-snapshot.mjs';
 import {projectCreditStatistics, fetchPublicCreditStatistics, withPublicCreditStatistics} from './public-credit-statistics.mjs';
 import {categoryCopyMap, operationCopyMap, researchWorkflows} from './data-api-copy.mjs';
 import {projectDirectoryMembership} from './data-directory-membership.mjs';
+import {categoryPath, categoryRouteSlugs, categoryRedirects} from './data-category-routes.mjs';
 
 const entry={slug:'test-api',collection:'ecommerce',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
 const membership=(...slugs)=>({collection:'ecommerce',slugs});
+
+test('opaque category routes have unique task paths and direct compatible aliases',()=>{
+  assert.equal(categoryPath('data-ss'),'/data/amazon-market-research/');
+  assert.equal(categoryPath('data-kp'),'/data/amazon-price-history/');
+  assert.equal(categoryPath('data-amazon-front-data'),'/data/amazon-front-data/');
+  assert.equal(categoryPath('data-future-market'),'/data/future-market/');
+  const categories=Object.keys(categoryRouteSlugs);
+  const aliases=categoryRedirects(categories);
+  assert.equal(aliases.size,17);
+  assert.equal(new Set(aliases.values()).size,17);
+  for(const [previous,target] of aliases){assert.notEqual(previous,target);assert.ok(!aliases.has(target));}
+  assert.throws(()=>categoryPath('../private'),/Invalid Data category/);
+  assert.throws(()=>categoryRedirects(['data-ss','amazon-market-research']),/Duplicate category route/);
+  assert.throws(()=>categoryRedirects(['data-ss','ss']),/alias conflicts/);
+});
+
+test('task routes update HTML and schema, keep operations and tracking IDs, and exclude aliases from canonical paths',async()=>{
+  const current=JSON.parse(await readFile(new URL('./data/api-docs.public.json',import.meta.url),'utf8'));
+  const directory=await mkdtemp(join(tmpdir(),'data-category-routes-'));
+  const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T00:00:00Z',apis:{},categories:{}};
+  const paths=await buildRoot(current,directory,usage);
+  const categories=[...new Set(current.entries.map(e=>e.categorySlug))];
+  assert.equal(paths.length,categories.length+1);
+  const root=await readFile(join(directory,'index.html'),'utf8');
+  const rootSchema=JSON.parse(root.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+  const rootItems=rootSchema['@graph'].find(node=>node['@type']==='ItemList').itemListElement;
+  for(const category of categories){
+    const canonical=categoryPath(category);
+    assert.ok(paths.includes(canonical));
+    assert.ok(root.includes(`href="${canonical}"`));
+    assert.ok(root.includes(`data-data-category="${category}"`));
+    assert.ok(rootItems.some(item=>item.url==='https://learn.nexscope.ai'+canonical));
+    const html=await readFile(join(directory,canonical.slice('/data/'.length),'index.html'),'utf8');
+    assert.ok(html.includes(`<link rel="canonical" href="https://learn.nexscope.ai${canonical}">`));
+    assert.ok(html.includes(`<meta property="og:url" content="https://learn.nexscope.ai${canonical}">`));
+    assert.ok(!html.includes('http-equiv="refresh"'));
+    for(const e of current.entries.filter(e=>e.categorySlug===category)) assert.ok(html.includes(officialApiUrl(e.slug)));
+  }
+  for(const [previous,target] of categoryRedirects(categories)){
+    assert.ok(!paths.includes(previous));
+    assert.ok(!root.includes('https://learn.nexscope.ai'+previous));
+    assert.ok(!root.includes(`href="${previous}"`));
+    const alias=await readFile(join(directory,previous.slice('/data/'.length),'index.html'),'utf8');
+    assert.match(alias,/data-legacy-redirect/);
+    assert.match(alias,/name="robots" content="noindex,follow"/);
+    assert.ok(alias.includes(`http-equiv="refresh" content="0;url=${target}"`));
+    const context={location:{search:'?co-from=learn&test=1',hash:'#apis',replace:value=>{context.result=value;}}};
+    runInNewContext(alias.match(/<script>(.*?)<\/script>/s)[1],context);
+    assert.equal(context.result,target+'?co-from=learn&test=1#apis');
+    assert.ok(!alias.includes('analytics.js'));
+  }
+});
 
 test('every platform filter has an icon and only WooCommerce gets the NEW badge',()=>{
   const categories=['woocommerce','patent-research','detection','jev','web-search','unknown-platform'];

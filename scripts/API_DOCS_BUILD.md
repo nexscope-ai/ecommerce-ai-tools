@@ -43,6 +43,17 @@ To publish directory changes, deploy this repository, then redeploy the root Lea
 
 `/data/` lists Data API categories; `/data/<category>/` contains a short introduction and that category’s API cards. Cards open `https://www.nexscope.ai/api-docs/<slug>?co-from=learn` directly. No local API detail pages are generated. The root sitemap includes the square and category pages; `/api/` remains only a redirect. GA events `data_api_category_click` and `data_api_open` retain page/category/API context and original channel fields without internal UTMs.
 
+Public category paths use the task names in `scripts/data-category-routes.mjs`
+instead of opaque source abbreviations: for example, `/data/ss/` moves to
+`/data/amazon-market-research/` and `/data/kp/` to `/data/amazon-price-history/`.
+Only published categories produce pages and aliases. Cards, canonical metadata,
+Open Graph URLs and JSON-LD use the same mapping. Category IDs and official API
+destinations remain unchanged. Old paths receive `noindex,follow` static aliases
+with canonical, immediate refresh, a fallback link and JavaScript navigation that
+preserves query parameters and fragments. They are excluded from sitemaps and
+third-party analytics. GitHub Pages serves these static files with HTTP 200,
+not HTTP 301. Canonical/alias collisions stop the build before output is cleared.
+
 ## Discovery controls
 
 The root directory provides platform chips, Categories / All APIs views, and keyword search across every public Data API. Category pages retain local API search. Cards show the platform logo, API name and description without inline parameter panels or examples. Users open the official documentation for technical details; no local API detail routes are added. Search terms are not sent in custom analytics events. Platform selections have dedicated events in addition to existing category and outbound attribution.
