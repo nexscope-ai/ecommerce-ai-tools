@@ -341,7 +341,7 @@ test('usage icons cap display values while retaining exact counts and sorting',(
   assert.match(category,/title="10,001 recorded calls"[^>]*>[\s\S]*?<strong>9999\+<\/strong>/);
   assert.match(category,/title="101 distinct API users"[^>]*>[\s\S]*?<strong>99\+<\/strong>/);
   assert.match(category,/title="10,000 recorded calls"[^>]*>[\s\S]*?<strong>10,000<\/strong>/);
-  assert.match(category,/title="100 distinct API users"[^>]*>[\s\S]*?<strong>100<\/strong>/);
+  assert.match(category,/title="100 distinct API users"[^>]*>[\s\S]*?<strong>99\+<\/strong>/);
   assert.ok(category.indexOf('Larger API')<category.indexOf('Test API'));
 });
 

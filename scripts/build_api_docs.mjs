@@ -185,7 +185,7 @@ function usageMarkup(metrics) {
   const coverage = metrics?.creditTotalApis ? ` ${metrics.creditKnownApis}/${metrics.creditTotalApis} APIs with charge records.` : '';
   const creditLabel = hasRange ? `${range} historical credits/call (10-credit floor); not a price quote.${coverage}` : 'Historical credit range unavailable. Check official API docs for current pricing.';
   const credits = `<span class="api-usage-metric api-credit-range" title="${esc(creditLabel)}" aria-label="${esc(creditLabel)}">${coins}<strong>${range}</strong></span>`;
-  return `<div class="api-usage" aria-label="Recorded usage and historical credit range">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,100,'99+') : ''}${credits}</div>`;
+  return `<div class="api-usage" aria-label="Recorded usage and historical credit range">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,99,'99+') : ''}${credits}</div>`;
 }
 function usageNote(snapshot) {
   const credits = snapshot.creditBasis === 'public-historical-statistics'
