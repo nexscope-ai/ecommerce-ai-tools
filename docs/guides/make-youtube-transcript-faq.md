@@ -39,14 +39,28 @@ A **Make YouTube transcript workflow** can draft a source-linked FAQ from one ca
 
 > **Quick answer:** Build the scenario with HTTP, response checks and the task-specific mapping below. The setup recipe is not a Make Blueprint. Aggregate selected evidence before an optional AI step, and review the output before writing or publishing it.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## Which videos are suitable for a caption-based FAQ?
 
 **Choose a video that actually explains the product questions you need answered.** A detailed setup or troubleshooting video is usually a better source than a short promotional montage. Check that public captions exist and select a requested language. The request uses `url`, `language` and camel-case `originalAudio`; the downloadable body shows the exact shape.
 
-This API does not generate new captions from uncaptained audio. NO_TRANSCRIPT should stop the FAQ route. Keep `data.transcript.kind` and `language` in the source record, and review a returned language that differs from the request. Automatic captions can misstate numbers, model names and negations, so a structured response still needs editorial verification.
+This API does not generate new captions from uncaptained audio. NO_TRANSCRIPT should stop the FAQ route. Keep `data.transcript.kind` and `language` in the source record, and check the returned language against a documented alias or code rather than requiring identical display text. Automatic captions can misstate numbers, model names and negations, so a structured response still needs editorial verification.
 
+
+## Production-account test: what actually returned?
+
+The production-account request for [the AeroPress Premium review](https://www.youtube.com/watch?v=0Ds0pgSLT4I) returned AVAILABLE and **626 segments** at **07:04:32 UTC on November 5, 2026**. The response reported **10 settled credits**, confirmed in the account ledger. This is the same underlying API observation used in the n8n timestamped-evidence guide, not a second paid call for the Make article.
+
+The actual caption language was **`English`**, despite the request using `en`, and caption kind was **`UNKNOWN`**. The first segment ran from **0 to 1,380 ms**. Keep these raw values in the aggregate. If adding a language filter, explicitly recognize `English` as the alias for the default `en` request; do not demand string equality or automatically assume every other label matches.
+
+The proposed 100-segment slice covers only part of the returned evidence. A FAQ generated from that slice must be described as based on selected captions. No FAQ, AI inference or automatic publication was executed during this test, and the returned captions alone do not verify the video's product claims.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside Make. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested youtube request JSON]({{ '/assets/downloads/social-live-youtube-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you configure HTTP in Make?
 
@@ -126,11 +140,11 @@ Keep drafts out of a live CMS until this review is complete. If the goal is a se
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 

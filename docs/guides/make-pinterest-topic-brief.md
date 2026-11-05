@@ -39,7 +39,7 @@ A **Make Pinterest API workflow** can turn a focused search into a topic-grouped
 
 > **Quick answer:** Build the scenario with HTTP, response checks and the task-specific mapping below. The setup recipe is not a Make Blueprint. Aggregate selected evidence before an optional AI step, and review the output before writing or publishing it.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## How is a grouped brief different from a Pin export?
 
@@ -47,6 +47,20 @@ A **Make Pinterest API workflow** can turn a focused search into a topic-grouped
 
 Use `/pinterest/search` with one keyword and `trim: true`. This pilot retrieves one page without following a cursor. It does not produce official keyword volume, competition difficulty or trend growth. If a brief needs those measurements, add a separate documented data source and label the difference rather than relabeling Pin frequency as search demand.
 
+
+## Production-account test: what actually returned?
+
+The retained production-account search used **`small kitchen coffee station storage`**. It returned AVAILABLE and **16 Pins** at **07:14:06 UTC on November 5, 2026**, with `hasMore: true` and **10 settled credits**, confirmed in the account ledger. This is the same retained API observation used in the n8n Pinterest guide; writing two articles did not require duplicating that call.
+
+Every returned Pin had **`sourceUrl: null` and `saveCount: null`**. For example, [Pin `1112600282978860427`](https://www.pinterest.com/pin/1112600282978860427) retained its Pin identity while its destination and saves were unavailable. A model cannot use this sample to supply verified destination domains or rank themes by save counts.
+
+Make should aggregate the source IDs and Pin URLs, label destination diversity unresolved, and leave missing metrics empty. An optional brief could propose questions to investigate, but needs separate human source checks before citing independent destinations. No model-generated brief or group classification was executed. An earlier, shorter Pinterest query completed before a browser restart, but its lost response is not presented as retained evidence.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside Make. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested pinterest request JSON]({{ '/assets/downloads/social-live-pinterest-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you configure HTTP in Make?
 
@@ -125,11 +139,11 @@ Save the brief as a draft rather than sending it directly to a live CMS. For a s
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 

@@ -39,7 +39,7 @@ An **n8n Pinterest API workflow** can turn a focused search into a source-linked
 
 > **Quick answer:** Import the inactive manual starter, select your own HTTP credential and inspect the mapped output before enabling the disabled Sheets writer. Keep source IDs, URLs, resource states and missing fields with the evidence.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## What question should the Pinterest search answer?
 
@@ -47,6 +47,25 @@ An **n8n Pinterest API workflow** can turn a focused search into a source-linked
 
 Use the starter body with `keyword` and `trim`. There is no cursor in the first request and no automatic page loop. A useful first review can be smaller than a complete collection: the goal is to decide whether a theme deserves further work. The local cap of 20 rows controls the worksheet size after retrieval; it is not an upstream search limit.
 
+
+## Production-account test: what actually returned?
+
+A retained production-account sample used `small kitchen coffee station storage` and `trim: true`. It returned **16 Pins** at **07:14:06 UTC on November 5, 2026**, with AVAILABLE state and `hasMore: true`. The response reported a settled **10-credit** charge, confirmed in the account credit ledger.
+
+| Evidence | Actual result |
+| --- | --- |
+| [One returned Pin](https://www.pinterest.com/pin/1112600282978860427) | ID `1112600282978860427` |
+| Missing `sourceUrl` values | 16 of 16 returned Pins |
+| Missing `saveCount` values | 16 of 16 returned Pins |
+| Coverage | One page; further results indicated |
+
+This sample is useful precisely because the destination and save-count fields were unavailable. Keep those cells empty with missing-field markers. Do not infer destination-domain diversity from Pin URLs or convert missing saves into zero popularity. The Pin links remain review leads; a human would need to inspect destinations before making a source-diversity claim. The original shorter query was a separate completed call whose response was lost when the browser restarted; it is not included as a second data sample here.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside n8n. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested pinterest request JSON]({{ '/assets/downloads/social-live-pinterest-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you import and configure the n8n starter?
 
@@ -113,11 +132,11 @@ Keep research and publication separate. The workflow neither creates Pins nor po
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 
@@ -125,7 +144,7 @@ Keep returned collection dates separate from the client observation time; an old
 - [Exact request body]({{ '/assets/downloads/n8n-pinterest-api-content-research-request.json' | relative_url }})
 - [Review sheet headings]({{ '/assets/downloads/n8n-pinterest-api-content-research-headers.csv' | relative_url }})
 
-The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. This does not establish compatibility with every installed n8n version or prove live account access.
+The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. Those offline checks do not establish compatibility with every installed n8n version. Live API access was checked separately for the dated example; the complete n8n workflow was not executed.
 
 Read the underlying [API and MCP research guide]({{ '/guides/pinterest-api-mcp-content-research/' | relative_url }}) for broader source interpretation. These workflow articles focus on implementation; they do not promise search rankings, citations or campaign results.
 

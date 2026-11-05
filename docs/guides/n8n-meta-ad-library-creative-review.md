@@ -39,7 +39,7 @@ An **n8n Meta Ad Library API workflow** can prepare a creative-research checkpoi
 
 > **Quick answer:** Import the inactive manual starter, select your own HTTP credential and inspect the mapped output before enabling the disabled Sheets writer. This Meta starter exports review metadata; individual ads require a verified supplier mapping.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## What does the downloadable workflow produce?
 
@@ -47,6 +47,25 @@ An **n8n Meta Ad Library API workflow** can prepare a creative-research checkpoi
 
 The distinction matters because this API wraps the supplier result under `data.data`. The public contract describes that inner value as an object, rather than promising a universal ads array. Guessing `data.items` or `data.data.ads` would create a workflow that can appear to succeed while collecting no usable evidence. The starter stops on an invalid wrapper and leaves ad-level mapping to a verified sample.
 
+
+## Production-account test: what actually returned?
+
+The exact `insulated travel mug` / US / EN / ACTIVE request returned AVAILABLE at **07:12:23 UTC on November 5, 2026**. Its supplier object contained **30 records at `data.data.searchResults`**, `searchResultsCount: 130` and a continuation cursor. The settled response charge was **10 credits**, confirmed in the account ledger.
+
+| Observed field | Meaning for this sample |
+| --- | --- |
+| `data.data.searchResults` | Actual array path in this response |
+| `ad_archive_id`, `page_id`, `page_name`, `url` | Available identity/source fields on returned records |
+| `snapshot.cards`, `snapshot.body` | Creative structure to inspect, not assumed flat text |
+| 30 returned / 130 supplier-reported | This response was not the whole reported collection |
+
+One returned advertiser identity was `Swig Life`, page ID `334164846957933`; we used that observed ID for the separate company-ad example in the Make guide. Search relevance still needs review: a match does not establish that every advertiser is a direct competitor. The downloadable n8n starter deliberately remains a metadata checkpoint. If you add extraction, validate this observed array path against your own response; it is not a universal wrapper guarantee.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside n8n. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested meta search request JSON]({{ '/assets/downloads/social-live-meta-search-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you import and configure the n8n starter?
 
@@ -116,11 +135,11 @@ The starter includes no LLM request, ad launcher or social publisher. Keep that 
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 
@@ -128,7 +147,7 @@ Keep returned collection dates separate from the client observation time; an old
 - [Exact request body]({{ '/assets/downloads/n8n-meta-ad-library-creative-review-request.json' | relative_url }})
 - [Review sheet headings]({{ '/assets/downloads/n8n-meta-ad-library-creative-review-headers.csv' | relative_url }})
 
-The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. This does not establish compatibility with every installed n8n version or prove live account access.
+The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. Those offline checks do not establish compatibility with every installed n8n version. Live API access was checked separately for the dated example; the complete n8n workflow was not executed.
 
 Read the underlying [API and MCP research guide]({{ '/guides/meta-ad-library-api-mcp-creative-research/' | relative_url }}) for broader source interpretation. These workflow articles focus on implementation; they do not promise search rankings, citations or campaign results.
 

@@ -1,0 +1,217 @@
+{
+  "observed_date": "2026-11-05",
+  "execution_surface": "Nexscope Online test on www.nexscope.ai with an existing production account",
+  "scope": "API calls and reviewed response excerpts; not authenticated n8n/Make workflow execution, a Sheets write, an LLM draft or a performance benchmark.",
+  "redaction": "Selected observations only, not full response fixtures. API keys, account identifiers, client IPs, diagnostic IDs, individual Reddit author names, full post bodies, media URLs and raw cursors omitted. Public brand handles, source IDs and a short caption excerpt are retained.",
+  "billing": {
+    "executions": 9,
+    "totalCredits": 90,
+    "ledgerVerified": true,
+    "note": "Eight distinct endpoints. The first Pinterest response was lost during a browser restart; its success was confirmed in call history and its deduction in the credit ledger. A new, differently scoped Pinterest query supplied the retained example. Response usage reported SETTLED/10 for the eight retained responses. Call Details showed Not charged for social calls while the account credit ledger showed -10 per call; consult the ledger when those views disagree."
+  },
+  "cases": {
+    "reddit": {
+      "request": {
+        "keyword": "travel coffee mug leaking",
+        "filter": "posts",
+        "sort": "relevance",
+        "timeframe": "year",
+        "trim": true
+      },
+      "fetchedAt": "2026-11-05T07:02:34.763251964Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "returned": 25,
+      "hasMore": true,
+      "example": [
+        {
+          "id": "1qdy0i0",
+          "url": "https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/whats_your_favorite_leakproof_coffee_travel_mug/",
+          "score": 22,
+          "commentCount": 95,
+          "upvoteRatio": null
+        }
+      ]
+    },
+    "comments": {
+      "request": {
+        "url": "https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/whats_your_favorite_leakproof_coffee_travel_mug/",
+        "trim": true
+      },
+      "fetchedAt": "2026-11-05T07:04:00.201716996Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "returned": 25,
+      "hasMore": true,
+      "example": [
+        {
+          "id": "nztdwbm",
+          "url": "https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/comment/nztdwbm/",
+          "postId": "t3_1qdy0i0",
+          "parentId": "t3_1qdy0i0",
+          "score": 66
+        },
+        {
+          "id": "nztgefz",
+          "url": "https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/comment/nztgefz/",
+          "postId": "t3_1qdy0i0",
+          "parentId": "t1_nztdwbm",
+          "score": 23
+        }
+      ]
+    },
+    "youtube": {
+      "request": {
+        "url": "https://www.youtube.com/watch?v=0Ds0pgSLT4I",
+        "language": "en",
+        "originalAudio": false
+      },
+      "fetchedAt": "2026-11-05T07:04:32.504261469Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "returned": 626,
+      "language": "English",
+      "kind": "UNKNOWN",
+      "example": [
+        {
+          "startMs": 0,
+          "endMs": 1380,
+          "text": "- Today we're gonna take a look at this."
+        }
+      ]
+    },
+    "profile": {
+      "request": {
+        "handle": "fellowproducts",
+        "trim": true
+      },
+      "fetchedAt": "2026-11-05T07:05:28.228476189Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "example": {
+        "id": "788609950",
+        "handle": "fellowproducts",
+        "url": "https://www.instagram.com/fellowproducts/",
+        "name": "Fellow",
+        "isPrivate": false,
+        "followerCount": 345515,
+        "postCount": 2547
+      }
+    },
+    "posts": {
+      "request": {
+        "handle": "fellowproducts",
+        "trim": true
+      },
+      "fetchedAt": "2026-11-05T07:05:54.358504696Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "returned": 12,
+      "hasMore": true,
+      "example": [
+        {
+          "id": "3946249700264085102_788609950",
+          "url": "https://www.instagram.com/p/DbD5TG7O4Zu/",
+          "type": "REEL",
+          "viewCount": 139693,
+          "likeCount": 3722,
+          "commentCount": 150,
+          "authorHandle": "fellowproducts"
+        },
+        {
+          "id": "3849037931726422833_788609950",
+          "url": "https://www.instagram.com/p/DVqh5sXjsMx/",
+          "type": "REEL",
+          "viewCount": 200997,
+          "likeCount": 4592,
+          "commentCount": 200,
+          "authorHandle": "fellowproducts"
+        }
+      ]
+    },
+    "pinterest": {
+      "request": {
+        "keyword": "small kitchen coffee station storage",
+        "trim": true
+      },
+      "fetchedAt": "2026-11-05T07:14:06.808322729Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "returned": 16,
+      "hasMore": true,
+      "missingDestinationCount": 16,
+      "missingSaveCount": 16,
+      "example": [
+        {
+          "id": "1112600282978860427",
+          "url": "https://www.pinterest.com/pin/1112600282978860427",
+          "sourceUrl": null,
+          "saveCount": null
+        }
+      ]
+    },
+    "meta": {
+      "request": {
+        "query": "insulated travel mug",
+        "country": "US",
+        "language": "EN",
+        "status": "ACTIVE",
+        "trim": true
+      },
+      "fetchedAt": "2026-11-05T07:12:23.226069035Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "arrayPath": "data.data.searchResults",
+      "returned": 30,
+      "totalReported": 130,
+      "hasCursor": true
+    },
+    "snapshot": {
+      "request": {
+        "pageId": "334164846957933",
+        "country": "US",
+        "status": "ACTIVE",
+        "trim": true
+      },
+      "fetchedAt": "2026-11-05T07:13:21.124762179Z",
+      "resourceStatus": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "arrayPath": "data.data.results",
+      "returned": 30,
+      "totalReported": 812,
+      "hasCursor": true,
+      "example": [
+        {
+          "id": "1409725611213075",
+          "page_id": "334164846957933",
+          "page_name": "Swig Life",
+          "url": "https://www.facebook.com/ads/library?id=1409725611213075"
+        }
+      ]
+    }
+  }
+}

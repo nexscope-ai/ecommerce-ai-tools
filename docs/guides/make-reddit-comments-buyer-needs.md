@@ -39,7 +39,7 @@ A **Make Reddit API workflow** can organize one public thread into a buyer-needs
 
 > **Quick answer:** Build the scenario with HTTP, response checks and the task-specific mapping below. The setup recipe is not a Make Blueprint. Aggregate selected evidence before an optional AI step, and review the output before writing or publishing it.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## Which discussion should you start with?
 
@@ -47,6 +47,23 @@ A **Make Reddit API workflow** can organize one public thread into a buyer-needs
 
 This endpoint returns `data.post` and `data.comments`, with pagination indicators when supplied. It is different from Reddit search, whose result array is `data.items`. One response is a selected page of discussion evidence. It is not the entire Reddit conversation, a complete comment tree or a representative sample of customers.
 
+
+## Production-account test: what actually returned?
+
+We used the first source from the travel-mug search: [Reddit thread `1qdy0i0`](https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/whats_your_favorite_leakproof_coffee_travel_mug/). The production-account comments call returned AVAILABLE and **25 comments** at **07:04:00 UTC on November 5, 2026**, with `hasMore: true`. The settled charge was **10 credits**, confirmed in the account ledger.
+
+| Returned comment | Parent relationship |
+| --- | --- |
+| [`nztdwbm`](https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/comment/nztdwbm/) | `parentId: t3_1qdy0i0`, a reply to the post |
+| [`nztgefz`](https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/comment/nztgefz/) | `parentId: t1_nztdwbm`, a reply to the comment above |
+
+Both records carried `postId: t3_1qdy0i0`. Dropping `parentId` would flatten a reply into an apparently independent statement. Make's proposed 20-comment slice would select a subset of this 25-comment page, not the entire thread. The public evidence file omits author names and full comment bodies. No AI needs brief was generated or validated in this API test.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside Make. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested reddit comments request JSON]({{ '/assets/downloads/social-live-reddit-comments-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you configure HTTP in Make?
 
@@ -125,11 +142,11 @@ For a search-based post log instead of a discussion brief, use [n8n Reddit to Go
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 

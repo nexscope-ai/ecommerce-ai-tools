@@ -39,7 +39,7 @@ A **Make Instagram API workflow** can organize a public account’s posts into a
 
 > **Quick answer:** Build the scenario with HTTP, response checks and the task-specific mapping below. The setup recipe is not a Make Blueprint. Aggregate selected evidence before an optional AI step, and review the output before writing or publishing it.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## What should the planning review help you decide?
 
@@ -47,6 +47,23 @@ A **Make Instagram API workflow** can organize a public account’s posts into a
 
 The request calls `/instagram/posts` with `handle` and `trim`. It does not fetch the profile separately, so it should not display a follower-based engagement rate using an assumed follower count. If you need profile context and creator shortlisting, use the two-stage [n8n Instagram guide]({{ '/guides/n8n-instagram-creator-shortlist/' | relative_url }}) instead.
 
+
+## Production-account test: what actually returned?
+
+A production-account call for [`fellowproducts`](https://www.instagram.com/fellowproducts/) returned **12 posts** at **07:05:54 UTC on November 5, 2026**, with AVAILABLE state and `hasMore: true`. The response reported **10 settled credits**, confirmed in the account ledger. The separate profile call belongs to the n8n creator example; this Make posts recipe needs only the posts request.
+
+| Source example | Dated public counts |
+| --- | --- |
+| [Returned reel `DbD5TG7O4Zu`](https://www.instagram.com/p/DbD5TG7O4Zu/) | 139,693 views; 3,722 likes; 150 comments |
+| [Returned reel `DVqh5sXjsMx`](https://www.instagram.com/p/DVqh5sXjsMx/) | 200,997 views; 4,592 likes; 200 comments |
+
+These examples show that the source fields are available for a review sheet. They do not establish why one post received more views, which topic to copy or when to publish. Keep the sample date and source links, and avoid a follower-based ratio in a scenario that did not fetch its own denominator. No calendar, AI theme labels or social posts were generated in this test.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside Make. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested instagram posts request JSON]({{ '/assets/downloads/social-live-instagram-posts-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you configure HTTP in Make?
 
@@ -125,11 +142,11 @@ Do not copy another account's captions or media into your calendar. Source resea
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 

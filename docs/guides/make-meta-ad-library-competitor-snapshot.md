@@ -39,7 +39,7 @@ A **Make Meta Ad Library API workflow** can create a dated research checkpoint f
 
 > **Quick answer:** Build the scenario with HTTP, response checks and the task-specific mapping below. The setup recipe is not a Make Blueprint. Aggregate selected evidence before an optional AI step, and review the output before writing or publishing it.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## How do you identify the correct advertiser?
 
@@ -47,6 +47,25 @@ A **Make Meta Ad Library API workflow** can create a dated research checkpoint f
 
 The template's `REPLACE_PAGE_ID` is intentionally not runnable as a real advertiser. Do not treat similarly named pages as the same company, and record the selected page ID in the checkpoint. Advertiser discovery is an additional request if you need it; it is not silently included in this scenario's one company-ads call.
 
+
+## Production-account test: what actually returned?
+
+We used page ID **`334164846957933`**, returned with the label `Swig Life` in the preceding keyword search. The production-account company-ad request returned AVAILABLE at **07:13:21 UTC on November 5, 2026**. The settled charge was **10 credits**, confirmed in the account ledger. This identity is an observed source label, not a claim of affiliation or business verification.
+
+| Evidence | Actual result |
+| --- | --- |
+| Array path | **`data.data.results`** |
+| Returned / supplier-reported count | 30 / 812 |
+| Continuation cursor | Present; not followed |
+| [One source ad](https://www.facebook.com/ads/library?id=1409725611213075) | ID `1409725611213075`, matching page ID |
+
+The company response used `results`; the keyword-search response used `searchResults`. That is why the recipe cannot safely assume one array path for every Meta operation. After checking your own output, map this observed company collection to Iterator and retain ad IDs, page IDs and URLs. One first-page observation cannot establish every active ad or a change over time. No second snapshot, private reporting or profitability analysis was performed.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside Make. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested meta company request JSON]({{ '/assets/downloads/social-live-meta-company-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you configure HTTP in Make?
 
@@ -125,11 +144,11 @@ An optional AI step belongs after verified extraction and source review. Ask it 
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 

@@ -39,7 +39,7 @@ An **n8n Reddit API workflow** can turn one search into a Google Sheets research
 
 > **Quick answer:** Import the inactive manual starter, select your own HTTP credential and inspect the mapped output before enabling the disabled Sheets writer. Keep source IDs, URLs, resource states and missing fields with the evidence.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## What should the research log answer?
 
@@ -47,6 +47,25 @@ An **n8n Reddit API workflow** can turn one search into a Google Sheets research
 
 Use `filter: posts` for this starter. `sort: relevance` and `timeframe: year` define the search context; they do not create a representative sample of buyers. A discussion with a high score is a useful reading lead, not proof of product demand. Keep complaint examples alongside posts that describe successful use so the final brief does not select only negative evidence.
 
+
+## Production-account test: what actually returned?
+
+The production-account request used the exact travel-mug query shown above. It returned **25 posts**, an AVAILABLE state and `hasMore: true` at **07:02:34 UTC on November 5, 2026**. The response reported `billingStatus: SETTLED` and **10 charged credits**, confirmed against the account credit ledger.
+
+| Returned evidence | Observed value |
+| --- | --- |
+| [First source discussion](https://www.reddit.com/r/BuyItForLife/comments/1qdy0i0/whats_your_favorite_leakproof_coffee_travel_mug/) | Post ID `1qdy0i0` |
+| Score / comment count at collection | 22 / 95 |
+| Upvote ratio | `null`, not zero |
+| Starter output limit | First 20 eligible rows from the returned page |
+
+The results also contained taste-related discussions and a post seeking an uninsulated mug. That is a useful relevance warning: a search match is not automatically a leak complaint or evidence that every buyer wants longer heat retention. Review the source before assigning a problem theme. We did not retrieve the next page or turn these counts into a demand estimate.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside n8n. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested reddit request JSON]({{ '/assets/downloads/social-live-reddit-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you import and configure the n8n starter?
 
@@ -116,11 +135,11 @@ Keep `hasMore` and `nextCursor` visible. If more posts exist, the sheet is a fir
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 
@@ -128,7 +147,7 @@ Keep returned collection dates separate from the client observation time; an old
 - [Exact request body]({{ '/assets/downloads/n8n-reddit-api-google-sheets-request.json' | relative_url }})
 - [Review sheet headings]({{ '/assets/downloads/n8n-reddit-api-google-sheets-headers.csv' | relative_url }})
 
-The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. This does not establish compatibility with every installed n8n version or prove live account access.
+The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. Those offline checks do not establish compatibility with every installed n8n version. Live API access was checked separately for the dated example; the complete n8n workflow was not executed.
 
 Read the underlying [API and MCP research guide]({{ '/guides/reddit-api-mcp-product-research/' | relative_url }}) for broader source interpretation. These workflow articles focus on implementation; they do not promise search rankings, citations or campaign results.
 

@@ -39,14 +39,33 @@ An **n8n YouTube transcript workflow** can prepare a timestamped evidence table 
 
 > **Quick answer:** Import the inactive manual starter, select your own HTTP credential and inspect the mapped output before enabling the disabled Sheets writer. Keep source IDs, URLs, resource states and missing fields with the evidence.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## What does this workflow retrieve?
 
 **It retrieves available captions, not a new transcription of the audio.** Supply one public YouTube URL and a requested language. The body uses the documented camel-case `originalAudio` option. A video without usable captions can return NO_TRANSCRIPT; stop there rather than asking a model to invent the missing narration.
 
-The normalized transcript is under `data.transcript`. Keep its `language` and `kind` fields alongside the segments: MANUAL, AUTOMATIC or UNKNOWN describe different evidence conditions. A requested language is not proof that the returned captions are in that language. The starter stops on a language mismatch so you can inspect it before deciding whether a different request is appropriate.
+The normalized transcript is under `data.transcript`. Keep its `language` and `kind` fields alongside the segments: MANUAL, AUTOMATIC or UNKNOWN describe different evidence conditions. A requested language is not proof that the returned captions are in that language. The starter validates exact language codes or an explicit alias (`English` to `en`), preserves the returned language and stops on unknown or mismatched values.
 
+
+## Production-account test: what actually returned?
+
+A production-account request for [James Hoffmann's AeroPress Premium review](https://www.youtube.com/watch?v=0Ds0pgSLT4I), with `language: en` and `originalAudio: false`, returned **626 caption segments** at **07:04:32 UTC on November 5, 2026**. The state was AVAILABLE; the settled charge was **10 credits**, checked against the credit ledger.
+
+| Field | Actual response |
+| --- | --- |
+| `data.transcript.language` | `English` |
+| `data.transcript.kind` | `UNKNOWN` |
+| First segment boundaries | `startMs: 0`, `endMs: 1380` |
+| Returned segments / starter review cap | 626 / 100 |
+
+This exposed a real starter incompatibility: comparing `English` directly with the requested `en` rejected valid evidence. The revised mapping accepts the explicit alias `English → en` for validation and keeps the returned `English` value in the sheet. Unknown labels and genuinely different requested codes still stop for review. It does not silently label UNKNOWN captions as manual or automatic. The first 100 selected segments would cover only part of this 626-segment response; this test does not validate any product claim in the video.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside n8n. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested youtube request JSON]({{ '/assets/downloads/social-live-youtube-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you import and configure the n8n starter?
 
@@ -114,11 +133,11 @@ For long reviews, increase the local review cap deliberately after checking the 
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 
@@ -126,7 +145,7 @@ Keep returned collection dates separate from the client observation time; an old
 - [Exact request body]({{ '/assets/downloads/n8n-youtube-transcript-review-evidence-request.json' | relative_url }})
 - [Review sheet headings]({{ '/assets/downloads/n8n-youtube-transcript-review-evidence-headers.csv' | relative_url }})
 
-The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. This does not establish compatibility with every installed n8n version or prove live account access.
+The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. Those offline checks do not establish compatibility with every installed n8n version. Live API access was checked separately for the dated example; the complete n8n workflow was not executed.
 
 Read the underlying [API and MCP research guide]({{ '/guides/youtube-transcript-api-mcp/' | relative_url }}) for broader source interpretation. These workflow articles focus on implementation; they do not promise search rankings, citations or campaign results.
 

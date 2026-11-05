@@ -39,7 +39,7 @@ An **n8n Instagram API workflow** can assemble a creator review sheet from a pub
 
 > **Quick answer:** Import the inactive manual starter, select your own HTTP credential and inspect the mapped output before enabling the disabled Sheets writer. Keep source IDs, URLs, resource states and missing fields with the evidence.
 
-*Reviewed November 5, 2026 against public API contracts and official platform documentation. Vendor-authored tutorial. Downloads were checked offline; no paid production call, authenticated platform import, live Sheets write or AI draft was tested.*
+*Reviewed November 5, 2026 against public contracts, official platform documentation and production-account API tests. Vendor-authored tutorial. The dated example below records real paid API observations; n8n/Make platform import, live Sheets writes and AI drafts were not executed.*
 
 ## Why check the profile before collecting posts?
 
@@ -47,6 +47,26 @@ An **n8n Instagram API workflow** can assemble a creator review sheet from a pub
 
 If privacy is unknown, the gate stops for review; it does not interpret the absence of a privacy field as permission to collect private content. Profile name and biography can help a reviewer identify topic fit, but they do not verify audience demographics. A similarly named account is not a safe substitute for the requested creator.
 
+
+## Production-account test: what actually returned?
+
+We made the two deliberate production-account calls for the public handle [`fellowproducts`](https://www.instagram.com/fellowproducts/). The profile response at **07:05:28 UTC on November 5, 2026** was AVAILABLE and explicitly reported `isPrivate: false`. The posts response at **07:05:54 UTC** returned **12 posts** with `hasMore: true`. Both responses reported SETTLED and 10 credits; the ledger confirmed **20 credits for these two calls**.
+
+| Evidence | Observed value |
+| --- | --- |
+| Returned profile identity | `788609950`, handle `fellowproducts` |
+| Follower count at collection | 345,515 |
+| [One returned post](https://www.instagram.com/p/DbD5TG7O4Zu/) | Media type `REEL` |
+| Its views / likes / comments at collection | 139,693 / 3,722 / 150 |
+
+The page contained 12 posts, so a 20-row cap should not manufacture eight extra rows. The matching profile and post-author handles support identity checks; the counts do not prove audience quality, creator fees or future campaign sales. These are dated public observations, not an endorsement or a ranking. No creator was contacted.
+
+These are observations from Nexscope Online test using an existing production account. They validate the API example, not a complete execution inside n8n. See the [sanitized live-case record]({{ '/assets/downloads/social-workflow-live-cases-20261105.json' | relative_url }}) for inputs and selected fields. Counts, availability and prices can change.
+
+- [Download the tested instagram profile request JSON]({{ '/assets/downloads/social-live-instagram-profile-request-20261105.json' | relative_url }})
+- [Download the tested instagram posts request JSON]({{ '/assets/downloads/social-live-instagram-posts-request-20261105.json' | relative_url }})
+
+These request files contain the real public inputs used for the dated case, without credentials. Executing them again can consume credits.
 
 ## How do you import and configure the n8n starter?
 
@@ -113,11 +133,11 @@ The Google Sheets writer appends rows if you enable it. Re-running the same crea
 
 ## How do you control cost and handle failures?
 
-**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. Each HTTP request can consume credits; pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
+**Budget API calls, platform execution and optional AI separately.** Inspect current Nexscope access and credit rules before running. In the retained November 5 tests, each API response reported 10 settled credits. That is an observed charge, not a permanent price quote. Pagination, retries and repeated manual runs can add calls. Local row or segment caps act after collection and do not define the supplier charge. An optional model request adds its own usage, and workflow-platform charging depends on your plan.
 
 Stop on a business error, unexpected shape or unusable resource state and inspect the retained response. AVAILABLE and PARTIAL are different: label partial evidence rather than presenting it as complete. PRIVATE, RESTRICTED, NOT_FOUND, NO_TRANSCRIPT and UNKNOWN should not feed a speculative report. A failed downstream write does not justify blindly repeating the paid retrieval.
 
-Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
+Keep returned collection dates separate from the client observation time; an older source timestamp is not fresh activity. Preserve pagination indicators when returned. API response `cost`, where present as processing time, is not a credit-price field. During these tests, Call Details showed “Not charged” for social calls while response usage and the account credit ledger showed charges. If those views disagree, reconcile the account credit ledger before assuming a call is free. Store credentials only in the platform's credential manager and choose execution-log retention appropriate to the public content you collect.
 
 ## Downloads and verification scope
 
@@ -125,7 +145,7 @@ Keep returned collection dates separate from the client observation time; an old
 - [Exact request body]({{ '/assets/downloads/n8n-instagram-creator-shortlist-request.json' | relative_url }})
 - [Review sheet headings]({{ '/assets/downloads/n8n-instagram-creator-shortlist-headers.csv' | relative_url }})
 
-The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. This does not establish compatibility with every installed n8n version or prove live account access.
+The n8n Code logic was exercised with constructed offline fixtures for valid, partial, empty and rejected responses. Graph checks confirm manual execution, absent embedded credentials, disabled Sheets writes and no automatic HTTP retry. Those offline checks do not establish compatibility with every installed n8n version. Live API access was checked separately for the dated example; the complete n8n workflow was not executed.
 
 Read the underlying [API and MCP research guide]({{ '/guides/instagram-api-mcp-creator-research/' | relative_url }}) for broader source interpretation. These workflow articles focus on implementation; they do not promise search rankings, citations or campaign results.
 
