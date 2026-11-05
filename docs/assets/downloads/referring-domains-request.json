@@ -1,0 +1,7 @@
+{
+  "target": {
+    "kind": "DOMAIN",
+    "target": "nexscope.ai"
+  },
+  "limit": 10
+}

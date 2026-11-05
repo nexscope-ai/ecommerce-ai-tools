@@ -2,13 +2,13 @@
 learning_topic: agents
 content_kind: guide
 layout: default
-title: "Backlink API: Referring Domains & New or Lost Links"
-description: "Choose a backlink API by task: profile overview, referring domains, link records or new/lost history. Check sample limits and inspect the matching Playground."
+title: "Backlink API in Python: Referring Domains to CSV"
+description: "Use a backlink API with Python to export referring domains to CSV. Check target scope, partial coverage, missing counts and link evidence before comparing sites."
 permalink: /guides/backlink-referring-domains-api/
 date_published: 2026-10-23
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-11-05
+last_modified_at: 2026-11-05
+last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -29,7 +29,7 @@ next_step:
   url: https://www.nexscope.ai/api-docs/seo-backlink-overview?view=playground&co-from=learn
 ---
 
-# Backlink API: referring domains, individual links and history
+# Backlink API in Python: export referring domains to CSV
 
 A **backlink API** can identify link sources worth inspecting. It does not measure the sales those links produced or reveal how Google values them. A useful study separates the number of links, the number of referring websites and the relevance of the actual pages linking to your content.
 
@@ -37,7 +37,7 @@ A **backlink API** can identify link sources worth inspecting. It does not measu
 
 > **Quick answer:** Nexscope's backlink APIs support link-profile research through overview, referring-domain, individual-link and new/lost views. Start with an exact domain or page, then inspect selected source evidence. Use the results for manual review, not automatic disavowal or exhaustive link counts. Index observations and proprietary scores are not Google's judgments about your site.
 
-*Reviewed October 26, 2026 against public documentation and repository contracts. Documentation-based guide by Nexscope Team. No paid backlink request, link acquisition or ranking experiment was performed for this article.*
+*Reviewed November 5, 2026 against public documentation and repository contracts. Documentation-based guide by Nexscope Team. No paid backlink request, link acquisition or ranking experiment was performed for this article.*
 
 ## Is this API workflow right for you?
 
@@ -84,6 +84,48 @@ The current [Referring Domains reference](https://www.nexscope.ai/api-docs/seo-r
 Check the completed result's `returnedCount`, `providerTotalCount`, `truncated` and `missing` alongside its domain rows. The provider's reported total and the rows returned are different quantities. Even an untruncated response describes the provider index, not the entire web or Google's private link inventory.
 
 For a page-level question, inspect the `PAGE` contract and use the precise page URL. Do not silently broaden the request to the whole domain merely to obtain more rows.
+
+## Backlink API Python tutorial: export referring domains to CSV
+
+**Start with one domain and ten referring-domain rows before collecting more evidence.** Download the [Python 3.10+ export starter]({{ '/assets/downloads/competitor-evidence-export.py' | relative_url }}) and [referring-domains request]({{ '/assets/downloads/referring-domains-request.json' | relative_url }}). No external Python packages are required.
+
+The template uses `{"target":{"kind":"DOMAIN","target":"nexscope.ai"},"limit":10}`. Replace the lowercase bare domain with your intended research target. This starter supports domain targets only; the full endpoint's page target requires its separately documented scope. It accepts a limit of 1–20 and never silently broadens a page request to the whole domain.
+
+Review the [Referring Domains API inputs and current estimate](https://www.nexscope.ai/api-docs/seo-referring-domains?view=api#online-test), then set `NEXSCOPE_API_KEY` in your local environment. Run:
+
+```shell
+python competitor-evidence-export.py backlinks referring-domains-request.json --output links-001
+```
+
+This makes one POST to `https://api.nexscope.ai/seo/referringDomains`. There is no automatic retry, pagination, source-page crawl or outreach. A new output directory prevents accidental replacement of earlier evidence. The raw response is saved before transformation.
+
+## Which backlink export checks should block a comparison?
+
+**Stop if the target, result scope or returned count does not match the request.** The starter checks both input and normalized targets, provider index, requested limit and number of items. Duplicate referring domains and invalid counts stop the export for inspection. Completed partial responses remain visibly partial; processing and unknown states do not produce a CSV.
+
+| Output | Evidence retained | Interpretation |
+| --- | --- | --- |
+| `response.json` | Original provider envelope and result | Preserve it when investigating missing data |
+| `manifest.json` | Coverage, target, source scope, reported total, truncation and available usage | Provider total and exported rows are different quantities |
+| `rows.csv` | Domain, proprietary rank, link/page counts, observation timestamps and missing reasons | Review source relevance before making a decision |
+
+`backlinks` counts links and `referringPages` counts pages within that source domain; neither is a count of independently referring websites across the entire web. The proprietary `rank` is not Google PageRank. `firstSeenAt` and `lostAt` remain source values; they do not establish the exact time of a publisher's edit. Unknown values stay blank and zero remains zero.
+
+Fill `source_page_checked`, `relevance_note` and `decision` after inspecting evidence that matters to your question. To identify individual source and destination URLs, use the separate Backlink Records interface described below. The starter does not automatically call that endpoint or label a domain an outreach opportunity merely because it appears in an export.
+
+If the call remains `PROCESSING`, inspect `manifest.json` and use its returned call ID to retrieve the same owner result:
+
+```shell
+python competitor-evidence-export.py backlinks referring-domains-request.json --call-id RETURNED_CALL_UUID --output links-result-001
+```
+
+Replace the placeholder with the actual returned UUID. This issues one GET to `/seo/referringDomains/calls/{callId}`, verifies the returned ID and does not poll. To reprocess already-saved evidence offline instead:
+
+```shell
+python competitor-evidence-export.py backlinks referring-domains-request.json --from-response links-001/response.json --output links-offline-001
+```
+
+The starter's failure handling was checked with constructed offline fixtures. No paid backlink request or source-page accuracy benchmark was run for this update. Partial coverage or a bounded result cannot become an exhaustive inventory by exporting it to a spreadsheet.
 
 ## What do individual backlink records add?
 
@@ -134,7 +176,7 @@ For content opportunities, read the [competitor keyword and traffic API guide]({
 
 ## Evidence checked and what remains untested
 
-Documentation review date: **October 26, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
+Documentation review date: **November 5, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
 
 The [Referring Domains contract](https://www.nexscope.ai/api-docs/seo-referring-domains?view=api) documents `limit` and the target object's `kind` and `target` fields. Response fields include `domain`, `backlinks`, `referringPages`, `firstSeenAt` and `lostAt`. These are index observations for the specified scope, not verified dates of a publisher's edit.
 
