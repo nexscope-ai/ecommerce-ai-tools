@@ -87,6 +87,7 @@ test('official tab membership includes new platforms and excludes marketing by a
     _publicDirectoryFallback:{apis:[{slug:'woocommerce-products',platformSlug:'woocommerce'},
       {slug:'future-store-products',platformSlug:'future-store'},
       {slug:'data-looking-seo',platformSlug:'cross-platform'},
+      {slug:'account-credits',platformSlug:'account'},
       {slug:'seo-keyword-metrics',platformSlug:'marketing'}]}};
   const html=value=>`<script id="__NEXT_DATA__" type="application/json">${JSON.stringify({props:{pageProps:value}})}</script>`;
   assert.deepEqual(projectDirectoryMembership(html(page)).slugs,['future-store-products','woocommerce-products']);
@@ -352,12 +353,12 @@ test('unknown counts remain unknown, and public metrics reject private identifie
 test('published statistics match the approved retained-record snapshot',async()=>{
   const usage=JSON.parse(await readFile(new URL('./data/api-usage.public.json',import.meta.url),'utf8'));
   validateUsage(usage);
-  assert.equal(Object.keys(usage.apis).length,248);
-  assert.equal(usage.updatedAt,'2026-11-02T08:14:51.849Z');
-  assert.deepEqual(usage.apis['1688-product-detail'],{callCount:15506,userCount:96,creditMin:1,creditMax:10});
+  assert.equal(Object.keys(usage.apis).length,439);
+  assert.equal(usage.updatedAt,'2026-11-05T03:23:00.280Z');
+  assert.deepEqual(usage.apis['1688-product-detail'],{callCount:16203,userCount:98,creditMin:1,creditMax:10});
   assert.equal(Object.values(usage.apis).filter(item=>item.creditMin != null).length,162);
   assert.equal(usage.creditUpdatedAt,'2026-10-29T10:36:38.737Z');
-  assert.equal(Object.values(usage.apis).reduce((sum,item)=>sum+item.callCount,0),96416);
+  assert.equal(Object.values(usage.apis).reduce((sum,item)=>sum+item.callCount,0),100762);
 });
 test('projection preserves public endpoints and excludes internal fields',()=>{
   const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:{route:{kind:'upstream-skill',record:{...entry,mcpToolName:'private_tool',primaryProxy:'internal'}},catalog:{skills:[{...entry,endpoint:'/public/test'}],categories:[]}}}},membership(entry.slug));

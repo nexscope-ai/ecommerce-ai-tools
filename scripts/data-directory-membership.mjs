@@ -25,9 +25,11 @@ export function projectDirectoryMembership(html) {
     return group.skills.map(item => item.slug);
   }));
   const slugs = page._publicDirectoryFallback.apis
-    .filter(item => item.platformSlug !== 'marketing' && !marketing.has(item.slug))
+    .filter(item => !['marketing','account'].includes(item.platformSlug) && !marketing.has(item.slug))
     .map(item => item.slug).sort();
-  const result = { collection: 'ecommerce', slugs, skills: page.catalog.skills, categories: page.catalog.categories };
+  const categorySlugs=new Set(page.catalog.categories.map(category=>category.slug));
+  const groupCategories=(page.selectorGroups??[]).filter(group=>!categorySlugs.has(group.slug)).map(group=>({slug:group.slug,name:group.name}));
+  const result = { collection: 'ecommerce', slugs, skills: page.catalog.skills, categories: [...page.catalog.categories,...groupCategories] };
   dataCollectionSlugs(result);
   if (!Number.isSafeInteger(page.directoryCounts?.data) || page.directoryCounts.data !== slugs.length) {
     throw new Error('Official E-commerce Data count does not match its membership');

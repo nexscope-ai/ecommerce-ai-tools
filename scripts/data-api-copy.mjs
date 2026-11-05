@@ -3,6 +3,7 @@
 export const copyReviewedAt = '2026-11-02T00:00:00Z';
 const category = (name, description, chooseWhen) => ({name, description, chooseWhen});
 export const categoryCopyMap = {
+  'social-data': category('Social & Content Data APIs', 'Explore platform-specific profile, post, comment, search and transcript endpoints for social and content research.', 'Choose a platform and inspect its available operations. The dedicated Social APIs directory groups these endpoints by platform; inputs and available data differ by operation.'),
   'woocommerce': category('WooCommerce Products, Variations & Store Research', 'Research products, variations, reviews, taxonomies and collection statistics within one specified public WooCommerce store.', 'Start with a public store URL, then inspect products and their variations. Store version and configuration affect available data; this is not a global store search or access to private orders.'),
   'jev': category('API Discovery & Content Evaluation', 'Discover a matching published API or evaluate supplied content with Nexscope JEV.', 'Use routing to inspect a suggested API, or evaluate content you are authorized to submit. Routing does not execute the suggested API; review results and current access requirements.'),
   'ai-content-generation': category('Product Description Generation', 'Generate product-description copy from supplied product information.', 'Provide accurate product facts and review the generated wording before publication. Generation does not verify product claims.'),
