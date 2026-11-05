@@ -255,3 +255,8 @@ No. The results are research signals. Validate product quality, inventory, prici
 - [TikTok Shop AI UGC video seller workflow]({{ '/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/' | relative_url }})
 - [Ecommerce APIs and MCP tools for AI agents](https://www.nexscope.ai/api-docs?co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=tiktok-shop-api-guide&utm_content=related-resource)
 
+
+## Extend this research into a reviewed workflow
+
+- [n8n TikTok API: Build a Video Research Sheet]({{ '/guides/n8n-tiktok-video-research/' | relative_url }})
+- [Make TikTok Comments API: Build a Buyer-Question Brief]({{ '/guides/make-tiktok-comments-analysis/' | relative_url }})

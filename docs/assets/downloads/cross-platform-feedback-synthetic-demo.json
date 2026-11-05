@@ -1,0 +1,46 @@
+[
+  {
+    "evidence_id": "demo-1",
+    "platform": "reddit",
+    "source_record_id": "synthetic-1",
+    "source_url": "https://example.com/illustrative/reddit/1",
+    "source_context": "Synthetic coffee-mug research exercise; not an actual post or customer statement.",
+    "observed_at": "2026-11-05T00:00:00Z",
+    "text": "Constructed example: ask how the lid seal is cleaned.",
+    "theme": "cleaning",
+    "sample_type": "synthetic"
+  },
+  {
+    "evidence_id": "demo-2",
+    "platform": "youtube",
+    "source_record_id": "synthetic-2",
+    "source_url": "https://example.com/illustrative/youtube/2",
+    "source_context": "Synthetic coffee-mug research exercise; not an actual post or customer statement.",
+    "observed_at": "2026-11-05T00:00:00Z",
+    "text": "Constructed example: ask whether replacement seals are documented.",
+    "theme": "cleaning",
+    "sample_type": "synthetic"
+  },
+  {
+    "evidence_id": "demo-3",
+    "platform": "tiktok",
+    "source_record_id": null,
+    "source_url": "https://example.com/illustrative/tiktok/3",
+    "source_context": "Synthetic coffee-mug research exercise; not an actual post or customer statement.",
+    "observed_at": "2026-11-05T00:00:00Z",
+    "text": "Constructed example: ask which cup-holder measurements were tested.",
+    "theme": "fit",
+    "sample_type": "synthetic"
+  },
+  {
+    "evidence_id": "demo-4",
+    "platform": "reddit",
+    "source_record_id": "synthetic-4",
+    "source_url": "https://example.com/illustrative/reddit/4",
+    "source_context": "Synthetic coffee-mug research exercise; not an actual post or customer statement.",
+    "observed_at": "2026-11-05T00:00:00Z",
+    "text": "Constructed example: prefer a drink to cool sooner rather than stay hot.",
+    "theme": "counterexample",
+    "sample_type": "synthetic"
+  }
+]

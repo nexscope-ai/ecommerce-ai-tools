@@ -1,0 +1,170 @@
+{
+  "name": "Nexscope - n8n YouTube Comments API: Find Unanswered Buyer Questions (manual pilot)",
+  "active": false,
+  "nodes": [
+    {
+      "id": "manual-start",
+      "name": "Manual start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "parameters": {},
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "id": "research-input",
+      "name": "Research input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const request={\"url\": \"https://www.youtube.com/watch?v=0Ds0pgSLT4I\", \"order\": \"top\"};\nif(Object.values(request).some(v=>typeof v==='string'&&v.includes('REPLACE')))throw new Error('Replace all placeholders.');\nif(!/^https:\\/\\/(?:www\\.)?(?:youtube\\.com\\/watch\\?|youtu\\.be\\/)/.test(request.url))throw new Error('Use a public YouTube video URL.');\nreturn [{json:request}];"
+      },
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "id": "nexscope-data",
+      "name": "Nexscope Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.nexscope.ai/social/youtube/video/comments",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 90000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "position": [
+        440,
+        300
+      ],
+      "retryOnFail": false
+    },
+    {
+      "id": "validate-and-map",
+      "name": "Validate and map",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const body=$input.first().json;\nconst request=$('Research input').first().json;\nif(typeof body.code!=='number'||body.code!==0)throw new Error('API business error; inspect saved response before repeating retrieval.');\nconst outer=body.data;\nif(!outer||!['AVAILABLE','PARTIAL'].includes(outer.resourceStatus))throw new Error('Resource unavailable or unknown.');\nconst s=outer.data;\nif(!s||typeof s!=='object'||Array.isArray(s))throw new Error('Expected supplier object under data.data.');\nif(s.success!==undefined&&s.success!==true)throw new Error('Supplier success not established.');\nif(typeof s.status_code==='number'&&s.status_code!==0)throw new Error('Supplier reports an error.');\nconst cell=v=>{if(v==null)return '';if(typeof v==='object')v=JSON.stringify(v);return typeof v==='string'&&(/^[\\t\\r\\n]/.test(v)||/^[=+\\-@]/.test(v.trimStart()))?\"'\"+v:v;};\nconst sourceUrl=(v,hosts)=>{if(typeof v!=='string'||!/^https:\\/\\/[A-Za-z0-9.-]+(?::[0-9]+)?(?:[/?#][^\\s]*)?$/.test(v))throw new Error('Missing HTTPS source URL.');const host=v.match(/^https:\\/\\/([^/:?#]+)/)[1].toLowerCase();if(!hosts.some(h=>host===h||host.endsWith('.'+h)))throw new Error('Source hostname mismatch.');return v;};\nconst common={resource_status:outer.resourceStatus,source_fetched_at:outer.fetchedAt??'',observed_at_utc:new Date().toISOString(),execution_id:String($execution.id),query_or_input:request.query??request.url??request.handle,continuation:s.continuationToken??s.cursor??'',billing_status:outer.usage?.billingStatus??'',charged_credits:outer.usage?.chargedCredits??''};\nconst finish=(rows,returned)=>rows.map(row=>({json:Object.fromEntries(Object.entries({...row,...common,returned_count:returned,exported_count:rows.length,missing_fields:Object.keys(row).filter(k=>row[k]==null).join(';')}).map(([k,v])=>[k,cell(v)]))}));\nif(!Array.isArray(s.comments))throw new Error('Expected data.data.comments array.');\nconst rows=[],seen=new Set();\nconst video=sourceUrl(request.url,['youtube.com','youtu.be']);\nfor(const p of s.comments){\n if(!p||typeof p.id!=='string'||!p.id)throw new Error('Missing comment identity.');\n if(seen.has(p.id))continue;seen.add(p.id);\n const base=video.split('#')[0];const link=base+(base.includes('?')?'&':'?')+'lc='+encodeURIComponent(p.id);\n rows.push({source_id:p.id,source_url:link,source_context:video,text:p.content,likes:p.engagement?.likes,replies:p.engagement?.replies,reply_level:p.replyLevel,published_time:p.publishedTime,published_time_text:p.publishedTimeText,date_precision:'publishedTime is best-effort from a relative label'});\n if(rows.length===20)break;\n}\nreturn finish(rows,s.comments.length);"
+      },
+      "position": [
+        660,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Research evidence",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      },
+      "id": "sheets",
+      "name": "Append to Google Sheets - configure then enable",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "disabled": true,
+      "position": [
+        880,
+        300
+      ]
+    },
+    {
+      "id": "setup-notes",
+      "name": "Setup notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "parameters": {
+        "content": "## Manual paid API pilot\nReview inputs and current credit rules before one request. Select your own Header Auth credential; no key belongs in this JSON. Leave Sheets disabled while checking the returned supplier object and mapped rows. Configure a scratch destination using the CSV headings before enabling writes. No automatic retry, schedule or pagination. In-run deduplication is not persistent delivery state. This starter does not publish, send messages or call an LLM.",
+        "height": 320,
+        "width": 650
+      },
+      "position": [
+        150,
+        -100
+      ]
+    }
+  ],
+  "connections": {
+    "Manual start": {
+      "main": [
+        [
+          {
+            "node": "Research input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Research input": {
+      "main": [
+        [
+          {
+            "node": "Nexscope Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nexscope Data": {
+      "main": [
+        [
+          {
+            "node": "Validate and map",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate and map": {
+      "main": [
+        [
+          {
+            "node": "Append to Google Sheets - configure then enable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}

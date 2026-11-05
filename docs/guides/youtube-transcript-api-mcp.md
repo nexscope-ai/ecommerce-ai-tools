@@ -151,4 +151,9 @@ Choose a concrete output before automating collection:
 - [n8n YouTube Transcript API: Create Timestamped Review Evidence]({{ '/guides/n8n-youtube-transcript-review-evidence/' | relative_url }}) — manual starter with a disabled Sheets writer.
 - [Make YouTube Transcript API: Draft a Source-Linked FAQ]({{ '/guides/make-youtube-transcript-faq/' | relative_url }}) — task-specific module recipe for a reviewed draft or research output.
 
+## Extend this research into a reviewed workflow
+
+- [n8n YouTube Comments API: Find Unanswered Buyer Questions]({{ '/guides/n8n-youtube-comments-analysis/' | relative_url }})
+- [n8n YouTube Channel Monitoring: Track Newly Observed Videos]({{ '/guides/n8n-youtube-channel-monitoring/' | relative_url }})
+
 {% include api-guide-faq.html %}

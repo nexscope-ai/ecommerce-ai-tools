@@ -1,0 +1,253 @@
+{
+  "reviewed_date": "2026-11-05",
+  "scope": "Eight production-account API calls through Nexscope Online test; eight call-history successes and eight 10-credit ledger deductions. Seven retained response bodies. No authenticated n8n/Make import, live Sheets write, live schedule or AI draft executed.",
+  "billing": {
+    "calls": 8,
+    "ledger_credits": 80,
+    "retained_responses": 7,
+    "note": "The earlier nine-call/90-credit pilot is separate. Call Details incorrectly displayed Not charged while the account ledger recorded deductions."
+  },
+  "redaction": "Account identifiers, API keys, client IPs, diagnostic identifiers, individual author profiles, full comments and creative assets omitted. This is selected metadata, not full response fixtures.",
+  "cases": {
+    "tt-comments": {
+      "observed_at_utc": "2026-11-05T07:39:14.709268100Z",
+      "resource_status": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "collection_path": "data.data.comments",
+      "returned_records": 20,
+      "supplier_keys": [
+        "comments",
+        "cursor",
+        "end_of_pagination",
+        "has_more",
+        "success",
+        "total"
+      ],
+      "item_fields": [
+        "aweme_id",
+        "comment_language",
+        "create_time",
+        "digg_count",
+        "reply_comment_total",
+        "text",
+        "user"
+      ],
+      "has_continuation": true
+    },
+    "yt-comments": {
+      "observed_at_utc": "2026-11-05T07:36:36.268627926Z",
+      "resource_status": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "collection_path": "data.data.comments",
+      "returned_records": 20,
+      "supplier_keys": [
+        "comments",
+        "continuationToken",
+        "success"
+      ],
+      "item_fields": [
+        "author",
+        "content",
+        "engagement",
+        "id",
+        "publishedTime",
+        "publishedTimeText",
+        "repliesContinuationToken",
+        "replyLevel"
+      ],
+      "has_continuation": true
+    },
+    "ig-comments": {
+      "observed_at_utc": "2026-11-05T07:37:26.593324230Z",
+      "resource_status": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "collection_path": "data.data.comments",
+      "returned_records": 12,
+      "supplier_keys": [
+        "comments",
+        "cursor",
+        "success"
+      ],
+      "item_fields": [
+        "child_comment_count",
+        "comment_like_count",
+        "created_at",
+        "id",
+        "text",
+        "user"
+      ],
+      "has_continuation": true
+    },
+    "yt-channel": {
+      "observed_at_utc": "2026-11-05T07:38:25.695322202Z",
+      "resource_status": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "collection_path": "data.data.videos",
+      "returned_records": 30,
+      "supplier_keys": [
+        "channels",
+        "continuationToken",
+        "lives",
+        "playlists",
+        "shelves",
+        "shorts",
+        "success",
+        "videos"
+      ],
+      "item_fields": [
+        "badges",
+        "channel",
+        "commentCountInt",
+        "commentCountText",
+        "description",
+        "durationFormatted",
+        "durationMs",
+        "genre",
+        "id",
+        "lengthSeconds",
+        "lengthText",
+        "likeCountInt",
+        "likeCountText",
+        "publishDate",
+        "publishedTime",
+        "publishedTimeText",
+        "thumbnail",
+        "title",
+        "type",
+        "url",
+        "viewCountInt",
+        "viewCountText"
+      ],
+      "has_continuation": true
+    },
+    "li-posts": {
+      "observed_at_utc": "2026-11-05T07:40:10.825714467Z",
+      "resource_status": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "collection_path": "data.data.posts",
+      "returned_records": 3,
+      "supplier_keys": [
+        "posts",
+        "success"
+      ],
+      "item_fields": [
+        "datePublished",
+        "id",
+        "text",
+        "url"
+      ],
+      "has_continuation": false
+    },
+    "li-ads": {
+      "observed_at_utc": "2026-11-05T07:46:46.908012380Z",
+      "resource_status": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "collection_path": "data.data.ads",
+      "returned_records": 24,
+      "supplier_keys": [
+        "ads",
+        "isLastPage",
+        "paginationToken",
+        "success",
+        "totalAds"
+      ],
+      "item_fields": [
+        "adDuration",
+        "adType",
+        "advertiser",
+        "advertiserLinkedinPage",
+        "advertiserLogo",
+        "carouselImages",
+        "creativeType",
+        "cta",
+        "description",
+        "destinationUrl",
+        "endDate",
+        "headline",
+        "id",
+        "image",
+        "imageSources",
+        "impressionsByCountry",
+        "landingPage",
+        "organicVideo",
+        "paidForBy",
+        "poster",
+        "posterTitle",
+        "preRollAdvertiser",
+        "preRollVideo",
+        "preRollVideoSources",
+        "promotedBy",
+        "sponsoredMessageButtons",
+        "sponsoredMessageSender",
+        "sponsoredMessageSenderAvatar",
+        "startDate",
+        "targeting",
+        "targetingTable",
+        "thumbnailSources",
+        "totalImpressions",
+        "url",
+        "video",
+        "videoSources"
+      ],
+      "has_continuation": true
+    },
+    "x-search": {
+      "observed_at_utc": "2026-11-05T07:47:23.172483606Z",
+      "resource_status": "AVAILABLE",
+      "usage": {
+        "billingStatus": "SETTLED",
+        "chargedCredits": 10
+      },
+      "collection_path": "data.data.posts",
+      "returned_records": 9,
+      "supplier_keys": [
+        "cursor",
+        "posts",
+        "query",
+        "success"
+      ],
+      "item_fields": [
+        "__typename",
+        "core",
+        "edit_control",
+        "grok_analysis_button",
+        "grok_annotations",
+        "is_translatable",
+        "legacy",
+        "note_tweet",
+        "previous_counts",
+        "rest_id",
+        "unmention_data",
+        "url",
+        "views"
+      ],
+      "has_continuation": true
+    },
+    "tt-search": {
+      "history_result": "SUCCESS",
+      "request_time_utc": "2026-11-05 07:35:04 UTC",
+      "retained_response": false,
+      "ledger_credits": 10,
+      "documented_collection_path": "data.data.search_item_list",
+      "limitation": "The browser connection failed after submission. Call history confirmed success and the credit ledger showed deduction; the result body and row count were not retained. No repeat request was made."
+    }
+  }
+}

@@ -183,4 +183,8 @@ Choose a concrete output before automating collection:
 - [n8n Meta Ad Library API: Create a Creative Review Queue]({{ '/guides/n8n-meta-ad-library-creative-review/' | relative_url }}) — manual starter with a disabled Sheets writer.
 - [Make Meta Ad Library API: Build a Competitor Snapshot Review]({{ '/guides/make-meta-ad-library-competitor-snapshot/' | relative_url }}) — task-specific module recipe for a reviewed draft or research output.
 
+## Extend this research into a reviewed workflow
+
+- [LinkedIn Ad Library API: Build a B2B Creative Review Workflow]({{ '/guides/linkedin-ad-library-api-workflow/' | relative_url }})
+
 {% include api-guide-faq.html %}

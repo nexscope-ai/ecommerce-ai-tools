@@ -159,4 +159,8 @@ Choose a concrete output before automating collection:
 - [n8n Instagram API Workflow: Build a Creator Shortlist]({{ '/guides/n8n-instagram-creator-shortlist/' | relative_url }}) — manual starter with a disabled Sheets writer.
 - [Make Instagram API Workflow: Build a Content Planning Review]({{ '/guides/make-instagram-content-planning/' | relative_url }}) — task-specific module recipe for a reviewed draft or research output.
 
+## Extend this research into a reviewed workflow
+
+- [Make Instagram Comments API: Prepare a Product FAQ Review]({{ '/guides/make-instagram-comments-faq/' | relative_url }})
+
 {% include api-guide-faq.html %}
