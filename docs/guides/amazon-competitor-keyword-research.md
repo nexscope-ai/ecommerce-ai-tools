@@ -194,3 +194,7 @@ It measures a dated rank or placement signal for a defined marketplace, query, p
 
 This guide is an editorial workflow, not a claim that a particular keyword will increase rankings or sales. Recheck the live [Amazon ASIN Keywords API documentation](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn) for current fields and credits, and verify consequential decisions against your first-party Amazon reports and listing experiments.
 
+
+## Continue with a reverse-ASIN workflow
+
+Use the [reverse-ASIN keyword gap tool](https://learn.nexscope.ai/tools/reverse-asin-keyword-gap/) to compare candidates for one marketplace, or browse the [Data API directory](https://learn.nexscope.ai/data/) for the documented Amazon operations. Validate every search-volume estimate against its provider definition; a competitor keyword is not proof of demand or sales.

@@ -173,6 +173,20 @@ def finalize(directory, root_site=None, api_snapshot=None):
     if errors: raise SystemExit('\n'.join(sorted(set(errors))))
     ET.indent(sitemap)
     ET.ElementTree(sitemap).write(old_sitemap, encoding='utf-8', xml_declaration=True)
+    # Publish a real image URL set, not a misleading index pointing back to the
+    # ordinary sitemap. Repeated sitewide social cards are not page evidence.
+    image_map = ET.Element(f'{{{NS}}}urlset')
+    for entry in sitemap:
+        images = entry.findall(f'{{{IMAGE_NS}}}image')
+        if not images:
+            continue
+        image_url = images[0].findtext(f'{{{IMAGE_NS}}}loc', '')
+        if image_url.endswith('/og-default.png'):
+            continue
+        image_map.append(ET.fromstring(ET.tostring(entry)))
+    ET.indent(image_map)
+    ET.ElementTree(image_map).write(directory / 'image-sitemap.xml', encoding='utf-8', xml_declaration=True)
+
     print(f'Canonical learning sitemap: {len(pages)} pages; excluded {dict(excluded)}. Internal links and six topic hubs verified.')
 
 if __name__ == '__main__':

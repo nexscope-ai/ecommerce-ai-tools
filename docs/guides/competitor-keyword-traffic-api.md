@@ -199,3 +199,7 @@ The [Domain Ranked Keywords contract](https://www.nexscope.ai/api-docs/seo-domai
 Check [current Nexscope pricing and access](https://www.nexscope.ai/pricing?co-from=learn) alongside the endpoint's current estimate. Plan the whole workflow, not just one request; no measured total is available from this article.
 
 {% include api-guide-faq.html %}
+
+## Need Amazon marketplace keyword evidence instead?
+
+Domain keyword rankings describe web search, not Amazon search placement. For marketplace research, follow the [Amazon competitor keyword workflow]({{ "/amazon-competitor-keyword-research/" | relative_url }}) and the [reverse-ASIN keyword gap tool](https://learn.nexscope.ai/tools/reverse-asin-keyword-gap/). Browse [Data API categories](https://learn.nexscope.ai/data/) to select the appropriate marketplace and check its current contract before building an export.

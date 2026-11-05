@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtemp, readFile, writeFile, readdir, mkdir} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {project, validate, build, buildRoot, buildPages, officialApiUrl} from './build_api_docs.mjs';
+import {project, validate, build, buildRoot, buildPages, renderStandalone, officialApiUrl} from './build_api_docs.mjs';
 import {runInNewContext} from 'node:vm';
 import {applyUsage, validateUsage} from './data-api-usage.mjs';
 import {projectFeed} from './refresh-data-api-snapshot.mjs';
@@ -320,9 +320,9 @@ test('historical positive credit ranges aggregate category extrema without addin
   assert.equal(result.categoryUsage[entry.categorySlug].creditKnownApis,2);
   assert.equal(result.categoryUsage[entry.categorySlug].creditTotalApis,3);
   const root=buildPages(result).get('index.md');
-  assert.match(root,/10～19 credits per call/);
-  assert.match(root,/Across 2 of 3 APIs with positive charge records/);
-  assert.match(root,/10 credits per call/);
+  assert.match(root,/10～19 historical credits\/call/);
+  assert.match(root,/2\/3 APIs with charge records/);
+  assert.match(root,/10 historical credits\/call/);
   assert.doesNotMatch(root,/<strong>(?:10～10|1～10|0～)/);
   assert.match(root,/api-credit-range[^]*?<strong>-<\/strong>/);
   assert.match(root,/Historical credit range unavailable/);
@@ -539,4 +539,15 @@ test('preview projection exposes only bounded published input examples and decla
   assert.ok(category.includes('co-from=learn'));
   assert.ok(category.includes('class="api-card-actions"'));
   assert.ok(!category.includes('<details><a'));
+});
+
+
+test('compact directory keeps full-description search terms and defines reusable statistics icons once', () => {
+  const long = {...entry, description: 'Repeated detail '.repeat(100) + 'specialpaginationflag'};
+  const source = buildPages({...snapshot,entries:[long]}).get('index.md');
+  assert.match(source, /data-api-search="[^"]*specialpaginationflag/);
+  assert.ok(!source.includes('<p>' + long.description + '</p>'));
+  const html = renderStandalone(source,snapshot);
+  assert.equal((html.match(/id="api-stat-coins"/g)||[]).length,1);
+  assert.match(html, /<use href="#api-stat-coins"/);
 });

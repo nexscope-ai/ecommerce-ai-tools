@@ -80,7 +80,7 @@
 
 .api-usage{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:10px;margin:0 0 0 auto;color:#89828f;font-size:12px;line-height:1}
 .api-usage-metric{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;line-height:1;cursor:help}
-.api-card-actions .api-usage-metric svg{display:block;width:16px;height:16px;flex:none;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:inherit}
+.api-card-actions .api-usage-metric svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block;width:16px;height:16px;flex:none;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:inherit}
 .api-usage-metric:hover{color:#5e477e}
 .api-card-actions > svg{flex:none;margin-left:auto}
 .api-card:focus-within{border-color:var(--card-accent,#7953cb);box-shadow:0 0 0 3px var(--card-soft,#f1edfb)}

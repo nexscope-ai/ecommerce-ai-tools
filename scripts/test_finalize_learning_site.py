@@ -34,6 +34,15 @@ class CanonicalSitemapTests(unittest.TestCase):
         first = ET.tostring(self.run_finalize().getroot())
         second = ET.tostring(self.run_finalize().getroot())
         self.assertEqual(first, second)
+    def test_image_sitemap_contains_page_images_instead_of_an_index(self):
+        self.page('illustrated/', '<meta property="og:image" content="https://example.com/product.webp">')
+        self.page('generic/', '<meta property="og:image" content="https://learn.nexscope.ai/og-default.png">')
+        self.run_finalize()
+        root = ET.parse(self.directory / 'image-sitemap.xml').getroot()
+        self.assertEqual(root.tag, f'{{{NS}}}urlset')
+        urls = root.findall(f'{{{NS}}}url')
+        self.assertEqual(len(urls), 1)
+        self.assertEqual(urls[0].findtext(f'{{{NS}}}loc'), f'{ORIGIN}{BASE}/illustrated/')
     def api_snapshot(self):
         path = self.directory / 'contract.json'
         path.write_text(json.dumps({'generatedAt': '2026-10-28T09:45:47.193Z', 'entries': [{'slug': 'example-api'}]}), encoding='utf-8')
