@@ -1,0 +1,6 @@
+{
+  "id": "REPLACE_AD_ID",
+  "trim": true,
+  "get_transcript": false,
+  "allow_long_transcription": false
+}

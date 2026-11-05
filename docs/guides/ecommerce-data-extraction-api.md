@@ -107,6 +107,8 @@ Download the [blank extraction pilot worksheet]({{ '/assets/downloads/extraction
 
 No measured cost advantage is claimed here. This worksheet is a proposed evaluation method. Nexscope Page Evidence remains a bounded observation of one public URL; a bulk crawler, renderer, variant resolver and normalized catalog pipeline would require separately verified capabilities.
 
+For a task-specific implementation, [Compare observed Google Shopping products and seller offers with source-bound references]({{ '/guides/google-shopping-api-mcp-seller-offers/' | relative_url }}). Preserve identity and source scope before using the result.
+
 ## Should you read a live product page, a catalog feed, or structured data?
 
 **Choose the source according to the decision, then compare sources when the decision is consequential.** Google describes structured data, Merchant Center feeds, and page content as related ways product information can appear in Search, but eligibility does not make one source a universal source of truth.

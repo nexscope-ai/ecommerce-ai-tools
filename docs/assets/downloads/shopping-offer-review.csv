@@ -1,0 +1,1 @@
+source_task_id,source_call_id,product_ref,product_url,brand,model,variant,pack_size,seller,currency,observed_base_price,observed_shipping,observed_tax,observed_total,installment_months,sampled_at,missing_evidence,product_match,checkout_verified,reviewer
