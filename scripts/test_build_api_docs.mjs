@@ -85,12 +85,15 @@ test('official tab membership includes new platforms and excludes marketing by a
   const page={catalogAvailable:true,directoryCounts:{data:2},catalog:{skills:[],categories:[]},
     marketingGroups:[{skills:[{slug:'data-looking-seo'}]}],
     _publicDirectoryFallback:{apis:[{slug:'woocommerce-products',platformSlug:'woocommerce'},
-      {slug:'future-store-products',platformSlug:'future-store'},
+      {slug:'future-store-products',platformSlug:'future-store',categorySlug:'future-category',categoryName:{en:'Future Store'}},
+      {slug:'account-credits',platformSlug:'account'},
+      {slug:'account-usage',platformSlug:'account'},
       {slug:'data-looking-seo',platformSlug:'cross-platform'},
       {slug:'account-credits',platformSlug:'account'},
       {slug:'seo-keyword-metrics',platformSlug:'marketing'}]}};
   const html=value=>`<script id="__NEXT_DATA__" type="application/json">${JSON.stringify({props:{pageProps:value}})}</script>`;
   assert.deepEqual(projectDirectoryMembership(html(page)).slugs,['future-store-products','woocommerce-products']);
+  assert.deepEqual(projectDirectoryMembership(html(page)).categories,[{slug:'future-category',name:'Future Store',description:''}]);
   assert.throws(()=>projectDirectoryMembership(html({...page,directoryCounts:{data:3}})),/count/);
   assert.throws(()=>projectDirectoryMembership(html({...page,catalogAvailable:false})),/publication/);
   assert.throws(()=>projectDirectoryMembership('<html>Unavailable</html>'),/publication/);

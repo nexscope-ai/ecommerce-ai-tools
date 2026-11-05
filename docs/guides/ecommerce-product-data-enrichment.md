@@ -3,13 +3,13 @@ learning_topic: research
 related_topics: [visibility, agents]
 content_kind: guide
 layout: default
-title: "Ecommerce Product Data Enrichment: SKU and Feed Workflow"
-description: "Learn how to enrich product data across SKUs, pages and feeds. Check missing attributes, variant mismatches and AI-drafted copy before publishing."
+title: "Product Data Enrichment: SKU Mapping and Feed Review"
+description: "Improve product data enrichment with a downloadable SKU review sheet. Reconcile missing attributes, variant conflicts and feed values before publishing approved changes."
 permalink: /ecommerce-product-data-enrichment/
 date_published: 2026-10-13
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-11-05
+last_modified_at: 2026-11-05
+last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -42,17 +42,59 @@ next_step:
   url: "https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn"
 ---
 
-# Ecommerce product data enrichment: a SKU and feed workflow
+# Product data enrichment: SKU mapping and feed review
 
 **Product data enrichment fills missing or unclear facts in an approved SKU record and keeps the catalog, product page, structured data, and channel feeds consistent.** Start with identifiers, variants, specifications, offer details, and buyer questions. AI can help map fields and draft readable copy from approved facts, but it cannot verify an invented certification, compatibility claim, price, or stock level.
 
 **Quick answer:** Audit a sample of important SKUs for missing identifiers, variant details, dimensions, material, use cases, images, and offer facts. Assign each field a source of truth and owner. Map only facts you can verify, review generated text before publishing, then test whether the landing page, markup, and feed agree. Better data can improve eligibility and usefulness; it cannot guarantee Google rankings or AI recommendations.
 
-{% include article-action.html %}
+{% include article-action.html placement="article-top" %}
 
 ## What should you compare in a sample audit?
 
 For one SKU, keep the approved catalog record beside the page audit. Check whether the page identifies the exact variant, whether key specifications are visible, and whether structured data describes the same offer. For example, a catalog's two-pack and a page's single-item description should become a review task before AI drafts more copy. This is a suggested review workflow, not a report that Nexscope has performed a bulk enrichment test.
+
+## Product feed enrichment: a downloadable SKU review sheet
+
+**Turn each proposed field change into an evidence-backed review row before publishing it.** Download the [blank product enrichment worksheet]({{ '/assets/downloads/product-enrichment-review.csv' | relative_url }}). It contains headers only, not fabricated customer data or an API result. Use one row per SKU, variant, locale and field; one SKU may need several rows.
+
+The sheet separates the approved record, visible page, feed value and proposed replacement. That prevents a page snapshot from silently overwriting a catalog value. Keep identifiers as text when importing: a spreadsheet must not remove leading zeros from SKUs or GTINs. Preserve units and currency explicitly and check spreadsheet imports so source text is treated as data rather than formulas.
+
+| Worksheet columns | What to record | Acceptance check |
+| --- | --- | --- |
+| `sku`, `variant_id`, `locale`, `field_name` | Exact record and attribute being reviewed | A parent product is not interchangeable with its selected variant |
+| `approved_value`, `page_value`, `feed_value` | Values from the three surfaces | Preserve disagreement; do not pick a majority vote |
+| `proposed_value`, `unit`, `currency` | Suggested change and its interpretation | No guessed capacity, price conversion or generated identifier |
+| `approved_source`, `source_url`, capture/update times | Where the fact came from and when | Client capture time does not prove the source is current |
+| `owner`, `status`, `decision_reason` | Responsible reviewer and the reason to proceed or hold | A missing owner keeps the row in review |
+| Reviewer, publication time, `recheck_result` | Approval and subsequent verification | Publishing is complete only after the destination is rechecked |
+
+## How do you resolve missing or conflicting product fields?
+
+**Use field ownership and evidence, not AI confidence, to resolve a conflict.** A manufacturer specification can support material or dimensions; the owning commerce system and current offer need to establish price, currency and availability. Verify that each source belongs to the same SKU, variant and locale before comparing values.
+
+The examples below are **fictional review scenarios**, not Nexscope API output or measured merchant results:
+
+| Field and observation | Proposed action | Why |
+| --- | --- | --- |
+| Capacity: approved specification says 750 ml; feed is blank | Propose `750`, unit `ml`, with the specification source | A missing destination field can be filled from an approved matching record |
+| Pack count: catalog says two; selected page offer says one | Set `CONFLICT` and hold release | Copy cannot resolve an identity mismatch |
+| GTIN: absent from both the master and source evidence | Set `UNKNOWN`; ask the record owner | Never generate a plausible identifier |
+| Availability: feed and page have different capture times | Ask the commerce owner to verify current offer state | Different snapshots do not establish which value is current now |
+
+For a small pilot, use review states such as `UNKNOWN`, `CONFLICT`, `READY_FOR_REVIEW`, `APPROVED`, `PUBLISHED` and `RECHECK_FAILED`. These are suggested worksheet labels, not an implemented Nexscope approval engine. Keep blocked fields out of publish-ready exports. Record both who approved the change and which system actually applied it.
+
+## What can you automate after the mapping is approved?
+
+**Automate repeatable transformations; keep factual approval tied to the owning record.** Unit formatting, schema mapping and copy drafting can follow explicit rules once identity and source facts are settled. Preserve the original value alongside the normalized value. A unit conversion should record its rule; a translation should preserve the approved meaning.
+
+Nexscope's Page Evidence interface can contribute bounded observations from one public URL. It does not establish that all variants were rendered, nor does it publish a corrected feed. Compare the actual response with the worksheet's evidence needs and leave unavailable fields unresolved. Use an authorized catalog, store or feed integration for any approved write, then recheck the published page and channel diagnostics.
+
+Assess the pilot using distinct SKU–variant–locale records with approved required fields, unresolved conflicts and post-publication mismatches. Count each missing field separately for completeness analysis, but do not count several rows for the same product as several successfully enriched products. Measure search clicks and orders separately from worksheet completion.
+
+For choosing collection methods, use the [web scraping vs API comparison]({{ '/ecommerce-data-extraction-api/' | relative_url }}). For an owned-store implementation example, the [WooCommerce Python guide]({{ '/guides/woocommerce-products-python/' | relative_url }}) describes its own authorization and product scope. Neither workflow is permission to rewrite another seller's catalog or proof that Google will display the changed record.
+
+{% include article-action.html placement="article-middle" %}
 
 ## What is product data enrichment for ecommerce?
 
@@ -158,7 +200,7 @@ For AI-search or GEO review, test a fixed set of product questions and record th
 
 The [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) can inspect **one public product URL** for page-level crawl, metadata, content, links, and structured-data evidence. The separate Page Evidence API provides a documented integration entry point for bounded observations. Compare available evidence manually with your approved catalog facts and channel feed. These are **not** a PIM, bulk feed-enrichment pipeline, or a substitute for Merchant Center diagnostics. The [product-page audit guide]({{ '/website-seo-audit-guide/' | relative_url }}) explains the audit workflow.
 
-*Nexscope API scope rechecked October 26, 2026 from the public Page Evidence reference and repository contract. No paid page request, catalog write or feed submission was executed for this update.*
+*Nexscope API scope rechecked November 5, 2026 from the public Page Evidence reference and repository contract. No paid page request, catalog write or feed submission was executed for this update.*
 
 ## Frequently asked questions
 
@@ -180,4 +222,4 @@ Extract selected page facts with their URL and timestamp, normalize them into an
 
 ## Sources and scope
 
-This is an editorial checklist, not a benchmark or a report that Nexscope performed a bulk catalog-enrichment test. Reviewed **October 20, 2026** against the [Commerce announcement](https://www.commerce.com/en-GB/press/commerce-introduces-data-enrichment-for-bigcommerce-and-feedonomics-to-power-agentic-commerce/), [Google Merchant Center specification](https://support.google.com/merchants/answer/7052112?hl=en), and [Google Search merchant-listing documentation](https://developers.google.com/search/docs/appearance/structured-data/merchant-listing). Recheck current channel requirements before deploying feed or markup changes.
+This is an editorial checklist, not a benchmark or a report that Nexscope performed a bulk catalog-enrichment test. Reviewed **November 5, 2026** against the [Commerce announcement](https://www.commerce.com/en-GB/press/commerce-introduces-data-enrichment-for-bigcommerce-and-feedonomics-to-power-agentic-commerce/), [Google Merchant Center specification](https://support.google.com/merchants/answer/7052112?hl=en), and [Google Search merchant-listing documentation](https://developers.google.com/search/docs/appearance/structured-data/merchant-listing). Recheck current channel requirements before deploying feed or markup changes.

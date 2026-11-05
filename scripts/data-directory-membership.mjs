@@ -20,16 +20,27 @@ export function projectDirectoryMembership(html) {
       || !Array.isArray(page.catalog?.categories)) throw new Error('Incomplete official directory publication');
   // Same partition used by the main-site E-commerce Data tab. Its directory
   // already excludes Video & Image; marketing membership is supplied by that site.
+  // Account utility references are published alongside APIs but are not counted
+  // in the E-commerce Data tab's membership.
   const marketing = new Set(page.marketingGroups.flatMap(group => {
     if (!Array.isArray(group.skills)) throw new Error('Invalid official marketing partition');
     return group.skills.map(item => item.slug);
   }));
   const slugs = page._publicDirectoryFallback.apis
-    .filter(item => !['marketing','account'].includes(item.platformSlug) && !marketing.has(item.slug))
+    .filter(item => item.platformSlug !== 'marketing' && item.platformSlug !== 'account' && !marketing.has(item.slug))
     .map(item => item.slug).sort();
-  const categorySlugs=new Set(page.catalog.categories.map(category=>category.slug));
-  const groupCategories=(page.selectorGroups??[]).filter(group=>!categorySlugs.has(group.slug)).map(group=>({slug:group.slug,name:group.name}));
-  const result = { collection: 'ecommerce', slugs, skills: page.catalog.skills, categories: [...page.catalog.categories,...groupCategories] };
+  // Newly published operations can precede the catalog category list. Use only
+  // their published directory category labels rather than guessing a category.
+  const eligible = new Set(slugs);
+  const categories = new Map(page.catalog.categories.map(item => [item.slug, item]));
+  for (const api of page._publicDirectoryFallback.apis) {
+    if (!eligible.has(api.slug) || categories.has(api.categorySlug)) continue;
+    const name = typeof api.categoryName === 'string' ? api.categoryName : api.categoryName?.en;
+    if (typeof api.categorySlug === 'string' && slug.test(api.categorySlug) && typeof name === 'string' && name.trim()) {
+      categories.set(api.categorySlug, { slug: api.categorySlug, name: name.trim(), description: '' });
+    }
+  }
+  const result = { collection: 'ecommerce', slugs, skills: page.catalog.skills, categories: [...categories.values()] };
   dataCollectionSlugs(result);
   if (!Number.isSafeInteger(page.directoryCounts?.data) || page.directoryCounts.data !== slugs.length) {
     throw new Error('Official E-commerce Data count does not match its membership');
