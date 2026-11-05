@@ -15,6 +15,7 @@
 .seller-deliverables small { display: block; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.65; }
 .seller-section { padding: 18px 0 38px; }
 .seller-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.seller-api-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .seller-card { display: flex; flex-direction: column; min-width: 0; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: #fff; text-decoration: none; color: var(--ink); }
 .seller-card:hover { border-color: #b5a2ed; }
 .seller-card h3 { margin: 14px 0 10px; font-size: 23px; line-height: 1.25; letter-spacing: -.025em; }
