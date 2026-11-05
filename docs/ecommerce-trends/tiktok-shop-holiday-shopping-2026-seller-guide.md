@@ -11,6 +11,8 @@ last_modified_at: 2026-11-05
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
+compact_evidence: true
+evidence_scope: "Official campaign dates and an editorial seller checklist; the API request is an unexecuted research example."
 suppress_article_help: true
 og_type: article
 topic: shopping
@@ -47,15 +49,13 @@ faq:
 
 # TikTok Shop BFCM 2026: dates, seller checklist and product research
 
-**By Nexscope Team · Published October 15, 2026 · Reviewed November 5, 2026**
-
 **TikTok Shop's announced 2026 Black Friday and Cyber Monday campaign runs November 11–30.** BFCM means Black Friday and Cyber Monday. Start by choosing a small product shortlist, validating your own stock and delivery promises, and preparing one creator or LIVE brief. Use the downloadable checklist and API request below to turn research into a reviewable plan.
+
+{% include article-action.html placement="article-top" %}
 
 The campaign dates come from [TikTok's October 14 holiday-season announcement](https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en). Check your market's Seller Center for enrollment deadlines, offer eligibility and account requirements. This guide's preparation schedule is editorial guidance, not a second official campaign calendar.
 
 **Start here:** download the [BFCM seller review sheet]({{ '/assets/downloads/tiktok-bfcm-seller-checklist.csv' | relative_url }}) and the [product research request template]({{ '/assets/downloads/tiktok-bfcm-product-request.json' | relative_url }}). The sheet contains review prompts and blank decision fields; it is not completed seller data. The JSON is an unexecuted request example. API calls use credits.
-
-{% include article-action.html placement="article-top" %}
 
 ## What should a TikTok Shop seller finish before BFCM?
 

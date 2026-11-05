@@ -12,6 +12,8 @@ last_modified_at: 2026-11-05
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
+compact_evidence: true
+evidence_scope: "Keyword integration reviewed Nov 5, 2026; provider comparison reviewed Oct 20. No new paid benchmark was run."
 suppress_article_help: true
 og_type: article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
@@ -54,8 +56,6 @@ faq:
 ---
 
 # Amazon search volume API: fields, request example and CSV export
-
-**By Nexscope Team · Published October 6, 2026 · Integration updated November 5, 2026**
 
 **An Amazon search volume API helps evaluate query demand within a defined marketplace and period.** Nexscope's ASIN Keywords endpoint starts with one product ASIN and can return associated terms with a `weeklySearchVolume` estimate. It is an ASIN-based research route, not proof of exact Amazon-wide demand or a universal keyword-only lookup. Below, inspect the fields, run a bounded request and export a review CSV before choosing a provider.
 
