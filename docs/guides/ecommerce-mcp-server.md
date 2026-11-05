@@ -288,6 +288,17 @@ Many production systems use both: REST for deterministic application services an
 
 Start with a narrow, non-sensitive research question and one documented capability. **[Open the live Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn)** to inspect the current endpoint, tool names, schemas, authentication, and examples. For direct HTTP integration, use the [Nexscope API documentation](https://www.nexscope.ai/api-docs?co-from=learn) or the [API capabilities guide](../api-capabilities/).
 
+## Task-specific API and MCP tutorials
+
+Start with one source and a reviewable output. These guides show current request examples, bounded Python exports and MCP task instructions:
+
+- [Reddit API and MCP: Product Research with Source Links]({{ '/guides/reddit-api-mcp-product-research/' | relative_url }})
+- [YouTube Transcript API and MCP: Build a Review Brief]({{ '/guides/youtube-transcript-api-mcp/' | relative_url }})
+- [AI Visibility API and MCP: Track Answers and Citations]({{ '/guides/ai-visibility-api-mcp-citation-tracking/' | relative_url }})
+- [Pinterest API and MCP: Build an Ecommerce Content Brief]({{ '/guides/pinterest-api-mcp-content-research/' | relative_url }})
+
+Each workflow preserves source metadata and missing evidence. A generated summary still needs review before it becomes a business decision.
+
 ## Sources
 
 - [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn)
