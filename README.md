@@ -1,6 +1,6 @@
 # Nexscope Ecommerce AI Tools
 
-**AI product video workflows. Ecommerce Data APIs. Free product listings.**
+**AI product video workflows. Ecommerce Data APIs. Social Media APIs. Free product listings.**
 
 [![Video Workflows](assets/badges/video-workflows.svg)](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_video) [![Data APIs](assets/badges/data-apis.svg)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](assets/badges/product-gallery.svg)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](assets/badges/discussions.svg)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](assets/badges/license.svg)](LICENSE)
 
@@ -10,6 +10,7 @@ Create product videos from photos, listing links or reference clips. Explore eco
 | --- | --- |
 | Create a product video from images, a listing link, an avatar or a reference clip | **[Compare video workflows and watch examples →](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_video)** |
 | Find ecommerce data for an application, research task or AI workflow | **[Explore the Data API directory →](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_data)** |
+| Research social profiles, posts, comments or video transcripts | **[Explore Social Media APIs →](https://learn.nexscope.ai/social/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_social)** |
 | Give your product a public page with facts, images and a link to your store | **[List your product for free →](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_primary_gallery)** |
 
 ## 1. AI product videos: choose a workflow for the materials you have
@@ -36,7 +37,22 @@ Browse ecommerce APIs for Amazon, TikTok, 1688, Shopify, Shopee, Walmart and oth
 
 The directory is free to browse. API requests follow each operation's account, access and credit requirements.
 
-## 3. Product Gallery: list and display your product completely free
+## 3. Social Media APIs: turn public content into research workflows
+
+Find platform-specific APIs for **Instagram, TikTok, YouTube, Facebook, Reddit, LinkedIn, X / Twitter** and more. Search by platform or task, compare available operations, and open the matching official API playground.
+
+- **Research creators:** inspect supported profile and post information before building an outreach shortlist.
+- **Understand conversations:** explore posts, comments and replies to identify product questions and feedback worth reviewing.
+- **Work with video content:** retrieve available transcripts and captions, then inspect comments separately to understand audience responses.
+- **Build with documented inputs:** review identifiers, pagination, returned fields and current credit requirements before integrating an endpoint.
+
+**[Explore Social Media APIs →](https://learn.nexscope.ai/social/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_social_feature)** · [Compare platforms and example operations](https://learn.nexscope.ai/social/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_social_platforms#platforms) · [Choose a research workflow](https://learn.nexscope.ai/social/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_social_workflows#workflows)
+
+Practical guides: [Reddit product research](docs/guides/reddit-api-mcp-product-research.md) · [YouTube transcript research](docs/guides/youtube-transcript-api-mcp.md) · [Pinterest content research](docs/guides/pinterest-api-mcp-content-research.md).
+
+The directory is free to browse. API requests require an account API key and follow the selected endpoint's access and credit requirements. Fields, freshness and coverage vary by platform; missing data does not prove that content or activity does not exist. For marketplace products, sourcing and TikTok Shop research, use the separate [ecommerce Data API directory](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_social_to_data).
+
+## 4. Product Gallery: list and display your product completely free
 
 Give search and AI systems a clearer source about what you sell. An approved Gallery page brings your product facts, images, optional video and original store link together in one public page. This can support **AI discovery and generative engine optimization (GEO)**, while shoppers follow the link to your store to buy.
 
