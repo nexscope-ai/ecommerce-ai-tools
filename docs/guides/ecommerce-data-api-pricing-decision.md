@@ -87,3 +87,7 @@ If the question is Amazon-specific, follow the [Amazon product research pilot ch
 ## Sources and scope
 
 Reviewed on October 21, 2026 against the public [Nexscope pricing page](https://www.nexscope.ai/pricing?co-from=learn), [API directory](https://www.nexscope.ai/api-docs?co-from=learn), and the linked Amazon endpoint references. This article is a buying worksheet. It does not report a customer result or promise a particular credit charge, ranking, or sales outcome.
+
+## Extend this research into a reviewed workflow
+
+- [Paid API Workflows: Control Retries, Deduplication and Credit Costs]({{ '/guides/paid-api-workflow-retries-deduplication/' | relative_url }})

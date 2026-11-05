@@ -104,6 +104,19 @@ For choosing collection methods, use the [web scraping vs API comparison]({{ '/e
 
 **Bulk product data mapping is the controlled translation of one product record into the fields required by another system.** A PIM, marketplace feed, product page, JSON-LD block, or Merchant Center source may use different field names and formats, but the underlying SKU, variant, offer, and descriptive facts should remain consistent. Normalize the schema first; generate readable copy only after the mapping and evidence checks pass.
 
+### A worked SKU mapping example
+
+The following **fictional example** shows a mapping decision, not an API response or a completed catalog update. Assume an approved record for `MUG-750-BLUE`, variant `BLUE-1`, describes one blue 750 ml mug:
+
+| Approved source field | Destination representation | Review before release |
+| --- | --- | --- |
+| `capacity_ml: 750` | Attribute value `750`, unit `ml` | Preserve the numeric value and unit; do not turn it into a product weight |
+| `pack_count: 1` | One item in the feed and product-page description | Hold if the page or image describes a two-pack |
+| `color: blue`, variant `BLUE-1` | Same color and variant in the destination | Do not combine other colors under this variant's offer |
+| `gtin: null` | Leave unresolved pending the record owner's decision | Do not invent a GTIN or mark the item exempt without checking channel rules |
+
+Write each field into the [SKU review worksheet]({{ '/assets/downloads/product-enrichment-review.csv' | relative_url }}), keeping the approved value, observed page value and feed value in separate columns. Resolve conflicts, approve the change in the owning catalog or feed system, then recheck the destination. AI can suggest mappings from supplied facts; your catalog integration applies approved writes. Nexscope's page evidence can assist the comparison but does not perform that bulk write.
+
 ## How can you use AI to automate ecommerce with data from your website?
 
 **Use AI as a controlled extraction and normalization layer, not as an unverified catalog generator.** A safe workflow starts with a bounded set of public URLs and ends with a reconciled record that a catalog or channel owner can approve:

@@ -3,7 +3,7 @@ layout: default
 title: "Ecommerce Resource Library: Guides, Tests & Comparisons | Nexscope"
 description: "Browse Nexscope guides, API evidence, comparisons and dated analysis by task: product research, SEO, AI visibility, sourcing, APIs and creative workflows."
 permalink: /
-last_modified_at: 2026-10-27
+last_modified_at: 2026-11-05
 resource_hub: true
 social_image: /assets/og-resource-library.png
 social_image_width: 1672

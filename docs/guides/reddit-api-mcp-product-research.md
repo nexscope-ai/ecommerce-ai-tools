@@ -147,4 +147,15 @@ The prompt is an orchestration example, not proof a call ran. REST provides a re
 
 The guide uses current documented fields and constructed offline tests. It does not present template inputs as measured outputs, fabricate user opinions or promise improved search visibility. Before publishing a report, check its source links and important conclusions. For social research, the [Social API directory](https://learn.nexscope.ai/social/) provides other documented entry points; a separate supported interface and authorization are required for any publishing action.
 
+## Build this research workflow in n8n or Make
+
+Choose a concrete output before automating collection:
+
+- [n8n Reddit API Workflow: Build a Google Sheets Research Log]({{ '/guides/n8n-reddit-api-google-sheets/' | relative_url }}) — manual starter with a disabled Sheets writer.
+- [Make Reddit API Workflow: Turn Comments into a Buyer-Needs Brief]({{ '/guides/make-reddit-comments-buyer-needs/' | relative_url }}) — task-specific module recipe for a reviewed draft or research output.
+
+## Extend this research into a reviewed workflow
+
+- [Cross-Platform Customer Feedback: Build a Source-Linked Evidence Brief]({{ '/guides/cross-platform-customer-feedback/' | relative_url }})
+
 {% include api-guide-faq.html %}

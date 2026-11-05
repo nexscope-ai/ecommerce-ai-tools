@@ -3,15 +3,17 @@ learning_topic: agents
 related_topics: [research]
 content_kind: guide
 layout: default
-title: "Amazon Search Volume API: Compare Data & Test Coverage"
-description: "Compare Amazon search volume and product research APIs by marketplace, keyword metrics, history and cost. Inspect dated response examples before choosing a provider."
+title: "Amazon Search Volume API: Fields, Example & CSV Export"
+description: "Inspect Amazon keyword search volume fields, try one ASIN request and export a review CSV with Python. Compare estimates, ranks, source dates and API coverage."
 permalink: /best-amazon-product-research-api/
 date_published: 2026-10-06
-date_modified: 2026-10-21
-last_modified_at: 2026-10-20
-last_reviewed: 2026-10-20
+date_modified: 2026-11-05
+last_modified_at: 2026-11-05
+last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
+compact_evidence: true
+evidence_scope: "Keyword integration reviewed Nov 5, 2026; provider comparison reviewed Oct 20. No new paid benchmark was run."
 suppress_article_help: true
 og_type: article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
@@ -20,11 +22,12 @@ image_alt: Amazon product research data flowing through specialized APIs into an
 image_caption: "Illustration: choose an Amazon product research API from the evidence required, not from the longest feature list."
 topic: research
 next_step:
-  id: amazon_research_api_catalog
-  title: Choose the request your research needs
-  description: Open Nexscope's Amazon API catalog, select product search, keywords, reviews or history, and inspect the endpoint's inputs, response fields and credit requirements before running a pilot.
-  label: Choose an Amazon research API
-  url: "https://www.nexscope.ai/apis/amazon?co-from=learn"
+  id: amazon_keyword_volume_sample
+  intent: api-evaluation
+  title: Inspect keyword metrics for one Amazon ASIN
+  description: Choose one ASIN and marketplace. Check the ASIN Keywords API's current fields and credit estimate, then inspect the available weekly search-volume estimates and source dates in your response.
+  label: Try the ASIN Keywords API
+  url: "https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=playground&co-from=learn"
 keywords:
   - best Amazon product research API
   - Amazon search volume API comparison
@@ -52,27 +55,66 @@ faq:
     answer: "A search volume API estimates demand for queries, while a product research API returns product, offer, review, rank, or historical records. Use the first for keyword prioritization and the second for product-level decisions, then keep marketplace, date, metric definitions, and evidence with each result."
 ---
 
-# Amazon search volume API: compare keyword and product research APIs
+# Amazon search volume API: fields, request example and CSV export
 
-**By Nexscope Team · Published October 6, 2026 · Reviewed October 20, 2026**
+**An Amazon search volume API helps evaluate query demand within a defined marketplace and period.** Nexscope's ASIN Keywords endpoint starts with one product ASIN and can return associated terms with a `weeklySearchVolume` estimate. It is an ASIN-based research route, not proof of exact Amazon-wide demand or a universal keyword-only lookup. Below, inspect the fields, run a bounded request and export a review CSV before choosing a provider.
 
-The best Amazon product research API depends on the evidence you need. If you searched for an Amazon search volume API or keyword search volume API, first define the marketplace, metric, date, and fields you need. Use Keepa for deep price and offer history, Rainforest API for request-level Amazon product/search data, SellerSprite for packaged keyword and product-research services, and Nexscope when one workflow must combine products, keywords, reviews, history, REST, and MCP. Use SP-API for authorized seller-account operations.
+**Quick distinction:** query volume estimates, an ASIN's natural or ad rank, and the product's sales are different measurements. A missing estimate remains unknown. The same query appearing for several ASINs does not create several independent search volumes.
 
-> **TL;DR:** Do not select a provider from the number of endpoints alone. Define one decision, list the fields that would support it, test the same ASINs and keywords across candidates, and compare usable coverage, provenance, latency, failure behavior, and cost. A specialist can be the best component even when another platform offers a broader workflow.
-
-{% include article-action.html %}
+{% include article-action.html placement="article-top" %}
 
 **Inspect output before committing:** the [dated price-series response]({{ '/api-evidence/amazon-price-series/' | relative_url }}) and [reviews response]({{ '/api-evidence/amazon-reviews-list/' | relative_url }}) show individual observed results and missing-data limits. Use them to write your own acceptance criteria; they are not keyword-volume benchmarks.
 
 {% include article-visual.html %}
 
-## Is there an Amazon keyword search volume API?
+## What does an Amazon keyword search volume API return?
 
-**There is no single public Amazon keyword search volume API that answers every marketplace and seller question.** Provider estimates can differ in coverage, date, language, metric definition, and whether the value is observed or modeled. Keep those labels separate from Google Search volume and from product sales, then validate a shortlist with eligible first-party Amazon reports when the decision affects inventory or spend.
+**Inspect the metric's definition and period before comparing values.** The [Nexscope ASIN Keywords field reference](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api) documents the following optional fields. Availability in the reference does not guarantee that every response supplies them.
 
-## What should you check in an Amazon search volume API?
+| Field | Interpretation | Keep separate from |
+| --- | --- | --- |
+| `keyword`, `asin` | Associated phrase and returned product identity | Proof that the phrase converts for your product |
+| `weeklySearchVolume` | Estimated weekly query volume | Google monthly volume or observed seller orders |
+| `productNaturalRank`, `naturalRankDisplay` | Returned natural-placement evidence and its display context | Sponsored placement |
+| `productAdRank`, `adRankDisplay` | Returned ad-placement evidence | Organic rank or your own ad performance |
+| `periodEndDate`, `updateTime` | Available source-period and update labels | The time your client downloaded the response |
 
-**Treat Amazon search volume as a scoped estimate, not a universal marketplace fact.** Before comparing an Amazon search volume API or keyword endpoint, record the marketplace, language, date, metric definition, coverage, and whether the value is observed, modeled, or estimated. Keep those labels separate from Google Search volume and from product sales. When the decision affects inventory or spend, validate a shortlist with eligible first-party Amazon reports and a small controlled test.
+Do not multiply a weekly estimate by four and relabel it as a measured monthly total. Requesting a seven-day or thirty-day evidence slice does not change the field's documented weekly unit. Preserve missing values and rank display text; an absent or zero rank needs interpretation rather than an automatic “not ranking” claim.
+
+## How do you request Amazon keyword metrics and export CSV?
+
+**Use one comparable ASIN, one market and an explicit evidence period for the first request.** Download the [ASIN request template]({{ '/assets/downloads/competitor-asin-request.json' | relative_url }}) and the [Python 3.10+ CSV export starter]({{ '/assets/downloads/competitor-evidence-export.py' | relative_url }}). Save them together and replace `REPLACE_ME` with a real ASIN. This is a template, not a request executed for this article:
+
+```json
+{
+  "asin": "REPLACE_ME",
+  "country": "US",
+  "timePieceType": "latelyDay",
+  "timePieceValue": "7",
+  "pageNum": 1,
+  "pageSize": 10
+}
+```
+
+The route is `POST https://api.nexscope.ai/sf/asinKeywords`; the MCP method is `nexscope_amazon_asin_keywords`. The download deliberately supports a US first-page sample of ten and recent-day values `7` or `30`. The full API supports other documented markets and time slices; inspect the current reference before adapting the starter. For a keyword-only workflow or a different market, evaluate the relevant endpoint instead of inventing an ASIN.
+
+Set `NEXSCOPE_API_KEY` locally through your normal secret-management method. Open the [API tester](https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=playground&co-from=learn) to check access and current credit requirements before running:
+
+```shell
+python competitor-evidence-export.py amazon competitor-asin-request.json --output keyword-volume-001
+```
+
+Each invocation makes **one paid call**, saves `response.json`, and creates `manifest.json` plus `rows.csv` when validation succeeds. It does not automatically retry or retrieve more pages. HTTP 200 alone does not establish a successful business result: the starter checks the outer `code` and any returned provider business code, then reads the array at `data.data`. Preserve error output and inspect usage history before retrying an uncertain call.
+
+In `rows.csv`, review keyword, requested and returned ASIN, market, time slice, available weekly estimate, ranks and source dates. A blank `weeklySearchVolume` remains unknown; do not replace it with zero. The manifest's client observation time is not a promise of source freshness. To re-export a saved response **without another call**, use the original request file:
+
+```shell
+python competitor-evidence-export.py amazon competitor-asin-request.json --from-response keyword-volume-001/response.json --output keyword-volume-offline-001
+```
+
+The starter was previously validated with constructed offline fixtures. This article update did not execute a paid ASIN request or measure a ranking lift. The [Amazon competitor keyword workflow]({{ '/amazon-competitor-keyword-research/' | relative_url }}) explains how to choose comparable ASINs and join exports without adding the same query estimate repeatedly. For Google keyword metrics, use the separate [keyword search volume API guide]({{ '/ecommerce-trends/seo-keyword-api-content-plan/' | relative_url }}).
+
+{% include article-action.html placement="article-middle" %}
 
 ## How is an Amazon search volume API different from a product research API?
 
@@ -174,7 +216,7 @@ A search volume API estimates query demand. A product research API returns produ
 
 ## Sources and methodology
 
-Reviewed October 20, 2026. Provider capabilities, availability, usage limits, and prices can change. The official pages below are the source of truth; the comparison above is a task-based interpretation.
+The keyword request and field walkthrough was checked against Nexscope's public reference on November 5, 2026. The wider provider comparison retains its October 20, 2026 review scope. Provider capabilities, availability, usage limits and prices can change; follow each provider's current official documentation before purchasing. The comparison is a task-based interpretation, not a new cross-provider benchmark.
 
 - [Amazon Selling Partner API](https://developer-docs.amazon.com/sp-api)
 - [Amazon SP-API product-listing workflow and Catalog Items API](https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/manage-product-listings-guide)

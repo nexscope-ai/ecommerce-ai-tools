@@ -1,0 +1,15 @@
+{
+  "format": "implementation-review-checklist",
+  "title": "Cross-Platform Customer Feedback: Build a Source-Linked Evidence Brief",
+  "helper": "social-workflow-evidence-ops.py",
+  "no_network_or_ai_calls": true,
+  "reviewed_date": "2026-11-05",
+  "checks": [
+    "Define a shared buyer question and comparable source scope",
+    "Keep platform, source URL, local evidence ID and nullable real source ID",
+    "Preserve reply context, counterevidence and timestamp precision",
+    "Use only reviewer-supplied themes; label synthetic demonstration data",
+    "Do not pool scores, likes and views or infer market prevalence",
+    "Review source facts before any AI draft or publication"
+  ]
+}

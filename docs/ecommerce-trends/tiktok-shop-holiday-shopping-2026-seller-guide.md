@@ -2,25 +2,28 @@
 learning_topic: visibility
 content_kind: insight
 layout: default
-title: "TikTok Shop Black Friday 2026 Dates & Seller Checklist"
-description: "TikTok Shop's announced Black Friday campaign runs Nov 11–30, 2026. Use this seller checklist for hero SKUs, creator briefs, LIVE Shopping and delivery checks."
+title: "TikTok Shop BFCM 2026: Dates, Checklist & Product Research"
+description: "Prepare for TikTok Shop BFCM, Nov 11–30, 2026: download a seller checklist, inspect a product research API request and plan SKU, creator and delivery checks."
 permalink: /ecommerce-trends/tiktok-shop-holiday-shopping-2026-seller-guide/
 date_published: 2026-10-15
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-11-05
+last_modified_at: 2026-11-05
+last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
+compact_evidence: true
+evidence_scope: "Official campaign dates and an editorial seller checklist; the API request is an unexecuted research example."
 suppress_article_help: true
 og_type: article
 topic: shopping
 editorial_only: true
 next_step:
   id: tiktok_holiday_product_discovery
-  title: Build your holiday product shortlist
-  description: Start with a category or gift keyword. Nexscope's TikTok Product Discovery API documentation shows product filters, response fields and access requirements for researching candidates before you choose hero SKUs.
-  label: View TikTok product discovery filters
-  url: "https://www.nexscope.ai/api-docs/tiktok-product-discovery?co-from=learn"
+  intent: api-evaluation
+  title: Try one BFCM product research request
+  description: Bring a gift keyword and target market. Open the API tester, check its current credit estimate and inspect up to ten candidates before choosing products for your own store.
+  label: Try TikTok product research
+  url: "https://www.nexscope.ai/api-docs/tiktok-product-discovery?view=playground&co-from=learn"
 keywords:
   - TikTok Shop holiday shopping 2026
   - TikTok Shop Black Friday 2026
@@ -28,6 +31,9 @@ keywords:
   - TikTok Shop LIVE shopping holiday
   - TikTok Shop holiday seller checklist
   - TikTok Shop gift ideas
+  - TikTok Shop BFCM
+  - BFCM TikTok Shop
+  - TikTok Shop Black Friday seller checklist
 faq:
   - question: "When is TikTok Shop's 2026 Black Friday and Cyber Monday campaign?"
     answer: "TikTok says its 2026 Black Friday and Cyber Monday TikTok Shop campaign runs from November 11 through November 30, 2026. Dates, eligibility, and offers can vary by market and seller account, so confirm the current Seller Center guidance before publishing a promotion."
@@ -41,17 +47,29 @@ faq:
     answer: "Nexscope can support documented public research, page inspection, and evidence logging. It does not connect a TikTok Shop account, publish campaigns, manage checkout, process payments, or guarantee TikTok distribution."
 ---
 
-# TikTok Shop Black Friday 2026: dates and seller checklist
+# TikTok Shop BFCM 2026: dates, seller checklist and product research
 
-**By Nexscope Team · Published October 15, 2026 · Reviewed October 26, 2026**
+**TikTok Shop's announced 2026 Black Friday and Cyber Monday campaign runs November 11–30.** BFCM means Black Friday and Cyber Monday. Start by choosing a small product shortlist, validating your own stock and delivery promises, and preparing one creator or LIVE brief. Use the downloadable checklist and API request below to turn research into a reviewable plan.
 
-**TikTok Shop's announced 2026 Black Friday and Cyber Monday campaign runs November 11–30.** A seller can use the weeks before it to choose hero products, confirm inventory and delivery promises, prepare creator briefs, and test shoppable LIVE links. The checklist below separates TikTok's announced dates from our suggested preparation schedule.
+{% include article-action.html placement="article-top" %}
 
-TikTok says its 2026 Black Friday and Cyber Monday TikTok Shop campaign runs **November 11 through November 30, 2026**. The company also reported that `#holidayshopping` content rose 263% in September compared with the prior month. Those are TikTok's own platform signals, not a guarantee that every category or seller will receive the same demand. [Read TikTok's holiday-season announcement](https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en).
+The campaign dates come from [TikTok's October 14 holiday-season announcement](https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en). Check your market's Seller Center for enrollment deadlines, offer eligibility and account requirements. This guide's preparation schedule is editorial guidance, not a second official campaign calendar.
 
-> **Key takeaways:** Start with three to five hero SKUs, map one buyer-intent keyword to each page, reconcile variant-level product facts, rehearse a shoppable LIVE, and measure discovery separately from orders and returns. The practical goal is not to chase a trend number; it is to make a gift decision easy to verify and easy to complete.
+**Start here:** download the [BFCM seller review sheet]({{ '/assets/downloads/tiktok-bfcm-seller-checklist.csv' | relative_url }}) and the [product research request template]({{ '/assets/downloads/tiktok-bfcm-product-request.json' | relative_url }}). The sheet contains review prompts and blank decision fields; it is not completed seller data. The JSON is an unexecuted request example. API calls use credits.
 
-{% include article-action.html %}
+## What should a TikTok Shop seller finish before BFCM?
+
+**Complete one product-level readiness check before expanding the campaign.** For each proposed hero SKU, assign an owner and link the evidence in the review sheet:
+
+| Check | Required decision | Where to verify |
+| --- | --- | --- |
+| Product fit | Does the exact variant answer the chosen gift or buyer question? | Approved specifications and selected listing |
+| Offer economics | Can the discount and eligible fees fit your margin? | Your seller account and internal cost record |
+| Stock and delivery | Can you meet the advertised destination and date? | Your inventory, fulfillment and Seller Center settings |
+| Creator or LIVE brief | Do the demonstration, item link and offer describe the same product? | Approved brief and account rehearsal |
+| Buyer questions | Which factual question needs a demonstration or FAQ answer? | Your support evidence and a dated review sample |
+
+Keep unresolved checks open rather than marking a product ready because it appears popular in a public research result. Once your account confirms the offer, use one SKU and one testable buyer question for the first creative.
 
 ## When is TikTok Shop's 2026 Black Friday and Cyber Monday campaign?
 
@@ -80,7 +98,7 @@ If a promotion has a shorter seller-submission deadline, use the earlier deadlin
 | Format | TikTok Shop LIVE shopping holiday; TikTok Shop LIVE deals; creator holiday campaign | LIVE landing page, creator brief, or video series |
 | Proof question | What arrives before Christmas?; giftable under $50; bundle contents; return policy | FAQ, product page, and support content |
 
-TikTok's holiday announcement gives useful directional signals. It reports September growth for `#fallwishlist` (450%), `#holidaydecor` (97%), `#giftsforwomen` (440%), and `#holidaygiftideas` (248%). It also reports increases for searches such as “gold jewelry” and “opal rings.” Treat these as TikTok-reported, US-oriented trend signals that can help generate hypotheses. They are not Google keyword-volume estimates, a promise of ranking, or proof that a specific product will sell.
+Use TikTok's reported seasonal trends to generate hypotheses, then inspect your own category and market. Platform trend percentages are not Google search-volume estimates or proof that a specific product will sell.
 
 For each page, choose one primary phrase and a few natural variants. Then answer the underlying question in plain language: who is the gift for, what is included, what does it cost, when can it arrive, and what happens if the buyer changes their mind? Do not copy a platform trend percentage into product copy or add irrelevant hashtags to borrow a seasonal audience.
 
@@ -123,7 +141,27 @@ Measure the LIVE in layers: viewers and average stay time for attention; product
 
 The [TikTok Shop API guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}) explains a practical research workflow. For a holiday sprint, keep the scope narrow:
 
-**Try one bounded research task:** write a gift keyword, target market and acceptable price band, then review the [TikTok Product Discovery request on Nexscope](https://www.nexscope.ai/api-docs/tiktok-product-discovery?co-from=learn). Check available filters and response fields before running a request. Save a shortlist with the product ID, source date and unanswered questions; confirm inventory, margin and promotion eligibility in your seller account before selecting a hero SKU.
+### Example: research ten US product candidates
+
+**Open [TikTok Product Discovery in the API tester](https://www.nexscope.ai/api-docs/tiktok-product-discovery?view=playground&co-from=learn), inspect the credit estimate, then adapt this request to your category.** The template uses a descriptive product phrase, not an assumed holiday-demand filter:
+
+```json
+{
+  "keyword": "travel mug",
+  "region": "US",
+  "orderField": "day7_units_sold",
+  "page": 1,
+  "pageSize": 10
+}
+```
+
+This is a documented request example, **not an executed call or a list of recommended products**. The REST route is `POST https://api.nexscope.ai/fm/productSearch`; a compatible MCP client can use `nexscope_tiktok_product_discovery`. The reference documents a maximum page size of ten. Check the current tool schema before translating the request into MCP arguments.
+
+After a call, inspect the platform business result rather than relying on HTTP 200 alone. Preserve the raw response and retrieval time. Review available `productId`, `region`, `title`, `price`, `currency` and `totalSale7dCnt` fields; missing fields remain unknown. A provider-reported seven-day sales value is a research signal, not your verified seller orders or available inventory.
+
+Copy candidate IDs and review questions into the worksheet. Confirm your own item, stock, margin and promotion eligibility in Seller Center before approving a hero SKU. For public content ideas and buyer questions, the separate [n8n TikTok video research guide]({{ '/guides/n8n-tiktok-video-research/' | relative_url }}) and [Make TikTok comments guide]({{ '/guides/make-tiktok-comments-analysis/' | relative_url }}) show how to keep video and comment observations separate from Shop product data.
+
+{% include article-action.html placement="article-middle" %}
 
 - **Product discovery:** compare a small set of products, price bands, variants, and visible attributes.
 - **Product detail and reviews:** record the claims buyers ask about, recurring objections, and evidence that can be safely repeated.

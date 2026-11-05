@@ -1,0 +1,16 @@
+{
+  "connectionId": 0,
+  "startDate": "2026-11-01",
+  "endDate": "2026-11-01",
+  "adProduct": "SPONSORED_PRODUCTS",
+  "reportTypeId": "spCampaigns",
+  "groupBy": [
+    "campaign"
+  ],
+  "columns": [
+    "campaignId",
+    "impressions",
+    "clicks",
+    "cost"
+  ]
+}

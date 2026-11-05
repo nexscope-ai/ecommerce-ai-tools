@@ -178,6 +178,8 @@ For example, `portable blender for smoothies` is a plausible candidate only if t
 
 Reverse-ASIN providers can differ in coverage, update timing, and the meaning of “ranked,” “indexed,” or “associated.” A missing term does not prove a competitor never appears for it. An estimated volume or sales field is not a seller-account measurement. Product rank, organic placement, advertising placement, and conversion answer different questions; keep them in separate columns.
 
+For a focused implementation, see [Compare ASIN exposure and traffic-keyword signals]({{ '/guides/amazon-asin-traffic-api-mcp/' | relative_url }}). The tutorial preserves request scope and provides a bounded Python starter.
+
 ## Frequently asked questions
 
 ### How do you find Amazon competitor keywords?

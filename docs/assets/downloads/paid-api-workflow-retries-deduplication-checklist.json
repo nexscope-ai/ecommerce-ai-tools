@@ -1,0 +1,16 @@
+{
+  "format": "implementation-review-checklist",
+  "title": "Paid API Workflows: Control Retries, Deduplication and Credit Costs",
+  "helper": "social-workflow-evidence-ops.py",
+  "no_network_or_ai_calls": true,
+  "reviewed_date": "2026-11-05",
+  "checks": [
+    "Record submission, retained response, validation, delivery and acknowledgment separately",
+    "A local fingerprint is not server idempotency",
+    "Inspect ledger and destination before repeating uncertain work",
+    "Budget calls/pages/runs with explicit price assumptions",
+    "Keep a pending queue and acknowledge only confirmed deliveries",
+    "Use destination stable keys; do not promise distributed exactly-once delivery",
+    "Keep credentials outside workflow exports and prompts"
+  ]
+}

@@ -138,3 +138,8 @@ No. Nexscope is an independent research and workflow platform. Use Amazon's auth
 
 **Next step:** choose one read-only research question, inspect the matching [API documentation](https://www.nexscope.ai/api-docs?co-from=learn), and run a bounded sample before connecting an autonomous workflow.
 
+
+## Extend this research into a reviewed workflow
+
+- [Make LinkedIn Company Posts API: Build a Reviewed Weekly Brief]({{ '/guides/make-linkedin-company-posts/' | relative_url }})
+- [n8n Twitter Search API: Research Google-Indexed Brand Mentions]({{ '/guides/n8n-twitter-brand-research/' | relative_url }})

@@ -53,6 +53,8 @@ A clean product shot tells a shopper what the item is. It may not explain fit, s
 
 The goal is a **coordinated set of images**, each tied to a specific question. The creative brief should also name the destination product page. That lets the seller check whether the visual promise and the product page agree. More images alone are not the measure of success; each additional asset should have a reason to exist.
 
+For a task-specific implementation, [Research public competitor ads with API and MCP before drafting your original brief]({{ '/guides/meta-ad-library-api-mcp-creative-research/' | relative_url }}). Preserve identity and source scope before using the result.
+
 ## What belongs in the one-page creative brief?
 
 | Input | Why it matters |

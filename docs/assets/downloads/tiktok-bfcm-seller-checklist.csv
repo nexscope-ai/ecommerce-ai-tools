@@ -1,0 +1,9 @@
+check_id,review_question,sku,variant_id,market,owner,evidence_url,checked_at,status,decision_note
+product_fit,Does the exact variant answer the chosen buyer question?,,,,,,,,
+offer_economics,Does the approved offer fit costs and margin?,,,,,,,,
+stock_delivery,Can inventory and fulfillment meet the advertised promise?,,,,,,,,
+promotion_eligibility,Is this item and offer eligible in Seller Center?,,,,,,,,
+creator_brief,Do the brief and linked offer describe the same exact item?,,,,,,,,
+live_rehearsal,Have the relevant account and product links been tested?,,,,,,,,
+buyer_questions,Which factual question needs a demonstration or FAQ answer?,,,,,,,,
+measurement,Are clicks orders cancellations and returns measured separately?,,,,,,,,

@@ -299,6 +299,8 @@ Start with one source and a reviewable output. These guides show current request
 
 Each workflow preserves source metadata and missing evidence. A generated summary still needs review before it becomes a business decision.
 
+For a focused implementation, see [Instagram creator research with public profile and post evidence]({{ '/guides/instagram-api-mcp-creator-research/' | relative_url }}). The tutorial preserves request scope and provides a bounded Python starter.
+
 ## Sources
 
 - [Nexscope MCP tool map](https://www.nexscope.ai/mcp-map?co-from=learn)
