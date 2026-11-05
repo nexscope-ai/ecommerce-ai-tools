@@ -2,15 +2,17 @@
 learning_topic: creative
 content_kind: guide
 layout: default
-title: "Nano Banana 2 vs Pro: Quality, Cost & Which to Choose"
-description: "Compare Nano Banana 2 and Pro for product images: supported settings, credit estimates, mixed user feedback and a fair testing checklist. Open both Playgrounds."
+title: "Nano Banana 2 vs Pro: Product Images, Cost & Test Sheet"
+description: "Compare Nano Banana 2 and Pro for product photos with a matched prompt, input checklist and downloadable scorecard. Open both model Playgrounds."
 permalink: /guides/nano-banana-2-vs-pro/
 date_published: 2026-10-23
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
-last_reviewed: 2026-10-23
+date_modified: 2026-11-05
+last_modified_at: 2026-11-05
+last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
+compact_evidence: true
+evidence_scope: "Documentation and attributed feedback comparison; the downloadable protocol is unexecuted, not a new same-image benchmark."
 og_type: article
 topic: creative
 suppress_article_help: true
@@ -24,13 +26,32 @@ next_step:
 
 # Nano Banana 2 vs Pro: which should you choose?
 
-**Nano Banana 2 vs Pro is a choice to test, not a guaranteed upgrade path.** On Nexscope, both routes offer reference images and 1K, 2K and 4K output. The useful difference is whether one produces a more accurate, usable result for your brief at an acceptable cost—not whether its name sounds more advanced.
+**Compare Nano Banana 2 and Pro using one product reference, the same prompt and matching output settings.** Both Nexscope routes offer reference images and 1K, 2K and 4K output. Start with the comparison sheet below to judge product accuracy, scene quality and actual cost; open either Playground when you are ready to try your own brief.
 
-**[Try Nano Banana 2](https://www.nexscope.ai/api-docs/banana-2-image-generation?view=playground&co-from=learn) · [Try Nano Banana Pro](https://www.nexscope.ai/api-docs/banana-pro-image-generation?view=playground&co-from=learn).** New users receive 1,000 free credits, valid for 3 days; usage and eligibility depend on the model and settings. Creative API key access requires an active subscription.
+{% include article-action.html placement="article-top" %}
+
+**[Try Nano Banana 2](https://www.nexscope.ai/api-docs/banana-2-image-generation?view=playground&co-from=learn) · [Try Nano Banana Pro](https://www.nexscope.ai/api-docs/banana-pro-image-generation?view=playground&co-from=learn).** New users receive 1,000 free credits, valid for 3 days; usage and eligibility depend on the model and settings. Check the current account and endpoint access before using an API key; app trial access and API eligibility are different checks.
 
 > **Quick verdict:** Shortlist both for reference-guided product concepts. Nano Banana 2 has a lower published route estimate at this review date; that does not establish lower cost per approved image. Public comparisons disagree on naturalness and concept fidelity. Test those separately, and reject altered product details regardless of which model made them.
 
-*Reviewed October 23, 2026. Nexscope provides access to both models. This is a documentation and public-feedback comparison, not a new hands-on benchmark or an independent satisfaction survey.*
+*Reviewed November 5, 2026. Nexscope provides access to both models. This is a documentation and public-feedback comparison, not a new hands-on benchmark or an independent satisfaction survey.*
+
+## Compare one product photo with the same brief
+
+**Hold the source product, prompt and comparable settings fixed; judge the product details before choosing a preferred style.** Download the [Nano Banana comparison scorecard]({{ '/assets/downloads/nano-banana-product-comparison.csv' | relative_url }}) and [product-photo prompt pack]({{ '/assets/downloads/product-photo-prompts.md' | relative_url }}). The scorecard is blank and the prompts are suggested inputs, not generated outputs.
+
+For a first comparison, use one permitted reference, one output, 1K and a 1:1 aspect ratio on both routes. Confirm those controls in each Playground and record any difference. Use this same prompt:
+
+> Place the supplied product on a neutral tabletop with soft side lighting. Preserve its silhouette, cap, printed label, color and visible quantity. Change only the background and lighting. Do not add accessories, text, contents or product claims. Keep the whole product visible.
+
+| Compare in each output | Record | Reject when |
+| --- | --- | --- |
+| Identity | Shape, package, logo and variant | A cap, label, color or included item changes |
+| Scene instruction | Background, light and product visibility | Unrequested props or contents imply a different offer |
+| Time | Submission to available output, with queue time when visible | A single run is presented as a general speed advantage |
+| Cost | Estimated and actually charged credits for every attempt | Failed or rejected attempts disappear from the calculation |
+
+Save both original outputs alongside the reference. A scorecard helps structure your review; it does not establish a model winner before you fill it. No new paired generation was performed for this update. To see why identity checks matter, inspect the separate [recorded Flare edit and its product-preservation failure]({{ '/api-evidence/gpt-image-2-5-flare/' | relative_url }}); it is not evidence comparing Nano Banana models.
 
 ## Nano Banana Pro vs Nano Banana 2: what is different?
 
@@ -44,7 +65,7 @@ The current Nexscope interfaces overlap substantially. Both allow optional refer
 | Published route estimate | 93–112 credits/call | 116–140 credits/call |
 | Exact product preservation | Must be checked | Must be checked |
 
-Sources: [Nano Banana 2 route documentation](https://www.nexscope.ai/api-docs/banana-2-image-generation?view=api) and [Nano Banana Pro route documentation](https://www.nexscope.ai/api-docs/banana-pro-image-generation?view=api), checked October 23, 2026. Estimates are not quotes for matched configurations; confirm the current request estimate and completed charge. Nexscope credits are not Google billing units.
+Sources: [Nano Banana 2 route documentation](https://www.nexscope.ai/api-docs/banana-2-image-generation?view=api) and [Nano Banana Pro route documentation](https://www.nexscope.ai/api-docs/banana-pro-image-generation?view=api), checked November 5, 2026. Estimates are not quotes for matched configurations; confirm the current request estimate and completed charge. Nexscope credits are not Google billing units.
 
 Google's [image-generation documentation](https://ai.google.dev/gemini-api/docs/image-generation) describes the underlying Gemini image family. That is a different scope from Nexscope's exposed inputs: a Google feature does not establish that the same feature is available through these routes.
 

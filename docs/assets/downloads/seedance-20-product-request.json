@@ -1,0 +1,7 @@
+{
+  "imageUrl": "https://example.com/replace-with-your-product.jpg",
+  "prompt": "Keep the product stationary while the camera moves slowly. Preserve shape, color and printed label. Add no accessories or text.",
+  "resolution": "720p",
+  "videoTime": 5,
+  "aspectRatio": "9:16"
+}

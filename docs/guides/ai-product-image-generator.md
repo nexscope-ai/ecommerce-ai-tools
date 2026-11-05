@@ -2,15 +2,25 @@
 learning_topic: creative
 content_kind: guide
 layout: default
-title: "AI Product Photography: Generate & Check Product Images"
-description: "Use an AI product image generator for product photography and lifestyle concepts. Compare Nano Banana 2 vs Pro, check real output evidence and review accuracy."
+title: "AI Product Photography: Examples, Prompts & Workflow"
+description: "Create product-photo concepts from a reference: inspect a real edit, copy studio and lifestyle prompts, compare models and review details before publishing."
 permalink: /ai-product-image-generator/
-last_reviewed: 2026-10-23
+last_reviewed: 2026-11-05
 date_published: 2026-09-23
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
+date_modified: 2026-11-05
+last_modified_at: 2026-11-05
 author: Nexscope Team
 schema_type: Article
+suppress_article_help: true
+next_step:
+  id: product_photography
+  intent: creative-trial
+  title: Try a product-photo concept
+  description: Bring a clear product reference, choose the available model and inspect its credit estimate before generating.
+  label: Open the image generator
+  url: https://www.nexscope.ai/tools/ai-image-generator?co-from=learn
+compact_evidence: true
+evidence_scope: "Includes a dated Flare concept-image edit and fictional prompts; it does not establish accuracy on a real merchant SKU."
 og_type: article
 topic: creative
 keywords:
@@ -30,13 +40,36 @@ faq:
 
 # AI product photography: generate and check product images
 
-**By Nexscope Team · Published September 23, 2026 · Reviewed October 23, 2026**
+**AI product photography turns a product reference and a scene brief into image concepts for your listing or campaign.** Use the examples and prompts below to plan a studio shot, a lifestyle scene or an ad layout, then open the image generator with your own product. Compare shape, label and color with the reference before approving the result.
 
-**AI product photography** uses an image-generation model to explore product shots, backgrounds and lifestyle concepts. An AI product image generator can work from a scene description or a supported product reference, but an attractive image is not automatically an accurate listing image. Choose a model, inspect the cost and compare the result with the real item before publishing.
+{% include article-action.html placement="article-top" %}
 
-**[Open the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?co-from=learn).** New Nexscope users receive 1,000 free credits, valid for 3 days; usage varies by model and settings. Creative API key access requires an active subscription.
+**[Open the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?co-from=learn).** New Nexscope users receive 1,000 free credits, valid for 3 days; usage varies by model and settings. Check the selected endpoint and your account for current API access; a trial balance is not a promise that every configuration is available.
 
 > **Quick answer:** Start with one clear product reference when the chosen model supports it. Describe the scene without inventing product features. Generate at an aspect ratio suited to the destination, and check the shape, packaging, label, color, and claims before downloading.
+
+## See a real edit before choosing your product-photo brief
+
+This **September 20, 2026 Flare example** used a generated bottle concept rather than a real merchant SKU. It returned one image and the recorded usage was 116 credits. The background changed, but so did label size and bottle/cap proportions. The result is useful for understanding a failure, not as approved listing photography or a Nano Banana comparison.
+
+<div class="evidence-pair" role="group" aria-label="Recorded Flare input and output">
+  <figure><img src="{{ '/assets/images/chatgpt-images-2-5-product-photos-720w.webp' | relative_url }}" width="720" height="405" alt="Generated reference concept with three amber bottles" loading="lazy"><figcaption>Recorded input: generated concept, not an approved SKU photo.</figcaption></figure>
+  <figure><img src="{{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }}" width="1024" height="1024" alt="Actual Flare output with an amber bottle and changed label proportions" loading="lazy"><figcaption>Actual output: completed edit that failed exact-item preservation.</figcaption></figure>
+</div>
+
+[Read the original request, output and QA record]({{ '/api-evidence/gpt-image-2-5-flare/' | relative_url }}). A successful generation status tells you the task completed; it does not approve the image for your listing.
+
+## Three product photography prompts to adapt
+
+Download the [studio, lifestyle and ad-layout prompt pack]({{ '/assets/downloads/product-photo-prompts.md' | relative_url }}). Supply your own accurate reference; the following are suggested creative briefs, not observed outputs:
+
+| Brief | Change | Keep fixed |
+| --- | --- | --- |
+| Clean studio | Neutral background and soft light | Product shape, label, variant and quantity |
+| Lifestyle | One relevant setting around the item | Scale, contents, use and approved product facts |
+| Ad layout | Composition with room for later copy | The same product; add verified offer text during review |
+
+For a studio draft, ask: **“Change only the background to plain white with a soft contact shadow. Preserve the supplied item, label and color; add no props or text.”** Review the destination's image requirements separately; writing “white background” does not certify marketplace compliance.
 
 ## When is an AI product image useful?
 
@@ -73,6 +106,8 @@ For a *hypothetical* stainless-steel water bottle, a starting prompt might be:
 > Create a clean studio image of the supplied bottle on a neutral surface. Keep the bottle silhouette, cap, color, and printed label consistent with the reference. Use soft side lighting and leave space around the product. Do not add accessories, capacity text, or features absent from the reference.
 
 This is an example input, **not a measured result**. A prompt can request fidelity but cannot guarantee it. If the output changes the logo or cap, reject it or revise the input and review a new generation.
+
+{% include article-action.html placement="article-middle" %}
 
 ## What evidence should you inspect before publishing?
 

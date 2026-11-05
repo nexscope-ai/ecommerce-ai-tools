@@ -164,6 +164,8 @@
 .resource-symbol img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .resource-card .card-body p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
 
+.trends-article p code,.trends-article li code,.trends-article td code{overflow-wrap:anywhere}
+
 /* Responsive primary navigation: keep links crawlable while presenting a compact mobile menu. */
 .trends-header .wrap { position: relative; }
 .trends-header .primary-navigation { display: block; }
