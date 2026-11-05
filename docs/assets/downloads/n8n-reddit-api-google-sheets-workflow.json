@@ -1,0 +1,170 @@
+{
+  "name": "Nexscope - n8n Reddit API Workflow: Build a Google Sheets Research Log (manual pilot)",
+  "nodes": [
+    {
+      "name": "Manual start",
+      "id": "manual-start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "parameters": {},
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "name": "Research input",
+      "id": "research-input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const request = {\"keyword\": \"travel coffee mug leaking\", \"filter\": \"posts\", \"sort\": \"relevance\", \"timeframe\": \"year\", \"trim\": true};\nif (Object.values(request).some(v=>typeof v==='string'&&v.includes('REPLACE'))) throw new Error('Replace all example placeholders before calling the API.');\nif(typeof request.keyword!=='string'||!request.keyword.trim()||request.keyword.length>1000)throw new Error('Invalid keyword.');\nreturn [{json:request}];"
+      },
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "name": "Nexscope Data",
+      "id": "nexscope-data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.nexscope.ai/reddit/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 90000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "position": [
+        440,
+        300
+      ],
+      "retryOnFail": false
+    },
+    {
+      "name": "Validate and map",
+      "id": "validate-and-map",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const body = $input.first().json;\nconst request = $('Research input').first().json;\nif (typeof body.code !== 'number' || body.code !== 0) throw new Error('API business error; inspect HTTP output before any repeat request.');\nconst d = body.data;\nif (!d || !['AVAILABLE','PARTIAL'].includes(d.resourceStatus)) throw new Error('Resource unavailable or unknown; no rows exported.');\nconst cell = v => {\n  if(v == null) return '';\n  if(typeof v === 'object') v=JSON.stringify(v);\n  return typeof v === 'string' && (/^[\\t\\r\\n]/.test(v) || /^[=+\\-@]/.test(v.trimStart())) ? \"'\"+v : v;\n};\nconst sourceUrl = v => { if(typeof v!=='string' || !/^https:\\/\\/[A-Za-z0-9.-]+(?::[0-9]+)?(?:[/?#][^\\s]*)?$/.test(v)) throw new Error('Missing or invalid HTTPS source URL.'); return v; };\nconst common = {\n  resource_status:d.resourceStatus, fetched_at:d.fetchedAt ?? '', source_fetched_at:d.sourceFetchedAt ?? '',\n  observed_at_utc:new Date().toISOString(),execution_id:String($execution.id),\n  query_or_input:request.keyword ?? request.url ?? request.handle ?? request.query,\n  has_more: d.hasMore ?? '', next_cursor:d.nextCursor ?? ''\n};\nconst finish = (rows, returned) => rows.map(row=>{\n  const missing=Object.keys(row).filter(k=>row[k]==null);\n  const output={...row,...common,returned_count:returned,exported_count:rows.length,missing_fields:missing.join(';')};\n  return {json:Object.fromEntries(Object.entries(output).map(([k,v])=>[k,cell(v)]))};\n});\nif(!Array.isArray(d.items)) throw new Error('Expected data.items array.');\nconst seen=new Set();const rows=[];\nfor(const p of d.items.slice(0,20)) {\n if(!p || typeof p.id!=='string' || !p.id) throw new Error('Missing source ID.');\n const url=sourceUrl(p.url); if(seen.has(p.id))continue; seen.add(p.id);\n rows.push({source_id:p.id,source_url:url,title:p.title,body:p.body,subreddit:p.subreddit,published_at:p.publishedAt,score:p.score,comment_count:p.commentCount});\n}\nreturn finish(rows,d.items.length);"
+      },
+      "position": [
+        660,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Research review",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      },
+      "id": "sheets",
+      "name": "Append to Google Sheets - configure then enable",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "disabled": true,
+      "position": [
+        880,
+        300
+      ]
+    },
+    {
+      "name": "Setup notes",
+      "id": "setup-notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "parameters": {
+        "content": "## Manual research pilot\nSelect your own Header Auth credential: Authorization = Bearer YOUR_KEY. No key belongs in this JSON. Edit Research input, leave Sheets disabled, inspect the HTTP and mapping results. Configure a scratch sheet using the companion headers before enabling writes. No scheduling, automatic pagination or retries. Reruns may charge credits and append duplicates. One API request per manual run.",
+        "height": 320,
+        "width": 650
+      },
+      "position": [
+        150,
+        -100
+      ]
+    }
+  ],
+  "connections": {
+    "Manual start": {
+      "main": [
+        [
+          {
+            "node": "Research input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Research input": {
+      "main": [
+        [
+          {
+            "node": "Nexscope Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nexscope Data": {
+      "main": [
+        [
+          {
+            "node": "Validate and map",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate and map": {
+      "main": [
+        [
+          {
+            "node": "Append to Google Sheets - configure then enable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}

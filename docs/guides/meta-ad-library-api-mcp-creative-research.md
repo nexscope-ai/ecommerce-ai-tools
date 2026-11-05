@@ -176,4 +176,11 @@ The [matching public API reference](https://www.nexscope.ai/api-docs/social-face
 
 Reviewed November 5, 2026 against current public contracts, MCP manifests and repository definitions. This is a vendor-authored implementation guide with offline examples, not an independent production benchmark. It does not claim increased rankings, ChatGPT citations, sales, creator results or ad returns. Missing source evidence remains unresolved.
 
+## Build this research workflow in n8n or Make
+
+Choose a concrete output before automating collection:
+
+- [n8n Meta Ad Library API: Create a Creative Review Queue]({{ '/guides/n8n-meta-ad-library-creative-review/' | relative_url }}) — manual starter with a disabled Sheets writer.
+- [Make Meta Ad Library API: Build a Competitor Snapshot Review]({{ '/guides/make-meta-ad-library-competitor-snapshot/' | relative_url }}) — task-specific module recipe for a reviewed draft or research output.
+
 {% include api-guide-faq.html %}

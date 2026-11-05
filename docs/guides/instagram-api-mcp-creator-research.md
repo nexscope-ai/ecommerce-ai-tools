@@ -152,4 +152,11 @@ The [matching API reference](https://www.nexscope.ai/api-docs/social-instagram-p
 
 The examples and tests are constructed offline. They do not establish production coverage, latency, report accuracy, campaign results or a search-traffic improvement. For implementation choices, see [MCP vs API]({{ '/guides/mcp-vs-api/' | relative_url }}). For other task-specific entry points, see the [ecommerce MCP guide]({{ '/ecommerce-mcp-server/' | relative_url }}).
 
+## Build this research workflow in n8n or Make
+
+Choose a concrete output before automating collection:
+
+- [n8n Instagram API Workflow: Build a Creator Shortlist]({{ '/guides/n8n-instagram-creator-shortlist/' | relative_url }}) — manual starter with a disabled Sheets writer.
+- [Make Instagram API Workflow: Build a Content Planning Review]({{ '/guides/make-instagram-content-planning/' | relative_url }}) — task-specific module recipe for a reviewed draft or research output.
+
 {% include api-guide-faq.html %}

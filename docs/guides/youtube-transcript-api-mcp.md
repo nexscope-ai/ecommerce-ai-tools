@@ -144,4 +144,11 @@ The prompt is an orchestration example, not proof a call ran. REST provides a re
 
 The guide uses current documented fields and constructed offline tests. It does not present template inputs as measured outputs, fabricate user opinions or promise improved search visibility. Before publishing a report, check its source links and important conclusions. For social research, the [Social API directory](https://learn.nexscope.ai/social/) provides other documented entry points; a separate supported interface and authorization are required for any publishing action.
 
+## Build this research workflow in n8n or Make
+
+Choose a concrete output before automating collection:
+
+- [n8n YouTube Transcript API: Create Timestamped Review Evidence]({{ '/guides/n8n-youtube-transcript-review-evidence/' | relative_url }}) — manual starter with a disabled Sheets writer.
+- [Make YouTube Transcript API: Draft a Source-Linked FAQ]({{ '/guides/make-youtube-transcript-faq/' | relative_url }}) — task-specific module recipe for a reviewed draft or research output.
+
 {% include api-guide-faq.html %}
