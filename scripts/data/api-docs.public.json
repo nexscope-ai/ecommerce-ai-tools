@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "scope": "data",
-  "generatedAt": "2026-11-05T03:04:55.873Z",
+  "generatedAt": "2026-11-06T08:15:03.976Z",
   "entries": [
     {
       "slug": "1688-product-billboard",
       "collection": "ecommerce",
-      "name": "1688 Product Billboard API",
+      "name": "1688 Bestselling Products",
       "description": "Query 1688 bestseller charts for wholesale sourcing and product research.",
       "group": "1688 Sourcing",
       "categoryDescription": "1688 Sourcing APIs.",
@@ -17,7 +17,7 @@
     {
       "slug": "1688-product-detail",
       "collection": "ecommerce",
-      "name": "1688 Product Detail API",
+      "name": "1688 Product Detail",
       "description": "Retrieve public 1688 product, SKU, pricing, logistics, and supplier details.",
       "group": "1688 Sourcing",
       "categoryDescription": "1688 Sourcing APIs.",
@@ -28,7 +28,7 @@
     {
       "slug": "1688-product-search",
       "collection": "ecommerce",
-      "name": "1688 Product Search API",
+      "name": "1688 Product Search",
       "description": "Search 1688 wholesale products for sourcing, supplier discovery, and product selection across Alibaba's domestic B2B marketplace.",
       "group": "1688 Sourcing",
       "categoryDescription": "1688 Sourcing APIs.",
@@ -39,7 +39,7 @@
     {
       "slug": "1688-search-by-image",
       "collection": "ecommerce",
-      "name": "1688 Search By Image API",
+      "name": "1688 Search By Image",
       "description": "Find visually similar 1688 supplier products from an image URL.",
       "group": "1688 Sourcing",
       "categoryDescription": "1688 Sourcing APIs.",
@@ -50,7 +50,7 @@
     {
       "slug": "amazon-ads-api-access",
       "collection": "ecommerce",
-      "name": "Amazon Ads API Access",
+      "name": "Amazon Ads Access",
       "description": "Connect an Amazon Ads account and check its connection status.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -116,7 +116,7 @@
     {
       "slug": "amazon-advertising",
       "collection": "ecommerce",
-      "name": "Amazon Advertising API",
+      "name": "Amazon Advertising",
       "description": "Manage Amazon Sponsored Products, Sponsored Brands, and Sponsored Display advertising.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -127,7 +127,7 @@
     {
       "slug": "amazon-alexa-search",
       "collection": "ecommerce",
-      "name": "Amazon Alexa Search API",
+      "name": "Amazon Alexa Search",
       "description": "Ask Amazon storefront Alexa for shopping guidance, recommended product groups, ASIN lists, and follow-up questions from.",
       "group": "Amazon Public Marketplace Data",
       "categoryDescription": "Amazon Public Marketplace Data APIs.",
@@ -138,7 +138,7 @@
     {
       "slug": "amazon-asin-keywords",
       "collection": "ecommerce",
-      "name": "Amazon ASIN Keywords API",
+      "name": "Amazon ASIN Keywords",
       "description": "Find keywords driving traffic to an Amazon ASIN.",
       "group": "Amazon Search Intelligence SF",
       "categoryDescription": "Amazon Search Intelligence SF APIs.",
@@ -149,7 +149,7 @@
     {
       "slug": "amazon-asin-traffic-summary",
       "collection": "ecommerce",
-      "name": "Amazon ASIN Traffic Summary API",
+      "name": "Amazon ASIN Traffic Summary",
       "description": "Compare traffic sources and keyword changes for an ASIN.",
       "group": "Amazon Search Intelligence SF",
       "categoryDescription": "Amazon Search Intelligence SF APIs.",
@@ -160,7 +160,7 @@
     {
       "slug": "amazon-broad-product-search",
       "collection": "ecommerce",
-      "name": "Amazon Broad Product Search API",
+      "name": "Amazon Broad Product Search",
       "description": "Find Amazon products by sales, price, ratings, and fulfillment.",
       "group": "Amazon Intelligence SS",
       "categoryDescription": "Amazon Intelligence SS APIs.",
@@ -182,7 +182,7 @@
     {
       "slug": "amazon-competitor-lookup",
       "collection": "ecommerce",
-      "name": "Amazon Competitor Lookup API",
+      "name": "Amazon Competitor Lookup",
       "description": "Compare competing Amazon products by sales, price, and growth.",
       "group": "Amazon Intelligence SS",
       "categoryDescription": "Amazon Intelligence SS APIs.",
@@ -193,7 +193,7 @@
     {
       "slug": "amazon-keyword-expansion",
       "collection": "ecommerce",
-      "name": "Amazon Keyword Expansion API",
+      "name": "Amazon Keyword Expansion",
       "description": "Find related Amazon keywords and compare search demand.",
       "group": "Amazon Research JS",
       "categoryDescription": "Amazon Research JS APIs.",
@@ -204,7 +204,7 @@
     {
       "slug": "amazon-keyword-intelligence",
       "collection": "ecommerce",
-      "name": "Amazon Keyword Intelligence API",
+      "name": "Amazon Keyword Intelligence",
       "description": "Explore weekly Amazon Brand Analytics search-term data.",
       "group": "Amazon ABA & Business Insights",
       "categoryDescription": "Amazon ABA & Business Insights APIs.",
@@ -215,7 +215,7 @@
     {
       "slug": "amazon-keyword-overview",
       "collection": "ecommerce",
-      "name": "Amazon Keyword Overview API",
+      "name": "Amazon Keyword Overview",
       "description": "Evaluate search demand and competition for an Amazon keyword.",
       "group": "Amazon Search Intelligence SF",
       "categoryDescription": "Amazon Search Intelligence SF APIs.",
@@ -226,7 +226,7 @@
     {
       "slug": "amazon-keyword-search-history",
       "collection": "ecommerce",
-      "name": "Amazon Keyword Search History API",
+      "name": "Amazon Keyword Search History",
       "description": "Track exact Amazon keyword search volume in seven-day periods across 10 marketplaces.",
       "group": "Amazon Research JS",
       "categoryDescription": "Amazon Research JS APIs.",
@@ -237,7 +237,7 @@
     {
       "slug": "amazon-keyword-share-of-voice",
       "collection": "ecommerce",
-      "name": "Amazon Keyword Share Of Voice API",
+      "name": "Amazon Keyword Share Of Voice",
       "description": "Compare how often brands appear in Amazon's organic and sponsored search results.",
       "group": "Amazon Research JS",
       "categoryDescription": "Amazon Research JS APIs.",
@@ -248,7 +248,7 @@
     {
       "slug": "amazon-keyword-summary",
       "collection": "ecommerce",
-      "name": "Amazon Keyword Summary API",
+      "name": "Amazon Keyword Summary",
       "description": "Compare competitor traffic from search, ads, and recommendations.",
       "group": "Amazon Search Intelligence SF",
       "categoryDescription": "Amazon Search Intelligence SF APIs.",
@@ -259,7 +259,7 @@
     {
       "slug": "amazon-market-product-detail",
       "collection": "ecommerce",
-      "name": "Amazon Market Product Detail API",
+      "name": "Amazon Market Product Detail",
       "description": "Look up product details and historical trends by ASIN.",
       "group": "Amazon Research ST",
       "categoryDescription": "Amazon Research ST APIs.",
@@ -270,7 +270,7 @@
     {
       "slug": "amazon-market-product-search",
       "collection": "ecommerce",
-      "name": "Amazon Market Product Search API",
+      "name": "Amazon Market Product Search",
       "description": "Filter Amazon products using market data and monthly snapshots.",
       "group": "Amazon Research ST",
       "categoryDescription": "Amazon Research ST APIs.",
@@ -281,7 +281,7 @@
     {
       "slug": "amazon-market-research",
       "collection": "ecommerce",
-      "name": "Amazon Market Research API",
+      "name": "Amazon Market Research",
       "description": "Assess niche size, competition, and seller concentration.",
       "group": "Amazon Intelligence SS",
       "categoryDescription": "Amazon Intelligence SS APIs.",
@@ -292,7 +292,7 @@
     {
       "slug": "amazon-market-statistics",
       "collection": "ecommerce",
-      "name": "Amazon Market Statistics API",
+      "name": "Amazon Market Statistics",
       "description": "Compare sales, prices, and ratings within an Amazon category.",
       "group": "Amazon Intelligence SS",
       "categoryDescription": "Amazon Intelligence SS APIs.",
@@ -303,7 +303,7 @@
     {
       "slug": "amazon-niche-info",
       "collection": "ecommerce",
-      "name": "Amazon Niche Info API",
+      "name": "Amazon Niche Info",
       "description": "Research demand, competition, prices, and customer reviews in an Amazon niche.",
       "group": "Amazon Niche Intelligence JM",
       "categoryDescription": "Amazon Niche Intelligence JM APIs.",
@@ -314,7 +314,7 @@
     {
       "slug": "amazon-niche-info-by-asin",
       "collection": "ecommerce",
-      "name": "Amazon Niche Info By ASIN API",
+      "name": "Amazon Niche Info By ASIN",
       "description": "Assess competition and market opportunity around an Amazon product.",
       "group": "Amazon Niche Intelligence JM",
       "categoryDescription": "Amazon Niche Intelligence JM APIs.",
@@ -325,7 +325,7 @@
     {
       "slug": "amazon-niche-info-by-keyword",
       "collection": "ecommerce",
-      "name": "Amazon Niche Info By Keyword API",
+      "name": "Amazon Niche Info By Keyword",
       "description": "Assess competition and market opportunity for an Amazon keyword.",
       "group": "Amazon Niche Intelligence JM",
       "categoryDescription": "Amazon Niche Intelligence JM APIs.",
@@ -336,7 +336,7 @@
     {
       "slug": "amazon-niche-reviews-by-keyword",
       "collection": "ecommerce",
-      "name": "Amazon Niche Reviews By Keyword API",
+      "name": "Amazon Niche Reviews By Keyword",
       "description": "Analyze Amazon niche reviews and consumer sentiment by keyword.",
       "group": "Amazon Niche Intelligence JM",
       "categoryDescription": "Amazon Niche Intelligence JM APIs.",
@@ -347,7 +347,7 @@
     {
       "slug": "amazon-opportunity-report-by-keyword",
       "collection": "ecommerce",
-      "name": "Amazon Opportunity Report By Keyword API",
+      "name": "Amazon Opportunity Report By Keyword",
       "description": "Generate an Amazon opportunity report by keyword across market potential, product traits, reviews, customer profiles, trends.",
       "group": "Amazon ABA & Business Insights",
       "categoryDescription": "Amazon ABA & Business Insights APIs.",
@@ -358,7 +358,7 @@
     {
       "slug": "amazon-opportunity-search-by-metrics",
       "collection": "ecommerce",
-      "name": "Amazon Opportunity Search By Metrics API",
+      "name": "Amazon Opportunity Search By Metrics",
       "description": "Filter Amazon niches and keywords using 30+ business metrics covering market size, growth, competition, pricing, demographics.",
       "group": "Amazon ABA & Business Insights",
       "categoryDescription": "Amazon ABA & Business Insights APIs.",
@@ -369,7 +369,7 @@
     {
       "slug": "amazon-policy-feed",
       "collection": "ecommerce",
-      "name": "Amazon Policy Feed API",
+      "name": "Amazon Policy Feed",
       "description": "Browse Amazon policy updates by marketplace and date, with AI-generated Chinese summaries.",
       "group": "Amazon ABA & Business Insights",
       "categoryDescription": "Amazon ABA & Business Insights APIs.",
@@ -380,7 +380,7 @@
     {
       "slug": "amazon-product-database",
       "collection": "ecommerce",
-      "name": "Amazon Product Database API",
+      "name": "Amazon Product Database",
       "description": "Find Amazon products by category, price, sales, reviews, and seller type.",
       "group": "Amazon Research JS",
       "categoryDescription": "Amazon Research JS APIs.",
@@ -391,7 +391,7 @@
     {
       "slug": "amazon-product-database-search",
       "collection": "ecommerce",
-      "name": "Amazon Product Database Search API",
+      "name": "Amazon Product Database Search",
       "description": "Find Amazon products using detailed price, sales, size, and shipping filters.",
       "group": "Amazon History KP",
       "categoryDescription": "Amazon History KP APIs.",
@@ -402,7 +402,7 @@
     {
       "slug": "amazon-product-detail",
       "collection": "ecommerce",
-      "name": "Amazon Product Detail API",
+      "name": "Amazon Product Detail",
       "description": "Retrieve product details, pricing, and ratings by ASIN.",
       "group": "Amazon Public Marketplace Data",
       "categoryDescription": "Amazon Public Marketplace Data APIs.",
@@ -413,7 +413,7 @@
     {
       "slug": "amazon-product-discovery",
       "collection": "ecommerce",
-      "name": "Amazon Product Discovery API",
+      "name": "Amazon Product Discovery",
       "description": "Discover potential Amazon bestsellers for product research.",
       "group": "Amazon Niche Intelligence JM",
       "categoryDescription": "Amazon Niche Intelligence JM APIs.",
@@ -424,7 +424,7 @@
     {
       "slug": "amazon-product-history",
       "collection": "ecommerce",
-      "name": "Amazon Product History API",
+      "name": "Amazon Product History",
       "description": "Retrieve Amazon product attributes and up to 12 months of sales history by ASIN.",
       "group": "Amazon History KP",
       "categoryDescription": "Amazon History KP APIs.",
@@ -435,7 +435,7 @@
     {
       "slug": "amazon-product-price-series",
       "collection": "ecommerce",
-      "name": "Amazon Product Price Series API",
+      "name": "Amazon Product Price Series",
       "description": "Track an Amazon product's price, best-seller rank, ratings, and sales over time.",
       "group": "Amazon History KP",
       "categoryDescription": "Amazon History KP APIs.",
@@ -446,7 +446,7 @@
     {
       "slug": "amazon-product-research",
       "collection": "ecommerce",
-      "name": "Amazon Product Research API",
+      "name": "Amazon Product Research",
       "description": "Browse Amazon product research APIs and choose the one that fits your task.",
       "group": "Amazon Research JS",
       "categoryDescription": "Amazon Research JS APIs.",
@@ -457,7 +457,7 @@
     {
       "slug": "amazon-related-asins",
       "collection": "ecommerce",
-      "name": "Amazon Related ASINs API",
+      "name": "Amazon Related ASINs",
       "description": "Find same-niche Amazon competitors by ASIN using conversion, click, sales, review, rating, price, and margin filters.",
       "group": "Amazon Niche Intelligence JM",
       "categoryDescription": "Amazon Niche Intelligence JM APIs.",
@@ -468,7 +468,7 @@
     {
       "slug": "amazon-reviews-list",
       "collection": "ecommerce",
-      "name": "Amazon Reviews List API",
+      "name": "Amazon Reviews List",
       "description": "Retrieve customer reviews for an Amazon product.",
       "group": "Amazon Public Marketplace Data",
       "categoryDescription": "Amazon Public Marketplace Data APIs.",
@@ -479,7 +479,7 @@
     {
       "slug": "amazon-sales-estimates",
       "collection": "ecommerce",
-      "name": "Amazon Sales Estimates API",
+      "name": "Amazon Sales Estimates",
       "description": "Get daily estimated Amazon ASIN sales and latest known price for a selected date range across 10 marketplaces.",
       "group": "Amazon Research JS",
       "categoryDescription": "Amazon Research JS APIs.",
@@ -490,7 +490,7 @@
     {
       "slug": "amazon-search",
       "collection": "ecommerce",
-      "name": "Amazon Search API",
+      "name": "Amazon Search",
       "description": "Find Amazon products by keyword and marketplace. Results come back as structured JSON.",
       "group": "Amazon Public Marketplace Data",
       "categoryDescription": "Amazon Public Marketplace Data APIs.",
@@ -501,7 +501,7 @@
     {
       "slug": "amazon-search-by-image",
       "collection": "ecommerce",
-      "name": "Amazon Search By Image API",
+      "name": "Amazon Search By Image",
       "description": "Find visually similar Amazon products from an image URL across eight marketplaces, with optional sales-data enrichment.",
       "group": "Amazon Public Marketplace Data",
       "categoryDescription": "Amazon Public Marketplace Data APIs.",
@@ -512,7 +512,7 @@
     {
       "slug": "amazon-traffic-keywords",
       "collection": "ecommerce",
-      "name": "Amazon Traffic Keywords API",
+      "name": "Amazon Traffic Keywords",
       "description": "Find keywords bringing traffic to an Amazon product and compare organic and ad rankings.",
       "group": "Amazon Intelligence SS",
       "categoryDescription": "Amazon Intelligence SS APIs.",
@@ -523,7 +523,7 @@
     {
       "slug": "chuhaijiang-tiktok-ad-detail",
       "collection": "ecommerce",
-      "name": "TikTok Ad Detail API",
+      "name": "TikTok Ad Detail",
       "description": "Look up details of a TikTok ad. Results come back as structured JSON.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -534,7 +534,7 @@
     {
       "slug": "chuhaijiang-tiktok-ad-related-products",
       "collection": "ecommerce",
-      "name": "TikTok Ad Related Products API",
+      "name": "TikTok Ad Related Products",
       "description": "Find products featured in a TikTok ad.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -545,7 +545,7 @@
     {
       "slug": "chuhaijiang-tiktok-ad-search",
       "collection": "ecommerce",
-      "name": "TikTok Ad Search API",
+      "name": "TikTok Ad Search",
       "description": "Search TikTok ads for competitor and creative research.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -556,7 +556,7 @@
     {
       "slug": "chuhaijiang-tiktok-creative-detail",
       "collection": "ecommerce",
-      "name": "TikTok Creative Detail API",
+      "name": "TikTok Creative Detail",
       "description": "Look up a TikTok ad creative for closer review.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -567,7 +567,7 @@
     {
       "slug": "chuhaijiang-tiktok-creative-search",
       "collection": "ecommerce",
-      "name": "TikTok Creative Search API",
+      "name": "TikTok Creative Search",
       "description": "Search TikTok ad creatives for content ideas.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -578,7 +578,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-detail",
       "collection": "ecommerce",
-      "name": "TikTok Creator Detail API",
+      "name": "TikTok Creator Detail",
       "description": "View a TikTok creator's profile for potential partnerships.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -589,7 +589,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-rankings-agencies",
       "collection": "ecommerce",
-      "name": "TikTok Creator Agencies API",
+      "name": "TikTok Creator Agencies",
       "description": "Explore TikTok creator agency rankings. Results come back as structured JSON.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -600,7 +600,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-rankings-commercial",
       "collection": "ecommerce",
-      "name": "TikTok Creator Commercial API",
+      "name": "TikTok Creator Commercial",
       "description": "Find TikTok creators ranked by commercial performance.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -611,7 +611,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-rankings-growth",
       "collection": "ecommerce",
-      "name": "TikTok Creator Growth API",
+      "name": "TikTok Creator Growth",
       "description": "Discover TikTok creators with growing audiences.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -622,7 +622,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-related-lives",
       "collection": "ecommerce",
-      "name": "TikTok Creator Related Lives API",
+      "name": "TikTok Creator Related Lives",
       "description": "Find livestreams associated with a TikTok creator.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -633,7 +633,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-related-products",
       "collection": "ecommerce",
-      "name": "TikTok Creator Related Products API",
+      "name": "TikTok Creator Related Products",
       "description": "Find products promoted by a TikTok creator.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -644,7 +644,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-related-videos",
       "collection": "ecommerce",
-      "name": "TikTok Creator Related Videos API",
+      "name": "TikTok Creator Related Videos",
       "description": "Browse videos associated with a TikTok creator.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -655,7 +655,7 @@
     {
       "slug": "chuhaijiang-tiktok-creator-search",
       "collection": "ecommerce",
-      "name": "TikTok Creator Search API",
+      "name": "TikTok Creator Search",
       "description": "Search TikTok creators for potential product partnerships.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -666,7 +666,7 @@
     {
       "slug": "chuhaijiang-tiktok-live-detail",
       "collection": "ecommerce",
-      "name": "TikTok Live Detail API",
+      "name": "TikTok Live Detail",
       "description": "Look up details of a TikTok livestream. Results come back as structured JSON.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -677,7 +677,7 @@
     {
       "slug": "chuhaijiang-tiktok-live-related-products",
       "collection": "ecommerce",
-      "name": "TikTok Live Related Products API",
+      "name": "TikTok Live Related Products",
       "description": "Find products featured in a TikTok livestream.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -688,7 +688,7 @@
     {
       "slug": "chuhaijiang-tiktok-live-search",
       "collection": "ecommerce",
-      "name": "TikTok Live Search API",
+      "name": "TikTok Live Search",
       "description": "Search TikTok livestreams for product and content research.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -699,7 +699,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-detail",
       "collection": "ecommerce",
-      "name": "TikTok Product Detail API",
+      "name": "TikTok Product Detail",
       "description": "Look up a TikTok Shop product to research a competing listing.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -710,7 +710,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-image-search",
       "collection": "ecommerce",
-      "name": "TikTok Product Image Search API",
+      "name": "TikTok Product Image Search",
       "description": "Find TikTok Shop products similar to an image.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -721,7 +721,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-rankings-most-promoted",
       "collection": "ecommerce",
-      "name": "TikTok Product Most Promoted API",
+      "name": "TikTok Product Most Promoted",
       "description": "Discover TikTok products ranked by promotion activity.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -732,7 +732,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-rankings-new-arrivals",
       "collection": "ecommerce",
-      "name": "TikTok Product New Arrivals API",
+      "name": "TikTok Product New Arrivals",
       "description": "Discover newly listed TikTok Shop products.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -743,7 +743,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-rankings-top-selling",
       "collection": "ecommerce",
-      "name": "TikTok Product Top Selling API",
+      "name": "TikTok Product Top Selling",
       "description": "Discover best-selling TikTok Shop products.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -754,7 +754,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-related-creators",
       "collection": "ecommerce",
-      "name": "TikTok Product Related Creators API",
+      "name": "TikTok Product Related Creators",
       "description": "Find TikTok creators promoting a product.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -765,7 +765,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-related-lives",
       "collection": "ecommerce",
-      "name": "TikTok Product Related Lives API",
+      "name": "TikTok Product Related Lives",
       "description": "Find TikTok livestreams featuring a product.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -776,7 +776,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-related-videos",
       "collection": "ecommerce",
-      "name": "TikTok Product Related Videos API",
+      "name": "TikTok Product Related Videos",
       "description": "Find TikTok videos featuring a product.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -787,7 +787,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-reviews",
       "collection": "ecommerce",
-      "name": "TikTok Product Reviews API",
+      "name": "TikTok Product Reviews",
       "description": "Read customer reviews for a TikTok Shop product.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -798,7 +798,7 @@
     {
       "slug": "chuhaijiang-tiktok-product-search",
       "collection": "ecommerce",
-      "name": "TikTok Product Market Search API",
+      "name": "TikTok Product Market Search",
       "description": "Search TikTok products by market, seller type, shipping, price, and sales filters.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -809,7 +809,7 @@
     {
       "slug": "chuhaijiang-tiktok-shop-detail",
       "collection": "ecommerce",
-      "name": "TikTok Shop Detail API",
+      "name": "TikTok Shop Detail",
       "description": "Look up a TikTok shop to research a competing seller.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -820,7 +820,7 @@
     {
       "slug": "chuhaijiang-tiktok-shop-rankings-most-promoted",
       "collection": "ecommerce",
-      "name": "TikTok Shop Most Promoted API",
+      "name": "TikTok Shop Most Promoted",
       "description": "Discover TikTok shops ranked by promotion activity.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -831,7 +831,7 @@
     {
       "slug": "chuhaijiang-tiktok-shop-rankings-top-selling",
       "collection": "ecommerce",
-      "name": "TikTok Shop Top Selling API",
+      "name": "TikTok Shop Top Selling",
       "description": "Discover top-selling TikTok shops. Results come back as structured JSON.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -842,7 +842,7 @@
     {
       "slug": "chuhaijiang-tiktok-shop-related-creators",
       "collection": "ecommerce",
-      "name": "TikTok Shop Related Creators API",
+      "name": "TikTok Shop Related Creators",
       "description": "Find creators associated with a TikTok shop.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -853,7 +853,7 @@
     {
       "slug": "chuhaijiang-tiktok-shop-related-products",
       "collection": "ecommerce",
-      "name": "TikTok Shop Related Products API",
+      "name": "TikTok Shop Related Products",
       "description": "Browse products associated with a TikTok shop.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -864,7 +864,7 @@
     {
       "slug": "chuhaijiang-tiktok-shop-related-videos",
       "collection": "ecommerce",
-      "name": "TikTok Shop Related Videos API",
+      "name": "TikTok Shop Related Videos",
       "description": "Find videos featuring products from a TikTok shop.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -875,7 +875,7 @@
     {
       "slug": "chuhaijiang-tiktok-shop-search",
       "collection": "ecommerce",
-      "name": "TikTok Shop Search API",
+      "name": "TikTok Shop Search",
       "description": "Search TikTok shops to find competing sellers.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -886,7 +886,7 @@
     {
       "slug": "chuhaijiang-tiktok-video-detail",
       "collection": "ecommerce",
-      "name": "TikTok Video Detail API",
+      "name": "TikTok Video Detail",
       "description": "Look up a TikTok video for content and competitor research.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -897,7 +897,7 @@
     {
       "slug": "chuhaijiang-tiktok-video-related-products",
       "collection": "ecommerce",
-      "name": "TikTok Video Related Products API",
+      "name": "TikTok Video Related Products",
       "description": "Find products featured in a TikTok video.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -908,7 +908,7 @@
     {
       "slug": "chuhaijiang-tiktok-video-reviews",
       "collection": "ecommerce",
-      "name": "TikTok Video Reviews API",
+      "name": "TikTok Video Reviews",
       "description": "Read comments on a TikTok video to understand audience reactions.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -919,7 +919,7 @@
     {
       "slug": "chuhaijiang-tiktok-video-search",
       "collection": "ecommerce",
-      "name": "TikTok Video Keyword Search API",
+      "name": "TikTok Video Keyword Search",
       "description": "Search TikTok videos by keyword, market, engagement, and commerce filters.",
       "group": "TikTok Commerce Intelligence CJ",
       "categoryDescription": "TikTok Commerce Intelligence CJ APIs.",
@@ -930,7 +930,7 @@
     {
       "slug": "data-amazon-ads-authorized-stores",
       "collection": "ecommerce",
-      "name": "Amazon Ads Connected Stores API",
+      "name": "Amazon Ads Connected Stores",
       "description": "List the stores connected to your Amazon Ads account so you can choose the account to use for campaign management.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -941,7 +941,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-ads-api-v1-create-reports",
       "collection": "ecommerce",
-      "name": "Amazon Ads Account Report Creation API",
+      "name": "Amazon Ads Account Report Creation",
       "description": "Create an advertiser account report for your selected request settings to review Amazon advertising results.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -952,7 +952,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-ads-api-v1-query-advertiser-accounts",
       "collection": "ecommerce",
-      "name": "Amazon Ads Advertiser Accounts API",
+      "name": "Amazon Ads Advertiser Accounts",
       "description": "Query advertiser accounts to identify the advertising accounts available for your Amazon Ads integration.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -963,7 +963,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-ads-api-v1-retrieve-reports",
       "collection": "ecommerce",
-      "name": "Amazon Ads Account Report Retrieval API",
+      "name": "Amazon Ads Account Report Retrieval",
       "description": "Retrieve advertiser account report information to check the results of a previously requested Amazon advertising report.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -974,7 +974,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-amazon-ads-developer-proxy",
       "collection": "ecommerce",
-      "name": "Amazon Ads Custom Requests API",
+      "name": "Amazon Ads Custom Requests",
       "description": "Send an allowed Amazon Ads request through your connected account when you need an advertising operation beyond the individual tools.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -985,7 +985,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-reporting-reports",
       "collection": "ecommerce",
-      "name": "Amazon Ads Report Creation API",
+      "name": "Amazon Ads Report Creation",
       "description": "Request an advertising report for selected dates and metrics to review the performance of your Amazon campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -996,7 +996,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-reporting-reports-report-id",
       "collection": "ecommerce",
-      "name": "Amazon Ads Report Status API",
+      "name": "Amazon Ads Report Status",
       "description": "Check an advertising report by its ID to see its current status and any available report information.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1007,7 +1007,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-ad-groups",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Ad Group Management API",
+      "name": "Sponsored Brands Ad Group Management",
       "description": "Work with ad groups to organize advertised products, targeting and bids within your Sponsored Brands advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1018,7 +1018,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-ads-creatives-creative-type",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Creatives by Format API",
+      "name": "Sponsored Brands Creatives by Format",
       "description": "Work with a selected Sponsored Brands creative format to manage the content used in your advertising.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1029,7 +1029,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-ads-creatives-list",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Ad Creative List API",
+      "name": "Sponsored Brands Ad Creative List",
       "description": "List creative assets for a Sponsored Brands ad so you can review the content used in that advertisement.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1040,7 +1040,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-budget-rules",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Budget Rules API",
+      "name": "Sponsored Brands Budget Rules",
       "description": "Work with budget rules to control when advertising campaign budgets are adjusted for Sponsored Brands.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1051,7 +1051,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-campaigns",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Campaign Management API",
+      "name": "Sponsored Brands Campaign Management",
       "description": "Work with advertising campaigns to organize your products, targeting and budgets for Sponsored Brands.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1062,7 +1062,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-keywords",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Keyword Management API",
+      "name": "Sponsored Brands Keyword Management",
       "description": "Work with advertising keywords to select the search terms that can bring shoppers to your products on Amazon. Ad format: Sponsored Brands.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1073,7 +1073,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-targets",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Target Management API",
+      "name": "Sponsored Brands Target Management",
       "description": "Work with advertising targets to choose the products, categories or audiences reached by your Sponsored Brands campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1084,7 +1084,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-targets-list",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Target List API",
+      "name": "Sponsored Brands Target List",
       "description": "List advertising targets to review the products, categories or audiences reached by your Sponsored Brands advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1095,7 +1095,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-v4-ad-groups",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Ad Group Management v4 API",
+      "name": "Sponsored Brands Ad Group Management v4",
       "description": "Work with ad groups to organize advertised products, targeting and bids within your Sponsored Brands advertising campaigns. Uses version 4.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1106,7 +1106,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-v4-ad-groups-list",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Ad Group List v4 API",
+      "name": "Sponsored Brands Ad Group List v4",
       "description": "List ad groups and their settings to review how products and targeting are organized within your advertising campaigns. Uses version 4.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1117,7 +1117,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-v4-ads",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Ad Management v4 API",
+      "name": "Sponsored Brands Ad Management v4",
       "description": "Work with Sponsored Brands ads to manage the advertisements used to introduce your brand and products to shoppers. Uses version 4.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1128,7 +1128,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-v4-ads-ad-type",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Ads by Format v4 API",
+      "name": "Sponsored Brands Ads by Format v4",
       "description": "Work with a selected Sponsored Brands ad format to manage the corresponding advertisements for your brand. Uses version 4.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1139,7 +1139,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-v4-ads-list",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Ad List v4 API",
+      "name": "Sponsored Brands Ad List v4",
       "description": "List Sponsored Brands ads and their settings to review the advertisements used by your brand and product campaigns. Uses version 4.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1150,7 +1150,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-v4-campaigns",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Campaign Management v4 API",
+      "name": "Sponsored Brands Campaign Management v4",
       "description": "Work with advertising campaigns to organize your products, targeting and budgets for Sponsored Brands. Uses version 4.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1161,7 +1161,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sb-v4-campaigns-list",
       "collection": "ecommerce",
-      "name": "Sponsored Brands Campaign List v4 API",
+      "name": "Sponsored Brands Campaign List v4",
       "description": "List advertising campaigns and their settings to review the campaigns used by Sponsored Brands. Uses version 4.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1172,7 +1172,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-ad-groups",
       "collection": "ecommerce",
-      "name": "Sponsored Display Ad Groups API",
+      "name": "Sponsored Display Ad Groups",
       "description": "List Sponsored Display ad groups to review how advertised products and targeting are organized within your Amazon advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1183,7 +1183,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-ad-groups-extended",
       "collection": "ecommerce",
-      "name": "Sponsored Display Ad Group Details API",
+      "name": "Sponsored Display Ad Group Details",
       "description": "Retrieve extended Sponsored Display ad group information to review additional settings for the ad groups in your advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1194,7 +1194,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-budget-rules",
       "collection": "ecommerce",
-      "name": "Sponsored Display Budget Rules API",
+      "name": "Sponsored Display Budget Rules",
       "description": "Work with budget rules to control when advertising campaign budgets are adjusted for Sponsored Display.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1205,7 +1205,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-campaigns",
       "collection": "ecommerce",
-      "name": "Sponsored Display Campaigns API",
+      "name": "Sponsored Display Campaigns",
       "description": "List Sponsored Display campaigns and their settings to review your advertising activity and compare the campaigns in your account.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1216,7 +1216,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-campaigns-extended",
       "collection": "ecommerce",
-      "name": "Sponsored Display Campaign Details API",
+      "name": "Sponsored Display Campaign Details",
       "description": "Retrieve extended Sponsored Display campaign information to review additional fields for the campaigns in your advertising account.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1227,7 +1227,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-creatives",
       "collection": "ecommerce",
-      "name": "Sponsored Display Ad Creatives API",
+      "name": "Sponsored Display Ad Creatives",
       "description": "Retrieve Sponsored Display creative information to review the content used in your Amazon display advertising.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1238,7 +1238,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-negative-targets",
       "collection": "ecommerce",
-      "name": "Sponsored Display Target Exclusions API",
+      "name": "Sponsored Display Target Exclusions",
       "description": "List Sponsored Display negative targets to review the products or categories excluded from your Amazon advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1249,7 +1249,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-negative-targets-extended",
       "collection": "ecommerce",
-      "name": "Sponsored Display Target Exclusion Details API",
+      "name": "Sponsored Display Target Exclusion Details",
       "description": "Retrieve extended Sponsored Display negative target information to review additional details for the targets excluded from your campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1260,7 +1260,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-product-ads",
       "collection": "ecommerce",
-      "name": "Sponsored Display Product Ads API",
+      "name": "Sponsored Display Product Ads",
       "description": "List Sponsored Display product ads to review which products are advertised within your campaigns and ad groups on Amazon.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1271,7 +1271,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-product-ads-extended",
       "collection": "ecommerce",
-      "name": "Sponsored Display Product Ad Details API",
+      "name": "Sponsored Display Product Ad Details",
       "description": "Retrieve extended Sponsored Display product ad information to review additional details for the products advertised in your campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1282,7 +1282,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-targets",
       "collection": "ecommerce",
-      "name": "Sponsored Display Targets API",
+      "name": "Sponsored Display Targets",
       "description": "List Sponsored Display targets to review the products, categories or audiences selected for your Amazon advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1293,7 +1293,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sd-targets-extended",
       "collection": "ecommerce",
-      "name": "Sponsored Display Target Details API",
+      "name": "Sponsored Display Target Details",
       "description": "Retrieve extended Sponsored Display target information to review additional targeting details for your Amazon advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1304,7 +1304,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-ad-groups",
       "collection": "ecommerce",
-      "name": "Sponsored Products Ad Group Management API",
+      "name": "Sponsored Products Ad Group Management",
       "description": "Work with ad groups to organize advertised products, targeting and bids within your Sponsored Products advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1315,7 +1315,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-ad-groups-list",
       "collection": "ecommerce",
-      "name": "Sponsored Products Ad Group List API",
+      "name": "Sponsored Products Ad Group List",
       "description": "List ad groups and their settings to review how products and targeting are organized within your advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1326,7 +1326,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-budget-rules",
       "collection": "ecommerce",
-      "name": "Sponsored Products Budget Rules API",
+      "name": "Sponsored Products Budget Rules",
       "description": "Work with budget rules to control when advertising campaign budgets are adjusted for Sponsored Products.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1337,7 +1337,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-budget-rules-association",
       "collection": "ecommerce",
-      "name": "Sponsored Products Campaign Budget Rule Links API",
+      "name": "Sponsored Products Campaign Budget Rule Links",
       "description": "Link budget rules to Sponsored Products campaigns so the selected rules apply to the campaigns you manage.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1348,7 +1348,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-campaign-negative-keywords",
       "collection": "ecommerce",
-      "name": "Sponsored Products Campaign Keyword Exclusions API",
+      "name": "Sponsored Products Campaign Keyword Exclusions",
       "description": "Work with campaign-level negative keywords to exclude unwanted search terms across a Sponsored Products campaign.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1359,7 +1359,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-campaign-negative-targets",
       "collection": "ecommerce",
-      "name": "Sponsored Products Campaign Target Exclusions API",
+      "name": "Sponsored Products Campaign Target Exclusions",
       "description": "Work with campaign-level negative targets to exclude unwanted product or category targets from Sponsored Products campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1370,7 +1370,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-campaigns",
       "collection": "ecommerce",
-      "name": "Sponsored Products Campaign Management API",
+      "name": "Sponsored Products Campaign Management",
       "description": "Work with advertising campaigns to organize your products, targeting and budgets for Sponsored Products.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1381,7 +1381,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-keywords",
       "collection": "ecommerce",
-      "name": "Sponsored Products Keyword Management API",
+      "name": "Sponsored Products Keyword Management",
       "description": "Work with advertising keywords to select the search terms that can bring shoppers to your products on Amazon.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1392,7 +1392,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-keywords-list",
       "collection": "ecommerce",
-      "name": "Sponsored Products Keyword List API",
+      "name": "Sponsored Products Keyword List",
       "description": "List advertising keywords and their settings to review the search terms used by your Sponsored Products advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1403,7 +1403,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-negative-keywords",
       "collection": "ecommerce",
-      "name": "Sponsored Products Negative Keyword Management API",
+      "name": "Sponsored Products Negative Keyword Management",
       "description": "Work with negative keywords to exclude unwanted search terms from your Amazon Sponsored Products advertising.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1414,7 +1414,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-negative-keywords-list",
       "collection": "ecommerce",
-      "name": "Sponsored Products Negative Keyword List API",
+      "name": "Sponsored Products Negative Keyword List",
       "description": "List negative keywords to review which search terms are excluded from your Amazon Sponsored Products advertising.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1425,7 +1425,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-negative-targets",
       "collection": "ecommerce",
-      "name": "Sponsored Products Negative Target Management API",
+      "name": "Sponsored Products Negative Target Management",
       "description": "Work with negative targets to exclude unwanted products or categories from your Sponsored Products advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1436,7 +1436,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-product-ads",
       "collection": "ecommerce",
-      "name": "Sponsored Products Product Ad Management API",
+      "name": "Sponsored Products Product Ad Management",
       "description": "Work with product ads to choose which products are advertised within your Sponsored Products campaigns and ad groups.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1447,7 +1447,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-product-ads-list",
       "collection": "ecommerce",
-      "name": "Sponsored Products Product Ad List API",
+      "name": "Sponsored Products Product Ad List",
       "description": "List product ads to review the advertised products and their placement within your Sponsored Products campaigns and ad groups.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1458,7 +1458,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-targets",
       "collection": "ecommerce",
-      "name": "Sponsored Products Target Management API",
+      "name": "Sponsored Products Target Management",
       "description": "Work with advertising targets to choose the products, categories or audiences reached by your Sponsored Products campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1469,7 +1469,7 @@
     {
       "slug": "data-amazon-ads-developer-proxy-sp-targets-list",
       "collection": "ecommerce",
-      "name": "Sponsored Products Target List API",
+      "name": "Sponsored Products Target List",
       "description": "List advertising targets to review the products, categories or audiences reached by your Sponsored Products advertising campaigns.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1480,7 +1480,7 @@
     {
       "slug": "data-amazon-ads-profiles",
       "collection": "ecommerce",
-      "name": "Amazon Ads Account Profiles API",
+      "name": "Amazon Ads Account Profiles",
       "description": "List advertising account profiles and their marketplace settings to select the right account for your Amazon Ads requests.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1491,7 +1491,7 @@
     {
       "slug": "data-amazon-ads-refresh-token",
       "collection": "ecommerce",
-      "name": "Amazon Ads Access Renewal API",
+      "name": "Amazon Ads Access Renewal",
       "description": "Renew access to your connected Amazon Ads account so your advertising integration can continue making authorized requests.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1502,7 +1502,7 @@
     {
       "slug": "data-amazon-ads-store-tokens",
       "collection": "ecommerce",
-      "name": "Amazon Ads Store Access API",
+      "name": "Amazon Ads Store Access",
       "description": "Retrieve access information for your connected stores to use the correct account when working with Amazon advertising.",
       "group": "Amazon Ads",
       "categoryDescription": "Amazon Ads APIs.",
@@ -1513,7 +1513,7 @@
     {
       "slug": "data-amazon-policy-feed-detail",
       "collection": "ecommerce",
-      "name": "Amazon Policy Update Details API",
+      "name": "Amazon Policy Update Details",
       "description": "Read the details of a selected Amazon policy update to understand the announcement and assess its relevance to your business.",
       "group": "Amazon ABA & Business Insights",
       "categoryDescription": "Amazon ABA & Business Insights APIs.",
@@ -1524,7 +1524,7 @@
     {
       "slug": "data-et-batch-video-detail",
       "collection": "ecommerce",
-      "name": "TikTok Video Details in Bulk API",
+      "name": "TikTok Video Details in Bulk",
       "description": "Retrieve details for several TikTok videos in one request to compare their content and available performance information.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -1535,7 +1535,7 @@
     {
       "slug": "data-et-list-product-video",
       "collection": "ecommerce",
-      "name": "TikTok Product Videos API",
+      "name": "TikTok Product Videos",
       "description": "Find videos associated with a TikTok product to research how creators promote the item and review available video information.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -1546,7 +1546,7 @@
     {
       "slug": "data-et-list-seller",
       "collection": "ecommerce",
-      "name": "TikTok Seller Search API",
+      "name": "TikTok Seller Search",
       "description": "Find TikTok sellers by region and available sorting options to research shops and identify relevant competitors.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -1557,7 +1557,7 @@
     {
       "slug": "data-et-list-seller-product",
       "collection": "ecommerce",
-      "name": "TikTok Seller Products API",
+      "name": "TikTok Seller Products",
       "description": "List the products offered by a TikTok seller to review their assortment and compare available product information.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -1568,7 +1568,7 @@
     {
       "slug": "data-kd-livestream-detail",
       "collection": "ecommerce",
-      "name": "TikTok Livestream Details API",
+      "name": "TikTok Livestream Details",
       "description": "Retrieve a TikTok livestream by ID to review available sales and performance information for your chosen region and date range.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -1579,7 +1579,7 @@
     {
       "slug": "data-kd-shop-rank",
       "collection": "ecommerce",
-      "name": "TikTok Shop Rankings API",
+      "name": "TikTok Shop Rankings",
       "description": "Rank TikTok shops for a selected region and date range to compare available performance and discover shops worth researching.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -1590,7 +1590,7 @@
     {
       "slug": "data-kd-video-rank",
       "collection": "ecommerce",
-      "name": "TikTok Video Rankings API",
+      "name": "TikTok Video Rankings",
       "description": "Rank TikTok videos by available performance measures to identify content worth reviewing for product and creator research.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -1612,7 +1612,7 @@
     {
       "slug": "design-similarity-search",
       "collection": "ecommerce",
-      "name": "Design Similarity Search API",
+      "name": "Design Similarity Search",
       "description": "Search design registrations using one image URL or Base64 image, with optional region, source-jurisdiction, Locarno and legal-status filters. Results support candidate review and do not establish infringement or freedom to operate.",
       "group": "Design Registration Research",
       "categoryDescription": "Image-based design-registration candidate research.",
@@ -1623,7 +1623,7 @@
     {
       "slug": "ebay-search",
       "collection": "ecommerce",
-      "name": "eBay Search API",
+      "name": "eBay Search",
       "description": "Search and browse product listings across multiple international eBay sites.",
       "group": "eBay Product Research",
       "categoryDescription": "eBay Product Research APIs.",
@@ -1634,7 +1634,7 @@
     {
       "slug": "etsy-category-search",
       "collection": "ecommerce",
-      "name": "Etsy Category Search API",
+      "name": "Etsy Category Search",
       "description": "Find Etsy category IDs by category name, ID, or parent ID for product and store filtering.",
       "group": "Etsy Product Research",
       "categoryDescription": "Etsy Product Research APIs.",
@@ -1645,7 +1645,7 @@
     {
       "slug": "etsy-product-detail",
       "collection": "ecommerce",
-      "name": "Etsy Product Detail API",
+      "name": "Etsy Product Detail",
       "description": "Retrieve public Etsy listing details from a validated marketplace URL for product, pricing, shop, and competitive research.",
       "group": "Etsy Product Research",
       "categoryDescription": "Etsy Product Research APIs.",
@@ -1656,7 +1656,7 @@
     {
       "slug": "etsy-product-query",
       "collection": "ecommerce",
-      "name": "Etsy Product Query API",
+      "name": "Etsy Product Query",
       "description": "Filter Etsy products by keyword, URL, price, sales, favorites, reviews, listing date, category, product type, and marketplace.",
       "group": "Etsy Product Research",
       "categoryDescription": "Etsy Product Research APIs.",
@@ -1667,7 +1667,7 @@
     {
       "slug": "etsy-store-query",
       "collection": "ecommerce",
-      "name": "Etsy Store Query API",
+      "name": "Etsy Store Query",
       "description": "Search Etsy stores by keyword, category, country, status, ratings, sales, favorites, reviews, and opening date with pagination.",
       "group": "Etsy Product Research",
       "categoryDescription": "Etsy Product Research APIs.",
@@ -1678,7 +1678,7 @@
     {
       "slug": "geekbi-temu-category-list",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Category List API",
+      "name": "Temu Category List",
       "description": "Browse Temu categories for product research. Results come back as structured JSON.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1689,7 +1689,7 @@
     {
       "slug": "geekbi-temu-category-search",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Category Research API",
+      "name": "Temu Category Research",
       "description": "Find Temu categories to narrow your product research.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1700,7 +1700,7 @@
     {
       "slug": "geekbi-temu-goods-detail",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Product Detail API",
+      "name": "Temu Product Detail",
       "description": "Look up details for a Temu product. Results come back as structured JSON.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1711,7 +1711,7 @@
     {
       "slug": "geekbi-temu-goods-image-search",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Image Search API",
+      "name": "Temu Image Search",
       "description": "Find Temu products similar to an image. Results come back as structured JSON.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1722,7 +1722,7 @@
     {
       "slug": "geekbi-temu-goods-search",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Product Search API",
+      "name": "Temu Product Search",
       "description": "Search Temu products for competitor and assortment research.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1733,7 +1733,7 @@
     {
       "slug": "geekbi-temu-keyword-search",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Keyword Research API",
+      "name": "Temu Keyword Research",
       "description": "Research Temu keywords to discover product opportunities.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1744,7 +1744,7 @@
     {
       "slug": "geekbi-temu-mall-search",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Shop Search API",
+      "name": "Temu Shop Search",
       "description": "Find Temu shops for competitor research. Results come back as structured JSON.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1755,7 +1755,7 @@
     {
       "slug": "geekbi-temu-site-list",
       "collection": "ecommerce",
-      "name": "GeekBI Temu Site List API",
+      "name": "Temu Site List",
       "description": "List available Temu markets for product research. Results come back as structured JSON.",
       "group": "Temu Intelligence GB",
       "categoryDescription": "Temu Intelligence GB APIs.",
@@ -1766,7 +1766,7 @@
     {
       "slug": "google-ai-mode-search",
       "collection": "ecommerce",
-      "name": "Google AI Mode Search API",
+      "name": "Google AI Mode Search",
       "description": "Retrieve Google AI Mode summaries for a single keyword to support research, technical questions, product selection, and market.",
       "group": "Google Research Tools",
       "categoryDescription": "Google Research Tools APIs.",
@@ -1777,7 +1777,7 @@
     {
       "slug": "google-patent-search",
       "collection": "ecommerce",
-      "name": "Google Patent Search API",
+      "name": "Google Patent Search",
       "description": "Search Google patent and related scholarly records with structured results, pagination details, and search summaries.",
       "group": "Google Research Tools",
       "categoryDescription": "Google Research Tools APIs.",
@@ -1788,7 +1788,7 @@
     {
       "slug": "google-trends-by-keywords",
       "collection": "ecommerce",
-      "name": "Google Trends By Keywords API",
+      "name": "Google Trends By Keywords",
       "description": "Compare Google Trends search interest for multiple keywords across regions and custom time ranges for seasonal and market analysis.",
       "group": "Google Research Tools",
       "categoryDescription": "Google Research Tools APIs.",
@@ -1799,7 +1799,7 @@
     {
       "slug": "google-trends-by-time",
       "collection": "ecommerce",
-      "name": "Google Trends By Time API",
+      "name": "Google Trends By Time",
       "description": "Query Google Trends topics and trending searches by country or region for a selected time range.",
       "group": "Google Research Tools",
       "categoryDescription": "Google Research Tools APIs.",
@@ -1832,7 +1832,7 @@
     {
       "slug": "maidalv-product-tro-detection",
       "collection": "ecommerce",
-      "name": "Product TRO Detection API",
+      "name": "Product IP & Court Order Risk Check",
       "description": "Screen product images for potential intellectual property risks, including temporary restraining orders (TROs).",
       "group": "TRO Risk Detection MD",
       "categoryDescription": "TRO Risk Detection MD APIs.",
@@ -1854,7 +1854,7 @@
     {
       "slug": "mercado-product-selection",
       "collection": "ecommerce",
-      "name": "Mercado Product Selection API",
+      "name": "Mercado Product Selection",
       "description": "Research Mercado Libre products, sellers, and keywords across five markets.",
       "group": "Mercado Libre Product Research",
       "categoryDescription": "Mercado Libre Product Research APIs.",
@@ -1865,7 +1865,7 @@
     {
       "slug": "ozon-brand-products",
       "collection": "ecommerce",
-      "name": "Ozon Brand Products API",
+      "name": "Ozon Brand Products",
       "description": "List products under an Ozon brand with sales, revenue, price, rating, stock, turnover, and lost-revenue metrics for brand.",
       "group": "Ozon Intelligence MP",
       "categoryDescription": "Ozon Intelligence MP APIs.",
@@ -1876,7 +1876,7 @@
     {
       "slug": "ozon-category-products",
       "collection": "ecommerce",
-      "name": "Ozon Category Products API",
+      "name": "Ozon Category Products",
       "description": "List products in an Ozon category with sales, revenue, price, rating, stock, turnover, and lost-revenue metrics.",
       "group": "Ozon Intelligence MP",
       "categoryDescription": "Ozon Intelligence MP APIs.",
@@ -1887,7 +1887,7 @@
     {
       "slug": "ozon-category-search",
       "collection": "ecommerce",
-      "name": "Ozon Category Search API",
+      "name": "Ozon Category Search",
       "description": "Analyze products in an Ozon category by category ID.",
       "group": "Ozon Intelligence SR",
       "categoryDescription": "Ozon Intelligence SR APIs.",
@@ -1898,7 +1898,7 @@
     {
       "slug": "ozon-keyword-back-search",
       "collection": "ecommerce",
-      "name": "Ozon Keyword Back Search API",
+      "name": "Ozon Keyword Back Search",
       "description": "Reverse-lookup Ozon and Wildberries search terms for up to 20 SKUs, with volume, rank, exposure, competition, and conversion.",
       "group": "Ozon Intelligence SR",
       "categoryDescription": "Ozon Intelligence SR APIs.",
@@ -1909,7 +1909,7 @@
     {
       "slug": "ozon-keyword-mining",
       "collection": "ecommerce",
-      "name": "Ozon Keyword Mining API",
+      "name": "Ozon Keyword Mining",
       "description": "Expand Ozon and Wildberries seed keywords using search volume, growth, competition, price, relevance, density, and conversion.",
       "group": "Ozon Intelligence SR",
       "categoryDescription": "Ozon Intelligence SR APIs.",
@@ -1920,7 +1920,7 @@
     {
       "slug": "ozon-market-keyword-search",
       "collection": "ecommerce",
-      "name": "Ozon Market Keyword Search API",
+      "name": "Ozon Market Keyword Search",
       "description": "Find Ozon and Wildberries market keywords using search volume, growth, competition, pricing, sales, and conversion metrics.",
       "group": "Ozon Intelligence SR",
       "categoryDescription": "Ozon Intelligence SR APIs.",
@@ -1931,7 +1931,7 @@
     {
       "slug": "ozon-product-detail",
       "collection": "ecommerce",
-      "name": "Ozon Product Detail API",
+      "name": "Ozon Product Detail",
       "description": "Retrieve full details for up to 100 Ozon SKUs.",
       "group": "Ozon Intelligence MP",
       "categoryDescription": "Ozon Intelligence MP APIs.",
@@ -1942,7 +1942,7 @@
     {
       "slug": "ozon-product-detail-search",
       "collection": "ecommerce",
-      "name": "Ozon Product Detail Search API",
+      "name": "Ozon Product Detail Search",
       "description": "Retrieve a single Ozon SKU's pricing, sales, stock, ranking, trend, brand, seller, fulfillment, weight, and listing-age data.",
       "group": "Ozon Intelligence SR",
       "categoryDescription": "Ozon Intelligence SR APIs.",
@@ -1953,7 +1953,7 @@
     {
       "slug": "ozon-product-report-search",
       "collection": "ecommerce",
-      "name": "Ozon Product Report Search API",
+      "name": "Ozon Product Report Search",
       "description": "Filter Ozon products by sales, revenue, growth, conversion, price, ratings, margin, returns, ads, seller, and fulfillment metrics.",
       "group": "Ozon Intelligence SR",
       "categoryDescription": "Ozon Intelligence SR APIs.",
@@ -1964,7 +1964,7 @@
     {
       "slug": "ozon-product-search",
       "collection": "ecommerce",
-      "name": "Ozon Product Search API",
+      "name": "Ozon Product Search",
       "description": "Search Ozon products by Russian keyword or SKU and return product ID, title, brand, and seller data for discovery.",
       "group": "Ozon Intelligence MP",
       "categoryDescription": "Ozon Intelligence MP APIs.",
@@ -1975,7 +1975,7 @@
     {
       "slug": "ozon-product-trend",
       "collection": "ecommerce",
-      "name": "Ozon Product Trend API",
+      "name": "Ozon Product Trend",
       "description": "Track daily Ozon SKU sales, price, stock, rating, and optional search visibility to analyze growth, seasonality, and anomalies.",
       "group": "Ozon Intelligence MP",
       "categoryDescription": "Ozon Intelligence MP APIs.",
@@ -1986,7 +1986,7 @@
     {
       "slug": "ozon-seller-products",
       "collection": "ecommerce",
-      "name": "Ozon Seller Products API",
+      "name": "Ozon Seller Products",
       "description": "List an Ozon seller's SKUs with sales, revenue, price, rating, stock, turnover, and lost-revenue metrics for competitor analysis.",
       "group": "Ozon Intelligence MP",
       "categoryDescription": "Ozon Intelligence MP APIs.",
@@ -1997,7 +1997,7 @@
     {
       "slug": "ozon-shop-search",
       "collection": "ecommerce",
-      "name": "Ozon Shop Search API",
+      "name": "Ozon Shop Search",
       "description": "Analyze an Ozon shop's products by shop ID. Results come back as structured JSON.",
       "group": "Ozon Intelligence SR",
       "categoryDescription": "Ozon Intelligence SR APIs.",
@@ -2008,7 +2008,7 @@
     {
       "slug": "patent-abstract-image-data",
       "collection": "ecommerce",
-      "name": "Patent Abstract Image Data API",
+      "name": "Patent Abstract Drawings",
       "description": "View patent abstract drawings by patent ID or publication number.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2019,7 +2019,7 @@
     {
       "slug": "patent-cited-by",
       "collection": "ecommerce",
-      "name": "Patent Cited By API",
+      "name": "Patents Citing This Patent",
       "description": "Find later patents that cite a patent you are researching.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2030,7 +2030,7 @@
     {
       "slug": "patent-claims",
       "collection": "ecommerce",
-      "name": "Patent Claims API",
+      "name": "Patent Claims",
       "description": "Read a patent's claims to understand what the patent covers.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2041,7 +2041,7 @@
     {
       "slug": "patent-claims-translation",
       "collection": "ecommerce",
-      "name": "Patent Claims Translation API",
+      "name": "Patent Claims Translation",
       "description": "Read translated patent claims. Results come back as structured JSON.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2052,7 +2052,7 @@
     {
       "slug": "patent-core-bibliography",
       "collection": "ecommerce",
-      "name": "Patent Core Bibliography API",
+      "name": "Patent Overview",
       "description": "Look up patent titles, abstracts, dates, applicants, and inventors.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2063,7 +2063,7 @@
     {
       "slug": "patent-description-data",
       "collection": "ecommerce",
-      "name": "Patent Description Data API",
+      "name": "Patent Technical Description",
       "description": "Read a patent's full technical description by ID or publication number.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2074,7 +2074,7 @@
     {
       "slug": "patent-description-data-translation",
       "collection": "ecommerce",
-      "name": "Patent Description Data Translation API",
+      "name": "Patent Description Translation",
       "description": "Read translated patent descriptions.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2085,7 +2085,7 @@
     {
       "slug": "patent-detailed-bibliography",
       "collection": "ecommerce",
-      "name": "Patent Detailed Bibliography API",
+      "name": "Patent Publication Details",
       "description": "Look up a patent's publication details, applicants, and inventors.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2096,7 +2096,7 @@
     {
       "slug": "patent-family-data",
       "collection": "ecommerce",
-      "name": "Patent Family Data API",
+      "name": "Related Patent Filings",
       "description": "Find related patent filings across countries and patent offices.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2107,7 +2107,7 @@
     {
       "slug": "patent-fulltext-images",
       "collection": "ecommerce",
-      "name": "Patent Fulltext Images API",
+      "name": "Patent Fulltext Images",
       "description": "Retrieve drawings, diagrams, and charts from patent documents by patent ID or publication number.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2118,7 +2118,7 @@
     {
       "slug": "patent-legal-status-data",
       "collection": "ecommerce",
-      "name": "Patent Legal Status Data API",
+      "name": "Patent Legal Status",
       "description": "Check a patent's recorded legal status. Results come back as structured JSON.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2129,7 +2129,7 @@
     {
       "slug": "patent-references",
       "collection": "ecommerce",
-      "name": "Patent References API",
+      "name": "Patent References",
       "description": "Retrieve patent documents and non-patent literature cited by one or more patents for prior-art, citation, and technology.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2140,7 +2140,7 @@
     {
       "slug": "patent-search",
       "collection": "ecommerce",
-      "name": "Patent Search API",
+      "name": "Patent Search",
       "description": "Find patents and their publication numbers for product research.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2151,7 +2151,7 @@
     {
       "slug": "patent-title-abstract-translation",
       "collection": "ecommerce",
-      "name": "Patent Title Abstract Translation API",
+      "name": "Patent Title Abstract Translation",
       "description": "Read translated patent titles and abstracts.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",
@@ -2173,7 +2173,7 @@
     {
       "slug": "ruiguan-copyright-detection",
       "collection": "ecommerce",
-      "name": "Ruiguan Copyright Detection API",
+      "name": "Image Copyright Check",
       "description": "Compare images with registered works to screen for potential copyright risks.",
       "group": "IP Risk Detection RG",
       "categoryDescription": "IP Risk Detection RG APIs.",
@@ -2184,7 +2184,7 @@
     {
       "slug": "ruiguan-detection-patent-design",
       "collection": "ecommerce",
-      "name": "Ruiguan Detection Patent Design API",
+      "name": "Design Patent Risk Check",
       "description": "Detect design-patent risks by comparing a product image with patent records across more than 25 jurisdictions.",
       "group": "IP Risk Detection RG",
       "categoryDescription": "IP Risk Detection RG APIs.",
@@ -2195,7 +2195,7 @@
     {
       "slug": "ruiguan-gun-parts-search",
       "collection": "ecommerce",
-      "name": "Ruiguan Gun Parts Search API",
+      "name": "Prohibited Product Image Check",
       "description": "Compare product images with records of prohibited items to help review listing risks.",
       "group": "IP Risk Detection RG",
       "categoryDescription": "IP Risk Detection RG APIs.",
@@ -2206,7 +2206,7 @@
     {
       "slug": "ruiguan-trademark-graphic-detection",
       "collection": "ecommerce",
-      "name": "Ruiguan Trademark Graphic Detection API",
+      "name": "Graphic Trademark Check",
       "description": "Find visual matches between product images and registered graphic trademarks.",
       "group": "IP Risk Detection RG",
       "categoryDescription": "IP Risk Detection RG APIs.",
@@ -2217,7 +2217,7 @@
     {
       "slug": "shopee-product-detail",
       "collection": "ecommerce",
-      "name": "Shopee Product Detail API",
+      "name": "Shopee Product Detail",
       "description": "Retrieve public Shopee product details from a validated marketplace URL.",
       "group": "Shopee Product Research",
       "categoryDescription": "Shopee Product Research APIs.",
@@ -2228,7 +2228,7 @@
     {
       "slug": "shopee-product-search",
       "collection": "ecommerce",
-      "name": "Shopee Product Search API",
+      "name": "Shopee Product Search",
       "description": "Search and filter products across supported Shopee markets in Asia and Latin America for product selection and marketplace.",
       "group": "Shopee Product Research",
       "categoryDescription": "Shopee Product Research APIs.",
@@ -2239,7 +2239,7 @@
     {
       "slug": "shopify-product-query",
       "collection": "ecommerce",
-      "name": "Shopify Product Query API",
+      "name": "Shopify Product Query",
       "description": "Find Shopify products by keyword, price, sales, and other product filters.",
       "group": "Shopify Product Research",
       "categoryDescription": "Shopify Product Research APIs.",
@@ -2250,7 +2250,7 @@
     {
       "slug": "shopify-store-query",
       "collection": "ecommerce",
-      "name": "Shopify Store Query API",
+      "name": "Shopify Store Query",
       "description": "Find Shopify stores by country, product range, sales, and audience size.",
       "group": "Shopify Product Research",
       "categoryDescription": "Shopify Product Research APIs.",
@@ -4362,7 +4362,7 @@
     {
       "slug": "temu-category-search",
       "collection": "ecommerce",
-      "name": "Temu Category Search API",
+      "name": "Temu Category Search",
       "description": "Find synced Temu category names and IDs by keyword for use in product and store filtering.",
       "group": "Temu Product Research",
       "categoryDescription": "Temu Product Research APIs.",
@@ -4373,7 +4373,7 @@
     {
       "slug": "temu-product-source-query",
       "collection": "ecommerce",
-      "name": "Temu Product Source Query API",
+      "name": "Temu Product Source Query",
       "description": "Find Temu products by keyword, category, price, sales, and ratings.",
       "group": "Temu Product Research",
       "categoryDescription": "Temu Product Research APIs.",
@@ -4384,7 +4384,7 @@
     {
       "slug": "temu-store-source-query",
       "collection": "ecommerce",
-      "name": "Temu Store Source Query API",
+      "name": "Temu Store Source Query",
       "description": "Find Temu stores by country, category, sales, and store ratings.",
       "group": "Temu Product Research",
       "categoryDescription": "Temu Product Research APIs.",
@@ -4395,7 +4395,7 @@
     {
       "slug": "text-trademark-detector",
       "collection": "ecommerce",
-      "name": "Text Trademark Detector API",
+      "name": "Text Trademark Detector",
       "description": "Detect text-trademark and infringement risks in ecommerce product listings.",
       "group": "IP Risk Detection RG",
       "categoryDescription": "IP Risk Detection RG APIs.",
@@ -4406,7 +4406,7 @@
     {
       "slug": "tiktok-batch-product-detail",
       "collection": "ecommerce",
-      "name": "TikTok Batch Product Detail API",
+      "name": "TikTok Batch Product Detail",
       "description": "Look up multiple TikTok Shop products with sales, prices, ratings, and commission data.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -4417,7 +4417,7 @@
     {
       "slug": "tiktok-creator-analytics",
       "collection": "ecommerce",
-      "name": "TikTok Creator Analytics API",
+      "name": "TikTok Creator Analytics",
       "description": "Compare TikTok creators by followers, sales revenue, and region.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -4428,7 +4428,7 @@
     {
       "slug": "tiktok-creator-search",
       "collection": "ecommerce",
-      "name": "TikTok Creator Rankings API",
+      "name": "TikTok Creator Rankings",
       "description": "Query TikTok creator rankings by region and date range.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -4439,7 +4439,7 @@
     {
       "slug": "tiktok-livestream-analytics",
       "collection": "ecommerce",
-      "name": "TikTok Livestream Analytics API",
+      "name": "TikTok Livestream Analytics",
       "description": "Compare TikTok shopping livestreams by sales revenue, viewers, and products sold.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -4450,7 +4450,7 @@
     {
       "slug": "tiktok-new-product-rank",
       "collection": "ecommerce",
-      "name": "TikTok New Product Rank API",
+      "name": "TikTok New Product Rank",
       "description": "Discover trending new products across 16 TikTok Shop markets using regional new-product ranking data.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -4461,7 +4461,7 @@
     {
       "slug": "tiktok-product-analytics",
       "collection": "ecommerce",
-      "name": "TikTok Product Analytics API",
+      "name": "TikTok Product Analytics",
       "description": "Analyze TikTok Shop product leaderboards and product-level price, sales, revenue, commission, listing status, and shop data.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -4472,7 +4472,7 @@
     {
       "slug": "tiktok-product-analytics-api",
       "collection": "ecommerce",
-      "name": "TikTok Product Analytics Detail API",
+      "name": "TikTok Product Analytics Detail",
       "description": "Review a TikTok product's price, sales, revenue, commission, and shop details.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -4483,7 +4483,7 @@
     {
       "slug": "tiktok-product-discovery",
       "collection": "ecommerce",
-      "name": "TikTok Product Discovery API",
+      "name": "TikTok Product Discovery",
       "description": "Search and filter global TikTok Shop products by keyword, category, shop type, commission, sales, creator count, and sorting.",
       "group": "TikTok Intelligence FM",
       "categoryDescription": "TikTok Intelligence FM APIs.",
@@ -4494,7 +4494,7 @@
     {
       "slug": "tiktok-product-search",
       "collection": "ecommerce",
-      "name": "TikTok Product Search API",
+      "name": "TikTok Product Search",
       "description": "Search TikTok Shop products across 16 markets using sales, creator-sales, pricing, and commission data.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -4505,7 +4505,7 @@
     {
       "slug": "tiktok-seller-detail",
       "collection": "ecommerce",
-      "name": "TikTok Seller Detail API",
+      "name": "TikTok Seller Detail",
       "description": "Review a TikTok seller's sales, followers, ratings, products, and promotional content.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -4516,7 +4516,7 @@
     {
       "slug": "tiktok-shop-analytics",
       "collection": "ecommerce",
-      "name": "TikTok Shop Analytics API",
+      "name": "TikTok Shop Analytics",
       "description": "Search TikTok Shop leaderboards and store details with regional sales, revenue, product, channel, and creator-collaboration.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -4527,7 +4527,7 @@
     {
       "slug": "tiktok-shop-product-detail",
       "collection": "ecommerce",
-      "name": "TikTok Shop Product Detail API",
+      "name": "TikTok Shop Product Detail",
       "description": "Retrieve public TikTok Shop product details by supported region.",
       "group": "TikTok Shop Product Details",
       "categoryDescription": "TikTok Shop Product Details APIs.",
@@ -4538,7 +4538,7 @@
     {
       "slug": "tiktok-top-selling-products",
       "collection": "ecommerce",
-      "name": "TikTok Top Selling Products API",
+      "name": "TikTok Top Selling Products",
       "description": "Query TikTok Shop top-selling product rankings by day, week, month, market, and category.",
       "group": "TikTok Intelligence FM",
       "categoryDescription": "TikTok Intelligence FM APIs.",
@@ -4549,7 +4549,7 @@
     {
       "slug": "tiktok-video-analytics",
       "collection": "ecommerce",
-      "name": "TikTok Video Analytics API",
+      "name": "TikTok Video Analytics",
       "description": "Compare TikTok promotional videos by views, engagement, and sales revenue.",
       "group": "TikTok Intelligence KD",
       "categoryDescription": "TikTok Intelligence KD APIs.",
@@ -4560,7 +4560,7 @@
     {
       "slug": "tiktok-video-download-url",
       "collection": "ecommerce",
-      "name": "TikTok Video Download URL API",
+      "name": "TikTok Video Download URL",
       "description": "Resolve TikTok video URLs to playback, cover-image, watermarked, and no-watermark download addresses for offline analysis.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -4571,7 +4571,7 @@
     {
       "slug": "tiktok-video-rank",
       "collection": "ecommerce",
-      "name": "TikTok Video Rank API",
+      "name": "TikTok Video Rank",
       "description": "Rank public TikTok ecommerce videos by supported market, date, category, and performance filters with paginated result totals.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -4582,7 +4582,7 @@
     {
       "slug": "tiktok-video-search",
       "collection": "ecommerce",
-      "name": "TikTok Video Search API",
+      "name": "TikTok Video Search",
       "description": "Find TikTok videos by product, creator, region, engagement, and sales performance.",
       "group": "TikTok Intelligence ET",
       "categoryDescription": "TikTok Intelligence ET APIs.",
@@ -4593,7 +4593,7 @@
     {
       "slug": "utility-patent-detector",
       "collection": "ecommerce",
-      "name": "Utility Patent Detector API",
+      "name": "Utility Patent Detector",
       "description": "Search for similar utility and invention patents from product information.",
       "group": "IP Risk Detection RG",
       "categoryDescription": "IP Risk Detection RG APIs.",
@@ -4604,7 +4604,7 @@
     {
       "slug": "walmart-category-market",
       "collection": "ecommerce",
-      "name": "Walmart Category Market API",
+      "name": "Walmart Category Market",
       "description": "Find Walmart categories and review category market reports.",
       "group": "Walmart Intelligence ST",
       "categoryDescription": "Walmart Intelligence ST APIs.",
@@ -4615,7 +4615,7 @@
     {
       "slug": "walmart-keyword-research",
       "collection": "ecommerce",
-      "name": "Walmart Keyword Research API",
+      "name": "Walmart Keyword Research",
       "description": "Research Walmart keywords and the products associated with them.",
       "group": "Walmart Intelligence ST",
       "categoryDescription": "Walmart Intelligence ST APIs.",
@@ -4626,7 +4626,7 @@
     {
       "slug": "walmart-product-analysis",
       "collection": "ecommerce",
-      "name": "Walmart Product Analysis API",
+      "name": "Walmart Product Analysis",
       "description": "Analyze Walmart products, detail records, performance trends, and dated sales volume. Results come back as structured JSON.",
       "group": "Walmart Intelligence ST",
       "categoryDescription": "Walmart Intelligence ST APIs.",
@@ -4637,7 +4637,7 @@
     {
       "slug": "walmart-product-detail",
       "collection": "ecommerce",
-      "name": "Walmart Product Detail API",
+      "name": "Walmart Product Detail",
       "description": "Look up Walmart product details, price history, and sales trends.",
       "group": "Walmart Product Research",
       "categoryDescription": "Walmart Product Research APIs.",
@@ -4648,7 +4648,7 @@
     {
       "slug": "walmart-search",
       "collection": "ecommerce",
-      "name": "Walmart Search API",
+      "name": "Walmart Search",
       "description": "Search Walmart product listings by keyword, category, price range, and other filters.",
       "group": "Walmart Product Research",
       "categoryDescription": "Walmart Product Research APIs.",
@@ -4659,7 +4659,7 @@
     {
       "slug": "web-search",
       "collection": "ecommerce",
-      "name": "Web Search API",
+      "name": "Web Search",
       "description": "Search the web for current information, community discussions, external articles, and trending topics.",
       "group": "Web Search",
       "categoryDescription": "Web Search APIs.",
@@ -4791,7 +4791,7 @@
     {
       "slug": "zhihuiya-patent-image-search",
       "collection": "ecommerce",
-      "name": "Zhihuiya Patent Image Search API",
+      "name": "Design Patent Image Search",
       "description": "Find visually similar design patents from an image URL with country, legal-status, date, Locarno-classification, and assignee.",
       "group": "Patent Intelligence ZY",
       "categoryDescription": "Patent Intelligence ZY APIs.",

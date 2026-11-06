@@ -37,8 +37,9 @@ export function projectFeed(payload, sitemap, previous, now=new Date().toISOStri
     if (typeof skill.endpoint !== 'string'||!skill.endpoint.trim()) throw new Error(`Missing public API contract: ${slug}`);
     const endpoint=new URL(skill.endpoint,'https://api.nexscope.ai');
     if (endpoint.origin !== 'https://api.nexscope.ai'||endpoint.username||endpoint.password||endpoint.search||endpoint.hash) throw new Error(`Invalid official API endpoint: ${slug}`);
-    // Keep reviewed customer-facing names; refresh availability, category and API contract summary.
-    const entry={slug,collection:'ecommerce',name:prior?.name||clean(skill.name),description:clean(skill.description||skill.summary)||prior?.description||clean(skill.name),
+    // Official copy can change without a new slug. Prefer the current publication;
+    // cached copy is only a fallback when the source omits usable text.
+    const entry={slug,collection:'ecommerce',name:clean(skill.name)||prior?.name,description:clean(skill.description)||clean(skill.summary)||prior?.description||clean(skill.name),
       group:clean(category.name),categoryDescription:clean(category.description),categorySlug:skill.categorySlug,method:'POST',path:endpoint.pathname};
     if (!entry.name||!entry.description) throw new Error(`Empty public API copy: ${slug}`);
     entries.set(slug,entry);

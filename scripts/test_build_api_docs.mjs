@@ -190,6 +190,27 @@ test('live refresh publishes only current canonical Data APIs and excludes withd
   assert.throws(()=>projectFeed(payload,sitemap,snapshot),/membership/);
 });
 
+test('refresh updates official copy for an existing slug and retains cached text only when omitted',()=>{
+  const old={...snapshot,entries:[{...entry,name:'Old account lookup',description:'Old account summary'}]};
+  const skill={...entry,name:'Advertiser Accounts',description:'List available advertising accounts.',endpoint:'/public/accounts'};
+  const payload={source:'server',categories:[{slug:entry.categorySlug,name:'Amazon Ads'}],skills:[skill]};
+  const sitemap='<urlset><url><loc>https://www.nexscope.ai/api-docs/test-api</loc></url></urlset>';
+  const selected=membership('test-api');
+  const now='2026-11-06T12:00:00Z';
+  const fresh=projectFeed(payload,sitemap,old,now,selected);
+  assert.equal(fresh.entries[0].name,'Advertiser Accounts');
+  assert.equal(fresh.entries[0].description,'List available advertising accounts.');
+  assert.equal(fresh.entries[0].slug,entry.slug);
+  assert.equal(officialApiUrl(fresh.entries[0].slug),officialApiUrl(entry.slug));
+  assert.equal(fresh.generatedAt,now);
+  assert.equal(old.entries[0].name,'Old account lookup');
+  const fallback=projectFeed({...payload,skills:[{...skill,name:' ',description:' ',summary:'Current short summary.'}]},sitemap,old,now,selected);
+  assert.equal(fallback.entries[0].name,'Old account lookup');
+  assert.equal(fallback.entries[0].description,'Current short summary.');
+  const unchanged=projectFeed(payload,sitemap,fresh,'2026-11-07T12:00:00Z',selected);
+  assert.equal(unchanged.generatedAt,now);
+});
+
 test('generated SEO metadata and structured data describe visible category content and official API links',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'data-seo-'));
   await buildRoot(snapshot,dir,{schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T00:00:00Z',apis:{},categories:{}});
