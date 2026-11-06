@@ -8,7 +8,7 @@ description: "Build a repeatable AI citation observation log with Nexscope API a
 permalink: /guides/ai-visibility-api-mcp-citation-tracking/
 date_published: 2026-11-05
 date_modified: 2026-11-05
-last_modified_at: 2026-11-05
+last_modified_at: 2026-11-06
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -40,6 +40,8 @@ An **AI visibility API** can help answer which sources appeared in a bounded ans
 {% include api-guide-entry.html %}
 
 *Reviewed November 5, 2026 against current public contracts. Vendor-authored implementation guide. Download code was checked with constructed offline fixtures; no paid production request, customer benchmark or traffic lift is claimed.*
+For a one-time reviewed interpretation instead of an API integration, see the [AI product visibility audit guide]({{ '/guides/ai-product-visibility-audit/' | relative_url }}). It separates brand mentions, product matches and explicit recommendations using a dated public example.
+
 ## What are you actually measuring?
 
 **Separate sampled answers, historical database records and first-party referrals.** The [AI Search Citation Sample reference](https://www.nexscope.ai/api-docs/seo-ai-search-citation-sample?view=api) describes a bounded consumer ChatGPT answer observation. The historical [AI Mention Records interface](https://www.nexscope.ai/api-docs/seo-ai-mention-records?view=api) describes provider database records. Neither is your analytics account.

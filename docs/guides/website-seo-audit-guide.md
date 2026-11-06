@@ -7,7 +7,7 @@ description: "Audit one ecommerce product or category page for crawlability, met
 permalink: /website-seo-audit-guide/
 date_published: 2026-09-15
 date_modified: 2026-10-19
-last_modified_at: 2026-10-19
+last_modified_at: 2026-11-06
 last_reviewed: 2026-10-19
 author: Nexscope Team
 schema_type: Article
@@ -45,6 +45,8 @@ image_caption: "Illustration: a useful page audit combines crawl signals, conten
 **An ecommerce product page SEO audit checks whether one product or category URL can be fetched, understood, and selected for search.** Start with crawlability and canonical signals, then review the title, description, headings, product content, internal links, images, structured data, and mobile performance. A single-page [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) report identifies evidence and risks; it does not replace a sitewide ecommerce audit or guarantee rankings.
 
 **Quick answer:** For a single-page ecommerce audit, fix blocking technical signals first, make the page answer one buyer intent with specific product facts, and connect it to relevant category and guide pages. If the same defect appears across a template or catalog, use the [sitewide ecommerce site audit checklist]({{ '/ecommerce-seo-audit/' | relative_url }}). Recheck Search Console after publishing because a sitemap or a passing live test does not guarantee indexing.
+
+If you need a reviewed plan for one product rather than a self-directed audit, see the [Product Growth Report guide]({{ '/guides/product-growth-report-guide/' | relative_url }}). It explains service selection, the included SEO/GEO analyses and how you apply the findings.
 
 ## Crawl eligibility and index selection are different checks
 

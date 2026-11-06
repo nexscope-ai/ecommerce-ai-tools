@@ -50,6 +50,8 @@ faq:
 
 For server-side automation, use the [image generation API Python tutorial]({{ '/guides/image-generation-api-python/' | relative_url }}). For the November release discussion, read [GPT Image 2.6 for ecommerce]({{ '/ecommerce-trends/gpt-image-2-6-ecommerce/' | relative_url }}); its announced features are separate from the currently listed Nexscope model routes.
 
+If you prefer to submit a creative brief and receive reviewed image deliverables, read the [product advertising image brief guide]({{ '/guides/product-ad-image-brief/' | relative_url }}). It distinguishes that service from this self-service generation workflow.
+
 ## See a real edit before choosing your product-photo brief
 
 This **September 20, 2026 Flare example** used a generated bottle concept rather than a real merchant SKU. It returned one image and the recorded usage was 116 credits. The background changed, but so did label size and bottle/cap proportions. The result is useful for understanding a failure, not as approved listing photography or a Nano Banana comparison.

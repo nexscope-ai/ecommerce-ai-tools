@@ -9,7 +9,7 @@ permalink: /amazon-listing-optimization-tool/
 last_reviewed: 2026-09-30
 date_published: 2026-09-23
 date_modified: 2026-09-30
-last_modified_at: 2026-09-30
+last_modified_at: 2026-11-06
 author: Nexscope Team
 schema_type: Article
 next_step:
@@ -38,6 +38,8 @@ To **optimize an Amazon listing**, start with its current content and a specific
 **[Open the AI Amazon Listing Optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=learn).** The workflow requires sign-in, and live research or AI steps may use credits.
 
 > **Quick answer:** Enter an ASIN or Amazon product URL, select the marketplace, and optionally add a target keyword. Review the listing snapshot, reverse-ASIN keyword sample, traffic signals, and product history before accepting any recommendation. Prioritize changes with a clear source, a feasible edit, and a way to check the result.
+
+If you need suggested writing delivered for review, use the [product description rewrite guide]({{ '/guides/product-description-rewrite/' | relative_url }}). This is a separate reviewed service; you remain responsible for applying approved listing changes.
 
 ## What does the audit examine?
 

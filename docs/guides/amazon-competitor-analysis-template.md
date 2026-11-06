@@ -9,7 +9,7 @@ schema_type: Article
 og_type: article
 date_published: "2026-09-17"
 date_modified: "2026-09-24"
-last_modified_at: "2026-09-24"
+last_modified_at: 2026-11-06
 last_reviewed: 2026-09-17
 image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
 image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp
@@ -24,6 +24,8 @@ image_caption: "Illustration: define comparable products first, then evaluate at
 A competitor spreadsheet is only useful if the products belong in the same comparison. A premium insulated bottle and a disposable party cup may both appear for “travel drink container,” but their buyers are solving different problems.
 
 Start with the purchase decision—not the biggest list of ASINs. This guide gives you a reusable framework for deciding which competitors to study and what evidence to collect.
+
+Prefer a reviewed deliverable for one item and market? The [product competitor analysis report guide]({{ '/guides/product-competitor-analysis-report/' | relative_url }}) explains comparing direct peers, benchmarks and complete offers.
 
 ## Define the decision before collecting data
 
