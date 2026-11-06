@@ -55,7 +55,7 @@
       matchingCounts[section.dataset.resultsKind] += visible;
       if (section.dataset.resultsKind === activeView) total += visible;
     }
-    count.textContent = `${total} ${activeView === 'categories' ? (total === 1 ? 'category' : 'categories') : (total === 1 ? 'API' : 'APIs')} ${words.length || platform ? 'matching your selection' : 'available'}`;
+    count.textContent = `${total} ${activeView === 'categories' ? (total === 1 ? 'category' : 'categories') : (total === 1 ? 'API' : 'APIs')} ${words.length || platform ? 'matching your selection' : 'listed'}`;
     empty.hidden = total > 0;
     clear.hidden = words.length === 0;
     for (const button of platformButtons) button.setAttribute('aria-pressed', String(button.getAttribute('data-platform-filter') === platform));

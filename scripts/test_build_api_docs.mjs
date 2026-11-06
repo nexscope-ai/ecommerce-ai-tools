@@ -11,10 +11,36 @@ import {projectCreditStatistics, fetchPublicCreditStatistics, withPublicCreditSt
 import {categoryCopyMap, operationCopyMap, researchWorkflows} from './data-api-copy.mjs';
 import {projectDirectoryMembership} from './data-directory-membership.mjs';
 import {categoryPath, categoryRouteSlugs, categoryRedirects} from './data-category-routes.mjs';
+import {announcedProcurement,supplementAnnouncedData,procurementCategory} from './announced-data-apis.mjs';
 
 const entry={slug:'test-api',collection:'ecommerce',name:'Test API',description:'Public <example>',group:'Data',categorySlug:'data-amazon-front-data',method:'POST',path:'/test',requestSchema:{type:'object',properties:{query:{type:'string',description:'Query'}},required:['query']},requestExample:{query:'example'}};
 const snapshot={schemaVersion:1,scope:'data',generatedAt:'2026-10-29T00:00:00Z',entries:[entry]};
 const membership=(...slugs)=>({collection:'ecommerce',slugs});
+
+test('announced procurement is discoverable without dead official links and upgrades to published copy',()=>{
+  const pending=supplementAnnouncedData(snapshot);
+  assert.equal(pending.entries.length,snapshot.entries.length+14);
+  assert.equal(new Set(pending.entries.map(e=>e.slug)).size,pending.entries.length);
+  assert.equal(supplementAnnouncedData(pending).entries.length,pending.entries.length);
+  const source=buildPages(pending).get(`${procurementCategory}.md`);
+  assert.equal((source.match(/api-docs-pending/g)||[]).length,14);
+  assert.ok(source.includes('14 announced references'));
+  assert.ok(source.includes('confirmation'));
+  const html=renderStandalone(source,pending);
+  for(const e of announcedProcurement) assert.ok(!html.includes(officialApiUrl(e.slug)));
+  assert.ok(html.includes('"numberOfItems":0'));
+  const announced=announcedProcurement[0];
+  const {documentationStatus,...contract}=announced;
+  const published={...contract,name:'Current official account authorization',description:'Current contract from the official feed.'};
+  const upgraded=supplementAnnouncedData({...snapshot,entries:[...snapshot.entries,published]});
+  const current=upgraded.entries.find(e=>e.slug===published.slug);
+  assert.equal(current.name,published.name);
+  assert.equal(current.documentationStatus,undefined);
+  const liveHtml=renderStandalone(buildPages(upgraded).get(`${procurementCategory}.md`),upgraded);
+  assert.ok(liveHtml.includes(officialApiUrl(published.slug)));
+  assert.equal((liveHtml.match(/api-docs-pending/g)||[]).length,13);
+  assert.ok(!supplementAnnouncedData(snapshot,[announced.slug]).entries.some(e=>e.slug===announced.slug));
+});
 
 test('opaque category routes have unique task paths and direct compatible aliases',()=>{
   assert.equal(categoryPath('data-ss'),'/data/amazon-market-research/');
@@ -51,7 +77,7 @@ test('task routes update HTML and schema, keep operations and tracking IDs, and 
     assert.ok(html.includes(`<link rel="canonical" href="https://learn.nexscope.ai${canonical}">`));
     assert.ok(html.includes(`<meta property="og:url" content="https://learn.nexscope.ai${canonical}">`));
     assert.ok(!html.includes('http-equiv="refresh"'));
-    for(const e of current.entries.filter(e=>e.categorySlug===category)) assert.ok(html.includes(officialApiUrl(e.slug)));
+    for(const e of current.entries.filter(e=>e.categorySlug===category)) assert.equal(html.includes(officialApiUrl(e.slug)),e.documentationStatus!=='pending',`documentation link state: ${e.slug}`);
   }
   for(const [previous,target] of categoryRedirects(categories)){
     assert.ok(!paths.includes(previous));
@@ -290,7 +316,7 @@ test('editorial mappings cover published categories without changing contracts o
     const html=pages.get(key+'.md');
     assert.ok(html.includes(categoryCopyMap[key].name.replaceAll('&','&amp;')));
     assert.match(html,/Is this the right category for your task/);
-    for(const entry of current.entries.filter(e=>e.categorySlug===key)) assert.ok(html.includes(officialApiUrl(entry.slug)));
+    for(const entry of current.entries.filter(e=>e.categorySlug===key)) assert.equal(html.includes(officialApiUrl(entry.slug)),entry.documentationStatus!=='pending',`documentation link state: ${entry.slug}`);
   }
   for(const slug of Object.keys(operationCopyMap)) assert.ok(current.entries.some(e=>e.slug===slug),`stale operation mapping: ${slug}`);
   assert.equal(JSON.stringify(current),before,'rendering must not mutate the refreshed contracts');
