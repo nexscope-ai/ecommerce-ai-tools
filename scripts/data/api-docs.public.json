@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "data",
-  "generatedAt": "2026-11-06T08:15:03.976Z",
+  "generatedAt": "2026-11-06T08:45:42.647Z",
   "entries": [
     {
       "slug": "1688-product-billboard",
@@ -936,8 +936,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/authorizeUrl",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/authorizeUrl"
     },
     {
       "slug": "data-alibaba1688-authorized-stores",
@@ -948,8 +947,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/authorizedStores",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/authorizedStores"
     },
     {
       "slug": "data-alibaba1688-cancel-order",
@@ -960,8 +958,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/cancelOrder",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/cancelOrder"
     },
     {
       "slug": "data-alibaba1688-confirm-receive",
@@ -972,8 +969,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/confirmReceive",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/confirmReceive"
     },
     {
       "slug": "data-alibaba1688-create-order",
@@ -984,8 +980,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/createOrder",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/createOrder"
     },
     {
       "slug": "data-alibaba1688-invoice-amount",
@@ -996,8 +991,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/invoiceAmount",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/invoiceAmount"
     },
     {
       "slug": "data-alibaba1688-invoice-apply",
@@ -1008,8 +1002,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/invoiceApply",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/invoiceApply"
     },
     {
       "slug": "data-alibaba1688-logistics",
@@ -1020,8 +1013,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/logistics",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/logistics"
     },
     {
       "slug": "data-alibaba1688-logistics-trace",
@@ -1032,8 +1024,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/logisticsTrace",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/logisticsTrace"
     },
     {
       "slug": "data-alibaba1688-order-preview",
@@ -1044,8 +1035,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/orderPreview",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/orderPreview"
     },
     {
       "slug": "data-alibaba1688-order-status",
@@ -1056,8 +1046,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/orderStatus",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/orderStatus"
     },
     {
       "slug": "data-alibaba1688-payment-url",
@@ -1068,8 +1057,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/paymentUrl",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/paymentUrl"
     },
     {
       "slug": "data-alibaba1688-receive-address-list",
@@ -1080,8 +1068,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/receiveAddressList",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/receiveAddressList"
     },
     {
       "slug": "data-alibaba1688-sku",
@@ -1092,8 +1079,7 @@
       "categoryDescription": "Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.",
       "categorySlug": "data-1688-procurement",
       "method": "POST",
-      "path": "/alibaba1688/sku",
-      "documentationStatus": "pending"
+      "path": "/alibaba1688/sku"
     },
     {
       "slug": "data-amazon-ads-authorized-stores",
