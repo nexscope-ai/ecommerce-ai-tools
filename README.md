@@ -1,16 +1,17 @@
 # Nexscope Ecommerce AI Tools
 
-**AI product video workflows. Ecommerce Data APIs. Social Media APIs. Free product listings.**
+**Ecommerce Data & Social APIs. AI product videos. Product Growth Reports. Free product listings.**
 
 [![Video Workflows](assets/badges/video-workflows.svg)](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_video) [![Data APIs](assets/badges/data-apis.svg)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](assets/badges/product-gallery.svg)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](assets/badges/discussions.svg)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](assets/badges/license.svg)](LICENSE)
 
-Create product videos from photos, listing links or reference clips. Explore ecommerce Data APIs, or give your product a free public page built for search and AI discovery. Choose a starting point on [Nexscope Learn](https://learn.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_home).
+Build with ecommerce and social data, create product videos, or turn a product link into a human-reviewed improvement plan. You can also give your product a free public page built for search and AI discovery. Choose a starting point on [Nexscope Learn](https://learn.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_home).
 
 | What do you want to do? | Start here |
 | --- | --- |
 | Create a product video from images, a listing link, an avatar or a reference clip | **[Compare video workflows and watch examples →](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_video)** |
 | Find ecommerce data for an application, research task or AI workflow | **[Explore the Data API directory →](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_data)** |
 | Research social profiles, posts, comments or video transcripts | **[Explore Social Media APIs →](https://learn.nexscope.ai/social/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_primary_social)** |
+| Decide what to improve on one product page, with reviewed findings and next actions | **[Explore Product Growth Reports →](https://learn.nexscope.ai/product-growth-report/?utm_source=github&utm_medium=referral&utm_campaign=product_growth_report&utm_content=readme_primary_report)** |
 | Give your product a public page with facts, images and a link to your store | **[List your product for free →](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_primary_gallery)** |
 
 ## 1. AI product videos: choose a workflow for the materials you have
@@ -52,7 +53,30 @@ Practical guides: [Reddit product research](docs/guides/reddit-api-mcp-product-r
 
 The directory is free to browse. API requests require an account API key and follow the selected endpoint's access and credit requirements. Fields, freshness and coverage vary by platform; missing data does not prove that content or activity does not exist. For marketplace products, sourcing and TikTok Shop research, use the separate [ecommerce Data API directory](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_social_to_data).
 
-## 4. Product Gallery: list and display your product completely free
+## 4. Product Growth Report: turn a product link into a focused action plan
+
+For ecommerce operators and developers who need to decide what to improve next. Submit an Amazon or public store product URL, choose one target market, and select the help you need: **AI mention analysis, competitor analysis, keyword optimization, product copy rewriting or advertising images**. SEO and GEO analyses are included with your paid selection; they cannot be requested alone.
+
+- **Choose your scope:** select at least one service and review the current credit quote before submitting. Advertising images are quoted per image.
+- **Receive reviewed work:** read and download an HTML report with findings, available evidence and recommended changes, plus PNG images if selected. Expected delivery is within 24 hours, after human review.
+- **Apply a clear next step:** use the findings to review your product facts, revise copy or brief creative work. Your team implements the changes.
+
+**[Explore the report and a worked example →](https://learn.nexscope.ai/product-growth-report/?utm_source=github&utm_medium=referral&utm_campaign=product_growth_report&utm_content=readme_report_feature)** · **[Choose services on Nexscope →](https://www.nexscope.ai/product-growth-report?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=product_growth_report&utm_content=readme_report_request#request)**
+
+Choose a practical guide for your task:
+
+| Your next task | Guide |
+| --- | --- |
+| Understand the inputs, quote, review and delivery | [Product Growth Report guide](docs/guides/product-growth-report-guide.md) |
+| Check how a product appears in sampled AI answers | [AI product visibility audit](docs/guides/ai-product-visibility-audit.md) |
+| Compare relevant products and observable differences | [Product competitor analysis](docs/guides/product-competitor-analysis-report.md) |
+| Map relevant phrases to the right product-page sections | [Product keyword mapping](docs/guides/product-keyword-mapping.md) |
+| Rewrite a product description using supported facts | [Product description rewriting](docs/guides/product-description-rewrite.md) |
+| Prepare an image brief and review generated concepts | [Product advertising image brief](docs/guides/product-ad-image-brief.md) |
+
+This is a paid, one-product, one-market service, separate from the completely free Product Gallery. Credits are deducted on successful submission; if a request is rejected, the deducted credits are returned with an explanation. It does not include website editing, ongoing monitoring or ad management, and does not guarantee rankings, AI recommendations, traffic or sales.
+
+## 5. Product Gallery: list and display your product completely free
 
 Give search and AI systems a clearer source about what you sell. An approved Gallery page brings your product facts, images, optional video and original store link together in one public page. This can support **AI discovery and generative engine optimization (GEO)**, while shoppers follow the link to your store to buy.
 
