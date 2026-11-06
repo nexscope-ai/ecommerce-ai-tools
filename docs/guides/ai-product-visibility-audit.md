@@ -24,7 +24,7 @@ next_step:
   title: "Request an answer-level product visibility review"
   description: "Choose one product and target market, select the relevant services and review the current credit quote before confirming. SEO and GEO analyses are included with at least one paid service."
   label: "Choose AI mention analysis"
-  url: https://www.nexscope.ai/product-growth-report?co-from=learn
+  url: https://www.nexscope.ai/product-growth-report?co-from=learn#request
 faq:
   - question: "Is a brand mention the same as a product recommendation?"
     answer: "No. A response may name the brand without identifying your product or recommending it for the question. Inspect the actual wording, product match and cited source."
@@ -109,7 +109,7 @@ No. Clear product identity and evidence can address readiness gaps, but they do 
 ## Sources and scope
 
 - [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn) — available configuration and quote.
+- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

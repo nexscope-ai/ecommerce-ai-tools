@@ -24,7 +24,7 @@ next_step:
   title: "Request a focused product advertising image pack"
   description: "Choose one product and target market, select the relevant services and review the current credit quote before confirming. SEO and GEO analyses are included with at least one paid service."
   label: "Choose advertising images"
-  url: https://www.nexscope.ai/product-growth-report?co-from=learn
+  url: https://www.nexscope.ai/product-growth-report?co-from=learn#request
 faq:
   - question: "How many advertising images can I request?"
     answer: "The current Product Growth Report form supports 1–20 advertising images, charged per image. Review the configuration and total credit quote before submitting."
@@ -117,7 +117,7 @@ No. The service provides selected creative deliverables reviewed before release.
 ## Sources and scope
 
 - [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn) — available configuration and quote.
+- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

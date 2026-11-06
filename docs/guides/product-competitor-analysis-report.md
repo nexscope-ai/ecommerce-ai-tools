@@ -24,7 +24,7 @@ next_step:
   title: "Compare your product with relevant alternatives"
   description: "Choose one product and target market, select the relevant services and review the current credit quote before confirming. SEO and GEO analyses are included with at least one paid service."
   label: "Choose competitor analysis"
-  url: https://www.nexscope.ai/product-growth-report?co-from=learn
+  url: https://www.nexscope.ai/product-growth-report?co-from=learn#request
 faq:
   - question: "Which products count as direct competitors?"
     answer: "Start with alternatives that solve a similar buying task in the chosen market. A benchmark may show another capability without being a like-for-like offer. Verify each exact product and variant."
@@ -109,7 +109,7 @@ No. Submitting a public product URL does not grant access to private seller data
 ## Sources and scope
 
 - [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn) — available configuration and quote.
+- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

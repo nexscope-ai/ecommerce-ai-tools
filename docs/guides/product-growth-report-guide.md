@@ -24,7 +24,7 @@ next_step:
   title: "Choose the report for your next product decision"
   description: "Choose one product and target market, select the relevant services and review the current credit quote before confirming. SEO and GEO analyses are included with at least one paid service."
   label: "Configure a Product Growth Report"
-  url: https://www.nexscope.ai/product-growth-report?co-from=learn
+  url: https://www.nexscope.ai/product-growth-report?co-from=learn#request
 faq:
   - question: "What is a product growth report?"
     answer: "Nexscope Product Growth Report is a one-time, human-reviewed analysis and optional creative service for one product and target market. It provides findings, available evidence and recommendations that you apply yourself."
@@ -79,7 +79,7 @@ This is a Nexscope-published reference example, not a customer growth case study
 
 ## Submit, review the quote and follow the request
 
-Open the [Product Growth Report request form](https://www.nexscope.ai/product-growth-report?co-from=learn). Choose at least one service and inspect the quote for your configuration before confirming. Advertising images are charged by the selected quantity; other services follow the current configuration. Credits are deducted when submission succeeds, rather than while you fill in the form.
+Open the [Product Growth Report request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request). Choose at least one service and inspect the quote for your configuration before confirming. Advertising images are charged by the selected quantity; other services follow the current configuration. Credits are deducted when submission succeeds, rather than while you fill in the form.
 
 Delivery is currently expected within 24 hours, with human review before release. Treat that as an estimate. Use the request status or history instead of leaving the page open. You can choose a readiness notification to your registered email.
 
@@ -118,7 +118,7 @@ No. Review the delivered findings and selected materials, then apply approved ch
 ## Sources and scope
 
 - [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn) — available configuration and quote.
+- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

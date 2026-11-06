@@ -24,7 +24,7 @@ next_step:
   title: "Get a keyword plan tied to your actual product"
   description: "Choose one product and target market, select the relevant services and review the current credit quote before confirming. SEO and GEO analyses are included with at least one paid service."
   label: "Choose keyword optimization"
-  url: https://www.nexscope.ai/product-growth-report?co-from=learn
+  url: https://www.nexscope.ai/product-growth-report?co-from=learn#request
 faq:
   - question: "What is product keyword mapping?"
     answer: "It connects a relevant search phrase and buyer intent to a useful product-page location, with a reason and evidence boundary. It is more specific than adding every related term to a title."
@@ -113,7 +113,7 @@ No. Use a phrase only when it accurately describes the item. Do not turn an adja
 ## Sources and scope
 
 - [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn) — available configuration and quote.
+- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.
