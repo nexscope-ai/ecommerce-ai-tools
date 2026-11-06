@@ -1,5 +1,5 @@
-// Public release announcement approved for directory display. Pending references
-// must not link to unavailable documentation or be presented as tested endpoints.
+// Public release announcement approved for directory display and direct links.
+// Current official feed entries take precedence as the publication catches up.
 export const procurementCategory = 'data-1688-procurement';
 export const announcedProcurement = [
   ['authorize-url','Authorize URL','authorizeUrl','Get the authorization link for your own 1688 account. Authorization is supported by LinkFox Agent; Nexscope keeps each user bound to their own authorized account.'],
@@ -19,12 +19,12 @@ export const announcedProcurement = [
 ].map(([suffix,name,endpoint,description])=>({
   slug:`data-alibaba1688-${suffix}`,collection:'ecommerce',name:`1688 ${name}`,description,
   group:'1688 Procurement',categoryDescription:'Authorize your own 1688 account, prepare purchase orders and follow up on shipping and invoices.',
-  categorySlug:procurementCategory,method:'POST',path:`/alibaba1688/${endpoint}`,documentationStatus:'pending',
+  categorySlug:procurementCategory,method:'POST',path:`/alibaba1688/${endpoint}`,
 }));
 
 export function supplementAnnouncedData(snapshot, withdrawnSlugs=[]) {
   const present=new Set(snapshot.entries.map(e=>e.slug)),withdrawn=new Set(withdrawnSlugs);
-  const pending=announcedProcurement.filter(e=>!present.has(e.slug)&&!withdrawn.has(e.slug));
-  if (!pending.length) return snapshot;
-  return {...snapshot,entries:[...snapshot.entries,...pending].sort((a,b)=>a.slug.localeCompare(b.slug))};
+  const additions=announcedProcurement.filter(e=>!present.has(e.slug)&&!withdrawn.has(e.slug));
+  if (!additions.length) return snapshot;
+  return {...snapshot,entries:[...snapshot.entries,...additions].sort((a,b)=>a.slug.localeCompare(b.slug))};
 }

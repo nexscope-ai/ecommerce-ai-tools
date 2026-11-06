@@ -76,8 +76,7 @@ export async function refreshSnapshot(directory=root) {
   const temporary=file+'.tmp';
   await writeFile(temporary,JSON.stringify(snapshot,null,2)+'\n');
   await rename(temporary,file);
-  const pending=snapshot.entries.filter(e=>e.documentationStatus==='pending').length;
-  console.log(`Refreshed ${snapshot.entries.length-pending} published Data APIs and ${pending} announced references awaiting documentation.`);
+  console.log(`Refreshed ${current.entries.length} official Data APIs and ${snapshot.entries.length-current.entries.length} release-announcement references.`);
   return snapshot;
 }
 
