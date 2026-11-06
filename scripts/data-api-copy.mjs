@@ -3,6 +3,7 @@
 export const copyReviewedAt = '2026-11-02T00:00:00Z';
 const category = (name, description, chooseWhen) => ({name, description, chooseWhen});
 export const categoryCopyMap = {
+  'data-1688-procurement': category('1688 Procurement & Order Management', 'Explore 1688 account authorization, addresses, SKUs, order preparation, logistics and invoice operations.', 'Use your own authorized 1688 account and check each card’s documentation status. Authorization is supported by LinkFox Agent. Review the current quote before any request. Order creation, payment-link retrieval, receipt confirmation, cancellation and invoice applications require explicit confirmation.'),
   'social-data': category('Social & Content Data APIs', 'Explore platform-specific profile, post, comment, search and transcript endpoints for social and content research.', 'Choose a platform and inspect its available operations. The dedicated Social APIs directory groups these endpoints by platform; inputs and available data differ by operation.'),
   'woocommerce': category('WooCommerce Products, Variations & Store Research', 'Research products, variations, reviews, taxonomies and collection statistics within one specified public WooCommerce store.', 'Start with a public store URL, then inspect products and their variations. Store version and configuration affect available data; this is not a global store search or access to private orders.'),
   'jev': category('API Discovery & Content Evaluation', 'Discover a matching published API or evaluate supplied content with Nexscope JEV.', 'Use routing to inspect a suggested API, or evaluate content you are authorized to submit. Routing does not execute the suggested API; review results and current access requirements.'),
@@ -60,9 +61,10 @@ export const operationCopyMap = {
   'woocommerce-product-attribute-terms': 'Retrieve terms for a selected product attribute, such as the values used for size or color.',
   'woocommerce-product-reviews': 'Retrieve public reviews from a specified WooCommerce store, optionally restricted to a product or category. Protected product reviews remain hidden.',
   'woocommerce-product-collection-data': 'Request collection statistics such as price ranges, ratings, stock-status counts and taxonomy counts. Unsupported store fields may be absent or null.',
-  '1688-product-search': 'Find wholesale product candidates from a keyword. Follow up with product detail lookup to compare the relevant offer and SKU information.',
-  '1688-search-by-image': 'Start a sourcing shortlist from a reference image, then inspect candidate offers before comparing suppliers.',
-  '1688-product-detail': 'Inspect one 1688 offer, including its available SKU, pricing, logistics and supplier information.',
+  '1688-product-search': 'Search 1688 by keyword or product ID. Check pagination and multiple-product-ID rules in the official documentation before building a sourcing shortlist.',
+  '1688-search-by-image': 'Find 1688 sourcing candidates by image. Check supported image inputs, pagination, sorting and filters before comparing offers.',
+  '1688-product-detail': 'Inspect a 1688 product, its prices and SKUs. Check response types and units before comparing offers or preparing a purchase.',
+  '1688-product-billboard': 'Explore 1688 weekly or monthly bestseller charts. Check date ranges, keyword filters and product-ID rules in the official documentation.',
   'amazon-search': 'Find Amazon listings for a product query. Use returned identifiers for follow-up detail and review research.',
   'amazon-product-detail': 'Inspect an Amazon product listing to collect the product facts needed for a comparison or catalog workflow.',
   'amazon-reviews-list': 'Retrieve Amazon review content for product-feedback research. Check the available filters and pagination before collecting a sample.',

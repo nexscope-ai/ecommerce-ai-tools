@@ -3,6 +3,7 @@ import {readFile, writeFile, rename} from 'node:fs/promises';
 import {join, resolve, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fetchDirectoryMembership, dataCollectionSlugs} from './data-directory-membership.mjs';
+import {supplementAnnouncedData} from './announced-data-apis.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 export const FEED='https://www.nexscope.ai/api/skill-api/catalog';
@@ -65,14 +66,18 @@ async function publicText(url) {
 export async function refreshSnapshot(directory=root) {
   const file=join(directory,'scripts/data/api-docs.public.json');
   const [feed,sitemap,previous,membership]=await Promise.all([publicText(FEED),publicText(SITEMAP),readFile(file,'utf8').then(JSON.parse),fetchDirectoryMembership()]);
-  const snapshot=projectFeed(JSON.parse(feed),sitemap,previous,new Date().toISOString(),membership);
+  const payload=JSON.parse(feed);
+  const current=projectFeed(payload,sitemap,previous,new Date().toISOString(),membership);
+  const snapshot=supplementAnnouncedData(current,(payload.data??payload).withdrawnSlugs??[]);
+  if (JSON.stringify(snapshot.entries)===JSON.stringify(previous.entries)) snapshot.generatedAt=previous.generatedAt;
   // Validate the safe public projection before changing the snapshot or generated output.
   const {validate}=await import('./build_api_docs.mjs');
   validate(snapshot);
   const temporary=file+'.tmp';
   await writeFile(temporary,JSON.stringify(snapshot,null,2)+'\n');
   await rename(temporary,file);
-  console.log(`Refreshed ${snapshot.entries.length} published Data APIs from official public documentation and sitemap.`);
+  const pending=snapshot.entries.filter(e=>e.documentationStatus==='pending').length;
+  console.log(`Refreshed ${snapshot.entries.length-pending} published Data APIs and ${pending} announced references awaiting documentation.`);
   return snapshot;
 }
 
