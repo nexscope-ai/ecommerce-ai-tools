@@ -126,8 +126,8 @@ function platformIcon(visual,size) {
   };
   return visual.logo ? `<img src="/data/logos/${visual.logo}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">` : `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${symbols[visual.kind] || symbols.data}</svg>`;
 }
-function platformNew(visual) {
-  return visual.kind === 'woocommerce' ? '<span class="api-new-badge" aria-label="New platform"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m6 0 1.5 4.5L12 6 7.5 7.5 6 12 4.5 7.5 0 6l4.5-1.5z"/></svg>NEW</span>' : '';
+function platformNew(visual, category) {
+  return visual.kind === 'woocommerce' || category === 'data-1688-procurement' ? `<span class="api-new-badge" aria-label="${category === 'data-1688-procurement' ? 'New category' : 'New platform'}"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m6 0 1.5 4.5L12 6 7.5 7.5 6 12 4.5 7.5 0 6l4.5-1.5z"/></svg>NEW</span>` : '';
 }
 function cardTop(category,badge) {
   const visual=categoryVisual(category);
@@ -185,7 +185,7 @@ function usageMarkup(metrics) {
   const coverage = metrics?.creditTotalApis ? ` ${metrics.creditKnownApis}/${metrics.creditTotalApis} APIs with charge records.` : '';
   const creditLabel = hasRange ? `${range} historical credits/call (10-credit floor); not a price quote.${coverage}` : 'Historical credit range unavailable. Check official API docs for current pricing.';
   const credits = `<span class="api-usage-metric api-credit-range" title="${esc(creditLabel)}" aria-label="${esc(creditLabel)}">${coins}<strong>${range}</strong></span>`;
-  return `<div class="api-usage" aria-label="Recorded usage and historical credit range">${calls != null ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users != null ? metric(users,userLabel,people,99,'99+') : ''}${credits}</div>`;
+  return `<div class="api-usage" aria-label="Recorded usage and historical credit range">${calls > 0 ? metric(calls,'recorded calls',activity,10000,'9999+') : ''}${users > 0 ? metric(users,userLabel,people,99,'99+') : ''}${credits}</div>`;
 }
 function usageNote(snapshot) {
   const credits = snapshot.creditBasis === 'public-historical-statistics'
@@ -217,7 +217,7 @@ export function buildPages(snapshot) {
     platforms.set(visual.kind,{...visual,count:(previous?.count||0)+entries.length});
     const {name,description} = categoryCopy(category,entries);
     const copy=categorySelectionCopy(category,entries);
-    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}${platformNew(visual)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
+    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}${platformNew(visual,category)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
     categories.push(card);
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
