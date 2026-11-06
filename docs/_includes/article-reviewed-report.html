@@ -1,0 +1,8 @@
+{% if page.report_step %}
+<section class="article-next article-next-focused" aria-label="Request a reviewed report">
+  <span class="eyebrow">Product Growth Report</span>
+  <h2>{{ page.report_step.title | escape }}</h2>
+  <p>{{ page.report_step.description | escape }}</p>
+  <a data-article-next-step data-step-id="{{ page.report_step.id | escape }}" data-cta-placement="{{ include.placement | default: 'article-middle' | escape }}" data-buyer-intent="{{ page.report_step.intent | escape }}" href="{{ page.report_step.url | escape }}">{{ page.report_step.label | escape }} →</a>
+</section>
+{% endif %}

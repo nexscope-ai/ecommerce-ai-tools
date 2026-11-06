@@ -1,0 +1,9 @@
+{% if page.next_step and page.report_step %}
+<section class="article-next article-next-focused" aria-label="Choose your next step">
+  <span class="eyebrow">Choose how to work on this product</span>
+  <h2>Use the tool yourself or request a reviewed report</h2>
+  <p>{{ page.workflow_choice | escape }}</p>
+  <p><a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-top" data-buyer-intent="{{ page.next_step.intent | default: 'self-service' | escape }}" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a></p>
+  <p><a data-article-next-step data-step-id="{{ page.report_step.id | escape }}" data-cta-placement="article-top" data-buyer-intent="{{ page.report_step.intent | escape }}" href="{{ page.report_step.url | escape }}">{{ page.report_step.label | escape }} →</a></p>
+</section>
+{% endif %}

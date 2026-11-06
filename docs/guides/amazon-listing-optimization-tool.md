@@ -4,20 +4,21 @@ related_topics: [visibility]
 content_kind: guide
 layout: default
 title: Optimize an Amazon Listing with Evidence
-description: Use the Nexscope AI Amazon Listing Optimizer to audit an ASIN and turn marketplace evidence into prioritized changes you can verify and test.
+description: "Optimize an Amazon listing with evidence, a recorded audit and a product-copy example. Choose self-service analysis or a reviewed report with suggested listing copy."
 permalink: /amazon-listing-optimization-tool/
-last_reviewed: 2026-09-30
+last_reviewed: 2026-11-06
 date_published: 2026-09-23
-date_modified: 2026-09-30
+date_modified: 2026-11-06
 last_modified_at: 2026-11-06
 author: Nexscope Team
 schema_type: Article
 next_step:
   id: amazon_listing_optimizer
+  intent: listing-audit-self-service
   title: Build a reviewable listing improvement plan
   description: Enter one ASIN or product URL and verify suggested changes against the live listing and source evidence.
   label: Open Listing Optimizer
-  url: https://www.nexscope.ai/tools/amazon-listing-optimization-tool
+  url: https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=learn
 og_type: article
 topic: research
 faq:
@@ -27,19 +28,26 @@ faq:
     answer: No. They are provider signals and bounded observations, not exact sales or complete search coverage. Missing values mean unavailable, not zero.
   - question: Do I need a target keyword to start?
     answer: An ASIN or Amazon URL and a marketplace are the starting inputs. A target keyword is optional and can add context for the page-one benchmark.
+compact_evidence: true
+evidence_scope: "Updated guidance and service choices. Existing examples retain their original dates and limits; no new paid test or growth result was measured."
+suppress_article_help: true
+workflow_choice: "Use Listing Optimizer to collect marketplace evidence and inspect its generated plan yourself. Choose the Product Growth Report when you want reviewed findings and selected deliverables, such as suggested listing copy."
+report_step:
+  id: reviewed_listing_copy
+  intent: product-copy-review
+  title: "Need a writing deliverable for this listing?"
+  description: "Select product copy rewriting for one exact product and market, add supported facts and review the quote. Receive suggested copy in a human-reviewed report, then approve and apply changes yourself."
+  label: "Request reviewed listing copy"
+  url: https://www.nexscope.ai/product-growth-report?co-from=learn#request
 ---
 
 # How to optimize an Amazon listing with marketplace evidence
 
-**By Nexscope Team · Published and reviewed September 23, 2026**
-
 To **optimize an Amazon listing**, start with its current content and a specific shopper intent. Compare the ASIN's title, bullets, images, and other visible fields with relevant keyword and competitor signals. Turn gaps into a short list of changes you can verify and test. Nexscope's AI Amazon Listing Optimizer organizes those inputs and proposes a prioritized plan; the seller still decides what is true and what to publish.
-
-**[Open the AI Amazon Listing Optimizer](https://www.nexscope.ai/tools/amazon-listing-optimization-tool?co-from=learn).** The workflow requires sign-in, and live research or AI steps may use credits.
 
 > **Quick answer:** Enter an ASIN or Amazon product URL, select the marketplace, and optionally add a target keyword. Review the listing snapshot, reverse-ASIN keyword sample, traffic signals, and product history before accepting any recommendation. Prioritize changes with a clear source, a feasible edit, and a way to check the result.
 
-If you need suggested writing delivered for review, use the [product description rewrite guide]({{ '/guides/product-description-rewrite/' | relative_url }}). This is a separate reviewed service; you remain responsible for applying approved listing changes.
+{% include article-workflow-choice.html %}
 
 ## What does the audit examine?
 
@@ -61,6 +69,22 @@ The archived public example did not capture the exact credits deducted or name t
 
 [Inspect the recorded input, output, sources, missing cost fields, and human interpretation]({{ '/api-evidence/amazon-listing-optimizer/' | relative_url }}).
 
+## From a product finding to a writing deliverable
+
+**A readiness score identifies an area to investigate; an approved edit needs a product fact and a specific field.** The separate [PCIQUTE public report](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn#module-copywriting) shows one way to move from a finding to suggested copy. It concerns a UK roller kit, not the US coffee ASIN in the recorded tool test above.
+
+| Product finding in the saved report | Suggested copy decision | Check before applying |
+| --- | --- | --- |
+| The offer contains a defined kit with different roller sizes | Make brand, category and pack contents easier to identify | Verify the exact sold variant and included pieces |
+| Working length depends on the assembled setup | Explain the measurement basis consistently | Measure the real configuration; do not replace it with a larger search phrase |
+| Related search language includes extension-pole uses | Use an accurate phrase in a suitable field | Keep sectional-rod and other adjustment mechanisms distinct |
+
+The November 5, 2026 report includes a British-English title, five selling points and a description. Those are the saved example's selected materials, not a fixed output count for every request. The report is published by Nexscope and does not show a tested conversion improvement after the copy was applied.
+
+This makes the workflow concrete: **finding → supported fact → proposed wording → owner approval → published-field check**. Keep the source and date with the edit. For a complete writing review process and a blank fact-check sheet, use the [product description rewrite guide]({{ '/guides/product-description-rewrite/' | relative_url }}).
+
+{% include article-reviewed-report.html placement="article-middle" %}
+
 ## How do you run a listing audit?
 
 1. Choose one listing and one marketplace. Record its ASIN or product URL and the date of your review.
@@ -72,6 +96,17 @@ The archived public example did not capture the exact credits deducted or name t
 7. Select one or two edits with a measurable outcome. Record the original listing, approved change, date, and subsequent performance before attributing an effect.
 
 The workflow may pause if a data request fails or credits are insufficient. A partial report is not evidence that the missing step returned zero results.
+
+## Which route fits your next decision?
+
+| Choose | When it fits | What remains yours to do |
+| --- | --- | --- |
+| Listing Optimizer | You want to run the evidence workflow and inspect its generated plan yourself | Verify sources, choose edits and update the listing |
+| Product Growth Report | You want reviewed product-specific findings and selected services, such as suggested copy | Provide supported facts, approve the deliverable and apply changes |
+
+The report uses one public product URL, market and report language. Select at least one paid service; SEO/GEO analyses are included with that choice. Review the current credit quote before confirming. It is separate from the tool's live research steps, and neither route publishes edits to Seller Central for you.
+
+Use the [report request guide]({{ '/guides/product-growth-report-guide/' | relative_url }}) for service selection and delivery. A short phrase accompanying an advertising image does not imply a full listing rewrite; select product copy rewriting when that is the deliverable you need.
 
 ## How do you turn a finding into a testable change?
 

@@ -2,12 +2,12 @@
 learning_topic: creative
 content_kind: insight
 layout: default
-title: "ChatGPT Images 2.5 for Ecommerce Product Photos"
-description: "Use GPT-Image-2.5 for ecommerce product-photo edits through Nexscope's Flare and Sunburst APIs, with an evidence-based workflow and SKU review checklist."
+title: "ChatGPT Images 2.5 Product Photos: Real Edit & QA"
+description: "See a real GPT 2.5 Flare edit, what changed in the output, and how to review product photos. Choose self-service generation or reviewed advertising images."
 permalink: /ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/
-last_reviewed: 2026-09-20
+last_reviewed: 2026-11-06
 date_published: 2026-09-20
-date_modified: 2026-09-24
+date_modified: 2026-11-06
 last_modified_at: 2026-11-06
 author: Nexscope Team
 schema_type: Article
@@ -15,10 +15,11 @@ og_type: article
 topic: creative
 next_step:
   id: gpt_image_flare_api
+  intent: image-generation-self-service
   title: Try one controlled product-photo edit
   description: Use an approved source image and check product details against the original before using any generated result.
-  label: Open the Flare image playground
-  url: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?view=api
+  label: Try a self-service Flare edit
+  url: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?view=playground&co-from=learn
 keywords:
   - ChatGPT Images 2.5
   - GPT-Image-2.5 ecommerce
@@ -37,24 +38,41 @@ faq:
     answer: "Yes. Nexscope lists GPT 2.5 Flare and GPT 2.5 Sunburst image-generation API pages with a playground and documented request parameters. Creative API-key access requires an active subscription; check the live pages for eligibility, credits, and settings. The separate video generator uses its own model selector."
   - question: Are GPT-Image-2.5 Flare and Sunburst the same as the ChatGPT interface?
     answer: "They are the two API models OpenAI announced alongside ChatGPT Images 2.5. Flare is positioned as the default for most applications; Sunburst targets premium creative and more precise editing. Nexscope documents both as separate image-generation API options; check its live pages for access and credits."
+compact_evidence: true
+evidence_scope: "Updated guidance and service choices. Existing examples retain their original dates and limits; no new paid test or growth result was measured."
+suppress_article_help: true
+workflow_choice: "Use the Flare Playground when you want to generate and review candidates yourself. Choose the Product Growth Report when you want to submit an image brief and receive selected deliverables after human review."
+report_step:
+  id: reviewed_product_ad_images
+  intent: product-ad-image-request
+  title: "Need reviewed product advertising images?"
+  description: "Select advertising images for one product and market, describe each creative job and review the current credit quote. Images are reviewed before delivery; campaign publishing remains your decision."
+  label: "Request reviewed product images"
+  url: https://www.nexscope.ai/product-growth-report?co-from=learn#request
 ---
 
 # ChatGPT Images 2.5 for ecommerce product photos: a practical workflow
-
-**By Nexscope Team · Published September 20, 2026 · Updated September 20, 2026**
 
 **ChatGPT Images 2.5 can help an ecommerce team explore product-photo variations and make more targeted edits, but a generated image is not proof that a product looks or performs that way.** OpenAI announced the release on September 8, 2026, highlighting stronger reference-image fidelity, more precise editing, and more reliable multi-turn changes. This guide turns those claims into a reviewable workflow for a real SKU rather than promising a one-click replacement for approved photography.
 
 > **The short answer:** start with an approved product photo and a written list of details that must not change. Request one change at a time, compare each output with the source, and keep only variants that accurately represent the sellable SKU. If you later use a still for a video concept, review the resulting video independently. The goal is usable creative, not just more generated files.
 
-<aside class="article-action" aria-label="Try GPT 2.5 image generation">
-  <div><span class="eyebrow">NEXT STEP / IMAGE API</span><strong>Try a bounded product-photo edit with GPT 2.5 Flare.</strong><p>Nexscope documents Flare and Sunburst image-generation APIs. Check subscription access and the credit estimate before running a test.</p></div>
-  <a href="https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn">Open Flare Playground ↗</a>
-</aside>
-
-{% include article-visual.html %}
+{% include article-workflow-choice.html %}
 
 Looking for the November 4 release? Read [GPT Image 2.6 for ecommerce: what to test after 2.5]({{ '/ecommerce-trends/gpt-image-2-6-ecommerce/' | relative_url }}). The dated 2.5 evidence below retains its original model and scope.
+
+## One real Flare run: input, output, and limitation
+
+On September 20, 2026, we used Nexscope's GPT 2.5 Flare playground to edit a **previously generated, unbranded concept image**, not a photograph of a sellable product. The request supplied that image as `imageUrls`, asked for one 2K square image at medium quality, and directed the model to remove the two framed photos and decorations while retaining the central amber dropper bottle, black cap, and blank label. The task returned `SUCCEEDED`, one 2048 × 2048 PNG, and the account usage record shows **116 credits deducted**. Task ID: `bb927666-e68b-4969-83da-8ad5e2352b12`.
+
+<div class="evidence-pair" role="group" aria-label="GPT 2.5 Flare reference image and actual generated output">
+  <figure><img src="{{ '/assets/images/chatgpt-images-2-5-product-photos-720w.webp' | relative_url }}" width="720" height="405" alt="Input concept image with three unbranded amber bottles in a studio composition" loading="lazy"><figcaption>Input: a generated concept image, not approved SKU photography.</figcaption></figure>
+  <figure><img src="{{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }}" srcset="{{ '/assets/images/gpt-image-25-flare-demo-480w.webp' | relative_url }} 480w, {{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }} 1024w" sizes="(max-width: 600px) calc(100vw - 40px), 380px" width="1024" height="1024" alt="Actual GPT 2.5 Flare output showing one amber dropper bottle on a neutral studio surface" loading="lazy"><figcaption>Output: one real Flare result from this request. <a href="{{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }}">View the optimized 1024px WebP</a>.</figcaption></figure>
+</div>
+
+The frames and decorations disappeared, and the result kept the broad idea of an amber bottle with a black dropper. **The label size and some bottle/cap proportions also changed visibly.** That is a failure against an exact-SKU preservation standard; we would not publish this output as a verified product listing image. This one concept test demonstrates the workflow and its limitation, not a conversion lift, a general model-quality benchmark, or supplier-ready creative.
+
+{% include article-reviewed-report.html placement="article-middle" %}
 
 ## What changed in ChatGPT Images 2.5?
 
@@ -114,22 +132,30 @@ Keep a lightweight audit trail: source-file ID, approved SKU facts, prompt, mode
 
 The figure above summarizes the documented [Flare](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn) and [Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn) inputs. The following single run adds an actual Flare output, but **it is not a product-fidelity test on a real SKU**.
 
-## One real Flare run: input, output, and limitation
-
-On September 20, 2026, we used Nexscope's GPT 2.5 Flare playground to edit a **previously generated, unbranded concept image**, not a photograph of a sellable product. The request supplied that image as `imageUrls`, asked for one 2K square image at medium quality, and directed the model to remove the two framed photos and decorations while retaining the central amber dropper bottle, black cap, and blank label. The task returned `SUCCEEDED`, one 2048 × 2048 PNG, and the account usage record shows **116 credits deducted**. Task ID: `bb927666-e68b-4969-83da-8ad5e2352b12`.
-
-<div class="evidence-pair" role="group" aria-label="GPT 2.5 Flare reference image and actual generated output">
-  <figure><img src="{{ '/assets/images/chatgpt-images-2-5-product-photos-720w.webp' | relative_url }}" width="720" height="405" alt="Input concept image with three unbranded amber bottles in a studio composition" loading="lazy"><figcaption>Input: a generated concept image, not approved SKU photography.</figcaption></figure>
-  <figure><img src="{{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }}" srcset="{{ '/assets/images/gpt-image-25-flare-demo-480w.webp' | relative_url }} 480w, {{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }} 1024w" sizes="(max-width: 600px) calc(100vw - 40px), 380px" width="1024" height="1024" alt="Actual GPT 2.5 Flare output showing one amber dropper bottle on a neutral studio surface" loading="lazy"><figcaption>Output: one real Flare result from this request. <a href="{{ '/assets/images/gpt-image-25-flare-demo-1024w.webp' | relative_url }}">View the optimized 1024px WebP</a>.</figcaption></figure>
-</div>
-
-The frames and decorations disappeared, and the result kept the broad idea of an amber bottle with a black dropper. **The label size and some bottle/cap proportions also changed visibly.** That is a failure against an exact-SKU preservation standard; we would not publish this output as a verified product listing image. This one concept test demonstrates the workflow and its limitation, not a conversion lift, a general model-quality benchmark, or supplier-ready creative.
-
 ## How can Nexscope fit into the workflow?
 
 **Nexscope offers separate GPT 2.5 Flare and Sunburst image-generation API pages**, each with a playground, reference-image input, and documented settings. The [Flare playground](https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn) is a starting point for one controlled edit; [Sunburst](https://www.nexscope.ai/api-docs/gpt-image-2-5-generation?co-from=learn) is another option to compare against the same brief. Creative API-key access requires an active Nexscope subscription, and the displayed credit estimate can vary with settings. Check the live page before generation.
 
 Use [customer review analysis](../../amazon-negative-review-analysis/) to identify buyer questions, the [Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) to review a landing page, and the [Nexscope AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn) for a separate image-to-video handoff. The video generator's live model selector, accepted inputs, credits, and settings are its source of truth. A still that passes image QA may still produce a video with warped packaging or unexpected motion, so review its frames and claims again. See the [image-to-video workflow](../../ai-video-generator/) for the video-specific checklist.
+
+## Can I request reviewed product images instead?
+
+**Choose a reviewed image deliverable when you want to submit a brief rather than configure and review each generation yourself.** In the Product Growth Report form, select advertising images, identify one product and market, and describe what each image should communicate. Review the current quantity and credit quote before confirming.
+
+The [public PCIQUTE image example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn#module-ad_images) illustrates three different creative jobs: a product-first composition, a decorating scene and a detail view. It is separate from the dated Flare test above; it does not establish which model should win or that the report caused better campaign results.
+
+<figure class="article-inline-evidence">
+  <img src="https://learn.nexscope.ai/assets/growth-report/pciqute-wide-preview.jpg" width="560" height="293" alt="Illustrative decorating-scene advertising concept from Nexscope's public PCIQUTE report" loading="lazy">
+  <figcaption>Existing JPEG preview from the November 5, 2026 public report. It is an illustrative concept, not a photographed product test or an original-resolution PNG delivery.</figcaption>
+</figure>
+
+| Image job | What to put in the brief | What to inspect in the delivered file |
+| --- | --- | --- |
+| Explain the offer | Exact variant, included items and approved reference | Product identity and visible quantity |
+| Explore a setting | Audience, scene, props and space for approved copy | Props do not imply extra included equipment |
+| Clarify a detail | The actual component and useful viewing angle | Geometry and connections match the reference |
+
+Report deliverables are reviewed before release, but the merchant still checks the chosen file for the intended placement. The image service is not advertising management, automatic posting or a promise of unlimited revisions. For the service brief and review worksheet, read the [product advertising image guide]({{ '/guides/product-ad-image-brief/' | relative_url }}).
 
 ## What should you measure after publication?
 
@@ -137,6 +163,7 @@ Do not call an output successful just because it looks impressive or receives an
 
 - **Discovery:** index status, search queries, impressions, and clicks for this exact article URL; these are not the same as sessions.
 - **Engagement:** article visits, meaningful scroll, and clicks to the relevant product or workflow page, subject to analytics consent and measurement limits.
+- **Route choice:** separate self-service tool clicks from Product Growth Report requests. This page's action links record the step identity, buyer intent and placement so a report click is not counted as a model-generation click.
 - **Creative quality:** pass rate against the SKU checklist, reasons for rejection, and review time. These are team-defined measures, not published model benchmarks.
 - **Commercial outcome:** qualified product-page sessions, sign-ups, and downstream actions where attribution is available. Compare creative variants in a controlled test before attributing a conversion lift.
 
