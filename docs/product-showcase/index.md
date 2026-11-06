@@ -1,19 +1,15 @@
 ---
 layout: default
-title: Free Ecommerce Product Listing & Page Review | Nexscope
-description: Submit your ecommerce product for free editorial review. Approved products receive a free public Gallery page with product facts, images and a link to your store.
+title: Free Ecommerce Product Gallery & Listings | Nexscope
+description: Explore Nexscope Product Gallery. Submit your product for free review and, if approved, get a public page with product facts, images and your store link.
 keywords:
   - free ecommerce product listing
-  - free ecommerce product page review
-  - professional product page feedback for sellers
-  - product listing improvement advice
-  - Shopify product page review
-  - Amazon ASIN editorial feedback
-  - AI product discovery page
+  - ecommerce product gallery
+  - Nexscope Product Gallery
+  - public product page
   - GEO for product pages
-  - product visibility in AI search
 permalink: /product-showcase/
-last_modified_at: 2026-10-30
+last_modified_at: 2026-11-06
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0

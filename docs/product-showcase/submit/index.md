@@ -1,18 +1,15 @@
 ---
 layout: default
-title: Submit Your Product for Free AI Discovery & GEO Feedback | Nexscope
-description: Submit a product URL or Amazon ASIN for free editorial review. Approved listings get a public product page built to make product facts easier for AI search to find; rankings and traffic are not guaranteed.
+title: Submit Your Product Free | Nexscope Product Gallery
+description: Submit a product URL or Amazon ASIN to Nexscope for free editorial feedback. Add facts and images; approved products get a free Gallery page with your store link.
 keywords:
-  - submit a product page for free feedback
-  - submit Shopify product URL for review
-  - submit WooCommerce product page for review
-  - submit Amazon ASIN for editorial feedback
-  - professional product page improvement suggestions
-  - submit ecommerce product for Gallery review
-  - product GEO feedback
-  - AI product discovery page
+  - submit product for free
+  - Nexscope product submission
+  - submit Shopify product
+  - submit Amazon ASIN
+  - free editorial product review
 permalink: /product-showcase/submit/
-last_modified_at: 2026-10-30
+last_modified_at: 2026-11-06
 robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
 sitemap:
   priority: 1.0
@@ -32,7 +29,7 @@ image_caption: Submit product details for free review and a possible public AI-d
   <header class="showcase-form-intro">
     <div class="showcase-form-heading">
       <span class="eyebrow">Free product-page review and Gallery submission</span>
-      <h1>Get free feedback<br><span>on your product page.</span></h1>
+      <h1>Submit your product free.<br><span>Get editorial feedback.</span></h1>
       <p>Share a public product URL or Amazon ASIN, verified details, and one accurate image. An editor will review your submission and leave specific feedback on a private page. If approved and published, your product also gets a free Gallery page linking to the original listing—another factual source that search and AI systems can discover. No payment or store login is required.</p>
       <div class="showcase-form-heading-actions">
         <a class="showcase-primary submission-hero-jump" href="#product-submission-form" data-submission-form-jump="hero">Start free submission <span aria-hidden="true">&nbsp;↓</span></a>
