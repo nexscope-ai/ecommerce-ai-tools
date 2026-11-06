@@ -1,0 +1,7 @@
+{
+  "imageUrls": ["https://example.com/replace-with-your-product.webp"],
+  "prompt": "Change only the background to a neutral tabletop with soft side lighting. Preserve the supplied product, shape, cap, label, color and quantity. Add no text or accessories.",
+  "outputNum": 1,
+  "resolution": "1K",
+  "aspectRatio": "1:1"
+}

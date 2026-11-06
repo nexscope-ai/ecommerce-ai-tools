@@ -7,7 +7,7 @@ description: "Call the Seedance 2.0 API with a bounded Python starter. Save the 
 permalink: /guides/seedance-api/
 date_published: 2026-10-23
 date_modified: 2026-11-05
-last_modified_at: 2026-11-05
+last_modified_at: 2026-11-06
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -139,6 +139,8 @@ Use a single clear product reference and a simple camera movement. Keep the inte
 For a hypothetical bottle, a brief could request a slow camera move around the stationary item while preserving its cap, silhouette, printed label and color. This is suggested input, not an output we generated. Review the whole video for changing geometry or packaging, invented accessories and unsupported implied functions.
 
 Log the input asset, prompt, route, settings, task ID, completion status, output, actual charge and rejection reason. Before automation at scale, decide what your application does with failed tasks, unusable completed media and uncertain product details. Do not auto-publish a video based only on completion status.
+
+For a separate still-image implementation, use the [image generation API Python tutorial]({{ '/guides/image-generation-api-python/' | relative_url }}). It has its own image request and task route; do not submit a video payload to an image endpoint.
 
 ## Playground or API: where should you begin?
 

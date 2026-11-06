@@ -7,7 +7,7 @@ description: "Prepare for TikTok Shop BFCM, Nov 11–30, 2026: download a seller
 permalink: /ecommerce-trends/tiktok-shop-holiday-shopping-2026-seller-guide/
 date_published: 2026-10-15
 date_modified: 2026-11-05
-last_modified_at: 2026-11-05
+last_modified_at: 2026-11-06
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -56,6 +56,8 @@ faq:
 The campaign dates come from [TikTok's October 14 holiday-season announcement](https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en). Check your market's Seller Center for enrollment deadlines, offer eligibility and account requirements. This guide's preparation schedule is editorial guidance, not a second official campaign calendar.
 
 **Start here:** download the [BFCM seller review sheet]({{ '/assets/downloads/tiktok-bfcm-seller-checklist.csv' | relative_url }}) and the [product research request template]({{ '/assets/downloads/tiktok-bfcm-product-request.json' | relative_url }}). The sheet contains review prompts and blank decision fields; it is not completed seller data. The JSON is an unexecuted request example. API calls use credits.
+
+Preparing the actual assets? Follow [Black Friday video ads: a product-photo creative pack]({{ '/guides/black-friday-video-ad-creative-pack/' | relative_url }}) for a small still, motion and presenter exercise. This page remains the campaign-readiness checklist.
 
 ## What should a TikTok Shop seller finish before BFCM?
 

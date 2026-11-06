@@ -8,7 +8,7 @@ permalink: /ai-product-image-generator/
 last_reviewed: 2026-11-05
 date_published: 2026-09-23
 date_modified: 2026-11-05
-last_modified_at: 2026-11-05
+last_modified_at: 2026-11-06
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -47,6 +47,8 @@ faq:
 **[Open the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?co-from=learn).** New Nexscope users receive 1,000 free credits, valid for 3 days; usage varies by model and settings. Check the selected endpoint and your account for current API access; a trial balance is not a promise that every configuration is available.
 
 > **Quick answer:** Start with one clear product reference when the chosen model supports it. Describe the scene without inventing product features. Generate at an aspect ratio suited to the destination, and check the shape, packaging, label, color, and claims before downloading.
+
+For server-side automation, use the [image generation API Python tutorial]({{ '/guides/image-generation-api-python/' | relative_url }}). For the November release discussion, read [GPT Image 2.6 for ecommerce]({{ '/ecommerce-trends/gpt-image-2-6-ecommerce/' | relative_url }}); its announced features are separate from the currently listed Nexscope model routes.
 
 ## See a real edit before choosing your product-photo brief
 

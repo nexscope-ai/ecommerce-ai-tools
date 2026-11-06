@@ -8,7 +8,7 @@ permalink: /ecommerce-trends/chatgpt-images-2-5-ecommerce-product-photos/
 last_reviewed: 2026-09-20
 date_published: 2026-09-20
 date_modified: 2026-09-24
-last_modified_at: 2026-09-24
+last_modified_at: 2026-11-06
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -53,6 +53,8 @@ faq:
 </aside>
 
 {% include article-visual.html %}
+
+Looking for the November 4 release? Read [GPT Image 2.6 for ecommerce: what to test after 2.5]({{ '/ecommerce-trends/gpt-image-2-6-ecommerce/' | relative_url }}). The dated 2.5 evidence below retains its original model and scope.
 
 ## What changed in ChatGPT Images 2.5?
 
