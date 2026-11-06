@@ -6,9 +6,9 @@ title: "How to Filter 1688 Products by MOQ and Price | Nexscope"
 description: "Shortlist 1688 products by minimum order quantity, price and specification. Follow a small search workflow, check SKU tiers and troubleshoot empty results."
 permalink: /guides/1688-product-search-api/
 date_published: 2026-10-26
-date_modified: 2026-10-30
-last_modified_at: 2026-10-30
-last_reviewed: 2026-10-30
+date_modified: 2026-11-06
+last_modified_at: 2026-11-06
+last_reviewed: 2026-11-06
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -146,3 +146,7 @@ Check [current pricing and access](https://www.nexscope.ai/pricing?co-from=learn
 For visual discovery, continue to [1688 search by image]({{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}). For the next comparison step, use [SKU prices and shipping fields]({{ '/guides/1688-product-detail-api/' | relative_url }}). For researching demand in another marketplace first, see [Shopee product research]({{ '/guides/shopee-product-research-api/' | relative_url }}) or [Ozon product research]({{ '/guides/ozon-product-research-api/' | relative_url }}).
 
 {% include api-guide-faq.html %}
+
+## Continue from research to a purchase preview
+
+Discovery is separate from purchasing. The [buyer authorization guide]({{ "/guides/1688-api-authorization/" | relative_url }}) and [SKU and order preview walkthrough]({{ "/guides/1688-order-preview-api/" | relative_url }}) explain the buyer connection, exact identifiers and quote checks before a real order.

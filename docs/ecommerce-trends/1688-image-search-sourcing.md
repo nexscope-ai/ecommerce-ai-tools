@@ -5,11 +5,11 @@ layout: default
 title: "1688 Search by Image: Compare Products & Suppliers"
 description: "Search 1688 by image to compare similar offers, prices, MOQ and supplier details. Includes a real API test and checks to make before ordering."
 permalink: /ecommerce-trends/1688-image-search-sourcing/
-last_reviewed: 2026-09-24
+last_reviewed: 2026-11-06
 date_published: 2026-09-20
-date_modified: 2026-10-09
+date_modified: 2026-11-06
 date: 2026-09-20
-last_modified_at: 2026-10-09
+last_modified_at: 2026-11-06
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -160,7 +160,7 @@ The same caution applies to rankings. [1688 Product Billboard](https://www.nexsc
 
 For an initial test, choose one non-branded product you can inspect physically. Search by image, retain five candidate offer IDs, inspect the relevant SKUs, then run a Chinese-keyword search for the same material and function. Identify the two candidates that meet your written constraints and request samples. If none qualifies, that is a useful result: revise the specification or price target instead of lowering verification standards.
 
-Nexscope's 1688 APIs help with **discovery and structured comparison**. They do not place an order, certify a factory, guarantee a margin, or replace direct supplier and compliance checks. [Explore the 1688 API documentation](https://www.nexscope.ai/api-docs?co-from=learn) to choose the first read-only call for your sourcing workflow.
+Nexscope's 1688 APIs help with **discovery and structured comparison**. The search APIs demonstrated here do not place an order, certify a factory, guarantee a margin, or replace direct supplier and compliance checks. [Explore the 1688 API documentation](https://www.nexscope.ai/api-docs?co-from=learn) to choose the first read-only call for your sourcing workflow.
 
 ## Frequently asked questions
 
@@ -183,3 +183,7 @@ Not necessarily. Verify the applicable quantity tier, MOQ, materials, sample, sh
 ---
 
 **Sources and methodology:** This guide was reviewed against [Alibaba Group's description of 1688](https://www.alibabagroup.com/en-US/about-alibaba-businesses-1941299332078632960) and Nexscope's public [image search](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn), [product search](https://www.nexscope.ai/api-docs/1688-product-search?co-from=learn), [product detail](https://www.nexscope.ai/api-docs/1688-product-detail?co-from=learn), and [billboard](https://www.nexscope.ai/api-docs/1688-product-billboard?co-from=learn) API references on September 20, 2026. Three URL-based requests failed; one Base64 request succeeded and returned 10 first-page rows. The table reports three selected rows from that response. No supplier identity, product specification, purchase, or performance claim was independently verified. Fields may be absent or change; check the live documentation and returned data before use.
+
+## Continue from research to a purchase preview
+
+Discovery is separate from purchasing. The [buyer authorization guide]({{ "/guides/1688-api-authorization/" | relative_url }}) and [SKU and order preview walkthrough]({{ "/guides/1688-order-preview-api/" | relative_url }}) explain the buyer connection, exact identifiers and quote checks before a real order.

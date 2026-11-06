@@ -7,9 +7,9 @@ title: "1688 Product Detail API: SKU Prices, MOQ & Shipping"
 description: "Read 1688 SKU prices, quantity tiers, MOQ and shipping fields with Nexscope. See a request example and learn what to verify before comparing supplier offers."
 permalink: /guides/1688-product-detail-api/
 date_published: 2026-10-26
-date_modified: 2026-10-26
-last_modified_at: 2026-10-26
-last_reviewed: 2026-10-26
+date_modified: 2026-11-06
+last_modified_at: 2026-11-06
+last_reviewed: 2026-11-06
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -112,3 +112,7 @@ Continue with the [1688 search and filtering tutorial]({{ '/guides/1688-product-
 
 {% include api-guide-faq.html %}
 
+
+## Continue from research to a purchase preview
+
+Discovery is separate from purchasing. The [buyer authorization guide]({{ "/guides/1688-api-authorization/" | relative_url }}) and [SKU and order preview walkthrough]({{ "/guides/1688-order-preview-api/" | relative_url }}) explain the buyer connection, exact identifiers and quote checks before a real order.
