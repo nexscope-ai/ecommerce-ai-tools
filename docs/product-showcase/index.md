@@ -80,6 +80,8 @@ faq:
 
 {% include product-showcase-featured.html context="hub" %}
 
+{% include product-growth-report.html context="hub" %}
+
 <section class="showcase-shopping-paths" aria-labelledby="showcase-community-title">
   <div class="showcase-shopping-paths-intro">
     <span class="eyebrow">Weekly product-page clinic</span>

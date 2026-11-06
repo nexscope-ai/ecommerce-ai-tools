@@ -165,6 +165,8 @@ image_caption: Submit product details for free review and a possible public AI-d
 
 
 
+  {% include product-growth-report.html context="submit" %}
+
   <dialog class="markdown-editor-dialog" data-markdown-dialog aria-labelledby="markdown-editor-title">
     <div class="markdown-dialog-header">
       <div><span class="eyebrow">Product details</span><h2 id="markdown-editor-title">Edit Markdown with a live preview</h2><p>GitHub-flavored Markdown supports headings, emphasis, nested lists, links, tables, task lists, quotes, images and code. Raw HTML is displayed as text.</p></div>
