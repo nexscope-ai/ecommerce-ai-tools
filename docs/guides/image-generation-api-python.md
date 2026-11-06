@@ -40,6 +40,8 @@ faq:
 
 {% include article-action.html placement="article-top" %}
 
+Prefer a visual integration? Use the [n8n product image workflow]({{ '/guides/n8n-image-generation/' | relative_url }}). For a different reference-image route and a two-photo composition exercise, see the [Seedream API tutorial]({{ '/guides/seedream-api-python/' | relative_url }}).
+
 ## What do you need before the first request?
 
 Download the [Python 3.10+ starter]({{ '/assets/downloads/image-generation-starter.py' | relative_url }}) and [product-image request template]({{ '/assets/downloads/banana2-product-image-request.json' | relative_url }}). The starter uses Python's standard library. It makes no API call when you download or inspect it.

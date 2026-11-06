@@ -1,0 +1,10 @@
+{
+  "imageUrls": [
+    "https://example.com/replace-with-your-main-photo.webp",
+    "https://example.com/replace-with-your-detail-photo.webp"
+  ],
+  "prompt": "Use both photos of the same desk organizer as references. Create one neutral tabletop composition. Preserve its visible compartments, color, proportions and quantity. Leave empty space beside the item. Add no text or accessories.",
+  "outputNum": 1,
+  "resolution": "2K",
+  "aspectRatio": "4:3"
+}

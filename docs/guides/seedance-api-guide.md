@@ -36,6 +36,8 @@ next_step:
 
 *Documentation checked November 5, 2026. Written by Nexscope Team. This is an integration guide, not a new generation benchmark. No chargeable API request was run for this article.*
 
+To implement another video model, use the separate [Kling API Python tutorial]({{ '/guides/kling-api-python/' | relative_url }}). Its request controls and task path belong to Kling 2.6; the payloads are not interchangeable.
+
 ## Seedance 2.0 API vs 2.5 API: which route do you need?
 
 Choose by the input and output requirements of the shot. A newer version's larger allowance does not establish better motion, fewer retries or a lower cost for your task.

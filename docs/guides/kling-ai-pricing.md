@@ -7,7 +7,7 @@ description: "Compare Kling plans and Nexscope credits, calculate cost per appro
 permalink: /guides/kling-ai-pricing/
 date_published: 2026-10-23
 date_modified: 2026-11-05
-last_modified_at: 2026-11-05
+last_modified_at: 2026-11-06
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -35,6 +35,8 @@ next_step:
 > **Quick answer:** For an official plan quote, use Kling's own membership checkout. For Nexscope, use Nexscope's plans and request-level estimate. Credits from the two services are not interchangeable. Budget for retries and rejected clips as well as successful tasks; an attractive clip may still be unusable if it changes the product.
 
 *Policy and linked request guidance reviewed November 5, 2026. Nexscope offers Kling routes; this is a provider-written budgeting guide. Official membership prices must be checked in your own Kling checkout.*
+
+For a route-specific implementation, follow the [Kling API Python tutorial]({{ '/guides/kling-api-python/' | relative_url }}): submit a product reference, save the task and download a returned clip before reviewing its actual charge.
 
 ## How much does one usable Kling video cost?
 

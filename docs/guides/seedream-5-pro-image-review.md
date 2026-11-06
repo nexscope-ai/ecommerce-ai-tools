@@ -7,7 +7,7 @@ description: "A balanced Seedream 5 Pro review of reference editing, product det
 permalink: /guides/seedream-5-pro-image/
 date_published: 2026-10-22
 date_modified: 2026-10-22
-last_modified_at: 2026-10-22
+last_modified_at: 2026-11-06
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -35,6 +35,8 @@ Seedream 5 Pro is a Nexscope image-generation route supporting prompts and optio
 > **Our take:** Seedream 5 Pro deserves consideration for reference-based image work, but claims of perfect editing control go beyond the available evidence. Public feedback includes both praise for local edits and complaints about face matching. The current Nexscope route lists 1K and 2K output, not a universal 4K capability.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
+
+For a reference-led implementation, use the [Seedream API Python tutorial]({{ '/guides/seedream-api-python/' | relative_url }}). It keeps the product references, request, task and image review in one record.
 
 ## What is Seedream 5 Pro?
 

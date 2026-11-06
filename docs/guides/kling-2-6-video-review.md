@@ -7,7 +7,7 @@ description: "Review Kling 2.6 for image-to-video: motion feedback, frame contro
 permalink: /guides/kling-2-6-video/
 date_published: 2026-10-22
 date_modified: 2026-10-23
-last_modified_at: 2026-10-23
+last_modified_at: 2026-11-06
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -35,6 +35,8 @@ Kling 2.6 is a reference-guided video model route available on Nexscope. Public 
 > **Our take:** Kling 2.6 offers short 720p/1080p clips and supported first/final-frame inputs. Public users praise some dynamic shots but also report choppy motion and unnatural lip movement. Those reports cover different hosts and modes; they are not a controlled assessment of Nexscope's generation route.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
+
+Ready to integrate this route? The [Kling API Python tutorial]({{ '/guides/kling-api-python/' | relative_url }}) provides a first-image request, task tracking and a video-download client. It is separate from this model review.
 
 ## What is Kling 2.6?
 

@@ -1,0 +1,323 @@
+{
+  "name": "Nexscope product image generation - one product",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3ae48c72-eaa0-434a-a056-8560bdccfcd4",
+      "name": "Start one product",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Replace the example with one permitted product reference, then set approvedForOnePaidRequest=true.\nreturn [{json:{sku:'FICTIONAL-ORGANIZER-001',imageUrl:'https://example.com/replace-with-your-product.webp',prompt:'Change only the setting to a neutral tabletop. Preserve the product shape, visible compartments, color and quantity. Add no text or accessories.',approvedForOnePaidRequest:false}}];"
+      },
+      "id": "da41d36f-fcb6-4ad1-8ce5-ddff1320e9b1",
+      "name": "Edit product brief",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const p=$input.first().json;\nif(p.approvedForOnePaidRequest!==true) throw new Error('Review the estimate and approve one paid request in Edit product brief.');\nif(typeof p.sku!=='string'||!p.sku.trim()) throw new Error('Provide a SKU for your review record.');\nif(typeof p.imageUrl!=='string'||!/^https:\\/\\/[A-Za-z0-9.-]+(?::443)?\\/[^\\s#]*$/.test(p.imageUrl)||/^https:\\/\\/example\\.com(?:[:/]|$)/i.test(p.imageUrl)) throw new Error('Replace the placeholder with a permitted public HTTPS reference.');\nif(typeof p.prompt!=='string'||!p.prompt.trim()||p.prompt.length>5000) throw new Error('Provide a prompt of 1..5000 characters.');\nreturn [{json:{sku:p.sku,request:{imageUrls:[p.imageUrl],prompt:p.prompt,outputNum:1,resolution:'1K',aspectRatio:'1:1'}}}];"
+      },
+      "id": "e372f550-6822-4439-b6f0-7200bbaa8299",
+      "name": "Validate product request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.nexscope.ai/image/banana2ImageGeneration",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.request) }}",
+        "options": {
+          "timeout": 60000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "d63a6e5c-aa6f-4c34-8c33-5f193cbfaa6d",
+      "name": "Submit image once",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        0
+      ],
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw=$input.first().json;\nconst d=raw.data;\nif(raw.code!==0||!d||!['PENDING','RUNNING','SUCCEEDED','FAILED','TIMEOUT'].includes(d.status)||typeof d.taskId!=='string'||! /^[A-Za-z0-9_-]{8,128}$/.test(d.taskId)) throw new Error('Unaccepted or unexpected task receipt; inspect the saved execution before retrying.');\nconst source=$('Validate product request').first().json;\nreturn [{json:{sku:source.sku,request:source.request,taskId:d.taskId,submitResponse:raw}}];"
+      },
+      "id": "97d436a5-21a8-47c1-94ad-502eebde9fb5",
+      "name": "Save task receipt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "f23ada86-c5b4-4435-aede-3b53072dd326",
+      "name": "Wait before query",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1100,
+        0
+      ],
+      "webhookId": "3b9f5756-ea4c-4176-85c3-e40a73a6f0d3"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.nexscope.ai/image/banana2ImageGeneration/tasks/' + $('Save task receipt').first().json.taskId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 60000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "e6b8efdf-5a22-4b10-8f75-2e2eafe9fbba",
+      "name": "Query saved task",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1320,
+        0
+      ],
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw=$input.first().json;\nconst saved=$('Save task receipt').first().json;\nconst d=raw.data;\nconst attempt=$runIndex+1;\nif(raw.code!==0||!d||d.taskId!==saved.taskId||!['PENDING','RUNNING','SUCCEEDED','FAILED','TIMEOUT'].includes(d.status)) throw new Error('Unexpected task response or mismatched task ID; do not resubmit generation.');\nif(d.status==='SUCCEEDED'&&(!d.result||typeof d.result!=='object'||Array.isArray(d.result))) throw new Error('Unexpected completed result; inspect the raw response.');\nconst pending=['PENDING','RUNNING'].includes(d.status);\nreturn [{json:{...saved,queryResponse:raw,status:d.status,queryAttempt:attempt,continuePolling:pending&&attempt<6,decision:d.status==='SUCCEEDED'?'needs_human_review':pending?(attempt<6?'polling':'poll_limit_reached'):'inspect_failure'}}];"
+      },
+      "id": "ef3f5101-2976-46d4-b465-4f6330ef8d4b",
+      "name": "Check task and polling limit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "203f432a-262c-4a9b-8486-f88da79145ea",
+              "leftValue": "={{ $json.continuePolling }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e60ead33-f2b3-4805-91e5-880a9584563b",
+      "name": "Continue polling",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all();"
+      },
+      "id": "4e142804-f8dc-443e-9130-df3b8e318916",
+      "name": "Review or resume this task",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## One-product example\nInactive export. Edit the fictional brief, check the estimate and set its approval flag. Select your HTTP Header Auth credential in BOTH HTTP nodes: Authorization = Bearer YOUR_KEY. No key is embedded. One POST per full manual run; at most six GETs, 30 seconds apart. Do not restart the full flow to resume a pending task. Save the receipt and query the same ID. Final output needs human review; no publishing node. Offline fixtures only, not a paid live run.",
+        "height": 260,
+        "width": 520
+      },
+      "id": "11e2f9ba-d838-45d0-977f-50a307eacdcb",
+      "name": "Read before running",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        -300
+      ]
+    }
+  ],
+  "connections": {
+    "Start one product": {
+      "main": [
+        [
+          {
+            "node": "Edit product brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit product brief": {
+      "main": [
+        [
+          {
+            "node": "Validate product request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate product request": {
+      "main": [
+        [
+          {
+            "node": "Submit image once",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submit image once": {
+      "main": [
+        [
+          {
+            "node": "Save task receipt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save task receipt": {
+      "main": [
+        [
+          {
+            "node": "Wait before query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait before query": {
+      "main": [
+        [
+          {
+            "node": "Query saved task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query saved task": {
+      "main": [
+        [
+          {
+            "node": "Check task and polling limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check task and polling limit": {
+      "main": [
+        [
+          {
+            "node": "Continue polling",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Continue polling": {
+      "main": [
+        [
+          {
+            "node": "Wait before query",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Review or resume this task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "imageUrl": "https://example.com/replace-with-your-product.webp",
+  "prompt": "Keep the supplied desk organizer stationary. Use a slow camera push-in. Preserve the visible compartments, color, proportions and quantity. Add no text, accessories or new product features.",
+  "resolution": "1080p",
+  "videoTime": 5,
+  "aspectRatio": "9:16",
+  "isPro": false,
+  "promptOptimizer": false
+}
