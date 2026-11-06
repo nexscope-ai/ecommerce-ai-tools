@@ -77,7 +77,7 @@ test('task routes update HTML and schema, keep operations and tracking IDs, and 
     assert.ok(html.includes(`<link rel="canonical" href="https://learn.nexscope.ai${canonical}">`));
     assert.ok(html.includes(`<meta property="og:url" content="https://learn.nexscope.ai${canonical}">`));
     assert.ok(!html.includes('http-equiv="refresh"'));
-    for(const e of current.entries.filter(e=>e.categorySlug===category)) assert.ok(html.includes(officialApiUrl(e.slug)));
+    for(const e of current.entries.filter(e=>e.categorySlug===category)) assert.equal(html.includes(officialApiUrl(e.slug)),e.documentationStatus!=='pending',`documentation link state: ${e.slug}`);
   }
   for(const [previous,target] of categoryRedirects(categories)){
     assert.ok(!paths.includes(previous));
@@ -316,7 +316,7 @@ test('editorial mappings cover published categories without changing contracts o
     const html=pages.get(key+'.md');
     assert.ok(html.includes(categoryCopyMap[key].name.replaceAll('&','&amp;')));
     assert.match(html,/Is this the right category for your task/);
-    for(const entry of current.entries.filter(e=>e.categorySlug===key)) assert.ok(html.includes(officialApiUrl(entry.slug)));
+    for(const entry of current.entries.filter(e=>e.categorySlug===key)) assert.equal(html.includes(officialApiUrl(entry.slug)),entry.documentationStatus!=='pending',`documentation link state: ${entry.slug}`);
   }
   for(const slug of Object.keys(operationCopyMap)) assert.ok(current.entries.some(e=>e.slug===slug),`stale operation mapping: ${slug}`);
   assert.equal(JSON.stringify(current),before,'rendering must not mutate the refreshed contracts');
