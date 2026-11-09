@@ -2,7 +2,7 @@
 import {readFile, writeFile, rename} from 'node:fs/promises';
 import {join, resolve, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {fetchDirectoryMembership, dataCollectionSlugs} from './data-directory-membership.mjs';
+import {projectDirectoryMembership, dataCollectionSlugs} from './data-directory-membership.mjs';
 import {supplementAnnouncedData} from './announced-data-apis.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
@@ -65,8 +65,9 @@ async function publicText(url) {
 
 export async function refreshSnapshot(directory=root) {
   const file=join(directory,'scripts/data/api-docs.public.json');
-  const [feed,sitemap,previous,membership]=await Promise.all([publicText(FEED),publicText(SITEMAP),readFile(file,'utf8').then(JSON.parse),fetchDirectoryMembership()]);
+  const [feed,sitemap,previous]=await Promise.all([publicText(FEED),publicText(SITEMAP),readFile(file,'utf8').then(JSON.parse)]);
   const payload=JSON.parse(feed);
+  const membership=projectDirectoryMembership(payload);
   const current=projectFeed(payload,sitemap,previous,new Date().toISOString(),membership);
   const snapshot=supplementAnnouncedData(current,(payload.data??payload).withdrawnSlugs??[]);
   if (JSON.stringify(snapshot.entries)===JSON.stringify(previous.entries)) snapshot.generatedAt=previous.generatedAt;
