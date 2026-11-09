@@ -32,6 +32,11 @@ Official learning homepage: https://learn.nexscope.ai/
 - https://learn.nexscope.ai/ecommerce-ai-tools/ai-video-generator/ — AI product-video workflow
 - https://learn.nexscope.ai/ecommerce-ai-tools/ai-product-image-generator/ — AI product-image workflow
 - https://learn.nexscope.ai/ecommerce-ai-tools/amazon-listing-optimization-tool/ — evidence-led Amazon listing optimization workflow
+- https://learn.nexscope.ai/ecommerce-ai-tools/guides/amazon-patent-trademark-tro-check/ — screen design, utility, trademark, copyright and TRO risk before an Amazon launch
+- https://learn.nexscope.ai/ecommerce-ai-tools/guides/amazon-policy-change-monitoring/ — weekly Amazon policy and fee-change digest for an AI agent
+- https://learn.nexscope.ai/ecommerce-ai-tools/guides/mercado-libre-product-research/ — Mercado Libre product research for Mexico, Brazil, Argentina, Chile and Colombia
+- https://learn.nexscope.ai/ecommerce-ai-tools/guides/ai-clothing-model-photos-virtual-try-on/ — flat-lay to on-model apparel photos with AI virtual try-on
+- https://learn.nexscope.ai/ecommerce-ai-tools/guides/product-color-variant-images-ai/ — product color-variant images from one approved photo
 
 ## About and editorial standards
 
