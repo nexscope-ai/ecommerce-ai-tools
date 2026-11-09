@@ -191,10 +191,10 @@ They complement each other. Business Hub would provide OpenAI's own counts. The 
 
 ## Sources
 
-- Search Engine Land (Barry Schwartz), "OpenAI testing business tools to track performance within ChatGPT," November 6, 2026: https://searchengineland.com/openai-testing-business-tools-to-track-performance-within-chatgpt-500841
-- PPC Land (Luis Rijo), "ChatGPT builds mention and click charts for verified businesses," November 6, 2026: https://ppc.land/chatgpt-builds-mention-and-click-charts-for-verified-businesses/
-- Digiday, "ChatGPT is about to show brands their mention count," November 9, 2026: https://digiday.com/marketing/chatgpt-is-about-to-show-brands-their-mention-count/
-- OpenAI, "Overview of OpenAI Crawlers" (accessed November 9, 2026): https://platform.openai.com/docs/bots
-- Nexscope, Product Growth Report (accessed November 9, 2026): https://learn.nexscope.ai/product-growth-report/
+- Search Engine Land (Barry Schwartz), [OpenAI testing business tools to track performance within ChatGPT](https://searchengineland.com/openai-testing-business-tools-to-track-performance-within-chatgpt-500841), November 6, 2026
+- PPC Land (Luis Rijo), [ChatGPT builds mention and click charts for verified businesses](https://ppc.land/chatgpt-builds-mention-and-click-charts-for-verified-businesses/), November 6, 2026
+- Digiday, [ChatGPT is about to show brands their mention count](https://digiday.com/marketing/chatgpt-is-about-to-show-brands-their-mention-count/), November 9, 2026
+- OpenAI, [Overview of OpenAI Crawlers](https://platform.openai.com/docs/bots), accessed November 9, 2026
+- Nexscope, [Product Growth Report](https://learn.nexscope.ai/product-growth-report/), accessed November 9, 2026
 
 Related: [SEO & AI visibility topic hub](../../topics/visibility/).
