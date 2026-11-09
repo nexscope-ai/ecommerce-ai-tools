@@ -5,7 +5,7 @@ export function learnDataHeader(path) {
   <a class="brand" href="/" aria-label="Nexscope learning home"><img src="/logo.png" alt="Nexscope" width="165" height="32"></a>
   <button class="primary-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
   <nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation"><ul>
-    <li class="nav-dropdown"><details>
+    <li class="nav-dropdown"><details class="learning-menu">
       <summary aria-current="${apiCurrent}">APIs <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
       <ul class="nav-dropdown-menu">
         <li><a href="/data/" data-track-tool="data-directory" aria-current="${apiCurrent}">Data APIs</a></li>
