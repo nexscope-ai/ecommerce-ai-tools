@@ -106,7 +106,7 @@ The cost of an xAI plan or API request is separate from Nexscope credits. Nexsco
 | A tool call returns an error | Check required fields, accepted formats, market coverage, access and credit availability in that operation's schema. |
 | A media task has not completed | Keep its task ID and use the documented result-retrieval operation with a reasonable polling interval. Do not submit another generation blindly. |
 
-For a general explanation of hosts, clients and tools, see the [MCP server guide]({{ '/guides/what-is-an-mcp-server/' | relative_url }}). For a social-data example, continue with [Grok and Nexscope TikTok research]({{ '/guides/grok-nexscope-tiktok-research/' | relative_url }}).
+For a general explanation of hosts, clients and tools, see the [MCP server guide]({{ '/what-is-an-mcp-server/' | relative_url }}). For a social-data example, continue with [Grok and Nexscope TikTok research]({{ '/guides/grok-nexscope-tiktok-research/' | relative_url }}).
 
 ## Frequently asked questions
 

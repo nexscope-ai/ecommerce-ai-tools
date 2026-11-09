@@ -71,7 +71,7 @@ These are proposed creative directions, not generated results. Review the copy a
 5. Compare the output with the reference: product silhouette, colors, logo, packaging, labels, accessories and any text. Reject inaccurate images, even when the composition looks polished.
 6. Save the prompt, model, settings, date and actual credits so you can explain which version you reviewed.
 
-For a browser-based walkthrough, see the [Nexscope AI Product Image Generator guide]({{ '/guides/ai-product-image-generator/' | relative_url }}). API-key eligibility and in-app trial credits are not necessarily the same; use the live playground and docs to confirm what your account can run.
+For a browser-based walkthrough, see the [Nexscope AI Product Image Generator guide]({{ '/ai-product-image-generator/' | relative_url }}). API-key eligibility and in-app trial credits are not necessarily the same; use the live playground and docs to confirm what your account can run.
 
 ## How do you turn an approved image into a video?
 

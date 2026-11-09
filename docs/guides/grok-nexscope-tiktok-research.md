@@ -88,7 +88,7 @@ Grok subscription or API charges and Nexscope API credits are separate. Nexscope
 
 Use Grok with Nexscope when you need an assistant to help frame a question, call documented social-data tools and organize returned evidence. It is not a substitute for a TikTok analytics account, primary customer research, controlled ad tests or a verified sales report. Keep the scope, platform, date and uncertainty with each conclusion, then validate important findings before spending on inventory or campaigns.
 
-For a broader tool connection walkthrough, read the [ecommerce MCP server guide]({{ '/guides/ecommerce-mcp-server/' | relative_url }}). For creative production after you have a direction, see [how to use Grok with Nexscope image and video workflows]({{ '/guides/grok-nexscope-creative-workflow/' | relative_url }}).
+For a broader tool connection walkthrough, read the [ecommerce MCP server guide]({{ '/ecommerce-mcp-server/' | relative_url }}). For creative production after you have a direction, see [how to use Grok with Nexscope image and video workflows]({{ '/guides/grok-nexscope-creative-workflow/' | relative_url }}).
 
 ## Frequently asked questions
 
