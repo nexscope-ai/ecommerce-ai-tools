@@ -8,7 +8,7 @@ permalink: /ecommerce-trends/merchant-center-ai-performance-insights/
 last_reviewed: 2026-09-22
 date_published: 2026-09-22
 date_modified: 2026-09-22
-last_modified_at: 2026-09-22
+last_modified_at: 2026-11-09
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -39,7 +39,7 @@ faq:
 
 **Merchant Center AI Performance Insights is Google's product-level view of how an eligible brand appears in conversational shopping journeys on AI Mode and AI Overviews.** It can show where demand is forming, which products surface, and where product data may be too weak or incomplete to compete.
 
-The report is not a universal AI ranking dashboard. It currently covers supported Google surfaces, eligible accounts and organic AI traffic—not paid ads, ChatGPT, Perplexity, or every mention of a brand.
+The report is not a universal AI ranking dashboard. It currently covers supported Google surfaces, eligible accounts and organic AI traffic—not paid ads, ChatGPT, Perplexity, or every mention of a brand. For the separate November 2026 reports of a ChatGPT impressions-and-clicks view that OpenAI has not launched, see [ChatGPT Business Hub: what sellers can see](../chatgpt-business-hub-impressions-clicks/).
 
 > **The practical takeaway:** use the report to find a specific visibility gap, verify the underlying product evidence, make one controlled data or page improvement, and measure the same segment again. A share-of-voice number without category, country, intent, and product context is easy to misread.
 
