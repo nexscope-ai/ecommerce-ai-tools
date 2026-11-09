@@ -1,5 +1,5 @@
 ---
-learning_topic: social
+learning_topic: agents
 content_kind: guide
 layout: default
 title: "How to Use Grok with Nexscope TikTok APIs for Product Research"

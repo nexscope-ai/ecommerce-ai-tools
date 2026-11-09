@@ -1,5 +1,5 @@
 ---
-learning_topic: build
+learning_topic: agents
 content_kind: guide
 layout: default
 title: "How to Connect Grok to Nexscope MCP for Ecommerce API Workflows"
