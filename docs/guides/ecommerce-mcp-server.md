@@ -10,7 +10,7 @@ redirect_from:
 last_reviewed: 2026-10-06
 date_published: 2026-09-18
 date_modified: 2026-10-06
-last_modified_at: 2026-10-06
+last_modified_at: 2026-11-09
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -95,7 +95,7 @@ The live catalog is broader than an Amazon-only MCP server. It currently groups 
 | Agent routing and evaluation | JEV (2) | Route a research intent to a published capability or evaluate authorized content |
 | Shared result workflows | One shared media-result tool is included in the current 318-tool total; an SEO result-query tool is exposed when the related SEO catalog is published | Continue an accepted asynchronous job without starting and paying for the job again |
 
-Representative marketplace tools include `nexscope_amazon_search`, `nexscope_amazon_product_price_series`, `nexscope_amazon_reviews_list`, `nexscope_shopee_product_detail`, and `nexscope_google_trends_by_time`. These examples show the naming pattern; they are not a guarantee that every account can call every tool.
+Representative marketplace tools include `nexscope_amazon_search`, `nexscope_amazon_product_price_series`, `nexscope_amazon_reviews_list`, `nexscope_shopee_product_detail`, and `nexscope_google_trends_by_time`. These examples show the naming pattern; they are not a guarantee that every account can call every tool. For a pre-launch screen with the patent and IP tools, follow the [Amazon patent, trademark and TRO check]({{ '/guides/amazon-patent-trademark-tro-check/' | relative_url }}).
 
 The server also publishes workflow tools that deserve separate treatment:
 
