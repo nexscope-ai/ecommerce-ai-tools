@@ -3,12 +3,23 @@
   <button class="primary-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
   <nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation">
     <ul>
-      <li><a href="/data/" data-track-tool="data-directory">Data APIs</a></li>
-      <li><a href="/social/" data-track-tool="social-directory">Social APIs</a></li>
+      <li class="nav-dropdown"><details>
+        <summary>APIs <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/data/" data-track-tool="data-directory">Data APIs</a></li>
+          <li><a href="/social/" data-track-tool="social-directory">Social APIs</a></li>
+        </ul>
+      </details></li>
       <li><a href="/video/" data-track-tool="video-directory">Video workflows</a></li>
       <li><a href="{{ '/product-showcase/' | relative_url }}" data-track-tool="product-gallery"{% if page.product_showcase_page %} aria-current="{% if page.url == '/product-showcase/' %}page{% else %}location{% endif %}"{% endif %}>Product Gallery</a></li>
-      <li><a href="{{ '/' | relative_url }}"{% unless page.product_showcase_page %} aria-current="{% if page.url == '/' %}page{% else %}location{% endif %}"{% endunless %}>Guides &amp; resources</a></li>
-      <li><a href="https://learn.nexscope.ai/pricing/">Pricing</a></li>
+      <li><a href="https://learn.nexscope.ai/product-growth-report/" data-track-tool="product-growth-report">Product Growth Report</a></li>
+      <li class="nav-dropdown"><details>
+        <summary{% unless page.product_showcase_page %} aria-current="location"{% endunless %}>Resources <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <ul class="nav-dropdown-menu">
+          <li><a href="{{ '/' | relative_url }}"{% unless page.product_showcase_page %} aria-current="{% if page.url == '/' %}page{% else %}location{% endif %}"{% endunless %}>Guides &amp; resources</a></li>
+          <li><a href="https://learn.nexscope.ai/pricing/">Pricing</a></li>
+        </ul>
+      </details></li>
       <li><a class="nav-cta" {% if page.url == '/product-showcase/submit/' %}data-submission-form-jump="navigation"{% else %}data-showcase-submit-cta="navigation"{% endif %} href="{% if page.url == '/product-showcase/submit/' %}#product-submission-form{% else %}{{ '/product-showcase/submit/' | relative_url }}{% endif %}">List a product free →</a></li>
     </ul>
   </nav>

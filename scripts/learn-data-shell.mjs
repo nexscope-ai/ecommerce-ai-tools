@@ -1,15 +1,27 @@
-// Match the root homepage and learning-library navigation for generated Data pages.
+// Match the root Learn homepage and learning-library navigation for generated Data pages.
 export function learnDataHeader(path) {
+  const apiCurrent = path === '/data/' ? 'page' : 'location';
   return `<header class="trends-header"><div class="wrap">
   <a class="brand" href="/" aria-label="Nexscope learning home"><img src="/logo.png" alt="Nexscope" width="165" height="32"></a>
   <button class="primary-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
   <nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation"><ul>
-    <li><a href="/data/" data-track-tool="data-directory" aria-current="${path === '/data/' ? 'page' : 'location'}">Data APIs</a></li>
-    <li><a href="/social/" data-track-tool="social-directory">Social APIs</a></li>
+    <li class="nav-dropdown"><details>
+      <summary aria-current="${apiCurrent}">APIs <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
+      <ul class="nav-dropdown-menu">
+        <li><a href="/data/" data-track-tool="data-directory" aria-current="${apiCurrent}">Data APIs</a></li>
+        <li><a href="/social/" data-track-tool="social-directory">Social APIs</a></li>
+      </ul>
+    </details></li>
     <li><a href="/video/" data-track-tool="video-directory">Video workflows</a></li>
     <li><a href="/ecommerce-ai-tools/product-showcase/" data-track-tool="product-gallery">Product Gallery</a></li>
-    <li><a href="/ecommerce-ai-tools/">Guides &amp; resources</a></li>
-    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="/product-growth-report/" data-track-tool="product-growth-report">Product Growth Report</a></li>
+    <li class="nav-dropdown"><details>
+      <summary>Resources <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
+      <ul class="nav-dropdown-menu">
+        <li><a href="/ecommerce-ai-tools/">Guides &amp; resources</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+      </ul>
+    </details></li>
     <li><a class="nav-cta" href="/ecommerce-ai-tools/product-showcase/submit/" data-showcase-submit-cta="data-navigation">List a product free →</a></li>
   </ul></nav></div></header>`;
 }
