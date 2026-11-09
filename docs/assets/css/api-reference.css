@@ -9,6 +9,8 @@
 .api-root-header nav a[aria-current] { color:#6847d5; font-weight:600; }
 .api-reference { max-width:1200px; margin:52px auto 72px; padding:0 24px; }
 .api-reference h1 { max-width:900px; margin:12px 0 20px; font-size:clamp(2rem,4vw,3.25rem); line-height:1.12; letter-spacing:-.035em; overflow-wrap:anywhere; }
+.api-reference h1.api-directory-heading { width:fit-content; max-width:100%; color:#252331; background:linear-gradient(100deg,#252331 0%,#5b4bd2 58%,#9860dd 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+@media(forced-colors:active) { .api-reference h1.api-directory-heading { color:CanvasText; background:none; -webkit-text-fill-color:currentColor; } }
 .api-reference > p { max-width:770px; color:#6d677a; margin:12px 0; font-size:1rem; }
 .api-reference .api-eyebrow { color:#7953cb; text-transform:uppercase; font-size:.72rem; font-weight:700; letter-spacing:.15em; }
 .api-reference > nav { font-size:.82rem; color:#777082; margin-bottom:30px; }
