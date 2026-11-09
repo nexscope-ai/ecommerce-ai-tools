@@ -8,7 +8,9 @@
   const consentKey = 'nexscope_marketing_analytics_consent';
   const consentCookieKey = 'nexscope_analytics_consent_v1';
   const learnHost = 'learn.nexscope.ai';
-  const linkedDomains = ['learn.nexscope.ai', 'www.nexscope.ai', 'nexscope.ai'];
+  // Learn pages share the nexscope.ai cookie domain. Only decorate links that
+  // leave Learn for the main site; same-site navigation needs no `_gl`.
+  const linkedDomains = ['www.nexscope.ai', 'nexscope.ai'];
 
   const readConsentCookie = () => {
     try {

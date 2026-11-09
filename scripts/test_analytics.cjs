@@ -47,7 +47,7 @@ test('seller landing and submission clicks retain acquisition source and reject 
   assert.equal(readFileSync(join(__dirname, '..', 'docs', 'assets', 'product-showcase.js'), 'utf8').includes("event('product_showcase_submit_click'"), false);
 });
 
-test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', () => {
+test('Learn analytics uses the shared GA4 stream and decorates only outbound main-site links', () => {
   const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
   const listeners = {};
   const link = {
@@ -91,7 +91,7 @@ test('Learn analytics uses the shared GA4 stream and cross-subdomain linker', ()
   const calls = window.dataLayer.map(entry => Array.from(entry));
   const config = calls.find(([name]) => name === 'config');
   assert.equal(config[1], 'G-55CJ5T3HHS');
-  assert.equal(Array.from(config[2].linker.domains).join(','), 'learn.nexscope.ai,www.nexscope.ai,nexscope.ai');
+  assert.equal(Array.from(config[2].linker.domains).join(','), 'www.nexscope.ai,nexscope.ai');
   assert.equal(config[2].content_group, 'learn');
   assert.equal(config[2].send_page_view, false);
 

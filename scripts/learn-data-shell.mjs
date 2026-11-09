@@ -10,6 +10,7 @@ export function learnDataHeader(path) {
       <ul class="nav-dropdown-menu">
         <li><a href="/data/" data-track-tool="data-directory" aria-current="${apiCurrent}">Data APIs</a></li>
         <li><a href="/social/" data-track-tool="social-directory">Social APIs</a></li>
+        <li><a href="/video-apis/" data-track-tool="video-api-directory">Video &amp; Image APIs</a></li>
       </ul>
     </details></li>
     <li><a href="/video/" data-track-tool="video-directory">Video workflows</a></li>
@@ -30,7 +31,7 @@ export function learnDataFooter() {
   return `<footer class="learn-site-footer"><div class="wrap resource-footer">
   <div><a href="/">Nexscope Learn</a><p>Ecommerce data. Clearer product discovery.</p></div>
   <nav aria-label="Footer">
-    <a href="/data/">Data APIs</a><a href="/social/">Social APIs</a><a href="/video/" data-track-tool="video-directory">Video workflows</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a>
+    <a href="/data/">Data APIs</a><a href="/social/">Social APIs</a><a href="/video-apis/" data-track-tool="video-api-directory">Video &amp; Image APIs</a><a href="/video/" data-track-tool="video-directory">Video workflows</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a>
     <a href="/ecommerce-ai-tools/product-showcase/submit/" data-showcase-submit-cta="data-footer">List a product free</a>
     <a href="/tools/">Tools</a><a href="/pricing/">Pricing</a><a href="/ecommerce-ai-tools/">Learning library</a>
     <a href="/ecommerce-ai-tools/community/">Community</a><a href="/about/">About</a><a href="/security/">Security</a><a href="/contact/">Contact</a>
