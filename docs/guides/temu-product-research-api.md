@@ -7,7 +7,7 @@ description: "Plan a Temu research workflow using product, shop, category and ke
 permalink: /guides/temu-product-research-api/
 date_published: 2026-10-23
 date_modified: 2026-10-23
-last_modified_at: 2026-10-23
+last_modified_at: 2026-11-09
 last_reviewed: 2026-10-23
 author: Nexscope Team
 schema_type: Article
@@ -109,7 +109,7 @@ These are Nexscope public-marketplace research interfaces. They do not automatic
 
 Budget for the whole sequence: search, detail and shop calls may be separate charges. A displayed estimate or recent average is not an unconditional flat price for every request. Check usage records after the pilot.
 
-For another platform, continue to [Etsy product research]({{ '/guides/etsy-product-research-api/' | relative_url }}) or [Walmart product and keyword research]({{ '/guides/walmart-product-keyword-api/' | relative_url }}). Use the [API capability map]({{ '/api-capabilities/' | relative_url }}) to choose the next task, not to infer that every platform exposes the same data.
+For another platform, continue to [Etsy product research]({{ '/guides/etsy-product-research-api/' | relative_url }}), [Walmart product and keyword research]({{ '/guides/walmart-product-keyword-api/' | relative_url }}) or [Mercado Libre product research]({{ '/guides/mercado-libre-product-research/' | relative_url }}). Use the [API capability map]({{ '/api-capabilities/' | relative_url }}) to choose the next task, not to infer that every platform exposes the same data.
 
 ## Evidence checked and what remains untested
 

@@ -7,7 +7,7 @@ description: "Use Ozon product reports, detail, keyword and trend APIs in one re
 permalink: /guides/ozon-product-research-api/
 date_published: 2026-10-26
 date_modified: 2026-10-26
-last_modified_at: 2026-10-26
+last_modified_at: 2026-11-09
 last_reviewed: 2026-10-26
 author: Nexscope Team
 schema_type: Article
@@ -121,6 +121,6 @@ Reviewed **October 26, 2026** against the linked public report, detail, keyword 
 
 Inspect [current pricing and access](https://www.nexscope.ai/pricing?co-from=learn) before starting. Search pages, detail lookups and trend requests can be separately charged. Keep API keys server-side and distinguish transport failures, business errors, valid empty results and missing fields when handling retries.
 
-Continue with [Shopee product research]({{ '/guides/shopee-product-research-api/' | relative_url }}) or [Temu product research]({{ '/guides/temu-product-research-api/' | relative_url }}) for platform-specific comparisons. For subsequent supplier discovery, use [1688 product search]({{ '/guides/1688-product-search-api/' | relative_url }}); a keyword or image match still requires product and supplier verification.
+Continue with [Shopee product research]({{ '/guides/shopee-product-research-api/' | relative_url }}), [Temu product research]({{ '/guides/temu-product-research-api/' | relative_url }}) or [Mercado Libre product research]({{ '/guides/mercado-libre-product-research/' | relative_url }}) for platform-specific comparisons. For subsequent supplier discovery, use [1688 product search]({{ '/guides/1688-product-search-api/' | relative_url }}); a keyword or image match still requires product and supplier verification.
 
 {% include api-guide-faq.html %}

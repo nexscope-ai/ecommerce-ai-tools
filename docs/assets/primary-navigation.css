@@ -15,7 +15,7 @@
 .trends-header .primary-navigation a[aria-current],
 .trends-header .primary-navigation summary:hover,
 .trends-header .primary-navigation summary[aria-current] { color: #6250e9; text-decoration: none; }
-.trends-header .nav-dropdown { position: relative; }
+.trends-header .nav-dropdown > details { position: relative; }
 .trends-header .nav-dropdown-menu { position: absolute; top: calc(100% + 4px); left: -12px; z-index: 2; display: grid; gap: 2px; min-width: 190px; margin: 0; padding: 8px; border: 1px solid #ddd8e8; border-radius: 14px; background: #fff; box-shadow: 0 14px 30px rgb(33 31 38 / 12%); list-style: none; }
 .trends-header .primary-navigation .nav-dropdown-menu a { display: flex; width: 100%; min-height: 40px; padding: 0 12px; border-radius: 8px; }
 .trends-header .primary-navigation .nav-dropdown-menu a:hover,

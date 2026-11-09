@@ -8,7 +8,7 @@ permalink: /api-capabilities/
 date_published: 2026-09-14
 last_reviewed: 2026-10-26
 date_modified: 2026-10-26
-last_modified_at: 2026-10-26
+last_modified_at: 2026-11-09
 schema_type: Article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
 image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
@@ -42,6 +42,11 @@ Use a focused guide when you need to choose an interface and understand its evid
 - [1688 Product Detail API]({{ '/guides/1688-product-detail-api/' | relative_url }}) — compare exact SKUs, quantity tiers, single-piece prices and shipping units.
 - [Shopee product research API]({{ '/guides/shopee-product-research-api/' | relative_url }}) — connect a station-specific search to eligible product-detail URLs.
 - [Ozon product research API]({{ '/guides/ozon-product-research-api/' | relative_url }}) — align product reports, detail windows, keyword periods and daily trends.
+- [Mercado Libre product research]({{ '/guides/mercado-libre-product-research/' | relative_url }}) — compare category demand, 30-day sales, new listings and cross-border shops in Mexico, Brazil, Argentina, Chile and Colombia.
+- [Amazon patent, trademark and TRO check]({{ '/guides/amazon-patent-trademark-tro-check/' | relative_url }}) — screen design, utility, trademark, copyright and court-order signals before you order inventory.
+- [Amazon policy and fee change monitoring]({{ '/guides/amazon-policy-change-monitoring/' | relative_url }}) — turn the public policy feed into a weekly digest filtered to your catalog.
+- [AI virtual try-on for apparel photos]({{ '/guides/ai-clothing-model-photos-virtual-try-on/' | relative_url }}) — dress one licensed model with flat-lay or hanger photos and review the garment before publishing.
+- [Product color variant images]({{ '/guides/product-color-variant-images-ai/' | relative_url }}) — recolor one approved photo into the colorways you actually sell.
 - [Competitor keyword and traffic APIs]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}) — turn bounded search evidence into relevant content briefs.
 - [Backlink and referring-domain APIs]({{ '/guides/backlink-referring-domains-api/' | relative_url }}) — inspect links without mistaking index scores for Google judgments.
 
@@ -49,7 +54,7 @@ The [TikTok Shop guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}) w
 
 ## What is in the API docs?
 
-- **Ecommerce data:** Amazon product/search/review/keyword research; TikTok Shop product, creator, video, and ad research; Shopify store/product queries; 1688 sourcing; other marketplace and patent research references.
+- **Ecommerce data:** Amazon product/search/review/keyword research; TikTok Shop product, creator, video, and ad research; Shopify store/product queries; 1688 sourcing; other marketplace and patent research references. For a pre-launch screen, see the [Amazon patent, trademark and TRO check]({{ '/guides/amazon-patent-trademark-tro-check/' | relative_url }}).
 - **SEO and GEO:** keyword metrics, search results, competitor and traffic research, page evidence, backlinks, advertising intelligence, and AI visibility research. Open the relevant API page to confirm its current inputs, access requirements, and response schema.
 - **Creative AI:** image generation and editing, background removal, and video generation. Creative work uses asynchronous tasks: submit once, then query the returned task ID.
 - **Integration:** REST endpoint details, MCP tool definitions, request/response examples, and an online API tester. The [API examples repository](https://github.com/nexscope-ai/nexscope-ecommerce-api) contains reusable cURL, JavaScript, and Python clients.

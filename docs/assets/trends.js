@@ -137,9 +137,6 @@
         learningMenu.querySelector('summary').focus();
       }
     });
-    learningMenu.addEventListener('focusout', event => {
-      if (event.relatedTarget && !learningMenu.contains(event.relatedTarget)) learningMenu.open = false;
-    });
   }
 
   document.addEventListener('click', event => {

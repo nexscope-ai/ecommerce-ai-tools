@@ -7,7 +7,7 @@ description: "Compare Shopee products within one market using price, variants an
 permalink: /guides/shopee-product-research-api/
 date_published: 2026-10-26
 date_modified: 2026-10-30
-last_modified_at: 2026-10-30
+last_modified_at: 2026-11-09
 last_reviewed: 2026-10-30
 author: Nexscope Team
 schema_type: Article
@@ -150,6 +150,6 @@ Reviewed **October 30, 2026** against the public [search](https://www.nexscope.a
 
 Inspect [current pricing and access](https://www.nexscope.ai/pricing?co-from=learn), and budget search pages and selected detail requests separately. Check HTTP and business errors before retrying, and keep actual charged credits with the pilot record.
 
-After marketplace research, investigate sourcing separately through [1688 product search]({{ '/guides/1688-product-search-api/' | relative_url }}). Compare another marketplace with the [Temu research guide]({{ '/guides/temu-product-research-api/' | relative_url }}) or [Ozon research guide]({{ '/guides/ozon-product-research-api/' | relative_url }}). A visual or keyword match across platforms is a lead to inspect, not proof of an identical product or achievable margin.
+After marketplace research, investigate sourcing separately through [1688 product search]({{ '/guides/1688-product-search-api/' | relative_url }}). Compare another marketplace with the [Temu research guide]({{ '/guides/temu-product-research-api/' | relative_url }}), [Ozon research guide]({{ '/guides/ozon-product-research-api/' | relative_url }}) or [Mercado Libre product research]({{ '/guides/mercado-libre-product-research/' | relative_url }}). A visual or keyword match across platforms is a lead to inspect, not proof of an identical product or achievable margin.
 
 {% include api-guide-faq.html %}
