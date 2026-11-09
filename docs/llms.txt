@@ -65,6 +65,7 @@ Official learning homepage: https://learn.nexscope.ai/
 
 ## Recent AI and ecommerce insights
 
+- https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/chatgpt-business-hub-impressions-clicks/ — how sellers should read reported ChatGPT impressions and clicks
 - https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/amazon-branded-conversations-ai-shopping-ads/ — prepare product expertise for sponsored Alexa for Shopping conversations
 - https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/amazon-seller-central-multichannel-selling/ — connect and verify Amazon, Shopify, TikTok, eBay, and Walmart workflows
 - https://learn.nexscope.ai/ecommerce-ai-tools/ecommerce-trends/shopify-canvas-sidekick-ai-store-builder/ — test Shopify Canvas and Sidekick theme changes safely
