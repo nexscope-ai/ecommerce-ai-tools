@@ -22,7 +22,7 @@ test('model experience clicks retain top, middle and end placement in both conve
     };
     const document = {
       referrer: '',
-      querySelectorAll: () => [link],
+      querySelectorAll: selector => selector === 'a[href]' ? [link] : [],
       querySelector: () => null,
       addEventListener(name, listener) { if (name === 'click') this.click = listener; },
     };
@@ -57,7 +57,7 @@ test('Learn keeps the external source when linking to the main site', () => {
   };
   const document = {
     referrer: 'https://chatgpt.com/c/example',
-    querySelectorAll: () => [link],
+    querySelectorAll: selector => selector === 'a[href]' ? [link] : [],
     querySelector: () => null,
     addEventListener(name, listener) { if (name === 'click') this.click = listener; },
   };
