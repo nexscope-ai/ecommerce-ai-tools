@@ -219,108 +219,225 @@ test('Product Gallery clicks record the product and placement without exposing m
   assert.equal(events().length, 3);
 });
 
-test('Learn analytics sends one cookieless page view before consent and does not duplicate it after opt-in', () => {
+function loadConsentPage({ consent = null, cookie = '', href = 'https://learn.nexscope.ai/ecommerce-ai-tools/' } = {}) {
   const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
   const appended = [];
+  const created = [];
+  const listeners = {};
+  const stored = { value: consent };
+  const location = new URL(href);
+  const history = {
+    pushState(_state, _title, url) {
+      if (url) location.href = new URL(url, location).href;
+    },
+    replaceState(_state, _title, url) {
+      if (url) location.href = new URL(url, location).href;
+    },
+  };
   const window = {
     nexscopeAnalyticsLoaded: false,
     dataLayer: [],
-    location: { href: 'https://learn.nexscope.ai/ecommerce-ai-tools/' },
+    location,
+    history,
     localStorage: {
-      getItem() { return null; },
-      setItem() {},
+      getItem() { return stored.value; },
+      setItem(_key, value) { stored.value = value; },
     },
+    addEventListener(name, listener) { (listeners[name] ||= []).push(listener); },
   };
   const document = {
     title: 'Learn',
     referrer: '',
-    cookie: '',
+    cookie,
     head: { appendChild() {} },
-    body: { append(node) { appended.push(node); } },
+    body: {
+      append(node) {
+        node.isConnected = true;
+        appended.push(node);
+      },
+    },
     createElement() {
-      return {
+      const node = {
         style: {},
+        attrs: {},
         children: [],
-        setAttribute() {},
+        listeners: {},
+        setAttribute(name, value) { this.attrs[name] = value; },
         append(...nodes) { this.children.push(...nodes); },
         querySelector() { return { focus() {} }; },
-        remove() {},
+        remove() { this.isConnected = false; },
+        addEventListener(type, fn) { this.listeners[type] = fn; },
       };
+      created.push(node);
+      return node;
     },
-    addEventListener() {},
+    addEventListener(name, listener) { (listeners[name] ||= []).push(listener); },
   };
-  runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
+  runInNewContext(script, { window, document, location, URL, URLSearchParams, Date, setInterval, clearInterval });
+  const panel = created.find(node => node.attrs['aria-label'] === 'Analytics preferences');
+  const tag = created.find(node => typeof node.src === 'string' && node.src.includes('gtag/js'));
+  return { window, document, appended, panel, tag, listeners, location };
+}
 
-  const beforeConsent = window.dataLayer.map(entry => Array.from(entry));
-  assert.equal(beforeConsent.find(entry => entry[0] === 'consent' && entry[1] === 'default')[2].analytics_storage, 'denied');
-  assert.equal(beforeConsent.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
+function pageViews(dataLayer) {
+  return dataLayer.map(entry => Array.from(entry)).filter(entry => entry[0] === 'event' && entry[1] === 'page_view');
+}
 
-  const allowButton = appended[0].children[1].children[0];
-  allowButton.onclick();
-  const afterConsent = window.dataLayer.map(entry => Array.from(entry));
-  assert.equal(afterConsent.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
-  assert.equal(afterConsent.filter(entry => entry[0] === 'consent' && entry[1] === 'update')[0][2].analytics_storage, 'granted');
+function consentDefaults(dataLayer) {
+  return dataLayer.map(entry => Array.from(entry)).filter(entry => entry[0] === 'consent' && entry[1] === 'default');
+}
+
+test('visitors without a stored choice are measured outside opt-in regions', () => {
+  const { window, appended, tag } = loadConsentPage();
+  const defaults = consentDefaults(window.dataLayer);
+  assert.equal(defaults.length, 2);
+  assert.equal(defaults[0][2].analytics_storage, 'denied');
+  assert.equal(defaults[0][2].ad_storage, 'denied');
+  assert.equal(defaults[0][2].ad_user_data, 'denied');
+  assert.equal(defaults[0][2].ad_personalization, 'denied');
+  for (const code of ['DE', 'FR', 'GB', 'CH', 'IS', 'NO']) {
+    assert.equal(defaults[0][2].region.includes(code), true, code);
+  }
+  assert.equal(defaults[0][2].region.includes('US'), false);
+  assert.equal(defaults[1][2].analytics_storage, 'granted');
+  assert.equal(defaults[1][2].ad_storage, 'granted');
+  assert.equal(defaults[1][2].ad_user_data, 'granted');
+  assert.equal(defaults[1][2].ad_personalization, 'granted');
+  assert.equal(defaults[1][2].region, undefined);
+  assert.equal(pageViews(window.dataLayer).length, 1);
+  assert.equal(window.dataLayer.map(entry => Array.from(entry)).some(entry => entry[0] === 'set' && entry[1] === 'url_passthrough' && entry[2] === true), true);
+  assert.equal(appended.length, 0);
+
+  window.google_tag_data = { ics: { entries: { analytics_storage: { default: true } } } };
+  tag.listeners.load();
+  assert.equal(appended.length, 0, 'granted regions do not show the banner');
 });
 
-test('Learn analytics sends one cookieless page view when analytics is rejected', () => {
-  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
-  const appended = [];
-  const window = {
-    nexscopeAnalyticsLoaded: false,
-    dataLayer: [],
-    location: { href: 'https://learn.nexscope.ai/ecommerce-ai-tools/' },
-    localStorage: {
-      getItem() { return null; },
-      setItem() {},
-    },
-  };
-  const document = {
-    title: 'Learn',
-    referrer: '',
-    cookie: '',
-    head: { appendChild() {} },
-    body: { append(node) { appended.push(node); } },
-    createElement() {
-      return {
-        style: {},
-        children: [],
-        setAttribute() {},
-        append(...nodes) { this.children.push(...nodes); },
-        querySelector() { return { focus() {} }; },
-        remove() {},
-      };
-    },
-    addEventListener() {},
-  };
-  runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
+test('an opt-in region shows the banner and Allow re-queues the same page view', () => {
+  const { window, appended, panel, tag } = loadConsentPage();
+  assert.equal(pageViews(window.dataLayer).length, 1);
+  window.google_tag_data = { ics: { entries: { analytics_storage: { default: false } } } };
+  tag.listeners.load();
+  assert.equal(appended.length, 1);
 
-  const rejectButton = appended[0].children[1].children[1];
-  rejectButton.onclick();
+  panel.children[1].children[0].onclick();
+  const views = pageViews(window.dataLayer);
+  assert.equal(views.length, 2);
+  assert.equal(views[1][2].page_location, views[0][2].page_location);
+  const update = window.dataLayer.map(entry => Array.from(entry)).find(entry => entry[0] === 'consent' && entry[1] === 'update');
+  assert.equal(update[2].analytics_storage, 'granted');
+  assert.equal(update[2].ad_storage, 'granted');
+  assert.equal(update[2].ad_user_data, 'granted');
+  assert.equal(update[2].ad_personalization, 'granted');
+});
+
+test('Reject in an opt-in region keeps one cookieless page view and denies every signal', () => {
+  const { window, panel, tag } = loadConsentPage();
+  window.google_tag_data = { ics: { entries: { analytics_storage: { default: false } } } };
+  tag.listeners.load();
+  panel.children[1].children[1].onclick();
   const calls = window.dataLayer.map(entry => Array.from(entry));
   assert.equal(calls.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
-  assert.equal(calls.filter(entry => entry[0] === 'consent' && entry[1] === 'update')[0][2].analytics_storage, 'denied');
+  const update = calls.find(entry => entry[0] === 'consent' && entry[1] === 'update');
+  assert.equal(update[2].analytics_storage, 'denied');
+  assert.equal(update[2].ad_storage, 'denied');
+  assert.equal(update[2].ad_user_data, 'denied');
+  assert.equal(update[2].ad_personalization, 'denied');
 });
 
-test('Learn analytics can read the shared consent cookie across subdomains', () => {
-  const script = readFileSync(join(__dirname, '..', 'docs', 'assets', 'analytics.js'), 'utf8');
-  const window = {
-    nexscopeAnalyticsLoaded: false,
-    dataLayer: [],
-    location: { href: 'https://learn.nexscope.ai/ecommerce-ai-tools/' },
-    localStorage: { getItem() { return null; } },
-  };
-  const document = {
-    title: 'Learn',
-    referrer: '',
+test('a stored grant or denial overrides the regional default and local storage wins over the cookie', () => {
+  const shared = loadConsentPage({ cookie: 'nexscope_analytics_consent_v1=granted' });
+  const granted = consentDefaults(shared.window.dataLayer);
+  assert.equal(granted.length, 1);
+  assert.equal(granted[0][2].analytics_storage, 'granted');
+  assert.equal(granted[0][2].ad_storage, 'granted');
+  assert.equal(granted[0][2].region, undefined);
+  assert.equal(pageViews(shared.window.dataLayer).length, 1);
+  shared.window.google_tag_data = { ics: { entries: { analytics_storage: { default: true } } } };
+  shared.tag.listeners.load();
+  assert.equal(shared.appended.length, 0);
+
+  const denied = loadConsentPage({ consent: 'denied' });
+  const deniedDefault = consentDefaults(denied.window.dataLayer)[0][2];
+  assert.equal(deniedDefault.analytics_storage, 'denied');
+  assert.equal(deniedDefault.ad_storage, 'denied');
+  assert.equal(deniedDefault.ad_user_data, 'denied');
+  assert.equal(deniedDefault.ad_personalization, 'denied');
+  assert.equal(deniedDefault.region, undefined);
+  denied.window.google_tag_data = { ics: { entries: { analytics_storage: { default: false } } } };
+  denied.tag.listeners.load();
+  assert.equal(denied.appended.length, 0);
+
+  const localWins = loadConsentPage({
+    consent: 'denied',
     cookie: 'nexscope_analytics_consent_v1=granted',
-    head: { appendChild() {} },
-    body: { append() {} },
-    createElement() {
-      return { style: {}, setAttribute() {}, append() {}, querySelector() { return { focus() {} }; } };
-    },
-    addEventListener() {},
+  });
+  assert.equal(consentDefaults(localWins.window.dataLayer)[0][2].analytics_storage, 'denied');
+});
+
+test('Cookie settings opens the banner even where measurement is already allowed', () => {
+  const { window, appended, listeners } = loadConsentPage({ consent: 'granted' });
+  assert.equal(appended.length, 0);
+  const link = {
+    href: 'https://learn.nexscope.ai/ecommerce-ai-tools/#analytics-preferences',
+    hash: '#analytics-preferences',
+    origin: 'https://learn.nexscope.ai',
+    textContent: 'Cookie settings',
+    getAttribute() { return null; },
   };
-  runInNewContext(script, { window, document, location: window.location, URL, URLSearchParams, Date });
-  const calls = window.dataLayer.map(entry => Array.from(entry));
-  assert.equal(calls.filter(entry => entry[0] === 'event' && entry[1] === 'page_view').length, 1);
+  let prevented = false;
+  listeners.click[1]({
+    target: { closest(selector) { return selector === 'a[href]' ? link : null; } },
+    preventDefault() { prevented = true; },
+  });
+  assert.equal(prevented, true);
+  assert.equal(appended.length, 1);
+  assert.equal(pageViews(window.dataLayer).length, 1);
+});
+
+test('page location keeps ads click ids and drops unrelated query params', () => {
+  const gclid = `CjwKCAjw${'A'.repeat(120)}`;
+  const href = `https://learn.nexscope.ai/ecommerce-ai-tools/?utm_source=google&utm_medium=cpc&utm_id=camp-1&gclid=${gclid}&gbraid=0A1B_gbraid.1&wbraid=WBRAID-1&gclsrc=aw.ds&dclid=display-1&gad_source=1&gad_campaignid=99&srsltid=shop-1&msclkid=bing-click&token=private&fbclid=social#section`;
+  const { window } = loadConsentPage({ consent: 'granted', href });
+  const location = window.dataLayer.map(entry => Array.from(entry)).find(entry => entry[0] === 'config')[2].page_location;
+  const params = new URL(location).searchParams;
+  assert.equal(params.get('utm_source'), 'google');
+  assert.equal(params.get('utm_medium'), 'cpc');
+  assert.equal(params.get('utm_id'), 'camp-1');
+  assert.equal(params.get('gclid'), gclid);
+  assert.equal(params.get('gbraid'), '0A1B_gbraid.1');
+  assert.equal(params.get('wbraid'), 'WBRAID-1');
+  assert.equal(params.get('gclsrc'), 'aw.ds');
+  assert.equal(params.get('dclid'), 'display-1');
+  assert.equal(params.get('gad_source'), '1');
+  assert.equal(params.get('gad_campaignid'), '99');
+  assert.equal(params.get('srsltid'), 'shop-1');
+  assert.equal(params.get('msclkid'), 'bing-click');
+  assert.equal(params.has('token'), false);
+  assert.equal(params.has('fbclid'), false);
+  assert.equal(location.includes('private'), false);
+  assert.equal(location.includes('#'), false);
+  const view = pageViews(window.dataLayer)[0][2];
+  assert.equal(view.page_location, location);
+});
+
+test('client-side navigations send one page view per sanitized URL', () => {
+  const { window, listeners, location } = loadConsentPage({
+    consent: 'granted',
+    href: 'https://learn.nexscope.ai/ecommerce-ai-tools/guides/?utm_source=chatgpt.com&token=private',
+  });
+  assert.equal(pageViews(window.dataLayer).length, 1);
+  window.history.pushState({}, '', '/ecommerce-ai-tools/pricing/?token=private&gclid=CLICKID');
+  const views = pageViews(window.dataLayer);
+  assert.equal(views.length, 2);
+  assert.equal(views[1][2].page_location, 'https://learn.nexscope.ai/ecommerce-ai-tools/pricing/?gclid=CLICKID');
+  assert.equal(views[1][2].page_referrer, 'https://learn.nexscope.ai/ecommerce-ai-tools/guides/?utm_source=chatgpt.com');
+  assert.equal(views[1][2].landing_path, '/ecommerce-ai-tools/guides/');
+  window.history.replaceState({}, '', '/ecommerce-ai-tools/pricing/?token=private&gclid=CLICKID');
+  assert.equal(pageViews(window.dataLayer).length, 2);
+  location.href = 'https://learn.nexscope.ai/ecommerce-ai-tools/guides/?utm_source=chatgpt.com&token=private';
+  listeners.popstate[0]();
+  const restored = pageViews(window.dataLayer);
+  assert.equal(restored.length, 3);
+  assert.equal(restored[2][2].page_location, 'https://learn.nexscope.ai/ecommerce-ai-tools/guides/?utm_source=chatgpt.com');
 });
