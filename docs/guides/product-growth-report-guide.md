@@ -63,6 +63,8 @@ Add facts you can support: included items, measurements and their endpoints, rel
 
 ## See what a specific finding looks like
 
+For a worked example with draft copy, a dimension photo brief and checks before publication, read the [Amazon listing audit for a paint roller set]({{ '/guides/amazon-listing-audit-paint-roller/' | relative_url }}).
+
 The [public PCIQUTE report](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn#module-seo) provides a concrete illustration. Its November 5, 2026 snapshot concerns a 17-piece paint roller kit for the UK market. One issue is explaining working length consistently, including what is attached when the measurement is taken.
 
 A reviewable change list would preserve the saved specification, identify each field that needs clarification and assign a measurement check before publishing. It would not convert a related “2 m” search phrase into an unsupported product claim.
