@@ -31,62 +31,6 @@
     }
     a { color: inherit; }
     .wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
-    .site-header {
-      position: relative;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgb(251 249 245 / 94%);
-      backdrop-filter: blur(16px);
-    }
-    .site-header .wrap {
-      display: flex;
-      min-height: 82px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-    .brand img { display: block; width: 166px; height: auto; }
-    .desktop-nav { display: flex; align-items: center; gap: 26px; font-size: 14px; font-weight: 750; }
-    .desktop-nav a, .mobile-menu a { text-decoration: none; }
-    .desktop-nav .gallery-link { color: var(--accent); }
-    .mobile-menu { display: none; }
-    .mobile-menu summary {
-      display: grid;
-      width: 44px;
-      height: 44px;
-      place-items: center;
-      cursor: pointer;
-      list-style: none;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--paper);
-      box-shadow: 0 8px 22px rgb(36 28 55 / 8%);
-    }
-    .mobile-menu summary::-webkit-details-marker { display: none; }
-    .menu-lines, .menu-lines::before, .menu-lines::after {
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--ink);
-      content: "";
-    }
-    .menu-lines { position: relative; }
-    .menu-lines::before { position: absolute; top: -6px; }
-    .menu-lines::after { position: absolute; top: 6px; }
-    .mobile-menu nav {
-      position: absolute;
-      top: 72px;
-      right: 24px;
-      display: grid;
-      min-width: 210px;
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-    .mobile-menu nav a { padding: 10px 12px; border-radius: 9px; font-size: 14px; font-weight: 750; }
-    .mobile-menu nav a:hover { background: var(--soft); }
     .product-page { padding: 30px 0 88px; }
     .breadcrumbs {
       display: flex;
@@ -231,8 +175,6 @@
     }
     @media (max-width: 700px) {
       .wrap { width: min(100% - 28px, 1180px); }
-      .desktop-nav { display: none; }
-      .mobile-menu { display: block; }
       .product-page { padding-top: 22px; }
       .product-hero { gap: 18px; }
       .hero-copy, .hero-media, .product-overview, .media-section { border-radius: 21px; }
@@ -266,8 +208,6 @@
     /* Directory-style product detail: clear summary, page sections and a compact facts rail. */
     :root { --canvas: #f7f8fc; --ink: #191b29; --muted: #606477; --line: #e3e5ee; --soft: #f2efff; --shadow: 0 18px 52px rgb(32 31 70 / 6%); }
     body { background: radial-gradient(circle at 10% 0%, #f0edff 0, transparent 31%), var(--canvas); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    .site-header { background: rgb(255 255 255 / 92%); }
-    .site-header .wrap { min-height: 72px; }
     .listing-page { padding: 26px 0 86px; }
     .listing-page .breadcrumbs { margin-bottom: 20px; font-size: 12px; }
     .listing-page .breadcrumbs > span:last-child { min-width: 0; overflow: hidden; color: var(--ink); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
@@ -405,13 +345,7 @@
   <script src="https://learn.nexscope.ai/ecommerce-ai-tools/assets/analytics.js?v=10" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="https://learn.nexscope.ai/" aria-label="Nexscope home"><img src="https://learn.nexscope.ai/logo.png" alt="Nexscope" width="166" height="42"></a>
-      <nav class="desktop-nav" aria-label="Primary"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/research/">Research</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/visibility/">SEO &amp; AI visibility</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/agents/">APIs &amp; agents</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/evidence/">Evidence</a><a class="gallery-link" href="{{GALLERY_URL}}" aria-current="page">Product Gallery</a></nav>
-      <details class="mobile-menu"><summary aria-label="Open navigation menu"><span class="menu-lines" aria-hidden="true"></span></summary><nav aria-label="Mobile navigation"><a href="https://learn.nexscope.ai/tools/">Tools</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/research/">Research</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/visibility/">SEO &amp; AI visibility</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/agents/">APIs &amp; agents</a><a href="https://learn.nexscope.ai/ecommerce-ai-tools/topics/evidence/">Evidence</a><a href="{{GALLERY_URL}}" aria-current="page">Product Gallery</a></nav></details>
-    </div>
-  </header>
+  <!-- shared Learn navigation -->
   <main class="wrap product-page listing-page">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{GALLERY_URL}}">Product Gallery</a><span aria-hidden="true">/</span><span>{{PRODUCT_NAME}}</span></nav>
     <article class="listing-article">

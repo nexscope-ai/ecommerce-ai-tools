@@ -80,6 +80,17 @@ def resource_errors(page, canonical, directory, root_site=None):
         if not target.is_file(): errors.append(f'Missing {kind}: {canonical} -> {href}')
     return errors
 
+
+def product_navigation(directory):
+    gallery = (directory / 'product-showcase/index.html').read_text(encoding='utf-8')
+    header = re.search(r'<header class="trends-header">.*?</header>', gallery, re.S)
+    stylesheet = re.search(r'<link[^>]+href="[^"]*/primary-navigation\.css\?[^"]+"[^>]*>', gallery)
+    script = re.search(r'<script[^>]+src="[^"]*/trends\.js\?[^"]+"[^>]*></script>', gallery)
+    if not (header and stylesheet and script):
+        raise SystemExit('Product Gallery is missing its shared Learn navigation or assets')
+    return header[0].replace('aria-current="page"', 'aria-current="location"'), stylesheet[0], script[0]
+
+
 def finalize(directory, root_site=None, api_snapshot=None):
     directory = Path(directory)
     api_contract = json.loads(Path(api_snapshot).read_text(encoding='utf-8')) if api_snapshot else None
@@ -98,9 +109,19 @@ def finalize(directory, root_site=None, api_snapshot=None):
     pages = {}
     excluded = Counter()
     errors = []
+    detail_nav = None
     for path in sorted(directory.rglob('*.html')):
         relative = path.relative_to(directory).as_posix()
-        page = Page(path.read_text(encoding='utf-8'))
+        html = path.read_text(encoding='utf-8')
+        marker = '<!-- shared Learn navigation -->'
+        if relative.startswith('product-showcase/product/') and marker in html:
+            if detail_nav is None:
+                detail_nav = product_navigation(directory)
+            header, stylesheet, script = detail_nav
+            html = html.replace(marker, header, 1)
+            html = html.replace('</head>', f'  {stylesheet}\n  {script}\n</head>', 1)
+            path.write_text(html, encoding='utf-8')
+        page = Page(html)
         if relative == '404.html' or page.redirect or 'noindex' in page.robots:
             excluded['redirect/private/noindex'] += 1
             continue

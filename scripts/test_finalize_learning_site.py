@@ -30,6 +30,30 @@ class CanonicalSitemapTests(unittest.TestCase):
     def test_broken_internal_link_fails_the_build(self):
         self.page('broken/', body=f'<a href="{BASE}/missing/">Missing</a>')
         with self.assertRaisesRegex(SystemExit, 'Broken local link'): self.run_finalize()
+    def test_product_detail_reuses_published_gallery_header_and_assets(self):
+        assets = self.directory / 'assets'
+        assets.mkdir()
+        for filename in ('primary-navigation.css', 'trends.js'):
+            (assets / filename).touch()
+        head = (
+            f'<link rel="stylesheet" href="{BASE}/assets/primary-navigation.css?v=8">'
+            f'<script src="{BASE}/assets/trends.js?v=20" defer></script>'
+        )
+        header = (
+            '<header class="trends-header"><nav>'
+            f'<a href="{BASE}/product-showcase/" aria-current="page">Product Gallery</a>'
+            '</nav></header>'
+        )
+        self.page('product-showcase/', head=head, body=header)
+        route = 'product-showcase/product/example/'
+        self.page(route, body='<!-- shared Learn navigation -->')
+
+        self.run_finalize()
+
+        html = (self.directory / route / 'index.html').read_text(encoding='utf-8')
+        self.assertIn(header.replace('aria-current="page"', 'aria-current="location"'), html)
+        self.assertIn('primary-navigation.css?v=8', html)
+        self.assertIn('trends.js?v=20', html)
     def test_dates_remain_stable_when_rebuilding(self):
         first = ET.tostring(self.run_finalize().getroot())
         second = ET.tostring(self.run_finalize().getroot())

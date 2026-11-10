@@ -191,8 +191,11 @@ test('Data directory and category pages share the Learn navigation, footer and r
     assert.match(html,/privacy\?co-from=learn/);
     assert.match(html,/Submission|Product submission/);
   }
-  assert.match(await readFile(join(dir,'learn-shell.css'),'utf8'),/max-width: 1180px/);
-  assert.match(await readFile(join(dir,'learn-shell.js'),'utf8'),/Escape/);
+  const shellCss=await readFile(join(dir,'learn-shell.css'),'utf8');
+  const shellJs=await readFile(join(dir,'learn-shell.js'),'utf8');
+  const compactWidth=shellCss.match(/max-width: (\d+)px/)[1];
+  assert.ok(shellJs.includes(`(max-width: ${compactWidth}px)`));
+  assert.match(shellJs,/Escape/);
 });
 
 test('live refresh publishes only current canonical Data APIs and excludes withdrawn or non-Data entries',()=>{
