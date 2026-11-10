@@ -30,7 +30,7 @@ next_step:
 
 A buyer sees “extension pole” and wants to know how far it extends with the roller attached. If the title, bullets and photos leave that question open, a longer keyword list gives the seller little direction. This Amazon listing audit follows a more concrete path: verify one measurement, explain it where buyers look and check the result on the live listing.
 
-The example is PCIQUTE’s 17-piece paint roller set (ASIN B0HDC7BHX5) on Amazon UK. [Nexscope’s public report from 5 November 2026](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn#module-seo) records a stated working length of approximately 60–160 cm with the roller setup attached. The first edit we would prepare is a clear explanation of that range backed by a measured photo.
+The example is PCIQUTE’s 17-piece paint roller set (ASIN B0HDC7BHX5) on Amazon UK. Open <a data-article-next-step data-step-id="amazon_listing_audit_report_example" data-cta-placement="article-intro" data-buyer-intent="product-report-evaluation" href="https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn#module-seo">Nexscope’s public report from 5 November 2026</a> to see the saved evidence. The saved listing states a working length of approximately 60–160 cm with the roller setup attached. The first edit we would prepare is a clear explanation of that range backed by a measured photo.
 
 ## Confirm what the number measures
 

@@ -3,12 +3,12 @@ learning_topic: agents
 content_kind: guide
 layout: default
 title: "Temu Product Research API: Products, Shops & Keywords"
-description: "Plan a Temu research workflow using product, shop, category and keyword APIs. Keep source IDs, regions and metric definitions aligned before comparing candidates."
+description: "See a Temu Product Source Query request and sample response. Learn which product, price, review and order fields to verify before building a shortlist."
 permalink: /guides/temu-product-research-api/
 date_published: 2026-10-23
-date_modified: 2026-10-23
-last_modified_at: 2026-11-09
-last_reviewed: 2026-10-23
+date_modified: 2026-11-10
+last_modified_at: 2026-11-10
+last_reviewed: 2026-11-10
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -25,8 +25,8 @@ next_step:
   id: temu_product_research_api
   title: Inspect a bounded Temu product query
   description: "Review the available product filters, source scope and current credits before collecting a shortlist."
-  label: View Temu Product Source Query
-  url: https://www.nexscope.ai/api-docs/temu-product-source-query?view=api&co-from=learn
+  label: Test Temu Product Source Query
+  url: "https://www.nexscope.ai/api-docs/temu-product-source-query?view=documentation&co-from=learn#online-test"
 ---
 
 # Temu product research API: products, shops and keywords
@@ -37,7 +37,31 @@ A **Temu product research API** can help turn a broad niche into a list of produ
 
 > **Quick answer:** Nexscope's Temu APIs support category, product, shop and keyword research across distinct source families. Use them for a bounded, reviewable shortlist, preserving the route and identifier definitions behind each result. They are not a merchant-management integration or proof of supplier reliability. Do not merge identifiers or sales metrics across source families without verification.
 
-*Reviewed October 23, 2026. Documentation-based guide by Nexscope Team. No paid API request or product test was run. This article focuses on data research, not image-generation tools.*
+*Reviewed November 10, 2026. The request and response below come from the official documentation.*
+
+## Temu Product Source Query request and response example
+
+To start a portable-blender shortlist, send `POST /eh/temu/productQuery` with the JSON below. `searchKey` is the product phrase. `page` and `pageSize` bound the first request. [Open the official API tester](https://www.nexscope.ai/api-docs/temu-product-source-query?view=documentation&co-from=learn#online-test).
+
+```json
+{
+  "searchKey": "portable blender",
+  "page": 1,
+  "pageSize": 5
+}
+```
+
+The published documentation shows the following fields on one record in `data.products`. The sample omits the collection date and market. Use it to check the response shape, then run a new query for current market research. [Official response sample](https://www.nexscope.ai/api-docs/temu-product-source-query?view=documentation&co-from=learn#data-example)
+
+| Field | Sample value | How to use it |
+| --- | --- | --- |
+| `productId` | `"605704219910204"` | Keep the ID as a string and retain the source route when matching records. |
+| `price` | `19.55` | Verify the currency, region and variant before comparing prices. |
+| `rating` and `reviewNum` | `0` and `66` | Check how the provider represents unavailable ratings before treating zero as a score. |
+| `orderWeek` and `orderMonth` | `935` and `2291` | Keep each reported window separate. Confirm its definition before comparing demand. |
+| `publishTime` | `2026-05-10` | This is the product publish date in the sample. Record the time of your own request separately. |
+
+If two rows describe different pack sizes or capacities, label the difference before sorting by price or orders. Save the request alongside the shortlist so you can reproduce the comparison later.
 
 ## Is this API workflow right for you?
 
@@ -113,7 +137,7 @@ For another platform, continue to [Etsy product research]({{ '/guides/etsy-produ
 
 ## Evidence checked and what remains untested
 
-Documentation review date: **October 23, 2026**. This is a vendor-authored contract review, not an independent benchmark or customer testimonial.
+Documentation reviewed by Nexscope on **November 10, 2026**.
 
 The [Temu Category Search contract](https://www.nexscope.ai/api-docs/temu-category-search?view=api) documents `keyword` as required, with `page` and `pageSize` controls. Category fields include `categoryId`, `parentId`, `level` and category names. The documented category source is synchronized data; a category match is not a live demand measurement or a factory verification.
 

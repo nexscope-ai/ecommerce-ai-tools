@@ -2,13 +2,13 @@
 learning_topic: creative
 content_kind: guide
 layout: default
-title: "AI Product Video Generator: Images to Reviewed Product Clips"
-description: "Turn product images into video with an AI product video generator. Compare model reviews, inspect pricing and check product accuracy before publishing."
+title: "AI Product Video Quality Checklist | Nexscope"
+description: "Review an AI-generated product video frame by frame. Check labels, product shape, motion and claims, then compare models using the same reference image."
 permalink: /ai-video-generator/
-last_reviewed: 2026-10-23
+last_reviewed: 2026-11-10
 date_published: 2026-09-15
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
+date_modified: 2026-11-10
+last_modified_at: 2026-11-10
 author: Nexscope Team
 schema_type: Article
 next_step:
@@ -31,13 +31,13 @@ faq:
     answer: No. This guide documents the workflow and review method, but it does not publish a controlled side-by-side output test or declare a model winner.
 ---
 
-# AI product video generator: turn product images into reviewed clips
+# How to check an AI product video before publishing
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 15, 2026 · Updated October 23, 2026**
+**By Nexscope Team · Published September 15, 2026 · Updated November 10, 2026**
 
-An **AI product video generator** turns a supported product image and motion brief into candidate footage for a listing or ad. Nexscope's browser tool lets sellers choose an available model, inspect its estimated cost and preview the result. The essential step is reviewing the whole clip: a moving product must still match the item for sale.
+Compare your AI-generated product video with the original photo before using it in a listing or ad. Check that the shape, colour, label and included parts stay consistent throughout the clip. Use the [frame-by-frame checklist](#review-the-result-before-publishing) to decide which takes you can use. If you are starting from a photo, [open the image-to-video quick start](https://learn.nexscope.ai/ai-video-generator/).
 
 Not sure whether to start from photos, a product link, an avatar or a reference clip? [Compare Nexscope's five product video workflows and watch official examples](https://learn.nexscope.ai/video/). The directory explains each workflow's inputs and output before you open its matching workspace.
 
@@ -96,6 +96,8 @@ The published tool offers these nine choices at the time of review:
 Model names alone do not establish which is best for your product. Compare the same reference and prompt, and judge label readability, shape consistency, motion quality, and the credits used. No comparative benchmark is claimed here. The live tool is the source for current availability and estimates.
 
 ## Review the result before publishing
+
+Review the first clear frame, the moment of greatest movement and the final frame against the source photo. For a labelled bottle, check whether the cap changes shape or letters disappear during the camera move. If either happens, record the timestamp and try a simpler movement before using the clip in a listing.
 
 | Check | What to inspect | If it fails |
 | --- | --- | --- |
