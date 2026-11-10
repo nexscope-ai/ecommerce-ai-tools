@@ -3,7 +3,7 @@
   const toggle = document.querySelector('.primary-menu-toggle');
   const navigation = document.querySelector('.primary-navigation');
   if (!toggle || !navigation) return;
-  const compact = window.matchMedia('(max-width: 1180px)');
+  const compact = window.matchMedia('(max-width: 1050px)');
   const setOpen = (open, focus = false) => {
     const expanded = Boolean(open && compact.matches);
     toggle.setAttribute('aria-expanded', String(expanded));
