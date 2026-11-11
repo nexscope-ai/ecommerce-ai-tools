@@ -2,6 +2,8 @@
 
 **Ecommerce Data & Social APIs. AI product videos. Product Growth Reports. Free product listings.**
 
+**Explore tools for your AI assistant:** [Browse MCP tools](https://www.nexscope.ai/mcp?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=github_mcp_launch&utm_content=ecommerce-ai-tools_readme_intro) · [Connection guide](https://www.nexscope.ai/mcp-map?co-from=learn&utm_source=github&utm_medium=referral&utm_campaign=github_mcp_launch&utm_content=ecommerce-ai-tools_readme_setup). Find a task, review its inputs and credit requirements, and start with a documented use case.
+
 [![Video Workflows](assets/badges/video-workflows.svg)](https://learn.nexscope.ai/video/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_video) [![Data APIs](assets/badges/data-apis.svg)](https://learn.nexscope.ai/data/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_header_data) [![Free Product Listings](assets/badges/product-gallery.svg)](https://learn.nexscope.ai/ecommerce-ai-tools/product-showcase/submit/?utm_source=github&utm_medium=referral&utm_campaign=product_gallery_launch&utm_content=readme_header_gallery) [![Discussions](assets/badges/discussions.svg)](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions) [![License](assets/badges/license.svg)](LICENSE)
 
 Build with ecommerce and social data, create product videos, or turn a product link into a human-reviewed improvement plan. You can also give your product a free public page built for search and AI discovery. Choose a starting point on [Nexscope Learn](https://learn.nexscope.ai/?utm_source=github&utm_medium=referral&utm_campaign=ecommerce_ai_tools&utm_content=readme_home).
