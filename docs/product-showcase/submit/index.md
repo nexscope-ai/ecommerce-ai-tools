@@ -53,6 +53,12 @@ image_caption: Submit product details for free review and a possible public AI-d
   <div class="submission-layout" id="product-submission-form">
     <noscript><p class="seller-scope">JavaScript is needed to upload images and submit this form. You can read the review process below or use the <a href="https://learn.nexscope.ai/contact/">official contact page</a> for help.</p></noscript>
     <form class="showcase-form" novalidate>
+      <aside class="submission-draft" aria-label="Keep your product description">
+        <strong>Keep your work while you check the product facts.</strong>
+        <p>Save the product name and description in this browser tab. Email, product links and uploaded files are not saved. Restore them while this tab stays open; saved text expires after 24 hours.</p>
+        <div><button type="button" data-draft-save>Save text draft</button><button type="button" data-draft-restore hidden>Restore saved text</button><button type="button" data-draft-clear hidden>Delete saved text</button></div>
+        <p role="status" data-draft-status></p>
+      </aside>
       <div class="form-section" data-showcase-step="source">
         <div class="form-section-heading"><span class="form-number">01</span><div><h2>Start with your product link or ASIN <span class="required-mark" aria-label="required">*</span></h2><p>Choose the source you already have. We use it for review; you will add and check the public product details in the next step.</p></div></div>
         <div class="form-section-body">

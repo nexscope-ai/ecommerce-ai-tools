@@ -223,3 +223,5 @@
     width: 100%;
   }
 }
+
+.article-quick-action{margin:24px 0;padding:22px 24px;border:1px solid #dfd5f5;border-radius:14px;background:#f7f4ff}.article-quick-action strong{display:block;font-size:18px;margin:8px 0}.article-quick-action p{font-size:14px;line-height:1.7;margin:8px 0 16px}.article-quick-action a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none}

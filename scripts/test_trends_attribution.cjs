@@ -75,3 +75,15 @@ test('Learn keeps the external source when linking to the main site', () => {
   assert.equal(events[0][1], 'learn_to_main_click');
   assert.equal(events[0][2].learn_entry_source, 'chatgpt.com');
 });
+// Keep the attribution setup realistic while observing only public CTA metadata.
+test('article CTA exposure is counted once per visible placement without private query data', () => {
+  const events = [], callbacks = [];
+  const link = { href: 'https://www.nexscope.ai/api-docs/amazon-product-detail?co-from=learn&token=private', dataset: { stepId: 'amazon_detail', ctaPlacement: 'article-intro' }, setAttribute() {} };
+  const window = { location: new URL('https://learn.nexscope.ai/ecommerce-ai-tools/guides/example/'), sessionStorage: { getItem: () => null, setItem() {}, removeItem() {} }, addEventListener() {}, gtag: (...args) => events.push(args) };
+  const document = { referrer: '', querySelector: () => null, querySelectorAll: selector => ['a[href]', '[data-article-next-step][href]'].includes(selector) ? [link] : [], addEventListener() {} };
+  runInNewContext(readFileSync(join(__dirname, '../docs/assets/trends.js'), 'utf8'), { window, document, URL, URLSearchParams, Date, requestAnimationFrame() {}, IntersectionObserver: class { constructor(callback) { callbacks.push(callback); } observe() {} unobserve() {} } });
+  assert.equal(callbacks.length, 1);
+  callbacks[0]([{ target: link, intersectionRatio: .2 }]); assert.equal(events.length, 0);
+  callbacks[0]([{ target: link, intersectionRatio: .6 }]); callbacks[0]([{ target: link, intersectionRatio: 1 }]);
+  assert.equal(events.length, 1); assert.equal(events[0][1], 'article_next_step_view'); assert.equal(events[0][2].cta_placement, 'article-intro'); assert.equal(JSON.stringify(events).includes('private'), false);
+});

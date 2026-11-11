@@ -158,14 +158,14 @@
       .reviewed { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
       footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); }
     </style>
-    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=15">
+    <link rel="stylesheet" href="{{ '/assets/trends.css' | relative_url }}?v=16">
     <link rel="stylesheet" href="{{ '/assets/learning-architecture.css' | relative_url }}?v=3">
-    <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=55">
+    <link rel="stylesheet" href="{{ '/assets/product-showcase.css' | relative_url }}?v=56">
     {% if page.seller_help_page %}<link rel="stylesheet" href="{{ '/assets/seller-help.css' | relative_url }}?v=1">{% endif %}
     {% if page.audit_tool %}<link rel="stylesheet" href="{{ '/assets/ecommerce-audit-tool.css' | relative_url }}?v=1">{% endif %}
     {% if page.not_found_page %}<link rel="stylesheet" href="{{ '/assets/not-found.css' | relative_url }}?v=2">{% endif %}
     <link rel="stylesheet" href="{{ '/assets/primary-navigation.css' | relative_url }}?v=9">
-    <script src="{{ '/assets/trends.js' | relative_url }}?v=20" defer></script>
+    <script src="{{ '/assets/trends.js' | relative_url }}?v=21" defer></script>
     {% unless page.private_page %}
     <script src="{{ '/assets/traffic-attribution.js' | relative_url }}?v=1" defer></script>
     <script src="{{ '/assets/analytics.js' | relative_url }}?v=10" defer></script>
@@ -197,11 +197,10 @@
       <div class="reading-layout"><aside class="reading-sidebar" hidden><details open><summary>On this page</summary><nav aria-label="Article contents"></nav></details></aside>
       {% endunless %}
       <article>
-        {% if page.resource_hub %}{% include resource-library.html %}{% elsif page.schema_type == 'Article' %}{% capture evidence_insert %}</p>{% include article-evidence.html %}{% endcapture %}{{ content | replace_first: '</p>', evidence_insert }}{% else %}{{ content }}{% endif %}
+        {% if page.resource_hub %}{% include resource-library.html %}{% elsif page.schema_type == 'Article' %}{% capture evidence_insert %}</p>{% include article-evidence.html %}{% if page.next_step and page.model_kind == nil %}{% unless content contains 'data-article-next-step' %}{% include article-quick-action.html %}{% endunless %}{% endif %}{% endcapture %}{{ content | replace_first: '</p>', evidence_insert }}{% else %}{{ content }}{% endif %}
 
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
         {% if page.schema_type == 'Article' %}
-          {% include related-learning.html %}
           {% if page.next_step %}
             {% if page.model_kind %}
               {% include model-experience.html placement="article-end" %}
@@ -230,6 +229,7 @@
             <section class="article-next" aria-label="Related articles"><span class="eyebrow">Keep exploring</span><h2>More from {% if section == 'ecommerce-trends' %}Insights{% elsif section == 'api-evidence' %}API evidence{% elsif section == 'case-studies' %}Case studies{% elsif section == 'alternatives' %}Comparisons{% else %}Guides{% endif %}</h2><p>Continue with another article in this collection.</p><div><a href="{{ previous_article.url | relative_url }}">{{ previous_article.title | escape }} →</a>{% if previous_article.url != next_article.url %}<a href="{{ next_article.url | relative_url }}">{{ next_article.title | escape }} →</a>{% endif %}</div></section>
           {% endif %}
           {% endif %}
+          {% include related-learning.html %}
         {% else %}
           {% unless is_hub or page.editorial_only %}
           <section class="article-next" aria-label="Next steps"><span class="eyebrow">Keep exploring</span><h2>Put your next idea to work.</h2><p>Follow another guide, inspect the evidence or find a focused tool for the task you are researching.</p><div><a href="{{ '/guides/' | relative_url }}">Browse guides →</a><a href="{{ '/api-evidence/' | relative_url }}">Inspect API evidence →</a><a href="https://learn.nexscope.ai/tools/">Find a tool →</a></div></section>
@@ -242,8 +242,9 @@
       {% unless is_hub %}</div>{% endunless %}
     </main>
     {% include site-footer.html %}
-    {% if page.product_showcase_page %}<script src="{{ '/assets/vendor/markdown-it-14.3.2.min.js' | relative_url }}" defer></script><script src="{{ '/assets/product-showcase-markdown.js' | relative_url }}?v=2" defer></script><script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=37" defer></script>{% endif %}
+    {% if page.product_showcase_page %}<script src="{{ '/assets/vendor/markdown-it-14.3.2.min.js' | relative_url }}" defer></script><script src="{{ '/assets/product-showcase-markdown.js' | relative_url }}?v=2" defer></script><script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=38" defer></script>{% endif %}
     {% if page.audit_tool %}<script src="{{ '/assets/ecommerce-audit-tool.js' | relative_url }}?v=1" defer></script>{% endif %}
     {% if page.not_found_page %}<script src="{{ '/assets/not-found.js' | relative_url }}?v=1" defer></script>{% endif %}
+  {% if page.url == '/product-showcase/submit/' %}<script src="{{ '/assets/product-submission-draft.js' | relative_url }}?v=1" defer></script>{% endif %}
   </body>
 </html>

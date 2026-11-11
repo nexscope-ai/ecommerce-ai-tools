@@ -175,6 +175,27 @@
     });
   });
 
+  // Compare each CTA's visible exposure with its own clicks, not total page views.
+  if (typeof IntersectionObserver === 'function') {
+    const viewed = new Set();
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.intersectionRatio < 0.5) continue;
+        const link = entry.target;
+        const id = link.dataset.stepId || 'unknown';
+        const placement = link.dataset.ctaPlacement || 'article-end';
+        const key = id + ':' + placement;
+        if (viewed.has(key)) { observer.unobserve(link); continue; }
+        const destination = new URL(link.href, window.location.href);
+        if (reportEvent('article_next_step_view', {
+          next_step: id, cta_placement: placement,
+          destination_host: destination.hostname, destination_path: destination.pathname,
+        })) { viewed.add(key); observer.unobserve(link); }
+      }
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-article-next-step][href]').forEach(link => observer.observe(link));
+  }
+
   const scrollMilestones = new Set();
   let scrollMeasurementScheduled = false;
   const measureScrollDepth = () => {

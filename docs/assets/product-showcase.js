@@ -1009,6 +1009,7 @@ Check the lid seal before carrying it in a bag.`;
           managementUrl.host = window.location.host;
         }
         event('product_submission_success', { source_type: sourceType });
+        form.dispatchEvent(new Event('showcase-submitted'));
         // Send GA4's recommended lead event only after a successful submission.
         // Keep the product-specific event for funnel analysis; mark
         // generate_lead as the conversion in GA4.

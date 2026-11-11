@@ -1,0 +1,6 @@
+<aside class="article-quick-action" aria-label="Try the workflow in this guide">
+  <span class="eyebrow">Your next step</span>
+  <strong>{{ page.next_step.title | escape }}</strong>
+  <p>{{ page.next_step.description | escape }}</p>
+  <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-intro" data-buyer-intent="{{ page.next_step.intent | default: 'unspecified' | escape }}" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
+</aside>
