@@ -3,12 +3,12 @@ learning_topic: visibility
 content_kind: insight
 layout: default
 title: "TikTok Shop BFCM 2026: Dates, Checklist & Product Research"
-description: "Prepare for TikTok Shop BFCM, Nov 11–30, 2026: download a seller checklist, inspect a product research API request and plan SKU, creator and delivery checks."
+description: "Prepare for TikTok Shop BFCM, Nov 11–30, 2026: check one hero SKU, align your listing and creative, and try a product research API request."
 permalink: /ecommerce-trends/tiktok-shop-holiday-shopping-2026-seller-guide/
 date_published: 2026-10-15
-date_modified: 2026-11-05
-last_modified_at: 2026-11-06
-last_reviewed: 2026-11-05
+date_modified: 2026-11-11
+last_modified_at: 2026-11-11
+last_reviewed: 2026-11-11
 author: Nexscope Team
 schema_type: Article
 compact_evidence: true
@@ -72,6 +72,23 @@ Preparing the actual assets? Follow [Black Friday video ads: a product-photo cre
 | Buyer questions | Which factual question needs a demonstration or FAQ answer? | Your support evidence and a dated review sample |
 
 Keep unresolved checks open rather than marking a product ready because it appears popular in a public research result. Once your account confirms the offer, use one SKU and one testable buyer question for the first creative.
+
+## Check one hero SKU before sending more traffic
+
+Open the exact linked TikTok Shop offer on a phone. Compare it with the first image and the first product demonstration a shopper sees. Use the same color, variant, quantity and included accessories throughout. Verify the checkout offer and delivery promise in the seller account before sending more traffic to it.
+
+| Where to look | What to fix first |
+| --- | --- |
+| Product page title and bullets | Name the exact variant and explain one useful gift or buying use case with a verified fact. |
+| First image | Show what the order includes. Keep any accessories or extra units visible in the creative consistent with the offer. |
+| First seconds of the video or LIVE demo | Show the same item in use. If the video shows a two-pack and the link sells one unit, swap the shot or correct the linked offer. |
+| Checkout | Confirm the price, applicable discount, stock, and delivery estimate for the selected variant and destination. |
+
+For example, a gift clip that shows a navy mug with a spare lid needs to point to an offer that includes that lid. If the promoted SKU ships with one lid, show one lid and name what is included in the listing. Save one screenshot from each surface and recheck the selected variant after the correction.
+
+If your product also has a public independent-store or Amazon product page, submit that URL to Nexscope's Product Growth Report. Choose **Product copy rewriting** for a title, benefits or FAQ brief, or **Product advertising images** for reviewed image concepts. Use the same approved product facts in your TikTok brief, then apply the changes in your seller account.
+
+<a data-article-next-step data-step-id="tiktok_bfcm_growth_report" data-cta-placement="article-middle" data-buyer-intent="product-report-evaluation" href="https://www.nexscope.ai/product-growth-report?co-from=learn#request">Review your hero SKU with a Product Growth Report →</a>
 
 ## When is TikTok Shop's 2026 Black Friday and Cyber Monday campaign?
 
@@ -209,7 +226,24 @@ For broader cross-channel planning, see the [AI Holiday Shopping 2026 seller gui
 
 ## Frequently asked questions
 
-### When is TikTok Shop's 2026 Black Friday and Cyber Monday campaign?
+### Check one hero SKU before sending more traffic
+
+Open the exact linked TikTok Shop offer on a phone. Compare it with the first image and the first product demonstration a shopper sees. Use the same color, variant, quantity and included accessories throughout. Verify the checkout offer and delivery promise in the seller account before sending more traffic to it.
+
+| Where to look | What to fix first |
+| --- | --- |
+| Product page title and bullets | Name the exact variant and explain one useful gift or buying use case with a verified fact. |
+| First image | Show what the order includes. Keep any accessories or extra units visible in the creative consistent with the offer. |
+| First seconds of the video or LIVE demo | Show the same item in use. If the video shows a two-pack and the link sells one unit, swap the shot or correct the linked offer. |
+| Checkout | Confirm the price, applicable discount, stock, and delivery estimate for the selected variant and destination. |
+
+For example, a gift clip that shows a navy mug with a spare lid needs to point to an offer that includes that lid. If the promoted SKU ships with one lid, show one lid and name what is included in the listing. Save one screenshot from each surface and recheck the selected variant after the correction.
+
+If your product also has a public independent-store or Amazon product page, submit that URL to Nexscope's Product Growth Report. Choose **Product copy rewriting** for a title, benefits or FAQ brief, or **Product advertising images** for reviewed image concepts. Use the same approved product facts in your TikTok brief, then apply the changes in your seller account.
+
+<a data-article-next-step data-step-id="tiktok_bfcm_growth_report" data-cta-placement="article-middle" data-buyer-intent="product-report-evaluation" href="https://www.nexscope.ai/product-growth-report?co-from=learn#request">Review your hero SKU with a Product Growth Report →</a>
+
+## When is TikTok Shop's 2026 Black Friday and Cyber Monday campaign?
 
 TikTok says the 2026 TikTok Shop BFCM campaign runs from November 11 through November 30, 2026. Confirm the current Seller Center requirements and any market-specific deadlines before advertising an offer.
 
