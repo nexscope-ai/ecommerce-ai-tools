@@ -60,7 +60,7 @@ class CanonicalSitemapTests(unittest.TestCase):
         self.assertEqual(first, second)
     def test_image_sitemap_contains_page_images_instead_of_an_index(self):
         self.page('illustrated/', '<meta property="og:image" content="https://example.com/product.webp">')
-        self.page('generic/', '<meta property="og:image" content="https://learn.nexscope.ai/og-default.png">')
+        self.page('generic/', '<meta property="og:image" content="https://learn.nexscope.ai/og-default.png?v=2">')
         self.run_finalize()
         root = ET.parse(self.directory / 'image-sitemap.xml').getroot()
         self.assertEqual(root.tag, f'{{{NS}}}urlset')

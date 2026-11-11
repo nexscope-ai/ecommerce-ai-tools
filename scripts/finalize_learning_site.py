@@ -202,7 +202,7 @@ def finalize(directory, root_site=None, api_snapshot=None):
         if not images:
             continue
         image_url = images[0].findtext(f'{{{IMAGE_NS}}}loc', '')
-        if image_url.endswith('/og-default.png'):
+        if urlsplit(image_url).path == '/og-default.png':
             continue
         image_map.append(ET.fromstring(ET.tostring(entry)))
     ET.indent(image_map)
