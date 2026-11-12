@@ -24,7 +24,7 @@ next_step:
   title: Inspect the image API before connecting n8n
   description: Review the Nano Banana 2 request, API access and estimate. Then attach your own credential to both HTTP nodes in the downloaded workflow.
   label: Open Nano Banana 2 API tester
-  url: https://www.nexscope.ai/api-docs/banana-2-image-generation?view=api#online-test
+  url: https://www.nexscope.ai/api-docs/banana-2-image-generation?view=playground&co-from=learn
 faq:
   - question: "Does this n8n image workflow need a Nexscope community node?"
     answer: "No. The template uses built-in Manual Trigger, Code, HTTP Request, Wait and If nodes. It calls Nexscope's Nano Banana 2 REST route; it does not claim an official native Nexscope node."

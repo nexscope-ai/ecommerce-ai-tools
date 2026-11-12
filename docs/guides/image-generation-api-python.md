@@ -24,7 +24,7 @@ next_step:
   title: Inspect the image request before integrating
   description: Open the currently listed Nano Banana 2 API, check reference inputs, account access and the credit estimate, then adapt the starter to your own permitted image.
   label: Open Nano Banana 2 API tester
-  url: https://www.nexscope.ai/api-docs/banana-2-image-generation?view=api#online-test
+  url: https://www.nexscope.ai/api-docs/banana-2-image-generation?view=playground&co-from=learn
 faq:
   - question: "Which image generation API does this Python example use?"
     answer: "It uses Nexscope's Nano Banana 2 route. Other models have their own schemas, access conditions and task routes; this is not a GPT Image 2.6 client or a universal provider wrapper."

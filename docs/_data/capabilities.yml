@@ -84,8 +84,8 @@
   guide_label: Create product images safely
   evidence: /api-evidence/gpt-image-2-5-flare/
   evidence_label: Inspect a real Flare run
-  api: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?co-from=learn
-  api_label: GPT 2.5 Flare API
+  api: https://www.nexscope.ai/api-docs/gpt-image-2-5-flare-generation?view=playground&co-from=learn
+  api_label: Try GPT Image 2.5 Flare in Playground
 
 - id: product-video
   number: "08"

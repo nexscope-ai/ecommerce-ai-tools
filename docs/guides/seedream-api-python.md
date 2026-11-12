@@ -24,7 +24,7 @@ next_step:
   title: Inspect the Seedream request with your references
   description: Check the current Seedream 5 Pro settings, API eligibility and estimate before sending permitted product reference photos.
   label: Open Seedream 5 Pro API tester
-  url: https://www.nexscope.ai/api-docs/seedream-5-pro-image-generation?view=api#online-test
+  url: https://www.nexscope.ai/api-docs/seedream-5-pro-image-generation?view=playground&co-from=learn
 faq:
   - question: "Which Seedream version does the Python starter call?"
     answer: "It calls Nexscope's Seedream 5 Pro route. Credentials, billing and controls belong to that integration, not every provider or Seedream version."

@@ -24,7 +24,7 @@ next_step:
   title: Test the Kling request for your product
   description: Open the current Kling 2.6 reference, inspect account access and the estimate, then replace the example image with your own permitted reference.
   label: Open Kling 2.6 API tester
-  url: https://www.nexscope.ai/api-docs/kling-2-6-video-generation?view=api#online-test
+  url: https://www.nexscope.ai/api-docs/kling-2-6-video-generation?view=playground&co-from=learn
 faq:
   - question: "Which Kling API does this tutorial use?"
     answer: "It uses Nexscope's Kling 2.6 route and Nexscope account credentials. It does not describe direct authentication, pricing or billing through Kling's own service."
