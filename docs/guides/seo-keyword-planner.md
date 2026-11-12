@@ -6,8 +6,8 @@ title: "SEO Keyword Planner for Ecommerce: A Tested Workflow"
 description: Plan ecommerce keywords with a dated Google US keyword and Amazon US competitor test. See the actual inputs, estimates, mismatches, and next checks.
 permalink: /seo-keyword-planner/
 date_published: 2026-10-09
-date_modified: 2026-10-12
-last_modified_at: 2026-11-06
+date_modified: 2026-11-12
+last_modified_at: 2026-11-12
 last_reviewed: 2026-10-12
 author: Nexscope Team
 schema_type: Article
@@ -36,6 +36,8 @@ faq:
 **Does Google search volume measure Amazon demand? No.** The Google estimate describes searches on Google for the selected locale and period; an Amazon product lookup returns marketplace listings, not a conversion of that estimate into Amazon searches or purchases. In our [October 7 portable-blender test]({{ '/api-evidence/portable-blender-keyword-competitor/' | relative_url }}), the Google seed estimate was 18,100 monthly searches, while the separate Amazon sample contained a non-electric shaker bottle. Those observations answer different questions and must remain labeled separately.
 
 For a product-specific reviewed plan, see [product keyword mapping]({{ '/guides/product-keyword-mapping/' | relative_url }}): connect each phrase to a supported fact, page field and reason, rather than treating every suggestion as measured demand.
+
+To try both checks in one workflow, [open the Google-to-Amazon Keyword Research tool](https://learn.nexscope.ai/tools/seo-keyword-planner/). Start with a product phrase, select a Google keyword idea, then inspect the Amazon listings returned for that phrase.
 
 ## What did a real Nexscope test show?
 

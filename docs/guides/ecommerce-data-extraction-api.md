@@ -3,13 +3,13 @@ learning_topic: agents
 related_topics: [research, visibility]
 content_kind: guide
 layout: default
-title: "Ecommerce Data Extraction API: Product Fields, Sources & Costs"
-description: "Choose an ecommerce data extraction API for product prices, availability and variants. Compare marketplace APIs, scraping and store feeds, with field and cost checks."
+title: "Ecommerce Data Extraction API: Get Structured Product Data"
+description: "See a real Amazon product API result, then choose how to extract titles, prices and variants from online stores using APIs, page extraction or catalog feeds."
 permalink: /ecommerce-data-extraction-api/
 date_published: 2026-10-20
-date_modified: 2026-11-05
-last_modified_at: 2026-11-05
-last_reviewed: 2026-11-05
+date_modified: 2026-11-12
+last_modified_at: 2026-11-12
+last_reviewed: 2026-11-12
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -44,13 +44,30 @@ faq:
     answer: "No. Accuracy depends on rendering, page changes, variants, access rules, missing fields, and timestamp. Preserve raw evidence and validate high-risk fields such as price, availability, identifiers, compatibility, and shipping."
 ---
 
-# Web scraping vs API: choosing ecommerce product data sources
+# How to extract structured product data from online stores
+
+**By Nexscope Team · Published October 20, 2026 · Reviewed November 12, 2026**
+
+To get structured product data, start with a product identifier or URL and decide which fields your workflow needs. Use a marketplace product API for supported listings, your store's catalog API or feed for records you own, and page extraction to check what shoppers see on a public URL. Keep the source and retrieval time with each record.
+
+## A real example from the Amazon Product Detail API
+
+On October 7, 2026, Nexscope looked up Amazon US ASIN `B0CT2BY5KL`. The saved record contains the product title, a returned price of **$32.29**, and the product image host. This excerpt uses the field names in the sanitized evidence file.
+
+```json
+{
+  "observedAtUtc": "2026-10-07T04:00:21Z",
+  "asin": "B0CT2BY5KL",
+  "title": "Portable Blender Personal Juicer for Shakes Smoothies with Insulated Sleeve",
+  "price": 32.29,
+  "currencySymbolReturned": "$",
+  "imageHost": "m.media-amazon.com"
+}
+```
+
+This is a dated listing snapshot. Availability and variant-level prices are absent from the saved record for this product. [Download the sanitized JSON record]({{ '/assets/evidence/portable-blender-amazon-1688-2026-10-07.json' | relative_url }}) or [test Amazon Product Detail with an ASIN](https://www.nexscope.ai/api-docs/amazon-product-detail?view=documentation&co-from=learn#online-test).
 
 {% include article-visual.html %}
-
-**By Nexscope Team · Published October 20, 2026 · Reviewed November 5, 2026**
-
-If you need to read and parse data from a live ecommerce website, **choose the source by the job**: an extraction API for repeated observations of permitted public pages, your store's catalog API or feed for records you own, and a page audit to diagnose one public URL. No single platform is best for all three. A page snapshot can disagree with the catalog, checkout, or selected variant, so preserve the URL, retrieval time, and evidence for each important field.
 
 {% include api-guide-entry.html %}
 

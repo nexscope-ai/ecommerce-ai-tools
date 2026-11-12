@@ -48,6 +48,18 @@
     return true;
   };
 
+  const sourcingSample = document.querySelector('details[data-sourcing-sample]');
+  if (sourcingSample) {
+    const reportSampleOpen = () => {
+      if (sourcingSample.open && reportEvent('sourcing_sample_open', {
+        sample_id: 'portable-blender-amazon-1688',
+      })) {
+        sourcingSample.removeEventListener('toggle', reportSampleOpen);
+      }
+    };
+    sourcingSample.addEventListener('toggle', reportSampleOpen);
+  }
+
   const primaryMenuToggle = document.querySelector('.primary-menu-toggle');
   const primaryNavigation = document.querySelector('.primary-navigation');
   if (primaryMenuToggle && primaryNavigation) {

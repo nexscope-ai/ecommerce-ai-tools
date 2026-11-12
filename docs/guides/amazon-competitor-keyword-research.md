@@ -8,8 +8,8 @@ permalink: /amazon-competitor-keyword-research/
 redirect_from:
   - /ecommerce-ai-tools/amazon-competitor-keyword-research/
 date_published: 2026-09-15
-date_modified: 2026-11-05
-last_modified_at: 2026-11-05
+date_modified: 2026-11-12
+last_modified_at: 2026-11-12
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -52,6 +52,8 @@ image_caption: "Illustration: select comparable ASINs, inspect associated terms,
 **To find Amazon competitor keywords, first select products that solve the same buyer problem in the same marketplace.** This Amazon competitor keyword workflow records comparable ASINs, inspects reverse-ASIN evidence, and compares relevant terms with your listing and first-party search reports. A term associated with a rival is a *candidate*, not proof that the rival converted or that your product should target it.
 
 **Quick answer:** Keep the query, marketplace, date, ASIN, source, and metric label together. Exclude products with a different function or variant. Prioritize terms that accurately describe your product and recur across comparable products; validate the shortlist with Amazon Brand Analytics or advertising search-term data when you have access. Do not relabel Google search volume as Amazon demand.
+
+If you already have two comparable Amazon ASINs, [compare them with the Reverse ASIN Keyword Gap tool](https://learn.nexscope.ai/tools/reverse-asin-keyword-gap/). Choose one marketplace, then check which terms appear for one ASIN and which rank and search-demand fields are available.
 
 {% include article-action.html placement="article-top" %}
 
@@ -199,4 +201,4 @@ This guide is an editorial workflow, not a claim that a particular keyword will 
 
 ## Continue with a reverse-ASIN workflow
 
-Use the [reverse-ASIN keyword gap tool](https://learn.nexscope.ai/tools/reverse-asin-keyword-gap/) to compare candidates for one marketplace, or browse the [Data API directory](https://learn.nexscope.ai/data/) for the documented Amazon operations. Validate every search-volume estimate against its provider definition; a competitor keyword is not proof of demand or sales.
+Browse the [Data API directory](https://learn.nexscope.ai/data/) for the documented Amazon operations. Validate every search-volume estimate against its provider definition; a competitor keyword is not proof of demand or sales.

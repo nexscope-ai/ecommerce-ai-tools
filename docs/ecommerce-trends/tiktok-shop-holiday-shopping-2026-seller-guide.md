@@ -3,12 +3,12 @@ learning_topic: visibility
 content_kind: insight
 layout: default
 title: "TikTok Shop BFCM 2026: Dates, Checklist & Product Research"
-description: "Prepare for TikTok Shop BFCM, Nov 11–30, 2026: check one hero SKU, align your listing and creative, and try a product research API request."
+description: "TikTok Shop Black Friday and Cyber Monday run Nov 11–30, 2026. Use the seller checklist to plan stock, check listings and prepare creator or LIVE content."
 permalink: /ecommerce-trends/tiktok-shop-holiday-shopping-2026-seller-guide/
 date_published: 2026-10-15
-date_modified: 2026-11-11
-last_modified_at: 2026-11-11
-last_reviewed: 2026-11-11
+date_modified: 2026-11-12
+last_modified_at: 2026-11-12
+last_reviewed: 2026-11-12
 author: Nexscope Team
 schema_type: Article
 compact_evidence: true

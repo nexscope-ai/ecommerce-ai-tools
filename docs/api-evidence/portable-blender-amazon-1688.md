@@ -7,8 +7,8 @@ description: Inspect a dated Amazon product, low-star review, 1688 image-search 
 permalink: /api-evidence/portable-blender-amazon-1688/
 last_reviewed: 2026-10-07
 date_published: 2026-10-07
-date_modified: 2026-10-07
-last_modified_at: 2026-10-07
+date_modified: 2026-11-12
+last_modified_at: 2026-11-12
 schema_type: Article
 topic: sourcing
 ---
@@ -30,7 +30,12 @@ topic: sourcing
 | Low-star result | 10 one-star + 0 two-star |
 | Credit charge | Not captured; no amount is claimed |
 
-## What did the image search return?
+## Explore the sample results {#sample-results}
+
+The search found **10 visually similar offers priced from ¥28 to ¥79**. Nine reported a minimum order of one unit. These are saved results from October 7, 2026. Opening the sample requires no API key and uses no credits.
+
+<details data-sourcing-sample markdown="1">
+<summary>View all 10 candidate offers</summary>
 
 The 10 candidates reported monthly-unit values from 4 to 591. All carried a returned `诚信通会员` label; three also carried `实力商家`, and two carried `超级工厂`. These are provider-returned identity or membership labels, not certifications independently authenticated by this test.
 
@@ -48,6 +53,16 @@ The 10 candidates reported monthly-unit values from 4 to 591. All carried a retu
 | 10 | `1044389845983` | ¥33.00 | 1 | 4 | 诚信通会员 |
 
 Visual similarity does not prove that an offer has the same manufacturer, motor, battery, materials, safety compliance, warranty, accessories, quality or intellectual-property status as the Amazon item.
+
+</details>
+
+<p>
+  <a data-article-next-step data-step-id="sourcing-sample-start" data-cta-placement="sourcing-sample" href="https://learn.nexscope.ai/tools/amazon-to-1688-supplier-finder/#workflow-title">Try your own Amazon ASIN →</a>
+  <span aria-hidden="true"> · </span>
+  <a data-article-next-step data-step-id="sourcing-sample-api-key" data-cta-placement="sourcing-sample" href="https://www.nexscope.ai/seller/api-access?tab=api-keys&amp;mode=data&amp;co-from=learn">Get a Nexscope API key ↗</a>
+</p>
+
+Live queries use a Nexscope API key and can consume credits.
 
 ## What did two supplier-detail checks add?
 
