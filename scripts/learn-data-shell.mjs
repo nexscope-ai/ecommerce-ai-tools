@@ -14,13 +14,8 @@ export function learnDataHeader(path) {
         <li><a href="/video-apis/" data-track-tool="video-api-directory">Video &amp; Image APIs</a></li>
       </ul>
     </details></li>
-    <li class="nav-dropdown"><details>
-      <summary>Video <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
-      <ul class="nav-dropdown-menu">
-        <li><a href="/video/" data-track-tool="video-directory">Video workflows</a></li>
-        <li><a href="/ad-library/" data-track-tool="ad-library">Ad Library</a></li>
-      </ul>
-    </details></li>
+    <li><a href="/video/" data-track-tool="video-directory">Video workflows</a></li>
+    <li><a href="/ad-library/" data-track-tool="ad-library">Ad Library</a></li>
     <li class="nav-dropdown"><details>
       <summary>Product Growth <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
       <ul class="nav-dropdown-menu">
