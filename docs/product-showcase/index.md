@@ -44,22 +44,31 @@ faq:
   - question: "What happens after I submit a product?"
     answer: "Save the private management link shown after submission. It shows the current status and, after editorial review, your feedback. You can edit and resubmit if changes are requested. There is no fixed review deadline or automatic status email. A product remains offline until approved and published."
 ---
+{% assign hero_product = site.data.product_showcase_pages | first %}
 <section class="showcase-hero" data-showcase-view>
   <div class="showcase-hero-copy">
     <span class="eyebrow">Nexscope Product Gallery</span>
-    <p class="showcase-status">SUBMISSION, REVIEW &amp; APPROVED DISPLAY — COMPLETELY FREE</p>
-    <h1>List your product free.<br><span>Make its facts easier to find.</span></h1>
-    <p>For Shopify, WooCommerce and other ecommerce sellers, including Amazon listings: submit one product for free editorial feedback. If approved and published, it gets a public Gallery page with clear product facts, images and a link to your original listing. This gives search and AI systems another source to understand your product and can support GEO.</p>
+    <h1>List your product <span>for free.</span></h1>
+    <p>Share a product link or Amazon ASIN for free editorial feedback. Approved products get a free public page with photos, product details and a link to your store.</p>
     <div class="showcase-actions">
       <a class="showcase-primary" data-showcase-submit-cta="hero" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product free ↗</a>
-      <a class="showcase-quiet-link" href="#published-example-hub">See a real example <span aria-hidden="true">↓</span></a>
     </div>
-    <p class="seller-reassurance">No store connection or payment. Submission, review, approved listing and display are completely free. Save your private review link. Publication, indexing, AI recommendations, traffic and sales are not guaranteed.</p>
   </div>
+  {% if hero_product and hero_product.image %}
+  <a class="showcase-hero-example" href="{{ hero_product.path | relative_url }}" data-track-product="gallery" data-product-id="{{ hero_product.publicUuid | escape }}" data-product-placement="hero">
+    <img src="{{ hero_product.image | escape }}" alt="{{ hero_product.title | escape }}" width="600" height="400" fetchpriority="high">
+    <span class="showcase-hero-example-copy">
+      <span class="eyebrow">Published Gallery example</span>
+      <strong>{{ hero_product.title | escape }}</strong>
+      <span>View product page <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+  {% else %}
   <figure class="showcase-hero-art">
     <img src="{{ '/assets/product-showcase-hero.webp' | relative_url }}" width="1200" height="800" alt="Illustration of ecommerce product cards and visual details">
     <figcaption><strong>Feedback first.</strong><span>A public product page linked to your store, if approved and published.</span></figcaption>
   </figure>
+  {% endif %}
 </section>
 
 <section class="showcase-discovery" id="showcase-preview" aria-labelledby="showcase-discovery-title">
