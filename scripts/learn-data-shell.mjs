@@ -24,7 +24,7 @@ export function learnDataHeader(path) {
         <li><a href="/pricing/">Pricing</a></li>
       </ul>
     </details></li>
-    <li><a class="nav-cta" href="/ecommerce-ai-tools/product-showcase/submit/" data-showcase-submit-cta="data-navigation">List a product free →</a></li>
+    <li><a class="nav-cta" data-track="start_using" data-cta-placement="data-navigation" href="https://www.nexscope.ai/?co-from=learn">Explore Nexscope ↗</a></li>
   </ul></nav></div></header>`;
 }
 
