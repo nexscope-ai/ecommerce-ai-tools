@@ -3,12 +3,12 @@ learning_topic: research
 content_kind: guide
 layout: default
 title: "Amazon Price History: Price, BSR & Sales"
-description: Learn how to check Amazon price history, BSR history, ratings, seller counts, and monthly sales for an ASIN with Nexscope.
+description: "Check Amazon ASIN price history and track Black Friday changes by price type. Includes the Nexscope Price Series Playground and a dated example."
 permalink: /amazon-price-history/
-last_reviewed: 2026-09-17
+last_reviewed: 2026-11-12
 date_published: 2026-09-17
-date_modified: 2026-09-17
-last_modified_at: 2026-09-17
+date_modified: 2026-11-12
+last_modified_at: 2026-11-12
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -22,11 +22,23 @@ image_caption: "Illustration: interpret price, BSR, and demand signals together 
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 17, 2026 · Updated September 17, 2026**
+**By Nexscope Team · Published September 17, 2026 · Updated November 12, 2026**
 
 **Amazon price history is a time series of observed product prices for a specific ASIN and marketplace.** Used with Best Sellers Rank (BSR), rating, seller-count, and monthly-sales signals, it can help you investigate promotions, seasonality, competitive pressure, and changes in product demand without treating one current snapshot as the whole story.
 
 > **Key takeaways:** Start with the correct ASIN and Amazon marketplace, keep every metric on its own scale, and compare aligned dates rather than isolated highs and lows. Nexscope's Amazon Product Price Series capability can return historical price, BSR, rating, seller-count, and monthly-sales signals when available. Provider estimates are directional evidence—not audited seller-account results.
+
+## How to check an Amazon ASIN’s price history before Black Friday
+
+Amazon US scheduled its 2026 Black Friday Week and Cyber Monday deal events for **November 19–30**. Record the ASIN’s pre-event price before the event, then compare it with observations from the same child ASIN, marketplace and price type during the event. [Amazon's official event dates](https://press.aboutamazon.com/2026/11/amazons-black-friday-week-and-cyber-monday-return-november-19-30-with-millions-of-deals-to-deliver-joy-this-holiday-season)
+
+1. Choose the exact child ASIN and Amazon US marketplace. Use a pre-event window such as November 5–18 and note the timestamps of any returned observations. Before November 19, capture the available baseline and record its cutoff date.
+2. In Price Series, choose a history window long enough to include that baseline when you repeat the lookup during or after the event. Save the returned timestamps and currency. Keep lowest-new price (`price`), Buy Box price (`buyboxPrice`), deal price (`priceDeal`) and Prime price (`pricePrime`) in separate columns.
+3. Compare each price series with its own baseline. For example, if the observed lowest-new price moves from $30 to $24, that is a 20% drop in the same series. A $24 Prime price is a separate offer observation. Verify eligibility, any applicable coupon and the checkout price on the live offer.
+
+<a data-article-next-step data-step-id="amazon_black_friday_price_series" data-cta-placement="article-middle" data-buyer-intent="api-evaluation" href="https://www.nexscope.ai/api-docs/amazon-product-price-series?view=playground&amp;co-from=learn">Open Amazon Price Series Playground →</a>
+
+In a separate September test, Amazon US ASIN `B072MQ5BRX` returned four lowest-new price observations, an empty deal series and no usable Prime price. Leave missing entries blank and compare only the dates you observed. [Dated API evidence and sample response]({{ '/api-evidence/amazon-price-series/' | relative_url }})
 
 ## What does Amazon price history show?
 
