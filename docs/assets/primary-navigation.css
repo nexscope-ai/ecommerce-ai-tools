@@ -1,5 +1,5 @@
 /* Keep the Jekyll and generated Data API pages aligned with the React Learn header. */
-.trends-header { --subscription-offer-height: 46px; position: relative; z-index: 12; background: #fbf9f4; border-bottom: 1px solid #e7e1eb; color: #211f26; font-family: Arial, Helvetica, sans-serif; }
+.trends-header { position: relative; z-index: 12; background: #fbf9f4; border-bottom: 1px solid #e7e1eb; color: #211f26; font-family: Arial, Helvetica, sans-serif; }
 .trends-header > .wrap { position: static; display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 24px; width: min(1200px, calc(100% - 64px)); min-height: 76px; margin-inline: auto; padding: 0; }
 .trends-header .brand { flex: none; line-height: 0; }
 .trends-header .brand img { display: block; width: 165px; height: 32px; object-fit: contain; }
@@ -47,7 +47,7 @@
 @media (max-width: 1050px) {
   .trends-header > .wrap { width: calc(100% - 36px); min-height: 72px; padding: 0; }
   .trends-header .primary-menu-toggle { position: relative; z-index: 52; display: grid; place-content: center; gap: 5px; flex: none; width: 46px; height: 46px; margin-left: auto; padding: 0; border: 1px solid #ddd8e8; border-radius: 12px; background: #fff; color: #211f26; cursor: pointer; }
-  .trends-header .primary-navigation { display: none; position: absolute; z-index: 50; top: 100%; left: 0; right: 0; width: auto; max-height: calc(100dvh - 72px - var(--subscription-offer-height)); overflow-y: auto; margin: 0; padding: 12px 18px 20px; border: 0; border-bottom: 1px solid #ddd8e8; border-radius: 0; background: #fbf9f4; box-shadow: 0 16px 24px rgb(33 31 38 / 10%); visibility: visible; opacity: 1; pointer-events: auto; transform: none; backdrop-filter: none; }
+  .trends-header .primary-navigation { display: none; position: absolute; z-index: 50; top: 100%; left: 0; right: 0; width: auto; max-height: calc(100dvh - 72px); overflow-y: auto; margin: 0; padding: 12px 18px 20px; border: 0; border-bottom: 1px solid #ddd8e8; border-radius: 0; background: #fbf9f4; box-shadow: 0 16px 24px rgb(33 31 38 / 10%); visibility: visible; opacity: 1; pointer-events: auto; transform: none; backdrop-filter: none; }
   .trends-header .primary-navigation.is-open { display: block; }
   .trends-header .primary-navigation > ul { display: flex; flex-direction: column; align-items: stretch; gap: 2px; max-width: 1200px; margin-inline: auto; }
   .trends-header .primary-navigation > ul > li { width: 100%; }
@@ -60,16 +60,3 @@
 @media (max-width: 700px) { .trends-page .learn-site-footer .resource-footer { width: calc(100% - 36px); } .trends-page .learn-site-footer nav { gap: 18px; } }
 @media (max-width: 440px) { .trends-header .brand img { width: 140px; height: auto; } }
 @media (prefers-reduced-motion: reduce) { .trends-header .primary-menu-toggle span, .trends-header .primary-navigation summary svg { transition: none; } }
-
-/* First-subscription promotion shared by article and generated directory headers. */
-.trends-header .subscription-offer { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 16px; min-height: var(--subscription-offer-height); padding: 10px 18px; background: linear-gradient(110deg, #322253, #5831a8 55%, #3146a4); color: #fff; font-size: 14px; line-height: 1.5; text-align: center; text-decoration: none; }
-.subscription-offer .subscription-offer-badge { padding: 3px 9px; border: 1px solid #f7d48866; border-radius: 999px; background: #f7d4881a; color: #ffe1a3; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
-.subscription-offer-message strong { font-weight: 800; }
-.subscription-offer-action { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
-.subscription-offer:hover .subscription-offer-action { text-decoration: underline; text-underline-offset: 3px; }
-.subscription-offer:focus-visible { outline: 3px solid #ffe1a3; outline-offset: -4px; }
-@media (max-width: 600px) {
-  .trends-header { --subscription-offer-height: 72px; }
-  .trends-header .subscription-offer { column-gap: 10px; font-size: 13px; }
-  .subscription-offer-message { width: 100%; order: -1; }
-}

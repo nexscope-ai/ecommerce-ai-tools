@@ -2,11 +2,6 @@
 export function learnDataHeader(path) {
   const apiCurrent = path === '/data/' ? 'page' : 'location';
   return `<header class="trends-header">
-<a class="subscription-offer" href="https://www.nexscope.ai/pricing?co-from=learn" data-track="start_using" data-subscription-offer="" data-cta-placement="subscription-banner" target="_blank" rel="noopener">
-  <span class="subscription-offer-badge">Limited-time offer</span>
-  <span class="subscription-offer-message"><strong>50% off</strong> your first year on an annual plan</span>
-  <span class="subscription-offer-action">View plans <span aria-hidden="true">→</span></span>
-</a>
 <div class="wrap">
   <a class="brand" href="/" aria-label="Nexscope learning home"><img src="/logo.png" alt="Nexscope" width="165" height="32"></a>
   <button class="primary-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
