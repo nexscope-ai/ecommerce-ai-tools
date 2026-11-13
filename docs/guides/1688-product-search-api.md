@@ -2,13 +2,13 @@
 learning_topic: sourcing
 content_kind: guide
 layout: default
-title: "How to Filter 1688 Products by MOQ and Price | Nexscope"
-description: "Shortlist 1688 products by minimum order quantity, price and specification. Follow a small search workflow, check SKU tiers and troubleshoot empty results."
+title: "1688 Product Search API: Find Wholesale Products by Keyword"
+description: "Search 1688 wholesale listings with Simplified Chinese keywords, price filters, and a maximum MOQ. Copy a JSON example and check shortlisted offers by SKU."
 permalink: /guides/1688-product-search-api/
 date_published: 2026-10-26
-date_modified: 2026-11-06
-last_modified_at: 2026-11-06
-last_reviewed: 2026-11-06
+date_modified: 2026-11-13
+last_modified_at: 2026-11-13
+last_reviewed: 2026-11-13
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -29,9 +29,11 @@ next_step:
   url: https://www.nexscope.ai/api-docs/1688-product-search?view=playground&co-from=learn
 ---
 
-# How to filter 1688 products by MOQ and price
+# 1688 product search API: find wholesale products by keyword, price and MOQ
 
-**Start with the product specification, then use price and minimum order quantity (MOQ) to narrow the offers.** A low listing price is only useful when it applies to the variant and order size you actually need. This guide helps you build a small comparison list with Nexscope, then check the shortlisted offers before contacting suppliers.
+Use the 1688 Product Search API to find wholesale listings that fit a written sourcing brief. Send a Simplified Chinese keyword such as `瑜伽垫` (yoga mat), set a price band and cap the minimum order quantity (MOQ) at what you can buy. Save the listing IDs for the offers you want to check.
+
+{% include api-guide-entry.html %}
 
 > **Quick answer:** Write a Simplified Chinese product keyword, set your price band and maximum acceptable MOQ, and request one small page. Compare specification before price. Keep unknown quantities visible, then open product details to check the intended SKU and pricing tier. A search match is a sourcing lead, not a verified supplier.
 
@@ -45,8 +47,6 @@ For the example below, the brief is a yoga mat with an illustrative listing-pric
 4. Keep a few eligible offers for a detail check and supplier questions.
 
 **What you will have:** a shortlist with a listing link, observed price, MOQ, unresolved questions and an explicit include/exclude decision. Keep the collection date beside it.
-
-{% include api-guide-entry.html %}
 
 ## Which 1688 API matches your starting point?
 

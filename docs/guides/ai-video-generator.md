@@ -53,7 +53,7 @@ Already have a public product listing instead of a standalone image? Follow the 
 
 ## Which model fits your product-video brief?
 
-For a reference-led short shot, inspect the [Seedance 2.0 review]({{ '/guides/seedance-2-0-video/' | relative_url }}) or [Kling 2.6 review]({{ '/guides/kling-2-6-video/' | relative_url }}). If you need more duration or references, compare the documented formats in the [model directory]({{ '/guides/ai-model-playgrounds/' | relative_url }}); greater capacity does not prove better product preservation.
+For a short clip driven by a product photo or reference video, see the [Seedance 2.0 image-to-video review]({{ '/guides/seedance-2-0-video/' | relative_url }}) or the [Kling 2.6 review]({{ '/guides/kling-2-6-video/' | relative_url }}). Compare supported durations and reference inputs in the [model directory]({{ '/guides/ai-model-playgrounds/' | relative_url }}).
 
 Before choosing by price, read the [Kling pricing guide]({{ '/guides/kling-ai-pricing/' | relative_url }}). For server-side automation, use the [Seedance API guide]({{ '/guides/seedance-api/' | relative_url }}). The browser tool, model Playground and API are separate entry points; check each one's actual controls and access requirements.
 

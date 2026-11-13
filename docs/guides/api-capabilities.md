@@ -8,7 +8,7 @@ permalink: /api-capabilities/
 date_published: 2026-09-14
 last_reviewed: 2026-10-26
 date_modified: 2026-10-26
-last_modified_at: 2026-11-09
+last_modified_at: 2026-11-13
 schema_type: Article
 image: /assets/images/mcp-server-ecommerce-tools-1440w.webp
 image_small: /assets/images/mcp-server-ecommerce-tools-720w.webp
@@ -38,8 +38,9 @@ Use a focused guide when you need to choose an interface and understand its evid
 - [Etsy product research API]({{ '/guides/etsy-product-research-api/' | relative_url }}) — build a comparable product and shop shortlist.
 - [Walmart product and keyword APIs]({{ '/guides/walmart-product-keyword-api/' | relative_url }}) — connect search, details, categories and keyword evidence.
 - [Temu product research API]({{ '/guides/temu-product-research-api/' | relative_url }}) — preserve source families, regions and metric definitions.
-- [1688 Product Search API]({{ '/guides/1688-product-search-api/' | relative_url }}) — build a shortlist with Chinese keywords, MOQ filters and dated sales signals.
-- [1688 Product Detail API]({{ '/guides/1688-product-detail-api/' | relative_url }}) — compare exact SKUs, quantity tiers, single-piece prices and shipping units.
+- [Search 1688 wholesale products by keyword]({{ '/guides/1688-product-search-api/' | relative_url }}) — build a shortlist with Chinese keywords, price and MOQ filters.
+- [Look up a 1688 product by offer ID]({{ '/guides/1688-product-detail-api/' | relative_url }}) — compare exact SKUs, quantity tiers, single-piece prices and shipping units.
+- [Extract product data from a live ecommerce website]({{ '/ecommerce-data-extraction-api/' | relative_url }}) — choose among catalog APIs, marketplace listings and one-page evidence.
 - [Shopee product research API]({{ '/guides/shopee-product-research-api/' | relative_url }}) — connect a station-specific search to eligible product-detail URLs.
 - [Ozon product research API]({{ '/guides/ozon-product-research-api/' | relative_url }}) — align product reports, detail windows, keyword periods and daily trends.
 - [Mercado Libre product research]({{ '/guides/mercado-libre-product-research/' | relative_url }}) — compare category demand, 30-day sales, new listings and cross-border shops in Mexico, Brazil, Argentina, Chile and Colombia.
@@ -85,6 +86,8 @@ Use [Shopify Store Query](https://www.nexscope.ai/api-docs/shopify-store-query?v
 ## 5. Keyword or URL → SEO/GEO evidence → research brief
 
 Explore [the SEO API directory](https://www.nexscope.ai/api-docs?tab=marketing&co-from=learn). Use keyword and SERP data to research search demand, page data to inspect on-page evidence, and AI visibility data to study citations. Confirm the selected endpoint's access requirements and request schema before integrating it. Google search volume is not Amazon search volume, and a citation sample does not guarantee visibility in every AI answer.
+
+If you already have a search phrase, start with the [Google SERP API tutorial]({{ '/guides/google-serp-api/' | relative_url }}) to collect ranking URLs and result types in JSON.
 
 ## 6. Product asset → image or video task → finished media
 

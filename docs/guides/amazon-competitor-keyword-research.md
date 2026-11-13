@@ -55,6 +55,8 @@ image_caption: "Illustration: select comparable ASINs, inspect associated terms,
 
 If you already have two comparable Amazon ASINs, [compare them with the Reverse ASIN Keyword Gap tool](https://learn.nexscope.ai/tools/reverse-asin-keyword-gap/). Choose one marketplace, then check which terms appear for one ASIN and which rank and search-demand fields are available.
 
+If you're deciding between Cerebro and an API workflow, see the [Helium 10 comparison for Amazon keyword research]({{ '/alternatives/helium-10/' | relative_url }}).
+
 {% include article-action.html placement="article-top" %}
 
 {% include article-visual.html %}

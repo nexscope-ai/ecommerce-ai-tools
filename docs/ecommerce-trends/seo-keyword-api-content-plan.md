@@ -52,6 +52,7 @@ faq:
 | A prepared list | [Keyword Metrics](https://www.nexscope.ai/api-docs/seo-keyword-metrics?view=api) | Available volume, difficulty, advertising metrics and missing fields |
 | Several seeds for ideas | [Category-based Keyword Ideas](https://www.nexscope.ai/api-docs/seo-keyword-ideas?view=api) | Supported inputs and categories |
 | A competitor domain | [Keyword ranking API guide]({{ '/guides/competitor-keyword-traffic-api/' | relative_url }}) | Returned ranking terms and URLs |
+| One query whose competing pages you want to see | [Google SERP API tutorial]({{ '/guides/google-serp-api/' | relative_url }}) | Ranking URLs, result types, and original positions |
 
 The current Keyword Metrics reference supports `market: US` and `language: en`, with 1–20 phrases. Each phrase is limited to 80 characters and ten whitespace-separated words. The downloadable starter rejects duplicate normalized inputs so a repeated phrase cannot create an ambiguous join. It does not split a large list into repeated paid requests.
 

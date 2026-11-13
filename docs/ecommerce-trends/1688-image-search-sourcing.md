@@ -97,8 +97,8 @@ This matters when sourcing from a marketplace photo. A listing may use a shared 
 
 1. **Choose an eligible reference.** The current Nexscope API documentation supports a publicly accessible PNG, JPG, or JPEG `imageUrl`, or raw Base64 for those formats. WEBP and GIF are not listed as supported. Use an image you have the right to process and avoid sharing private product imagery through a public URL.
 2. **Run image search and keep the raw evidence.** Record the query image, time, returned product `offerId`, listing URL, image, displayed price, `quantityBegin`, seller name or identity, and any available sales or service signals. The response may include an `imageId`; retain it for later pages. Missing fields should stay blank, not be inferred.
-3. **Check the actual offer.** Pass a shortlisted `offerId` as a string to [1688 Product Detail](https://www.nexscope.ai/api-docs/1688-product-detail?co-from=learn). Its normalized response can include `skuList`, `saleInfo`, `shippingInfo`, and `companyName`. Compare the specific variant you would order, not a generic headline image.
-4. **Search again by terms, not just appearance.** The [1688 Product Search API](https://www.nexscope.ai/api-docs/1688-product-search?co-from=learn) supports a `keyWord` in Simplified Chinese, price and MOQ filters, supplier-related filters, and sorting. Search the product's material and function to find alternatives that look different but better fit the brief.
+3. **Check the actual offer.** Use the [1688 offer ID lookup guide]({{ '/guides/1688-product-detail-api/' | relative_url }}) to inspect the shortlisted variant's price, quantity tiers and shipping fields.
+4. **Find more offers by specification.** Follow the [1688 wholesale keyword search guide]({{ '/guides/1688-product-search-api/' | relative_url }}) to search by material and function, then filter by price and MOQ.
 5. **Ask for evidence from the finalists.** Confirm company identity, sample quality, applicable price tier, lead time, production role, testing or compliance documents, payment terms, and shipping arrangement directly. Do not pay solely because an API returned a promising row.
 
 A minimal image-search request body looks like this. Replace the example URL with your own eligible, publicly accessible image; this is a **request template, not a live test or a real search result**:
@@ -130,7 +130,6 @@ For a broader procurement overview, see Nexscope's [1688 supplier sourcing guide
 
 For the exact documented request and response fields behind this step, inspect the [1688 Search By Image evidence record]({{ '/api-evidence/1688-image-search/' | relative_url }}). It separates observable API fields from supplier claims that still need verification.
 
-For a step-by-step keyword request, use the [1688 Product Search tutorial]({{ '/guides/1688-product-search-api/' | relative_url }}). For the selected offer, see [1688 Product Detail: SKU prices, MOQ and shipping]({{ '/guides/1688-product-detail-api/' | relative_url }}). These guides cover request construction and field interpretation beyond visual matching.
 
 ## How should you compare two similar offers?
 

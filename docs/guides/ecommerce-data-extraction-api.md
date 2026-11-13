@@ -3,13 +3,13 @@ learning_topic: agents
 related_topics: [research, visibility]
 content_kind: guide
 layout: default
-title: "Ecommerce Data Extraction API: Get Structured Product Data"
-description: "See a real Amazon product API result, then choose how to extract titles, prices and variants from online stores using APIs, page extraction or catalog feeds."
+title: "Ecommerce Data Extraction API: Read Product Pages & Feeds"
+description: "Compare Shopify or WooCommerce catalog APIs, marketplace product APIs, and live product-page parsing. See which source to use for prices, stock, and variants."
 permalink: /ecommerce-data-extraction-api/
 date_published: 2026-10-20
-date_modified: 2026-11-12
-last_modified_at: 2026-11-12
-last_reviewed: 2026-11-12
+date_modified: 2026-11-13
+last_modified_at: 2026-11-13
+last_reviewed: 2026-11-13
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -44,11 +44,15 @@ faq:
     answer: "No. Accuracy depends on rendering, page changes, variants, access rules, missing fields, and timestamp. Preserve raw evidence and validate high-risk fields such as price, availability, identifiers, compatibility, and shipping."
 ---
 
-# How to extract structured product data from online stores
+# How to extract product data from a live ecommerce website
 
-**By Nexscope Team · Published October 20, 2026 · Reviewed November 12, 2026**
+**By Nexscope Team · Published October 20, 2026 · Reviewed November 13, 2026**
 
-To get structured product data, start with a product identifier or URL and decide which fields your workflow needs. Use a marketplace product API for supported listings, your store's catalog API or feed for records you own, and page extraction to check what shoppers see on a public URL. Keep the source and retrieval time with each record.
+The right source depends on who controls the store and what you need to read. For your own Shopify or WooCommerce store, start with its authorized catalog API or feed for SKUs, variants and inventory. For a supported marketplace listing, start with its product ID and a marketplace product API. For one public product URL, inspect visible price and availability alongside its structured data and record where each value came from.
+
+If you need to parse product pages across stores, test one representative URL per storefront before deciding on an extractor. Check whether the returned price belongs to the selected variant, whether stock is visible, and how the API reports missing fields. A product title and a price alone may be enough for a listing preview, while a catalog sync also needs stable variant identifiers.
+
+{% include api-guide-entry.html %}
 
 ## A real example from the Amazon Product Detail API
 
@@ -68,8 +72,6 @@ On October 7, 2026, Nexscope looked up Amazon US ASIN `B0CT2BY5KL`. The saved re
 This is a dated listing snapshot. Availability and variant-level prices are absent from the saved record for this product. [Download the sanitized JSON record]({{ '/assets/evidence/portable-blender-amazon-1688-2026-10-07.json' | relative_url }}) or [test Amazon Product Detail with an ASIN](https://www.nexscope.ai/api-docs/amazon-product-detail?view=documentation&co-from=learn#online-test).
 
 {% include article-visual.html %}
-
-{% include api-guide-entry.html %}
 
 | Your job | Start with | Check before relying on it |
 | --- | --- | --- |

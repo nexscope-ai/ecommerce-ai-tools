@@ -3,12 +3,12 @@ layout: default
 learning_topic: agents
 related_topics: [visibility]
 content_kind: guide
-title: "Google SERP API: Search Results, Ranks & JSON Handling"
-description: "Use a Google SERP API to inspect ranking pages and result types. Includes Nexscope inputs, JSON status checks and a practical search-intent review workflow."
+title: "Google SERP API Tutorial: Get Search Results in JSON"
+description: "Use a Google SERP API to return titles, URLs and ranking positions in JSON. Copy a request for US desktop results and handle partial or pending responses."
 permalink: /guides/google-serp-api/
 date_published: 2026-10-28
-date_modified: 2026-10-28
-last_modified_at: 2026-10-28
+date_modified: 2026-11-13
+last_modified_at: 2026-11-13
 last_reviewed: 2026-10-28
 author: Nexscope Team
 schema_type: Article
@@ -21,7 +21,7 @@ next_step:
   title: Inspect the results for one search query
   description: Review the US English desktop scope and current cost. Use one keyword to inspect result types, original ranks and missing fields before designing a larger workflow.
   label: Open the Google SERP API tester
-  url: "https://www.nexscope.ai/api-docs/seo-serp?view=api#online-test"
+  url: "https://www.nexscope.ai/api-docs/seo-serp?view=playground&co-from=learn"
 keywords: [serp api, google serp api, google search results api, serp api json]
 faq:
   - question: Is a SERP API the same as SerpApi?
@@ -32,9 +32,9 @@ faq:
     answer: "No. A URL absent from a bounded or partial result has not been observed in that returned sample. That does not prove the site is unindexed or ranks nowhere."
 ---
 
-# Google SERP API: inspect search results without confusing the metrics
+# Google SERP API: get Google search results in JSON
 
-**Use a Google SERP API to inspect ranking pages and result formats before planning content.** This guide shows Nexscope's current request, response-status checks and a practical search-intent review. Keep query snapshots separate from domain keyword databases, search-volume estimates and recurring rank tracking.
+Send one keyword to the Google SERP API to get a snapshot of returned pages, with titles, URLs, result types and ranking positions. The example below uses US English desktop results and requests up to ten entries. Use the returned URLs to see which pages compete for that query and which formats are showing up.
 
 {% include api-guide-entry.html %}
 
@@ -72,27 +72,18 @@ If your application needs mobile results in another country, establish a support
 
 ## How do you request a Google search snapshot?
 
-The live reference documents the following route:
+The live reference documents the following request. Set `NEXSCOPE_API_KEY` in your environment before running it.
 
-```text
-POST https://api.nexscope.ai/seo/serp
-Authorization: Bearer YOUR_API_KEY
-Content-Type: application/json
-```
-
-This **unexecuted input example** asks a research question relevant to a product team:
-
-```json
-{
-  "keyword": "portable blender for travel",
-  "market": "US",
-  "language": "en",
-  "device": "desktop",
-  "limit": 10
-}
+```bash
+curl -X POST 'https://api.nexscope.ai/seo/serp' \
+  -H "Authorization: Bearer ${NEXSCOPE_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{"keyword":"portable blender for travel","market":"US","language":"en","device":"desktop","limit":10}'
 ```
 
 Review current access and credit use before sending it. The [MCP entry](https://www.nexscope.ai/mcp-map/seo-serp) provides a compatible agent route; do not assume its argument wrapper is identical to the REST payload.
+
+For a CSV export, keep one row per returned result. Use columns for the query, market, device, collection time, result type, title, URL, group rank and absolute rank. Keep the response status in the export or a companion manifest so partial results remain identifiable after filtering or sorting.
 
 ## How should your application handle the JSON response?
 

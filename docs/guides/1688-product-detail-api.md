@@ -3,8 +3,8 @@ learning_topic: sourcing
 related_topics: [agents]
 content_kind: guide
 layout: default
-title: "1688 Product Detail API: SKU Prices, MOQ & Shipping"
-description: "Read 1688 SKU prices, quantity tiers, MOQ and shipping fields with Nexscope. See a request example and learn what to verify before comparing supplier offers."
+title: "1688 Product Detail API: Check SKU Prices and MOQ by Offer ID"
+description: "Turn a 1688 product URL into an offer ID, then look up variants, wholesale price tiers, MOQ and shipping. Copy an example or open the Nexscope Playground."
 permalink: /guides/1688-product-detail-api/
 date_published: 2026-10-26
 date_modified: 2026-11-13
@@ -31,11 +31,13 @@ next_step:
   url: https://www.nexscope.ai/api-docs/1688-product-detail?view=playground&co-from=learn
 ---
 
-# 1688 product detail API: compare SKU prices, MOQ and shipping
+# 1688 product detail API: check SKU prices and MOQ by offer ID
 
-Paste a 1688 offer ID into the Playground to inspect the selected SKU, its price, minimum order quantity (MOQ) and available shipping details. For a link such as https://detail.1688.com/offer/1040473674152.html, use the digits after `/offer/` and keep them as a string.
+Use the 1688 Product Detail API when you already have a product link and want to know which price applies to the variant and quantity you plan to order. For a link such as `https://detail.1688.com/offer/1040473674152.html`, pass the digits after `/offer/` as the string `offerId`. Check the SKU price, quantity tiers, minimum order quantity (MOQ) and shipping fields before comparing offers.
 
 {% include api-guide-entry.html %}
+
+If you still need listings to compare, use [1688 keyword search with price and MOQ filters]({{ '/guides/1688-product-search-api/' | relative_url }}). If you only have a photo, start with the [1688 image search workflow]({{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}).
 
 ## Try one offer ID
 
@@ -62,7 +64,7 @@ If a price or shipping field is absent, record it as unknown. Check the exact pa
 
 ## What do you need before requesting product details?
 
-You need the offer identifier, not a screenshot or a loosely similar product name. Keep `offerId` from [1688 product search]({{ '/guides/1688-product-search-api/' | relative_url }}) or an eligible listing URL. For visual discovery, use the [1688 image-search workflow]({{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}) first, then inspect the shortlisted offers individually.
+Keep the full `offerId` from an eligible listing URL or a search result. Store it as text through any spreadsheet, CSV or JSON export so the lookup uses the exact digits.
 
 The current request requires `offerId` as a positive-integer **string**. Preserve it from input through storage and export. Converting long IDs into floating-point numbers can change the identifier. A spreadsheet should also treat the field as text.
 

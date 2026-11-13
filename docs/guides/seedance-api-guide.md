@@ -49,7 +49,7 @@ Choose by the input and output requirements of the shot. A newer version's large
 
 Check the live [Seedance 2.0 contract](https://www.nexscope.ai/api-docs/seedance-2-0-video-generation?view=api) or [Seedance 2.5 contract](https://www.nexscope.ai/api-docs/seedance-2-5-video-generation?view=api) before sending production requests. In particular, reference-video mode cannot be combined with image-reference inputs. Do not add every available reference field to the same payload.
 
-For editorial strengths, limitations and attributed public feedback, read the [2.0 review]({{ '/guides/seedance-2-0-video/' | relative_url }}) and [2.5 review]({{ '/guides/seedance-2-5-video/' | relative_url }}). The guide here focuses on the integration decision rather than repeating those reviews.
+For feedback on turning product photos into short clips, see the [Seedance 2.0 image-to-video review]({{ '/guides/seedance-2-0-video/' | relative_url }}). For the newer route, read the [Seedance 2.5 review]({{ '/guides/seedance-2-5-video/' | relative_url }}).
 
 ## Can you use a free Seedance API key?
 
