@@ -74,6 +74,8 @@ Save the region, date window, sort measure and category with each product ID. Ch
 
 ## Turn one ranked product into a comparison
 
+Use the <a href="/data/tiktok-product-discovery/" data-track-tool="tiktok-product-discovery">TikTok Shop product discovery and bestseller API directory</a> to choose between looking up a dated ranking and finding candidates for a product idea.
+
 Pick three items that serve the same buyer need. Open each listing and compare the exact variant, offer quantity, current price and evidence for its main claim. A high ranking can help choose a product to investigate. Use those listing checks and your own costs to decide whether it is a useful comparison.
 
 For developers, the [TikTok Shop API guide]({{ '/guides/tiktok-shop-api-guide/' | relative_url }}) explains how ranking fits with discovery and product details. For sellers who want a reviewed competitor comparison for their own public Amazon or independent-store product page, see the [Nexscope Product Growth Report](https://www.nexscope.ai/product-growth-report?co-from=learn#request).

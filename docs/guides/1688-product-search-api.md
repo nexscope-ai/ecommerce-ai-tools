@@ -55,7 +55,7 @@ For the example below, the brief is a yoga mat with an illustrative listing-pric
 
 ## Which 1688 API matches your starting point?
 
-Use keyword search for a written specification, image search for visual discovery, and product details for a known offer. They answer different questions and should not be treated as interchangeable responses.
+Open the <a href="/data/1688-sourcing/" data-track-tool="1688-sourcing">1688 product and supplier API directory</a> to choose the endpoint that matches your input. Use keyword search for a written specification, image search for visual discovery, or product details for a known offer ID.
 
 | What you have | Starting point | Next useful step |
 | --- | --- | --- |

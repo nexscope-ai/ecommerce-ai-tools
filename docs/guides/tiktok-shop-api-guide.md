@@ -30,9 +30,6 @@ faq:
     answer: "The documented run endpoints use POST with a Bearer API key, and the API pages expose MCP method names for compatible clients. Use the individual API page for the current endpoint, parameters, response fields, and credit estimate."
 ---
 
-Browse the [Nexscope Data API directory](/data/) to compare TikTok operations with other marketplaces and open their official testers.
-
-
 # TikTok Shop API: product, creator and video research
 
 **By Nexscope Team · Published October 13, 2026 · Updated October 23, 2026**
@@ -157,7 +154,7 @@ For a small data-only pilot, discover sellers in a supported region, inspect one
 
 ## Which TikTok Shop API should you call first?
 
-Choose the API from the decision you need to make:
+Choose the API from the decision you need to make. If you have a product idea or category and need a shortlist, start with the <a href="/data/tiktok-product-discovery/" data-track-tool="tiktok-product-discovery">TikTok Shop product discovery and bestseller APIs</a>. For follow-up questions about creators, videos or ads, browse the <a href="/data/tiktok-commerce-research/" data-track-tool="tiktok-commerce-research">TikTok commerce research APIs</a>.
 
 | Seller question | Start with | Add next |
 |---|---|---|

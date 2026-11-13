@@ -117,6 +117,8 @@ The documented REST operation is `POST /api/skill-api/v1/skills/1688-search-by-i
 
 ## Which 1688 API answers which sourcing question?
 
+In the <a href="/data/1688-sourcing/" data-track-tool="1688-sourcing">1688 product and supplier API directory</a>, start with Search by Image to find similar listings. Use Product Detail with a shortlisted offer ID to check the SKU, pricing tiers and supplier information before comparing offers.
+
 **Use each endpoint for one decision.** Image search discovers visual candidates; the other APIs add independent ways to inspect or challenge that initial shortlist. Combining them is more reliable than treating one image match as a purchase recommendation.
 
 | Sourcing question | Nexscope capability | Evidence to keep | Important limit |
