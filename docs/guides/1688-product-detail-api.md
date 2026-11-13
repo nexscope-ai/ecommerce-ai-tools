@@ -7,9 +7,9 @@ title: "1688 Product Detail API: SKU Prices, MOQ & Shipping"
 description: "Read 1688 SKU prices, quantity tiers, MOQ and shipping fields with Nexscope. See a request example and learn what to verify before comparing supplier offers."
 permalink: /guides/1688-product-detail-api/
 date_published: 2026-10-26
-date_modified: 2026-11-06
-last_modified_at: 2026-11-06
-last_reviewed: 2026-11-06
+date_modified: 2026-11-13
+last_modified_at: 2026-11-13
+last_reviewed: 2026-11-13
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -24,6 +24,7 @@ faq:
     answer: "No. A supplier or store name is listing evidence. Verify company identity, manufacturing role, samples, commercial terms and relevant product requirements separately before purchasing."
 next_step:
   id: 1688_product_detail_api
+  intent: api-evaluation
   title: Inspect the SKU and price fields for your offer
   description: "New users receive 1,000 free credits to get started. Check this endpoint's access and current credit requirements before running a request."
   label: Open 1688 Product Detail Playground
@@ -32,11 +33,32 @@ next_step:
 
 # 1688 product detail API: compare SKU prices, MOQ and shipping
 
-A **1688 product detail API** helps answer a question that search results leave open: what does this exact offer say about the variant and quantity you want to buy? Nexscope documents product, SKU, pricing, shipping and seller fields for a supplied offer identifier. Begin with the [API capability map]({{ '/api-capabilities/' | relative_url }}) if you still need to choose a research task.
+Paste a 1688 offer ID into the Playground to inspect the selected SKU, its price, minimum order quantity (MOQ) and available shipping details. For a link such as https://detail.1688.com/offer/1040473674152.html, use the digits after `/offer/` and keep them as a string.
 
 {% include api-guide-entry.html %}
 
-> **Quick answer:** Nexscope's 1688 Product Detail API retrieves a selected offer using a string `offerId`. Inspect `skuList`, `saleInfo`, `shippingInfo` and seller fields together. Keep single-piece prices, wholesale tiers, currencies and weight units separate. The result supports an offer comparison; it does not confirm a purchase quote or certify a supplier.
+## Try one offer ID
+
+Copy this JSON into the Playground and replace the example ID with your own. The optional currency field requests converted values where the API supplies them.
+
+```json
+{"offerId":"1040473674152","currency":"USD"}
+```
+
+Check that `data.offerId` matches the input. Start with `skuList` for the variant, `saleInfo.priceRanges` for quantity tiers, `minOrderQuantity` for the minimum and `shippingInfo` for available shipping details. The example below shows a trimmed shape from the public contract. Its sample prices are in RMB.
+
+```json
+{
+  "code": 0,
+  "data": {
+    "offerId": "1234567890123456789",
+    "skuList": [{"skuId": "456789012345678901", "price": "4.20", "retailPrice": "4.80"}],
+    "saleInfo": {"priceRanges": [{"startQuantity": 2, "price": "4.20"}]}
+  }
+}
+```
+
+If a price or shipping field is absent, record it as unknown. Check the exact pack size, order quantity and shipping terms with the supplier before using the numbers in a purchase decision. [Documented response example](https://www.nexscope.ai/api-docs/1688-product-detail?view=api&co-from=learn)
 
 ## What do you need before requesting product details?
 
@@ -104,7 +126,7 @@ For each shortlisted offer, keep one comparison row: source URL, observation dat
 
 ## Evidence, cost and next steps
 
-Reviewed **October 26, 2026** against the [public Product Detail reference](https://www.nexscope.ai/api-docs/1688-product-detail?view=api&co-from=learn) and its published request and response contracts. This is a vendor-authored documentation guide. No paid detail request, supplier verification, latency benchmark or purchase was performed for this article.
+Reviewed **November 13, 2026** against the [public Product Detail reference](https://www.nexscope.ai/api-docs/1688-product-detail?view=api&co-from=learn) and its published request and response contracts. This is a vendor-authored documentation guide. No paid detail request, supplier verification, latency benchmark or purchase was performed for this article.
 
 Check [current pricing and access](https://www.nexscope.ai/pricing?co-from=learn) before execution. Search, detail and any separate analysis request can be separate actions; an upstream `costToken` field is not a substitute for your account's actual credit record.
 

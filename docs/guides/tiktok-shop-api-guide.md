@@ -70,7 +70,7 @@ The newer analytics-oriented product endpoints add a second layer:
 - TikTok Product Discovery
 - TikTok Product Search
 - TikTok New Product Rank
-- TikTok Top Selling Products
+- [TikTok Shop Best Sellers API]({{ '/guides/tiktok-shop-best-sellers-api/' | relative_url }})
 
 For example, [TikTok Product Discovery](https://www.nexscope.ai/api-docs/tiktok-product-discovery?returnTo=%2Fapi-docs%23api-tiktok-product-discovery&co-from=learn&utm_source=learn.nexscope.ai&utm_medium=referral&utm_campaign=tiktok-shop-api-guide&utm_content=product-discovery) is designed for keyword, category, shop-type, commission, sales, and creator-count filters. It is a better starting point for a shortlist than asking a model to guess which products are trending.
 
