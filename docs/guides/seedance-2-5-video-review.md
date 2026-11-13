@@ -3,7 +3,7 @@ learning_topic: creative
 content_kind: guide
 layout: default
 title: "Seedance 2.5 Review: Capabilities, Limits & User Views"
-description: "Explore Seedance 2.5's longer clips, reference options and user-reported limits. Compare the 2.0 API route or open the matching Nexscope Playground."
+description: "Review Seedance 2.5's clip lengths, reference options and user-reported limits, then try the Nexscope image-to-video generator or explore the API."
 permalink: /guides/seedance-2-5-video/
 date_published: 2026-10-22
 date_modified: 2026-10-23
@@ -21,9 +21,9 @@ suppress_article_help: true
 next_step:
   id: seedance_2_5_video_generation
   title: "Experience Seedance 2.5"
-  description: "New users receive 1,000 free credits to experience models. Trial credits are valid for 3 days; usage varies by model and settings."
-  label: "Try Seedance 2.5 in Playground"
-  url: https://www.nexscope.ai/api-docs/seedance-2-5-video-generation?view=playground&co-from=learn
+  description: "Add a product image and describe how you want it to move. Preview the video settings and sign in when you're ready to generate."
+  label: "Create a video with Seedance 2.5"
+  url: https://www.nexscope.ai/seedance-2-5?co-from=learn
 ---
 
 # Seedance 2.5 Review: Capabilities, Limits & User Views
@@ -72,6 +72,8 @@ A [separate user report on “unlimited” 2.5 platforms](https://www.reddit.com
 A candidate for reference-rich creative work and ideas that genuinely need more than 15 seconds. Avoid assuming longer means better or that a new version guarantees correct actions. For a commercial asset, the decisive question remains whether the complete clip depicts the intended subject and event accurately.
 
 {% include model-decision-path.html %}
+
+For an integration, [open the Seedance 2.5 API Playground](https://www.nexscope.ai/api-docs/seedance-2-5-video-generation?view=playground&co-from=learn) to inspect and test the request.
 
 ## Related model reviews
 
