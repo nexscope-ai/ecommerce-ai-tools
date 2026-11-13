@@ -32,9 +32,10 @@ faq:
 next_step:
   id: mercado_market_research
   title: Find the category code for one product idea
-  description: "Inspect the Mercado Libre market research operations, market codes and current credit cost before running a category search."
-  label: Open Mercado Libre Market Research
-  url: https://www.nexscope.ai/api-docs/mercado-market-intelligence?view=api&co-from=learn
+  intent: api-test
+  description: 'Start with search_categories, a local-language keyword and the market code. The Mexico example below shows the JSON to paste.'
+  label: Test Mercado Libre Market Research
+  url: https://www.nexscope.ai/api-docs/mercado-market-intelligence?view=playground&co-from=learn
 ---
 
 # How do you research what to sell on Mercado Libre?

@@ -20,6 +20,16 @@ export const dataStarts = {
       ['data-amazon-ads-developer-proxy-reporting-reports-report-id', 'Check the report status', 'Use the returned report ID; submission does not mean the report is ready.'],
     ],
   },
+  'data-zy-patent': {
+    title: 'Find a relevant patent and check its record',
+    bring: 'Keywords for your product idea, or a patent publication number if you already know it.',
+    result: 'Candidate patent records, bibliographic details and reported legal status.',
+    steps: [
+      ['patent-search', 'Search for matching patent records', 'Start with the product and its most distinctive feature.'],
+      ['patent-core-bibliography', 'Review a specific patent', 'Check publication details before comparing related results.'],
+      ['patent-legal-status-data', 'Check the reported legal status', 'Confirm consequential findings with the relevant patent office.'],
+    ],
+  },
   'data-1688-sourcing': {
     title: 'Find supplier candidates from one product image',
     bring: 'A publicly accessible product image URL, or a sourcing keyword.',

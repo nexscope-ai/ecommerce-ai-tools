@@ -347,13 +347,13 @@ test('workflow recommendations link only present categories and existing guides 
 test('task starting points link only published operations and retain channel and placement context',async()=>{
   const current=JSON.parse(await readFile(new URL('./data/api-docs.public.json',import.meta.url),'utf8'));
   const pages=buildPages(current);
-  for(const category of ['data-amazon-front-data','data-amazon-ads','data-1688-sourcing']) {
+  for(const category of ['data-amazon-front-data','data-amazon-ads','data-1688-sourcing','data-zy-patent']) {
     const html=pages.get(category+'.md');
     const start=html.split('<section class="api-start"')[1].split('</section>')[0];
     assert.match(start,/You bring/);assert.match(start,/You get/);
     const links=[...start.matchAll(/href="([^"]+)"[^>]*data-api-slug="([^"]+)"/g)];
     assert.ok(links.length>0);
-    for(const [,url,slug] of links){assert.ok(current.entries.some(e=>e.slug===slug&&e.categorySlug===category));assert.equal(new URL(url).searchParams.get('co-from'),'learn');}
+    for(const [,url,slug] of links){assert.ok(current.entries.some(e=>e.slug===slug&&e.categorySlug===category));const target=new URL(url.replaceAll('&amp;','&'));assert.equal(target.searchParams.get('view'),'playground');assert.equal(target.searchParams.get('co-from'),'learn');}
   }
   const absent=buildPages(snapshot).get(entry.categorySlug+'.md');
   assert.ok(!absent.includes('class="api-start"'),'a missing API must not create a dead starting point');

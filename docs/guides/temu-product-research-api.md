@@ -24,7 +24,8 @@ faq:
 next_step:
   id: temu_product_research_api
   title: Inspect a bounded Temu product query
-  description: "Review the available product filters, source scope and current credits before collecting a shortlist."
+  intent: api-test
+  description: 'Start with the portable blender example below: copy the sample JSON, check the estimated credits and run one request.'
   label: Test Temu Product Source Query
   url: "https://www.nexscope.ai/api-docs/temu-product-source-query?view=documentation&co-from=learn#online-test"
 ---

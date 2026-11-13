@@ -3,7 +3,7 @@ learning_topic: creative
 content_kind: guide
 layout: default
 title: "Seedream 5 Pro Review: Editing, Detail & User Views"
-description: "A balanced Seedream 5 Pro review of reference editing, product detail and mixed community feedback. Try the model in its corresponding Nexscope Playground."
+description: "A balanced Seedream 5 Pro review of reference editing, product detail and mixed community feedback. Create a product image with Seedream 5 Pro or test the API in its Nexscope Playground."
 permalink: /guides/seedream-5-pro-image/
 date_published: 2026-10-22
 date_modified: 2026-10-22
@@ -21,9 +21,9 @@ suppress_article_help: true
 next_step:
   id: seedream_5_pro_image_generation
   title: "Experience Seedream 5 Pro"
-  description: "New users receive 1,000 free credits to experience models. Trial credits are valid for 3 days; usage varies by model and settings."
-  label: "Try Seedream 5 Pro in Playground"
-  url: https://www.nexscope.ai/api-docs/seedream-5-pro-image-generation?view=playground&co-from=learn
+  description: "Choose Seedream 5 Pro in the generator and check the credit estimate before generating."
+  label: "Create a product image"
+  url: https://www.nexscope.ai/tools/ai-image-generator?co-from=learn#generator
 ---
 
 # Seedream 5 Pro Review: Editing, Detail & User Views
@@ -31,6 +31,8 @@ next_step:
 Seedream 5 Pro is a Nexscope image-generation route supporting prompts and optional references. Its appeal to a creative team is reference-led image work, including product scenes and edits. This review considers that positioning alongside public reports that praise editing control but also question consistency and access restrictions.
 
 {% include model-experience.html placement="article-top" %}
+
+**Creating an image?** Select **Seedream 5 Pro** in the generator. Upload a product photo or describe the scene, then check the estimate before generating. **Integrating the model?** [Test the Seedream 5 Pro API in Playground](https://www.nexscope.ai/api-docs/seedream-5-pro-image-generation?view=playground&co-from=learn).
 
 > **Our take:** Seedream 5 Pro deserves consideration for reference-based image work, but claims of perfect editing control go beyond the available evidence. Public feedback includes both praise for local edits and complaints about face matching. The current Nexscope route lists 1K and 2K output, not a universal 4K capability.
 

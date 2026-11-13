@@ -32,6 +32,8 @@ Seedance 2.5 is a video route in Nexscope's creative catalog with a wider durati
 
 {% include model-experience.html placement="article-top" %}
 
+**Try one shot:** Upload a clear product photo and describe a single movement, such as a slow push-in that keeps the label and shape unchanged. [Compare other video models in the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn#generator).
+
 > **Our take:** Seedance 2.5 offers up to 30-second output and up to 30 image references on Nexscope. Those are meaningful capability differences, but they do not prove accurate choreography or stable identity throughout a long clip. Public feedback includes praise for visual quality and concerns about missed actions and host restrictions.
 
 *Reviewed October 22, 2026. Editorial review of documented capabilities and attributed public feedback; not a new hands-on generation benchmark. Nexscope provides access to this model, so this is not an unaffiliated review.*
