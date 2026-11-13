@@ -64,7 +64,7 @@
 .api-search-row { display:flex; gap:10px; align-items:center; }
 .api-search-row input { min-width:0; }
 .api-search-row button { padding:8px 10px; color:#6847d5; background:transparent; border:0; font-size:.8rem; }
-.api-view-switch { display:flex; gap:6px; margin:0 0 20px; padding:4px; width:fit-content; border:1px solid #e6e1ee; border-radius:11px; background:#f0edf4; }
+.api-view-switch { display:flex; gap:6px; margin:20px 0; padding:4px; width:fit-content; border:1px solid #e6e1ee; border-radius:11px; background:#f0edf4; }
 .api-view-switch button { border:0; border-radius:7px; padding:8px 14px; background:transparent; color:#80758d; font-size:.78rem; }
 .api-view-switch button span { margin-left:7px; opacity:.65; font-size:.7rem; }
 .api-view-switch button[aria-pressed="true"] { color:#4f376e; background:#fff; box-shadow:0 2px 5px #362a4810; }
