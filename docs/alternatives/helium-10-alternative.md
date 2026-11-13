@@ -60,6 +60,11 @@ Use the [Amazon competitor keyword research walkthrough]({{ '/amazon-competitor-
 
 {% include article-action.html %}
 
+{% include article-flow.html title="Compare tools on the same Amazon research task"
+  first="Pick one competitor ASIN" first_detail="Use the same Amazon marketplace in both tools."
+  second="Compare returned keywords" second_detail="Check relevant terms, organic rank and volume definitions."
+  third="Choose how to work" third_detail="Use a seller dashboard, REST API or an MCP client." %}
+
 ## Does Helium 10 have an API or MCP integration?
 
 **Helium 10 has an official MCP integration. A developer evaluating API access should inspect the exact supported interface rather than infer a public REST contract from a dashboard feature.** Its [MCP page](https://www.helium10.com/tools/mcp/) describes ASIN keywords, keyword expansion, product research and account-related tools, with plan-specific access. Nexscope separately documents REST requests and an MCP catalog for ecommerce research.

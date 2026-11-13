@@ -33,6 +33,11 @@ next_step:
 
 Use the 1688 Product Search API to find wholesale listings that fit a written sourcing brief. Send a Simplified Chinese keyword such as `瑜伽垫` (yoga mat), set a price band and cap the minimum order quantity (MOQ) at what you can buy. Save the listing IDs for the offers you want to check.
 
+{% include article-flow.html title="Find 1688 offers that fit your sourcing brief"
+  first="Write a Chinese keyword" first_detail="Use the product name and key specs, such as material."
+  second="Filter by price and MOQ" second_detail="Set a price band and cap the minimum order."
+  third="Open the shortlisted offers" third_detail="Use their IDs to verify the SKU and price tier." %}
+
 {% include api-guide-entry.html %}
 
 > **Quick answer:** Write a Simplified Chinese product keyword, set your price band and maximum acceptable MOQ, and request one small page. Compare specification before price. Keep unknown quantities visible, then open product details to check the intended SKU and pricing tier. A search match is a sourcing lead, not a verified supplier.

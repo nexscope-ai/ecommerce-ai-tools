@@ -202,6 +202,20 @@
 .resource-card .resource-card-footer time { margin: 0 0 0 auto; white-space: nowrap; text-align: right; }
 
 /* Compact model links complement the single in-article experience card. */
+.article-flow { margin:26px 0 22px; padding:clamp(16px,3vw,24px); border:1px solid #ded5f5; border-radius:16px; background:#f7f4ff; color:#251b40; }
+.article-flow figcaption { margin:0 0 14px; color:inherit; font-size:clamp(17px,2.4vw,20px); font-weight:750; text-align:left; }
+.article-flow .article-flow-prompt { margin:0 0 14px; color:#4e3f68; font-size:14px; }
+.article-flow .article-flow-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; padding:0; margin:0; list-style:none; }
+.article-flow .article-flow-steps li { position:relative; margin:0; padding:13px; border:1px solid #e0d6f6; border-radius:11px; background:#fff; line-height:1.45; overflow-wrap:anywhere; }
+.article-flow-steps:not(.article-flow-choices) li+li::before { position:absolute; top:50%; right:calc(100% + 6px); width:7px; height:7px; content:""; border:solid #6943b7; border-width:2px 2px 0 0; transform:translateY(-50%) rotate(45deg); }
+.article-flow-number { display:grid; width:25px; height:25px; margin-bottom:8px; place-items:center; border-radius:50%; background:#e9dfff; color:#4c258c; font-size:12px; font-weight:750; }
+.article-flow-steps strong { display:block; margin-bottom:5px; color:#302146; font-size:14px; }
+.article-flow-detail { display:block; color:#504361; font-size:13px; }
+@media (max-width:620px) {
+  .article-flow .article-flow-steps { grid-template-columns:1fr; gap:14px; }
+  .article-flow-steps:not(.article-flow-choices) li+li::before { top:auto; right:auto; bottom:calc(100% + 5px); left:23px; transform:rotate(135deg); }
+}
+
 .model-experience { display:flex; align-items:center; flex-wrap:wrap; gap:12px 20px; margin:22px 0 28px; }
 .model-experience>a { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; max-width:100%; padding:10px 17px; border-radius:9px; background:var(--accent); color:#fff; font-size:14px; font-weight:700; line-height:1.5; text-decoration:none; overflow-wrap:anywhere; }
 .model-experience>a:hover { background:#5628d7; color:#fff; }

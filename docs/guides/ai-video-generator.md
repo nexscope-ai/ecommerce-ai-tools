@@ -7,16 +7,16 @@ description: "Review an AI-generated product video frame by frame. Check labels,
 permalink: /ai-video-generator/
 last_reviewed: 2026-11-10
 date_published: 2026-09-15
-date_modified: 2026-11-10
-last_modified_at: 2026-11-10
+date_modified: 2026-11-13
+last_modified_at: 2026-11-13
 author: Nexscope Team
 schema_type: Article
 next_step:
   id: ai_video_generator
   title: Test a product-video concept
   description: Start with one clear product image, review the credit estimate, then check the result for product accuracy.
-  label: Open AI Video Generator
-  url: https://www.nexscope.ai/tools/ai-video-generator?co-from=learn
+  label: Create a product video
+  url: https://www.nexscope.ai/tools/ai-video-generator?co-from=learn#generator
 og_type: article
 image: /assets/images/ai-video-generator-product-workflow-1440w.webp
 image_small: /assets/images/ai-video-generator-product-workflow-720w.webp
@@ -35,15 +35,22 @@ faq:
 
 {% include article-visual.html %}
 
-**By Nexscope Team · Published September 15, 2026 · Updated November 10, 2026**
+**By Nexscope Team · Published September 15, 2026 · Updated November 13, 2026**
 
-Compare your AI-generated product video with the original photo before using it in a listing or ad. Check that the shape, colour, label and included parts stay consistent throughout the clip. Use the [frame-by-frame checklist](#review-the-result-before-publishing) to decide which takes you can use. If you are starting from a photo, [open the image-to-video quick start](https://learn.nexscope.ai/ai-video-generator/).
+Compare your AI-generated product video with the original photo before using it in a listing or ad. Check that the shape, colour, label and included parts stay consistent throughout the clip. Use the [frame-by-frame checklist](#review-the-result-before-publishing) to decide which takes you can use.
+
+{% include article-flow.html title="From product photo to a clip you can review"
+  first="Pick a photo" first_detail="Use a sharp product image with clear packaging."
+  second="Direct one motion" second_detail="Describe how the product or camera should move."
+  third="Check the finished clip" third_detail="Review the label, shape and claims before publishing." %}
+
+{% include article-action.html placement="article-top" %}
+
+New Nexscope users receive **1,000 free credits**, valid for 3 days. Sign in to generate and check the estimate for your model and settings.
 
 Not sure whether to start from photos, a product link, an avatar or a reference clip? [Compare Nexscope's five product video workflows and watch official examples](https://learn.nexscope.ai/video/). The directory explains each workflow's inputs and output before you open its matching workspace.
 
 For task-specific instructions, follow the [Bulk Video folder-to-download guide]({{ '/guides/bulk-product-video-guide/' | relative_url }}), [Avatar Video tutorial]({{ '/guides/ai-avatar-product-video-guide/' | relative_url }}) or [reference-led ad-cloning guide]({{ '/guides/ai-ad-cloning-guide/' | relative_url }}).
-
-**[Try the AI Video Generator](https://www.nexscope.ai/tools/ai-video-generator?co-from=learn). New users receive 1,000 free credits, valid for 3 days.** Usage depends on the model and settings; this is a finite trial balance, not unlimited generation or a guarantee that every configuration fits the balance.
 
 Already have a public product listing instead of a standalone image? Follow the [URL-to-video guide]({{ '/url-to-video-guide/' | relative_url }}) to import the listing, verify its product details, and prepare a script before generating. The image-to-video workflow below starts from uploaded product images.
 

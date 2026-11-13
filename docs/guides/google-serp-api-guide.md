@@ -36,6 +36,11 @@ faq:
 
 Send one keyword to the Google SERP API to get a snapshot of returned pages, with titles, URLs, result types and ranking positions. The example below uses US English desktop results and requests up to ten entries. Use the returned URLs to see which pages compete for that query and which formats are showing up.
 
+{% include article-flow.html title="From a keyword to Google results in JSON"
+  first="Set the search scope" first_detail="Send one keyword and choose the supported US desktop scope."
+  second="Check the response status" second_detail="Retrieve a pending request by call ID and flag partial results."
+  third="Save the ranking snapshot" third_detail="Keep URLs, result types and original positions together." %}
+
 {% include api-guide-entry.html %}
 
 > **Quick answer:** Choose the query and supported search scope, collect a bounded result, preserve result types and original ranks, and inspect the returned URLs. A partial response stays partial. A missing target is “not observed in this sample,” not proof that it has no Google visibility.

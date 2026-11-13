@@ -52,6 +52,11 @@ The right source depends on who controls the store and what you need to read. Fo
 
 If you need to parse product pages across stores, test one representative URL per storefront before deciding on an extractor. Check whether the returned price belongs to the selected variant, whether stock is visible, and how the API reports missing fields. A product title and a price alone may be enough for a listing preview, while a catalog sync also needs stable variant identifiers.
 
+{% include article-flow.html title="Choose a source for product data" mode="choices" prompt="Which source do you have?"
+  first="Your own store" first_detail="Use the catalog API or feed for SKU, stock and variants."
+  second="Marketplace listing" second_detail="Use the product ID to request supported fields."
+  third="One public product URL" third_detail="Check what the page shows and record where each field came from." %}
+
 {% include api-guide-entry.html %}
 
 ## A real example from the Amazon Product Detail API

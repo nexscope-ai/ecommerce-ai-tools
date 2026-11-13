@@ -7,8 +7,8 @@ description: "Create product-photo concepts from a reference: inspect a real edi
 permalink: /ai-product-image-generator/
 last_reviewed: 2026-11-05
 date_published: 2026-09-23
-date_modified: 2026-11-05
-last_modified_at: 2026-11-06
+date_modified: 2026-11-13
+last_modified_at: 2026-11-13
 author: Nexscope Team
 schema_type: Article
 suppress_article_help: true
@@ -17,8 +17,8 @@ next_step:
   intent: creative-trial
   title: Try a product-photo concept
   description: Bring a clear product reference, choose the available model and inspect its credit estimate before generating.
-  label: Open the image generator
-  url: https://www.nexscope.ai/tools/ai-image-generator?co-from=learn
+  label: Create a product image
+  url: https://www.nexscope.ai/tools/ai-image-generator?co-from=learn#generator
 compact_evidence: true
 evidence_scope: "Includes a dated Flare concept-image edit and fictional prompts; it does not establish accuracy on a real merchant SKU."
 og_type: article
@@ -42,9 +42,14 @@ faq:
 
 **AI product photography turns a product reference and a scene brief into image concepts for your listing or campaign.** Use the examples and prompts below to plan a studio shot, a lifestyle scene or an ad layout, then open the image generator with your own product. Compare shape, label and color with the reference before approving the result.
 
+{% include article-flow.html title="Create a product image from a reference"
+  first="Choose a reference" first_detail="Start with a sharp photo of the actual product."
+  second="Describe one scene" second_detail="Set the background, light and crop you want."
+  third="Check the generated image" third_detail="Compare the shape, label and color with the original." %}
+
 {% include article-action.html placement="article-top" %}
 
-**[Open the AI Product Image Generator](https://www.nexscope.ai/tools/ai-image-generator?co-from=learn).** New Nexscope users receive 1,000 free credits, valid for 3 days; usage varies by model and settings. Check the selected endpoint and your account for current API access; a trial balance is not a promise that every configuration is available.
+New Nexscope users receive **1,000 free credits**, valid for 3 days. Sign in to generate and check the estimate for your model and settings.
 
 > **Quick answer:** Start with one clear product reference when the chosen model supports it. Describe the scene without inventing product features. Generate at an aspect ratio suited to the destination, and check the shape, packaging, label, color, and claims before downloading.
 

@@ -3,7 +3,7 @@ learning_topic: creative
 content_kind: guide
 layout: default
 title: "Seedance 2.0 Review: Image-to-Video Quality & User Feedback"
-description: "See how Seedance 2.0 uses product photos and reference clips, what creators report about consistency, and what to inspect in the Nexscope Playground."
+description: "See how Seedance 2.0 uses product photos and reference clips, what creators report about consistency, and how to try image-to-video in Nexscope."
 permalink: /guides/seedance-2-0-video/
 date_published: 2026-10-22
 date_modified: 2026-11-13
@@ -20,17 +20,24 @@ review_basis: documented-and-community
 suppress_article_help: true
 next_step:
   id: seedance_2_0_video_generation
-  title: "Experience Seedance 2.0"
-  description: "New users receive 1,000 free credits to try eligible models. Check current Seedance 2.0 cost and access in the Playground."
-  label: "Try Seedance 2.0 in Playground"
-  url: https://www.nexscope.ai/api-docs/seedance-2-0-video-generation?view=playground&co-from=learn
+  title: "Try a product-photo clip"
+  description: "Choose Seedance 2.0 in the video generator, add a product photo, and review the credit estimate before generating."
+  label: "Open the AI Video Generator"
+  url: https://www.nexscope.ai/tools/ai-video-generator?co-from=learn#generator
 ---
 
 # Seedance 2.0 review for image-to-video and product clips
 
 Seedance 2.0 is worth evaluating when you have a product photo or reference clip and want a short shot with guided motion. Nexscope documents 4–15 second outputs up to 1080p. Creator reports describe useful results for individual shots and recurring problems with identity consistency and dialogue. For ecommerce clips, inspect whether the logo, packaging and product shape hold up once the camera moves.
 
+{% include article-flow.html title="Turn one product photo into a short video"
+  first="Upload a clear photo" first_detail="Start with the label, outline and colors visible."
+  second="Ask for one movement" second_detail="Try a slow camera push with the product stationary."
+  third="Review three frames" third_detail="Check the packaging and logo at the start, middle and end." %}
+
 {% include model-experience.html placement="article-top" %}
+
+Testing API inputs? [Open the Seedance 2.0 API Playground](https://www.nexscope.ai/api-docs/seedance-2-0-video-generation?view=playground&co-from=learn).
 
 > **Our take:** Seedance 2.0 offers a broad reference system and up to 1080p on Nexscope. Public creators report useful visual and production results, but also describe identity drift and dialogue-related problems. The evidence supports evaluating it per shot, not treating it as an automatic substitute for a complete video production process.
 

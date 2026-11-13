@@ -35,6 +35,11 @@ next_step:
 
 Use the 1688 Product Detail API when you already have a product link and want to know which price applies to the variant and quantity you plan to order. For a link such as `https://detail.1688.com/offer/1040473674152.html`, pass the digits after `/offer/` as the string `offerId`. Check the SKU price, quantity tiers, minimum order quantity (MOQ) and shipping fields before comparing offers.
 
+{% include article-flow.html title="From a 1688 link to an offer comparison"
+  first="Find the offer ID" first_detail="Copy the digits after /offer/ and keep them as text."
+  second="Match the exact SKU" second_detail="Choose the size, color and pack you plan to buy."
+  third="Check the order size" third_detail="Compare the applicable price tier, MOQ and shipping fields." %}
+
 {% include api-guide-entry.html %}
 
 If you still need listings to compare, use [1688 keyword search with price and MOQ filters]({{ '/guides/1688-product-search-api/' | relative_url }}). If you only have a photo, start with the [1688 image search workflow]({{ '/ecommerce-trends/1688-image-search-sourcing/' | relative_url }}).

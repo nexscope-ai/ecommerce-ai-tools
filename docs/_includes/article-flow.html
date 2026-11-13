@@ -1,0 +1,15 @@
+<figure class="article-flow">
+  <figcaption>{{ include.title | escape }}</figcaption>
+  {% if include.prompt %}<p class="article-flow-prompt">{{ include.prompt | escape }}</p>{% endif %}
+  {% assign flow_steps = 'first,second,third' | split: ',' %}
+  {% if include.mode == 'choices' %}<ul class="article-flow-steps article-flow-choices" role="list">{% else %}<ol class="article-flow-steps" role="list">{% endif %}
+  {% for key in flow_steps %}
+    {% assign detail_key = key | append: '_detail' %}
+    <li>
+      {% unless include.mode == 'choices' %}<span class="article-flow-number" aria-hidden="true">{{ forloop.index }}</span>{% endunless %}
+      <strong>{{ include[key] | escape }}</strong>
+      <span class="article-flow-detail">{{ include[detail_key] | escape }}</span>
+    </li>
+  {% endfor %}
+  {% if include.mode == 'choices' %}</ul>{% else %}</ol>{% endif %}
+</figure>
