@@ -43,7 +43,7 @@ faq:
 
 **Choose a short reference with a clear idea that suits your product.** A simple reveal, camera move or scene progression is easier to describe and inspect than a clip with many products, transitions and unrelated actions.
 
-Use the [official Video Clone page](https://www.nexscope.ai/video-clone) to understand the reference-led format. If you only have a product photo, start with the [image-to-video guide]({{ '/ai-video-generator/' | relative_url }}). If your message needs a presenter, the [Avatar Video tutorial]({{ '/guides/ai-avatar-product-video-guide/' | relative_url }}) covers that workflow.
+Open the [Video Clone workspace](https://www.nexscope.ai/seller/video-generation/video-replication?co-from=learn) to try a reference. If you only have a product photo, start with the [image-to-video guide]({{ '/ai-video-generator/' | relative_url }}). If your message needs a presenter, the [Avatar Video tutorial]({{ '/guides/ai-avatar-product-video-guide/' | relative_url }}) covers that workflow.
 
 Before importing, write a two-column brief:
 

@@ -3,12 +3,12 @@ learning_topic: research
 related_topics: [visibility, agents]
 content_kind: guide
 layout: default
-title: "Product Data Enrichment: SKU Mapping and Feed Review"
-description: "Improve product data enrichment with a downloadable SKU review sheet. Reconcile missing attributes, variant conflicts and feed values before publishing approved changes."
+title: "Ecommerce Product Data Enrichment and Bulk SKU Mapping"
+description: "Map product attributes across your catalog, product pages and feeds. Download a SKU worksheet to review missing values and variant conflicts before publishing."
 permalink: /ecommerce-product-data-enrichment/
 date_published: 2026-10-13
-date_modified: 2026-11-05
-last_modified_at: 2026-11-05
+date_modified: 2026-11-16
+last_modified_at: 2026-11-16
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -42,9 +42,9 @@ next_step:
   url: "https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn"
 ---
 
-# Product data enrichment: SKU mapping and feed review
+# Ecommerce product data enrichment and bulk SKU mapping
 
-**Product data enrichment fills missing or unclear facts in an approved SKU record and keeps the catalog, product page, structured data, and channel feeds consistent.** Start with identifiers, variants, specifications, offer details, and buyer questions. AI can help map fields and draft readable copy from approved facts, but it cannot verify an invented certification, compatibility claim, price, or stock level.
+**Start with a sample of SKUs and match each variant across your website, catalog and feed.** Use the [SKU mapping worksheet]({{ '/assets/downloads/product-enrichment-review.csv' | relative_url }}) to flag missing attributes and conflicting values. AI can suggest field mappings and draft copy from approved records. Check identifiers, variants, prices and availability against their source before applying changes in bulk.
 
 **Quick answer:** Audit a sample of important SKUs for missing identifiers, variant details, dimensions, material, use cases, images, and offer facts. Assign each field a source of truth and owner. Map only facts you can verify, review generated text before publishing, then test whether the landing page, markup, and feed agree. Better data can improve eligibility and usefulness; it cannot guarantee Google rankings or AI recommendations.
 

@@ -2,14 +2,14 @@
 learning_topic: research
 content_kind: guide
 layout: default
-title: "Amazon Competitor Keywords: Compare ASINs and Export CSV"
-description: "Find Amazon competitor keywords, export reverse-ASIN evidence with Python, and compare relevant terms without mixing ad ranks, organic ranks or volume estimates."
+title: "How to Find Amazon Competitor Keywords by ASIN"
+description: "Find the keywords Amazon competitors rank for. Run a reverse ASIN lookup, compare relevant terms in the same marketplace, and export a shortlist to CSV."
 permalink: /amazon-competitor-keyword-research/
 redirect_from:
   - /ecommerce-ai-tools/amazon-competitor-keyword-research/
 date_published: 2026-09-15
-date_modified: 2026-11-12
-last_modified_at: 2026-11-12
+date_modified: 2026-11-16
+last_modified_at: 2026-11-16
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -39,17 +39,17 @@ next_step:
   intent: api-evaluation
   title: Start with one competitor ASIN
   description: Have one comparable ASIN and marketplace ready. Check the required inputs, returned keyword fields, credit estimate and access requirements before a pilot request.
-  label: Evaluate the ASIN keyword request
-  url: "https://www.nexscope.ai/api-docs/amazon-asin-keywords?view=api&co-from=learn"
+  label: Try the ASIN keyword API
+  url: "https://www.nexscope.ai/api-docs/amazon-asin-keywords?co-from=learn#online-test"
 image: /assets/images/ecommerce-competitor-keyword-research-1440w.webp
 image_small: /assets/images/ecommerce-competitor-keyword-research-720w.webp
 image_alt: A magnifying glass revealing keyword clusters and gaps across competing ecommerce products
 image_caption: "Illustration: select comparable ASINs, inspect associated terms, and validate each apparent gap."
 ---
 
-# Amazon competitor keywords: compare ASINs and export CSV
+# How to find Amazon competitor keywords by ASIN
 
-**To find Amazon competitor keywords, first select products that solve the same buyer problem in the same marketplace.** This Amazon competitor keyword workflow records comparable ASINs, inspects reverse-ASIN evidence, and compares relevant terms with your listing and first-party search reports. A term associated with a rival is a *candidate*, not proof that the rival converted or that your product should target it.
+**Start with two comparable products in the same Amazon marketplace.** Run a reverse ASIN lookup for each, compare the returned terms with your listing, and export a shortlist to CSV. Keep the rank and search-volume fields attached to each keyword so you can review them later.
 
 **Quick answer:** Keep the query, marketplace, date, ASIN, source, and metric label together. Exclude products with a different function or variant. Prioritize terms that accurately describe your product and recur across comparable products; validate the shortlist with Amazon Brand Analytics or advertising search-term data when you have access. Do not relabel Google search volume as Amazon demand.
 

@@ -74,7 +74,7 @@ Open **Bulk Video**, sign in and choose folder import. After the upload finishes
 
 When adding multiple standalone images instead, check whether they have been grouped into one product task. Uploading several files does not necessarily mean each file becomes a different SKU. Add or organize tasks explicitly when needed.
 
-The [official Bulk Video page](https://www.nexscope.ai/bulk-video-generator) documents the current project and image limits. Files beyond an import limit may be skipped; compare imported tasks and thumbnails with your source folders rather than assuming everything was accepted.
+Check the current project and image limits in the [Bulk Video workspace](https://www.nexscope.ai/seller/video-generation/bulk-video?co-from=learn). Files beyond an import limit may be skipped; compare imported tasks and thumbnails with your source folders rather than assuming everything was accepted.
 
 ## Can you import an Amazon product instead of uploading photos?
 

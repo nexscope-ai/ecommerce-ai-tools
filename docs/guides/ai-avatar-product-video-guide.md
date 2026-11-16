@@ -43,7 +43,7 @@ faq:
 
 **Use an avatar when a person explaining the product would help communicate one clear idea.** A short introduction, feature explanation or scene-led product story can benefit from a presenter. A simple moving packshot may be easier to make with [Image to Video]({{ '/ai-video-generator/' | relative_url }}).
 
-The [Nexscope AI UGC page](https://www.nexscope.ai/ai-ugc-video-generator) shows product, talking-video and reference-led creative examples. This tutorial focuses on the **Avatar Video** workspace. For the wider process of turning research into a creative brief, read the existing [TikTok Shop AI UGC workflow]({{ '/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/' | relative_url }}).
+Open the [Avatar Video workspace](https://www.nexscope.ai/seller/video-generation/product-talking-video?co-from=learn) to prepare a presenter-led product video. For the wider process of turning research into a creative brief, read the [TikTok Shop AI UGC workflow]({{ '/ecommerce-trends/tiktok-shop-ai-ugc-video-seller-workflow/' | relative_url }}).
 
 Choose a message that can be supported by the product material you provide. If the message depends on a measured result, such as load capacity or battery life, a generated scene cannot supply that evidence.
 

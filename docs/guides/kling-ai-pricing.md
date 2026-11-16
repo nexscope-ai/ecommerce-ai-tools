@@ -2,12 +2,12 @@
 learning_topic: creative
 content_kind: guide
 layout: default
-title: "Kling AI Pricing: Plans, Credits & Video Cost Worksheet"
-description: "Compare Kling plans and Nexscope credits, calculate cost per approved video and download a configuration-level budget sheet before generating."
+title: "Kling AI Pricing: Plans, Credits and Cost per Video"
+description: "See where to check current Kling AI plan prices, how credits affect video costs, and how to budget for retries. Includes a downloadable video cost worksheet."
 permalink: /guides/kling-ai-pricing/
 date_published: 2026-10-23
-date_modified: 2026-11-05
-last_modified_at: 2026-11-06
+date_modified: 2026-11-16
+last_modified_at: 2026-11-16
 last_reviewed: 2026-11-05
 author: Nexscope Team
 schema_type: Article
@@ -24,9 +24,9 @@ next_step:
   url: https://www.nexscope.ai/api-docs/kling-2-6-video-generation?view=playground&co-from=learn
 ---
 
-# Kling AI pricing: plans, credits and the cost of a usable video
+# Kling AI pricing: plans, credits and cost per video
 
-**Kling AI pricing depends on where you use Kling, the selected model and the generation settings.** An official Kling subscription, an official credit purchase and a Nexscope generation are different purchases. Comparing headline prices without distinguishing those billing systems can produce a misleading video budget.
+**Check the current price and included credits in [Kling’s official membership checkout](https://app.klingai.com/global/membership/membership-plan).** To budget for an individual video, also check the credits required by your selected model, duration and resolution. If you generate through Nexscope, use the estimate in its Playground and budget for any retries.
 
 {% include article-action.html placement="article-top" %}
 

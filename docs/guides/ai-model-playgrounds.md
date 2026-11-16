@@ -6,8 +6,8 @@ title: "AI Model Reviews: 12 Video & 10 Image Models"
 description: "Compare 22 Nexscope image and video model reviews: capabilities, strengths, limitations and attributed user feedback. Open each model's dedicated Playground."
 permalink: /guides/ai-model-playgrounds/
 date_published: 2026-10-22
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
+date_modified: 2026-11-16
+last_modified_at: 2026-11-16
 last_reviewed: 2026-10-22
 author: Nexscope Team
 schema_type: Article
@@ -17,6 +17,13 @@ topic: creative
 # AI model reviews: video and image generation
 
 Find a separate introduction and editorial review for each of the **12 video models and 10 image models** listed in the [Nexscope creative catalog](https://www.nexscope.ai/apis/creatives) when reviewed on October 22, 2026. Each review covers capabilities, strengths, limitations and attributable public feedback, with a direct link to experience that specific model.
+
+## Try a model in its Playground
+
+- **Create a product image.** Open <a href="https://www.nexscope.ai/api-docs/banana-2-image-generation?view=playground&amp;co-from=learn" data-article-next-step data-step-id="try-nano-banana-2" data-cta-placement="guide-model-picker" data-buyer-intent="self-service">Nano Banana 2 Playground</a>. Add a product photo and describe the background or edit you want.
+- **Turn a product image into a video.** Open <a href="https://www.nexscope.ai/api-docs/seedance-2-5-video-generation?view=playground&amp;co-from=learn" data-article-next-step data-step-id="try-seedance-2-5" data-cta-placement="guide-model-picker" data-buyer-intent="self-service">Seedance 2.5 Playground</a>. Add a reference image and describe one clear scene or movement.
+
+Check the credit estimate in the Playground before generating. For a different model, use the corresponding link in the tables below.
 
 **New users receive 1,000 free credits to experience models.** Trial credits are valid for 3 days; credit use varies by model and settings. See the [current trial offer](https://www.nexscope.ai/pricing?co-from=learn).
 
@@ -38,7 +45,7 @@ A model's supported duration and resolution describe its interface, not a qualit
 
 | Model review | Selected Nexscope route capabilities | Experience the model |
 | --- | --- | --- |
-{% for model in site.data.creative_models %}{% if model.kind == 'video' %}| [{{ model.name }} review]({{ model.article | relative_url }}) | {{ model.capabilities }} | [Open Playground](https://www.nexscope.ai/api-docs/{{ model.api }}?view=playground&co-from=learn) |
+{% for model in site.data.creative_models %}{% if model.kind == 'video' %}| [{{ model.name }} review]({{ model.article | relative_url }}) | {{ model.capabilities }} | <a href="https://www.nexscope.ai/api-docs/{{ model.api }}?view=playground&amp;co-from=learn" data-article-next-step data-step-id="{{ model.api | escape }}" data-cta-placement="guide-video-model-table" data-buyer-intent="self-service">Try {{ model.name | escape }}</a> |
 {% endif %}{% endfor %}
 
 ## Image model reviews
@@ -47,7 +54,7 @@ These reviews distinguish output size, reference support and editing behaviour. 
 
 | Model review | Selected Nexscope route capabilities | Experience the model |
 | --- | --- | --- |
-{% for model in site.data.creative_models %}{% if model.kind == 'image' %}| [{{ model.name }} review]({{ model.article | relative_url }}) | {{ model.capabilities }} | [Open Playground](https://www.nexscope.ai/api-docs/{{ model.api }}?view=playground&co-from=learn) |
+{% for model in site.data.creative_models %}{% if model.kind == 'image' %}| [{{ model.name }} review]({{ model.article | relative_url }}) | {{ model.capabilities }} | <a href="https://www.nexscope.ai/api-docs/{{ model.api }}?view=playground&amp;co-from=learn" data-article-next-step data-step-id="{{ model.api | escape }}" data-cta-placement="guide-image-model-table" data-buyer-intent="self-service">Try {{ model.name | escape }}</a> |
 {% endif %}{% endfor %}
 
 ## How were these reviews written?

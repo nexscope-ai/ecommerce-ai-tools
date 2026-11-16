@@ -93,7 +93,7 @@ The video appears in **Recent videos** when the task is ready; **View all histor
 
 Use **Download video** only after the clip passes review. If it fails, use **Edit settings** to adjust the input before another generation. Keep a record of the source URL, approved product facts, selected images, script, model, settings, and date. A generated video is a creative asset—not evidence of product performance or an automatic sales lift.
 
-**Try it with a product you know well:** [Open Nexscope URL to Video](https://www.nexscope.ai/url-to-video?co-from=learn). If the import fails, share the platform, non-sensitive URL pattern, and error message in the [official Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions).
+**Try it with a product you know well:** [Open the Nexscope URL to Video workspace](https://www.nexscope.ai/seller/video-generation/url-to-video?co-from=learn). If the import fails, share the platform, non-sensitive URL pattern, and error message in the [official Nexscope community](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions).
 
 If you prefer to begin with a standalone product photo, use the separate [image-to-video tutorial]({{ '/ai-video-generator/' | relative_url }}).
 
