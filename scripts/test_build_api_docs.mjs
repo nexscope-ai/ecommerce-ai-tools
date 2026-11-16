@@ -405,12 +405,12 @@ test('unknown counts remain unknown, and public metrics reject private identifie
 test('published statistics match the approved retained-record snapshot',async()=>{
   const usage=JSON.parse(await readFile(new URL('./data/api-usage.public.json',import.meta.url),'utf8'));
   validateUsage(usage);
-  assert.equal(Object.keys(usage.apis).length,439);
-  assert.equal(usage.updatedAt,'2026-11-05T03:23:00.280Z');
-  assert.deepEqual(usage.apis['1688-product-detail'],{callCount:16203,userCount:98,creditMin:1,creditMax:10});
+  assert.equal(Object.keys(usage.apis).length,478);
+  assert.equal(usage.updatedAt,'2026-11-16T07:02:00.000Z');
+  assert.deepEqual(usage.apis['1688-product-detail'],{callCount:19483,userCount:111,creditMin:1,creditMax:10});
   assert.equal(Object.values(usage.apis).filter(item=>item.creditMin != null).length,162);
   assert.equal(usage.creditUpdatedAt,'2026-10-29T10:36:38.737Z');
-  assert.equal(Object.values(usage.apis).reduce((sum,item)=>sum+item.callCount,0),100762);
+  assert.equal(Object.values(usage.apis).reduce((sum,item)=>sum+item.callCount,0),116413);
 });
 test('projection preserves public endpoints and excludes internal fields',()=>{
   const result=project({generatedAt:snapshot.generatedAt,apiSlugs:[entry.slug],apiDetailsBySlug:{[entry.slug]:{route:{kind:'upstream-skill',record:{...entry,mcpToolName:'private_tool',primaryProxy:'internal'}},catalog:{skills:[{...entry,endpoint:'/public/test'}],categories:[]}}}},membership(entry.slug));

@@ -1,34 +1,98 @@
 {
   "schemaVersion": 1,
   "period": "all-time",
-  "updatedAt": "2026-11-05T03:23:00.280Z",
+  "updatedAt": "2026-11-16T07:02:00.000Z",
   "apis": {
+    "1688-authorize-url": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-authorized-stores": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-cancel-order": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-confirm-receive": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-create-order": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-invoice-amount": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-invoice-apply": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-logistics": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-logistics-trace": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-order-detail": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-order-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-order-preview": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-order-status": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "1688-payment-url": {
+      "callCount": 0,
+      "userCount": 0
+    },
     "1688-product-billboard": {
-      "callCount": 559,
-      "userCount": 30,
+      "callCount": 762,
+      "userCount": 33,
       "creditMin": 10,
       "creditMax": 19
     },
     "1688-product-detail": {
-      "callCount": 16203,
-      "userCount": 98,
+      "callCount": 19483,
+      "userCount": 111,
       "creditMin": 1,
       "creditMax": 10
     },
     "1688-product-search": {
-      "callCount": 16035,
-      "userCount": 132,
+      "callCount": 20231,
+      "userCount": 148,
       "creditMin": 10,
       "creditMax": 19
     },
+    "1688-receive-address-list": {
+      "callCount": 0,
+      "userCount": 0
+    },
     "1688-search-by-image": {
-      "callCount": 12147,
-      "userCount": 116,
+      "callCount": 12724,
+      "userCount": 123,
       "creditMin": 5,
       "creditMax": 10
     },
+    "1688-sku": {
+      "callCount": 0,
+      "userCount": 0
+    },
     "amazon-ads-api-access": {
-      "callCount": 223,
+      "callCount": 224,
       "userCount": 4
     },
     "amazon-ads-manager": {
@@ -66,80 +130,80 @@
       "creditMax": 27
     },
     "amazon-asin-keywords": {
-      "callCount": 936,
-      "userCount": 31,
+      "callCount": 1100,
+      "userCount": 35,
       "creditMin": 10,
       "creditMax": 19
     },
     "amazon-asin-traffic-summary": {
-      "callCount": 54,
-      "userCount": 16,
+      "callCount": 61,
+      "userCount": 18,
       "creditMin": 10,
       "creditMax": 19
     },
     "amazon-broad-product-search": {
-      "callCount": 627,
-      "userCount": 22,
+      "callCount": 815,
+      "userCount": 24,
       "creditMin": 16,
       "creditMax": 32
     },
     "amazon-category-lookup": {
-      "callCount": 20,
-      "userCount": 8,
+      "callCount": 36,
+      "userCount": 11,
       "creditMin": 1,
       "creditMax": 10
     },
     "amazon-competitor-lookup": {
-      "callCount": 370,
+      "callCount": 372,
       "userCount": 22,
       "creditMin": 16,
       "creditMax": 32
     },
     "amazon-keyword-expansion": {
-      "callCount": 535,
-      "userCount": 26,
+      "callCount": 560,
+      "userCount": 30,
       "creditMin": 133,
       "creditMax": 5442
     },
     "amazon-keyword-intelligence": {
-      "callCount": 195,
-      "userCount": 19,
+      "callCount": 282,
+      "userCount": 24,
       "creditMin": 6,
       "creditMax": 26
     },
     "amazon-keyword-overview": {
-      "callCount": 221,
-      "userCount": 19,
+      "callCount": 233,
+      "userCount": 24,
       "creditMin": 10,
       "creditMax": 19
     },
     "amazon-keyword-search-history": {
-      "callCount": 430,
-      "userCount": 18,
+      "callCount": 1393,
+      "userCount": 22,
       "creditMin": 67,
       "creditMax": 133
     },
     "amazon-keyword-share-of-voice": {
-      "callCount": 418,
-      "userCount": 11,
+      "callCount": 569,
+      "userCount": 12,
       "creditMin": 67,
       "creditMax": 133
     },
     "amazon-keyword-summary": {
-      "callCount": 113,
-      "userCount": 4,
+      "callCount": 118,
+      "userCount": 5,
       "creditMin": 19,
       "creditMax": 19
     },
     "amazon-market-product-detail": {
-      "callCount": 420,
-      "userCount": 27,
+      "callCount": 444,
+      "userCount": 29,
       "creditMin": 13,
       "creditMax": 125
     },
     "amazon-market-product-search": {
-      "callCount": 135,
-      "userCount": 17,
+      "callCount": 167,
+      "userCount": 19,
       "creditMin": 32,
       "creditMax": 63
     },
@@ -162,32 +226,32 @@
       "creditMax": 19
     },
     "amazon-niche-info-by-asin": {
-      "callCount": 69,
+      "callCount": 71,
       "userCount": 8,
       "creditMin": 10,
       "creditMax": 19
     },
     "amazon-niche-info-by-keyword": {
-      "callCount": 110,
-      "userCount": 17,
+      "callCount": 227,
+      "userCount": 23,
       "creditMin": 10,
       "creditMax": 19
     },
     "amazon-niche-reviews-by-keyword": {
-      "callCount": 18,
-      "userCount": 9,
+      "callCount": 24,
+      "userCount": 13,
       "creditMin": 19,
       "creditMax": 19
     },
     "amazon-opportunity-report-by-keyword": {
-      "callCount": 14,
-      "userCount": 7,
+      "callCount": 17,
+      "userCount": 8,
       "creditMin": 45,
       "creditMax": 56
     },
     "amazon-opportunity-search-by-metrics": {
-      "callCount": 40,
-      "userCount": 8,
+      "callCount": 49,
+      "userCount": 9,
       "creditMin": 8,
       "creditMax": 125
     },
@@ -198,44 +262,44 @@
       "creditMax": 32
     },
     "amazon-product-database": {
-      "callCount": 148,
-      "userCount": 8,
+      "callCount": 172,
+      "userCount": 10,
       "creditMin": 67,
       "creditMax": 133
     },
     "amazon-product-database-search": {
-      "callCount": 197,
-      "userCount": 15,
+      "callCount": 433,
+      "userCount": 19,
       "creditMin": 1,
       "creditMax": 39
     },
     "amazon-product-detail": {
-      "callCount": 790,
-      "userCount": 50,
+      "callCount": 845,
+      "userCount": 55,
       "creditMin": 10,
       "creditMax": 1156
     },
     "amazon-product-discovery": {
-      "callCount": 771,
-      "userCount": 13,
+      "callCount": 915,
+      "userCount": 14,
       "creditMin": 19,
       "creditMax": 19
     },
     "amazon-product-history": {
-      "callCount": 554,
-      "userCount": 22,
+      "callCount": 592,
+      "userCount": 23,
       "creditMin": 1,
       "creditMax": 10
     },
     "amazon-product-price-series": {
-      "callCount": 767,
-      "userCount": 31,
+      "callCount": 1250,
+      "userCount": 37,
       "creditMin": 1,
       "creditMax": 10
     },
     "amazon-product-research": {
-      "callCount": 16,
-      "userCount": 11,
+      "callCount": 18,
+      "userCount": 13,
       "creditMin": 10,
       "creditMax": 10
     },
@@ -246,32 +310,32 @@
       "creditMax": 19
     },
     "amazon-reviews-list": {
-      "callCount": 335,
-      "userCount": 43,
+      "callCount": 420,
+      "userCount": 44,
       "creditMin": 22,
       "creditMax": 1094
     },
     "amazon-sales-estimates": {
-      "callCount": 180,
-      "userCount": 27,
+      "callCount": 189,
+      "userCount": 30,
       "creditMin": 133,
       "creditMax": 133
     },
     "amazon-search": {
-      "callCount": 1028,
-      "userCount": 57,
+      "callCount": 1359,
+      "userCount": 64,
       "creditMin": 16,
       "creditMax": 94
     },
     "amazon-search-by-image": {
-      "callCount": 692,
-      "userCount": 16,
+      "callCount": 735,
+      "userCount": 19,
       "creditMin": 32,
       "creditMax": 32
     },
     "amazon-traffic-keywords": {
-      "callCount": 520,
-      "userCount": 14,
+      "callCount": 583,
+      "userCount": 15,
       "creditMin": 16,
       "creditMax": 32
     },
@@ -288,8 +352,8 @@
       "creditMax": 38
     },
     "chuhaijiang-tiktok-ad-search": {
-      "callCount": 104,
-      "userCount": 7,
+      "callCount": 109,
+      "userCount": 8,
       "creditMin": 38,
       "creditMax": 38
     },
@@ -300,13 +364,13 @@
       "creditMax": 19
     },
     "chuhaijiang-tiktok-creative-search": {
-      "callCount": 14,
-      "userCount": 3,
+      "callCount": 15,
+      "userCount": 4,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-creator-detail": {
-      "callCount": 965,
+      "callCount": 1101,
       "userCount": 7,
       "creditMin": 19,
       "creditMax": 19
@@ -336,8 +400,8 @@
       "creditMax": 38
     },
     "chuhaijiang-tiktok-creator-related-products": {
-      "callCount": 1,
-      "userCount": 1,
+      "callCount": 2,
+      "userCount": 2,
       "creditMin": 38,
       "creditMax": 38
     },
@@ -348,8 +412,8 @@
       "creditMax": 38
     },
     "chuhaijiang-tiktok-creator-search": {
-      "callCount": 312,
-      "userCount": 8,
+      "callCount": 381,
+      "userCount": 9,
       "creditMin": 38,
       "creditMax": 38
     },
@@ -366,13 +430,13 @@
       "creditMax": 38
     },
     "chuhaijiang-tiktok-live-search": {
-      "callCount": 5,
-      "userCount": 2,
+      "callCount": 6,
+      "userCount": 3,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-product-detail": {
-      "callCount": 626,
+      "callCount": 994,
       "userCount": 10,
       "creditMin": 19,
       "creditMax": 19
@@ -384,48 +448,48 @@
       "creditMax": 63
     },
     "chuhaijiang-tiktok-product-rankings-most-promoted": {
-      "callCount": 286,
+      "callCount": 291,
       "userCount": 2,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-product-rankings-new-arrivals": {
-      "callCount": 64,
+      "callCount": 87,
       "userCount": 4,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-product-rankings-top-selling": {
-      "callCount": 356,
-      "userCount": 7,
+      "callCount": 387,
+      "userCount": 9,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-product-related-creators": {
-      "callCount": 5,
-      "userCount": 2,
+      "callCount": 6,
+      "userCount": 3,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-product-related-lives": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "chuhaijiang-tiktok-product-related-videos": {
-      "callCount": 119,
+      "callCount": 260,
       "userCount": 4,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-product-reviews": {
-      "callCount": 154,
-      "userCount": 7,
+      "callCount": 172,
+      "userCount": 8,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-product-search": {
-      "callCount": 683,
-      "userCount": 17,
+      "callCount": 884,
+      "userCount": 20,
       "creditMin": 38,
       "creditMax": 38
     },
@@ -448,14 +512,14 @@
       "creditMax": 38
     },
     "chuhaijiang-tiktok-shop-related-creators": {
-      "callCount": 264,
+      "callCount": 278,
       "userCount": 4,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-shop-related-products": {
-      "callCount": 3,
-      "userCount": 2,
+      "callCount": 4,
+      "userCount": 3,
       "creditMin": 38,
       "creditMax": 38
     },
@@ -466,8 +530,8 @@
       "creditMax": 38
     },
     "chuhaijiang-tiktok-shop-search": {
-      "callCount": 52,
-      "userCount": 5,
+      "callCount": 54,
+      "userCount": 6,
       "creditMin": 38,
       "creditMax": 38
     },
@@ -478,22 +542,78 @@
       "creditMax": 19
     },
     "chuhaijiang-tiktok-video-related-products": {
-      "callCount": 2,
-      "userCount": 2,
+      "callCount": 3,
+      "userCount": 3,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-video-reviews": {
-      "callCount": 13,
-      "userCount": 4,
+      "callCount": 18,
+      "userCount": 6,
       "creditMin": 38,
       "creditMax": 38
     },
     "chuhaijiang-tiktok-video-search": {
-      "callCount": 42,
-      "userCount": 6,
+      "callCount": 74,
+      "userCount": 9,
       "creditMin": 38,
       "creditMax": 38
+    },
+    "data-alibaba1688-authorize-url": {
+      "callCount": 10,
+      "userCount": 4
+    },
+    "data-alibaba1688-authorized-stores": {
+      "callCount": 25,
+      "userCount": 5
+    },
+    "data-alibaba1688-cancel-order": {
+      "callCount": 2,
+      "userCount": 1
+    },
+    "data-alibaba1688-confirm-receive": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-alibaba1688-create-order": {
+      "callCount": 21,
+      "userCount": 1
+    },
+    "data-alibaba1688-invoice-amount": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-alibaba1688-invoice-apply": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-alibaba1688-logistics": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "data-alibaba1688-logistics-trace": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "data-alibaba1688-order-preview": {
+      "callCount": 49,
+      "userCount": 2
+    },
+    "data-alibaba1688-order-status": {
+      "callCount": 4,
+      "userCount": 2
+    },
+    "data-alibaba1688-payment-url": {
+      "callCount": 6,
+      "userCount": 1
+    },
+    "data-alibaba1688-receive-address-list": {
+      "callCount": 9,
+      "userCount": 2
+    },
+    "data-alibaba1688-sku": {
+      "callCount": 41,
+      "userCount": 3
     },
     "data-amazon-ads-authorized-stores": {
       "callCount": 1,
@@ -708,56 +828,56 @@
       "userCount": 0
     },
     "data-amazon-policy-feed-detail": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "data-et-batch-video-detail": {
-      "callCount": 3,
-      "userCount": 2,
+      "callCount": 29,
+      "userCount": 5,
       "creditMin": 10,
       "creditMax": 10
     },
     "data-et-list-product-video": {
-      "callCount": 11,
-      "userCount": 2,
+      "callCount": 122,
+      "userCount": 5,
       "creditMin": 10,
       "creditMax": 10
     },
     "data-et-list-seller": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 4,
+      "userCount": 2
     },
     "data-et-list-seller-product": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 10,
+      "userCount": 4
     },
     "data-kd-livestream-detail": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 4,
+      "userCount": 2
     },
     "data-kd-shop-rank": {
-      "callCount": 5,
-      "userCount": 1
+      "callCount": 8,
+      "userCount": 2
     },
     "data-kd-video-rank": {
-      "callCount": 6,
-      "userCount": 3,
+      "callCount": 9,
+      "userCount": 4,
       "creditMin": 22,
       "creditMax": 22
     },
     "design-registration-details": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 5,
+      "userCount": 3
     },
     "design-similarity-search": {
-      "callCount": 1,
-      "userCount": 1,
+      "callCount": 25,
+      "userCount": 6,
       "creditMin": 11,
       "creditMax": 11
     },
     "ebay-search": {
-      "callCount": 22,
-      "userCount": 7,
+      "callCount": 30,
+      "userCount": 8,
       "creditMin": 32,
       "creditMax": 32
     },
@@ -768,20 +888,20 @@
       "creditMax": 10
     },
     "etsy-product-detail": {
-      "callCount": 47,
+      "callCount": 48,
       "userCount": 8,
       "creditMin": 11,
       "creditMax": 11
     },
     "etsy-product-query": {
-      "callCount": 396,
-      "userCount": 17,
+      "callCount": 471,
+      "userCount": 22,
       "creditMin": 10,
       "creditMax": 375
     },
     "etsy-store-query": {
-      "callCount": 161,
-      "userCount": 9,
+      "callCount": 165,
+      "userCount": 10,
       "creditMin": 2,
       "creditMax": 375
     },
@@ -810,14 +930,14 @@
       "creditMax": 313
     },
     "geekbi-temu-goods-search": {
-      "callCount": 1478,
-      "userCount": 19,
+      "callCount": 1617,
+      "userCount": 22,
       "creditMin": 32,
       "creditMax": 32
     },
     "geekbi-temu-keyword-search": {
-      "callCount": 69,
-      "userCount": 4,
+      "callCount": 70,
+      "userCount": 5,
       "creditMin": 32,
       "creditMax": 32
     },
@@ -828,32 +948,32 @@
       "creditMax": 32
     },
     "geekbi-temu-site-list": {
-      "callCount": 16,
-      "userCount": 13,
+      "callCount": 21,
+      "userCount": 16,
       "creditMin": 10,
       "creditMax": 10
     },
     "google-ai-mode-search": {
-      "callCount": 20,
-      "userCount": 5,
+      "callCount": 21,
+      "userCount": 6,
       "creditMin": 9,
       "creditMax": 10
     },
     "google-patent-search": {
-      "callCount": 43,
-      "userCount": 3,
+      "callCount": 51,
+      "userCount": 5,
       "creditMin": 16,
       "creditMax": 16
     },
     "google-trends-by-keywords": {
-      "callCount": 421,
-      "userCount": 29,
+      "callCount": 605,
+      "userCount": 32,
       "creditMin": 7,
       "creditMax": 13
     },
     "google-trends-by-time": {
-      "callCount": 24,
-      "userCount": 10,
+      "callCount": 25,
+      "userCount": 11,
       "creditMin": 13,
       "creditMax": 13
     },
@@ -872,14 +992,14 @@
       "creditMax": 235
     },
     "mercado-market-intelligence": {
-      "callCount": 240,
-      "userCount": 12,
+      "callCount": 521,
+      "userCount": 23,
       "creditMin": 10,
       "creditMax": 25
     },
     "mercado-product-selection": {
-      "callCount": 264,
-      "userCount": 7,
+      "callCount": 499,
+      "userCount": 11,
       "creditMin": 10,
       "creditMax": 25
     },
@@ -890,61 +1010,61 @@
       "creditMax": 25
     },
     "ozon-category-products": {
-      "callCount": 56,
-      "userCount": 13,
+      "callCount": 63,
+      "userCount": 14,
       "creditMin": 10,
       "creditMax": 25
     },
     "ozon-category-search": {
-      "callCount": 230,
-      "userCount": 14,
+      "callCount": 231,
+      "userCount": 15,
       "creditMin": 16,
       "creditMax": 32
     },
     "ozon-keyword-back-search": {
-      "callCount": 160,
+      "callCount": 178,
       "userCount": 13,
       "creditMin": 47,
       "creditMax": 47
     },
     "ozon-keyword-mining": {
-      "callCount": 152,
+      "callCount": 190,
       "userCount": 18,
       "creditMin": 13,
       "creditMax": 47
     },
     "ozon-market-keyword-search": {
-      "callCount": 306,
-      "userCount": 20,
+      "callCount": 358,
+      "userCount": 21,
       "creditMin": 13,
       "creditMax": 32
     },
     "ozon-product-detail": {
-      "callCount": 859,
-      "userCount": 32,
+      "callCount": 899,
+      "userCount": 34,
       "creditMin": 10,
       "creditMax": 25
     },
     "ozon-product-detail-search": {
-      "callCount": 319,
+      "callCount": 326,
       "userCount": 27,
       "creditMin": 5,
       "creditMax": 25
     },
     "ozon-product-report-search": {
-      "callCount": 5380,
-      "userCount": 38,
+      "callCount": 5562,
+      "userCount": 39,
       "creditMin": 13,
       "creditMax": 32
     },
     "ozon-product-search": {
-      "callCount": 649,
-      "userCount": 32,
+      "callCount": 658,
+      "userCount": 34,
       "creditMin": 10,
       "creditMax": 25
     },
     "ozon-product-trend": {
-      "callCount": 123,
+      "callCount": 124,
       "userCount": 13,
       "creditMin": 13,
       "creditMax": 25
@@ -974,8 +1094,8 @@
       "creditMax": 10
     },
     "patent-claims": {
-      "callCount": 7,
-      "userCount": 3,
+      "callCount": 13,
+      "userCount": 4,
       "creditMin": 7,
       "creditMax": 10
     },
@@ -1016,16 +1136,20 @@
       "creditMax": 10
     },
     "patent-fulltext-images": {
-      "callCount": 117,
-      "userCount": 4,
+      "callCount": 132,
+      "userCount": 5,
       "creditMin": 10,
       "creditMax": 10
     },
     "patent-legal-status-data": {
-      "callCount": 12,
-      "userCount": 3,
+      "callCount": 26,
+      "userCount": 5,
       "creditMin": 10,
       "creditMax": 10
+    },
+    "patent-pdf-download": {
+      "callCount": 1,
+      "userCount": 1
     },
     "patent-references": {
       "callCount": 1,
@@ -1034,8 +1158,8 @@
       "creditMax": 10
     },
     "patent-search": {
-      "callCount": 35,
-      "userCount": 5,
+      "callCount": 42,
+      "userCount": 6,
       "creditMin": 10,
       "creditMax": 10
     },
@@ -1046,7 +1170,7 @@
       "creditMax": 10
     },
     "product-description-generator": {
-      "callCount": 774,
+      "callCount": 776,
       "userCount": 6
     },
     "reverse-product-image-search": {
@@ -1060,8 +1184,8 @@
       "userCount": 1
     },
     "ruiguan-detection-patent-design": {
-      "callCount": 111,
-      "userCount": 5,
+      "callCount": 114,
+      "userCount": 6,
       "creditMin": 10,
       "creditMax": 220
     },
@@ -1076,26 +1200,26 @@
       "creditMax": 147
     },
     "shopee-product-detail": {
-      "callCount": 1926,
-      "userCount": 31,
+      "callCount": 1980,
+      "userCount": 34,
       "creditMin": 110,
       "creditMax": 110
     },
     "shopee-product-search": {
-      "callCount": 8798,
-      "userCount": 72,
+      "callCount": 9007,
+      "userCount": 78,
       "creditMin": 4,
       "creditMax": 10
     },
     "shopify-product-query": {
-      "callCount": 370,
-      "userCount": 14,
+      "callCount": 443,
+      "userCount": 15,
       "creditMin": 4,
       "creditMax": 188
     },
     "shopify-store-query": {
-      "callCount": 55,
-      "userCount": 11,
+      "callCount": 56,
+      "userCount": 12,
       "creditMin": 10,
       "creditMax": 375
     },
@@ -1124,8 +1248,8 @@
       "userCount": 0
     },
     "social-bluesky-profile": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 2,
+      "userCount": 2
     },
     "social-bluesky-user-posts": {
       "callCount": 0,
@@ -1164,24 +1288,24 @@
       "userCount": 0
     },
     "social-facebook-ad-library-ad": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 3,
+      "userCount": 2
     },
     "social-facebook-ad-library-ad-transcript": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 2,
+      "userCount": 2
     },
     "social-facebook-ad-library-company-ads": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 5,
+      "userCount": 5
     },
     "social-facebook-ad-library-search-ads": {
-      "callCount": 4,
-      "userCount": 1
+      "callCount": 44,
+      "userCount": 8
     },
     "social-facebook-ad-library-search-companies": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 3,
+      "userCount": 3
     },
     "social-facebook-event-details": {
       "callCount": 0,
@@ -1192,16 +1316,16 @@
       "userCount": 0
     },
     "social-facebook-events-search": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 2,
+      "userCount": 2
     },
     "social-facebook-group": {
       "callCount": 0,
       "userCount": 0
     },
     "social-facebook-group-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 3,
+      "userCount": 2
     },
     "social-facebook-marketplace-item": {
       "callCount": 0,
@@ -1232,8 +1356,8 @@
       "userCount": 0
     },
     "social-facebook-profile": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 2,
+      "userCount": 2
     },
     "social-facebook-profile-events": {
       "callCount": 0,
@@ -1244,16 +1368,16 @@
       "userCount": 0
     },
     "social-facebook-profile-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-facebook-profile-reels": {
       "callCount": 0,
       "userCount": 0
     },
     "social-facebook-search-videos": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 7,
+      "userCount": 3
     },
     "social-find-creator-emails": {
       "callCount": 0,
@@ -1264,8 +1388,8 @@
       "userCount": 1
     },
     "social-github-repository": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-github-trending-developers": {
       "callCount": 0,
@@ -1308,16 +1432,16 @@
       "userCount": 0
     },
     "social-google-ad-library-advertisers-search": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 2,
+      "userCount": 2
     },
     "social-google-company-ads": {
       "callCount": 0,
       "userCount": 0
     },
     "social-google-search": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 2,
+      "userCount": 2
     },
     "social-instagram-audio-reels": {
       "callCount": 0,
@@ -1336,48 +1460,48 @@
       "userCount": 0
     },
     "social-instagram-post-comments": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-instagram-post-detail": {
       "callCount": 0,
       "userCount": 0
     },
     "social-instagram-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 3,
+      "userCount": 3
     },
     "social-instagram-profile": {
+      "callCount": 4,
+      "userCount": 2
+    },
+    "social-instagram-profile-post-count": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "social-instagram-reels-search": {
       "callCount": 2,
       "userCount": 1
     },
-    "social-instagram-profile-post-count": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-instagram-reels-search": {
-      "callCount": 0,
-      "userCount": 0
-    },
     "social-instagram-reels-trending": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-instagram-search": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-instagram-search-hashtag": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-instagram-search-popular": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-instagram-search-profiles": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-instagram-user-embed": {
       "callCount": 0,
@@ -1392,12 +1516,12 @@
       "userCount": 0
     },
     "social-instagram-user-reels": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-instagram-user-tagged-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-kick-clip": {
       "callCount": 1,
@@ -1432,7 +1556,7 @@
       "userCount": 0
     },
     "social-linkedin-ads-search": {
-      "callCount": 1,
+      "callCount": 2,
       "userCount": 1
     },
     "social-linkedin-company": {
@@ -1440,8 +1564,8 @@
       "userCount": 0
     },
     "social-linkedin-company-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-linkedin-post": {
       "callCount": 0,
@@ -1452,12 +1576,12 @@
       "userCount": 0
     },
     "social-linkedin-profile": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 29,
+      "userCount": 2
     },
     "social-linkedin-search-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-linkme": {
       "callCount": 1,
@@ -1476,8 +1600,8 @@
       "userCount": 0
     },
     "social-pinterest-search": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 5,
+      "userCount": 2
     },
     "social-pinterest-topic": {
       "callCount": 0,
@@ -1488,8 +1612,8 @@
       "userCount": 0
     },
     "social-reddit-post-comments": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 3,
+      "userCount": 2
     },
     "social-reddit-post-detail": {
       "callCount": 0,
@@ -1500,8 +1624,8 @@
       "userCount": 0
     },
     "social-reddit-search": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 2,
+      "userCount": 2
     },
     "social-reddit-subreddit": {
       "callCount": 1,
@@ -1536,8 +1660,8 @@
       "userCount": 0
     },
     "social-snapchat-profile": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 22,
+      "userCount": 2
     },
     "social-snapchat-spotlight": {
       "callCount": 0,
@@ -1564,8 +1688,8 @@
       "userCount": 0
     },
     "social-spotify-artist": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 2,
+      "userCount": 1
     },
     "social-spotify-playlist": {
       "callCount": 0,
@@ -1608,8 +1732,8 @@
       "userCount": 1
     },
     "social-threads-search": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-threads-search-users": {
       "callCount": 0,
@@ -1624,28 +1748,28 @@
       "userCount": 0
     },
     "social-tiktok-ad-library-search": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 2,
+      "userCount": 2
     },
     "social-tiktok-collection-videos": {
       "callCount": 0,
       "userCount": 0
     },
     "social-tiktok-get-trending-feed": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-tiktok-live": {
       "callCount": 0,
       "userCount": 0
     },
     "social-tiktok-product": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 2,
+      "userCount": 1
     },
     "social-tiktok-profile": {
-      "callCount": 4,
-      "userCount": 2
+      "callCount": 57,
+      "userCount": 4
     },
     "social-tiktok-profile-region": {
       "callCount": 0,
@@ -1656,36 +1780,36 @@
       "userCount": 0
     },
     "social-tiktok-search-hashtag": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-tiktok-search-keyword": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-tiktok-search-suggestions": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-tiktok-search-top": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-tiktok-search-users": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-tiktok-shop-product-reviews": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-tiktok-shop-products": {
-      "callCount": 0,
-      "userCount": 0
-    },
-    "social-tiktok-shop-search": {
       "callCount": 1,
       "userCount": 1
+    },
+    "social-tiktok-search-keyword": {
+      "callCount": 2,
+      "userCount": 2
+    },
+    "social-tiktok-search-suggestions": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "social-tiktok-search-top": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "social-tiktok-search-users": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "social-tiktok-shop-product-reviews": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "social-tiktok-shop-products": {
+      "callCount": 1,
+      "userCount": 1
+    },
+    "social-tiktok-shop-search": {
+      "callCount": 2,
+      "userCount": 2
     },
     "social-tiktok-song": {
       "callCount": 0,
@@ -1696,12 +1820,12 @@
       "userCount": 0
     },
     "social-tiktok-user-audience": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-tiktok-user-followers": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-tiktok-user-following": {
       "callCount": 0,
@@ -1716,16 +1840,16 @@
       "userCount": 0
     },
     "social-tiktok-video": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-tiktok-video-comment-replies": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-tiktok-video-comments": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 4,
+      "userCount": 2
     },
     "social-tiktok-video-transcript": {
       "callCount": 0,
@@ -1760,8 +1884,8 @@
       "userCount": 0
     },
     "social-twitch-user-videos": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 21,
+      "userCount": 1
     },
     "social-twitter-community": {
       "callCount": 0,
@@ -1772,12 +1896,12 @@
       "userCount": 0
     },
     "social-twitter-profile": {
-      "callCount": 1,
-      "userCount": 1
+      "callCount": 2,
+      "userCount": 2
     },
     "social-twitter-search-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-twitter-tweet": {
       "callCount": 0,
@@ -1796,8 +1920,8 @@
       "userCount": 1
     },
     "social-youtube-channel-community-posts": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-youtube-channel-lives": {
       "callCount": 0,
@@ -1816,8 +1940,8 @@
       "userCount": 0
     },
     "social-youtube-channel-videos": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 22,
+      "userCount": 3
     },
     "social-youtube-community-post": {
       "callCount": 0,
@@ -1828,8 +1952,8 @@
       "userCount": 0
     },
     "social-youtube-search": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 4,
+      "userCount": 1
     },
     "social-youtube-search-hashtag": {
       "callCount": 0,
@@ -1844,16 +1968,16 @@
       "userCount": 0
     },
     "social-youtube-transcript": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 1,
+      "userCount": 1
     },
     "social-youtube-video-comment-replies": {
       "callCount": 0,
       "userCount": 0
     },
     "social-youtube-video-comments": {
-      "callCount": 0,
-      "userCount": 0
+      "callCount": 2,
+      "userCount": 2
     },
     "social-youtube-video-detail": {
       "callCount": 0,
@@ -1864,14 +1988,14 @@
       "userCount": 0
     },
     "temu-category-search": {
-      "callCount": 30,
-      "userCount": 11,
+      "callCount": 31,
+      "userCount": 12,
       "creditMin": 10,
       "creditMax": 10
     },
     "temu-product-source-query": {
-      "callCount": 601,
-      "userCount": 32,
+      "callCount": 837,
+      "userCount": 35,
       "creditMin": 4,
       "creditMax": 375
     },
@@ -1882,28 +2006,60 @@
       "creditMax": 75
     },
     "text-trademark-detector": {
-      "callCount": 132,
-      "userCount": 7,
+      "callCount": 183,
+      "userCount": 8,
       "creditMin": 64,
       "creditMax": 74
     },
     "tiktok-batch-product-detail": {
-      "callCount": 113,
-      "userCount": 24,
+      "callCount": 142,
+      "userCount": 26,
       "creditMin": 10,
       "creditMax": 94
     },
+    "tiktok-brand-search": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "tiktok-category-level-1": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "tiktok-category-level-2": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "tiktok-category-level-3": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "tiktok-category-overview": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "tiktok-category-trend": {
+      "callCount": 0,
+      "userCount": 0
+    },
     "tiktok-creator-analytics": {
-      "callCount": 1516,
-      "userCount": 11,
+      "callCount": 1523,
+      "userCount": 12,
       "creditMin": 11,
       "creditMax": 22
     },
     "tiktok-creator-search": {
-      "callCount": 57,
-      "userCount": 7,
+      "callCount": 58,
+      "userCount": 8,
       "creditMin": 11,
       "creditMax": 22
+    },
+    "tiktok-influencer-detail": {
+      "callCount": 0,
+      "userCount": 0
+    },
+    "tiktok-influencer-trend": {
+      "callCount": 0,
+      "userCount": 0
     },
     "tiktok-livestream-analytics": {
       "callCount": 118,
@@ -1912,32 +2068,32 @@
       "creditMax": 22
     },
     "tiktok-new-product-rank": {
-      "callCount": 110,
-      "userCount": 25,
+      "callCount": 113,
+      "userCount": 27,
       "creditMin": 5,
       "creditMax": 47
     },
     "tiktok-product-analytics": {
-      "callCount": 47,
-      "userCount": 9,
+      "callCount": 48,
+      "userCount": 10,
       "creditMin": 11,
       "creditMax": 22
     },
     "tiktok-product-analytics-api": {
-      "callCount": 26,
+      "callCount": 28,
       "userCount": 5,
       "creditMin": 22,
       "creditMax": 22
     },
     "tiktok-product-discovery": {
-      "callCount": 589,
-      "userCount": 35,
+      "callCount": 775,
+      "userCount": 40,
       "creditMin": 11,
       "creditMax": 22
     },
     "tiktok-product-search": {
-      "callCount": 377,
-      "userCount": 54,
+      "callCount": 395,
+      "userCount": 56,
       "creditMin": 5,
       "creditMax": 47
     },
@@ -1954,26 +2110,26 @@
       "creditMax": 22
     },
     "tiktok-shop-product-detail": {
-      "callCount": 252,
+      "callCount": 260,
       "userCount": 11,
       "creditMin": 132,
       "creditMax": 132
     },
     "tiktok-top-selling-products": {
-      "callCount": 5884,
-      "userCount": 32,
+      "callCount": 5933,
+      "userCount": 34,
       "creditMin": 11,
       "creditMax": 22
     },
     "tiktok-video-analytics": {
-      "callCount": 1109,
-      "userCount": 14,
+      "callCount": 1111,
+      "userCount": 16,
       "creditMin": 11,
       "creditMax": 22
     },
     "tiktok-video-download-url": {
-      "callCount": 219,
-      "userCount": 18,
+      "callCount": 224,
+      "userCount": 19,
       "creditMin": 5,
       "creditMax": 10
     },
@@ -1984,8 +2140,8 @@
       "creditMax": 94
     },
     "tiktok-video-search": {
-      "callCount": 277,
-      "userCount": 21,
+      "callCount": 348,
+      "userCount": 24,
       "creditMin": 10,
       "creditMax": 47
     },
@@ -2000,8 +2156,8 @@
       "creditMax": 79
     },
     "walmart-keyword-research": {
-      "callCount": 7,
-      "userCount": 4,
+      "callCount": 12,
+      "userCount": 6,
       "creditMin": 13,
       "creditMax": 63
     },
@@ -2018,14 +2174,14 @@
       "creditMax": 44
     },
     "walmart-search": {
-      "callCount": 175,
-      "userCount": 8,
+      "callCount": 178,
+      "userCount": 10,
       "creditMin": 32,
       "creditMax": 32
     },
     "web-search": {
-      "callCount": 290,
-      "userCount": 21,
+      "callCount": 292,
+      "userCount": 23,
       "creditMin": 7,
       "creditMax": 13
     },
@@ -2074,8 +2230,8 @@
       "userCount": 0
     },
     "zhihuiya-patent-image-search": {
-      "callCount": 145,
-      "userCount": 7,
+      "callCount": 161,
+      "userCount": 8,
       "creditMin": 169,
       "creditMax": 169
     },
