@@ -248,16 +248,19 @@ export function buildPages(snapshot) {
     .filter(([category]) => groups.has(category))
     .map(([category,label]) => `<a href="${categoryPath(category)}" data-data-category="${category}" data-cta-placement="data-hero-task">${label} →</a>`)
     .join('');
-  const hero = `<h1 class="api-directory-heading"><span class="api-title-accent">Ecommerce Data</span> APIs</h1>
-    <p>Get product details, reviews, search keywords and supplier offers from Amazon, TikTok Shop, 1688 and more.</p>
-    <p class="api-caption">${snapshot.entries.length} APIs across ${groups.size} categories</p>
-    <nav class="api-intent-navigation" aria-label="Get started with Data APIs">
-      <a class="api-primary-action" href="#api-directory" data-cta-placement="data-hero-browse">Browse Data APIs ↓</a>
+  const hero = `<section class="api-directory-hero" aria-labelledby="api-directory-title">
+    <div class="api-directory-intro">
+      <h1 id="api-directory-title" class="api-directory-heading"><span class="api-title-accent">Ecommerce Data</span> APIs</h1>
+      <p>Find product details, reviews, keywords and supplier offers across Amazon, TikTok Shop, 1688 and more.</p>
+      <p class="api-caption">${snapshot.entries.length} APIs across ${groups.size} categories</p>
+    </div>
+    <aside class="api-directory-trial" aria-label="Data API trial">
+      <p><strong>1,000 free credits</strong> for new accounts</p>
+      <p>Valid for 3 days. <a href="https://www.nexscope.ai/pricing?co-from=learn" data-track="start_using" data-cta-placement="data-hero-free-trial">Trial details</a></p>
       ${amazonLookup}
-    </nav>
-    <p class="api-trial"><strong>1,000 free credits for new accounts.</strong> Valid for 3 days. That covers up to 100 requests at 10 credits each. Check the cost for your endpoint before testing. <a href="https://www.nexscope.ai/pricing?co-from=learn" data-track="start_using" data-cta-placement="data-hero-free-trial">See free trial details ↗</a></p>
-    ${taskLinks ? `<nav class="api-intent-navigation" aria-label="Common ecommerce data tasks">${taskLinks}</nav>` : ''}`;
-  const content = `${hero}<div id="api-directory" data-data-directory data-directory-kind="root">${searchControls('Search all APIs','category',groups.size,true)}${chips}${switcher}<section data-results-kind="categories" data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section><section data-results-kind="apis" data-api-group="APIs" hidden><div class="api-directory">${operations.sort((a,b)=>compareUsage(a.entry.usage,b.entry.usage)).map(item=>item.html).join('')}</div></section></div>${workflowMarkup(groups)}${selectionHelp(rootCopy)}${usageNote(snapshot)}`;
+    </aside>
+  </section>`;
+  const content = `${hero}<div id="api-directory" data-data-directory data-directory-kind="root">${searchControls('Search all APIs','category',groups.size,true)}${chips}${switcher}<section data-results-kind="categories" data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section><section data-results-kind="apis" data-api-group="APIs" hidden><div class="api-directory">${operations.sort((a,b)=>compareUsage(a.entry.usage,b.entry.usage)).map(item=>item.html).join('')}</div></section></div>${taskLinks ? `<nav class="api-intent-navigation" aria-label="Common ecommerce data tasks">${taskLinks}</nav>` : ''}${workflowMarkup(groups)}${selectionHelp(rootCopy)}${usageNote(snapshot)}`;
   return new Map([['index.md',page('Ecommerce Data APIs for Amazon, TikTok & 1688 | Nexscope','Explore ecommerce APIs for Amazon, TikTok Shop and 1688. Test product, review and sourcing endpoints with 1,000 free trial credits for new accounts.','',content)],...pages]);
 }
 
