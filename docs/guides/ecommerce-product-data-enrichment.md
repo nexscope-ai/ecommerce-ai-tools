@@ -46,6 +46,8 @@ next_step:
 
 **Start with a sample of SKUs and match each variant across your website, catalog and feed.** Use the [SKU mapping worksheet]({{ '/assets/downloads/product-enrichment-review.csv' | relative_url }}) to flag missing attributes and conflicting values. AI can suggest field mappings and draft copy from approved records. Check identifiers, variants, prices and availability against their source before applying changes in bulk.
 
+For a live listing comparison, browse the [WooCommerce product and variation APIs](/data/woocommerce/) or the [Amazon product and review APIs](/data/amazon-front-data/). Use those results to check one item at a time against the approved catalog record.
+
 **Quick answer:** Audit a sample of important SKUs for missing identifiers, variant details, dimensions, material, use cases, images, and offer facts. Assign each field a source of truth and owner. Map only facts you can verify, review generated text before publishing, then test whether the landing page, markup, and feed agree. Better data can improve eligibility and usefulness; it cannot guarantee Google rankings or AI recommendations.
 
 {% include article-action.html placement="article-top" %}

@@ -61,6 +61,8 @@ The phrase **SERP API** also has a brand-navigation ambiguity: [SerpApi](https:/
 | When does interest rise? | [Google Trends data]({{ '/guides/google-trends-api/' | relative_url }}) |
 | How did my position change every day? | A monitoring system with comparable saved observations |
 
+If you also need to check when interest rises, browse the [Google Data APIs](/data/google-tools/) for Google Trends by keyword or time. Keep trend signals separate from the ranked URLs returned by the SERP request.
+
 ## What search scope does Nexscope currently support?
 
 **The reviewed route supports US English desktop results, with one to ten returned entries.** It is a bounded request, not an assertion of unlimited search depth or worldwide coverage.

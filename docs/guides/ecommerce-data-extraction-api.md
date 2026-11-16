@@ -76,6 +76,8 @@ On October 7, 2026, Nexscope looked up Amazon US ASIN `B0CT2BY5KL`. The saved re
 
 This is a dated listing snapshot. Availability and variant-level prices are absent from the saved record for this product. [Download the sanitized JSON record]({{ '/assets/evidence/portable-blender-amazon-1688-2026-10-07.json' | relative_url }}) or [test Amazon Product Detail with an ASIN](https://www.nexscope.ai/api-docs/amazon-product-detail?view=documentation&co-from=learn#online-test).
 
+For a related lookup, compare the [Amazon product search, detail and review APIs](/data/amazon-front-data/). If your workflow starts with a wholesale offer, browse the [1688 product and supplier APIs](/data/1688-sourcing/).
+
 {% include article-visual.html %}
 
 | Your job | Start with | Check before relying on it |

@@ -83,6 +83,8 @@ Use the selected request's current estimate as a configuration-specific planning
 
 Choosing 3 Omni also means choosing a different route, not simply buying a more expensive 2.6 generation. Confirm that its supported inputs match your brief. Read the [Kling 2.6 review]({{ '/guides/kling-2-6-video/' | relative_url }}) and [Kling 3 Omni review]({{ '/guides/kling-3-omni-video/' | relative_url }}) before deciding.
 
+If you're still choosing a model, use the [Video & Image API directory](/video-apis/) to compare Kling with the other available models. If you already have a product photo and want a guided workflow, see [product video workflows and examples](/video/).
+
 {% include article-action.html placement="article-middle" %}
 
 ## Is Kling free to try?

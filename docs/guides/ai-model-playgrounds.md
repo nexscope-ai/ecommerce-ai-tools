@@ -25,6 +25,8 @@ Find a separate introduction and editorial review for each of the **12 video mod
 
 Check the credit estimate in the Playground before generating. For a different model, use the corresponding link in the tables below.
 
+To find a model by task or name, browse the [Video & Image API directory](/video-apis/). For a product photo, listing URL, or reference ad, [compare the product video workflows](/video/) to see what each one needs.
+
 **New users receive 1,000 free credits to experience models.** Trial credits are valid for 3 days; credit use varies by model and settings. See the [current trial offer](https://www.nexscope.ai/pricing?co-from=learn).
 
 ## Compare models, costs and access before you choose

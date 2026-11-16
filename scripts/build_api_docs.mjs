@@ -221,7 +221,7 @@ export function buildPages(snapshot) {
     categories.push(card);
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
-    const content = `<nav aria-label="Breadcrumb"><a href="/data/">Data API categories</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p>${copy.chooseWhen?`<aside class="api-choice-note"><h2>Is this the right category for your task?</h2><p>${esc(copy.chooseWhen)}</p></aside>`:''}<p class="api-caption">Access and credit requirements vary by operation.</p><div data-data-directory data-directory-kind="category">${searchControls('Find an API','API',entries.length)}<section data-results-kind="apis" data-api-group="${esc(name)}"><h2 class="api-directory-title">Explore ${esc(name)} APIs</h2><div class="api-directory">${cards}</div></section></div>${selectionHelp(copy)}${usageNote(snapshot)}`;
+    const content = `<nav class="api-category-breadcrumb" aria-label="Breadcrumb"><a href="/data/" data-cta-placement="data-category-back">Browse all Data APIs</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p>${copy.chooseWhen?`<aside class="api-choice-note"><h2>Is this the right category for your task?</h2><p>${esc(copy.chooseWhen)}</p></aside>`:''}<p class="api-caption">Access and credit requirements vary by operation.</p><div data-data-directory data-directory-kind="category">${searchControls('Find an API','API',entries.length)}<section data-results-kind="apis" data-api-group="${esc(name)}"><h2 class="api-directory-title">Explore ${esc(name)} APIs</h2><div class="api-directory">${cards}</div></section></div>${selectionHelp(copy)}${usageNote(snapshot)}`;
     pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content.replace('<div data-data-directory',`${startingPoint(category,entries)}<div data-data-directory`)));
   }
   const chips=`<div class="api-platform-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${platformIcon(visual,20)}${esc(visual.label)} <span>${visual.count}</span>${platformNew(visual)}</button>`).join('')}</div>`;
@@ -230,6 +230,14 @@ export function buildPages(snapshot) {
   const amazonLookup = snapshot.entries.some(entry => entry.slug === 'amazon-product-detail')
     ? `<a href="${esc(apiPlaygroundUrl('amazon-product-detail'))}" data-api-slug="amazon-product-detail" data-cta-placement="data-hero-example">Test an Amazon product lookup ↗</a>`
     : '';
+  const taskLinks = [
+    ['data-amazon-front-data', 'Look up Amazon products and reviews'],
+    ['data-1688-sourcing', 'Find 1688 products and suppliers'],
+    ['data-fm-tiktok', 'Find trending TikTok Shop products'],
+  ]
+    .filter(([category]) => groups.has(category))
+    .map(([category,label]) => `<a href="${categoryPath(category)}" data-data-category="${category}" data-cta-placement="data-hero-task">${label} →</a>`)
+    .join('');
   const hero = `<h1 class="api-directory-heading"><span class="api-title-accent">Ecommerce Data</span> APIs</h1>
     <p>Get product details, reviews, search keywords and supplier offers from Amazon, TikTok Shop, 1688 and more.</p>
     <p class="api-caption">${snapshot.entries.length} APIs across ${groups.size} categories</p>
@@ -237,7 +245,8 @@ export function buildPages(snapshot) {
       <a class="api-primary-action" href="#api-directory" data-cta-placement="data-hero-browse">Browse Data APIs ↓</a>
       ${amazonLookup}
     </nav>
-    <p class="api-trial"><strong>1,000 free credits for new accounts.</strong> Valid for 3 days. That covers up to 100 requests at 10 credits each. Check the cost for your endpoint before testing. <a href="https://www.nexscope.ai/pricing?co-from=learn" data-track="start_using" data-cta-placement="data-hero-free-trial">See free trial details ↗</a></p>`;
+    <p class="api-trial"><strong>1,000 free credits for new accounts.</strong> Valid for 3 days. That covers up to 100 requests at 10 credits each. Check the cost for your endpoint before testing. <a href="https://www.nexscope.ai/pricing?co-from=learn" data-track="start_using" data-cta-placement="data-hero-free-trial">See free trial details ↗</a></p>
+    ${taskLinks ? `<nav class="api-intent-navigation" aria-label="Common ecommerce data tasks">${taskLinks}</nav>` : ''}`;
   const content = `${hero}<div id="api-directory" data-data-directory data-directory-kind="root">${searchControls('Search all APIs','category',groups.size,true)}${chips}${switcher}<section data-results-kind="categories" data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section><section data-results-kind="apis" data-api-group="APIs" hidden><div class="api-directory">${operations.sort((a,b)=>compareUsage(a.entry.usage,b.entry.usage)).map(item=>item.html).join('')}</div></section></div>${workflowMarkup(groups)}${selectionHelp(rootCopy)}${usageNote(snapshot)}`;
   return new Map([['index.md',page('Ecommerce Data APIs for Amazon, TikTok & 1688 | Nexscope','Explore ecommerce APIs for Amazon, TikTok Shop and 1688. Test product, review and sourcing endpoints with 1,000 free trial credits for new accounts.','',content)],...pages]);
 }
