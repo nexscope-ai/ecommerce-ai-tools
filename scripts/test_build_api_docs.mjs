@@ -301,7 +301,7 @@ test('platform filters sort by API count across categories, keeping All platform
   const usage={schemaVersion:1,period:'all-time',updatedAt:'2026-10-29T08:34:41Z',
     apis:{'amazon-one':{callCount:40,userCount:2},'amazon-two':{callCount:40,userCount:2},'sourcing-api':{callCount:70,userCount:2}},categories:{}};
   const root=buildPages(applyUsage({...snapshot,entries},usage)).get('index.md');
-  const chips=root.split('class="api-platform-filters"')[1].split('</div>')[0];
+  const chips=root.split('data-platform-filters hidden>')[1].split('</div>')[0];
   assert.ok(chips.indexOf('data-platform-filter=""')<chips.indexOf('data-platform-filter="amazon"'));
   assert.ok(chips.indexOf('data-platform-filter="amazon"')<chips.indexOf('data-platform-filter="1688"'));
   // Sourcing has more calls, but Amazon has more APIs across its categories.
@@ -497,7 +497,7 @@ test('invalid input never clears previously generated documentation',async()=>{
 test('platform filters and global search switch between categories and direct API results',async()=>{
   const source=await readFile(new URL('../docs/assets/api-directory.js',import.meta.url),'utf8');
   const control=(attrs={})=>({hidden:true,value:'',attrs,events:{},dataset:{},focus(){},addEventListener(t,h){this.events[t]=h;},setAttribute(k,v){this.attrs[k]=v;},getAttribute(k){return this.attrs[k];}});
-  const search=control(),count=control(),empty=control(),clear=control(),reset=control(),filters=control();
+  const search=control(),count=control(),empty=control(),reset=control(),filters=control();
   const platforms=['','amazon','tiktok'].map(value=>control({'data-platform-filter':value}));
   const views=['categories','apis'].map(value=>control({'data-directory-view':value}));
   for (const button of views) {
@@ -508,7 +508,7 @@ test('platform filters and global search switch between categories and direct AP
   const categories=[card('amazon','amazon data'),card('tiktok','tiktok data')];
   const apis=[card('amazon','amazon reviews list'),card('amazon','amazon product detail'),card('tiktok','tiktok creators')];
   const sections=[{dataset:{resultsKind:'categories'},querySelectorAll:()=>categories},{dataset:{resultsKind:'apis'},querySelectorAll:()=>apis}];
-  const directory={dataset:{directoryKind:'root'},querySelector:s=>({'[data-api-count]':count,'[data-api-empty]':empty,'[data-clear-search]':clear,'[data-reset-filters]':reset}[s]),querySelectorAll:s=>s==='[data-platform-filter]'?platforms:s==='[data-directory-view]'?views:s==='[data-results-kind]'?sections:[filters]};
+  const directory={dataset:{directoryKind:'root'},querySelector:s=>({'[data-api-count]':count,'[data-api-empty]':empty,'[data-reset-filters]':reset}[s]),querySelectorAll:s=>s==='[data-platform-filter]'?platforms:s==='[data-directory-view]'?views:s==='[data-results-kind]'?sections:[filters]};
   const document={addEventListener(){},querySelector:()=>directory,getElementById:()=>search};
   const searchEvents=[];
   const window={location:{pathname:'/data/'},gtag:(...args)=>searchEvents.push(args)};
@@ -522,7 +522,8 @@ test('platform filters and global search switch between categories and direct AP
   search.value='reviews';search.events.input();
   assert.equal(sections[0].hidden,true);assert.equal(sections[1].hidden,false);
   assert.equal(apis[0].hidden,false);assert.equal(apis[1].hidden,true);assert.equal(apis[2].hidden,true);
-  assert.equal(count.textContent,'1 API matching your selection');
+  assert.equal(count.textContent,'1 API found');
+  assert.equal(reset.hidden,false);
   search.events.change();
   const searchEvent=searchEvents.find(args=>args[1]==='data_api_search');
   assert.equal(searchEvent[2].query_length,7);
@@ -533,8 +534,8 @@ test('platform filters and global search switch between categories and direct AP
   search.value='creators';search.events.input();assert.equal(empty.hidden,false);
   assert.deepEqual(views.map(button=>button.badge.textContent),['0','0']);
   platforms[2].events.click();assert.equal(empty.hidden,true);assert.equal(apis[2].hidden,false);
-  clear.events.click();assert.equal(search.value,'');assert.equal(sections[0].hidden,false);
   reset.events.click();assert.equal(platforms[0].attrs['aria-pressed'],'true');
+  assert.equal(search.value,'');assert.equal(sections[0].hidden,false);assert.equal(reset.hidden,true);
   assert.ok(categories.every(c=>!c.hidden));
   assert.deepEqual(views.map(button=>button.badge.textContent),['2','3']);
   views[1].events.click();assert.equal(sections[1].hidden,false);assert.ok(apis.every(c=>!c.hidden));

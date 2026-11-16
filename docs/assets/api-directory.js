@@ -33,6 +33,7 @@
   const count = directory.querySelector('[data-api-count]');
   const empty = directory.querySelector('[data-api-empty]');
   const clear = directory.querySelector('[data-clear-search]');
+  const reset = directory.querySelector('[data-reset-filters]');
   const platformButtons = [...directory.querySelectorAll('[data-platform-filter]')];
   const viewButtons = [...directory.querySelectorAll('[data-directory-view]')];
   const sections = [...directory.querySelectorAll('[data-results-kind]')];
@@ -55,9 +56,10 @@
       matchingCounts[section.dataset.resultsKind] += visible;
       if (section.dataset.resultsKind === activeView) total += visible;
     }
-    count.textContent = `${total} ${activeView === 'categories' ? (total === 1 ? 'category' : 'categories') : (total === 1 ? 'API' : 'APIs')} ${words.length || platform ? 'matching your selection' : 'listed'}`;
+    count.textContent = `${total} ${activeView === 'categories' ? (total === 1 ? 'category' : 'categories') : (total === 1 ? 'API' : 'APIs')} ${isRoot ? 'found' : words.length || platform ? 'matching your selection' : 'listed'}`;
     empty.hidden = total > 0;
-    clear.hidden = words.length === 0;
+    if (clear) clear.hidden = words.length === 0;
+    if (isRoot) reset.hidden = !search.value && !platform;
     for (const button of platformButtons) button.setAttribute('aria-pressed', String(button.getAttribute('data-platform-filter') === platform));
     for (const button of viewButtons) {
       const kind = button.getAttribute('data-directory-view');
@@ -74,7 +76,7 @@
       result_count: update(), data_platform: platform || 'all',
     });
   });
-  clear.addEventListener('click', () => { search.value = ''; update(); search.focus(); });
+  clear?.addEventListener('click', () => { search.value = ''; update(); search.focus(); });
   for (const button of platformButtons) button.addEventListener('click', () => {
     platform = button.getAttribute('data-platform-filter'); update();
     track('data_api_platform_filter', { data_platform: platform || 'all' });
@@ -85,7 +87,7 @@
     update();
     track('data_api_view_change', { directory_view: view });
   });
-  directory.querySelector('[data-reset-filters]').addEventListener('click', () => { platform = ''; search.value = ''; view = isRoot ? 'categories' : 'apis'; update(); search.focus(); });
+  reset.addEventListener('click', () => { platform = ''; search.value = ''; view = isRoot ? 'categories' : 'apis'; update(); search.focus(); });
   for (const control of directory.querySelectorAll('[data-api-filters], [data-platform-filters], [data-view-switch]')) control.hidden = false;
   update();
 })();
