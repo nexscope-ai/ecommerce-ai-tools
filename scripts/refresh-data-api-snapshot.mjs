@@ -59,20 +59,30 @@ async function publicText(url) {
       const text=await response.text();
       if (text.length>20000000) throw new Error('Response exceeds public feed size limit');
       return text;
-    } catch(error) { if (attempt===1) throw new Error(`Public API refresh failed for ${new URL(url).pathname}: ${error.name}`); }
+    } catch(error) {
+      if (attempt===1) throw new Error(`Public API refresh failed for ${new URL(url).pathname}: ${error.message}`, { cause:error });
+    }
   }
 }
 
-export async function refreshSnapshot(directory=root) {
+export async function refreshSnapshot(directory=root, { allowCached=false }={}) {
   const file=join(directory,'scripts/data/api-docs.public.json');
-  const [feed,sitemap,previous]=await Promise.all([publicText(FEED),publicText(SITEMAP),readFile(file,'utf8').then(JSON.parse)]);
+  const previous=JSON.parse(await readFile(file,'utf8'));
+  const {validate}=await import('./build_api_docs.mjs');
+  const sources=await Promise.all([publicText(FEED),publicText(SITEMAP)]).catch(error=>{
+    if (!allowCached) throw error;
+    validate(previous);
+    console.warn(`${error.message}; retained ${previous.entries.length} published Data APIs from ${previous.generatedAt}.`);
+    return null;
+  });
+  if (!sources) return previous;
+  const [feed,sitemap]=sources;
   const payload=JSON.parse(feed);
   const membership=projectDirectoryMembership(payload);
   const current=projectFeed(payload,sitemap,previous,new Date().toISOString(),membership);
   const snapshot=supplementAnnouncedData(current,(payload.data??payload).withdrawnSlugs??[]);
   if (JSON.stringify(snapshot.entries)===JSON.stringify(previous.entries)) snapshot.generatedAt=previous.generatedAt;
   // Validate the safe public projection before changing the snapshot or generated output.
-  const {validate}=await import('./build_api_docs.mjs');
   validate(snapshot);
   const temporary=file+'.tmp';
   await writeFile(temporary,JSON.stringify(snapshot,null,2)+'\n');

@@ -11,6 +11,7 @@ export const categoryCopyMap = {
   'data-1688-sourcing': category('1688 Product & Supplier Research', 'Find wholesale offers by keyword or image, then inspect product, SKU and supplier details.', 'You need to shortlist wholesale offers. Use search to discover products and detail lookup to check a specific offer before comparing suppliers.'),
   'data-shopee-product-selection': category('Shopee Product Search & Details', 'Search Shopee listings and inspect individual products for marketplace research.', 'You want to move from a product keyword to listing details. Keep the marketplace consistent when comparing products.'),
   'data-fm-tiktok': category('TikTok Product Discovery & Bestsellers', 'Explore product discovery and top-selling product operations to build a research shortlist.', 'You are looking for product candidates rather than detailed creator, video or shop analytics.'),
+  'data-st-tiktok': category('TikTok Brand Search', 'Search for TikTok brands to start brand and competitor research.', 'Start here when you need to find a brand. Check the API documentation for supported inputs and returned fields.'),
   'data-sr-ozon': category('Ozon Keywords, Markets & Shops', 'Research Ozon keywords, product reports, categories and shops from a market-research starting point.', 'Your question starts with market demand, keywords or competitors. Use the report and search operations that match that question.'),
   'data-cj-tiktok': category('TikTok Products, Creators & Ad Research', 'Connect TikTok product research with related creators, videos, shops, livestreams and ads.', 'You need to research relationships around a product or creator. Choose a search operation first, then inspect the matching entity or related content.'),
   'data-et-tiktok': category('TikTok Product, Seller & Video Lookup', 'Find TikTok products, sellers and videos, with batch-detail and ranking operations for follow-up research.', 'You need product or seller discovery, video lookup, or batch details. Check the identifiers required by each follow-up operation.'),
@@ -47,8 +48,6 @@ export const categoryCopyMap = {
 
 // Focused overrides for frequently searched tasks. Unmapped operations retain feed copy.
 export const operationCopyMap = {
-  'jev-route': 'Match an intent to a published API or evaluation preset. Returns discovery metadata; it does not execute the suggested API or invent missing inputs.',
-  'jev-evaluate': 'Evaluate content you are authorized to submit using a preset or typed questions. Review advisory results before making a decision.',
   'product-description-generator': 'Generate description copy from supplied product facts, then review accuracy and claims before publication.',
   'woocommerce-products': 'Search products within one specified public WooCommerce store. Keep the store URL with each product ID and check pagination before treating the catalog as complete.',
   'woocommerce-product-detail': 'Inspect a product in its source WooCommerce store. Review its facts before making a separate request for variations.',

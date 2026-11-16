@@ -352,7 +352,7 @@ async function main() {
   let snapshot;
   if(args.includes('--refresh')) {
     const {refreshSnapshot}=await import('./refresh-data-api-snapshot.mjs');
-    snapshot=await refreshSnapshot();
+    snapshot=await refreshSnapshot(undefined,{allowCached:args.includes('--allow-cached')});
   } else if(args.includes('--web-root')) {
     const root=args[args.indexOf('--web-root')+1];
     if(!root || root.startsWith('--')) throw new Error('--web-root requires the read-only web directory');
