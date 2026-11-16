@@ -11,6 +11,7 @@ import { withPublicCreditStatistics } from './public-credit-statistics.mjs';
 import { categoryEditorialCopy, operationEditorialCopy, researchWorkflows, copyReviewedAt } from './data-api-copy.mjs';
 import {dataCollectionSlugs, fetchDirectoryMembership} from './data-directory-membership.mjs';
 import {dataStarts} from './data-api-starts.mjs';
+import {procurementCategory} from './announced-data-apis.mjs';
 import {categoryPath, categoryRedirects, renderCategoryRedirect} from './data-category-routes.mjs';
 export {categoryPath} from './data-category-routes.mjs';
 
@@ -222,7 +223,16 @@ export function buildPages(snapshot) {
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
     const content = `<nav class="api-category-breadcrumb" aria-label="Breadcrumb"><a href="/data/" data-cta-placement="data-category-back">Browse all Data APIs</a> / ${esc(name)}</nav><p class="api-eyebrow">Nexscope Data APIs</p><h1>${esc(name)}</h1><p>${esc(description)}</p>${copy.chooseWhen?`<aside class="api-choice-note"><h2>Is this the right category for your task?</h2><p>${esc(copy.chooseWhen)}</p></aside>`:''}<p class="api-caption">Access and credit requirements vary by operation.</p><div data-data-directory data-directory-kind="category">${searchControls('Find an API','API',entries.length)}<section data-results-kind="apis" data-api-group="${esc(name)}"><h2 class="api-directory-title">Explore ${esc(name)} APIs</h2><div class="api-directory">${cards}</div></section></div>${selectionHelp(copy)}${usageNote(snapshot)}`;
-    pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content.replace('<div data-data-directory',`${startingPoint(category,entries)}<div data-data-directory`)));
+    const guides = category === procurementCategory ? `
+      <section class="api-choice-note" aria-labelledby="procurement-guides-title">
+        <h2 id="procurement-guides-title">1688 procurement guides</h2>
+        <ol>
+          <li><a href="/ecommerce-ai-tools/guides/1688-api-authorization/">Connect and verify a 1688 buyer account</a></li>
+          <li><a href="/ecommerce-ai-tools/guides/1688-order-preview-api/">Preview order totals and shipping costs</a></li>
+          <li><a href="/ecommerce-ai-tools/guides/1688-order-api/">Create a purchase order and check its status</a></li>
+        </ol>
+      </section>` : '';
+    pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content.replace('<div data-data-directory',`${guides}${startingPoint(category,entries)}<div data-data-directory`)));
   }
   const chips=`<div class="api-platform-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${platformIcon(visual,20)}${esc(visual.label)} <span>${visual.count}</span>${platformNew(visual)}</button>`).join('')}</div>`;
   const switcher=`<div class="api-view-switch" role="group" aria-label="Browse directory" data-view-switch hidden><button type="button" data-directory-view="categories" aria-pressed="true">Categories <span>${groups.size}</span></button><button type="button" data-directory-view="apis" aria-pressed="false">All APIs <span>${snapshot.entries.length}</span></button></div>`;
