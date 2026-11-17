@@ -99,6 +99,8 @@ The workflow may pause if a data request fails or credits are insufficient. A pa
 
 ## Which route fits your next decision?
 
+If you want to inspect the listing yourself first, use the [Amazon listing audit checklist]({{ '/guides/amazon-listing-audit-checklist/' | relative_url }}) to rank the issues for one ASIN.
+
 | Choose | When it fits | What remains yours to do |
 | --- | --- | --- |
 | Listing Optimizer | You want to run the evidence workflow and inspect its generated plan yourself | Verify sources, choose edits and update the listing |

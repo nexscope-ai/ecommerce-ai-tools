@@ -37,6 +37,13 @@ next_step:
   description: Use a public category or product URL to inspect page-level signals, then verify sitewide patterns in Search Console and a crawler.
   label: Open Website SEO Auditor
   url: "https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn"
+report_step:
+  id: ecommerce_seo_audit_product_report
+  intent: product-report-evaluation
+  title: "Turn one audit finding into a product-page plan"
+  description: "Share one priority product URL and target market. Choose the services that fit the issue and review the credit quote before submitting."
+  label: "Build a Product Growth Report"
+  url: "https://www.nexscope.ai/product-growth-report?co-from=learn#request"
 ---
 
 # Ecommerce SEO audit checklist: site audit, tools and examples
@@ -144,6 +151,10 @@ Keep a change log with **URL pattern, sample URL, evidence, owner, release date,
 Use the [Nexscope Website SEO Auditor](https://www.nexscope.ai/tools/website-seo-auditor?co-from=learn) to inspect **one public URL** and review its page-level crawl, metadata, content, links, and structured-data evidence; a mobile Lighthouse check is a separate diagnostic. It is useful for verifying a representative page or a proposed fix. It does **not** crawl the complete store, read your private Search Console or Merchant Center reports, or prove that rankings improved. Pair it with those first-party reports and a full crawler for a true sitewide audit. If the question is whether live page facts match a catalog or feed, use the [ecommerce data extraction API guide]({{ '/ecommerce-data-extraction-api/' | relative_url }}) to choose the right evidence source.
 
 For a narrower workflow, use the [product-page SEO audit guide]({{ '/website-seo-audit-guide/' | relative_url }}). If your priority is what product information Google can use in newer shopping experiences, continue with the [Google AI Mode shopping readiness guide]({{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}).
+
+If several templates share the issue, investigate it at the store level. If the finding concerns one priority listing, a reviewed report can help you decide what to change on that product page first. For help choosing the scope, see the [ecommerce SEO services guide]({{ '/guides/ecommerce-seo-services-scope/' | relative_url }}).
+
+{% include article-reviewed-report.html %}
 
 ## Frequently asked questions
 

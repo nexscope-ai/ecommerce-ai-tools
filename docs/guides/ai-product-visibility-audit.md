@@ -54,6 +54,8 @@ Download the [answer-review worksheet]({{ '/assets/downloads/ai-product-visibili
 | Explicit recommendation | The wording recommends the product for the stated task | That another question or later answer will do the same |
 | Citation | The answer links to a source | That the source is independent or every claim is supported |
 
+For a quick check you can repeat yourself, use the [AI visibility checker workflow]({{ '/guides/ai-visibility-checker-product-pages/' | relative_url }}) to log mentions and citations against the same buyer questions.
+
 ## What the public example shows
 
 The [AI mention section of Nexscope's public report](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn#module-ai_mentions) contains saved answers for the PCIQUTE roller kit. The November 5, 2026 example includes 21 captured answers across seven buying questions, comprising 14 ChatGPT responses and seven Gemini responses.

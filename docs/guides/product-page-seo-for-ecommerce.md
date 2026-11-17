@@ -22,6 +22,13 @@ next_step:
   description: Submit a public product URL or Amazon ASIN for free editorial feedback. An approved and published product can also receive a free Gallery page linking to the original listing.
   label: Request free product-page feedback
   url: /ecommerce-ai-tools/product-showcase/submit/
+report_step:
+  id: product_page_seo_report
+  intent: product-report-evaluation
+  title: "Get a prioritized plan for one product page"
+  description: "Share your product URL and tell the reviewers which search or buying decision you want to improve. Select a service such as keyword research or copy rewriting and review the credit quote."
+  label: "Get a Product Growth Report"
+  url: "https://www.nexscope.ai/product-growth-report?co-from=learn#request"
 ---
 
 # How product page SEO helps shoppers find the right item
@@ -73,6 +80,8 @@ If you need a technical inspection of one URL, use the [product-page SEO audit g
 ## How can you tell whether a change helped?
 
 **Compare the same product page before and after the edit, then look for both search discovery and useful shopper actions.** Record the URL, what you changed, and the date. In Search Console, compare relevant queries, impressions, clicks, and search appearance over a meaningful period. On your own store, check qualified product-page visits and purchase actions. A change in a short date range can also reflect seasonality, inventory, promotions, or a search update; avoid attributing every movement to one edit.
+
+{% include article-reviewed-report.html %}
 
 ## Where does the Nexscope Product Gallery fit?
 

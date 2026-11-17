@@ -103,6 +103,12 @@ Measure outcomes through your own analytics and operating records after implemen
 - [Product description rewriting]({{ '/guides/product-description-rewrite/' | relative_url }}) — convert findings into a usable draft.
 - [Product advertising image briefs]({{ '/guides/product-ad-image-brief/' | relative_url }}) — request and review a focused creative pack.
 
+## Find a guide for your product-page issue
+
+- [Choose the right scope for ecommerce SEO services]({{ '/guides/ecommerce-seo-services-scope/' | relative_url }}) or narrow the work to [Shopify SEO services]({{ '/guides/shopify-seo-services-product-pages/' | relative_url }}).
+- [Audit a Shopify product page]({{ '/guides/shopify-product-page-seo-audit/' | relative_url }}) or [prioritize fixes for one Amazon ASIN]({{ '/guides/amazon-listing-audit-checklist/' | relative_url }}).
+- [Check if AI answers mention your product]({{ '/guides/ai-visibility-checker-product-pages/' | relative_url }}) and compare the scope of [GEO services for ecommerce]({{ '/guides/generative-engine-optimization-services-ecommerce/' | relative_url }}).
+
 ## Frequently asked questions
 
 ### What is a product growth report?
