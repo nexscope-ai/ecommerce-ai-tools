@@ -128,8 +128,20 @@ function platformIcon(visual,size) {
   };
   return visual.logo ? `<img src="/data/logos/${visual.logo}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">` : `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${symbols[visual.kind] || symbols.data}</svg>`;
 }
-function platformNew(visual, category) {
-  return visual.kind === 'woocommerce' || category === 'data-1688-procurement' ? `<span class="api-new-badge" aria-label="${category === 'data-1688-procurement' ? 'New category' : 'New platform'}"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m6 0 1.5 4.5L12 6 7.5 7.5 6 12 4.5 7.5 0 6l4.5-1.5z"/></svg>NEW</span>` : '';
+const newApiSlugs = new Set([
+  '1688-order-list',
+  '1688-order-detail',
+  'tiktok-brand-search',
+  'tiktok-category-level-1',
+  'tiktok-category-level-2',
+  'tiktok-category-level-3',
+  'tiktok-category-overview',
+  'tiktok-category-trend',
+  'tiktok-influencer-detail',
+  'tiktok-influencer-trend',
+]);
+function newApiBadge(slug) {
+  return newApiSlugs.has(slug) ? `<span class="api-new-badge" aria-label="New API"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m6 0 1.5 4.5L12 6 7.5 7.5 6 12 4.5 7.5 0 6l4.5-1.5z"/></svg>NEW</span>` : '';
 }
 function cardTop(category,badge) {
   const visual=categoryVisual(category);
@@ -198,7 +210,7 @@ function usageNote(snapshot) {
 function renderOperation(e, category, name) {
   const contract=e.preview || {};
   const summary = e.description.length > 220 ? e.description.slice(0,217).replace(/\s+\S*$/, '') + '…' : e.description;
-  const content=`<a class="api-main-link" href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${cardTop(category,e.method)}<div class="api-card-content"><span class="api-platform-label">${esc(name)}</span><h3>${esc(e.name)}</h3><p>${esc(summary)}</p></div><div class="api-card-actions"><span class="api-card-cta">View API docs <span aria-hidden="true">↗</span></span>${usageMarkup(e.usage)}</div></a>`;
+  const content=`<a class="api-main-link" href="${officialApiUrl(e.slug)}" data-track="start_using" data-data-category="${esc(category)}" data-api-slug="${esc(e.slug)}">${cardTop(category,e.method)}<div class="api-card-content"><span class="api-platform-label">${esc(name)}${newApiBadge(e.slug)}</span><h3>${esc(e.name)}</h3><p>${esc(summary)}</p></div><div class="api-card-actions"><span class="api-card-cta">View API docs <span aria-hidden="true">↗</span></span>${usageMarkup(e.usage)}</div></a>`;
   return `<article class="api-card api-operation-card" style="${cardStyle(category)}" data-platform="${esc(categoryVisual(category).kind)}" data-api-search="${esc([e.name,e.slug,e.path,...new Set(e.description.toLowerCase().split(/\s+/)),name,...(contract.inputs||[]).map(f=>f.name)].join(' ').toLowerCase())}">${content}</article>`;
 }
 export function buildPages(snapshot) {
@@ -219,7 +231,7 @@ export function buildPages(snapshot) {
     platforms.set(visual.kind,{...visual,count:(previous?.count||0)+entries.length});
     const {name,description} = categoryCopy(category,entries);
     const copy=categorySelectionCopy(category,entries);
-    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}${platformNew(visual,category)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
+    const card = `<a class="api-card api-category-card" style="${cardStyle(category)}" href="${route}" data-data-category="${esc(category)}" data-platform="${esc(visual.kind)}" data-api-search="${esc([name,category,description,...entries.map(e=>e.name)].join(' ').toLowerCase())}">${cardTop(category,`${entries.length} ${entries.length === 1 ? "API" : "APIs"}`)}<div class="api-card-content"><span class="api-platform-label">${esc(visual.label)}</span><h3>${esc(name)}</h3><p>${esc(description)}</p></div><div class="api-card-actions"><span class="api-card-cta">Explore category <span aria-hidden="true">→</span></span>${usageMarkup(snapshot.categoryUsage?.[category])}</div></a>`;
     categories.push(card);
     const cards=entries.map(e=>renderOperation(e,category,name)).join('');
     operations.push(...entries.map(e=>({entry:e,html:renderOperation(e,category,name)})));
@@ -235,7 +247,7 @@ export function buildPages(snapshot) {
       </section>` : '';
     pages.set(`${category}.md`,page(`${name} APIs | Nexscope`,description,route.slice('/data/'.length,-1),content.replace('<div data-data-directory',`${guides}${startingPoint(category,entries)}<div data-data-directory`)));
   }
-  const chips=`<div class="api-platform-filters catalog-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${platformIcon(visual,20)}${esc(visual.label)} <span>${visual.count}</span>${platformNew(visual)}</button>`).join('')}</div>`;
+  const chips=`<div class="api-platform-filters catalog-filters" role="group" aria-label="Filter by platform" data-platform-filters hidden><button type="button" data-platform-filter="" aria-pressed="true">All platforms <span>${snapshot.entries.length}</span></button>${[...platforms].sort(([,a],[,b])=>b.count-a.count).map(([key,visual])=>`<button type="button" data-platform-filter="${esc(key)}" aria-pressed="false">${platformIcon(visual,20)}${esc(visual.label)} <span>${visual.count}</span></button>`).join('')}</div>`;
   const switcher=`<div class="api-view-switch catalog-tab-switch" role="group" aria-label="Browse directory" data-view-switch hidden><button type="button" data-directory-view="categories" aria-pressed="true">Categories <span>${groups.size}</span></button><button type="button" data-directory-view="apis" aria-pressed="false">All APIs <span>${snapshot.entries.length}</span></button></div>`;
   const rootCopy=selectionCopy('Ecommerce Data',orderedEntries);
   const amazonLookup = snapshot.entries.some(entry => entry.slug === 'amazon-product-detail')

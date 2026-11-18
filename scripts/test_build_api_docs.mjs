@@ -93,17 +93,30 @@ test('task routes update HTML and schema, keep operations and tracking IDs, and 
   }
 });
 
-test('every platform filter has an icon and only WooCommerce gets the NEW badge',()=>{
+test('platform filters have icons and old platform and category badges are removed',()=>{
   const categories=['woocommerce','patent-research','detection','jev','web-search','unknown-platform'];
   const index=buildPages({...snapshot,entries:categories.map((categorySlug,i)=>({...entry,slug:`icon-test-${i}`,categorySlug}))}).get('index.md');
   const buttons=[...index.matchAll(/<button[^>]*data-platform-filter="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)];
   assert.equal(buttons.length,categories.length);
-  for(const [,kind,content] of buttons){
+  for(const [,,content] of buttons){
     assert.match(content,/<(?:img|svg)\b/);
-    assert.equal(content.includes('api-new-badge'),kind==='woocommerce');
   }
   assert.match(index,/src="\/data\/logos\/woocommerce.svg"/);
-  assert.equal((index.match(/class="api-new-badge"/g)||[]).length,2);
+  assert.equal((index.match(/class="api-new-badge"/g)||[]).length,0);
+});
+
+test('new operations receive a badge on the directory and category pages',()=>{
+  const entries = [
+    {...entry, slug:'tiktok-brand-search', name:'New brand lookup', categorySlug:'data-st-tiktok'},
+    {...entry, slug:'tiktok-product-detail', name:'Existing product detail', categorySlug:'data-st-tiktok'},
+  ];
+  const pages = buildPages({...snapshot, entries});
+  for(const file of ['index.md','data-st-tiktok.md']) {
+    const html = pages.get(file);
+    assert.equal((html.match(/class="api-new-badge"/g)||[]).length,1);
+    const cards = [...html.matchAll(/<article class="api-card api-operation-card"[^]*?<\/article>/g)];
+    assert.equal(cards.find(([card])=>card.includes('api-new-badge'))?.[0].includes('data-api-slug="tiktok-brand-search"'),true);
+  }
 });
 
 test('official tab membership includes new platforms and excludes marketing by actual partition',()=>{
