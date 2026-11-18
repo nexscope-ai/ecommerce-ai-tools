@@ -4,12 +4,12 @@ related_topics: ["agents"]
 content_kind: "guide"
 layout: "default"
 title: "1688 Order API: Create and Track Orders | Nexscope"
-description: "Build a 1688 order API flow from preview to confirmed creation and a manual payment link. Reconcile uncertain writes before retries. Read the workflow."
+description: "Create and track 1688 orders, then sync current and historical buyer orders with the order list and detail APIs."
 permalink: "/guides/1688-order-api/"
 date_published: "2026-11-06"
-date_modified: "2026-11-06"
-last_modified_at: "2026-11-06"
-last_reviewed: "2026-11-06"
+date_modified: "2026-11-18"
+last_modified_at: "2026-11-18"
+last_reviewed: "2026-11-18"
 author: "Nexscope Team"
 schema_type: "Article"
 og_type: "article"
@@ -73,6 +73,18 @@ After a timeout, stop dependent actions. The outcome is uncertain and a repeated
 
 {% include article-action.html placement="article-middle" %}
 
+## Sync 1688 buyer orders into a procurement system
+
+Use [Order List](https://www.nexscope.ai/api-docs/1688-order-list) to discover order IDs and [Order Detail](https://www.nexscope.ai/api-docs/1688-order-detail) to refresh changed orders. Both read from the currently authorized 1688 buyer account. Order Detail can also read orders placed directly on 1688. [Check buyer authorization]({{ '/guides/1688-api-authorization/' | relative_url }}).
+
+| Request | Example body | How to use it |
+| --- | --- | --- |
+| `POST /alibaba1688/orderList` | `{"page":1,"pageSize":20,"isHis":false}` | Fetch current orders. While `hasNext` is true, increment `page`. |
+| `POST /alibaba1688/orderList` | `{"page":1,"pageSize":20,"isHis":true}` | Start a separate pagination pass for historical orders. |
+| `POST /alibaba1688/orderDetail` | `{"aliOrderId":"<order ID returned by the list>"}` | Read the exact order, including product, amount and logistics fields when available. |
+
+For a scheduled sync, send `modifyStartTime` and `modifyEndTime` with a timezone. Keep the window fixed while paging. Store the order ID as a string and update your own record under the buyer and order ID so overlapping windows do not create duplicates. Advance the checkpoint after all pages in the window are saved. Keep the original status alongside the normalized status for reconciliation. Use the [tracking guide]({{ '/guides/1688-order-tracking-api/' | relative_url }}) to follow individual parcels.
+
 ## Retrieve a payment link separately
 
 ```text
@@ -107,7 +119,7 @@ Continue with [logistics tracking]({{ '/guides/1688-order-tracking-api/' | relat
 
 ## Sources and verification
 
-Reviewed November 6, 2026 by the Nexscope Team against the procurement operation reference and request schemas in the main-site implementation. The examples are illustrative templates, not live buyer-account results. No paid request, order, payment, invoice or supplier verification was performed for this guide.
+The Nexscope Team reviewed the original procurement workflow on November 6, 2026, and checked the order list and detail contracts on November 18, 2026. The examples are illustrative templates, not live buyer-account results. No paid request, order, payment, invoice or supplier verification was performed for this guide.
 
 [Inspect the workflow reference](https://www.nexscope.ai/api-docs/1688-create-order?view=api&co-from=learn) and [current pricing](https://www.nexscope.ai/pricing?co-from=learn) before execution. Outer response processing time is not a credit charge.
 

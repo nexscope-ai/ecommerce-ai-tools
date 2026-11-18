@@ -47,6 +47,8 @@ Nexscope documents TikTok Shop product search, product videos, creator search, c
 
 ## A practical creator shortlist
 
+If you already have a product and want collaborators, follow the [TikTok Shop affiliate screening guide]({{ '/guides/find-tiktok-shop-affiliates/' | relative_url }}).
+
 Start with a product or category, then collect:
 
 - supported market;

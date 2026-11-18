@@ -74,6 +74,8 @@ Save the region, date window, sort measure and category with each product ID. Ch
 
 ## Turn one ranked product into a comparison
 
+For category trends and brand comparisons, use the [TikTok Shop product research guide]({{ '/guides/tiktok-shop-product-research/' | relative_url }}).
+
 Use the <a href="/data/tiktok-product-discovery/" data-track-tool="tiktok-product-discovery">TikTok Shop product discovery and bestseller API directory</a> to choose between looking up a dated ranking and finding candidates for a product idea.
 
 Pick three items that serve the same buyer need. Open each listing and compare the exact variant, offer quantity, current price and evidence for its main claim. A high ranking can help choose a product to investigate. Use those listing checks and your own costs to decide whether it is a useful comparison.
