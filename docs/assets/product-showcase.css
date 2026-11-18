@@ -46,13 +46,8 @@ html { scroll-behavior: smooth; }
 .showcase-featured-scoring > small { display: block; color: var(--muted); font-size: 11px; line-height: 1.5; }
 .showcase-featured-scoring > small + small { margin-top: 5px; }
 .showcase-featured-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.showcase-featured-list.is-stacked { position: relative; display: block; width: min(100%, 960px); height: clamp(300px, 50vw, 470px); margin-inline: auto; isolation: isolate; }
-.showcase-featured-card { position: relative; display: block; min-width: 0; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid #e6e2ef; border-radius: 18px; background: #fff; color: #fff !important; text-decoration: none; box-shadow: 0 18px 40px rgb(31 23 59 / 15%); transition: transform .25s ease, box-shadow .25s ease; }
-.showcase-featured-list.is-stacked .showcase-featured-card { position: absolute; top: var(--card-top); left: var(--card-left); z-index: var(--card-layer); width: 34%; transform: rotate(var(--card-tilt)); }
-.showcase-featured-list.is-stacked .showcase-featured-card:nth-child(1) { --card-left: 5%; --card-top: 20px; --card-tilt: -5deg; --card-layer: 1; }
-.showcase-featured-list.is-stacked .showcase-featured-card:nth-child(2) { --card-left: 33%; --card-top: 46px; --card-tilt: 4deg; --card-layer: 2; }
-.showcase-featured-list.is-stacked .showcase-featured-card:nth-child(3) { --card-left: 61%; --card-top: 27px; --card-tilt: -2deg; --card-layer: 3; }
-.showcase-featured-card:hover, .showcase-featured-card:focus-visible, .showcase-featured-list.is-stacked .showcase-featured-card:hover, .showcase-featured-list.is-stacked .showcase-featured-card:focus-visible { z-index: 5; transform: translateY(-10px) rotate(0) scale(1.025); box-shadow: 0 28px 60px rgb(31 23 59 / 23%); }
+.showcase-featured-card { position: relative; display: block; min-width: 0; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid #e6e2ef; border-radius: 18px; background: #fff; color: #fff !important; text-decoration: none; box-shadow: 0 18px 40px rgb(31 23 59 / 15%); transition: transform .25s ease, box-shadow .25s ease; }
+.showcase-featured-card:hover, .showcase-featured-card:focus-visible { z-index: 5; transform: translateY(-10px) rotate(0) scale(1.025); box-shadow: 0 28px 60px rgb(31 23 59 / 23%); }
 .showcase-featured-card:focus-visible { outline: 3px solid #8270f4; outline-offset: 4px; }
 .showcase-featured-rank { position: absolute; top: 15px; left: 15px; z-index: 1; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgb(255 255 255 / 75%); border-radius: 10px; background: rgb(255 255 255 / 88%); color: #4333b4; font-size: 12px; font-weight: 800; backdrop-filter: blur(8px); }
 .showcase-featured-image { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; background: #f5f2fa; }
@@ -60,8 +55,6 @@ html { scroll-behavior: smooth; }
 .showcase-featured-placeholder { padding: 20px; color: var(--muted); font-size: 13px; text-align: center; }
 .showcase-featured-copy { position: absolute; right: 0; bottom: 0; left: 0; display: flex; min-width: 0; flex-direction: column; gap: 9px; padding: 68px 20px 20px; background: linear-gradient(180deg, transparent, rgb(13 17 35 / 78%) 46%, rgb(13 17 35 / 96%)); }
 .showcase-featured-copy strong { display: block; overflow: hidden; color: #fff; font-size: 18px; line-height: 1.33; text-overflow: ellipsis; white-space: nowrap; }
-.showcase-featured-list.is-stacked .showcase-featured-card:not(:last-child) .showcase-featured-copy { padding-right: 65px; }
-.showcase-featured-list.is-stacked .showcase-featured-card:hover .showcase-featured-copy, .showcase-featured-list.is-stacked .showcase-featured-card:focus-visible .showcase-featured-copy { padding-right: 20px; }
 .showcase-featured-card:hover .showcase-featured-copy strong, .showcase-featured-card:focus-visible .showcase-featured-copy strong { display: -webkit-box; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
 .showcase-featured-copy > span { color: #e8e4ff; font-size: 12px; font-weight: 700; }
 .showcase-featured-card:hover .showcase-featured-copy > span, .showcase-featured-card:focus-visible .showcase-featured-copy > span { text-decoration: underline; text-underline-offset: 3px; }
@@ -592,10 +585,9 @@ html { scroll-behavior: smooth; }
   .media-preview-stage img, .media-preview-stage video { max-height: calc(100dvh - 122px); }
 }
 @media (max-width: 800px) {
-  .showcase-featured-list.is-stacked { display: flex; width: 100%; height: auto; gap: 14px; margin: 0; padding: 18px 3px 28px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-padding-inline: 3px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
-  .showcase-featured-list.is-stacked .showcase-featured-card { position: relative; top: auto; left: auto; flex: 0 0 min(72vw, 320px); width: auto; transform: none; scroll-snap-align: start; }
-  .showcase-featured-list.is-stacked .showcase-featured-card:hover, .showcase-featured-list.is-stacked .showcase-featured-card:focus-visible { transform: translateY(-4px); }
-  .showcase-featured-list.is-stacked .showcase-featured-card:not(:last-child) .showcase-featured-copy { padding-right: 20px; }
+  .showcase-featured-list.is-scrollable { display: flex; width: 100%; height: auto; gap: 14px; margin: 0; padding: 18px 3px 28px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-padding-inline: 3px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .showcase-featured-list.is-scrollable .showcase-featured-card { flex: 0 0 min(72vw, 320px); width: auto; transform: none; scroll-snap-align: start; }
+  .showcase-featured-list.is-scrollable .showcase-featured-card:hover, .showcase-featured-list.is-scrollable .showcase-featured-card:focus-visible { transform: translateY(-4px); }
   .showcase-featured-copy strong { display: -webkit-box; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
   .showcase-featured-swipe { display: block; margin: 0; color: var(--muted); font-size: 12px; text-align: center; }
   .showcase-featured-cta { margin-top: 28px; }

@@ -1,16 +1,17 @@
 {% assign published_products = site.data.product_showcase_pages %}
-{% if published_products.size > 0 %}
+{% assign featured_products = published_products | slice: 0, 6 %}
+{% if featured_products.size > 0 %}
 <section class="showcase-featured" aria-labelledby="showcase-featured-{{ include.context }}-title">
   <header class="showcase-featured-heading">
     <div>
       <span class="eyebrow">Nexscope editorial scores</span>
-      <h2 id="showcase-featured-{{ include.context }}-title">{% if published_products.size >= 3 %}The 3 highest-scoring products in the Gallery.{% else %}Highest-scoring products in the Gallery.{% endif %}</h2>
+      <h2 id="showcase-featured-{{ include.context }}-title">{% if featured_products.size > 1 %}Top {{ featured_products.size }} products by editorial score{% else %}Highest-scoring product in the Gallery{% endif %}</h2>
     </div>
-    <p>Up to three of the highest-scoring approved, published products are featured on Nexscope's Gallery and submission pages for added visibility. Rankings may change; traffic and sales are not guaranteed.</p>
+    <p>Explore approved Gallery listings ranked by their editorial review scores.</p>
   </header>
   {% include product-showcase-scoring.html %}
-  <div class="showcase-featured-list{% if published_products.size >= 3 %} is-stacked{% endif %}" aria-label="Highest-scoring published products">
-    {% for product in published_products limit:3 %}
+  <div class="showcase-featured-list{% if featured_products.size > 1 %} is-scrollable{% endif %}" aria-label="Highest-scoring published products">
+    {% for product in featured_products %}
     <a class="showcase-featured-card" href="{{ product.path | relative_url }}" data-track-product="gallery" data-product-id="{{ product.publicUuid | escape }}" data-product-placement="featured-{{ include.context }}">
       <span class="showcase-featured-rank" aria-hidden="true">0{{ forloop.index }}</span>
       <span class="showcase-featured-image">
@@ -23,7 +24,7 @@
     </a>
     {% endfor %}
   </div>
-  {% if published_products.size >= 3 %}<p class="showcase-featured-swipe">Swipe to explore all three products <span aria-hidden="true">↔</span></p>{% endif %}
+  {% if featured_products.size > 1 %}<p class="showcase-featured-swipe">Swipe to explore more products <span aria-hidden="true">↔</span></p>{% endif %}
   <div class="showcase-featured-cta">
     <div>
       <strong>Want your product in the Gallery?</strong>
