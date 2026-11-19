@@ -5,11 +5,11 @@ layout: default
 title: "1688 Search by Image: Compare Products & Suppliers"
 description: "Search 1688 by image to compare similar offers, prices, MOQ and supplier details. Includes a real API test and checks to make before ordering."
 permalink: /ecommerce-trends/1688-image-search-sourcing/
-last_reviewed: 2026-11-06
+last_reviewed: 2026-11-19
 date_published: 2026-09-20
-date_modified: 2026-11-06
+date_modified: 2026-11-19
 date: 2026-09-20
-last_modified_at: 2026-11-06
+last_modified_at: 2026-11-19
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -113,7 +113,11 @@ A minimal image-search request body looks like this. Replace the example URL wit
 
 For the successful test above, we omitted `imageUrl` and sent `"imageBase64": "<raw JPEG Base64>"` instead, without a `data:image/jpeg;base64,` prefix. Supply exactly one of `imageUrl`, `imageBase64`, or `imageId`, as the live documentation specifies. The Base64 itself is intentionally not reproduced in this article.
 
-The documented REST operation is `POST /api/skill-api/v1/skills/1688-search-by-image/run` with a bearer API key. Keep the key on your server, not in browser code or a shared document. Check the JSON `code` as well as the HTTP status: `code: 0` means the request was accepted or succeeded, not that a suitable supplier was found. Read candidate listings from the returned data, preserve `imageId` for pagination when present, and treat missing optional fields as unknown. The [live API reference](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn) is the source of truth for current inputs and billing.
+The documented REST operation is `POST https://api.nexscope.ai/alibaba1688/imageSearch` with a bearer API key. Keep the key on your server, not in browser code or a shared document. Check the JSON `code` as well as the HTTP status: `code: 0` means the request was accepted or succeeded, not that a suitable supplier was found. Read candidate listings from the returned data, preserve `imageId` for pagination when present, and treat missing optional fields as unknown. The [live API reference](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn) is the source of truth for current inputs and billing.
+
+### Match the image, then check MOQ for the exact SKU
+
+Use a clear PNG or JPEG of the product shape. Keep the offer ID and the returned image with each result so you can explain what matched. Confirm capacity, size, material and included parts on the detail page. For each offer, record `quantityBegin` when present and check the variant's price tier and minimum quantity for your own order size. Leave missing MOQ blank and ask the supplier to confirm it before comparing quotes. [Open the 1688 Image Search tester](https://www.nexscope.ai/api-docs/1688-search-by-image?co-from=learn#online-test)
 
 ## Which 1688 API answers which sourcing question?
 

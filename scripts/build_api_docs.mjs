@@ -270,7 +270,7 @@ export function buildPages(snapshot) {
   const hero = `<section class="catalog-hero" aria-labelledby="api-directory-title">
     <div>
       <h1 id="api-directory-title"><span class="api-title-accent">Ecommerce Data</span> APIs</h1>
-      <p class="catalog-description">Find product details, reviews, keywords and supplier offers across Amazon, TikTok Shop, 1688 and more.</p>
+      <p class="catalog-description">Use Nexscope product data APIs to look up product details, prices, reviews, keywords and supplier offers across Amazon, TikTok Shop, 1688 and more.</p>
       <p class="catalog-size">${snapshot.entries.length} APIs across ${groups.size} categories</p>
     </div>
     <aside class="catalog-trial" aria-label="API trial">
@@ -280,14 +280,14 @@ export function buildPages(snapshot) {
     </aside>
   </section>`;
   const content = `${hero}<div id="api-directory" class="catalog-directory" data-data-directory data-directory-kind="root">${searchControls('Search all APIs','category',groups.size,true)}${chips}${switcher}<div class="catalog-results"><p data-api-count role="status" aria-live="polite">${groups.size} categories found</p><button type="button" data-reset-filters hidden>Clear filters</button></div><p data-api-empty hidden>No matching APIs. Try another search or clear your filters.</p><section data-results-kind="categories" data-api-group="Categories"><div class="api-directory">${categories.join('')}</div></section><section data-results-kind="apis" data-api-group="APIs" hidden><div class="api-directory">${operations.sort((a,b)=>compareUsage(a.entry.usage,b.entry.usage)).map(item=>item.html).join('')}</div></section></div>${taskLinks ? `<nav class="api-intent-navigation" aria-label="Common ecommerce data tasks">${taskLinks}</nav>` : ''}${workflowMarkup(groups)}${selectionHelp(rootCopy)}${usageNote(snapshot)}`;
-  return new Map([['index.md',page('Ecommerce Data APIs for Amazon, TikTok & 1688 | Nexscope','Explore ecommerce APIs for Amazon, TikTok Shop and 1688. Test product, review and sourcing endpoints with 1,000 free trial credits for new accounts.','',content)],...pages]);
+  return new Map([['index.md',page('Ecommerce Data APIs for Amazon, TikTok & 1688 | Nexscope','Explore ecommerce product data APIs for Amazon, TikTok Shop and 1688. Test product price, review and supplier endpoints with 1,000 free trial credits for new accounts.','',content)],...pages]);
 }
 
 export function renderStandalone(source, snapshot) {
   const title = JSON.parse(source.match(/^title: (.+)$/m)[1]);
   const description = JSON.parse(source.match(/^description: (.+)$/m)[1]);
   const path = source.match(/^permalink: (.+)$/m)[1];
-  const modifiedAt = [copyReviewedAt,snapshot.generatedAt,snapshot.usageUpdatedAt,snapshot.creditBasis === 'public-historical-statistics' ? null : snapshot.creditUpdatedAt].filter(Boolean).sort((a,b)=>Date.parse(b)-Date.parse(a))[0];
+  const modifiedAt = [copyReviewedAt, path === '/data/' && '2026-11-19',snapshot.generatedAt,snapshot.usageUpdatedAt,snapshot.creditBasis === 'public-historical-statistics' ? null : snapshot.creditUpdatedAt].filter(Boolean).sort((a,b)=>Date.parse(b)-Date.parse(a))[0];
   const category=path==='/data/' ? null : snapshot.entries.find(e=>categoryPath(e.categorySlug)===path)?.categorySlug;
   const selected=[...snapshot.entries.filter(e=>!category||e.categorySlug===category)].sort((a,b)=>compareUsage(a.usage,b.usage));
   const groups=new Map([...Map.groupBy(snapshot.entries,e=>e.categorySlug)].sort(([a],[b])=>compareUsage(snapshot.categoryUsage?.[a],snapshot.categoryUsage?.[b])));

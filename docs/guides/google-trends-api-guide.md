@@ -4,12 +4,12 @@ learning_topic: agents
 related_topics: [visibility, research]
 content_kind: guide
 title: "How to Check Product Seasonality with Google Trends | Nexscope"
-description: "Check product seasonality with a fixed keyword, country and date window. Interpret Google Trends scores, compare periods and avoid confusing interest with sales."
+description: "Check product seasonality with Google Trends data in Python. Compare two keywords over the same dates and interpret normalized interest scores."
 permalink: /guides/google-trends-api/
 date_published: 2026-10-28
-date_modified: 2026-10-30
-last_modified_at: 2026-10-30
-last_reviewed: 2026-10-30
+date_modified: 2026-11-19
+last_modified_at: 2026-11-19
+last_reviewed: 2026-11-19
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -101,6 +101,37 @@ This is a **documentation-derived input example**:
 The request defines a past annual window; it does not imply that the example has been run or that a complete series will be returned. The current `keyword` field is a string. Start with one term and inspect the documented rules before assuming that a JSON array or a list of comma-separated terms is supported.
 
 A Python application can submit that JSON with an HTTPS client and then retain the original response. Check HTTP errors, the outer business `code` and the presence of usable data separately. Do not construct a successful chart from an authentication error or a null payload. Keep the API key on your server or in your local environment rather than in browser source.
+
+## Get Google Trends data with Python
+
+This example uses Nexscope's keyword endpoint. It saves two separate series for the same country and dates. Use them to compare the **timing** of seasonal peaks and quiet periods. Each response may normalize its own values, so a higher score from one request does not establish higher search demand than the other.
+
+```python
+import json
+import os
+from pathlib import Path
+from urllib.request import Request, urlopen
+
+endpoint = "https://api.nexscope.ai/googleTrend/getTrendByKeys"
+headers = {
+    "Authorization": "Bearer " + os.environ["NEXSCOPE_API_KEY"],
+    "Content-Type": "application/json",
+}
+window = {"region": "US", "dayRangeStart": "2025-10-01",
+          "dayRangeEnd": "2026-09-30"}
+
+for keyword, filename in [("portable blender", "portable-blender.json"),
+                          ("travel blender", "travel-blender.json")]:
+    request = Request(endpoint, data=json.dumps({"keyword": keyword, **window}).encode(),
+                      headers=headers, method="POST")
+    with urlopen(request, timeout=20) as response:
+        result = json.load(response)
+    if result.get("code") != 0 or not result.get("data"):
+        raise RuntimeError(f"No usable response for {keyword}")
+    Path(filename).write_text(json.dumps(result["data"], indent=2), encoding="utf-8")
+```
+
+Compare the dates covered in both files before drawing a conclusion. Record days with missing data and validate a seasonal peak with marketplace evidence before ordering inventory. [Nexscope keyword endpoint](https://www.nexscope.ai/api-docs/google-trends-by-keywords) · [Google Trends API Alpha](https://developers.google.com/search/apis/trends)
 
 ## How do you interpret the 0–100 interest scale?
 

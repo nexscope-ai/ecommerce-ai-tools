@@ -5,10 +5,10 @@ layout: default
 title: "Amazon Price History: Price, BSR & Sales"
 description: "Check Amazon ASIN price history and track Black Friday changes by price type. Includes the Nexscope Price Series Playground and a dated example."
 permalink: /amazon-price-history/
-last_reviewed: 2026-11-12
+last_reviewed: 2026-11-19
 date_published: 2026-09-17
-date_modified: 2026-11-12
-last_modified_at: 2026-11-12
+date_modified: 2026-11-19
+last_modified_at: 2026-11-19
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -27,6 +27,8 @@ image_caption: "Illustration: interpret price, BSR, and demand signals together 
 **Amazon price history is a time series of observed product prices for a specific ASIN and marketplace.** Used with Best Sellers Rank (BSR), rating, seller-count, and monthly-sales signals, it can help you investigate promotions, seasonality, competitive pressure, and changes in product demand without treating one current snapshot as the whole story.
 
 > **Key takeaways:** Start with the correct ASIN and Amazon marketplace, keep every metric on its own scale, and compare aligned dates rather than isolated highs and lows. Nexscope's Amazon Product Price Series capability can return historical price, BSR, rating, seller-count, and monthly-sales signals when available. Provider estimates are directional evidence—not audited seller-account results.
+
+For a daily watchlist of current prices, see the [Amazon price tracker for Google Sheets]({{ '/guides/amazon-price-tracker-google-sheets/' | relative_url }}).
 
 ## How to check an Amazon ASIN’s price history before Black Friday
 

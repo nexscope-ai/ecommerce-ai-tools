@@ -6,9 +6,9 @@ title: "Walmart Product API: Search, Keywords & Market Research"
 description: "Use Walmart research APIs to search products, inspect details and explore category and keyword evidence. Separate provider signals from private seller-account data."
 permalink: /guides/walmart-product-keyword-api/
 date_published: 2026-10-23
-date_modified: 2026-10-23
-last_modified_at: 2026-10-23
-last_reviewed: 2026-10-23
+date_modified: 2026-11-19
+last_modified_at: 2026-11-19
+last_reviewed: 2026-11-19
 author: Nexscope Team
 schema_type: Article
 og_type: article
@@ -121,3 +121,5 @@ The [Walmart Product Detail reference](https://www.nexscope.ai/api-docs/walmart-
 Check [current Nexscope pricing and access](https://www.nexscope.ai/pricing?co-from=learn) alongside the endpoint's current estimate. Plan the whole workflow, not just one request; no measured total is available from this article.
 
 {% include api-guide-faq.html %}
+
+To compare an item's dated price observations, follow the [Walmart price history guide]({{ '/guides/walmart-price-history/' | relative_url }}).
