@@ -63,15 +63,16 @@ Inline INPUT/OUTPUT labels and expandable examples have been removed from both c
 
 `scripts/data/api-usage.public.json` contains only approved aggregate counts,
 embedded during the static build; no runtime statistics API or credentials are used.
-The snapshot exported on 2026-10-29 covers all retained historical requests,
+The snapshot exported on 2026-11-23 at 09:40:53 Asia/Shanghai covers all retained historical requests,
 including test/deleted accounts, all invocation types and all request statuses.
 It is not a success-only or production-customer statistic.
 
-The exported CSVs identify APIs by canonical `api_slug`. The 233 current Data
-APIs match 176 rows and contain 89,220 recorded requests. The other 57 canonical
+The exported CSVs identify APIs by canonical `api_slug`. The 478 published
+metric records contain 125,313 recorded requests. Of these, 189 canonical
 slugs have no retained records in this exhaustive export and display zero;
 historical aliases/shared proxy traffic are not estimated or redistributed.
-The source's global 105,076 calls includes APIs outside this directory.
+The source export covers 586 APIs and 196,660 calls, including APIs outside
+this published metrics snapshot. Existing credit ranges retain their own date.
 Users are distinct recorded users per API, excluding anonymous calls. Category
 calls sum only listed APIs. Category users sum per-API user counts, as requested;
 the tooltip clarifies that users of multiple APIs may count more than once.
