@@ -10,6 +10,7 @@ product_showcase_page: true
 private_page: true
 ---
 <section class="showcase-status-shell" data-management-page data-api-base="{{ site.product_showcase_api_base }}" data-public-page-base="{{ '/product-showcase/product' | relative_url }}" data-showcase-url="{{ '/product-showcase/' | relative_url }}" aria-busy="true">
+  <p class="showcase-paused-notice" role="status">Product submissions and updates are temporarily unavailable. Existing submission details remain available to view.</p>
   <header class="management-page-intro">
     <div class="management-page-intro-main">
       <div class="management-page-status-row">
@@ -19,7 +20,7 @@ private_page: true
         </div>
       </div>
       <h1>Manage your product submission.</h1>
-      <p>Keep this private link bookmarked. Your product-page feedback will appear here after editorial review. You can also check publishing status, update product information, or take a published product offline.</p>
+      <p>Keep this private link bookmarked. Your product-page feedback will appear here after editorial review. Publishing status and existing information are available in read-only mode. Updates are temporarily unavailable.</p>
       <p class="management-feedback" data-management-feedback role="status" hidden></p>
     </div>
     <a class="showcase-primary management-public-link" data-view-public-product href="" target="_blank" rel="noopener noreferrer" hidden>View product detail page <span aria-hidden="true">↗</span></a>
@@ -54,13 +55,13 @@ private_page: true
       {% include product-showcase-scoring.html %}
       <div class="management-suggestion-toolbar" data-review-suggestion-toolbar hidden>
         <span>SEO / GEO suggestions</span>
-        <button type="button" data-copy-review-suggestion>Copy Markdown</button>
+        <button disabled type="button" data-copy-review-suggestion>Copy Markdown</button>
       </div>
       <div class="markdown-preview management-suggestion-markdown" data-review-suggestion hidden></div>
     </section>
 
     <section class="management-edit-section" id="edit-product-information" aria-label="Edit product information and resubmit">
-      <form class="management-edit-form" novalidate>
+      <form class="management-edit-form" novalidate><fieldset disabled class="showcase-paused-fields">
         <section class="management-form-section">
           <div class="management-form-section-heading"><span>01</span><div><h3>Product information</h3><p>Update the name and description shown to the editorial team.</p></div></div>
           <div class="management-form-section-body management-form-grid">
@@ -68,7 +69,7 @@ private_page: true
             <div class="markdown-field management-field-full">
               <div class="markdown-field-header">
                 <div><strong id="management-product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Markdown, 20–5000 characters. Use headings, lists and links to make the product easier to review.</span></div>
-                <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
+                <button disabled class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
               </div>
               <textarea name="productDetails" minlength="20" maxlength="5000" rows="9" required aria-labelledby="management-product-details-label"></textarea>
               <small class="field-error" data-error-for="productDetails" role="alert" hidden></small>
@@ -85,7 +86,7 @@ private_page: true
               <div class="media-field-header"><div><strong>Product images <span class="required-mark" aria-label="required">*</span></strong><span>Keep or replace 1–5 JPEG, PNG or WebP images, up to 10 MB each. The first image is used as the main product image.</span></div><span class="media-limit">0 / 5</span></div>
               <input type="hidden" name="imageUploadKeys" value="[]">
               <input class="media-file-input" data-media-input type="file" accept="image/jpeg,image/png,image/webp" multiple>
-              <button class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
+              <button disabled class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
               <div class="media-upload-list image-upload-list" data-media-list aria-live="polite"></div>
               <small class="field-error" data-error-for="imageUploadKeys" role="alert" hidden></small>
             </div>
@@ -93,13 +94,13 @@ private_page: true
               <div class="media-field-header"><div><strong>Product video</strong><span>Optional: keep, replace (MP4/WebM up to 100 MB), or use a link. No points are deducted for not submitting a video. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn" data-utm-campaign="product_showcase_management" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
               <input type="hidden" name="videoUrl">
               <div class="media-mode-switch" role="tablist" aria-label="Video source">
-                <button type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
-                <button type="button" role="tab" aria-selected="false" data-video-mode="URL">Use video URL</button>
+                <button disabled type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
+                <button disabled type="button" role="tab" aria-selected="false" data-video-mode="URL">Use video URL</button>
               </div>
               <div data-video-panel="UPLOAD">
                 <div data-media-upload="VIDEO" data-max-files="1" data-max-bytes="104857600">
                   <input class="media-file-input" data-media-input type="file" accept="video/mp4,video/webm">
-                  <button class="media-dropzone media-dropzone-compact" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add the product video</strong><small>MP4 or WebM</small></span></button>
+                  <button disabled class="media-dropzone media-dropzone-compact" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add the product video</strong><small>MP4 or WebM</small></span></button>
                   <div class="media-upload-list video-upload-list" data-media-list aria-live="polite"></div>
                 </div>
               </div>
@@ -139,10 +140,10 @@ private_page: true
           <div class="management-form-section-body">
             <label><strong class="field-label">Contact email</strong><span>Kept private and fixed to the email used for the original submission.</span><input name="submitterEmail" type="email" maxlength="254" required readonly aria-readonly="true" autocomplete="email" inputmode="email"><small class="field-error" data-error-for="submitterEmail" role="alert" hidden></small></label>
             <div class="management-resubmit-note"><strong>What happens after you save?</strong><span>The updated version becomes Under review and Offline immediately. It will not return online until it is approved and published again.</span></div>
-            <div class="management-edit-actions"><button class="showcase-primary" type="submit" data-management-save>Save changes and resubmit <span aria-hidden="true">↗</span></button></div>
+            <div class="management-edit-actions"><button disabled class="showcase-primary" type="submit" data-management-save>Temporarily unavailable</button></div>
           </div>
         </section>
-      </form>
+      </fieldset></form>
     </section>
 
     <section class="management-community" aria-labelledby="management-community-title">
@@ -171,38 +172,8 @@ private_page: true
 
     <section class="management-offline-panel" data-offline-panel hidden>
       <div><h2>Take this product offline</h2><p>The product will disappear from the Product Gallery immediately. Its approved submission and private management page will remain available.</p></div>
-      <button class="showcase-offline" type="button" data-take-offline>Take product offline</button>
+      <button disabled class="showcase-offline" type="button" data-take-offline>Temporarily unavailable</button>
     </section>
 
   </div>
-
-  <dialog class="markdown-editor-dialog" data-markdown-dialog aria-labelledby="management-markdown-editor-title">
-    <div class="markdown-dialog-header">
-      <div><span class="eyebrow">Product details</span><h2 id="management-markdown-editor-title">Edit Markdown with a live preview</h2><p>GitHub-flavored Markdown supports headings, emphasis, nested lists, links, tables, task lists, quotes, images and code. Raw HTML is displayed as text.</p></div>
-      <button class="markdown-dialog-close" type="button" data-close-markdown aria-label="Close Markdown editor">×</button>
-    </div>
-    <div class="markdown-editor-grid">
-      <section class="markdown-editor-pane" aria-labelledby="management-markdown-input-title">
-        <div class="markdown-pane-heading"><strong id="management-markdown-input-title">Markdown</strong><span>Write</span></div>
-        <textarea data-markdown-input maxlength="5000" spellcheck="true" aria-labelledby="management-markdown-input-title"></textarea>
-      </section>
-      <section class="markdown-preview-pane" aria-labelledby="management-markdown-preview-title">
-        <div class="markdown-pane-heading"><strong id="management-markdown-preview-title">Rendered preview</strong><span class="markdown-readonly-label">Read only</span></div>
-        <article class="markdown-preview" data-markdown-preview aria-live="polite" aria-readonly="true"></article>
-      </section>
-    </div>
-    <div class="markdown-dialog-footer"><span><strong data-count="productDetails">0 / 5000</strong> · Saved into this resubmission as Markdown.</span><button class="showcase-primary" type="button" data-close-markdown>Done editing</button></div>
-  </dialog>
-
-  <dialog class="management-confirm-dialog" data-management-confirm-dialog aria-labelledby="management-confirm-title" aria-describedby="management-confirm-description">
-    <div class="management-confirm-header">
-      <div><span class="eyebrow">Confirm action</span><h2 id="management-confirm-title" data-management-confirm-title></h2></div>
-      <button class="management-confirm-close" type="button" data-management-confirm-cancel aria-label="Cancel and close">×</button>
-    </div>
-    <p id="management-confirm-description" data-management-confirm-description></p>
-    <div class="management-confirm-actions">
-      <button class="showcase-secondary" type="button" data-management-confirm-cancel>Cancel</button>
-      <button class="showcase-primary" type="button" data-management-confirm-submit></button>
-    </div>
-  </dialog>
 </section>

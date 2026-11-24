@@ -108,7 +108,7 @@ If you want to inspect the listing yourself first, use the [Amazon listing audit
 
 The report uses one public product URL, market and report language. Select at least one paid service; SEO/GEO analyses are included with that choice. Review the current credit quote before confirming. It is separate from the tool's live research steps, and neither route publishes edits to Seller Central for you.
 
-Use the [report request guide]({{ '/guides/product-growth-report-guide/' | relative_url }}) for service selection and delivery. A short phrase accompanying an advertising image does not imply a full listing rewrite; select product copy rewriting when that is the deliverable you need.
+Use the  for service selection and delivery. A short phrase accompanying an advertising image does not imply a full listing rewrite; select product copy rewriting when that is the deliverable you need.
 
 ## How do you turn a finding into a testable change?
 

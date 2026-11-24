@@ -86,7 +86,7 @@ Choose **Product copy rewriting** in the report request. Supply the product URL,
 
 If you mainly need to decide which buyer phrases belong in each field, start with [keyword mapping]({{ '/guides/product-keyword-mapping/' | relative_url }}). Select the rewrite when you need suggested copy, rather than assuming a keyword analysis includes a complete new listing.
 
-The current service returns reviewed report materials. It does not automatically replace your marketplace listing or store content. Review the quote before confirming; use the [Product Growth Report guide]({{ '/guides/product-growth-report-guide/' | relative_url }}) for the broader submission and delivery process.
+The current service returns reviewed report materials. It does not automatically replace your marketplace listing or store content. Review the quote before confirming; use the  for the broader submission and delivery process.
 
 ## Keep page copy and ad copy separate
 
@@ -116,8 +116,8 @@ No. Brief image text or accompanying advertising language does not mean a full p
 
 ## Sources and scope
 
-- [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
+-  — current product description and service boundaries.
+-  — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

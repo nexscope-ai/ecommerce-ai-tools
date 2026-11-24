@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Submit Your Product Free | Nexscope Product Gallery
-description: Submit a product URL or Amazon ASIN to Nexscope for free editorial feedback. Add facts and images; approved products get a free Gallery page with your store link.
+title: Product Submissions Temporarily Unavailable | Nexscope
+description: Product submissions and updates are temporarily unavailable. Existing submission details remain available to view.
 keywords:
   - submit product for free
   - Nexscope product submission
@@ -10,7 +10,7 @@ keywords:
   - free editorial product review
 permalink: /product-showcase/submit/
 last_modified_at: 2026-11-06
-robots: index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1
+robots: noindex,follow
 sitemap:
   priority: 1.0
   changefreq: weekly
@@ -26,23 +26,24 @@ image_alt: Product information, images and video prepared for an editorially rev
 image_caption: Submit product details for free review and a possible public AI-discovery page in Nexscope Product Gallery.
 ---
 <section class="showcase-form-shell" data-showcase-form data-api-base="{{ site.product_showcase_api_base }}">
+  <p class="showcase-paused-notice" role="status">Product submissions and updates are temporarily unavailable. Existing submission details remain available to view.</p>
   <header class="showcase-form-intro">
     <div class="showcase-form-heading">
-      <span class="eyebrow">Free product-page review and Gallery submission</span>
-      <h1>Submit your product free.<br><span>Get editorial feedback.</span></h1>
-      <p>Share a public product URL or Amazon ASIN, verified details, and one accurate image. An editor will review your submission and leave specific feedback on a private page. If approved and published, your product also gets a free Gallery page linking to the original listing—another factual source that search and AI systems can discover. No payment or store login is required.</p>
+      <span class="eyebrow">PRODUCT SUBMISSIONS PAUSED</span>
+      <h1>Product submissions are paused.</h1>
+      <p>New product submissions and updates are temporarily unavailable. The form below is read-only while this feature is paused.</p>
       <div class="showcase-form-heading-actions">
-        <a class="showcase-primary submission-hero-jump" href="#product-submission-form" data-submission-form-jump="hero">Start free submission <span aria-hidden="true">&nbsp;↓</span></a>
+        <button class="showcase-primary" type="button" disabled>Temporarily unavailable</button>
       </div>
     </div>
     <aside class="submission-promise" aria-label="Submission promises">
-      <span class="submission-promise-label">BEFORE YOU START</span>
-      <strong>What you need to begin</strong>
-      <p>Have your product page URL or ASIN, exact product name, a short factual description, one clear image, and a contact email ready.</p>
+      <span class="submission-promise-label">EXISTING SUBMISSIONS</span>
+      <strong>Your existing information is still available</strong>
+      <p>Use your original private management link to view previously submitted information and editorial feedback.</p>
       <ul>
-        <li>Submission and editorial review are completely free</li>
-        <li>No store account connection or payment</li>
-        <li>Save the private link to see feedback and status</li>
+        <li>New submissions are disabled</li>
+        <li>Editing and uploads are disabled</li>
+        <li>Existing details remain available to view</li>
       </ul>
       <a class="submission-review-link" href="#submission-review">What happens after you submit? ↓</a>
     </aside>
@@ -52,13 +53,8 @@ image_caption: Submit product details for free review and a possible public AI-d
 
   <div class="submission-layout" id="product-submission-form">
     <noscript><p class="seller-scope">JavaScript is needed to upload images and submit this form. You can read the review process below or use the <a href="https://learn.nexscope.ai/contact/">official contact page</a> for help.</p></noscript>
-    <form class="showcase-form" novalidate>
-      <aside class="submission-draft" aria-label="Keep your product description">
-        <strong>Keep your work while you check the product facts.</strong>
-        <p>Save the product name and description in this browser tab. Email, product links and uploaded files are not saved. Restore them while this tab stays open; saved text expires after 24 hours.</p>
-        <div><button type="button" data-draft-save>Save text draft</button><button type="button" data-draft-restore hidden>Restore saved text</button><button type="button" data-draft-clear hidden>Delete saved text</button></div>
-        <p role="status" data-draft-status></p>
-      </aside>
+    <form class="showcase-form" novalidate><fieldset disabled class="showcase-paused-fields">
+
       <div class="form-section" data-showcase-step="source">
         <div class="form-section-heading"><span class="form-number">01</span><div><h2>Start with your product link or ASIN <span class="required-mark" aria-label="required">*</span></h2><p>Choose the source you already have. We use it for review; you will add and check the public product details in the next step.</p></div></div>
         <div class="form-section-body">
@@ -95,7 +91,7 @@ image_caption: Submit product details for free review and a possible public AI-d
           <div class="markdown-field">
             <div class="markdown-field-header">
               <div><strong id="product-details-label">Product details <span class="required-mark" aria-label="required">*</span></strong><span>Plain text or Markdown, 20–5000 characters. Explain who it is for, key specifications or compatibility, and important limits. Add only facts you can support.</span></div>
-              <button class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
+              <button disabled class="markdown-editor-open" type="button" data-open-markdown>Open Markdown editor</button>
             </div>
             <p class="showcase-field-warning" role="note"><strong>Writing reminder:</strong> Use specific, verifiable facts about this product. Vague or copied text may affect editorial review and make the public page less useful.</p>
             <textarea name="productDetails" minlength="20" maxlength="5000" rows="7" required aria-labelledby="product-details-label" placeholder="## Product overview&#10;[Describe the exact product and variant in 1–2 sentences.]&#10;&#10;### Best for&#10;[Describe the buyer and one real use case.]&#10;&#10;### Verified facts&#10;- Size, material or capacity: [Add verified facts.]&#10;- Compatibility: [List supported devices, platforms or use cases.]&#10;- Included items: [List what the buyer receives.]&#10;&#10;### How it works&#10;[Explain the main feature or workflow without unsupported claims.]&#10;&#10;### Limits&#10;[Note exclusions, conditions or what buyers should check before purchase.]"></textarea>
@@ -107,7 +103,7 @@ image_caption: Submit product details for free review and a possible public AI-d
             <p class="showcase-field-warning" role="note"><strong>Image reminder:</strong> Upload a clear image of this exact product and variant. Blurry or unrelated images may affect review.</p>
             <input type="hidden" name="imageUploadKeys" value="[]">
             <input class="media-file-input" data-media-input type="file" accept="image/jpeg,image/png,image/webp" multiple>
-            <button class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
+            <button disabled class="media-dropzone" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add product images</strong><small>Choose files or drop them here</small></span></button>
             <div class="media-upload-list image-upload-list" data-media-list aria-live="polite"></div>
             <small class="field-error" id="imageUploadKeys-error" data-error-for="imageUploadKeys" role="alert" hidden></small>
           </div>
@@ -116,13 +112,13 @@ image_caption: Submit product details for free review and a possible public AI-d
             <div class="media-field-header"><div><strong>Product video</strong><span>Optional: MP4/WebM up to 100 MB or an HTTPS URL. Add video when it helps explain the product. <a class="video-generator-link" href="https://www.nexscope.ai/seller/video-generation/image-to-video?co-from=learn" data-utm-campaign="product_showcase_submission" data-utm-content="video_hint" target="_blank" rel="noopener noreferrer">Create one from an image <span aria-hidden="true">↗</span></a></span></div></div>
             <input type="hidden" name="videoUrl">
             <div class="media-mode-switch" role="tablist" aria-label="Video source">
-              <button type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
-              <button type="button" role="tab" aria-selected="false" data-video-mode="URL">Use video URL</button>
+              <button disabled type="button" role="tab" aria-selected="true" data-video-mode="UPLOAD">Upload video</button>
+              <button disabled type="button" role="tab" aria-selected="false" data-video-mode="URL">Use video URL</button>
             </div>
             <div data-video-panel="UPLOAD">
               <div data-media-upload="VIDEO" data-max-files="1" data-max-bytes="104857600">
                 <input class="media-file-input" data-media-input type="file" accept="video/mp4,video/webm">
-                <button class="media-dropzone media-dropzone-compact" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add a product video</strong><small>MP4 or WebM</small></span></button>
+                <button disabled class="media-dropzone media-dropzone-compact" type="button" data-media-choose><span class="media-dropzone-icon" aria-hidden="true">＋</span><span><strong>Add a product video</strong><small>MP4 or WebM</small></span></button>
                 <div class="media-upload-list video-upload-list" data-media-list aria-live="polite"></div>
               </div>
             </div>
@@ -138,10 +134,10 @@ image_caption: Submit product details for free review and a possible public AI-d
           <label><strong class="field-label">Contact email <span class="required-mark" aria-label="required">*</span></strong><span>Kept private and never displayed on the public product page.</span><input name="submitterEmail" type="email" maxlength="254" required autocomplete="email" inputmode="email" placeholder="you@company.com"><small class="field-error" id="submitterEmail-error" data-error-for="submitterEmail" role="alert" hidden></small></label>
           <div class="trust-note"><strong>Your email stays private.</strong><span>It is used only to verify important requests to update or remove product information, and never for marketing.</span></div>
           <p class="form-error" role="alert" hidden></p>
-          <div class="submission-actions"><button class="showcase-primary" type="submit">Request free product-page feedback <span aria-hidden="true">↗</span></button><small>Save your private management link after submitting. Your editorial feedback will appear there after review.</small></div>
+          <div class="submission-actions"><button disabled class="showcase-primary" type="submit">Temporarily unavailable</button><small>Save your private management link after submitting. Your editorial feedback will appear there after review.</small></div>
         </div>
       </div>
-    </form>
+    </fieldset></form>
   </div>
 
   <details class="seller-supplement">
@@ -176,7 +172,7 @@ image_caption: Submit product details for free review and a possible public AI-d
   <dialog class="markdown-editor-dialog" data-markdown-dialog aria-labelledby="markdown-editor-title">
     <div class="markdown-dialog-header">
       <div><span class="eyebrow">Product details</span><h2 id="markdown-editor-title">Edit Markdown with a live preview</h2><p>GitHub-flavored Markdown supports headings, emphasis, nested lists, links, tables, task lists, quotes, images and code. Raw HTML is displayed as text.</p></div>
-      <button class="markdown-dialog-close" type="button" data-close-markdown aria-label="Close Markdown editor">×</button>
+      <button disabled class="markdown-dialog-close" type="button" data-close-markdown aria-label="Close Markdown editor">×</button>
     </div>
     <div class="markdown-editor-grid">
       <section class="markdown-editor-pane" aria-labelledby="markdown-input-title">
@@ -188,7 +184,7 @@ image_caption: Submit product details for free review and a possible public AI-d
         <article class="markdown-preview" data-markdown-preview aria-live="polite" aria-readonly="true"></article>
       </section>
     </div>
-    <div class="markdown-dialog-footer"><span><strong data-count="productDetails">0 / 5000</strong> · Saved into this submission as Markdown.</span><button class="showcase-primary" type="button" data-close-markdown>Done editing</button></div>
+    <div class="markdown-dialog-footer"><span><strong data-count="productDetails">0 / 5000</strong> · Saved into this submission as Markdown.</span><button disabled class="showcase-primary" type="button" data-close-markdown>Done editing</button></div>
   </dialog>
 
 </section>

@@ -60,4 +60,4 @@ Nexscope’s separate Amazon UK audit of **ASIN B0HDC7BHX5** shows the page-side
 
 {% include article-action.html placement="article-middle" %}
 
-For a human-reviewed analysis of your item, choose **AI mentions & recommendations** in the Nexscope Product Growth Report. The service reviews sampled buying questions and available answers for one public product URL and market. Use the Alexa workflow above for your storefront-specific test. [See the report scope and sample](https://learn.nexscope.ai/product-growth-report/)
+For a human-reviewed analysis of your item, choose **AI mentions & recommendations** in the Nexscope Product Growth Report. The service reviews sampled buying questions and available answers for one public product URL and market. Use the Alexa workflow above for your storefront-specific test.

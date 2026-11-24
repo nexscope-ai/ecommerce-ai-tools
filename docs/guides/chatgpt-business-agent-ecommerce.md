@@ -56,7 +56,7 @@ Use a simple record for each preview. Save the exact question, expected answer, 
 
 If the agent guesses a dimension or combines the contents of two variants, first confirm the underlying fact. Then revise the relevant product field, policy or agent guidance and rerun the same preview question. When the exact size or delivery estimate is unavailable, guide the shopper to the product page or checkout for the current information.
 
-Nexscope's Product Growth Report can help prepare that product-page copy. Choose **Product copy rewriting** to get a reviewed title, selling points, description and FAQ suggestions grounded in the product information you submit. Start with one public product URL and one target market. Apply approved edits in your store and test the agent again. [Report scope and public example](https://learn.nexscope.ai/product-growth-report/)
+Nexscope's Product Growth Report can help prepare that product-page copy. Choose **Product copy rewriting** to get a reviewed title, selling points, description and FAQ suggestions grounded in the product information you submit. Start with one public product URL and one target market. Apply approved edits in your store and test the agent again.
 
 {% include article-action.html placement="article-middle" %}
 

@@ -17,13 +17,6 @@ export function learnDataHeader(path) {
     <li><a href="/video/" data-track-tool="video-directory">Video workflows</a></li>
     <li><a href="/ad-library/" data-track-tool="ad-library">Ad Library</a></li>
     <li class="nav-dropdown"><details>
-      <summary>Product Growth <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
-      <ul class="nav-dropdown-menu">
-        <li><a href="/ecommerce-ai-tools/product-showcase/" data-track-tool="product-gallery">Product Gallery</a></li>
-        <li><a href="/product-growth-report/" data-track-tool="product-growth-report">Product Growth Report</a></li>
-      </ul>
-    </details></li>
-    <li class="nav-dropdown"><details>
       <summary>Resources <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></summary>
       <ul class="nav-dropdown-menu">
         <li><a href="/ecommerce-ai-tools/">Guides &amp; resources</a></li>
@@ -38,11 +31,11 @@ export function learnDataFooter() {
   return `<footer class="learn-site-footer"><div class="wrap resource-footer">
   <div><a href="/">Nexscope Learn</a><p>Ecommerce data. Clearer product discovery.</p></div>
   <nav aria-label="Footer">
-    <a href="/data/">Data APIs</a><a href="/social/">Social APIs</a><a href="/video-apis/" data-track-tool="video-api-directory">Video &amp; Image APIs</a><a href="/video/" data-track-tool="video-directory">Video workflows</a><a href="/ecommerce-ai-tools/product-showcase/">Product Gallery</a>
-    <a href="/ecommerce-ai-tools/product-showcase/submit/" data-showcase-submit-cta="data-footer">List a product free</a>
+    <a href="/data/">Data APIs</a><a href="/social/">Social APIs</a><a href="/video-apis/" data-track-tool="video-api-directory">Video &amp; Image APIs</a><a href="/video/" data-track-tool="video-directory">Video workflows</a>
+
     <a href="/tools/">Tools</a><a href="/pricing/">Pricing</a><a href="/ecommerce-ai-tools/">Learning library</a>
     <a href="/ecommerce-ai-tools/community/">Community</a><a href="/about/">About</a><a href="/security/">Security</a><a href="/contact/">Contact</a>
     <a href="https://www.nexscope.ai/privacy?co-from=learn">Privacy</a><a href="https://www.nexscope.ai/terms?co-from=learn">Terms</a><a href="#analytics-preferences">Cookie settings</a>
-  </nav><p class="learn-footer-disclosure">Nexscope publishes this directory and Product Gallery. Product submission, review and approved display are free. API access and credits follow the selected operation’s official documentation.</p>
+  </nav><p class="learn-footer-disclosure">Nexscope publishes this directory. API access and credits follow the selected operation’s official documentation.</p>
   </div></footer>`;
 }

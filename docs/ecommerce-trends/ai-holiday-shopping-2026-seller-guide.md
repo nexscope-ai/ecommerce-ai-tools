@@ -79,7 +79,7 @@ Start with five to ten high-priority gift SKUs. Give each an owner who can confi
 
 Shopify's report includes brand examples, but their outcomes are not a forecast for another store. If you use [Merchant Center AI performance insights](../merchant-center-ai-performance-insights/) or other channel reports, note the date, market, and reporting definition before comparing results.
 
-Once one SKU has verified facts, accurate images and a public selling page, you can [submit it to the Nexscope Product Gallery]({{ '/product-showcase/submit/' | relative_url }}) for editorial review. An approved Gallery page is an additional product explanation, not a live offer feed or a guarantee of AI shopping visibility.
+Once one SKU has verified facts, accurate images and a public selling page, you can  for editorial review. An approved Gallery page is an additional product explanation, not a live offer feed or a guarantee of AI shopping visibility.
 
 ## Where does an image-to-video product clip help?
 

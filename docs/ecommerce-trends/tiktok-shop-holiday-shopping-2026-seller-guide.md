@@ -88,7 +88,7 @@ For example, a gift clip that shows a navy mug with a spare lid needs to point t
 
 If your product also has a public independent-store or Amazon product page, submit that URL to Nexscope's Product Growth Report. Choose **Product copy rewriting** for a title, benefits or FAQ brief, or **Product advertising images** for reviewed image concepts. Use the same approved product facts in your TikTok brief, then apply the changes in your seller account.
 
-<a data-article-next-step data-step-id="tiktok_bfcm_growth_report" data-cta-placement="article-middle" data-buyer-intent="product-report-evaluation" href="https://www.nexscope.ai/product-growth-report?co-from=learn#request">Review your hero SKU with a Product Growth Report →</a>
+
 
 ## When is TikTok Shop's 2026 Black Friday and Cyber Monday campaign?
 

@@ -50,7 +50,7 @@ Update the website and product data together. Confirm that the new data was proc
 
 ## When the price is correct but the page still leaves buyers guessing
 
-Check whether the landing page clearly explains what ships, which variant the price applies to and why the product fits the shopper's use. Nexscope's Product Growth Report reviews one public product page and market. Select **Product copy rewriting** for suggested edits. SEO and GEO analyses are included with a selected paid service. Feed changes and Merchant Center status are managed in your own account. [Product Growth Report scope and example](https://learn.nexscope.ai/product-growth-report/)
+Check whether the landing page clearly explains what ships, which variant the price applies to and why the product fits the shopper's use. Nexscope's Product Growth Report reviews one public product page and market. Select **Product copy rewriting** for suggested edits. SEO and GEO analyses are included with a selected paid service. Feed changes and Merchant Center status are managed in your own account.
 
 {% include article-action.html placement="article-middle" %}
 

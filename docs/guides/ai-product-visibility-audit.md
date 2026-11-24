@@ -92,7 +92,7 @@ Keep question wording, market, channel, collection context, answer text and sour
 
 Measure mentions, correct product identification, explicit recommendations and clicks separately. A saved recommendation is not an observed customer visit or order. Use your own referral analytics to investigate downstream traffic.
 
-For the complete request and delivery process, follow the [Product Growth Report guide]({{ '/guides/product-growth-report-guide/' | relative_url }}). For alternatives named in the answers, continue with [product competitor analysis]({{ '/guides/product-competitor-analysis-report/' | relative_url }}).
+For the complete request and delivery process, follow the . For alternatives named in the answers, continue with [product competitor analysis]({{ '/guides/product-competitor-analysis-report/' | relative_url }}).
 
 ## Frequently asked questions
 
@@ -110,8 +110,8 @@ No. Clear product identity and evidence can address readiness gaps, but they do 
 
 ## Sources and scope
 
-- [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
+-  — current product description and service boundaries.
+-  — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

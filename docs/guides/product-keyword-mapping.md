@@ -82,7 +82,7 @@ In the report form, select **Keyword optimization**, supply the public product U
 
 The service provides directions, proposed placement and reasons. It does not invent search volume or difficulty when valid sources are unavailable. The publicly available example's autocomplete evidence should not be relabelled as Ahrefs data or proven sales demand.
 
-SEO and GEO analyses accompany at least one selected paid service. Review the current configuration and quote before confirming. The [report guide]({{ '/guides/product-growth-report-guide/' | relative_url }}) explains what happens after submission.
+SEO and GEO analyses accompany at least one selected paid service. Review the current configuration and quote before confirming. The  explains what happens after submission.
 
 ## When should you use a tool or API instead?
 
@@ -112,8 +112,8 @@ No. Use a phrase only when it accurately describes the item. Do not turn an adja
 
 ## Sources and scope
 
-- [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
+-  — current product description and service boundaries.
+-  — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

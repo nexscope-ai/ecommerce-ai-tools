@@ -63,4 +63,4 @@ Before submitting the revision, ask someone unfamiliar with the kit to answer th
 
 Bring a public listing URL, a target market and one decision your team needs to make. Choose competitor analysis if you need to see how comparable kits explain their offers, or copy rewriting if you already have verified specs and need a draft. Nexscope includes search visibility and AI readiness reviews with at least one paid service. The report is reviewed before delivery, and your team chooses and applies the changes.
 
-[See what the service includes](https://learn.nexscope.ai/product-growth-report/) or open the request form below to select services and check the current credit quote. The PCIQUTE example illustrates the review and proposed edits. It records no before-and-after results.
+ or open the request form below to select services and check the current credit quote. The PCIQUTE example illustrates the review and proposed edits. It records no before-and-after results.

@@ -51,7 +51,7 @@ faq:
     <h1>List your product <span>for free.</span></h1>
     <p>Share a product link or Amazon ASIN for free editorial feedback. Approved products get a free public page with photos, product details and a link to your store.</p>
     <div class="showcase-actions">
-      <a class="showcase-primary" data-showcase-submit-cta="hero" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product free ↗</a>
+
     </div>
   </div>
   {% if hero_product and hero_product.image %}
@@ -163,7 +163,7 @@ faq:
       <li><span>02</span><div><strong>Add the useful detail</strong><small>Description, images and optional video</small></div></li>
       <li><span>03</span><div><strong>Read your feedback</strong><small>Specific feedback after review; public display if approved and published</small></div></li>
     </ol>
-    <a class="showcase-primary" data-showcase-submit-cta="footer" href="{{ '/product-showcase/submit/' | relative_url }}">Submit your product free ↗</a>
+
   </div>
   <figure class="showcase-path-art">
     <img src="{{ '/assets/product-showcase-submission.webp' | relative_url }}" width="1200" height="800" alt="Product links, images and video moving into a curated ecommerce showcase">

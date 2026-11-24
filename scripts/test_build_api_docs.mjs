@@ -192,7 +192,7 @@ test('Data directory and category pages share the Learn navigation, footer and r
   for(const path of ['index.html','amazon-front-data/index.html']) {
     const html=await readFile(join(dir,path),'utf8');
     const header=html.match(/<header[\s\S]*?<\/header>/)[0];
-    for(const href of ['/data/','/video/','/ecommerce-ai-tools/product-showcase/','/ecommerce-ai-tools/','/pricing/','https://www.nexscope.ai/?co-from=learn']) assert.ok(header.includes(`href="${href}"`));
+    for(const href of ['/data/','/video/','/ecommerce-ai-tools/','/pricing/','https://www.nexscope.ai/?co-from=learn']) assert.ok(header.includes(`href="${href}"`));
     assert.deepEqual(navLabels(header),navLabels(libraryHeader));
     assert.ok(!header.includes('href="/tools/"'));
     assert.match(html.match(/<footer[\s\S]*?<\/footer>/)[0], /href="\/tools\/"/);
@@ -200,9 +200,9 @@ test('Data directory and category pages share the Learn navigation, footer and r
     assert.match(header,/aria-current="(?:page|location)"/);
     assert.match(html,/learn-shell\.css\?v=[a-f0-9]{12}/);
     assert.match(html,/learn-shell\.js\?v=[a-f0-9]{12}/);
-    assert.match(html,/data-showcase-submit-cta="data-footer"/);
+    assert.doesNotMatch(html,/href="[^"]*(?:product-showcase|product-growth-report)/);
     assert.match(html,/privacy\?co-from=learn/);
-    assert.match(html,/Submission|Product submission/);
+    assert.match(html,/API access and credits/);
   }
   const shellCss=await readFile(join(dir,'learn-shell.css'),'utf8');
   const shellJs=await readFile(join(dir,'learn-shell.js'),'utf8');

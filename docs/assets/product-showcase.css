@@ -716,3 +716,9 @@ html { scroll-behavior: smooth; }
 @media(max-width:420px) { .gallery-report-services { grid-template-columns:1fr; } .gallery-report-services article { padding:16px; } }
 
 .submission-draft{padding:20px 24px;border:1px solid #e1d9ee;border-radius:14px;background:#f8f6fc;margin-bottom:26px}.submission-draft strong{font-size:15px}.submission-draft p{font-size:12px;line-height:1.7;margin:8px 0 14px}.submission-draft div{display:flex;flex-wrap:wrap;gap:10px}.submission-draft button{min-height:40px;padding:8px 14px;border:1px solid #d5c7ec;border-radius:8px;background:#fff;color:#654195;font:inherit;font-size:12px;cursor:pointer}.submission-draft button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.submission-draft [hidden]{display:none}.submission-draft [role=status]:empty{display:none}
+
+/* Paused submission and management controls remain readable without suggesting an action. */
+.showcase-paused-notice { padding: 18px 22px; margin: 20px 0; border: 1px solid #d1d5db; border-radius: 14px; background: #f3f4f6; color: #4b5563; line-height: 1.6; }
+.showcase-paused-fields { display: contents; min-width: 0; padding: 0; margin: 0; border: 0; }
+.showcase-form-shell button:disabled, .showcase-status-shell button:disabled { background: #e5e7eb !important; color: #6b7280 !important; border-color: #d1d5db !important; box-shadow: none !important; cursor: not-allowed; opacity: 1; }
+.showcase-paused-fields input:disabled, .showcase-paused-fields textarea:disabled, .showcase-paused-fields select:disabled { background: #f3f4f6; color: #6b7280; cursor: not-allowed; }

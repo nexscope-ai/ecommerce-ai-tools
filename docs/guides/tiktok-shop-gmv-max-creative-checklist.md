@@ -49,7 +49,7 @@ When you review results, save the asset ID, SKU, reporting period, spend and pro
 
 ## Give the creator one verified product brief
 
-If the listing and videos disagree on what ships, first fix the product facts. If you also have a public Amazon or independent-store product page for that SKU, use it to request **Product copy rewriting** or **Product advertising images** in the Nexscope Product Growth Report. Share approved copy and images with the creator as references for the video. [Product Growth Report scope](https://learn.nexscope.ai/product-growth-report/)
+If the listing and videos disagree on what ships, first fix the product facts. If you also have a public Amazon or independent-store product page for that SKU, use it to request **Product copy rewriting** or **Product advertising images** in the Nexscope Product Growth Report. Share approved copy and images with the creator as references for the video.
 
 {% include article-action.html placement="article-middle" %}
 

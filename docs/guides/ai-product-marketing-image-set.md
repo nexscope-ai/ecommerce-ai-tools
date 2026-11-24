@@ -55,7 +55,7 @@ Running the creative API requires an active subscription. Check the live credit 
 
 Compare the generated image and live listing side by side. Check the number of pieces, shape, color, label and accessories. For the dimension image, check each label against the actual variant. If an image shows a spare lid that the SKU does not include, revise the shot before uploading it. Read the destination marketplace's current rules before using the image as the main listing photo.
 
-If you need help preparing the set, choose **Product advertising images** in the Nexscope Product Growth Report. Provide one public product URL, the target market, the number of images and the purpose of each. The service reviews the selected images before delivery. [Product Growth Report scope](https://learn.nexscope.ai/product-growth-report/)
+If you need help preparing the set, choose **Product advertising images** in the Nexscope Product Growth Report. Provide one public product URL, the target market, the number of images and the purpose of each. The service reviews the selected images before delivery.
 
 {% include article-action.html placement="article-middle" %}
 

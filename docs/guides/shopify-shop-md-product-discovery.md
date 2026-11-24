@@ -53,7 +53,7 @@ Save the prompt, date, observed answer, exact product URL and any mismatched det
 
 If the agent links to the correct item but cannot verify a useful measurement, add the verified value where buyers can see it on the product page. If the linked variant is wrong, compare the variant labels, URLs and catalog mapping. Retest the same prompt with comparable settings after the update.
 
-Nexscope's **AI mentions & recommendations** service reviews available sampled answers for one product and target market. Select it if you want help checking product identification, recommendation wording and the evidence behind it. The report describes its own sample scope. For a Shop.md-specific observation, use the workflow above and keep the result from that session. [Product Growth Report scope and public example](https://learn.nexscope.ai/product-growth-report/)
+Nexscope's **AI mentions & recommendations** service reviews available sampled answers for one product and target market. Select it if you want help checking product identification, recommendation wording and the evidence behind it. The report describes its own sample scope. For a Shop.md-specific observation, use the workflow above and keep the result from that session.
 
 {% include article-action.html placement="article-middle" %}
 

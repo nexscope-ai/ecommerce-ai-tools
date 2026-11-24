@@ -91,6 +91,19 @@ def product_navigation(directory):
     return header[0].replace('aria-current="page"', 'aria-current="location"'), stylesheet[0], script[0]
 
 
+def strip_paused_service_links(html: str) -> str:
+    """Remove public acquisition links to paused services from rendered HTML."""
+    def replace_anchor(match):
+        try:
+            url = urlsplit(urljoin(ORIGIN, match.group(2)))
+        except ValueError:
+            return match.group(0)
+        own_host = url.hostname in ('learn.nexscope.ai', 'www.nexscope.ai', 'nexscope.ai')
+        paused = re.search(r'/(?:product-showcase|product-growth-report)(?:/|$)', url.path)
+        return '' if own_host and paused else match.group(0)
+    return re.sub(r'<a\b[^>]*\bhref\s*=\s*([\"\'])([^\"\']*)\1[^>]*>[\s\S]*?</a>', replace_anchor, html, flags=re.I)
+
+
 def finalize(directory, root_site=None, api_snapshot=None):
     directory = Path(directory)
     api_contract = json.loads(Path(api_snapshot).read_text(encoding='utf-8')) if api_snapshot else None
@@ -120,6 +133,10 @@ def finalize(directory, root_site=None, api_snapshot=None):
             header, stylesheet, script = detail_nav
             html = html.replace(marker, header, 1)
             html = html.replace('</head>', f'  {stylesheet}\n  {script}\n</head>', 1)
+            path.write_text(html, encoding='utf-8')
+        cleaned = strip_paused_service_links(html)
+        if cleaned != html:
+            html = cleaned
             path.write_text(html, encoding='utf-8')
         page = Page(html)
         if relative == '404.html' or page.redirect or 'noindex' in page.robots:

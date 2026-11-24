@@ -46,9 +46,9 @@ You do not need to write a long post to take part. Start with one product-page c
 
 ## Connect Product Gallery feedback to a public conversation
 
-The [Nexscope Product Gallery]({{ '/product-showcase/' | relative_url }}) gives every reviewed submission private editorial feedback and may publish an approved product on a public Gallery page. The community is where sellers can discuss one public question raised by that process.
+The  gives every reviewed submission private editorial feedback and may publish an approved product on a public Gallery page. The community is where sellers can discuss one public question raised by that process.
 
-1. [Submit one public product page]({{ '/product-showcase/submit/' | relative_url }}) with accurate facts and media.
+1.  with accurate facts and media.
 2. Keep the private management link private and read the editorial feedback there.
 3. If you want peer input, share only the public product URL or public Gallery page and ask one focused question in [Show and tell](https://github.com/nexscope-ai/ecommerce-ai-tools/discussions/categories/show-and-tell?utm_source=learn.nexscope.ai&utm_medium=community_hub&utm_campaign=product_showcase_community&utm_content=gallery_loop).
 4. Return with the change you tested and what happened. A small before-and-after example is more useful than a promotional post.

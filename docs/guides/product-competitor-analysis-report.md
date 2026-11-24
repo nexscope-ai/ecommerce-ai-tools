@@ -90,7 +90,7 @@ If you want a DIY structure specifically for Amazon, use the existing [Amazon co
 
 Pick a difference you can substantiate and turn it into a clear field, diagram or FAQ. Keep the source and review date with the change. Avoid relying on a competitor's temporary offer to write an evergreen superiority claim.
 
-If the comparison reveals useful buying language, continue with [product keyword mapping]({{ '/guides/product-keyword-mapping/' | relative_url }}). If the item is clear but the wording is not, the [product copy rewriting guide]({{ '/guides/product-description-rewrite/' | relative_url }}) explains the next deliverable. The [report request guide]({{ '/guides/product-growth-report-guide/' | relative_url }}) covers submission and delivery.
+If the comparison reveals useful buying language, continue with [product keyword mapping]({{ '/guides/product-keyword-mapping/' | relative_url }}). If the item is clear but the wording is not, the [product copy rewriting guide]({{ '/guides/product-description-rewrite/' | relative_url }}) explains the next deliverable. The  covers submission and delivery.
 
 ## Frequently asked questions
 
@@ -108,8 +108,8 @@ No. Submitting a public product URL does not grant access to private seller data
 
 ## Sources and scope
 
-- [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
+-  — current product description and service boundaries.
+-  — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

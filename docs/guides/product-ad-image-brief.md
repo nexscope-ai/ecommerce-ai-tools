@@ -98,7 +98,7 @@ Compare each delivered original with the real reference. Check quantity, compone
 
 Keep the image ID, actual dimensions, reviewer and decision. A delivery review does not remove the merchant's need to inspect the chosen asset for its specific placement. Test campaign performance only after a factual and destination check; creative approval alone does not predict advertising results.
 
-The [report request guide]({{ '/guides/product-growth-report-guide/' | relative_url }}) explains access and delivery. The [Black Friday creative-pack guide]({{ '/guides/black-friday-video-ad-creative-pack/' | relative_url }}) covers a separate self-directed still-and-video exercise if your next step is motion rather than this image service.
+The  explains access and delivery. The [Black Friday creative-pack guide]({{ '/guides/black-friday-video-ad-creative-pack/' | relative_url }}) covers a separate self-directed still-and-video exercise if your next step is motion rather than this image service.
 
 ## Frequently asked questions
 
@@ -116,8 +116,8 @@ No. The service provides selected creative deliverables reviewed before release.
 
 ## Sources and scope
 
-- [Nexscope Product Growth Report](https://learn.nexscope.ai/product-growth-report/) — current product description and service boundaries.
-- [Current request form](https://www.nexscope.ai/product-growth-report?co-from=learn#request) — available configuration and quote.
+-  — current product description and service boundaries.
+-  — available configuration and quote.
 - [Nexscope public report example](https://www.nexscope.ai/reports/product-growth-example-en.html?co-from=learn) — saved November 5, 2026 illustration. Its observations and selected services are not a fixed package or a customer success claim.
 
 Nexscope publishes this guide and provides the service. No new report purchase, customer survey or before-and-after performance experiment was conducted for this article.

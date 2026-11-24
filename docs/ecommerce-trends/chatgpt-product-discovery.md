@@ -101,9 +101,9 @@ Use semantic HTML, useful internal links, correct canonicals, crawlable product 
 
 ## Where does Nexscope Product Gallery fit in AI shopping preparation?
 
-**The [Nexscope Product Gallery]({{ '/product-showcase/' | relative_url }}) gives approved submissions an additional public product page; it is not a merchant feed or a direct ChatGPT integration.** The page brings submitted details, images, optional video and a link to the original listing together after editorial review. The merchant's own listing remains the source for current price, stock, variants, delivery and purchase terms.
+**The  gives approved submissions an additional public product page; it is not a merchant feed or a direct ChatGPT integration.** The page brings submitted details, images, optional video and a link to the original listing together after editorial review. The merchant's own listing remains the source for current price, stock, variants, delivery and purchase terms.
 
-If you [submit a product]({{ '/product-showcase/submit/' | relative_url }}), use its exact model or variant and answer the questions a buyer would ask before deciding. For example, a travel mug submission could state its measured capacity, dimensions, lid type, compatible cup holders, cleaning instructions and any limits on a leak-resistance claim. Include the source or test condition for important claims; leave unknown facts unknown. These details can help a person evaluate the product and give an AI-assisted researcher clearer public context, but no page can force an AI system to retrieve or recommend it.
+If you , use its exact model or variant and answer the questions a buyer would ask before deciding. For example, a travel mug submission could state its measured capacity, dimensions, lid type, compatible cup holders, cleaning instructions and any limits on a leak-resistance claim. Include the source or test condition for important claims; leave unknown facts unknown. These details can help a person evaluate the product and give an AI-assisted researcher clearer public context, but no page can force an AI system to retrieve or recommend it.
 
 Use this workflow to keep the channels separate:
 
@@ -146,7 +146,7 @@ AI referrals can lose or change referrer details. Add UTM parameters to links yo
 
 ## Start with one product, not a promise of AI ranking
 
-Choose one product and one constrained buyer question. Check the original listing's facts and buying terms, then [submit the product to the Nexscope Gallery]({{ '/product-showcase/submit/' | relative_url }}) if you want an additional reviewed public page and editorial suggestions. [Run an AI visibility report](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn) separately to observe sampled shopping answers. Neither step replaces the merchant's own catalog or guarantees that an AI assistant recommends the product.
+Choose one product and one constrained buyer question. Check the original listing's facts and buying terms, then  if you want an additional reviewed public page and editorial suggestions. [Run an AI visibility report](https://www.nexscope.ai/ai-product-visibility-tool?co-from=learn) separately to observe sampled shopping answers. Neither step replaces the merchant's own catalog or guarantees that an AI assistant recommends the product.
 
 For a narrower check of what shoppers see after discovery, use the [product-card versus offer-card seller audit](../chatgpt-product-cards-offer-cards-seller-audit/). It separates the product choice from the merchant offer and explains the limits of a recent observational shopping study.
 

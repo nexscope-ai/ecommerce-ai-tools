@@ -201,7 +201,7 @@
 
         {% if page.last_reviewed %}<p class="reviewed">Last reviewed: {{ page.last_reviewed }} · Maintained by the official <a href="{{ '/about/' | relative_url }}">Nexscope team</a> · <a href="{{ '/editorial-policy/' | relative_url }}">Editorial &amp; evidence policy</a>.</p>{% endif %}
         {% if page.schema_type == 'Article' %}
-          {% if page.next_step %}
+          {% if page.next_step %}{% unless page.next_step.url contains 'product-showcase' or page.next_step.url contains 'product-growth-report' %}
             {% if page.model_kind %}
               {% include model-experience.html placement="article-end" %}
             {% else %}
@@ -212,7 +212,7 @@
               <a data-article-next-step data-step-id="{{ page.next_step.id | escape }}" data-cta-placement="article-end" data-buyer-intent="{{ page.next_step.intent | default: 'unspecified' | escape }}" href="{{ page.next_step.url | escape }}">{{ page.next_step.label | escape }} →</a>
             </section>
             {% endif %}
-          {% elsif page.learning_topic == nil %}
+          {% endunless %}{% elsif page.learning_topic == nil %}
           {% assign article_pages = site.pages | where: 'schema_type', 'Article' | where_exp: 'item', 'item.sitemap != false' | sort: 'url' %}
           {% assign siblings = article_pages | where_exp: 'item', 'item.path contains section' %}
           {% if siblings.size > 1 %}
@@ -242,9 +242,8 @@
       {% unless is_hub %}</div>{% endunless %}
     </main>
     {% include site-footer.html %}
-    {% if page.product_showcase_page %}<script src="{{ '/assets/vendor/markdown-it-14.3.2.min.js' | relative_url }}" defer></script><script src="{{ '/assets/product-showcase-markdown.js' | relative_url }}?v=2" defer></script><script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=38" defer></script>{% endif %}
+    {% if page.product_showcase_page %}<script src="{{ '/assets/vendor/markdown-it-14.3.2.min.js' | relative_url }}" defer></script><script src="{{ '/assets/product-showcase-markdown.js' | relative_url }}?v=2" defer></script><script src="https://unpkg.com/lucide@1.48.0/dist/umd/lucide.min.js" defer></script><script src="{{ '/assets/product-showcase.js' | relative_url }}?v=39" defer></script>{% endif %}
     {% if page.audit_tool %}<script src="{{ '/assets/ecommerce-audit-tool.js' | relative_url }}?v=1" defer></script>{% endif %}
     {% if page.not_found_page %}<script src="{{ '/assets/not-found.js' | relative_url }}?v=1" defer></script>{% endif %}
-  {% if page.url == '/product-showcase/submit/' %}<script src="{{ '/assets/product-submission-draft.js' | relative_url }}?v=1" defer></script>{% endif %}
   </body>
 </html>

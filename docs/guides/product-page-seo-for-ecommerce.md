@@ -37,7 +37,7 @@ report_step:
 
 **The first three checks:** Can a shopper reach the page from your store? Does its title name the exact product? Can someone verify the important specifications and buying terms without guessing? Fix those before looking for another SEO score.
 
-If you already have one public product URL or Amazon ASIN and want a second look, you can [request free editorial feedback on that product page]({{ '/product-showcase/submit/' | relative_url }}). Bring the exact product name, a factual description, and one accurate image; no store login is needed.
+If you already have one public product URL or Amazon ASIN and want a second look, you can . Bring the exact product name, a factual description, and one accurate image; no store login is needed.
 
 If you sell a product, start with the page where someone can actually evaluate or buy it. A category page can help a shopper choose among items; a product page should answer questions about one item or a closely related set of variants. Google's [ecommerce SEO guidance](https://developers.google.com/search/docs/specialty/ecommerce) treats site navigation, product data, and crawlable pages as connected parts of product discovery.
 
@@ -85,9 +85,9 @@ If you need a technical inspection of one URL, use the [product-page SEO audit g
 
 ## Where does the Nexscope Product Gallery fit?
 
-**Use the free review to find gaps you can fix on the original listing.** Your selling page remains the place to keep current buying details. The [Nexscope Product Gallery]({{ '/product-showcase/' | relative_url }}) offers a separate, free way to get editorial feedback on a public product URL or Amazon ASIN. After review, you can read what works and any specific improvement suggestions on a private management page. If your product is approved and published, it may also receive a **free public Gallery page** with product details, media, and a link to your original listing.
+**Use the free review to find gaps you can fix on the original listing.** Your selling page remains the place to keep current buying details. The  offers a separate, free way to get editorial feedback on a public product URL or Amazon ASIN. After review, you can read what works and any specific improvement suggestions on a private management page. If your product is approved and published, it may also receive a **free public Gallery page** with product details, media, and a link to your original listing.
 
-That additional page can give a shopper another route to the product. It does not repair SEO issues on your own store, replace a Merchant Center feed, or guarantee that Google indexes either page. [Submit one product for free feedback]({{ '/product-showcase/submit/' | relative_url }}) when you have a public product link or ASIN, verified details, and an accurate image. No store login or seller token is required; save the private management link shown after submission to check the result. There is no fixed review deadline.
+That additional page can give a shopper another route to the product. It does not repair SEO issues on your own store, replace a Merchant Center feed, or guarantee that Google indexes either page.  when you have a public product link or ASIN, verified details, and an accurate image. No store login or seller token is required; save the private management link shown after submission to check the result. There is no fixed review deadline.
 
 If your main question is how product details can help an AI-assisted shopper understand the item, continue with [product page GEO for AI shopping research]({{ '/product-page-geo-ai-shopping/' | relative_url }}).
 

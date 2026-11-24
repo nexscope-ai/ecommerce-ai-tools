@@ -30,7 +30,7 @@ next_step:
 
 **A useful starting point:** Pick three real buyer questions about one SKU. For each, publish a direct answer, the product fact or source that supports it, and any important limitation. Keep the same facts on the seller's page and every other public product surface.
 
-For one product you already sell, [request a free editorial review]({{ '/product-showcase/submit/' | relative_url }}) of its public URL or Amazon ASIN. You will receive feedback through a private link; an additional Gallery page is published only if the submission is approved.
+For one product you already sell,  of its public URL or Amazon ASIN. You will receive feedback through a private link; an additional Gallery page is published only if the submission is approved.
 
 Google says its generative AI search features build on core Search systems and do not require a separate technical trick. Its [AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) emphasizes useful content and ordinary Search eligibility. OpenAI's [shopping research help](https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt) says that experience may use publicly available product information alongside merchant data and other sources. Neither source promises that a specific page will be quoted or a product recommended.
 
@@ -78,11 +78,11 @@ Publish the useful answer in visible page copy. If you also maintain product mar
 
 ## What can a free Nexscope Gallery page add?
 
-**It can add editorial feedback and, if approved, another public explanation of your product.** The [Nexscope Product Gallery]({{ '/product-showcase/' | relative_url }}) lets a seller submit one public product URL or Amazon ASIN for **completely free editorial feedback**. The review looks at the submitted facts, images, and buyer questions; the feedback is shown on a private management page after review. If the product is approved and published, its **listing and display are also completely free**. The public Gallery page brings the submitted context, media, and a link to the original selling page together for readers.
+**It can add editorial feedback and, if approved, another public explanation of your product.** The  lets a seller submit one public product URL or Amazon ASIN for **completely free editorial feedback**. The review looks at the submitted facts, images, and buyer questions; the feedback is shown on a private management page after review. If the product is approved and published, its **listing and display are also completely free**. The public Gallery page brings the submitted context, media, and a link to the original selling page together for readers.
 
 This is an **additional reviewed explanation of the product**, not a direct connection to ChatGPT, Google AI Mode, or a shopping catalog. It does not submit a merchant feed, update your store's price or stock, guarantee an AI citation, or guarantee visits. Keep the original selling page as the source of current purchase terms. For platform-specific routes, see the separate [ChatGPT product-discovery guide]({{ '/ecommerce-trends/chatgpt-product-discovery/' | relative_url }}) and [Google AI Mode shopping guide]({{ '/ecommerce-trends/google-ai-mode-shopping/' | relative_url }}).
 
-If you have an accurate public listing and at least one real product image, [submit the product for free review]({{ '/product-showcase/submit/' | relative_url }}). You do not need to connect your store or share a seller token. Save the private management link after submitting; there is no fixed review deadline, and public display happens only after approval and publication.
+If you have an accurate public listing and at least one real product image, . You do not need to connect your store or share a seller token. Save the private management link after submitting; there is no fixed review deadline, and public display happens only after approval and publication.
 
 ## Common questions
 

@@ -51,7 +51,7 @@ A $24 mug with one lid and a $30 set with two lids can both be relevant alternat
 
 Pick the gap most closely tied to the buyer's question. For the mug, that could be a dimension image showing the measured base diameter, or a clearer bullet describing the lid and included parts. Save the source for the claim and review the exact listing again before sending more traffic.
 
-Nexscope's **Competitor analysis** service reviews relevant alternatives and observable differences for one public product URL and market. Use it when you want a reviewed comparison before changing your positioning or listing. [Product Growth Report scope and example](https://learn.nexscope.ai/product-growth-report/)
+Nexscope's **Competitor analysis** service reviews relevant alternatives and observable differences for one public product URL and market. Use it when you want a reviewed comparison before changing your positioning or listing.
 
 {% include article-action.html placement="article-middle" %}
 

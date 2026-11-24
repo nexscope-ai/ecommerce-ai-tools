@@ -121,7 +121,7 @@ For a complete store rather than one URL, use the [sitewide ecommerce SEO audit 
 
 ## How does the reviewed product report differ from the auditor?
 
-The auditor is a self-service page check. The [Product Growth Report]({{ '/guides/product-growth-report-guide/' | relative_url }}) is a one-time service around one product and market. Choose at least one paid service, such as keywords or product copy; SEO and GEO analyses accompany that selection and cannot be requested alone.
+The auditor is a self-service page check. The  is a one-time service around one product and market. Choose at least one paid service, such as keywords or product copy; SEO and GEO analyses accompany that selection and cannot be requested alone.
 
 Use the report when you need a reviewed product-specific interpretation or selected writing or image deliverables. Use the auditor and your own technical evidence when you need to investigate status codes, page signals or performance. The reviewed service is not a full-site crawler, an automatic site editor or a verification of Google coverage. Review the current quote before confirming a request.
 
