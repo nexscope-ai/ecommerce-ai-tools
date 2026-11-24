@@ -51,7 +51,8 @@ class CanonicalSitemapTests(unittest.TestCase):
         self.run_finalize()
 
         html = (self.directory / route / 'index.html').read_text(encoding='utf-8')
-        self.assertIn(header.replace('aria-current="page"', 'aria-current="location"'), html)
+        self.assertIn('<header class="trends-header"><nav></nav></header>', html)
+        self.assertNotIn(f'href="{BASE}/product-showcase/"', html)
         self.assertIn('primary-navigation.css?v=8', html)
         self.assertIn('trends.js?v=20', html)
     def test_dates_remain_stable_when_rebuilding(self):
