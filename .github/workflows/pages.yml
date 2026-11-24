@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: "22"
       - name: Test the API documentation generator
-        run: node --test scripts/test_build_api_docs.mjs
+        run: node --test scripts/test_build_api_docs.mjs scripts/test-showcase-paused.mjs
       - name: Clean and regenerate public REST API documentation
         run: node scripts/build_api_docs.mjs --refresh --allow-cached
       - name: Test the product page generator
